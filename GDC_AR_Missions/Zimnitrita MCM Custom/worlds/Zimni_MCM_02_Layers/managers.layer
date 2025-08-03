@@ -35,6 +35,9 @@ SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/Gam
     "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
    }
   }
+  RHS_AdditionalGameModeSettingsComponent "{61AE627E9607513B}" {
+   Enabled 0
+  }
   SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
    m_eArsenalTypesEnabled 5
   }
@@ -467,6 +470,7 @@ SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/Gam
  coords 0 0 0
  PlayerControllerPrefab "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et"
  m_bAutoPlayerRespawn 0
+ m_bAllowFactionChange 0
  m_fAutoReloadTime 75
  m_bUseSpawnPreload 1
  m_aDisabledResourceTypes {
@@ -537,30 +541,30 @@ MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et"
 SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
  m_aPlayerLoadouts {
   SCR_FactionPlayerLoadout "{65FD0052B3A591A3}" {
-   m_sLoadoutResource "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player.et"
+   m_sLoadoutResource "{A3AC876D9E4CC3A1}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player.et"
   }
   SCR_FactionPlayerLoadout "{65FD0052FEAFF37B}" {
-   m_sLoadoutResource "{57FAE4CBFBAECFB6}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Corpsman.et"
+   m_sLoadoutResource "{57FAE4CBFBAECFB6}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Corpsman.et"
   }
   SCR_FactionPlayerLoadout "{65FD0053173A7BCC}" {
-   m_sLoadoutResource "{11387C28DCE27566}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Leader.et"
+   m_sLoadoutResource "{11387C28DCE27566}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Leader.et"
   }
   SCR_FactionPlayerLoadout "{65FD00535C2431D8}" {
-   m_sLoadoutResource "{C41D222A407D5F78}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_AmmoBearer.et"
+   m_sLoadoutResource "{C41D222A407D5F78}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AmmoBearer.et"
   }
   SCR_FactionPlayerLoadout "{65FD0053B5E230D5}" {
   }
   SCR_FactionPlayerLoadout "{65FD00545DC6F4E2}" {
-   m_sLoadoutResource "{7290AEA25A11EE7C}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_GL.et"
+   m_sLoadoutResource "{7290AEA25A11EE7C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_GL.et"
   }
   SCR_FactionPlayerLoadout "{65FD0054704B63F3}" {
-   m_sLoadoutResource "{A7EDB942D42F990A}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_AT.et"
+   m_sLoadoutResource "{A7EDB942D42F990A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AT.et"
   }
   SCR_FactionPlayerLoadout "{65FD0054F8804490}" {
-   m_sLoadoutResource "{DD6CC9DDD4375A21}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Marksman.et"
+   m_sLoadoutResource "{DD6CC9DDD4375A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Marksman.et"
   }
   SCR_FactionPlayerLoadout "{65FE9637263FE654}" {
-   m_sLoadoutResource "{1A8F3A2A19EA2426}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_ExplosiveSpecialist.et"
+   m_sLoadoutResource "{1A8F3A2A19EA2426}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_ExplosiveSpecialist.et"
   }
  }
 }
