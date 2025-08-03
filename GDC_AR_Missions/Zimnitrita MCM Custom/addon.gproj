@@ -1,0 +1,22 @@
+GameProject {
+ ID "ZimnitritaMCMCustom"
+ GUID "65DAE0F92F16F29D"
+ TITLE "Zimnitrita MCM Custom"
+ Dependencies {
+  "597697D81A1EA202" "595F2BF2F44836FB" "6518A7C00A4DD9E6"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+ }
+}

@@ -1,0 +1,21 @@
+GenericEntity {
+ ID "59E66612E9E25B23"
+ coords 1349.012 0 2960.421
+ {
+  GenericEntity {
+   ID "59E66612E9E25B70"
+   coords -0.609 -0.187 3.051
+   angleY 53.804
+  }
+  GenericEntity {
+   ID "59E66612E9E25B73"
+   coords 1.784 0 3.337
+   angleY 143.667
+  }
+  GenericEntity {
+   ID "59E66612E9E25B77"
+   coords -2.183 -0.216 5.003
+   angleY -124.349
+  }
+ }
+}

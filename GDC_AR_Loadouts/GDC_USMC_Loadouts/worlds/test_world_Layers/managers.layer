@@ -1,0 +1,261 @@
+SCR_AIWorld : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5AF8B9A114F10E9A}" {
+     NavmeshFile "{FA94770AE4F52B83}worlds/MP/Navmeshes/Coop_CombatOps_Arland.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE480BAED35}" {
+     NavmeshFile "{39DC008432CB842C}worlds/MP/Navmeshes/Coop_CombatOps_Arland_vehicles.nmn"
+    }
+   }
+  }
+ }
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 0.151 0 0.763
+}
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SignalsManagerComponent "{5A96DB65B66820ED}" {
+  }
+  SCR_CommunicationSoundComponent "{5A96DB65A4F312BC}" {
+   Filenames {
+    "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
+   }
+  }
+  GarbageSystemConfigComponent "{6298B35DAC95E67F}" {
+   Config "{A4D57E0B09F30AD4}Configs/Systems/GarbageSystem/Coop_CombatOps.conf"
+  }
+  SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
+   m_eArsenalTypesEnabled 5
+  }
+  SCR_CommandingManagerComponent "{5A86E110CD916E9A}" {
+   m_sCommandsConfigPath "{54764D4E706F348C}Configs/Commanding/Commands.conf"
+  }
+  SCR_DebriefingScreenComponent "{5D349E27D58E3DBA}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5D349E27C9D49EAA}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5D349E27CFE0247B}" {
+     m_sContentImage "{8E135C7AA80F6861}UI/Textures/MissionLoadingScreens/CO_Arland_05.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5D349E27C39D8D30}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5D349E27FA750E5E}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+     m_sSubtitleLostText "#AR-DebriefingScreen_Subtitle_Lost"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5D349E27FB89309F}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5D4272AF9F27F9ED}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5D4272AF9DC59980}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5D4272AF9043F083}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5D4272AF91FE0EB2}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5D4272AF97A47B7E}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_GameModeCombatOpsManager "{5A234ADFA03CDF03}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{5A3AEBCFFA9F291C}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622D8C8672D}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622A74E2EB3}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{5B047926AB8BC612}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+   }
+   m_aAfterTasksInitActions {
+    SCR_ScenarioFrameworkActionSetBriefingEntryTextBasedOnGeneratedTasks "{5E5E6EBC107C8FF0}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 2
+    }
+    SCR_ScenarioFrameworkActionSetExecutionEntryTextBasedOnGeneratedTasks "{5E5E6E8434947260}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 3
+    }
+   }
+   m_aCoreAreas {
+    "Area_Insertion" "Extraction_A" "Extraction_B" "Extraction_C" "MainCompositions"
+   }
+   m_bDynamicDespawn 1
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   m_GameOverScreenConfig SCR_GameOverScreenConfig "{56DEC6462FFDD82D}" : "{D065F36EC49D68F2}Configs/GameOverScreen/ScenarioFrameworkGameOverScreensConfig.conf" {
+   }
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_RespawnBriefingComponent "{5A234AD99EE3348B}" {
+   m_sJournalConfigPath "{E8B9FDA6DF9066DE}Configs/Journal/Journal_CO_Arland.conf"
+   m_Info SCR_UIInfo "{5AD083DBBFC2A25F}" {
+    Description "AR-CombatScenario_Briefing"
+   }
+   m_SimpleBriefingBackground "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+   m_aGameModeHints {
+    SCR_HintUIInfo "{5A52BD34105BB30B}" {
+     Name "#AR-Workshop_TabName_Briefing"
+     Description "#AR-CombatScenario_Briefing"
+     Icon "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+    }
+   }
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5A52BD34B2740F51}" {
+     victoryCondition CUSTOM
+     name "#AR-CombatScenario_Intel_Title"
+     description "#AR-CombatScenario_Intel_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD348C78FD47}" {
+     victoryCondition SEIZE
+     name "#AR-CombatScenario_ClearAreaTask_Title"
+     description "#AR-CombatScenario_ClearAreaTask_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD35E7AC3A0B}" {
+     victoryCondition GUARD
+     name "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+     description "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD354BE5402F}" {
+     name "#AR-CombatScenario_ExfilTask_Title"
+     description "#AR-CombatScenario_ExfilTask_Title"
+    }
+   }
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7AD9BB3CF81}" {
+    m_sForcedFaction "PLAYERS"
+   }
+  }
+  SCR_RespawnTimerComponent "{5A234AD9646DDEF9}" {
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_Struct SCR_MissionStruct "{5C70A6634F52360B}" {
+    m_Struct0 SCR_ScenarioFrameworkStruct "{5C70A66340F5B90E}" {
+    }
+   }
+   m_iAutosavePeriod 120
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5AD4D80FEA1C15D9}" {
+   m_iStartingHours 12
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5D349E395BF4CC12}" {
+   Enabled 0
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E39488C37FD}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5D349E3975645B48}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5D349E399BDAFE8D}" {
+     m_sTitleText "Possible Objectives"
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D102E7CE}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_Kill_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D1D100E5}" {
+       m_sObjectiveQuadName "Custom"
+       m_sDescription "#AR-CombatScenario_Intel_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D19EA135}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_ClearAreaTask_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D65D87BB}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#AR-Commanding_Command_SaD"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39CF92CF24}" {
+       m_sObjectiveQuadName "GetOut"
+       m_sDescription "#AR-CombatScenario_ExfilTask_Title"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E399CC30313}" {
+     m_sTitleText "#AR-FieldManual_Category_Introduction_Title"
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5D349E399784D39C}" {
+       m_sContentImage "{8E135C7AA80F6861}UI/Textures/MissionLoadingScreens/CO_Arland_05.edds"
+       m_sContentTitleText "#AR-Workshop_TabName_Briefing"
+       m_sContentDescriptionText "#AR-CombatScenario_Briefing"
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ PlayerControllerPrefab "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et"
+ m_bAutoPlayerRespawn 0
+ m_fAutoReloadTime 75
+ m_bUseSpawnPreload 1
+ m_aDisabledResourceTypes {
+  0
+ }
+}
+SCR_FactionManager FactionManager_Editor1 : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ components {
+  SCR_FactionAliasComponent "{62AAC9C57DFAF28B}" {
+   m_aFactionAliases {
+    SCR_ScenarioFrameworkFactionAliasConfig "{62AAC9C5732EBD4B}" {
+     m_sAlias "OPFOR"
+     m_sFactionKey "RHS_AFRF"
+    }
+    SCR_ScenarioFrameworkFactionAliasConfig "{62AAC9C573D789D7}" {
+     m_sAlias "PLAYERS"
+     m_sFactionKey "RHS_USAF"
+    }
+   }
+  }
+ }
+ Factions {
+  SCR_Faction "{56DEAC40D2DBC8B1}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{56DEAC40D3C2E623}" {
+   m_bShowInWelcomeScreenIfNonPlayable 0
+  }
+  SCR_Faction "{56DEAC40D132400B}" {
+   m_bIsPlayable 1
+  }
+  SCR_Faction "{5CC8DE37E1FF0F7A}" {
+   m_bIsPlayable 1
+  }
+ }
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 1.113 0 1.015
+}
+ScriptedChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ coords 0.794 0 0.337
+}
+SCR_BaseTaskManager : "{1AC69CD7907FB4F8}Prefabs/Systems/ScenarioFramework/Tasks/TaskManager.et" {
+ coords 0 0 0
+}
+MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
+}
+SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+ coords 0.197 0 0.327
+}

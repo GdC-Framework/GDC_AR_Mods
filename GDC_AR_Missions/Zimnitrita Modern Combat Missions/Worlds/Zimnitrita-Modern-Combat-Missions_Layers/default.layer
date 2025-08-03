@@ -100,6 +100,13 @@ SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/Gam
    m_aCoreAreas {
     "_Area_Extraction" "_Area_Insertion"
    }
+   m_aDebugAreas {
+    SCR_ScenarioFrameworkDebugArea "{65D9458A384F148C}" {
+     m_sForcedArea "Area_C"
+     m_sForcedLayerTask "C_Kill"
+     m_sForcedSlotTask "C_SlotKill1"
+    }
+   }
    m_iUpdateRate 0
   }
   SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
@@ -474,6 +481,9 @@ SCR_FactionManager FactionManager_USMCxMSV : "{589540B35EBA8CDC}Prefabs/MP/Manag
  }
 }
 TimeAndWeatherManagerEntity : "{A3BAF78F6F03315B}Prefabs/World/Game/TimeAndWeatherManager.et" {
+ "Internal variant transition" 0
+ "Internal subvariant 0" 0
+ "Internal subvariant 1" 0
 }
 RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
  coords 0 0 0
@@ -6904,10 +6914,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        components {
         SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
          m_sFactionKey "RHS_AFRF"
-         m_bShowDebugShapesInWorkbench 0
          m_aPlugins {
           SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
-           m_fAreaRadius 161
+           m_fAreaRadius 60
            m_eActivationPresence ANY_CHARACTER
            m_aSpecificClassNames {
             "SCR_ChimeraCharacter"
@@ -6918,7 +6927,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
          m_bCanBeGarbageCollected 0
         }
        }
-       coords 38.912 -0.795 2.159
+       coords 48.594 -0.795 -7.233
       }
      }
     }
@@ -7643,6 +7652,47 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           }
           coords 2.548 0.028 -3.695
           angleX -0.448
+         }
+        }
+       }
+       C_Layer_Veh1 {
+        coords -145.183 13.693 -124.538
+        {
+         GenericEntity SlotAI128 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{65D9458A16548360}" {
+             m_aLayerName {
+              "C_WP_GetIn_Veh1"
+             }
+            }
+           }
+          }
+          coords -55.114 -9.606 5.636
+          angleX 6.619
+          angleY -0.234
+          angleZ -2.026
+         }
+         GenericEntity Slot41 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sObjectToSpawn "{0B4DEA8078B78A9B}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_PKM.et"
+           }
+          }
+          coords -54.473 -13.693 12.35
+          angleY 111.172
+         }
+         GenericEntity C_WP_GetIn_Veh1 : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{65D94589CAE4801C}" {
+             m_fCompletionRadius 5
+            }
+           }
+          }
+          coords -53.353 -13.693 12.296
+          angleY 4.286
          }
         }
        }

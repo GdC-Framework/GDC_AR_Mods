@@ -1,0 +1,59 @@
+Vehicle : "{4A71F755A4513227}Prefabs/Vehicles/Wheeled/M998/M1025.et" {
+ ID "BBCBA43A9778AE21"
+ components {
+  SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+   MultiSlots {
+    MultiSlotConfiguration "{5A60CECB549327C1}" {
+     SlotTemplate InventoryStorageSlot Bandages {
+      Prefab "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
+     }
+     NumSlots 24
+    }
+    MultiSlotConfiguration "{5A60CECAD76E3803}" {
+     NumSlots 4
+    }
+    MultiSlotConfiguration "{5A60CECAC8B21989}" {
+     SlotTemplate InventoryStorageSlot zz {
+      Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+     }
+     NumSlots 1
+    }
+    MultiSlotConfiguration "{5A60CECA3D786B16}" {
+     SlotTemplate InventoryStorageSlot UGLammo {
+      Prefab "{1663496AE5B9F10B}Prefabs/Weapons/Ammo/Ammo_Grenade_HEDP_M433.et"
+     }
+     NumSlots 24
+    }
+    MultiSlotConfiguration "{64E0FA32D51726B4}" {
+     SlotTemplate InventoryStorageSlot InventoryStorageSlot {
+      Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+     }
+     NumSlots 8
+    }
+    MultiSlotConfiguration "{64E110BC28C6482E}" {
+     SlotTemplate InventoryStorageSlot InventoryStorageSlot {
+      Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
+     }
+     NumSlots 10
+    }
+    MultiSlotConfiguration "{64E110BC2802481E}" {
+     SlotTemplate InventoryStorageSlot InventoryStorageSlot {
+      Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+     }
+     NumSlots 1
+    }
+   }
+   m_aSlotsToShow {
+   }
+  }
+  SCR_VehicleInventoryStorageManagerComponent "{591056FA3B752FE6}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6604EA85386853B1}" {
+     PrefabsToSpawn {
+      "{B16ECE2CE1C0E176}Prefabs/Systems/DeployableRadios/DeployableSpawnPointTent.et" "{B5A9B78EE58D9C76}Prefabs/Systems/DeployableRadios/DeployableItemRadioReplacemenUS.et"
+     }
+    }
+   }
+  }
+ }
+}

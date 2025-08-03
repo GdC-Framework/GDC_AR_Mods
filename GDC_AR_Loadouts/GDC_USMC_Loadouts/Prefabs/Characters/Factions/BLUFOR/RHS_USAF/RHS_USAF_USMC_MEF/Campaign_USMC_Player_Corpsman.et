@@ -1,6 +1,9 @@
-SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player.et" {
+SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player.et" {
  ID "520EC961A090BBD5"
  components {
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{3BB52CEF1659F3C0}Prefabs/Weapons/Rifles/M27IAR/Rifle_M27IAR_camo1_su231A.et"
+  }
   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
    Slots {
     LoadoutSlotInfo Hat {
@@ -17,9 +20,13 @@ SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/C
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
     ItemsInitConfigurationItem "{5D7CAAFB9235E903}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/blueforce/Pouch_Blueforce_Tri.et"
      PrefabsToSpawn {
       "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
      }
+    }
+    ItemsInitConfigurationItem "{5A24B6035F7619E7}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/m67/Pouch_Filbe_M67_Base.et"
     }
     ItemsInitConfigurationItem "{54A49B42D138207E}" {
      TargetStorage "Prefabs/Characters/Vests/Vest_PCGen_III_Pouches/Pouch_FILBE_doubleM4_1.et"
@@ -45,6 +52,15 @@ SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/C
       "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et"
      }
     }
+    ItemsInitConfigurationItem "{64DF38472325F0E7}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/radio/Pouch_152_Radio.et"
+    }
+    ItemsInitConfigurationItem "{64E2D49419C8DB46}" {
+     TargetStorage "ArmoredVest/Vest_PCGen_III.et"
+     PrefabsToSpawn {
+      "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{6E35D94130954509}Prefabs/Items/Equipment/Accessories/ETool_ALICE/ETool_ALICE_FreeRoamBuilding_Gadget.et"
+     }
+    }
     ItemsInitConfigurationItem "{5ED5456D74FD19E5}" {
      TargetStorage "Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_EMR.et"
      PrefabsToSpawn {
@@ -55,5 +71,5 @@ SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/C
   }
  }
  coords 0 0 0
- angleY 68.079
+ angleY -129.5
 }

@@ -1,0 +1,15 @@
+SCR_AIGroup : "{2F789534FC49EE31}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_MedicalSection.et" {
+ coords 9718.48 1.274 5005.851
+ m_bPlayable 1
+ m_bSetPlayable 1
+}
+SCR_AIGroup : "{CBB94A576FB7DD47}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_Team_AT.et" {
+ coords 9722.961 1.173 5006.98
+ m_bPlayable 1
+ m_bSetPlayable 1
+}
+SCR_AIGroup : "{F831DFB4A9B46152}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_RifleSquad.et" {
+ coords 9714.732 1.428 5003.148
+ m_bPlayable 1
+ m_bSetPlayable 1
+}

@@ -2,40 +2,74 @@ SCR_LoadoutManager : "{AA4E7419A1FF65B0}Prefabs/MP/Managers/Loadouts/LoadoutMana
  ID "56B2B47708C4F23A"
  m_aPlayerLoadouts {
   SCR_FactionPlayerLoadout "{60D6AED324886C1C}" {
-   m_sLoadoutResource "{A3AC876D9E4CC3A1}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player.et"
+   m_sAffiliatedFaction ""
   }
   SCR_PlayerArsenalLoadout "{60D6AED32EB77BC6}" {
-   m_sLoadoutName "Grenade Launcher"
-   m_sLoadoutResource "{7290AEA25A11EE7C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_GL.et"
+   m_sAffiliatedFaction ""
   }
-  SCR_FactionPlayerLoadout "{6518C33D736E5EDC}" {
-   m_sLoadoutName "Leader"
+  SCR_FactionPlayerLoadout "{65FD0052B3A591A3}" {
+   m_sLoadoutName "Rifleman"
+   m_sLoadoutResource "{A3AC876D9E4CC3A1}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD0052FEAFF37B}" {
+   m_sLoadoutName "Corpsman"
+   m_sLoadoutResource "{57FAE4CBFBAECFB6}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Corpsman.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD0053173A7BCC}" {
+   m_sLoadoutName "Squad / Team Leader"
    m_sLoadoutResource "{11387C28DCE27566}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Leader.et"
    m_sAffiliatedFaction "RHS_USAF"
   }
-  SCR_FactionPlayerLoadout "{6518C33C8F726976}" {
-   m_sLoadoutName "Anti-tank Specialist"
-   m_sLoadoutResource "{A7EDB942D42F990A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AT.et"
-   m_sAffiliatedFaction "RHS_USAF"
-  }
-  SCR_FactionPlayerLoadout "{6518C33DCD9C77FB}" {
-   m_sLoadoutName "MG"
-   m_sLoadoutResource "{7F45D083ADA68756}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AR.et"
-   m_sAffiliatedFaction "RHS_USAF"
-  }
-  SCR_FactionPlayerLoadout "{6518DC976C942430}" {
-   m_sLoadoutName "AmmoBearer"
+  SCR_FactionPlayerLoadout "{65FD00535C2431D8}" {
+   m_sLoadoutName "Ammo Bearer"
    m_sLoadoutResource "{C41D222A407D5F78}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AmmoBearer.et"
    m_sAffiliatedFaction "RHS_USAF"
   }
-  SCR_FactionPlayerLoadout "{6518DC97E372AB75}" {
+  SCR_FactionPlayerLoadout "{65FD0053B5E230D5}" {
+   m_sLoadoutName "Light Machine Gunner"
+   m_sLoadoutResource "{7F45D083ADA68756}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_LMG.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD00545DC6F4E2}" {
+   m_sLoadoutName "Grenade Launcher"
+   m_sLoadoutResource "{7290AEA25A11EE7C}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_GL.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD0054704B63F3}" {
+   m_sLoadoutName "Anti Tank Specialist"
+   m_sLoadoutResource "{A7EDB942D42F990A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AT.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FE963B15B6B4CE}" {
+   m_sLoadoutName "Anti Tank Assistant"
+   m_sLoadoutResource "{E94D97EA29DF6375}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AssAT.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD00549B448FBF}" {
+   m_sLoadoutName "Machine Gunner"
+   m_sLoadoutResource "{70F8C68A5ACB7AB5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_MG.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FE963993E6FF35}" {
+   m_sLoadoutName "Machine Gunner Assistant"
+   m_sLoadoutResource "{63F220313E1969CA}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_AssMG.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FD0054F8804490}" {
+   m_sLoadoutName "Marksman"
+   m_sLoadoutResource "{DD6CC9DDD4375A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Marksman.et"
+   m_sAffiliatedFaction "RHS_USAF"
+  }
+  SCR_FactionPlayerLoadout "{65FE9637263FE654}" {
    m_sLoadoutName "Explosive Specialist"
    m_sLoadoutResource "{1A8F3A2A19EA2426}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_ExplosiveSpecialist.et"
    m_sAffiliatedFaction "RHS_USAF"
   }
-  SCR_FactionPlayerLoadout "{6518DC9003E9CCD7}" {
-   m_sLoadoutName "Marksman"
-   m_sLoadoutResource "{DD6CC9DDD4375A21}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player_Marksman.et"
+  SCR_FactionPlayerLoadout "{65FD005515F9939C}" {
+   m_sLoadoutName "Sniper"
+   m_sLoadoutResource "{9449B1DF76C0B5DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Sniper.et"
    m_sAffiliatedFaction "RHS_USAF"
   }
  }

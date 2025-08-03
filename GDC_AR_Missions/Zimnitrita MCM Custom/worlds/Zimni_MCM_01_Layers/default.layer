@@ -1,0 +1,3788 @@
+SCR_AIWorld SCR_AIWorld_Zimni_1 : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5AF8B9A114F10E9A}" {
+     NavmeshFile "{395CA63E8E456BE7}World/Data/Zimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE480BAED35}" {
+     NavmeshFile "{FA02CD1FDA9A7EE4}World/Data/BTRLikeZimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90B7788942D4B8}" {
+     NavmeshFile "{118D26584E97D8E6}World/Data/LowResZimnitrita.nmn"
+    }
+   }
+  }
+ }
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 11729.987 30.094 12017.947
+}
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SignalsManagerComponent "{5A96DB65B66820ED}" {
+  }
+  SCR_CommunicationSoundComponent "{5A96DB65A4F312BC}" {
+   Filenames {
+    "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
+   }
+  }
+  SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
+   m_eArsenalTypesEnabled 5
+  }
+  SCR_CommandingManagerComponent "{5A86E110CD916E9A}" {
+   m_sCommandsConfigPath "{54764D4E706F348C}Configs/Commanding/Commands.conf"
+  }
+  SCR_DebriefingScreenComponent "{5D349E27D58E3DBA}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5D349E27C9D49EAA}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5D349E27CFE0247B}" {
+     m_sContentImage "{8E135C7AA80F6861}UI/Textures/MissionLoadingScreens/CO_Arland_05.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5D349E27C39D8D30}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5D349E27FA750E5E}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+     m_sSubtitleLostText "#AR-DebriefingScreen_Subtitle_Lost"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5D349E27FB89309F}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5D4272AF9F27F9ED}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5D4272AF9DC59980}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5D4272AF9043F083}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5D4272AF91FE0EB2}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5D4272AF97A47B7E}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_GameModeCombatOpsManager "{5A234ADFA03CDF03}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{5A3AEBCFFA9F291C}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622D8C8672D}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622A74E2EB3}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{5B047926AB8BC612}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+   }
+   m_aAfterTasksInitActions {
+    SCR_ScenarioFrameworkActionSetBriefingEntryTextBasedOnGeneratedTasks "{5E5E6EBC107C8FF0}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 2
+    }
+    SCR_ScenarioFrameworkActionSetExecutionEntryTextBasedOnGeneratedTasks "{5E5E6E8434947260}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 3
+    }
+   }
+   m_aCoreAreas {
+    "_Area_Extraction" "_Area_Insertion"
+   }
+   m_aDebugAreas {
+    SCR_ScenarioFrameworkDebugArea "{65D9458A384F148C}" {
+     m_sForcedArea "Area_C"
+     m_sForcedLayerTask "C_Kill"
+     m_sForcedSlotTask "C_SlotKill1"
+    }
+    SCR_ScenarioFrameworkDebugArea "{65DAE7EE114A6DAF}" {
+     m_sForcedArea "Area_C1"
+     m_sForcedLayerTask "C1_Destroy"
+     m_sForcedSlotTask "C1_Destroy_Mi8"
+    }
+   }
+   m_iUpdateRate 0
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   m_GameOverScreenConfig SCR_GameOverScreenConfig "{56DEC6462FFDD82D}" {
+    m_aGameOverScreens {
+     SCR_BaseGameOverScreenInfo "{56D68C4268C953C8}" {
+      m_GameOverScreenId NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56EEDCE2B507E635}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sImageTexture "{BD2E2F871E6A3EBF}UI/Textures/Flags/Flag_Faction_Base.edds"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568E79DBC553CECC}" {
+      m_GameOverScreenId FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBC9C7EC56}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{568E79DB918A8E56}" {
+      m_GameOverScreenId FACTION_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB9224CAB6}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Score"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568E79DBAC19013D}" {
+      m_GameOverScreenId FACTION_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBB3E97D11}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_DefeatDetail_Score"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{56D6AA9BDC7D83DE}" {
+      m_GameOverScreenId FACTION_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB9224CAB6}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Time"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{56D6AA9BE2D70B6E}" {
+      m_GameOverScreenId FACTION_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBB3E97D11}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_DefeatDetail_Time"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{568E79DB4253B914}" {
+      m_GameOverScreenId FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB4F02D721}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-Campaign_MatchResult_DrawDetail"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{568E810D44CBC66B}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D67CAF2BC}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{0B03F611D52043AE}UI/Textures/placeholder.edds"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{568E810D4E943600}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D55E95F87}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{56D6AA9BEFDDEC08}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D67CAF2BC}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_DM_Time_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{56D6AA9BF1F0219F}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D55E95F87}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "loc DM debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{568E810D7C96FEF0}" {
+      m_GameOverScreenId EDITOR_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56D6DA8F67562868}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_EditorNeutral_Subtitle"
+       m_sImageTexture "{45BF8792AAF74C6E}UI/Textures/Editor/Logos/Logo_Editor_GameOver.edds"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A7849E5D5141}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_Neutral_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_Neutral_Description"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{58F0C76C9A071EE3}" {
+      m_GameOverScreenId SERVER_RESTART
+      m_GameOverContentLayout "{C4507D07F3C54831}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_NoImage.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{58F0C8B005997C9C}" {
+       m_sTitle "#AR-ServerRestart_Title-UC"
+       m_sSubtitle "#AR-ServerRestart_Description"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{58F0C76CFCD7D695}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_RestartServer_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_RestartServer_Description"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568EB6DFDCD175BD}" {
+      m_GameOverScreenId EDITOR_FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DFE533EE66}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A7849BBE69BD}" {
+       m_bCanBeSetByGameMaster 0
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{568EB6DFEF507060}" {
+      m_GameOverScreenId EDITOR_FACTION_VICTORY
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DFF87D9C84}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A78490C62B36}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionVictory_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionVictory_Description"
+       m_MirroredState EDITOR_FACTION_DEFEAT
+      }
+     }
+     SCR_EditorFactionGameOverScreenInfo "{56EED1ED0A9954E6}" {
+      m_GameOverScreenId EDITOR_FACTION_DEFEAT
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56EED1ED10CDB164}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56EED1ED1D11FFF2}" {
+       m_bCanBeSetByGameMaster 0
+       m_MirroredState EDITOR_FACTION_VICTORY
+      }
+      m_sMultiFactionsSubtiteText "#AR-MatchResult_MultiFactions"
+     }
+     SCR_FactionGameOverScreenInfo "{568EB6DFB0180025}" {
+      m_GameOverScreenId EDITOR_FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DF6448B10D}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A784F5213016}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionDraw_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionDraw_Description"
+      }
+      m_bGetWinningFactionImage 0
+      m_bGetWinningSubtitleParam 0
+     }
+     SCR_BaseGameOverScreenInfo "{59EC75B80DEAA612}" {
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{59EC75B9DB34FA69}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Accomplished"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Good"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5ADC782E70D51AD4}" {
+      m_GameOverScreenId COMBATPATROL_PARTIAL_SUCCESS
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5ADC782EB947833C}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Accomplished"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Normal"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5ADC782ED5D1236A}" {
+      m_GameOverScreenId COMBATPATROL_DRAW
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5ADC782EC00A635C}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Bad"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{59EC75B80C1DD0D2}" {
+      m_GameOverScreenId COMBATPATROL_DEFEAT
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{59EC75B9C0E9E099}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Failed"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Good_Timeout"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+    }
+   }
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_RespawnBriefingComponent "{5A234AD99EE3348B}" {
+   m_sJournalConfigPath "{CA9C49AC1AB434F6}Configs/Journal/Journal_01_USvsRUS_MilitaryAirport.conf"
+   m_Info SCR_UIInfo "{5AD083DBBFC2A25F}" {
+    Description "AR-CombatScenario_Briefing"
+   }
+   m_SimpleBriefingBackground "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+   m_aGameModeHints {
+    SCR_HintUIInfo "{5A52BD34105BB30B}" {
+     Name "#AR-Workshop_TabName_Briefing"
+     Description "#AR-CombatScenario_Briefing"
+     Icon "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+    }
+   }
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5A52BD34B2740F51}" {
+     victoryCondition CUSTOM
+     name "#AR-CombatScenario_Intel_Title"
+     description "#AR-CombatScenario_Intel_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD348C78FD47}" {
+     victoryCondition SEIZE
+     name "#AR-CombatScenario_ClearAreaTask_Title"
+     description "#AR-CombatScenario_ClearAreaTask_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD35E7AC3A0B}" {
+     victoryCondition GUARD
+     name "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+     description "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD354BE5402F}" {
+     name "#AR-CombatScenario_ExfilTask_Title"
+     description "#AR-CombatScenario_ExfilTask_Title"
+    }
+   }
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7AD9BB3CF81}" {
+    m_sForcedFaction "RHS_USAF"
+   }
+  }
+  SCR_RespawnTimerComponent "{5A234AD9646DDEF9}" {
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_Struct SCR_MissionStruct "{5C70A6634F52360B}" {
+    m_Struct0 SCR_ScenarioFrameworkStruct "{5C70A66340F5B90E}" {
+    }
+   }
+   m_iAutosavePeriod 120
+   m_DebugHeaderResourceName "{DAA03C6E6099D50F}Missions/24_CombatOps.conf"
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5AD4D80FEA1C15D9}" {
+   m_iStartingHours 12
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bRandomWeatherChanges 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5D349E395BF4CC12}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E39488C37FD}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5D349E3975645B48}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5D349E399BDAFE8D}" {
+     m_sTitleText "Possible Objectives"
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D102E7CE}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_Kill_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D1D100E5}" {
+       m_sObjectiveQuadName "Custom"
+       m_sDescription "#AR-CombatScenario_Intel_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D19EA135}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_ClearAreaTask_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D65D87BB}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#AR-Commanding_Command_SaD"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39CF92CF24}" {
+       m_sObjectiveQuadName "GetOut"
+       m_sDescription "#AR-CombatScenario_ExfilTask_Title"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E399CC30313}" {
+     m_sTitleText "#AR-FieldManual_Category_Introduction_Title"
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5D349E399784D39C}" {
+       m_sContentImage "{63AA3DC1CA7557F8}MissionLoadingScreens/Screen_4.edds"
+       m_sContentTitleText "#AR-Workshop_TabName_Briefing"
+       m_sContentDescriptionText "Russian forces are firmly established on Zimnitrita. <br /><br />For the moment, we cannot consider regaining control of the territory. We must therefore conduct targeted missions to exhaust their military potential.<br /><br />You will conduct sabotage, high-value target neutralization, and area suppression operations. Not to mention intelligence gathering. <br /><br />Be careful, you are heavily outnumbered. Keep a low profile and exfiltrate immediately once your mission is completed."
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ PlayerControllerPrefab "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et"
+ m_bAutoPlayerRespawn 0
+ m_fAutoReloadTime 75
+ m_bUseSpawnPreload 1
+ m_aDisabledResourceTypes {
+  0
+ }
+}
+SCR_FactionManager FactionManager_USMCxMSV : "{589540B35EBA8CDC}Prefabs/MP/Managers/Factions/FactionManager_USxUSSR.et" {
+ Factions {
+  SCR_Faction "{56B2B46E999BF3BF}" : "{F33C7BF22CBF3A8A}Configs/Factions/RHS_US_USMC.conf" {
+   FactionKey "RHS_USAF"
+  }
+  SCR_Faction "{56B2B46E9AF80999}" : "{627A8CDE681D223D}Configs/Factions/RHS_RF_MSV.conf" {
+   m_bIsPlayable 0
+  }
+  SCR_Faction "{5E88F23089063C56}" : "{09727032415AC39B}Configs/Factions/USSR.conf" {
+   m_iOrder 2000
+   m_bIsPlayable 0
+   m_aFriendlyFactionsIds {
+    "RHS_AFRF"
+   }
+  }
+  SCR_Faction "{5E911D79CFA6394C}" : "{5EB46557DF2AA24F}Configs/Factions/US.conf" {
+   m_bIsPlayable 0
+  }
+ }
+}
+TimeAndWeatherManagerEntity : "{A3BAF78F6F03315B}Prefabs/World/Game/TimeAndWeatherManager.et" {
+ "Internal variant transition" 0
+ "Internal subvariant 0" 0
+ "Internal subvariant 1" 0
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 0 0 0
+}
+ScriptedChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ coords 0 0 0
+}
+SCR_BaseTaskManager : "{1AC69CD7907FB4F8}Prefabs/Systems/ScenarioFramework/Tasks/TaskManager.et" {
+ coords 0 0 0
+ {
+  SCR_ScenarioFrameworkTaskClearAreaSupportEntity {
+   ID "5A96783D483C9642"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDefendSupportEntity {
+   ID "5E38B27D6204EDC7"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDeliverSupportEntity {
+   ID "5A96783D483C9644"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDestroySupportEntity {
+   ID "5A96783D483C61C4"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskExtractSupportEntity {
+   ID "5A96783D483C61C5"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskKillSupportEntity {
+   ID "5E38B27D9A1E8ABC"
+   coords 0 -0.531 0
+  }
+  SCR_ScenarioFrameworkTaskSupportEntity {
+   ID "5A96783D483C25E4"
+   coords 0 0 0
+  }
+ }
+}
+MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
+}
+SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+}
+$grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ _Area_Insertion {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_SpawnChildren RANDOM_ONE
+    m_sTriggerResource ""
+   }
+  }
+  coords 13017.214 50 11663.271
+  {
+   GenericEntity Insertion_A : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_sFactionKey "RHS_USAF"
+     }
+    }
+    coords -1.408 11.433 20.768
+    angleX -2.689
+    angleY -0.334
+    angleZ -0.878
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      a_spawns {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_ONE
+        }
+       }
+       coords 3.516 0 5.892
+       {
+        $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         Slot_Sp_1_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sFactionKey "RHS_USAF"
+            m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+            m_sOverrideObjectDisplayName "#AR-DeployMenu_SpawnPoint_Name"
+           }
+          }
+          coords 36.425 0 -2.943
+          angleY -87.4
+         }
+         Slot_Sp_2_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sFactionKey "RHS_USAF"
+            m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+            m_sOverrideObjectDisplayName "#AR-DeployMenu_SpawnPoint_Name"
+           }
+          }
+          coords 35.706 0 11.838
+          angleY -84.229
+         }
+         Slot_Sp_3_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sFactionKey "RHS_USAF"
+            m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+            m_sOverrideObjectDisplayName "#AR-DeployMenu_SpawnPoint_Name"
+           }
+          }
+          coords 48.188 0 12.019
+          angleY -32.004
+         }
+        }
+       }
+      }
+      a_camp {
+       coords 57.956 -2.301 12.314
+       angleX -2.389
+       angleY 151.763
+       angleZ -5.304
+       {
+        $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         Slot_Vehicle_3_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_sObjectToSpawn "{FA6820A9A52CD05B}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MDO_USAF.et"
+            m_bCanBeGarbageCollected 0
+           }
+          }
+          coords -8.092 0.402 -8.407
+          angleX 3.937
+          angleY 17.402
+          angleZ -2.251
+         }
+         Slot_Vehicle_4_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_sObjectToSpawn "{CC55611936C21F25}Prefabs/Vehicles/Wheeled/M998/M1025_USAF.et"
+            m_bCanBeGarbageCollected 0
+           }
+          }
+          coords -10.344 0.17 -17.487
+          angleX 4.025
+          angleY 6.463
+          angleZ 0.514
+         }
+         Slot_Vehicle_5_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_sObjectToSpawn "{CC55611936C21F25}Prefabs/Vehicles/Wheeled/M998/M1025_USAF.et"
+            m_bCanBeGarbageCollected 0
+           }
+          }
+          coords -8.211 0.501 0.897
+          angleX -1.105
+          angleY 7.01
+          angleZ 5.71
+         }
+         Slot_Vehicle_6_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_sObjectToSpawn "{4E3A86638BFF9FC6}Prefabs/Vehicles/Wheeled/M998/M997_maxi_ambulance_USAF.et"
+            m_bCanBeGarbageCollected 0
+           }
+          }
+          coords 0.23 -0.019 -13.604
+          angleX 3.272
+          angleY -43.299
+          angleZ -0.202
+         }
+         Slot_Vehicle_7_a {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_sObjectToSpawn "{F1FBD0972FA5FE09}Prefabs/Vehicles/Wheeled/M923A1/M923A1_transport.et"
+            m_bCanBeGarbageCollected 0
+           }
+          }
+          coords 8.174 0.393 -19.082
+          angleX 2.964
+          angleY -39.355
+          angleZ 4.573
+         }
+        }
+        $grp GenericEntity : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+         SlotMarker_a {
+          components {
+           SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+            m_sFactionKey "RHS_USAF"
+            m_bShowDebugShapesInWorkbench 0
+            m_bCanBeGarbageCollected 0
+            m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+             m_sMapMarkerText "#AR-CampaignMapMarkerPlayerSpawn"
+             m_eMapMarkerColor BLUFOR
+            }
+           }
+          }
+          coords 16.27 0.353 -9.062
+          angleX 2.91
+          angleY -154.264
+          angleZ -4.607
+         }
+         SlotRespawnMarker1 {
+          components {
+           SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+            m_sFactionKey "RHS_USAF"
+            m_bShowDebugShapesInWorkbench 0
+            m_bCanBeGarbageCollected 0
+            m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+             m_sMapMarkerText "Respawn"
+             m_eMapMarkerIcon FLAG
+             m_eMapMarkerColor BLUFOR
+            }
+           }
+          }
+          coords -880.371 74.413 867.831
+          angleX 6.517
+          angleY -98.239
+          angleZ -0.975
+         }
+         SlotRespawnMarker2 {
+          components {
+           SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+            m_sFactionKey "RHS_USAF"
+            m_bShowDebugShapesInWorkbench 0
+            m_bCanBeGarbageCollected 0
+            m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+             m_sMapMarkerText "Respawn"
+             m_eMapMarkerIcon FLAG
+             m_eMapMarkerColor BLUFOR
+            }
+           }
+          }
+          coords -1552.852 144.235 721.338
+          angleX -5.333
+          angleY 109.688
+          angleZ -2.325
+         }
+         SlotRespawnMarker3 {
+          components {
+           SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+            m_sFactionKey "RHS_USAF"
+            m_bShowDebugShapesInWorkbench 0
+            m_bCanBeGarbageCollected 0
+            m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+             m_sMapMarkerText "Respawn"
+             m_eMapMarkerIcon FLAG
+             m_eMapMarkerColor BLUFOR
+            }
+           }
+          }
+          coords -576.863 52.276 3.426
+          angleX -1.751
+          angleY -42.033
+          angleZ 2.268
+         }
+         SlotRespawnMarker4 {
+          components {
+           SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+            m_sFactionKey "RHS_USAF"
+            m_bShowDebugShapesInWorkbench 0
+            m_bCanBeGarbageCollected 0
+            m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+             m_sMapMarkerText "Respawn"
+             m_eMapMarkerIcon FLAG
+             m_eMapMarkerColor BLUFOR
+            }
+           }
+          }
+          coords -601.408 48.79 422.594
+          angleX -1.751
+          angleY -42.033
+          angleZ 2.268
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ _Area_Extraction {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_sTriggerResource ""
+   }
+  }
+  coords 15138.139 50 14703.559
+  angleY 0.653
+  {
+   GenericEntity TaskExtraction : "{246BEC080F393398}Prefabs/Systems/ScenarioFramework/Components/LayerTaskMove.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTask "{5A2283E9F84958A1}" {
+      m_sFactionKey "RHS_USAF"
+      m_eActivationType ON_TRIGGER_ACTIVATION
+      m_sTaskTitle "#AR-CombatScenario_ExfilTask_Title"
+      m_sTaskDescription "#AR-CombatScenario_ExfilTask_Description_NoLimit"
+      m_aTriggerActionsOnFinish {
+       SCR_ScenarioFrameworkActionEndMission "{5A6D34926E5735E2}" {
+       }
+      }
+     }
+    }
+    coords -53.8 0 -41.584
+    {
+     GenericEntity ext_A : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      coords -18.274 0 4.994
+      angleY -49.976
+      {
+       GenericEntity SlotDelivery_1 : "{4C2EF5C1E53FE511}Prefabs/Systems/ScenarioFramework/Components/SlotDelivery.et" {
+        components {
+         SCR_ScenarioFrameworkSlotDelivery "{59F51EA7A10294D2}" {
+          m_sFactionKey "RHS_USAF"
+          m_bShowDebugShapesDuringRuntime 0
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6513EB3A4B9621}" {
+            m_fAreaRadius 20
+            m_bOnce 0
+           }
+          }
+          m_aAssociatedTaskLayers {
+           "A_Documents" "B_Documents" "C_Documents" "D_Documents" "E1_Documents" "E2_Documents" "E4_Documents" "F_Documents"
+          }
+         }
+        }
+        coords 24.678 0 -142.26
+        angleY 9.26
+       }
+       GenericEntity SlotExtraction_1 : "{9C47DECB98FDA4DA}Prefabs/Systems/ScenarioFramework/Components/SlotExtraction.et" {
+        components {
+         SCR_ScenarioFrameworkSlotExtraction "{5A1EEEC837EEA27B}" {
+          m_sFactionKey "US"
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A6C6D099D49E4BA}" {
+            m_fAreaRadius 30
+            m_fMinimumPlayersNeededPercentage 0.75
+            m_fActivationCountdownTimer 20
+            m_bNotificationEnabled 1
+            m_sPlayerActivationNotificationTitle "#AR-CombatScenario_ExfilTrigger_Notification"
+            m_bEnableAudio 1
+            m_sCountdownAudio "SOUND_RESPAWNMENU"
+           }
+          }
+          m_sObjectToSpawn "{47D49EA6A216CFD5}Prefabs/Systems/ScenarioFramework/Triggers/ScenarioFrameworkCharacterTrigger.et"
+          m_sTaskTitle "#AR-CombatScenario_ExfilTask_Title"
+          m_sTaskDescription "#AR-CombatScenario_ExfilTask_Description_NoLimit"
+          m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Extraction_US"
+          m_aActionsOnFinished {
+           SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+            m_sSound "SOUND_CP_TEC"
+           }
+          }
+          m_aActionsOnCreated {
+           SCR_ScenarioFrameworkActionAppendBriefingEntryTextBasedOnTask "{5E64886833533F71}" {
+            m_sFactionKey "RHS_USAF"
+            m_iEntryID 3
+            m_Getter SCR_ScenarioFrameworkGetTask "{5E5E6E99B339819B}" {
+             m_sLayerTaskName "TaskExtraction"
+            }
+           }
+          }
+         }
+        }
+        coords 23.852 -14.381 -139.187
+        angleX 1.895
+        angleY 13.711
+        angleZ 10.125
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ MainCompositions {
+  coords 14089.451 574.067 11123.84
+  {
+   GenericEntity MainCompositionLayer : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords -0.028 0.015 0.144
+    {
+     $grp SCR_ScenarioFrameworkLogicCounter : "{6C1792C71DCAFD55}Prefabs/Systems/ScenarioFramework/Components/LogicCounter.et" {
+      extractionAreaCounter {
+       coords -571.932 -77.994 -33.002
+       m_aInputs {
+        SCR_ScenarioFrameworkLogicInput "{5E32BEB74F6241D4}" {
+         m_InputAction SCR_ScenarioFrameworkActionInputOnTaskEventIncreaseCounter "{5E32BEB74D0E9941}" {
+         }
+        }
+        SCR_ScenarioFrameworkLogicInput "{5E32BEB74DAA1E3C}" {
+         m_InputAction SCR_ScenarioFrameworkActionInputOnTaskEventIncreaseCounter "{5E32BEB7461B1596}" {
+          m_eEventName PROGRESSED
+         }
+        }
+       }
+       m_aActions {
+        SCR_ScenarioFrameworkActionSpawnClosestObjectFromList "{5ABEDBE123949586}" {
+         m_Getter SCR_ScenarioFrameworkGetLastFinishedTaskEnity "{5ABEDBE12E41452C}" {
+         }
+         m_aListOfObjects {
+          "TaskExtraction"
+         }
+        }
+       }
+       m_iCountTo 2
+      }
+      endScreenCounter {
+       coords 609.491 -37.264 673.016
+       m_aInputs {
+        SCR_ScenarioFrameworkLogicInput "{5AFC76BAFF67026C}" {
+         m_InputAction SCR_ScenarioFrameworkActionInputOnTaskEventIncreaseCounter "{5AFC76BAF3BE9773}" {
+         }
+        }
+       }
+       m_iCountTo 4
+       m_aOnIncreaseActions {
+        SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA791531CC}" {
+         m_eComparisonOperator EQUAL
+         m_iValue 1
+         m_sCounterName "endScreenCounter"
+         m_aActions {
+          SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA69848A2A}" {
+           m_eGameOverType COMBATPATROL_DRAW
+          }
+         }
+        }
+        SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA675DC4B2}" {
+         m_eComparisonOperator EQUAL
+         m_iValue 2
+         m_sCounterName "endScreenCounter"
+         m_aActions {
+          SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA9C1F5FF9}" {
+           m_eGameOverType COMBATPATROL_PARTIAL_SUCCESS
+          }
+         }
+        }
+        SCR_ScenarioFrameworkActionCompareCounterAndExecute "{5AFC76BA940387A7}" {
+         m_eComparisonOperator GREATER_OR_EQUAL
+         m_iValue 3
+         m_sCounterName "endScreenCounter"
+         m_aActions {
+          SCR_ScenarioFrameworkActionSetMissionEndScreen "{5AFC76BA86B567FB}" {
+           m_eGameOverType COMBATPATROL_VICTORY
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ Area_C {
+  components {
+   SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+    m_bShowDebugShapesInWorkbench 1
+    m_sTriggerResource ""
+    m_fAreaRadius 5
+    m_bOnce 0
+   }
+  }
+  coords 14212.171 58.194 11811.078
+  {
+   GenericEntity C_Kill : "{2008B4EE6C4D528E}Prefabs/Systems/ScenarioFramework/Components/LayerTaskKill.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskKill "{5B02763B6A6D6C4B}" {
+      m_SpawnChildren RANDOM_ONE
+      m_sFactionKey "RHS_USAF"
+      m_eActivationType ON_TASKS_INIT
+      m_bPlaceMarkerOnSubjectSlot 1
+     }
+    }
+    coords -5.568 0.193 -6.623
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      C_Officer1 {
+       coords -118.717 6.212 129.815
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI116 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{B4474D20DB777AB6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_AR_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+            }
+            m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+           }
+          }
+          coords 180.908 -9.44 -137.058
+          angleY -101.531
+         }
+         SlotAI124 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+            }
+            m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+           }
+          }
+          coords 174.773 -12.64 -142.212
+          angleY -101.531
+         }
+         SlotAI125 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+            }
+            m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+           }
+          }
+          coords 178.09 -9.44 -145.965
+          angleY -101.531
+         }
+        }
+        GenericEntity C_SlotKill1 : "{C70DC6CBD1AAEC9A}Prefabs/Systems/ScenarioFramework/Components/SlotKill.et" {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sObjectToSpawn "{13F471430D84970C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Officer.et"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Kill_US"
+           m_aActionsOnFinished {
+            SCR_ScenarioFrameworkActionPlaySound "{5B0479207BA9C1B7}" {
+             m_sSound "SOUND_CP_TD_PC"
+            }
+           }
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9114B7E72D}" {
+           }
+          }
+         }
+         coords 161.579 -9.44 -111.899
+         angleY 167.788
+        }
+       }
+      }
+      C_Officer2 {
+       coords 192.396 -6.381 77.189
+       {
+        GenericEntity C_Officer2_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+         coords 0 0 0
+         {
+          $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+           C_Officer2_WP1 {
+            components {
+             SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+              m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FD26704FFFF08A}" {
+               m_fCompletionRadius 10
+               m_fHoldingTime 60
+              }
+             }
+            }
+            coords -6.575 -0.66 -3.165
+           }
+           C_Officer2_WP2 {
+            components {
+             SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+              m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FD26704FFFF08A}" {
+               m_fCompletionRadius 10
+               m_fHoldingTime 60
+              }
+             }
+            }
+            coords -26.354 -0.66 -54.274
+           }
+          }
+         }
+        }
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI48 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64FD26700DBD4072}" {
+             m_aLayerName {
+              "C_Officer2_WP1"
+             }
+            }
+            m_sWPToSpawn "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et"
+           }
+          }
+          coords -6.557 -0.66 -1.542
+         }
+         SlotAI127 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64FD26700DBD4072}" {
+             m_aLayerName {
+              "C_Officer2_WP2"
+             }
+            }
+            m_sWPToSpawn "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et"
+           }
+          }
+          coords -30.881 -0.66 -53.407
+         }
+        }
+        GenericEntity C_SlotKill2 : "{C70DC6CBD1AAEC9A}Prefabs/Systems/ScenarioFramework/Components/SlotKill.et" {
+         components {
+          SCR_ScenarioFrameworkSlotKill "{5B02763C1EAA0BF1}" {
+           m_sObjectToSpawn "{13F471430D84970C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Officer.et"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Kill_US"
+           m_aActionsOnFinished {
+            SCR_ScenarioFrameworkActionPlaySound "{5B0479207BA9C1B7}" {
+             m_sSound "SOUND_CP_TD_PC"
+            }
+           }
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91154A6E16}" {
+            m_aLayerName {
+             "C_Officer2_WP1"
+            }
+           }
+           m_bSpawnAIOnWPPos 0
+          }
+         }
+         coords -11.197 -0.66 0.977
+         angleY -170.114
+        }
+       }
+      }
+     }
+    }
+   }
+   $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    C_Vehicles {
+     coords -3.985 0.172 -3.798
+     {
+      $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       C_Static_Veh1 {
+        coords 64.673 6.233 -53
+        {
+         GenericEntity SlotAI128 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{65D9458A16548360}" {
+             m_aLayerName {
+              "C_WP_GetIn_Veh1"
+             }
+            }
+            m_bSpawnAIOnWPPos 1
+           }
+          }
+          coords -63.513 -13.692 5.657
+          angleX -0.448
+          angleY -0.234
+          angleZ 0.002
+         }
+         GenericEntity Slot41 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sObjectToSpawn "{0B4DEA8078B78A9B}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_PKM.et"
+           }
+          }
+          coords -50.878 -13.693 12.639
+          angleY 111.172
+         }
+         GenericEntity C_WP_GetIn_Veh1 : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{65D94589CAE4801C}" {
+             m_fCompletionRadius 5
+            }
+           }
+          }
+          coords -52.602 -13.693 10.085
+          angleY 4.286
+         }
+        }
+       }
+       C_Static_Veh2 {
+        coords 510.275 -0.061 349.63
+        {
+         GenericEntity SlotAI147 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{65D9458A16548360}" {
+             m_aLayerName {
+              "C_WP_GetIn_StaticVeh2"
+             }
+            }
+            m_bSpawnAIOnWPPos 1
+           }
+          }
+          coords 32.634 -13.302 -44.264
+          angleX -0.448
+          angleY -0.234
+          angleZ 0.002
+         }
+         GenericEntity Slot43 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sObjectToSpawn "{3918E80DF5393F8C}Prefabs/Vehicles/Wheeled/K17/APC_K17_Epoch_camo1.et"
+           }
+          }
+          coords 32.122 -7.184 -27.123
+          angleX 0.516
+          angleY 16.662
+          angleZ -0.535
+         }
+         GenericEntity C_WP_GetIn_StaticVeh2 : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{65D94589CAE4801C}" {
+            }
+           }
+          }
+          coords 26.176 -5.435 -38.791
+          angleY 4.286
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+       Slot33 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{00AED68EFBF251BA}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed_camo1.et"
+         }
+        }
+        coords 55.567 -7.293 -39.359
+        angleX 4.259
+        angleY -63.385
+        angleZ -1.823
+       }
+       Slot34 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{00AED68EFBF251BA}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed_camo1.et"
+         }
+        }
+        coords 58.253 -7.46 -35.573
+        angleX 4.259
+        angleY -63.385
+        angleZ -1.823
+       }
+       Slot35 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{00AED68EFBF251BA}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed_camo1.et"
+         }
+        }
+        coords -58.211 -7.47 7.414
+        angleX 4.259
+        angleY -63.385
+        angleZ -1.823
+       }
+       Slot36 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{E1A99B5F2DC9B38A}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Camo.et"
+         }
+        }
+        coords 37.111 -7.372 -24.7
+        angleY -129.526
+       }
+       Slot37 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{E1A99B5F2DC9B38A}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Camo.et"
+         }
+        }
+        coords 24.113 -7.171 3.879
+        angleY -71.304
+       }
+       Slot38 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{D9B91FAB817A6033}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered.et"
+         }
+        }
+        coords 233.94 -7.386 136.685
+        angleX 1.365
+        angleY -63.293
+        angleZ -1.819
+       }
+       Slot39 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{00AED68EFBF251BA}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed_camo1.et"
+         }
+        }
+        coords 124.006 -7.441 38.935
+        angleX 0.223
+        angleY 146.961
+        angleZ 3.035
+       }
+       Slot40 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{E1A99B5F2DC9B38A}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_Camo.et"
+         }
+        }
+        coords 180.112 -7.553 -339.421
+        angleX 0.547
+        angleY 83.46
+        angleZ 0.838
+       }
+      }
+     }
+    }
+    C_0_Defense {
+     coords -7.558 0.224 1.449
+     {
+      GenericEntity C_Defense_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+         C_WP_Defense1 {
+          coords 0 0 0
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_WP_Defense1_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{64FCE5E8DD886194}" {
+               }
+              }
+             }
+             coords 153.562 -7.512 -76.288
+            }
+            SlotWaypoint27 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords 208.29 -7.512 -28.2
+            }
+            SlotWaypoint185 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords 211.143 -7.512 167.939
+            }
+            SlotWaypoint186 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords 111.651 -7.51 19.994
+            }
+            SlotWaypoint187 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords 28.101 -7.511 94.896
+            }
+           }
+          }
+         }
+         C_WP_Defense2 {
+          coords 247.467 -7.511 -222.26
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_WP_Defense2_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{64FCE5E8DD886194}" {
+               }
+              }
+             }
+             coords 153.562 -7.512 -76.288
+            }
+            SlotWaypoint188 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords 22.771 -0.001 35.206
+            }
+            SlotWaypoint189 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -198.486 -0.001 46.139
+            }
+            SlotWaypoint190 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -446.509 -0.003 -0.05
+             angleX 0.448
+             angleY -0.004
+             angleZ -0.448
+            }
+            SlotWaypoint191 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -390.595 -0.215 133.161
+             angleX -0.448
+            }
+           }
+          }
+         }
+         C_WP_Defense3 {
+          coords 216.899 -7.51 214.429
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_WP_Defense3_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{64FCE5E8DD886194}" {
+               }
+              }
+             }
+             coords 153.562 -7.512 -76.288
+            }
+            SlotWaypoint192 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -58.493 -0.002 -16.468
+            }
+            SlotWaypoint193 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -247.578 -0.002 34.687
+            }
+            SlotWaypoint194 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -404.561 -0.174 -214.562
+             angleX 0.895
+             angleY 0.021
+             angleZ 1.343
+            }
+            SlotWaypoint195 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5EB0EA3E2EB}" {
+                m_fHoldingTime 60
+               }
+              }
+             }
+             coords -553.267 -0.002 -84.039
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+       C_Defense1 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911550B801}" {
+           m_aLayerName {
+            "C_WP_Defense1_Cycle"
+           }
+          }
+         }
+        }
+        coords 169.244 -7.512 -69.281
+       }
+       C_Defense2 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{2A667B5C63C8A92D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_MachineGunTeam.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911550B801}" {
+           m_aLayerName {
+            "C_WP_Defense2_Cycle"
+           }
+          }
+          m_sWPToSpawn "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et"
+         }
+        }
+        coords 257.996 -7.512 -210.239
+       }
+       C_Defense3 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911550B801}" {
+           m_aLayerName {
+            "C_WP_Defense3_Cycle"
+           }
+          }
+          m_sWPToSpawn "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et"
+         }
+        }
+        coords 265.779 -7.511 196.482
+       }
+      }
+     }
+    }
+    C_0_Garrisons {
+     coords -4.865 0.128 2.003
+     {
+      GenericEntity C_Garrisons_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+         C_Garrison1_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords -11.856 -7.416 13.107
+         }
+         C_Garrison2_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords 46.268 -7.416 -8.354
+         }
+         C_Garrison3_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords -77.464 -6.556 67.308
+         }
+         C_Garrison4_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords 31.361 -7.416 125.416
+         }
+         C_Garrison5_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords -68.723 -7.416 301.377
+         }
+         C_Garrison6_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords 203.328 -7.142 -356.073
+         }
+         C_Garrison7_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords 99.795 -6.806 841.586
+         }
+         C_Garrison8_WP {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCCEA29CE58A3D}" {
+             m_fCompletionRadius 25
+            }
+           }
+          }
+          coords -340.461 -4.322 -34.781
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+       C_Garrison1 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison1_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords -10.093 -7.416 19.215
+       }
+       C_Garrison2 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison2_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords 53.331 -7.416 -9.627
+       }
+       C_Garrison3 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison3_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords -74.454 -7.416 58.723
+       }
+       C_Garrison4 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison4_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords 33.563 -7.415 124.582
+       }
+       C_Garrison5 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison5_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords -66.849 -7.416 284.864
+       }
+       C_Garrison6 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison6_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords 202.457 -7.064 -362.438
+       }
+       C_Garrison7 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison7_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords 108.906 -7.418 811.182
+       }
+       C_Garrison8 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_bShowDebugShapesInWorkbench 0
+          m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911563E4E1}" {
+           m_aLayerName {
+            "C_Garrison8_WP"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAISkill VETERAN
+         }
+        }
+        coords -346.239 -4.322 -26.52
+       }
+      }
+     }
+    }
+    C_Compositions {
+     coords -6.078 0.216 0.753
+     {
+      $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+       Slot_172 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{7D7B50995A8B3F73}Prefabs/Vehicles/Airplanes/IL76/Plane_IL76_RU_static.et"
+         }
+        }
+        coords -65.336 -7.504 300.943
+        angleY -123.25
+       }
+       Slot27 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sObjectToSpawn "{7D7B50995A8B3F73}Prefabs/Vehicles/Airplanes/IL76/Plane_IL76_RU_static.et"
+         }
+        }
+        coords 36.948 -7.504 133.419
+        angleY -18.25
+       }
+      }
+     }
+    }
+    C_Waypoints {
+     coords 0 0 0
+     {
+      GenericEntity C_WP_Defend : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       coords 12.562 -7.288 -18.073
+       angleY 21.26
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+         C_Defend_WP1 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{6060CE91313BF240}" {
+            }
+           }
+          }
+          coords 1.5 0 -0.291
+         }
+         C_Defend_WP2 {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_bShowDebugShapesInWorkbench 0
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{6060CE91313BF240}" {
+            }
+           }
+          }
+          coords 171.791 0.001 142.3
+          angleY -21.26
+         }
+        }
+       }
+      }
+     }
+    }
+    C_Outposts {
+     coords 0.338 -0.015 -0.253
+     {
+      $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       C_Outpos_B {
+        coords -252.435 -7.273 -86.984
+        angleY 14.073
+        {
+         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          Guard9 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115C57020}" {
+             }
+            }
+           }
+           coords 17.464 -0.062 73.201
+           angleX -0.581
+           angleY -112.984
+           angleZ -0.815
+          }
+          SlotAI18 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+             }
+            }
+           }
+           coords 19.826 -0.103 70.977
+           angleX 0.975
+           angleY -90.627
+           angleZ -0.227
+          }
+         }
+         GenericEntity Slot_211 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sObjectToSpawn "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et"
+           }
+          }
+          coords 16.968 -0.069 72.89
+          angleX -0.457
+          angleY -104.699
+          angleZ -0.89
+         }
+        }
+       }
+       C_Outpos_A {
+        coords 219.747 -2.676 200.18
+        angleY -46.21
+        {
+         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          Guard8 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+             }
+            }
+           }
+           coords 59.781 -4.579 -17.992
+           angleX 0.242
+           angleY -76.551
+           angleZ 0.376
+          }
+          SlotAI15 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+             }
+            }
+           }
+           coords 61.016 -4.576 -19.874
+           angleX -0.104
+           angleY -30.344
+           angleZ 0.435
+          }
+         }
+         GenericEntity Slot_212 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sObjectToSpawn "{114DE81321786CD9}Prefabs/Compositions/Slotted/SlotFlatSmall/MachineGunNest_S_USSR_01_PKM.et"
+           }
+          }
+          coords 60.756 -4.597 -17.284
+          angleY 29.489
+         }
+        }
+       }
+      }
+     }
+    }
+    C_0_Patrols {
+     components {
+      SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+       m_iRandomPercent 66
+      }
+     }
+     coords -15.98 0.292 5.714
+     {
+      GenericEntity C_Patrols_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+         C_WP_Patrol1 {
+          coords 268.493 -7.58 -68.785
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_2_76 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312674AA}" {
+               }
+              }
+             }
+             coords 16.289 0 -143.593
+            }
+            C_2_77 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126BF16}" {
+               }
+              }
+             }
+             coords -37.548 0 -273.323
+            }
+            C_2_78 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126E2D3}" {
+               }
+              }
+             }
+             coords -253.075 -0.952 -273.732
+             angleX -4.898
+             angleY 0.822
+             angleZ -0.962
+            }
+            C_2_79 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312715B4}" {
+               }
+              }
+             }
+             coords -248.047 1.481 -171.906
+             angleX 7.059
+             angleY 0.449
+             angleZ 8.434
+            }
+            C_2_80 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312758D7}" {
+               }
+              }
+             }
+             coords -81.922 0 -144.402
+            }
+            C_Patrol1_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E74BFC}" {
+                m_bUseRandomOrder 1
+               }
+              }
+             }
+             coords 27.41 -15.244 -124.529
+            }
+           }
+          }
+         }
+         C_WP_Patrol2 {
+          coords 268.36 -28.303 266.263
+          angleX 4.022
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_2_86 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE9131389661}" {
+               }
+              }
+             }
+             coords -513.144 13.326 105.482
+             angleX -4.022
+             angleY 0.105
+             angleZ -0.007
+            }
+            C_2_87 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913138D928}" {
+               }
+              }
+             }
+             coords -324.89 2.731 256.611
+             angleX -4.022
+             angleY 0.032
+             angleZ -0.002
+            }
+            C_2_88 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313905F9}" {
+               }
+              }
+             }
+             coords -263.358 16.028 67.51
+             angleX -3.945
+             angleY 11.257
+             angleZ -0.785
+            }
+            C_2_89 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313941A6}" {
+               }
+              }
+             }
+             coords -486.134 24.858 -58.083
+             angleX -4.022
+             angleY -0.22
+             angleZ 0.015
+            }
+            C_2_90 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE9131398E26}" {
+               }
+              }
+             }
+             coords -801.506 15.613 54.25
+             angleX -4.022
+            }
+            C_2_91 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913139B0C1}" {
+               }
+              }
+             }
+             coords -729.22 9.509 141.065
+             angleX -4.022
+            }
+            C_2_92 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913139F805}" {
+               }
+              }
+             }
+             coords -716.63 12.586 97.304
+             angleX -4.022
+             angleY 0.024
+             angleZ -0.002
+            }
+            C_2_93 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313A3B9A}" {
+               }
+              }
+             }
+             coords -394.523 20.11 9.451
+             angleX -4.022
+            }
+            C_Patrol2_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E7728E}" {
+                m_bUseRandomOrder 1
+               }
+              }
+             }
+             coords -335.292 59.345 -551.236
+             angleX -4.022
+            }
+           }
+          }
+         }
+         C_WP_Patrol3 {
+          coords -176.472 3.217 -50.355
+          angleY -141.094
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_2_94 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313A6730}" {
+               }
+              }
+             }
+             coords 131.719 -10.797 121.67
+             angleY -0.104
+            }
+            C_2_95 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313AADCC}" {
+               }
+              }
+             }
+             coords 101.604 -10.797 -31.935
+             angleY -2.084
+            }
+            C_2_96 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313AD797}" {
+               }
+              }
+             }
+             coords -40.555 -11.016 11.432
+            }
+            C_2_97 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313B1DE1}" {
+               }
+              }
+             }
+             coords -206.086 -10.822 -33.586
+             angleX 0.349
+             angleY -0.053
+             angleZ 0.281
+            }
+            C_2_98 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313B47BB}" {
+               }
+              }
+             }
+             coords -176.435 -10.797 6.838
+             angleY 0.059
+            }
+            C_2_99 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313B8DCE}" {
+               }
+              }
+             }
+             coords 12.408 -10.992 -60.141
+             angleX 0.348
+             angleY -0.006
+             angleZ 0.281
+            }
+            C_2_100 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91313BCBF7}" {
+               }
+              }
+             }
+             coords 38.529 -10.797 126.356
+             angleY 4.619
+            }
+            C_Patrol3_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E7BB09}" {
+                m_bUseRandomOrder 1
+               }
+              }
+             }
+             coords 195.663 -10.797 -235.648
+             angleY 0.002
+            }
+           }
+          }
+         }
+         C_WP_Patrol4 {
+          coords 21.843 -7.58 -44.432
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            SlotWaypoint177 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312674AA}" {
+               }
+              }
+             }
+             coords -5.169 0 100.364
+            }
+            SlotWaypoint176 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126BF16}" {
+               }
+              }
+             }
+             coords 80.383 0 39.763
+            }
+            SlotWaypoint175 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126E2D3}" {
+               }
+              }
+             }
+             coords 59.748 0 -17.531
+             angleY 0.822
+            }
+            SlotWaypoint174 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312715B4}" {
+               }
+              }
+             }
+             coords -14.364 0 1.45
+             angleY 0.449
+            }
+            SlotWaypoint173 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312758D7}" {
+               }
+              }
+             }
+             coords -114.286 -0.027 71.224
+             angleX -0.448
+             angleY -0.004
+             angleZ 0.448
+            }
+            C_Patrol4_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E74BFC}" {
+               }
+              }
+             }
+             coords 27.41 -15.244 -124.529
+            }
+            SlotWaypoint178 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312758D7}" {
+               }
+              }
+             }
+             coords -76.918 0.001 100.202
+             angleX -0.448
+             angleY -0.004
+             angleZ 0.448
+            }
+           }
+          }
+         }
+         C_WP_Patrol5 {
+          coords 283.166 -7.578 490.981
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            SlotWaypoint183 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312674AA}" {
+               }
+              }
+             }
+             coords 2.212 -0.002 10.398
+            }
+            SlotWaypoint182 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126BF16}" {
+               }
+              }
+             }
+             coords -91.355 -0.002 263.382
+            }
+            SlotWaypoint181 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE913126E2D3}" {
+               }
+              }
+             }
+             coords 1.585 -0.002 -207.646
+             angleY 0.822
+            }
+            SlotWaypoint180 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312715B4}" {
+               }
+              }
+             }
+             coords -2.693 -82.646 -553.565
+             angleX 7.059
+             angleY 0.449
+             angleZ 8.434
+            }
+            SlotWaypoint179 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{6060CE91312758D7}" {
+               }
+              }
+             }
+             coords 1.589 -0.002 -520.097
+            }
+            C_Patrol5_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E74BFC}" {
+                m_bUseRandomOrder 1
+               }
+              }
+             }
+             coords 27.41 -15.244 -124.529
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+       C_Patrol1 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115DC6A0D}" {
+           m_aLayerName {
+            "C_Patrol1_Cycle"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAIGroupFormation Line
+          m_eAISkill VETERAN
+         }
+        }
+        coords 245.757 -7.58 -213.735
+        angleY 6.365
+       }
+       C_Patrol3 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D332C1}" {
+           m_aLayerName {
+            "C_Patrol3_Cycle"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+         }
+        }
+        coords 8.747 -7.83 -314.451
+       }
+       C_Patrol2 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115EA6D5D}" {
+           m_aLayerName {
+            "C_Patrol2_Cycle"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+         }
+        }
+        coords -190.839 -7.58 269.606
+       }
+       C_Patrol4 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115DC6A0D}" {
+           m_aLayerName {
+            "C_Patrol4_Cycle"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAIGroupFormation Line
+          m_eAISkill VETERAN
+         }
+        }
+        coords 28.415 -7.58 -44.777
+        angleY 6.365
+       }
+       C_Patrol5 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115DC6A0D}" {
+           m_aLayerName {
+            "C_Patrol5_Cycle"
+           }
+          }
+          m_bSpawnAIOnWPPos 1
+          m_eAIGroupFormation Line
+          m_eAISkill VETERAN
+         }
+        }
+        coords 285.458 -7.58 470.245
+        angleY 6.365
+       }
+      }
+     }
+    }
+    C_SpawnPoints {
+     components {
+      SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+       m_eActivationType ON_TRIGGER_ACTIVATION
+       m_bExcludeFromDynamicDespawn 1
+      }
+     }
+     coords -6.874 0.245 7.293
+     {
+      $grp GenericEntity : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+       Slot_213 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sFactionKey "US"
+          m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+          m_bCanBeGarbageCollected 0
+         }
+        }
+        Flags 1026
+        coords -396.748 -8.396 -207.241
+        angleX -1.14
+        angleY -98.168
+        angleZ -1.644
+       }
+       Slot42 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sFactionKey "US"
+          m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+          m_bCanBeGarbageCollected 0
+         }
+        }
+        Flags 1026
+        coords 59.225 -7.994 -460.362
+        angleX -0.886
+        angleY -98.17
+        angleZ 0.127
+       }
+       Slot44 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sFactionKey "US"
+          m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+          m_bCanBeGarbageCollected 0
+         }
+        }
+        Flags 1026
+        coords 581.257 -7.533 -8.942
+        angleY -98.168
+       }
+       Slot45 {
+        components {
+         SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+          m_sFactionKey "US"
+          m_sObjectToSpawn "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et"
+          m_bCanBeGarbageCollected 0
+         }
+        }
+        Flags 1026
+        coords -620.049 -5.499 150.828
+        angleX 8.721
+        angleY -98.466
+        angleZ -1.74
+       }
+      }
+     }
+    }
+    C__Logic {
+     coords -4.373 0.148 -0.901
+     {
+      $grp SCR_ScenarioFrameworkLogicCounter : "{6C1792C71DCAFD55}Prefabs/Systems/ScenarioFramework/Components/LogicCounter.et" {
+       LogicCounter_7 {
+        coords 0.178 -0.005 -0.211
+        m_aInputs {
+         SCR_ScenarioFrameworkLogicInput "{5AA4995B9D430F41}" {
+          m_InputAction SCR_ScenarioFrameworkActionInputCheckEntitiesInTrigger "{5AA499586C52E87E}" {
+           m_Getter SCR_ScenarioFrameworkGetEntityByName "{5AA4B21EFDAC7E21}" {
+            m_sEntityName "C_TriggerQRF"
+           }
+           m_iValue 6
+          }
+         }
+        }
+        m_aActions {
+         SCR_ScenarioFrameworkActionSpawnObjects "{5E8CB9C1B424916A}" {
+          m_aNameOfObjectsToSpawnOnActivation {
+           "C_QRF"
+          }
+         }
+         SCR_ScenarioFrameworkActionChangeLayerActivationType "{5E3866FC87F868E8}" {
+          m_Getter SCR_ScenarioFrameworkGetLayerBase "{5E3866FCBA80ADAF}" {
+           m_sLayerBaseName "C_QRF"
+          }
+         }
+        }
+       }
+       LogicCounter_DocumentSound3 {
+        coords 0 0 0
+        m_aActions {
+         SCR_ScenarioFrameworkActionPlaySound "{5AE0A6286CA68701}" {
+          m_sSound "SOUND_CP_TIF"
+         }
+        }
+       }
+      }
+      GenericEntity C_TriggerQRF : "{D183AFE8DAF9793D}Prefabs/Systems/ScenarioFramework/Components/SlotPlayerTrigger.et" {
+       components {
+        SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
+         m_sFactionKey "RHS_AFRF"
+         m_aPlugins {
+          SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
+           m_fAreaRadius 60
+           m_eActivationPresence ANY_CHARACTER
+           m_aSpecificClassNames {
+            "SCR_ChimeraCharacter"
+           }
+           m_sActivatedByThisFaction "USSRHS_AFRF"
+          }
+         }
+         m_bCanBeGarbageCollected 0
+        }
+       }
+       coords 48.594 -0.795 -7.233
+      }
+     }
+    }
+    C_QRF {
+     components {
+      SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+       m_eActivationType ON_TRIGGER_ACTIVATION
+      }
+     }
+     coords 318.612 6.83 61.094
+     angleY -90
+     {
+      GenericEntity c_QRFpool : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       components {
+        SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+         m_SpawnChildren RANDOM_ONE
+        }
+       }
+       coords -0.074 0.042 -1.174
+       angleY 90
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         C_QRFGroup {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sFactionKey "RHS_AFRF"
+            m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115E10468}" {
+             m_aLayerName {
+              "C_WpQRF"
+             }
+            }
+           }
+          }
+          coords -81.29 -14.16 32.504
+          angleY -90
+         }
+         C_QRFGroup2 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sFactionKey "RHS_AFRF"
+            m_sObjectToSpawn "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115F4D55E}" {
+             m_aLayerName {
+              "C_WpQRF"
+             }
+            }
+           }
+          }
+          coords -196.386 -14.121 -307.078
+          angleY -19.986
+         }
+        }
+       }
+      }
+      GenericEntity C_WpQRF : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint SCR_ScenarioFrameworkWaypointSearchAndDestroy "{6060CE91313C3AA0}" {
+         }
+        }
+       }
+       coords -69.937 -14.118 312.845
+      }
+     }
+    }
+    C_0_Sentries {
+     coords -30.641 0.451 9.699
+     {
+      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+       SlotAI120 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords -111.759 -2.091 1124.723
+        angleY -101.531
+       }
+       SlotAI121 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords 337.878 -0.753 1327.447
+        angleY -101.531
+       }
+       SlotAI20 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords 220.191 -7.424 -353.198
+        angleX -0.853
+        angleY -101.531
+        angleZ -0.301
+       }
+       SlotAI_88 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911596676C}" {
+          }
+          m_bSpawnAIOnWPPos 1
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+          m_bBalanceOnPlayersCount 1
+         }
+        }
+        coords -93.503 -7.457 40.602
+        angleX 1.254
+        angleY 110.959
+        angleZ 0.48
+       }
+       SlotAI3 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91159C2532}" {
+          }
+          m_bSpawnAIOnWPPos 1
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+          m_bBalanceOnPlayersCount 1
+         }
+        }
+        coords 42.794 -7.539 -39.173
+        angleY 124.255
+       }
+       SlotAI5 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91159C2532}" {
+          }
+          m_bSpawnAIOnWPPos 1
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+          m_bBalanceOnPlayersCount 1
+         }
+        }
+        coords -32.633 -7.613 19.294
+        angleX -0.137
+        angleY -166.374
+        angleZ 0.127
+       }
+       SlotAI6 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91159C2532}" {
+          }
+          m_bSpawnAIOnWPPos 1
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+          m_bBalanceOnPlayersCount 1
+         }
+        }
+        coords -21.666 -7.62 25.726
+        angleY 124.255
+       }
+       SlotAI117 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords -351.547 -0.753 -58.271
+        angleY -101.531
+       }
+       SlotAI118 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords -509.582 -2.097 323.308
+        angleY -101.531
+       }
+       SlotAI119 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords -410.208 -2.097 836.47
+        angleY -101.531
+       }
+       SlotAI122 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords 204.805 0.654 -484.158
+        angleY 93.469
+       }
+       SlotAI123 {
+        components {
+         SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+          m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+          m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115D92AC3}" {
+          }
+          m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+         }
+        }
+        coords 297.273 0.654 -228.029
+        angleY -101.531
+       }
+      }
+     }
+    }
+    C_Waypoints_2 {
+     coords 0 0 0
+     {
+      $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       C_WP_RdmGrp_1 {
+        coords 182.713 -8.196 -385.479
+        angleY 0.739
+        {
+         $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          C_RdmGrp_1_WP_2 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 19.832 0 106.159
+          }
+          C_RdmGrp_1_WP_1 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59076313F72C}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 240
+             }
+            }
+           }
+           coords -265.678 -0.435 85.722
+          }
+          C_RdmGrp_1_WP_Cycle {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E70ED5}" {
+              m_bUseRandomOrder 1
+             }
+            }
+           }
+           coords 16.626 0.909 58.474
+           angleY -0.035
+          }
+          C_RdmGrp_1_WP_3 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 15.867 0.683 39.55
+           angleY -0.739
+          }
+         }
+        }
+       }
+       C_WP_RdmGrp_2 {
+        coords -427.058 -7.288 24.77
+        angleY 0.739
+        {
+         $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          C_RdmGrp_2_WP_3 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 25
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 190.675 0 -45.235
+          }
+          C_RdmGrp_2_WP_2 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59076313F72C}" {
+              m_fCompletionRadius 50
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 81.247 0 -53.635
+          }
+          C_RdmGrp_2_WP_Cycle {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E70ED5}" {
+              m_bUseRandomOrder 1
+             }
+            }
+           }
+           coords 112.326 0 -17.714
+          }
+          C_RdmGrp_2_WP_1 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 50
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 189.53 0.683 194.875
+           angleY -0.739
+          }
+         }
+        }
+       }
+       C_WP_RdmGrp_3 {
+        coords 207.965 -7.287 54.498
+        angleY 0.739
+        {
+         $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          C_RdmGrp_3_WP_3 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords -6.431 -0.001 133.095
+          }
+          C_RdmGrp_3_WP_2 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59076313F72C}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords -72.025 0 87.934
+          }
+          C_RdmGrp_3_WP_Cycle {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E70ED5}" {
+              m_bUseRandomOrder 1
+             }
+            }
+           }
+           coords 16.626 0.909 58.474
+           angleY -0.035
+          }
+          C_RdmGrp_3_WP_1 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 10
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords -0.166 0.683 -15.548
+           angleY -0.739
+          }
+         }
+        }
+       }
+       C_WP_RdmGrp_4 {
+        coords 43.894 -7.288 109.35
+        angleY 0.739
+        {
+         $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          C_RdmGrp_4_WP_3 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords -50.284 -0.001 198.255
+          }
+          C_RdmGrp_4_WP_2 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59076313F72C}" {
+              m_fCompletionRadius 20
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords -46.101 0 -9.65
+          }
+          C_RdmGrp_4_WP_Cycle {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6060CE9111E70ED5}" {
+              m_bUseRandomOrder 1
+             }
+            }
+           }
+           coords 2.256 0 22.233
+           angleY -0.035
+          }
+          C_RdmGrp_4_WP_1 {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{62DB59073AF6D116}" {
+              m_fCompletionRadius 10
+              m_fHoldingTime 120
+             }
+            }
+           }
+           coords 30.984 0.683 -23.703
+           angleY -0.739
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+    Area_C_mrk {
+     coords 61.122 -76.888 65.63
+     angleX 0.613
+     angleY 151.448
+     angleZ -5.413
+     {
+      GenericEntity SlotMarker4 : "{E537867C6E760514}Prefabs/Systems/ScenarioFramework/Components/SlotMarker.et" {
+       components {
+        SCR_ScenarioFrameworkSlotMarker "{5EA2BD9901E5E82E}" {
+         m_sFactionKey "RHS_USAF"
+         m_bShowDebugShapesInWorkbench 0
+         m_bCanBeGarbageCollected 0
+         m_MapMarkerType SCR_ScenarioFrameworkMarkerCustom "{5EECE8B242C19799}" {
+          m_sMapMarkerText "Area controlled by hostiles"
+          m_eMapMarkerIcon MARK_EXCLAMATION
+          m_eMapMarkerColor RED
+         }
+        }
+       }
+       coords -4.633 69.353 93.268
+       angleX 2.91
+       angleY -154.264
+       angleZ -4.607
+      }
+     }
+    }
+    C_VehPatrols {
+     components {
+      SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+       m_SpawnChildren RANDOM_MULTIPLE
+       m_iRandomPercent 75
+      }
+     }
+     coords 205.87 -7.288 67.74
+     {
+      $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+       C_VehPatrol_A {
+        coords 0 0 0
+        {
+         GenericEntity C_WP_VehPatrol_A : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+          coords -205.87 7.288 -67.74
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            SlotWaypoint64 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 275.046 -7.288 163.168
+            }
+            SlotWaypoint65 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 313.279 -7.288 359.255
+            }
+            SlotWaypoint66 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords -247.683 -7.288 17.202
+            }
+            SlotWaypoint67 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords -59.915 -7.288 -141.966
+            }
+            SlotWaypoint69 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 212.687 -7.288 -192.043
+            }
+            C_WP_VehPatrol_A_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{64D73C79240AF51E}" {
+                m_aLayersWithWaypointsToCycle {
+                 "C_WP_VehPatrol_A"
+                }
+               }
+              }
+             }
+             coords 218.617 -7.288 -171.34
+            }
+           }
+          }
+         }
+         GenericEntity C_Veh_A_Grp : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{61DD5A8910ECF5C6}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_LightFireTeam.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64D73C6D7F4F1FCF}" {
+             m_aLayerName {
+              "C_WP_GetIn_VehPatrol_A" "C_WP_VehPatrol_A_Cycle" "C_WP_VehPatrol_A"
+             }
+            }
+            m_sWPToSpawn "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et"
+           }
+          }
+          coords 20.155 0 -253.686
+         }
+         GenericEntity C_Veh_A : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sFactionKey "RHS_AFRF"
+            m_aActivationActions {
+             SCR_ScenarioFrameworkActionSetFuelConsumption "{64D77C2AC75F9D5C}" {
+              m_fFuelConsumption 0
+              m_fFuelConsumptionIdle 0
+             }
+             SCR_ScenarioFrameworkActionSetVehicleCruiseSpeed "{64D77C2ADDEDB276}" {
+              m_fMaxCruiseSpeed 25
+             }
+            }
+            m_sObjectToSpawn "{447CFE8D73F95C3E}Prefabs/Vehicles/Wheeled/BTR70/BTR70_AFRF.et"
+           }
+          }
+          coords 13.334 0 -248.924
+         }
+         GenericEntity C_WP_GetIn_VehPatrol_A : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{64D77C29355C1696}" {
+             m_fPriorityLevel 2000
+            }
+           }
+          }
+          coords 15.084 0 -246.668
+         }
+        }
+       }
+       C_VehPatrol_B {
+        coords -10.089 0.502 -443.075
+        {
+         GenericEntity C_WP_VehPatrol_B : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+          coords -205.87 7.288 -67.74
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            SlotWaypoint68 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 263.039 -7.288 99.974
+            }
+            SlotWaypoint70 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 316.218 -7.288 254.782
+            }
+            SlotWaypoint71 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords 345.643 -7.288 830.701
+            }
+            SlotWaypoint72 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords -118.501 -8.754 1691.039
+             angleX 2.681
+             angleY -0.084
+             angleZ -1.792
+            }
+            SlotWaypoint73 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords -538.177 -9.134 791.437
+            }
+            SlotWaypoint75 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointPatrol "{64D73C65645C19BB}" {
+               }
+              }
+             }
+             coords -289.355 -8.686 211.178
+             angleX 0.447
+             angleY -0.01
+             angleZ -1.343
+            }
+            C_WP_VehPatrol_B_Cycle {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{64D73C79240AF51E}" {
+                m_aLayersWithWaypointsToCycle {
+                 "C_WP_VehPatrol_B"
+                }
+               }
+              }
+             }
+             coords 210.458 -7.287 65.987
+            }
+           }
+          }
+         }
+         GenericEntity C_Veh_B_Grp : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{C22DD62FE52FDE29}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_ReconTeam.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64D73C6D7F4F1FCF}" {
+             m_aLayerName {
+              "C_WP_GetIn_VehPatrol_B" "C_WP_VehPatrol_B_Cycle" "C_WP_VehPatrol_B"
+             }
+            }
+            m_sWPToSpawn "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et"
+           }
+          }
+          coords 0.311 0.078 -6.873
+          angleX -0.895
+         }
+         GenericEntity C_Veh_B : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+          components {
+           SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+            m_sFactionKey "RHS_AFRF"
+            m_aActivationActions {
+             SCR_ScenarioFrameworkActionSetFuelConsumption "{64D77C2AC75F9D5C}" {
+              m_fFuelConsumption 0
+              m_fFuelConsumptionIdle 0
+             }
+             SCR_ScenarioFrameworkActionSetVehicleCruiseSpeed "{64D77C2ADDEDB276}" {
+              m_fMaxCruiseSpeed 25
+             }
+            }
+            m_sObjectToSpawn "{0B4DEA8078B78A9B}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_PKM.et"
+           }
+          }
+          coords -0.591 -0.019 2.37
+          angleX -0.076
+          angleY 80.193
+          angleZ -0.441
+         }
+         GenericEntity C_WP_GetIn_VehPatrol_B : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{64D77C29355C1696}" {
+             m_fPriorityLevel 2000
+            }
+           }
+          }
+          coords 2.548 0.028 -3.695
+          angleX -0.448
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity C_Documents : "{88821DCA414AF4C7}Prefabs/Systems/ScenarioFramework/Components/LayerTaskDeliver.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskDeliver "{5A6513F48903E7DA}" {
+      m_SpawnChildren RANDOM_ONE
+      m_sFactionKey "RHS_USAF"
+      m_eActivationType ON_TASKS_INIT
+      m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+      m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+      m_bPlaceMarkerOnSubjectSlot 1
+      m_sTaskTitleUpdated "#AR_CombatScenario_IntelTitle_Deliver"
+      m_sTaskDescriptionUpdated "#AR-CombatScenario_Intel_Description_D"
+     }
+    }
+    coords -113.33 3.947 84.287
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      Layer_112 {
+       coords 3.001 -11.235 6.782
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_92 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115A35182}" {
+            }
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 27.494 4.847 -22.164
+          angleY -158.585
+         }
+         SlotAI_93 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115A6A69D}" {
+            }
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 47.76 0 -25.493
+          angleY -113.955
+         }
+         SlotAI_94 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115BA0917}" {
+            }
+            m_bBalanceOnPlayersCount 1
+           }
+          }
+          coords 29.885 0 -28.751
+          angleY 130.83
+         }
+        }
+        GenericEntity SlotPick_4 : "{9F70B00322910AED}Prefabs/Systems/ScenarioFramework/Components/SlotPick.et" {
+         components {
+          SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+           m_sObjectToSpawn "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et"
+           m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Documents_US"
+           m_aActionsOnProgress {
+            SCR_ScenarioFrameworkActionIncrementCounter "{5AE4A080ECBEF679}" {
+             m_sCounterName "LogicCounter_DocumentSound3"
+            }
+           }
+           m_sTaskTitleUpdated1 "#AR_CombatScenario_IntelTitle_Deliver"
+           m_sTaskDescriptionUpdated1 "#AR-CombatScenario_Intel_Description_E"
+           m_sTaskTitleUpdated2 "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescriptionUpdated2 "#AR-CombatScenario_Intel_Description_D"
+          }
+         }
+         coords 30.102 5.758 -25.401
+         angleX -0.548
+         angleY -13.546
+         angleZ -0.264
+        }
+       }
+      }
+      c_bunker {
+       coords -60.438 -11.258 41.804
+       angleX 0.895
+       {
+        $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         SlotAI_95 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115BE3D7B}" {
+            }
+           }
+          }
+          coords 174.765 3.01 -120.124
+          angleX 0.433
+          angleY -118.929
+          angleZ 0.783
+         }
+         SlotAI_96 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{FBB329ECA28B85A7}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_AR.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115B1EAA2}" {
+            }
+           }
+          }
+          coords 177.798 1.417 -89.191
+          angleX 0.479
+          angleY -122.369
+          angleZ 0.756
+         }
+         SlotAI_97 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{8E0FE664CE7D1CA9}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_GL.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115B55557}" {
+            }
+           }
+          }
+          coords 159.477 1.596 -100.655
+          angleX 0.775
+          angleY 149.982
+          angleZ -0.448
+         }
+         SlotAI_98 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{AB9726163EC1BD81}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Medic.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE910A49646E}" {
+            }
+           }
+          }
+          coords 169.893 5.835 -96.063
+          angleX -0.529
+          angleY 53.774
+          angleZ -0.722
+         }
+         SlotAI_99 {
+          components {
+           SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+            m_sObjectToSpawn "{E9AEEF2D9E41321B}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AMG.et"
+            m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE910A46745F}" {
+            }
+           }
+          }
+          coords 166.85 1.368 -83.367
+          angleX -1.255
+          angleY 52.635
+          angleZ -0.168
+         }
+        }
+        GenericEntity SlotPick_5 : "{9F70B00322910AED}Prefabs/Systems/ScenarioFramework/Components/SlotPick.et" {
+         components {
+          SCR_ScenarioFrameworkSlotPick "{5A2283FD60F69A1A}" {
+           m_sObjectToSpawn "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et"
+           m_sTaskTitle "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescription "#AR-CombatScenario_Intel_Description_A"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Documents_US"
+           m_aActionsOnProgress {
+            SCR_ScenarioFrameworkActionIncrementCounter "{5AE4A081076A23FA}" {
+             m_sCounterName "LogicCounter_DocumentSound3"
+            }
+           }
+           m_sTaskTitleUpdated1 "#AR_CombatScenario_IntelTitle_Deliver"
+           m_sTaskDescriptionUpdated1 "#AR-CombatScenario_Intel_Description_E"
+           m_sTaskTitleUpdated2 "#AR-CombatScenario_Intel_Title"
+           m_sTaskDescriptionUpdated2 "#AR-CombatScenario_Intel_Description_D"
+          }
+         }
+         coords 170.417 6.729 -94.764
+         angleY -13.548
+        }
+        GenericEntity Slot_216 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         components {
+          SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+           m_sObjectToSpawn "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et"
+          }
+         }
+         coords 134.547 1.691 -106.784
+         angleX -0.757
+         angleY -32.307
+         angleZ 0.478
+        }
+       }
+      }
+     }
+    }
+   }
+   GenericEntity C_ClearArea : "{CDC0845AD90BA073}Prefabs/Systems/ScenarioFramework/Components/LayerTaskClearArea.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskClearArea "{5A6513F46D132331}" {
+      m_sFactionKey "RHS_USAF"
+      m_eActivationType ON_TASKS_INIT
+      m_sTaskTitle "#AR-CombatScenario_ClearAreaTask_Title"
+      m_sTaskDescription "#AR-CombatScenario_ClearAreaTask_Description"
+      m_bPlaceMarkerOnSubjectSlot 1
+     }
+    }
+    coords 87.8 0.09 -17.268
+    {
+     GenericEntity Layer_114 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      coords 0 0 -0.004
+      {
+       GenericEntity C_Groups : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+        coords 0 0 0
+        {
+         GenericEntity C_Groups_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+          coords 0 0 0
+          {
+           $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+            C_WP_Group1 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5E278D71E22}" {
+                m_fCompletionRadius 10
+               }
+              }
+             }
+             coords 7.145 0 3.961
+            }
+            C_WP_Group2 {
+             components {
+              SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+               m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{64FCE5E278D71E22}" {
+                m_fCompletionRadius 10
+               }
+              }
+             }
+             coords -146.868 -7.377 33.781
+            }
+           }
+          }
+         }
+         $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+          C_Group1 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64FCE5E2AFCF8943}" {
+              m_aLayerName {
+               "C_WP_Group1"
+              }
+             }
+             m_bSpawnAIOnWPPos 1
+            }
+           }
+           coords -14.792 -7.479 -13.622
+           angleX 0.069
+           angleY -0.799
+           angleZ 4.911
+          }
+          C_Group2 {
+           components {
+            SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+             m_sObjectToSpawn "{28574BDF21397789}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_FireGroup.et"
+             m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{64FCE5E2AFCF8943}" {
+              m_aLayerName {
+               "C_WP_Group2"
+              }
+             }
+             m_bSpawnAIOnWPPos 1
+            }
+           }
+           coords -149.646 -7.378 31.711
+           angleX 0.069
+           angleY -0.799
+           angleZ 4.911
+          }
+         }
+        }
+       }
+       GenericEntity C_SlotClearArea : "{E53456990A756229}Prefabs/Systems/ScenarioFramework/Components/SlotClearArea.et" {
+        components {
+         SCR_ScenarioFrameworkSlotClearArea "{5A633AF525D5B972}" {
+          m_sFactionKey "RHS_USAF"
+          m_aPlugins {
+           SCR_ScenarioFrameworkPluginTrigger "{5A633AF5368D26A3}" {
+            m_fAreaRadius 75
+            m_aSpecificClassNames {
+             "SCR_ChimeraCharacter"
+            }
+            m_sActivatedByThisFaction "RHS_USAF"
+           }
+          }
+          m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_ClearArea_US"
+          m_aActionsOnFinished {
+           SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+            m_sSound "SOUND_CP_TACC"
+           }
+          }
+         }
+        }
+        coords -70.13 -7.378 23.497
+       }
+      }
+     }
+    }
+   }
+   GenericEntity C_TriggerSpawnPoints : "{D183AFE8DAF9793D}Prefabs/Systems/ScenarioFramework/Components/SlotPlayerTrigger.et" {
+    components {
+     SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
+      m_aPlugins {
+       SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
+        m_fAreaRadius 500
+        m_bOnce 1
+       }
+      }
+      m_bCanBeGarbageCollected 0
+      m_aTriggerActions {
+       SCR_ScenarioFrameworkActionSpawnObjects "{5A85030BA3BCF361}" {
+        m_aNameOfObjectsToSpawnOnActivation {
+         "C_SpawnPoints"
+        }
+       }
+      }
+     }
+    }
+    coords 13.417 -7.288 -34.921
+   }
+  }
+ }
+ Area_C1 {
+  coords 14311.527 50.906 11915.351
+  {
+   GenericEntity C1_Destroy : "{5EDF39860639027D}Prefabs/Systems/ScenarioFramework/Components/LayerTaskDestroy.et" {
+    components {
+     SCR_ScenarioFrameworkLayerTaskDestroy "{5A6513F41BA457C8}" {
+      m_SpawnChildren RANDOM_ONE
+      m_sFactionKey "RHS_USAF"
+      m_eActivationType ON_TASKS_INIT
+      m_sTaskTitle "#AR-CombatScenario_DestroyTask_B_Title"
+      m_sTaskDescription "#AR-CombatScenario_DestroyTask_B_Description"
+      m_bPlaceMarkerOnSubjectSlot 1
+     }
+    }
+    coords 57.184 0 8.809
+    {
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      C1_Mi8 {
+       coords 8.13 0 -3.26
+       {
+        GenericEntity C1_Mi8_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+         coords 0 0 0
+         {
+          GenericEntity C1_Mi8_DefendCP1 : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+           components {
+            SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+             m_Waypoint SCR_ScenarioFrameworkWaypointDefendCP "{64FCE5E5E7376CDD}" {
+              m_fCompletionRadius 30
+             }
+            }
+           }
+           coords -53.185 0 -9.038
+          }
+         }
+        }
+        GenericEntity C1_Destroy_Mi8 : "{7586595959BA2D99}Prefabs/Systems/ScenarioFramework/Components/SlotDestroy.et" {
+         components {
+          SCR_ScenarioFrameworkSlotDestroy "{5A22E1D6276BD209}" {
+           m_sObjectToSpawn "{DF5CCB7C0FF049F4}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_unarmed_transport.et"
+           m_sID "BIS_ObjectToDestroy"
+           m_sTaskTitle "#AR-CombatScenario_DestroyTask_B_Title"
+           m_sTaskDescription "#AR-CombatScenario_DestroyTask_B_Description"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Vehicle_US"
+           m_aActionsOnFinished {
+            SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+             m_sSound "SOUND_CP_TD_VC"
+            }
+           }
+          }
+         }
+         coords -54.751 0.289 -6.943
+         angleY -31.894
+         angleZ -0.037
+        }
+        GenericEntity Guard31 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+         components {
+          SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+           m_sObjectToSpawn "{61DD5A8910ECF5C6}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_LightFireTeam.et"
+           m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91154CD788}" {
+            m_aLayerName {
+             "C1_Mi8_DefendCP1"
+            }
+           }
+           m_bSpawnAIOnWPPos 1
+          }
+         }
+         coords -59.62 0 2.435
+        }
+        GenericEntity Slot_149 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         components {
+          SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+           m_sObjectToSpawn "{D3FCFE5148A78C43}Prefabs/MP/CombatOps/AmmoBoxes/ArsenalBox_USSR_CO.et"
+          }
+         }
+         coords -32.174 0 27.505
+         angleY 6.169
+        }
+       }
+      }
+      C_Radar {
+       coords 22.78 0 -252.009
+       {
+        GenericEntity C_RadarGuards_A : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+         coords 90.168 5.996 430.427
+         {
+          $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+           Guard33 {
+            components {
+             SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+              m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+              m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE9115468551}" {
+              }
+              m_bSpawnAIOnWPPos 1
+              m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+             }
+            }
+            coords 7.902 -5.996 35.09
+            angleY -79.029
+           }
+           Guard34 {
+            components {
+             SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+              m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+              m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE911559E70F}" {
+              }
+              m_bSpawnAIOnWPPos 1
+              m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+             }
+            }
+            coords 15.71 -5.996 -3.761
+            angleY -33.036
+           }
+           Guard35 {
+            components {
+             SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+              m_sObjectToSpawn "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+              m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6060CE91155D231C}" {
+              }
+              m_bSpawnAIOnWPPos 1
+              m_sWPToSpawn "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et"
+             }
+            }
+            coords -17.128 -5.996 6.993
+            angleY -46.791
+           }
+          }
+         }
+        }
+        GenericEntity C_Radar2 : "{7586595959BA2D99}Prefabs/Systems/ScenarioFramework/Components/SlotDestroy.et" {
+         components {
+          SCR_ScenarioFrameworkSlotDestroy "{5A22E1D6276BD209}" {
+           m_bExcludeFromDynamicDespawn 1
+           m_sObjectToSpawn "{A528F04F41F2A2D0}Prefabs/Structures/Military/Radar/ApproachRadar_RPL5_01/ApproachRadar_RPL5_01_on.et"
+           m_sID "BIS_ObjectToDestroy"
+           m_sOverrideObjectDisplayName "Radar RPL5"
+           m_sTaskTitle "#AR-CombatScenario_DestroyTask_C_Title"
+           m_sTaskDescription "#AR-CombatScenario_DestroyTask_C_Description"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Destroy_Radar_US"
+           m_aActionsOnFinished {
+            SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+             m_sSound "SOUND_CP_TD_VC"
+            }
+           }
+          }
+         }
+         coords 68.389 0 433.643
+         angleY -124.572
+        }
+        GenericEntity C_radarAmmo2 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         components {
+          SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+           m_sObjectToSpawn "{92F3D49676C8CB61}Prefabs/Props/Military/AmmoBoxes/USSR/EquipmentBoxWooden_Launcher_01_USSR.et"
+          }
+         }
+         coords 97.159 0 464.727
+         angleY -45.475
+        }
+       }
+      }
+      C_TruckB {
+       coords 1.06 0 -3.344
+       {
+        GenericEntity C_URAL2 : "{7586595959BA2D99}Prefabs/Systems/ScenarioFramework/Components/SlotDestroy.et" {
+         components {
+          SCR_ScenarioFrameworkSlotDestroy "{5A22E1D6276BD209}" {
+           m_sObjectToSpawn "{4C81D7ED8F8C0D87}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_tanker.et"
+           m_sID "BIS_ObjectToDestroy"
+           m_sTaskTitle "#AR-CombatScenario_DestroyTask_B_Title"
+           m_sTaskDescription "#AR-CombatScenario_DestroyTask_B_Description"
+           m_sTaskExecutionBriefing "#AR-Briefing_CO_Arland_Execution_Vehicle_US"
+           m_aActionsOnFinished {
+            SCR_ScenarioFrameworkActionPlaySound "{5A96DC4CC736B5F0}" {
+             m_sSound "SOUND_CP_TD_VC"
+            }
+           }
+          }
+         }
+         coords -11.064 0 -115.906
+         angleY -128.238
+        }
+        GenericEntity Slot_155 : "{AA01691FDC4E9167}Prefabs/Systems/ScenarioFramework/Components/Slot.et" {
+         components {
+          SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
+           m_sObjectToSpawn "{D3FCFE5148A78C43}Prefabs/MP/CombatOps/AmmoBoxes/ArsenalBox_USSR_CO.et"
+          }
+         }
+         coords -7.654 0 -82.092
+         angleY -4.194
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

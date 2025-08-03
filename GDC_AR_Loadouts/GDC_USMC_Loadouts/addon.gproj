@@ -1,8 +1,22 @@
 GameProject {
- ID "GDCLoadoutUSMCGM"
+ ID "GDCLoadoutUSMC"
  GUID "6518A7C00A4DD9E6"
- TITLE "GDC Loadouts USMC GM"
+ TITLE "GDC Loadouts USMC"
  Dependencies {
   "58D0FB3206B6F859" "595F2BF2F44836FB"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
  }
 }

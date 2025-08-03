@@ -1,0 +1,81 @@
+$grp GenericEntity : "{0FE25F81E87E8131}Prefabs/Props/Airport/RunwayLightPortable_01/RunwayLightPortable_01_red.et" {
+ {
+  coords 11732.683 30.094 12026.789
+  angleY -161.989
+ }
+ {
+  coords 11727.044 30.094 12009.166
+  angleY 18.011
+ }
+ {
+  coords 11721.423 30.094 12020.983
+  angleY -71.989
+ }
+ {
+  coords 11739.017 30.094 12015.264
+  angleY 108.011
+ }
+}
+GenericEntity : "{1359D393ED1D1A3F}Prefabs/Props/Garbage/Medical/GarbageMedicalUSSR_01.et" {
+ coords 11658.071 29.975 12183.295
+}
+$grp StaticModelEntity : "{172DD50ACF177B9E}Prefabs/Props/Military/Furniture/ChairMilitary_USSR_01.et" {
+ {
+  coords 11660.486 29.975 12184.107
+  angleY 15.38
+ }
+ {
+  coords 11660.986 29.975 12183.106
+  angleY 26.846
+ }
+}
+$grp GenericEntity : "{937999008F178E82}Prefabs/Props/Military/Sandbags/Sandbag_01_short_high_burlap.et" {
+ {
+  coords 11777.713 30.281 11963.939
+  angleX 8.036
+  angleY -162.544
+  angleZ 1.125
+ }
+ {
+  coords 11780.08 30.094 11971.583
+  angleY -162.82
+ }
+}
+GenericEntity : "{A46F8469F129E154}Prefabs/Props/Military/CargoContainers/CargoContainer_01_military_base.et" {
+ coords 11656.652 29.975 12184.334
+ angleY 18.868
+}
+GenericEntity : "{B31A14BC1A0E7776}Prefabs/Props/Military/Sandbags/Sandbag_01_round_burlap.et" {
+ coords 11781.518 30.169 11967.114
+ angleX 1.407
+ angleY 106.607
+ angleZ -4.706
+}
+$grp GenericEntity : "{B898D2A1F45058F6}Prefabs/Props/Garbage/Military/Food/GarbageFoodMilitaryUSSR_01.et" {
+ {
+  coords 11659.361 29.975 12183.074
+ }
+ {
+  coords 11659.119 29.975 12183.283
+  angleY 52.207
+ }
+}
+$grp GenericEntity : "{BE16EE8FAA315FE2}Prefabs/Props/Military/Sandbags/Sandbag_01_long_high_burlap.et" {
+ {
+  coords 11781.131 30.094 11970.002
+  angleY -73.208
+ }
+ {
+  coords 11779.481 30.202 11964.53
+  angleX -0.513
+  angleY -73.338
+  angleZ 1.715
+ }
+}
+StaticModelEntity : "{C99D1B2E817E12D9}Prefabs/Props/Military/Furniture/TableMilitary_USSR_02_cabinet.et" {
+ coords 11660.047 29.975 12181.544
+ angleY 21.521
+}
+GenericEntity : "{C9C7D79C9380F85B}Prefabs/Props/Military/Camps/DispenserBeverage_E_01/DispenserBeverage_E_01_green.et" {
+ coords 11658.954 29.975 12183.901
+}

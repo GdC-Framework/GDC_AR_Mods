@@ -1,0 +1,52 @@
+GenericEntity : "{1ABA1239EEA6FAC6}Prefabs/Structures/Military/CamoNets/Soviet/CamoNet_Bunker_Soviet.et" {
+ coords 14216.497 50.906 12266.366
+ angleY 55.635
+}
+$grp GenericEntity : "{7783AE4B44D3CF29}Prefabs/Props/Wrecks/M923A1_wreck.et" {
+ {
+  coords 14261.85 50.852 11741.084
+  angleX 1.342
+  angleY -0.01
+  angleZ -0.448
+ }
+ {
+  coords 14414.216 50.906 11601.633
+  angleY -32.032
+ }
+ {
+  coords 14330.304 50.906 11774.809
+  angleY -139.45
+ }
+}
+$grp GenericEntity : "{937999008F178E82}Prefabs/Props/Military/Sandbags/Sandbag_01_short_high_burlap.et" {
+ {
+  coords 14201.131 50.906 12184.022
+  angleY -32.834
+ }
+ {
+  coords 14196.792 50.906 12190.744
+  angleY -32.834
+ }
+}
+GenericEntity : "{B31A14BC1A0E7776}Prefabs/Props/Military/Sandbags/Sandbag_01_round_burlap.et" {
+ coords 14196.782 50.906 12185.79
+ angleY -123.318
+}
+$grp GenericEntity : "{BE16EE8FAA315FE2}Prefabs/Props/Military/Sandbags/Sandbag_01_long_high_burlap.et" {
+ {
+  coords 14199.243 50.906 12184.229
+  angleY 56.778
+ }
+ {
+  coords 14196.11 50.906 12189.012
+  angleY 56.778
+ }
+}
+$grp GenericEntity : "{EB084C400AABD1D3}Prefabs/Props/Wrecks/M151A2_wreck.et" {
+ {
+  coords 14340.804 50.906 11949.997
+ }
+ {
+  coords 14361.66 50.907 11750.99
+ }
+}

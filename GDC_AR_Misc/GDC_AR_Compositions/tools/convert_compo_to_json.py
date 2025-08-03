@@ -3,7 +3,7 @@ convert_compo_to_json.py
 
 This script parses Enfusion composition (.et) files and extracts all child entities from the main composition block.
 It outputs a JSON fragment containing only the entity list, formatted as:
-"campItems": [ ... ] ti be used with darc missions mod ()
+"campItems": [ ... ] to be used with darc missions mod (https://github.com/mokdevel/DarcMods/tree/main/DarcMissions/docs)
 
 Usage:
     python convert_compo_to_json.py -f <path/to/file.et>

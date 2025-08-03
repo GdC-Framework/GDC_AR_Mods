@@ -1,0 +1,55 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ Equipement {
+  coords 9734.348 0.943 4995.317
+  m_sTitle "Equipement"
+  m_sTextData "Tout ce qui est sur vous est à vous. "\
+  "n'hésitez pas à ramasser de quoi faire exploser la terre entière."
+  m_aVisibleForFactions {
+   "US" ""
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ Objectif {
+  coords 9736.765 0.986 5000.332
+  m_sTitle "Objectif"
+  m_sTextData "Vous débarquez sur la plage non loin de Perell Bay."\
+  "Votre Objectif est de détruire tout ce qui peux l'etre sur l'ancienne carrière de grey,  reconvertit en station de réparation par l'armée américaine, au sud-Ouest de votre position."\
+  ""
+  m_aVisibleForFactions {
+   "US" ""
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+}
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ ObjRepairStation {
+  coords 8826.538 196.405 3943.34
+  angleY 0
+  m_sImageSet "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+  m_sImageSetGlow ""
+  m_MarkerColor 0.502 0 0 1
+  m_fWorldSize 100
+  m_sDescription "RepairStation"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "RHS_USAF" "USSR" "FIA"
+  }
+  m_bVisibleForEmptyFaction 1
+ }
+ spawn {
+  coords 9732.247 0.964 4997.151
+  angleY 0
+  m_sImageSet "{15A293B1904F942B}UI/Textures/Icons/icon_objective.edds"
+  m_sImageSetGlow ""
+  m_MarkerColor 0 0.125 0.502 1
+  m_fWorldSize 100
+  m_sDescription "Spawn"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "RHS_USAF" "USSR" "FIA"
+  }
+  m_bVisibleForEmptyFaction 1
+ }
+}

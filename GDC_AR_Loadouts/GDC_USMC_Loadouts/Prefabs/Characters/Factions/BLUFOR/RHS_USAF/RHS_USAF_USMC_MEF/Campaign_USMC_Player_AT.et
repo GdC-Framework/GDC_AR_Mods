@@ -1,4 +1,4 @@
-SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player.et" {
+SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Campaign_USMC_Player.et" {
  ID "520EC961A090BBD5"
  components {
   SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
@@ -6,7 +6,7 @@ SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/C
     SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
      InitialStorageSlots {
       SCR_EquipmentStorageSlot BinocularSlot {
-       Prefab "{03810BEF182ADA0B}Prefabs/Items/Equipment/Binoculars/Rangefinder_Vector21.et"
+       Prefab "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22/Binoculars_M22.et"
       }
      }
     }
@@ -27,32 +27,55 @@ SCR_ChimeraCharacter : "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/C
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
+    ItemsInitConfigurationItem "{5A24B6035F7619E7}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67_2/Pouch_Filbe_M67_Base.et"
+    }
     ItemsInitConfigurationItem "{54A49B42D138207E}" {
-     TargetStorage "Prefabs/Items/Equipment/Backpacks/Backpack_ALICE_Medium_assembled.et"
+     TargetStorage "Back/Backpack_ALICE_Medium_assembled.et"
      PrefabsToSpawn {
-      "{27AC9FC7F5E2BEEB}Prefabs/Weapons/Magazines/MK153/Container_MK153_HEDP.et" "{2C935EF6F98E6354}Prefabs/Weapons/Magazines/MK153/Container_MK153_HEAA.et"
+      "{2C935EF6F98E6354}Prefabs/Weapons/Magazines/MK153/Container_MK153_HEAA.et" "{319873694735DE0F}Prefabs/Weapons/Magazines/MK153/Container_MK153_NE.et"
      }
     }
     ItemsInitConfigurationItem "{5538C040738A83D1}" {
-     TargetStorage "Prefabs/Characters/Vests/Vest_PCGen_III_Pouches/Pouch_Placard.et"
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/Placard/Pouch_Placard.et"
      PrefabsToSpawn + {
       "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{5538C040737C0BE0}" {
+     TargetStorage ""
      PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{64DF38436D3C8752}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67/Pouch_Filbe_M67_2.et"
+    }
+    ItemsInitConfigurationItem "{64DF384564BBDDA3}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/saw2/Pouch_PCGEN3_util.et"
+     PrefabsToSpawn + {
       "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et"
      }
     }
     ItemsInitConfigurationItem "{64DF3845936E40D7}" {
-     TargetStorage "Prefabs/Characters/Vests/Vest_PCGen_III_Pouches/Pouch_PCGEN3_ifak.et"
+    }
+    ItemsInitConfigurationItem "{64DF38472325F0E7}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/radio/Pouch_152_Radio.et"
     }
     ItemsInitConfigurationItem "{64DF3847CC5CDA37}" {
-     TargetStorage "Prefabs/Characters/Vests/Vest_PCGen_III_Pouches/Pouch_PCGEN3_util.et"
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/ifak/Pouch_PCGEN3_ifak.et"
+     PrefabsToSpawn {
+      "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{64E2D49419C8DB46}" {
+     TargetStorage "Back/Backpack_ALICE_Medium_assembled.et"
+     PrefabsToSpawn {
+      "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{6E35D94130954509}Prefabs/Items/Equipment/Accessories/ETool_ALICE/ETool_ALICE_FreeRoamBuilding_Gadget.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
+     }
     }
    }
   }
  }
  coords 0 0 0
- angleY -18
+ angleY -158
 }

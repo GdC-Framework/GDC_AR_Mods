@@ -1,0 +1,566 @@
+SCR_AIWorld SCR_AIWorld_Zimni_1 : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5AF8B9A114F10E9A}" {
+     NavmeshFile "{395CA63E8E456BE7}World/Data/Zimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE480BAED35}" {
+     NavmeshFile "{FA02CD1FDA9A7EE4}World/Data/BTRLikeZimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90B7788942D4B8}" {
+     NavmeshFile "{118D26584E97D8E6}World/Data/LowResZimnitrita.nmn"
+    }
+   }
+  }
+ }
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 11729.987 30.094 12017.947
+}
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SignalsManagerComponent "{5A96DB65B66820ED}" {
+  }
+  SCR_CommunicationSoundComponent "{5A96DB65A4F312BC}" {
+   Filenames {
+    "{91D53896F5AD5DB4}Sounds/RadioProtocol/RadioProtocol_CombatPatrol_US.acp"
+   }
+  }
+  SCR_ArsenalManagerComponent "{6120A34EB1E9BBEF}" {
+   m_eArsenalTypesEnabled 5
+  }
+  SCR_CommandingManagerComponent "{5A86E110CD916E9A}" {
+   m_sCommandsConfigPath "{54764D4E706F348C}Configs/Commanding/Commands.conf"
+  }
+  SCR_DebriefingScreenComponent "{5D349E27D58E3DBA}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_DebriefingScreenUnevenFourTiles "{5D349E27C9D49EAA}" {
+    m_TopLeftTile SCR_DebriefingScreenBigImageContent "{5D349E27CFE0247B}" {
+     m_sContentImage "{8E135C7AA80F6861}UI/Textures/MissionLoadingScreens/CO_Arland_05.edds"
+    }
+    m_TopRightTile SCR_DebriefingScreenFinishedObjectivesContent "{5D349E27C39D8D30}" {
+     m_sTitleText "#AR-DebriefingScreen_Objectives"
+    }
+    m_BottomLeftTile SCR_DebriefingScreenSummaryContent "{5D349E27FA750E5E}" {
+     m_sTitleText "#AR-DebriefingScreen_Debriefing"
+     m_sSubtitleText "#AR-DebriefingScreen_Subtitle"
+     m_sSubtitleLostText "#AR-DebriefingScreen_Subtitle_Lost"
+    }
+    m_BottomRightTile SCR_DebriefingScreenStatisticsContent "{5D349E27FB89309F}" {
+     m_sTitleText "#AR-DebriefingScreen_Statistics"
+     m_aStatistics {
+      SCR_DebriefingScreenStatisticShotsFired "{5D4272AF9F27F9ED}" {
+      }
+      SCR_DebriefingScreenStatisticKills "{5D4272AF9DC59980}" {
+      }
+      SCR_DebriefingScreenStatisticDeaths "{5D4272AF9043F083}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceWalked "{5D4272AF91FE0EB2}" {
+      }
+      SCR_DebriefingScreenStatisticDistanceDriven "{5D4272AF97A47B7E}" {
+      }
+     }
+    }
+   }
+  }
+  SCR_GameModeCombatOpsManager "{5A234ADFA03CDF03}" {
+   m_aTaskTypesAvailable {
+    SCR_ScenarioFrameworkTaskType "{5A3AEBCFFA9F291C}" {
+     m_eTypeOfTask DELIVER
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622D8C8672D}" {
+     m_eTypeOfTask DESTROY
+    }
+    SCR_ScenarioFrameworkTaskType "{5AA32622A74E2EB3}" {
+     m_eTypeOfTask KILL
+    }
+    SCR_ScenarioFrameworkTaskType "{5B047926AB8BC612}" {
+     m_eTypeOfTask CLEAR_AREA
+    }
+   }
+   m_aAfterTasksInitActions {
+    SCR_ScenarioFrameworkActionSetBriefingEntryTextBasedOnGeneratedTasks "{5E5E6EBC107C8FF0}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 2
+    }
+    SCR_ScenarioFrameworkActionSetExecutionEntryTextBasedOnGeneratedTasks "{5E5E6E8434947260}" {
+     m_sFactionKey "RHS_USAF"
+     m_iEntryID 3
+    }
+   }
+   m_aCoreAreas {
+    "_Area_Extraction" "_Area_Insertion"
+   }
+   m_aDebugAreas {
+    SCR_ScenarioFrameworkDebugArea "{65D9458A384F148C}" {
+     m_sForcedArea "Area_B"
+     m_sForcedLayerTask "B_ClearArea"
+     m_sForcedSlotTask "B_SlotClearArea"
+    }
+    SCR_ScenarioFrameworkDebugArea "{65DF2D6DDE854D6E}" {
+     m_sForcedArea "Area_A"
+     m_sForcedLayerTask "A_Destroy"
+     m_sForcedSlotTask "A_Truck"
+    }
+    SCR_ScenarioFrameworkDebugArea "{65E1004A6098B210}" {
+     m_sForcedArea "Area_C"
+     m_sForcedLayerTask "C_Destroy"
+     m_sForcedSlotTask "C_Radar"
+    }
+   }
+   m_iUpdateRate 0
+  }
+  SCR_GameOverScreenManagerComponent "{56DEC646298AD219}" {
+   m_GameOverScreenConfig SCR_GameOverScreenConfig "{56DEC6462FFDD82D}" {
+    m_aGameOverScreens {
+     SCR_BaseGameOverScreenInfo "{56D68C4268C953C8}" {
+      m_GameOverScreenId NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56EEDCE2B507E635}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sImageTexture "{BD2E2F871E6A3EBF}UI/Textures/Flags/Flag_Faction_Base.edds"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568E79DBC553CECC}" {
+      m_GameOverScreenId FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBC9C7EC56}" {
+       m_sTitle "#AR-MatchResult_Default-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{568E79DB918A8E56}" {
+      m_GameOverScreenId FACTION_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB9224CAB6}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Score"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568E79DBAC19013D}" {
+      m_GameOverScreenId FACTION_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBB3E97D11}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_DefeatDetail_Score"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{56D6AA9BDC7D83DE}" {
+      m_GameOverScreenId FACTION_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB9224CAB6}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_VictoryDetail_Time"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{56D6AA9BE2D70B6E}" {
+      m_GameOverScreenId FACTION_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DBB3E97D11}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-Campaign_MatchResult_DefeatDetail_Time"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{568E79DB4253B914}" {
+      m_GameOverScreenId FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E79DB4F02D721}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-Campaign_MatchResult_DrawDetail"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{568E810D44CBC66B}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D67CAF2BC}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sImageTexture "{0B03F611D52043AE}UI/Textures/placeholder.edds"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{568E810D4E943600}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_SCORE
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D55E95F87}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_DM_Score_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{56D6AA9BEFDDEC08}" {
+      m_GameOverScreenId DEATHMATCH_VICTORY_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D67CAF2BC}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_DM_Time_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_DeathMatchGameOverScreenInfo "{56D6AA9BF1F0219F}" {
+      m_GameOverScreenId DEATHMATCH_DEFEAT_TIME
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568E810D55E95F87}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "loc DM debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{568E810D7C96FEF0}" {
+      m_GameOverScreenId EDITOR_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56D6DA8F67562868}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_EditorNeutral_Subtitle"
+       m_sImageTexture "{45BF8792AAF74C6E}UI/Textures/Editor/Logos/Logo_Editor_GameOver.edds"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A7849E5D5141}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_Neutral_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_Neutral_Description"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{58F0C76C9A071EE3}" {
+      m_GameOverScreenId SERVER_RESTART
+      m_GameOverContentLayout "{C4507D07F3C54831}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_NoImage.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{58F0C8B005997C9C}" {
+       m_sTitle "#AR-ServerRestart_Title-UC"
+       m_sSubtitle "#AR-ServerRestart_Description"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{58F0C76CFCD7D695}" {
+       m_sDisplayName "#AR-Editor_GameOverAttribute_RestartServer_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_RestartServer_Description"
+      }
+     }
+     SCR_FactionGameOverScreenInfo "{568EB6DFDCD175BD}" {
+      m_GameOverScreenId EDITOR_FACTION_NEUTRAL
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DFE533EE66}" {
+       m_sTitle "#AR-MatchResult_EditorSessionEnd-UC"
+       m_sSubtitle "#AR-MatchResult_FactionNeutral_Subtitle"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A7849BBE69BD}" {
+       m_bCanBeSetByGameMaster 0
+      }
+     }
+     SCR_FactionVictoryGameOverScreenInfo "{568EB6DFEF507060}" {
+      m_GameOverScreenId EDITOR_FACTION_VICTORY
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DFF87D9C84}" {
+       m_sTitle "#AR-MatchResult_Victory-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A78490C62B36}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionVictory_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionVictory_Description"
+       m_MirroredState EDITOR_FACTION_DEFEAT
+      }
+     }
+     SCR_EditorFactionGameOverScreenInfo "{56EED1ED0A9954E6}" {
+      m_GameOverScreenId EDITOR_FACTION_DEFEAT
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{56EED1ED10CDB164}" {
+       m_sTitle "#AR-MatchResult_Defeat-UC"
+       m_sSubtitle "#AR-Campaign_MatchResult"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56EED1ED1D11FFF2}" {
+       m_bCanBeSetByGameMaster 0
+       m_MirroredState EDITOR_FACTION_VICTORY
+      }
+      m_sMultiFactionsSubtiteText "#AR-MatchResult_MultiFactions"
+     }
+     SCR_FactionGameOverScreenInfo "{568EB6DFB0180025}" {
+      m_GameOverScreenId EDITOR_FACTION_DRAW
+      m_GameOverContentLayout "{E04021BC742BE432}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_Default.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{568EB6DF6448B10D}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-MatchResult_Draw"
+       m_sDebriefing "#AR-MatchResult_EditorNeutral_Debrief"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+      m_OptionalEditorParams SCR_BaseGameOverScreenInfoEditor "{56B2A784F5213016}" {
+       m_bNeedsPlayableFactions 1
+       m_sDisplayName "#AR-Editor_GameOverAttribute_FactionDraw_Name"
+       m_sDescription "#AR-Editor_GameOverAttribute_FactionDraw_Description"
+      }
+      m_bGetWinningFactionImage 0
+      m_bGetWinningSubtitleParam 0
+     }
+     SCR_BaseGameOverScreenInfo "{59EC75B80DEAA612}" {
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{59EC75B9DB34FA69}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Accomplished"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Good"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5ADC782E70D51AD4}" {
+      m_GameOverScreenId COMBATPATROL_PARTIAL_SUCCESS
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5ADC782EB947833C}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Accomplished"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Normal"
+       m_sAudioOneShot "SOUND_ONVICTORY"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{5ADC782ED5D1236A}" {
+      m_GameOverScreenId COMBATPATROL_DRAW
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{5ADC782EC00A635C}" {
+       m_sTitle "#AR-MatchResult_Draw-UC"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Bad"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+     SCR_BaseGameOverScreenInfo "{59EC75B80C1DD0D2}" {
+      m_GameOverScreenId COMBATPATROL_DEFEAT
+      m_GameOverContentLayout "{77DC985790BEDC1C}UI/layouts/HUD/GameOver/EndScreen/EndScreenContent_CombatPatrol.layout"
+      m_OptionalParams SCR_BaseGameOverScreenInfoOptional "{59EC75B9C0E9E099}" {
+       m_sTitle "#AR_CombatScenario_GameOver_Failed"
+       m_sSubtitle "#AR-CombatScenario_Debriefing_Good_Timeout"
+       m_sAudioOneShot "SOUND_ONDEFEAT"
+      }
+     }
+    }
+   }
+  }
+  SCR_NametagConfigComponent "{571AA9E54FC9210D}" {
+   m_sConfigPath "{09F7AAA14A642683}Configs/NameTags/NametagFriendlies.conf"
+  }
+  SCR_PlayerSpawnPointManagerComponent "{6604EA8353A765EE}" {
+   m_SpawnPointPrefab "{B5A9B78EE58D9C76}Prefabs/Systems/DeployableRadios/DeployableItemRadioReplacemenUS.et"
+  }
+  SCR_RespawnBriefingComponent "{5A234AD99EE3348B}" {
+   m_sJournalConfigPath "{E807BF0149153D69}Configs/Journal/Journal_ZICO_Zimni.conf"
+   m_Info SCR_UIInfo "{5AD083DBBFC2A25F}" {
+    Description "AR-CombatScenario_Briefing"
+   }
+   m_SimpleBriefingBackground "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+   m_aGameModeHints {
+    SCR_HintUIInfo "{5A52BD34105BB30B}" {
+     Name "#AR-Workshop_TabName_Briefing"
+     Description "#AR-CombatScenario_Briefing"
+     Icon "{39A515BAE3795994}UI/Textures/DeployMenu/Briefing/conflict_HintBanner_3_UI.edds"
+    }
+   }
+   m_aWinConditions {
+    SCR_BriefingVictoryCondition "{5A52BD34B2740F51}" {
+     victoryCondition CUSTOM
+     name "#AR-CombatScenario_Intel_Title"
+     description "#AR-CombatScenario_Intel_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD348C78FD47}" {
+     victoryCondition SEIZE
+     name "#AR-CombatScenario_ClearAreaTask_Title"
+     description "#AR-CombatScenario_ClearAreaTask_Title"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD35E7AC3A0B}" {
+     victoryCondition GUARD
+     name "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+     description "#AR-EditableEntity_AIWaypoint_SearchAndDestroy_Name"
+    }
+    SCR_BriefingVictoryCondition "{5A52BD354BE5402F}" {
+     name "#AR-CombatScenario_ExfilTask_Title"
+     description "#AR-CombatScenario_ExfilTask_Title"
+    }
+   }
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7AD9BB3CF81}" {
+    m_sForcedFaction "RHS_USAF"
+   }
+  }
+  SCR_RespawnTimerComponent "{5A234AD9646DDEF9}" {
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_Struct SCR_MissionStruct "{5C70A6634F52360B}" {
+    m_Struct0 SCR_ScenarioFrameworkStruct "{5C70A66340F5B90E}" {
+    }
+   }
+   m_iAutosavePeriod 120
+   m_DebugHeaderResourceName "{DAA03C6E6099D50F}Missions/24_CombatOps.conf"
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5AD4D80FEA1C15D9}" {
+   m_iStartingHours 12
+   m_bRandomStartingDaytime 1
+   m_bRandomStartingWeather 1
+   m_bRandomWeatherChanges 1
+   m_bAllowHeaderSettings 1
+  }
+  SCR_WelcomeScreenComponent "{5D349E395BF4CC12}" {
+   m_sHeaderTitle "#AR-CombatScenarioArland_Name"
+   m_BaseLayout SCR_WelcomeScreenThreeHorizontalColumns "{5D349E39488C37FD}" {
+    m_LeftColumn SCR_WelcomeScreenFactionContent "{5D349E3975645B48}" {
+     m_sTitleText "#AR-DeployScreen_AvailableFactionsTitle"
+     m_sBottomTitleText "#AR-DeployScreen_MoreFactions"
+    }
+    m_MiddleColumn SCR_WelcomeScreenMissionObjectivesContent "{5D349E399BDAFE8D}" {
+     m_sTitleText "Possible Objectives"
+     m_aMissionObjectives {
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D102E7CE}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_Kill_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D1D100E5}" {
+       m_sObjectiveQuadName "Custom"
+       m_sDescription "#AR-CombatScenario_Intel_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D19EA135}" {
+       m_sObjectiveQuadName "Seize"
+       m_sDescription "#AR-CombatScenario_ClearAreaTask_Title"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39D65D87BB}" {
+       m_sObjectiveQuadName "Defend"
+       m_sDescription "#AR-Commanding_Command_SaD"
+      }
+      SCR_WelcomeScreenMissionObjectives "{5D349E39CF92CF24}" {
+       m_sObjectiveQuadName "GetOut"
+       m_sDescription "#AR-CombatScenario_ExfilTask_Title"
+      }
+     }
+    }
+    m_RightColumn SCR_WelcomeScreenIntroductionContent "{5D349E399CC30313}" {
+     m_sTitleText "#AR-FieldManual_Category_Introduction_Title"
+     m_aIntroduction {
+      SCR_WelcomeScreenIntroduction "{5D349E399784D39C}" {
+       m_sContentImage "{63AA3DC1CA7557F8}MissionLoadingScreens/Screen_4.edds"
+       m_sContentTitleText "#AR-Workshop_TabName_Briefing"
+       m_sContentDescriptionText "Russian forces are firmly established on Zimnitrita. <br /><br />For the moment, we cannot consider regaining control of the territory. We must therefore conduct targeted missions to exhaust their military potential.<br /><br />You will conduct sabotage, high-value target neutralization, and area suppression operations. Not to mention intelligence gathering. <br /><br />Be careful, you are heavily outnumbered. Keep a low profile and exfiltrate immediately once your mission is completed."
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ PlayerControllerPrefab "{CD2B8EF361478648}Prefabs/Characters/Core/DefaultPlayerControllerMP_ScenarioFramework.et"
+ m_bAutoPlayerRespawn 0
+ m_fAutoReloadTime 75
+ m_bUseSpawnPreload 1
+ m_aDisabledResourceTypes {
+  0
+ }
+}
+SCR_FactionManager FactionManager_USMCxMSV : "{589540B35EBA8CDC}Prefabs/MP/Managers/Factions/FactionManager_USxUSSR.et" {
+ Factions {
+  SCR_Faction "{56B2B46E999BF3BF}" : "{F33C7BF22CBF3A8A}Configs/Factions/RHS_US_USMC.conf" {
+   FactionKey "RHS_USAF"
+  }
+  SCR_Faction "{56B2B46E9AF80999}" : "{627A8CDE681D223D}Configs/Factions/RHS_RF_MSV.conf" {
+   m_bIsPlayable 0
+  }
+  SCR_Faction "{5E88F23089063C56}" : "{09727032415AC39B}Configs/Factions/USSR.conf" {
+   m_iOrder 2000
+   m_bIsPlayable 0
+   m_aFriendlyFactionsIds {
+    "RHS_AFRF"
+   }
+  }
+  SCR_Faction "{5E911D79CFA6394C}" : "{5EB46557DF2AA24F}Configs/Factions/US.conf" {
+   m_bIsPlayable 0
+  }
+ }
+}
+RadioManagerEntity : "{B8E09FAB91C4ECCD}Prefabs/Radio/RadioManager.et" {
+ coords 0 0 0
+}
+ScriptedChatEntity : "{F69BC912AC8236F9}Prefabs/MP/ScriptedChatEntity.et" {
+ coords 0 0 0
+}
+SCR_BaseTaskManager : "{1AC69CD7907FB4F8}Prefabs/Systems/ScenarioFramework/Tasks/TaskManager.et" {
+ coords 0 0 0
+ {
+  SCR_ScenarioFrameworkTaskClearAreaSupportEntity {
+   ID "5A96783D483C9642"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDefendSupportEntity {
+   ID "5E38B27D6204EDC7"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDeliverSupportEntity {
+   ID "5A96783D483C9644"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskDestroySupportEntity {
+   ID "5A96783D483C61C4"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskExtractSupportEntity {
+   ID "5A96783D483C61C5"
+   coords 0 0 0
+  }
+  SCR_ScenarioFrameworkTaskKillSupportEntity {
+   ID "5E38B27D9A1E8ABC"
+   coords 0 -0.531 0
+  }
+  SCR_ScenarioFrameworkTaskSupportEntity {
+   ID "5A96783D483C25E4"
+   coords 0 0 0
+  }
+ }
+}
+MusicManager : "{359452CCDBDD03F5}Prefabs/Sounds/Music/MusicManager_Campaign.et" {
+}
+SCR_LoadoutManager : "{B54D08AEA74A5354}Prefabs/MP/Managers/Loadouts/LoadoutManager_Editor.et" {
+ m_aPlayerLoadouts {
+  SCR_FactionPlayerLoadout "{65FD0052B3A591A3}" {
+   m_sLoadoutResource "{A3AC876D9E4CC3A1}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD0052FEAFF37B}" {
+   m_sLoadoutResource "{57FAE4CBFBAECFB6}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Corpsman.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD0053173A7BCC}" {
+   m_sLoadoutResource "{11387C28DCE27566}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Leader.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD00535C2431D8}" {
+   m_sLoadoutResource "{C41D222A407D5F78}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_AmmoBearer.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD0053B5E230D5}" {
+  }
+  SCR_FactionPlayerLoadout "{65FD00545DC6F4E2}" {
+   m_sLoadoutResource "{7290AEA25A11EE7C}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_GL.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD0054704B63F3}" {
+   m_sLoadoutResource "{A7EDB942D42F990A}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_AT.et"
+  }
+  SCR_FactionPlayerLoadout "{65FD0054F8804490}" {
+   m_sLoadoutResource "{DD6CC9DDD4375A21}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_Marksman.et"
+  }
+  SCR_FactionPlayerLoadout "{65FE9637263FE654}" {
+   m_sLoadoutResource "{1A8F3A2A19EA2426}Prefabs/Characters/Campaign/RHS/Coop/Campaign_USMC_Player_ExplosiveSpecialist.et"
+  }
+ }
+}

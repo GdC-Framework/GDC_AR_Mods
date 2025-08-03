@@ -1,0 +1,7 @@
+GenericEntity : "{B3400E8AAE81A0E8}Prefabs/Vegetation/Core/VegetationCuttings_base.et" {
+ ID "5616B1481D357A5A"
+ components {
+  RplComponent "{65829B6EB3F587B6}" {
+  }
+ }
+}
