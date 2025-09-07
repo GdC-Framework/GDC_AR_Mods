@@ -1,0 +1,323 @@
+$grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ veh_1 {
+  coords 15913.852 50.006 14410.812
+  {
+   GenericEntity veh_1_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     AIWaypointCycle veh_1_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+      coords -3.778 -0.037 1.864
+      CompletionType Any
+      CycleWaypoints {
+       "veh_1_WP_Defend_1" "veh_1_WP_Defend_2" "veh_1_WP_Defend_3"
+      }
+     }
+     $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+      veh_1_WP_Defend_1 {
+       coords -230.852 -9.947 509.098
+       CompletionType Any
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 120
+       }
+      }
+      veh_1_WP_Defend_2 {
+       coords -180.677 -0.006 -20.312
+       CompletionType Any
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 120
+       }
+      }
+      veh_1_WP_Defend_3 {
+       coords -4.756 -0.037 4.043
+       CompletionType Any
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 120
+       }
+      }
+     }
+    }
+   }
+   TILW_PrefabSpawnerEntity veh_1_Spawn : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+    coords -4.105 -0.058 -2.758
+    m_prefab "{254289B9C09904AB}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2.et"
+    m_crewConfig TILW_CrewConfig "{662918CCAAF849A2}" {
+     m_crewGroups {
+      TILW_CrewGroup "{662918CCCADDDD97}" {
+       m_crewStations {
+        TILW_CrewStation "{662918DCFC62381C}" {
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et" "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et" "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "veh_1_WP_Cycle"
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+ }
+ veh_2 {
+  coords 14096.569 32.313 14605.147
+  {
+   GenericEntity veh_2_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    coords 0 0 0
+    {
+     $grp SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+      veh_2_WP_Defend_1 {
+       coords 475.725 17.214 -114.835
+       CompletionRadius 80
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 180
+       }
+      }
+      veh_2_WP_Defend_2 {
+       coords 1210.089 17.799 -195.334
+       CompletionRadius 50
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 180
+       }
+      }
+      veh_2_WP_Defend_3 {
+       coords 1103.994 11.874 -617.284
+       CompletionRadius 50
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 180
+       }
+      }
+      veh_2_WP_Defend_4 {
+       coords 37.624 0.427 -568.885
+       CompletionRadius 50
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 180
+       }
+      }
+      veh_2_WP_Defend_5 {
+       coords -7.551 -0.12 -48.285
+       CompletionRadius 50
+       m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159B08567D75}" {
+        m_holdingTime 180
+       }
+      }
+     }
+     AIWaypointCycle veh_2_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+      coords 0 0 0
+      CycleWaypoints {
+       "veh_2_WP_Defend_1" "veh_2_WP_Defend_2" "veh_2_WP_Defend_3" "veh_2_WP_Defend_4" "veh_2_WP_Defend_5"
+      }
+     }
+    }
+   }
+   TILW_PrefabSpawnerEntity veh_2_Spawn : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+    coords -11.339 -0.019 -43.643
+    angleY 96.917
+    m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+    m_crewConfig TILW_CrewConfig "{6629458ADC95E3E1}" {
+     m_crewGroups {
+      TILW_CrewGroup "{6629458ADED5E45D}" {
+       m_crewStations {
+        TILW_CrewStation "{6629458AE6DC151E}" {
+         m_allowCargo 0
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et" "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et" "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+        TILW_CrewStation "{6629458EBFE86C67}" {
+         m_allowPilot 0
+         m_allowTurret 0
+         m_characters {
+          "{7BD71EE82DDDB298}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Sergeant.et" "{E569F066E35DA06F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Rifleman.et" "{E569F066E35DA06F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Rifleman.et" "{E569F066E35DA06F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Rifleman.et" "{E569F066E35DA06F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Rifleman.et" "{E569F066E35DA06F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Rifleman.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "veh_2_WP_Cycle"
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+ }
+ Defence {
+  coords 15172.298 50 14591.309
+  {
+   $grp GenericEntity {
+    QRF_Spawn_Pos_2 {
+     coords 28.656 -3.903 368.737
+    }
+    QRF_Spawn_Pos_1 {
+     coords -207.042 -18.092 626.863
+    }
+   }
+   SCR_ChimeraCharacter : "{124C018E4FE2DE7B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Officer.et" {
+    coords 17.64 1.375 -1.821
+   }
+   SCR_AIGroup grp_8 : "{1A00EE432E398461}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MedicalSection.et" {
+    coords -144.489 2.612 107.445
+    m_aStaticWaypoints {
+     "grp_8_WP_1"
+    }
+   }
+   SCR_ChimeraCharacter grp_Sniper : "{3FFB9E205563F066}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Sharpshooter_2.et" {
+    coords -122.578 15.386 84.795
+   }
+   $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+    grp_1_WP {
+     coords 0 0 0
+     {
+      SCR_DefendWaypoint grp_1_WP_1 : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+       coords 13.987 -0.877 -6.015
+       CompletionRadius 15
+      }
+     }
+    }
+    grp_4_WP {
+     coords 23.527 0.095 83.484
+     {
+      SCR_DefendWaypoint grp_4_WP_1 : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+       coords -81.78 -0.095 19.687
+       CompletionRadius 130
+      }
+     }
+    }
+    ptrl_1_WP {
+     coords -10.867 0.217 -125.692
+     {
+      $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+       ptrl_1_WP_1 {
+        coords -4.606 -0.21 21.478
+       }
+       ptrl_1_WP_2 {
+        coords -129.826 -0.184 38.122
+       }
+       ptrl_1_WP_3 {
+        coords -215.745 -0.217 154.358
+       }
+       ptrl_1_WP_4 {
+        coords -105.686 -0.267 373.311
+       }
+       ptrl_1_WP_5 {
+        coords 124.373 -0.332 304.998
+       }
+       ptrl_1_WP_6 {
+        coords 59.732 -0.09 124.759
+       }
+      }
+      AIWaypointCycle ptrl_1_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+       coords 5.815 0.058 -3.502
+       CycleWaypoints {
+        "ptrl_1_WP_1" "ptrl_1_WP_2" "ptrl_1_WP_3" "ptrl_1_WP_4" "ptrl_1_WP_5" "ptrl_1_WP_6"
+       }
+      }
+     }
+    }
+    grp_5_WP {
+     coords -107.75 0.031 212.072
+     {
+      SCR_DefendWaypoint grp_5_WP_1 : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+       coords 3.427 0.117 3.893
+       CompletionRadius 10
+      }
+     }
+    }
+    grp_6_WP {
+     coords 3.239 0.178 -125.088
+     {
+      SCR_DefendWaypoint grp_6_WP_1 : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+       coords 2.541 -0.022 3.102
+       CompletionRadius 10
+      }
+     }
+    }
+    grp_3_WP {
+     coords 0 0 0
+     {
+      SCR_DefendWaypoint grp_3_WP_1 : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+       coords -130.386 0 83.027
+       CompletionRadius 15
+      }
+     }
+    }
+    grp_8_WP {
+     coords 0 0 0
+     {
+      SCR_DefendWaypoint grp_8_WP_1 : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+       coords -150.619 0.61 109.398
+       CompletionRadius 10
+      }
+     }
+    }
+    grp_Sniper_WP {
+     coords 0 0 0
+     {
+      SCR_SmartActionWaypoint grp_Sniper_WP_1 : "{97FB527ECC7CA49E}Prefabs/AI/Waypoints/AIWaypoint_ObservationPost.et" {
+       coords -124.016 15.386 83.978
+       CompletionRadius 5
+      }
+     }
+    }
+   }
+   SCR_AIGroup grp_3 : "{60E2D587BE5A9B43}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MachineGunTeam.et" {
+    coords -132.982 5.49 77.103
+    m_aStaticWaypoints {
+     "grp_3_WP_1"
+    }
+   }
+   SCR_AIGroup grp_2 : "{A906B4565ED3BAFC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_ManeuverGroup.et" {
+    coords 8.662 4.576 -2.96
+   }
+   SCR_SearchAndDestroyWaypoint AI_WP_SD : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+    coords -68.222 0 36.226
+    CompletionRadius 120
+   }
+   $grp SCR_AIGroup : "{BA8CA45F6B252004}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_PlatoonHQ.et" {
+    grp_1 {
+     coords 16.552 0 -3.199
+     m_aStaticWaypoints {
+      "grp_1_WP_1"
+     }
+    }
+    grp_7 {
+     coords -131.917 5.49 77.13
+     m_aStaticWaypoints {
+      "grp_3_WP_1"
+     }
+    }
+   }
+   $grp SCR_AIGroup : "{F40CDA3D5A7B1CDF}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_LightFireTeam.et" {
+    grp_4 {
+     coords -51.215 1.924 169.597
+     m_aUnitPrefabSlots + {
+      "{234A37EC8608DFAC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/RandomSoldiers/Character_RHS_RF_MSV_VKPO_DS_Rifleman_Random.et" "{234A37EC8608DFAC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/RandomSoldiers/Character_RHS_RF_MSV_VKPO_DS_Rifleman_Random.et" "{234A37EC8608DFAC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/RandomSoldiers/Character_RHS_RF_MSV_VKPO_DS_Rifleman_Random.et" "{234A37EC8608DFAC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/RandomSoldiers/Character_RHS_RF_MSV_VKPO_DS_Rifleman_Random.et"
+     }
+     m_aStaticWaypoints {
+      "grp_4_WP_1"
+     }
+    }
+    ptrl_1 {
+     coords -34.69 0.248 -103.444
+     m_aStaticWaypoints {
+      "ptrl_1_WP_Cycle"
+     }
+    }
+    grp_5 {
+     coords -103.737 0 210.729
+     m_aStaticWaypoints {
+      "grp_5_WP_1"
+     }
+    }
+    grp_6 {
+     coords -1.166 0.195 -120.208
+     m_aStaticWaypoints {
+      "grp_6_WP_1"
+     }
+    }
+   }
+  }
+ }
+}

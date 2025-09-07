@@ -1,0 +1,175 @@
+$grp GenericEntity : "{25861AD07CEE719A}Prefabs/Compositions/Misc/SubCompositions/Sandbag_MG_USSR_01_PKM.et" {
+ {
+  coords 15172.827 50 14584.196
+  angleY -161.503
+ }
+ {
+  coords 15027.707 50 14666.802
+  angleY -156.898
+ }
+}
+Vehicle UAZ1 : "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et" {
+ coords 15190.065 50 14594.655
+ angleY 115.192
+}
+GenericEntity : "{3001B0C35F835714}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Wall_BarbedWire_USSR_01.et" {
+ coords 15199.182 50 14591.824
+ angleY 109.048
+}
+GenericEntity : "{4E288C9E06A3A2B8}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_MG_USSR_01_NSV_SPP.et" {
+ coords 15187.183 50 14668.741
+ angleY 111.99
+}
+GenericEntity : "{4F602EFD9A6384AD}Prefabs/Compositions/Misc/SubCompositions/Utility/Tire_Stack_Sign_01.et" {
+ coords 15220.328 50 14586.034
+ angleY -82.408
+ {
+  GenericEntity {
+   ID "551ED4204EBD40E7"
+   coords 0.166 0.199 -0.047
+   angleY 135.785
+  }
+ }
+}
+GenericEntity : "{651E545B53BBD034}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1_USSR.et" {
+ coords 15080.633 50 14668.549
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_BaseInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     ActionContexts {
+      UserActionContext "{61F4C18ECB0A8B85}" {
+       Position PointInfo "{61F4C18F31FA02AA}" {
+        Offset 0 1 0
+       }
+       Radius 5
+       "Display UI At Reference Point" 1
+      }
+     }
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       Duration 3
+       m_actionName "Declare victory"
+       m_factionKeys {
+        "RHS_USAF" "RHS_AFRF"
+       }
+       m_singleUse 0
+       m_flagName "END_MISSION"
+       m_conditionFlag "NOMORE_ENY"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+GenericEntity : "{7492BAA88AFCEDCE}Prefabs/Compositions/Slotted/SlotFlatSmall/Bunker_S_USSR_01.et" {
+ coords 15069.532 50.072 14807.632
+ angleY -68.497
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ {
+  coords 15109.267 51.427 14671.008
+  m_queryRadius 130
+  m_flagName "OBJECTIVE_TAKEN"
+  m_stopAfterFirstChange 1
+  m_drawShapeSurface 0
+  m_drawShapeOutline 0
+  m_ownerFactionKey "RHS_USAF"
+ }
+ {
+  coords 15107.019 50.003 14809.659
+  m_queryRadius 400
+  m_skipFirstQuery 1
+  m_flagName "NOMORE_ENY"
+  m_ownerFactionKey "RHS_USAF"
+ }
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15163.617 50 14591.508
+ m_missionEvents {
+  TILW_MissionEvent "{662B23629AAD1AF4}" {
+   m_name "Objectif principal pris"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{662B444556BF4FA3}" {
+     m_executionDelay 0
+     m_prefab "{D5BA898DF743F90B}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_3.0/Group_RHS_RF_MSV_VKPO_3.0_RifleSquad.et"
+     m_locationName "QRF_Spawn_Pos_2"
+     m_waypointNames {
+      "AI_WP_SD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{662B2362A9257DB8}" {
+     m_executionDelay 30
+     m_prefab "{60E2D587BE5A9B43}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MachineGunTeam.et"
+     m_locationName "QRF_Spawn_Pos_1"
+     m_waypointNames {
+      "AI_WP_SD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{662B7340FEC58C8B}" {
+     m_executionDelay 60
+     m_prefab "{DFF74E2181355AFD}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_Team_GL.et"
+     m_locationName "QRF_Spawn_Pos_2"
+     m_waypointNames {
+      "AI_WP_SD"
+     }
+    }
+    TILW_SendMessageInstruction "{662B2362E4E4AECF}" {
+     m_executionDelay 0
+     m_messageTitle "HQ message"
+     m_messageBody "QRFs are converging on you! Hold your position."
+    }
+   }
+   m_condition TILW_LiteralTerm "{662B2361193EB62F}" {
+    m_flagName "OBJECTIVE_TAKEN"
+   }
+  }
+  TILW_MissionEvent "{6630810153D4E3AD}" {
+   m_name "End Mission"
+   m_instructions {
+    TILW_EndGameInstruction "{6630810185170C11}" {
+     m_factionKey "RHS_USAF"
+    }
+   }
+   m_condition TILW_LiteralTerm "{66308101A12D6851}" {
+    m_flagName "END_MISSION"
+   }
+  }
+  TILW_MissionEvent "{66310A1530220B4C}" {
+   m_name "No more ENY"
+   m_instructions {
+    TILW_SendMessageInstruction "{66310A154A4368F1}" {
+     m_messageTitle "HQ Message"
+     m_messageBody "The situation seems to be under control. Take care of the red flag and take the opportunity to shoot a souvenir photo for your wife."
+    }
+   }
+   m_condition TILW_LiteralTerm "{66310A1540C6E490}" {
+    m_flagName "NOMORE_ENY"
+   }
+  }
+ }
+ m_suppressGameEnd 0
+}
+GenericEntity : "{9F9924B626C5FA2C}Prefabs/Compositions/Slotted/SlotRoadLarge/Checkpoint_L_USSR_01.et" {
+ coords 15178.604 50.165 14469.149
+ angleY 13.527
+}
+$grp Vehicle : "{D9B91FAB817A6033}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered.et" {
+ Ural4320_transport_covered1 {
+  coords 15055.778 51.427 14638.919
+  angleY 20.435
+ }
+ Ural4320_transport_covered2 {
+  coords 15062.041 51.427 14637.313
+  angleY 20.435
+ }
+ Ural4320_transport_covered3 {
+  coords 15068.292 51.427 14634.01
+  angleY 20.435
+ }
+}
+GenericEntity : "{FB95D1B918E908A9}Prefabs/Systems/Arsenal/ArsenalBoxes/USSR/ArsenalBox_RHS.et" {
+ coords 15050.781 50 14681.51
+}

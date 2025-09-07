@@ -1,0 +1,8 @@
+SCR_AIGroup : "{02045B8FE45FAFB2}Prefabs/Groups/OPFOR/Group_TF_RF_RifleSquad.et" {
+ coords 1481.759 39.831 2908.989
+ m_bSetPlayable 1
+}
+SCR_AIGroup : "{5AC7FF248E8F512F}Prefabs/Groups/BLUFOR/Group_TF_US_RifleSquad.et" {
+ coords 1465.789 38 2933.307
+ m_bSetPlayable 1
+}

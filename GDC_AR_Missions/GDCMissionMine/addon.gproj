@@ -1,8 +1,0 @@
-GameProject {
- ID "GDCMissionMine"
- GUID "65FAFC85120FC2CA"
- TITLE "GDCMissionMine"
- Dependencies {
-  "651E7E47B359F69A" "0315131312150202" "58D0FB3206B6F859"
- }
-}

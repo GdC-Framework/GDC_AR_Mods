@@ -1,0 +1,24 @@
+GameProject {
+ ID "GDC Zimnitrita Missions"
+ GUID "66273C703D4DFCEF"
+ TITLE "GDC Zimnitrita Missions"
+ Dependencies {
+  "0315131312150202" "61F0E6AB2D06B1C6" "663710CD8BEB01D4" "6633125341CA0710" "66332E89142C6D52" "663E97A021C36ABF"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
+  GameProjectConfig Xbox {
+  }
+ }
+}

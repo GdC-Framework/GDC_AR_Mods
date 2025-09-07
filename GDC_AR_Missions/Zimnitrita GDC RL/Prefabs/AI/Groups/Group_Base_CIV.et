@@ -1,0 +1,115 @@
+SCR_AIGroup {
+ ID "664345DB85919496"
+ components {
+  AIBehaviorTreeComponent "{664345DB8591949D}" {
+   BehaviorTree "{082D5B0D5D33DB1D}AI/BehaviorTrees/Chimera/Group/Group.bt"
+  }
+  AIFormationComponent "{664345DB85919766}" {
+   DefaultFormation "Wedge"
+   "Min Distance to Raytrace an Offset" 1
+   "Projection distance" 10
+  }
+  AIPathfindingComponent "{664345DB8591976A}" {
+   NavmeshProject "Soldiers"
+  }
+  SCR_AIConfigComponent "{664345DB8591976C}" {
+   m_aDefaultReactions {
+    SCR_AIIdleReaction "{664345DB85919771}" {
+    }
+   }
+   m_aGoalReactions {
+    SCR_AIGoalReaction_Attack "{664345DB85919776}" {
+     m_eType ANIMATE
+    }
+    SCR_AIGoalReaction_GetInVehicle "{664345DB85919777}" {
+     m_eType GET_IN_VEHICLE
+    }
+    SCR_AIGoalReaction_GetOutVehicle "{664345DB85919778}" {
+     m_eType GET_OUT_VEHICLE
+    }
+    SCR_AIGoalReaction_Heal "{664345DB8591977A}" {
+     m_eType HEAL
+    }
+    SCR_AIGoalReaction_Defend "{664345DB8591977B}" {
+     m_eType DEFEND
+    }
+    SCR_AIGoalReaction_Move "{664345DB8591977D}" {
+     m_eType MOVE
+    }
+    SCR_AIGoalReaction_SeekAndDestroy "{664345DB8591977F}" {
+     m_eType SEEK_DESTROY
+    }
+    SCR_AIGoalReaction_PerformAction "{664345DB85919741}" {
+     m_eType PERFORM_ACTION
+    }
+    SCR_AIGoalReaction_Cancel "{664345DB85919749}" {
+     m_eType CANCEL
+    }
+    SCR_AIGoalReaction_Follow "{664345DB8591974C}" {
+     m_eType FOLLOW
+    }
+    SCR_AIGoalReaction_Animate "{664345DB8591974D}" {
+     m_eType ANIMATE
+    }
+   }
+   m_aInfoReactions {
+    SCR_AIInfoReaction_Wounded "{664345DB8591974F}" {
+     m_eType WOUNDED
+    }
+    SCR_AIInfoReaction_NoAmmo "{664345DB85919750}" {
+     m_eType NO_AMMO
+    }
+   }
+  }
+  SCR_AIGroupInfoComponent "{664345DB85919751}" {
+  }
+  SCR_AIGroupMovementComponent "{664345DB85919753}" {
+   "Min Speed" 7
+   "Using Railroad" 0
+   "Max Distance to Path" 5
+   DefaultFormation "Wedge"
+  }
+  SCR_AIGroupSettingsComponent "{664345DB85919754}" {
+  }
+  SCR_AIGroupUtilityComponent "{664345DB85919756}" {
+  }
+  SCR_CallsignGroupComponent "{664345DB85919757}" {
+   Enabled 0
+  }
+  SCR_EditableGroupComponent "{50D291F6C83FA532}" : "{8CA09EBD20B25B39}Prefabs/Editor/Components/Group_SCR_EditableEntityComponent.ct" {
+   m_UIInfo SCR_EditableGroupUIInfo "{5298E609432D192D}" {
+    Name "#AR-Group_Default"
+    m_EntityBudgetCost {
+     SCR_EntityBudgetValue "{664345DB8591975B}" {
+      m_BudgetType CAMPAIGN
+      m_Value 1
+     }
+     SCR_EntityBudgetValue "{664345DB85919722}" {
+      m_BudgetType AI_SERVER
+     }
+    }
+    m_MilitarySymbol SCR_MilitarySymbol "{664345DB85919727}" {
+    }
+   }
+   m_bAutoRegister ALWAYS
+  }
+  SCR_GroupIdentityComponent "{664345DB85919729}" {
+   Enabled 0
+   m_MilitarySymbol SCR_MilitarySymbol "{664345DB8591972A}" {
+   }
+  }
+  SCR_MailboxComponent "{664345DB8591972C}" {
+  }
+  RplComponent "{664345DB8591972D}" {
+   "Rpl State Override" Runtime
+   Streamable Disabled
+  }
+ }
+ coords 0 0 0
+ DangerEventRange 200
+ m_faction "CIV"
+ m_aUnitPrefabSlots {
+  "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et" "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et" "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et" "{22E43956740A6794}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_Randomized.et"
+ }
+ m_bDeleteWhenEmpty 0
+}

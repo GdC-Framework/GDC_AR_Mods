@@ -1419,7 +1419,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
           components {
            SCR_ScenarioFrameworkSlotBase "{5A22E1D67E712EC8}" {
             m_bShowDebugShapesInWorkbench 0
-            m_sObjectToSpawn "{CC55611936C21F25}Prefabs/Vehicles/Wheeled/M998/M1025_USAF.et"
+            m_sObjectToSpawn "{3EA6F47D95867114}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB.et"
             m_bCanBeGarbageCollected 0
            }
           }
@@ -1656,8 +1656,10 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     m_bShowDebugShapesInWorkbench 1
     m_aActivationActions {
      SCR_ScenarioFrameworkActionQRFDispacher "{6605371D0D8778CE}" : "{323CE89802F85CC0}Prefabs/Systems/ScenarioFramework/Core/QRFDispacherAction.conf" {
+      m_bDebug 1
       m_sQRFLayerName "C_QRFLayer"
       m_iNumberOfAvailableQRFWaves 10
+      m_fQRFNextWaveDelay 60
       m_aGroupList {
        SCR_QRFGroupConfig "{605276DF13DDDEF2}" {
         m_sGroupPrefab "{F009E2968D0327E4}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_LightFireTeam.et"
@@ -1687,10 +1689,18 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         m_sGroupPrefab "{73A7F75147CD0884}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_SentryTeam.et"
        }
       }
+      m_aQRFMaxDistanceConfig {
+       SCR_QRFTypeMaxDistance "{60627D460CF5CFC9}" {
+        m_iMaxSpawnDistance 200
+       }
+       SCR_QRFTypeMaxDistance "{60627D460C972FB2}" {
+        m_iMaxSpawnDistance 400
+       }
+      }
      }
     }
     m_iDynamicDespawnRange 200
-    m_fAreaRadius 5
+    m_fAreaRadius 200
     m_bOnce 0
    }
   }
@@ -2412,32 +2422,18 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
     components {
      SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
       m_SpawnChildren RANDOM_ONE
-      m_bShowDebugShapesDuringRuntime 1
       m_bShowDebugShapesInWorkbench 1
      }
     }
     coords 0 0 0
     {
-     GenericEntity {
-      ID "6054EE897FB6C21B"
-      components {
-       SCR_ScenarioFrameworkQRFSlotAI "{5A26B3E02AC77BA0}" {
-        m_aSCR_QRFSpawnSafeZone {
-         SCR_QRFSpawnSafeZone "{6496E54ACB2A02D5}" {
-          m_iMinDistanceToClosestObserver 300
-         }
-        }
-       }
-      }
-      coords 326.451 11.965 469.675
-     }
      $grp GenericEntity : "{FCE82B7F21949782}Prefabs/Systems/ScenarioFramework/Compositions/QRFSpawnpoint.et" {
       QRFSpawnpoint1 {
        components {
         SCR_ScenarioFrameworkQRFSlotAI "{5A26B3E02AC77BA0}" {
          m_aSCR_QRFSpawnSafeZone {
           SCR_QRFSpawnSafeZone "{6605499C1858533E}" {
-           m_iMinDistanceToClosestObserver 300
+           m_iMinDistanceToClosestObserver 200
           }
          }
         }
@@ -2455,6 +2451,30 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         }
        }
        coords 177.699 -0.669 343.111
+      }
+      QRFSpawnpoint4 {
+       components {
+        SCR_ScenarioFrameworkQRFSlotAI "{5A26B3E02AC77BA0}" {
+         m_aSCR_QRFSpawnSafeZone {
+          SCR_QRFSpawnSafeZone "{6605499C1858533E}" {
+           m_iMinDistanceToClosestObserver 300
+          }
+         }
+        }
+       }
+       coords -278.022 0.476 -493.156
+      }
+      QRFSpawnpoint5 {
+       components {
+        SCR_ScenarioFrameworkQRFSlotAI "{5A26B3E02AC77BA0}" {
+         m_aSCR_QRFSpawnSafeZone {
+          SCR_QRFSpawnSafeZone "{6605499C1858533E}" {
+           m_iMinDistanceToClosestObserver 300
+          }
+         }
+        }
+       }
+       coords 317.159 20.543 7.851
       }
      }
     }

@@ -366,7 +366,7 @@ SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/Gam
    m_SpawnPointPrefab "{B5A9B78EE58D9C76}Prefabs/Systems/DeployableRadios/DeployableItemRadioReplacemenUS.et"
   }
   SCR_RespawnBriefingComponent "{5A234AD99EE3348B}" {
-   m_sJournalConfigPath "{E807BF0149153D69}Configs/Journal/Journal_ZICO_Zimni.conf"
+   m_sJournalConfigPath "{5FC90A7F85BFDC7D}Configs/Journal/Journal_02_USvsRUS_Kromzova.conf"
    m_Info SCR_UIInfo "{5AD083DBBFC2A25F}" {
     Description "AR-CombatScenario_Briefing"
    }
