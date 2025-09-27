@@ -3,6 +3,20 @@ GameProject {
  GUID "6676EAEB0A1A0669"
  TITLE "GDC AR GameModes"
  Dependencies {
-  "58D0FB3206B6F859"
+  "58D0FB3206B6F859" "60926835F4A7B0CA" "631EE12D448D7FCC" "5ED0FAC84A48D018" "631C9C204D8FAF47" "0315131312150202" "61F0E6AB2D06B1C6"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
  }
 }
