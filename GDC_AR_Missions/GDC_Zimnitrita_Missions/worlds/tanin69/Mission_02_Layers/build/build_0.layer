@@ -1,0 +1,61 @@
+$grp SCR_AIGroup : "{0CCB12C30665F646}Prefabs/AI/Groups/Group_Base_CIV.et" {
+ {
+  coords 14965.986 55.863 4857.375
+  m_aStaticWaypoints {
+   "WP_Civ_2"
+  }
+ }
+ {
+  coords 14624.884 46.936 4873.417
+  m_aStaticWaypoints {
+   "WP_Civ_3"
+  }
+ }
+ {
+  coords 14398.737 53.531 3899.815
+  m_aStaticWaypoints {
+   "WP_Civ_7"
+  }
+ }
+ {
+  coords 15249.263 53.438 4017.682
+  m_aStaticWaypoints {
+   "WP_Civ_8"
+  }
+ }
+ {
+  coords 13428.985 21.999 2902.531
+  m_aStaticWaypoints {
+   "WP_Civ_9"
+  }
+ }
+}
+$grp SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+ WP_Civ_3 {
+  coords 14603.181 47.077 4869.275
+ }
+ WP_Civ_2 {
+  coords 14965.789 57.54 4856.658
+  CompletionRadius 50
+ }
+ WP_Civ_8 {
+  coords 15283.808 53.438 4060.045
+ }
+ WP_Civ_7 {
+  coords 14393.826 53.584 3935.066
+  CompletionRadius 80
+ }
+ WP_Civ_9 {
+  coords 13437.745 22 2900.701
+ }
+}
+GenericEntity : "{8BB566E09FB2A507}PrefabsEditable/Auto/Props/Military/SupplyBox/SupplyCrate/SupplyCrate_01/E_SupplyCrate_01_storage.et" {
+ coords 14109.423 80.604 3091.34
+}
+Vehicle S105_darkblue1 : "{9C3269FB43F989A3}Prefabs/Vehicles/Wheeled/S105/S105_darkblue.et" {
+ coords 14590.404 47.779 4855.59
+}
+Vehicle S1203_cargo_yellow1 : "{E3AD3E9E60F2E061}Prefabs/Vehicles/Wheeled/S1203/S1203_cargo_yellow.et" {
+ coords 14615.94 47.441 4860.73
+ angleY 165
+}

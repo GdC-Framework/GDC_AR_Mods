@@ -1,0 +1,168 @@
+$grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ Camp {
+  coords 12483.619 115.875 4342.346
+  {
+   Turret : "{1A407760EEAE4156}Prefabs/Vehicles/Static/BaconZU23/BaconZU23_Turret_Deployed.et" {
+    coords -134.606 11.905 -48.938
+   }
+   SCR_AIGroup : "{22F33D3EC8F281AB}Prefabs/Groups/INDFOR/Group_FIA_MachineGunTeam.et" {
+    coords 102.751 -1.098 34.681
+    angleX 12.953
+    angleY 59.132
+    angleZ -7.631
+   }
+   $grp SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+    WP_Defend_Bunker {
+     coords -3.633 -0.754 27.114
+     CompletionRadius 10
+    }
+    WP_Defend_Camp_1 {
+     coords -32.503 -0.656 -10.888
+     CompletionRadius 75
+    }
+    WP_Defend_Camp_2 {
+     coords 19.304 0.002 6.35
+     CompletionRadius 75
+    }
+   }
+   SCR_AIGroup : "{2E9C920C3ACA2C6F}Prefabs/Groups/INDFOR/Group_FIA_ReconTeam.et" {
+    coords 262.016 -57.024 -455.181
+   }
+   SCR_AIGroup : "{581106FA58919E89}Prefabs/Groups/INDFOR/Group_FIA_MedicalSection.et" {
+    coords 23.451 1.205 23.684
+   }
+   $grp SCR_AIGroup : "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et" {
+    {
+     coords -7.477 1.816 28.92
+     m_aStaticWaypoints {
+      "WP_Defend_Bunker"
+     }
+    }
+    {
+     coords 783.859 -53.515 355.295
+     angleY 165
+    }
+   }
+   $grp SCR_AIGroup : "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et" {
+    {
+     coords -8.491 0.185 29.008
+     m_aStaticWaypoints {
+      "WP_Defend_Bunker"
+     }
+    }
+    {
+     coords -138.337 23.456 -51.063
+     m_aStaticWaypoints {
+      "WP_Defend_ZU_1"
+     }
+    }
+    {
+     coords -10.979 21.934 -1.53
+     m_aStaticWaypoints {
+      "WP_Defend_ZU_2"
+     }
+    }
+    {
+     coords 54.76 -0.164 -49.354
+     angleY 59.738
+    }
+    {
+     coords -54.055 -1.243 -53.997
+     angleY -34.953
+    }
+    {
+     coords -43.445 41.031 156.562
+    }
+    {
+     coords -45.655 0.739 40.638
+     angleY -61.519
+    }
+   }
+   $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+    WP_Defend_ZU_1 {
+     coords -133.694 11.905 -49.15
+     CompletionRadius 5
+    }
+    WP_Defend_ZU_2 {
+     coords -19.249 -0.656 -9.786
+     CompletionRadius 5
+    }
+   }
+   $grp SCR_AIGroup : "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et" {
+    {
+     coords -54.752 -0.656 -8.287
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_1"
+     }
+    }
+    {
+     coords 0.819 -0.346 -10.447
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_2"
+     }
+    }
+   }
+   Vehicle UAZ469_UK59_FIA1 : "{E72D78E7F45532EC}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_UK59_FIA.et" {
+    coords -60.464 -0.656 -27.719
+   }
+   SCR_AIGroup : "{EE92725E9B949C3D}Prefabs/Groups/INDFOR/Group_FIA_PlatoonHQ.et" {
+    coords -10.748 3.241 30.039
+    m_aStaticWaypoints {
+     "WP_Defend_Bunker"
+    }
+   }
+   Vehicle Ural4320_ZU1 : "{FD109F3702AAB392}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ZU23.et" {
+    coords -19.086 -0.656 -9.558
+    angleY -60
+   }
+  }
+ }
+ Embuscades {
+  coords 13919.392 16.451 4716.489
+  {
+   SCR_AIGroup : "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et" {
+    coords -1174.39 83.715 190.98
+   }
+   $grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+    {
+     coords -3 -0.463 5.043
+     angleY 90
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+    }
+    {
+     coords -76.083 -4.108 -22.562
+     angleY 90
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+    }
+    {
+     coords -50.468 15.896 329.337
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+    }
+    {
+     coords -132.555 8.325 283.637
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+    }
+    {
+     coords -463.022 -4.115 -713.005
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+    }
+    {
+     coords -408.941 -10.438 -807.169
+     m_prefab "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et"
+    }
+    {
+     coords -196.816 16.169 1268.131
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+    }
+    {
+     coords -184.903 15.656 1108.169
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+    }
+    {
+     coords -394.66 10.343 332.566
+     m_prefab "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et"
+    }
+   }
+  }
+ }
+}

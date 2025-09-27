@@ -1,0 +1,8 @@
+GameProject {
+ ID "GDCARGameModes"
+ GUID "6676EAEB0A1A0669"
+ TITLE "GDC AR GameModes"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

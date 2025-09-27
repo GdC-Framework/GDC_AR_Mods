@@ -32,9 +32,6 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
   {
    SCR_AIGroup Grp_Elec : "{2E9C920C3ACA2C6F}Prefabs/Groups/INDFOR/Group_FIA_ReconTeam.et" {
     coords -523.313 5.336 -128.933
-    m_aUnitPrefabSlots + {
-     "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et" "{84B40583F4D1B7A3}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Rifleman.et"
-    }
     m_aStaticWaypoints {
      "WP_Grp_Elec"
     }
@@ -90,7 +87,7 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
      m_prefab "{6307F42403E9B8A4}Prefabs/Groups/INDFOR/Group_FIA_SharpshooterTeam.et"
      m_conditionFlag "ATTACK_ELEC"
      m_spawnTimings {
-      40
+      120
      }
      m_waypointNames {
       "WP_Elec_Move1"
@@ -102,15 +99,15 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
      m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
      m_conditionFlag "ATTACK_ELEC"
      m_spawnTimings {
-      90
+      120
      }
      m_waypointNames {
       "WP_Elec_Move1"
      }
     }
     Spawn_btr {
-     coords -729.244 -38.229 192.914
-     angleY 136.438
+     coords -120.917 -20.635 328.641
+     angleY 174.668
      m_prefab "{B47110AA1A806556}Prefabs/Vehicles/Wheeled/BTR70/BTR70_FIA.et"
      m_conditionFlag "ATTACK_ELEC"
      m_crewConfig TILW_CrewConfig "{663F01013CE92E03}" {
@@ -153,8 +150,8 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
       }
      }
     }
-    coords -534.683 4.701 -147.553
-    angleY 94.145
+    coords -520.619 4.701 -163.112
+    angleY 4.145
    }
   }
  }
@@ -397,26 +394,212 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
    }
   }
  }
-}
-TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
- coords 14515.508 52.933 3340.408
- angleY 18.888
- m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
- m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
-  m_crewGroups {
-   TILW_CrewGroup "{663F010FBCA025E3}" {
-    m_crewStations {
-     TILW_CrewStation "{663F010FCC94049D}" {
-      m_allowCargo 0
-      m_characters {
-       "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+ Random_Groups {
+  coords 14188.041 51.028 4291.64
+  {
+   $grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+    WP_Random_Grp_1 {
+     coords -1002.021 -24.018 278.381
+    }
+    WP_Random_Grp_2 {
+     coords 1403.489 2.41 -527.893
+    }
+    WP_Random_Grp_3 {
+     coords 1819.302 -15.963 -683.274
+    }
+    WP_Random_Grp_4 {
+     coords -728.026 -37.811 -243.543
+    }
+   }
+   $grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+    Random_BRDM_1 {
+     coords 74.29 -9.154 -824.336
+     angleY -146.112
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_1"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
       }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_Grp_1 {
+     coords -1005.788 -23.975 284.102
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+     m_conditionFlag "RANDOM_GRP_1"
+     m_waypointNames {
+      "WP_Random_Grp_1"
+     }
+    }
+    Random_Grp_2 {
+     coords 1404.204 2.412 -536.372
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+     m_conditionFlag "RANDOM_GRP_2"
+     m_waypointNames {
+      "WP_Random_Grp_2"
+     }
+    }
+    Random_Grp_3 {
+     coords 1820.017 -15.996 -691.753
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+     m_conditionFlag "RANDOM_GRP_3"
+     m_waypointNames {
+      "WP_Random_Grp_3"
+     }
+    }
+    Random_Grp_4 {
+     coords -727.311 -37.809 -252.022
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+     m_conditionFlag "RANDOM_GRP_4"
+     m_waypointNames {
+      "WP_Random_Grp_4"
+     }
+    }
+    Random_BRDM_2 {
+     coords 330.74 1.941 -952.637
+     angleY -71.112
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_2"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_BRDM_3 {
+     coords 716.085 2.41 -483.991
+     angleY -112.681
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_3"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_BRDM_4 {
+     coords -828.268 -36.436 -983.603
+     angleY 3.888
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_4"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_BRDM_5 {
+     coords 287.07 2.608 -805.277
+     angleY -116.112
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_5"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_BRDM_6 {
+     coords -73.487 -11.913 -800.481
+     angleY -146.112
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_6"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    Random_BRDM_7 {
+     coords 189.915 -1.646 -846.971
+     angleY -86.112
+     m_prefab "{442939C9617DF228}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_FIA.et"
+     m_conditionFlag "RANDOM_BRDM_7"
+     m_crewConfig TILW_CrewConfig "{663F010FB32FC61C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{663F010FBCA025E3}" {
+        m_crewStations {
+         TILW_CrewStation "{663F010FCC94049D}" {
+          m_allowCargo 0
+          m_characters {
+           "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et" "{641AD7731E23454B}Prefabs/Characters/Factions/INDFOR/FIA/Character_FIA_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
      }
     }
    }
   }
-  m_noTurretDismount 1
-  m_useIdleGroups 0
  }
 }
 $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
@@ -429,8 +612,9 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
   m_ratioThreshold 0.1
  }
  {
-  coords 14111.104 73.348 3127.787
-  m_queryRadius 100
+  coords 14116.54 73.348 3101.257
+  m_queryRadius 80
+  m_skipFirstQuery 1
   m_captureTime 30
   m_flagName "ATTACK_HQ"
   m_stopAfterFirstChange 1

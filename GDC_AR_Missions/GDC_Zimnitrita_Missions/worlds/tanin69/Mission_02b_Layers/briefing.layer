@@ -1,0 +1,174 @@
+GenericEntity : "{1AAC905FBE6CF779}PrefabsEditable/Auto/Structures/Military/Flags/E_FlagPole_02_V2_USSR.et" {
+ coords 15495.834 52.125 4531.917
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_BaseInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     ActionContexts {
+      UserActionContext "{61F4C18ECB0A8B85}" {
+       Position PointInfo "{61F4C18F31FA02AA}" {
+        Offset 0 1 0
+       }
+       "Display UI At Reference Point" 1
+      }
+     }
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Défaite"
+       m_factionKeys {
+        "USSR"
+       }
+       m_flagName "END_MISSION_LOOSE"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+PolylineShapeEntity : "{25C6E66E6C14258D}Prefabs/Logic/Map/Cover_Map.et" {
+ components {
+  TILW_CoverMapComponent "{64734633ABA43B46}" {
+   m_ratioWidth 1.2
+  }
+  TILW_MapShapeComponent "{6508F5522A2E1971}" {
+   m_color 0.133 0.133 0.133 0.75
+  }
+ }
+ coords 15847.901 53.437 4968.53
+ Points {
+  ShapePoint "{6663168FC579455C}" {
+   Position -2471.822 -19.261 114.259
+  }
+  ShapePoint "{6663168FC260AD9B}" {
+   Position -2532.179 -49.654 -2847.723
+  }
+  ShapePoint "{6663168FCE874C5F}" {
+   Position 98.982 -50.938 -2836.513
+  }
+  ShapePoint "{6663168FC82B541F}" {
+   Position 52.415 -21.263 145.466
+  }
+ }
+}
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<i>Les terroristes que certains qualifient abusivement de \"paramilitaires\" sont très actifs sur notre territoire. Ils procèdent toujours à des sabotages ciblés, ainsi qu'à des embuscades.</i>"\
+  ""\
+  "Il y a quelques heures, l'équipe chargée d'empêcher le sabotage de l'installation située au nord de Sterini est tombée dans une violente embuscade. Avec les résultats que vous savez. No comment."\
+  ""\
+  "Vous avez été envoyé sur place pour finir le travail et récupérer ce qui pouvait l'être. Les ordres pour la suite de l'opération vous sont parvenus en route."\
+  ""\
+  "Vous avez fait le taf, les équipes médicales et logistiques ont fait le ménage, vous êtes à pied d'oeuvre pour la suite de l'opération."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Drawna, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
+  ""\
+  "Heureusement, grâce à l'action déterminée de notre grande soeur Russie et de tous les peuples gouvernés selon les préceptes du vrai  marxisme, l'ONU n'a pas reconnu ce régime à la solde des capitalistes."\
+  ""\
+  "La vraie Zimnitrita, la nôtre, la République du Peuple de Zimnitrita, espère bien retrouver, un jour, l'unité de notre pays. Pour cela, il faudra renverser, par les armes si besoin, le gouvernement bourgeois et anti social qui opprime notre peuple de l'Ouest."\
+  ""\
+  "Mais ce n'est pas pour tout de suite : notre grande soeur, dans sa sagesse et sa bienveillance, continue à nous fournir des armes et des conseils. Malheureusement, le rapport de force n'est pas encore en notre faveur."\
+  ""\
+  "Un jour... Peut-être..."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "> Neutralisez tous les éléments hostiles présent à Stéréni"\
+  ""\
+  "> Rapportez des preuves de l'intervention US : armes, papiers d'identité, etc."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
+ }
+ {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "Des habitants de <color name=\"orange\">Stereni</color> ont informé le QG que des éléments armés irréguliers (en clair, des enculés de terroristes) sont présents dans leur village."\
+  ""\
+  "D'après eux, il y aurait <color name=\"orange\">une trentaine de pax</color>, dont pas mal tourent autour de la station service du village. Parmi eux, il y a aurait des soldats avec des uniformes étrangers. Nous avons toutes les raisons de penser qu'il s'agit <color name=\"orange\">\"d'instructeurs\" US</color>."\
+  ""\
+  "Le <color name=\"orange\">BTR</color> des hostiles qui a tant fait flipper l'équipe précédente n'a pas été détruit. Il n'est pas exclu que vous le croisiez à nouveau."\
+  ""\
+  "A part ça, rien de bien nouveau : les terroristes sont toujours aussi fanatiques et bien entrainés."\
+  ""\
+  "Et <color name=\"orange\">les embuscades sont toujours possibles</color>. Soyez prudent :  ce serait dommage (et dommageable pour votre avancement) de perdre encore des hommes durant votre retour à la base..."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 3
+ }
+ {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
+  ""\
+  "Après votre opération, vous viendrez y faire votre rapport."\
+  ""\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
+  ""\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  <color name=\"red\">Tête baissée comme il se doit</color>."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "Vous avez un BTR chargé avec une blinde de munitons et de matériel médical. Faites-en bon usage pour appuyer vos fantassins."\
+  ""\
+  "Le premier BTR est en maintenance, du fait de l'incompétence de vos collègues. Essayez d'être plus efficace. Les BTR constituent notre meilleur atout."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 5
+ }
+}
+SCR_ChimeraCharacter : "{5117311FB822FD1F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer.et" {
+ components {
+  SCR_CharacterRankComponent "{528E6D4286AA2D8F}" {
+   m_iRank MAJOR
+  }
+ }
+ coords 15485.015 52.796 4527.392
+ angleY -139.638
+}
+PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ coords 15516.831 52.125 4438.434
+ angleY 0
+ m_aVisibleForFactions {
+  "USSR"
+ }
+ m_aHideOnGameModeStates {
+ }
+}
+PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ coords 14082.902 79.968 3082.987
+ angleY 0
+ m_MarkerColor 0 0.502 0.125 1
+ m_sDescription "Sabotage"
+ m_aVisibleForFactions {
+  "USSR"
+ }
+ m_bVisibleForEmptyFaction 0
+}

@@ -29,9 +29,6 @@ PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/Per
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  components {
-  SCR_GameModeHealthSettings "{5A22E11F9ACBB1DF}" {
-   m_bPermitUnconsciousVON 0
-  }
   SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
    m_sInitialStartingWeatherId "Overcast Rain"
    m_initialWeatherDurationMin 0.1
@@ -39,22 +36,23 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
   }
   SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
    m_iStartingHours 17
-   m_iStartingMinutes 36
+   m_iStartingMinutes 42
    m_bUseSpecifiedDate 1
-   m_iSetDay 7
+   m_iSetDay 14
    m_iSetMonth 9
    m_iSetYear 1982
   }
  }
- coords 15480.034 52.125 4454.519
- m_bMarkersOnlyOnBriefing 1
+ coords 15533.625 52.125 4472.869
+ m_bTeamSwitch 1
  m_bRemoveSquadMarkers 1
- m_iFreezeTime 500
+ m_iFreezeTime 5000
  m_bDisableGarbageSystem 1
  m_bEnableSpectatorLocalVoice 1
+ m_safeStartTime 5
  m_eJIPState Auto
  {
-  SCR_FactionManager "66455C5D20ECA9BC" {
+  SCR_FactionManager "665AA8DB7B483BA0" {
    ID "5ED9088735FF2D8B"
    Factions {
     SCR_Faction "{56DEAC40D2DBC8B1}" {
@@ -62,12 +60,10 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
       "FIA"
      }
     }
-    SCR_Faction "{56DEAC40D132400B}" {
-     m_aFriendlyFactionsIds {
-      "US"
-     }
-    }
    }
+  }
+  SCR_EditorManagerEntity : "{788933FFDC706A68}Prefabs/Editor/EditorManager.et" {
+   coords 0 0 0
   }
  }
 }
@@ -83,7 +79,7 @@ TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramewor
      m_locationName "mrk_indep_hq"
     }
     TILW_SendMessageInstruction "{66432D70866D2066}" {
-     m_executionDelay 0
+     m_executionDelay 180
      m_messageTitle "Message du QG"
      m_messageBody "Ici Papa Ours. Nous recevons des renseignements des habitants de Stereni (137-024)."
     }
@@ -106,7 +102,9 @@ TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramewor
     TILW_SendMessageInstruction "{66432D7FC020E0FB}" {
      m_executionDelay 24
      m_messageTitle "Message du QG"
-     m_messageBody "Dès que vous vous serez assuré que le sabotage est déjoué, neutralisez ces salopards. Pas de perte civile, c'est un ordre absolu."
+     m_messageBody "Dès que vous vous serez assuré que le sabotage est déjoué, neutralisez ces salopards. Si vous en êtes encore capables. "\
+     ""\
+     "Pas de perte civile, c'est un ordre absolu."
      m_factionKeys {
       "USSR"
      }
@@ -156,6 +154,48 @@ TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramewor
    }
    m_condition TILW_LiteralTerm "{664CD81C753C783C}" {
     m_flagName "END_MISSION_LOOSE"
+   }
+  }
+  TILW_MissionEvent "{66631683BA882C5E}" {
+   m_name "All Players Killed"
+   m_instructions {
+    TILW_SendMessageInstruction "{66631683C892A8E6}" {
+     m_messageTitle "DEFEAT"
+     m_messageBody "Tous les hommes sont morts... Echec cuisant, honte, etc."
+     m_factionKeys {
+      "USSR"
+     }
+    }
+    TILW_EndGameInstruction "{66631683F8BD3709}" {
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{66631683EF8BFB4E}" {
+    m_flagName "ALL_PLAYERS_KILLED"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{66631683AC5DBC24}" {
+   m_flagName "ALL_PLAYERS_KILLED"
+   m_factionKey "USSR"
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{6663169CFF1E9E0D}" {
+   m_flagNames {
+    "RANDOM_GRP_1" "RANDOM_GRP_2" "RANDOM_GRP_3" "RANDOM_GRP_4"
+   }
+  }
+  TILW_FlagSampling "{6663169B2788B490}" {
+   m_flagNames {
+    "RANDOM_BRDM_1" "RANDOM_BRDM_2" "RANDOM_BRDM_5" "RANDOM_BRDM_6" "RANDOM_BRDM_7"
+   }
+  }
+  TILW_FlagSampling "{666316911589DE8E}" {
+   m_flagNames {
+    "RANDOM_BRDM_3" "RANDOM_BRDM_4"
    }
   }
  }

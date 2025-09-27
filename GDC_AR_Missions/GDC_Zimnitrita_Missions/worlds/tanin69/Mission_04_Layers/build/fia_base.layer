@@ -1,0 +1,42 @@
+SCR_ChimeraCharacter : "{11EB9A0D2A5899EA}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_1.et" {
+ coords 12734.947 100.166 4911.367
+}
+GenericEntity : "{144F1136AB4DB0E8}Prefabs/Compositions/Slotted/SlotFlatSmall/LivingArea_S_FIA_01.et" {
+ coords 12432.605 115.219 4311.486
+ angleY 11.819
+}
+SCR_ChimeraCharacter : "{3AE3C1A509298D9D}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_DenimJacket_2.et" {
+ coords 12746.864 103.925 4923.882
+ angleY -117.398
+}
+Vehicle Ural4320_ammo_FIA1 : "{3F5D19AC3C7E20DC}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ammo_FIA.et" {
+ coords 12529.562 115.166 4366.647
+}
+Vehicle UAZ469_covered_CIV_Randomized1 : "{57A441224AC02CF3}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_Randomized.et" {
+ coords 12446.129 115.248 4353.945
+ angleY 105
+}
+SCR_ChimeraCharacter : "{8C7093AF368F496A}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_1.et" {
+ coords 12727.455 99.625 4965.781
+}
+SCR_ChimeraCharacter : "{B3AB6D12D247DDB5}Prefabs/Characters/Factions/CIV/Businessman/Character_CIV_Businessman_Randomized.et" {
+ coords 12751.553 99.825 4927.815
+ angleY -150
+}
+Vehicle Ural4320_FIA_transport_covered1 : "{B70E6D12A8EC2410}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_FIA_transport_covered.et" {
+ coords 12535.893 115.004 4365.306
+}
+Vehicle UAZ469_covered_CIV_PTS1 : "{BDFB2377B6B4ABBB}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_PTS.et" {
+ coords 12473.852 115.699 4345.368
+}
+GenericEntity : "{C74EA351062C4CBB}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_02.et" {
+ coords 12518.663 115.25 4368.868
+}
+GenericEntity : "{CD02EBFB0E2E274E}Prefabs/Compositions/Slotted/SlotFlatSmall/Headquarters_S_FIA_01.et" {
+ coords 12435.79 115.219 4349.107
+ angleY 105
+}
+SCR_ChimeraCharacter : "{E6C3C3E5E3DE8F14}Prefabs/Characters/Factions/CIV/GenericCivilians/Character_CIV_CottonShirt_5.et" {
+ coords 12738.024 100.166 4901.708
+ angleY -39.448
+}

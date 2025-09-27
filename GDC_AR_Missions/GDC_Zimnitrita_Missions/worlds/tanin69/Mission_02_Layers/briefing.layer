@@ -27,6 +27,31 @@ GenericEntity : "{1AAC905FBE6CF779}PrefabsEditable/Auto/Structures/Military/Flag
   }
  }
 }
+PolylineShapeEntity : "{25C6E66E6C14258D}Prefabs/Logic/Map/Cover_Map.et" {
+ components {
+  TILW_CoverMapComponent "{64734633ABA43B46}" {
+   m_ratioWidth 1.2
+  }
+  TILW_MapShapeComponent "{6508F5522A2E1971}" {
+   m_color 0.133 0.133 0.133 0.75
+  }
+ }
+ coords 15847.901 53.437 4968.53
+ Points {
+  ShapePoint "{6663168FC579455C}" {
+   Position -2471.822 -19.261 114.259
+  }
+  ShapePoint "{6663168FC260AD9B}" {
+   Position -2532.179 -49.654 -2847.723
+  }
+  ShapePoint "{6663168FCE874C5F}" {
+   Position 98.982 -50.938 -2836.513
+  }
+  ShapePoint "{6663168FC82B541F}" {
+   Position 52.415 -21.263 145.466
+  }
+ }
+}
 $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
  {
   coords 15505.293 52.126 4440.746
@@ -47,7 +72,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Contexte"
   m_sTextData "Zimnitrita, début des années 80."\
   ""\
-  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Rawana, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
+  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Drawna, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
   ""\
   "Heureusement, grâce à l'action déterminée de notre grande soeur Russie et de tous les peuples gouvernés selon les préceptes du vrai  marxisme, l'ONU n'a pas reconnu ce régime à la solde des capitalistes."\
   ""\
@@ -64,7 +89,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Mission"
   m_sTextData "Nous avons été informés que les terroristes prévoient de saboter une installation électrique au nord de Stereni (140-030)."\
   ""\
-  "Vous devez impérativement éviter ce sabotage. Agissez vite !"
+  "Vous devez impérativement éviter ce sabotage. Agissez vite !"\
+  ""\
+  "Vu le matériel à votre disposition, cette mission devrait être facile. Vous recevrez de nouveaux ordres sur place."
   m_aVisibleForFactions {
    "USSR"
   }
@@ -75,7 +102,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Renseignements"
   m_sTextData "Vous connaissez la situation : les terroristes peuvent être partout. On pense également qu'ils ont reçus récemment des blindés de type BRDM et BTR."\
   ""\
-  "Seule la rive sud de Varpany (celle où se situe votre base) est sécurisée."\
+  "Seule la rive sud de Varpany (celle où se situe votre base) est sécurisée. En dehors de cette petite zone, c'est l'inconnu."\
   ""\
   "En aucun cas vous ne devez faire de victime civile. Inutile de nourrir la propagande ennemie. Cela ne pourrait que faire grossir les rangs des paramilitaires."
   m_aVisibleForFactions {
@@ -90,9 +117,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "Après votre opération, vous viendrez y faire votre rapport."\
   ""\
-  "En cas de victoire, allez saluer l'officier et la statuette de Lénine dans le QG ."\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
   ""\
-  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte..."\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  Tête baissée comme il se doit."\
   ""\
   ""
   m_aVisibleForFactions {
@@ -101,6 +128,15 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 2
+ }
+ {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "Vous disposez de deux BTR avec du matériel de réparation. Ils embarquent munitions et équipement médical."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 5
  }
 }
 SCR_ChimeraCharacter : "{5117311FB822FD1F}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Officer.et" {
@@ -119,39 +155,6 @@ PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupF
   "USSR"
  }
  m_aHideOnGameModeStates {
- }
-}
-PolylineShapeEntity : "{85222A2744768C81}Prefabs/Logic/AOLimit/TILW_AOLimit.et" {
- components {
-  TILW_AOLimitComponent "{6217617AC21DEB7B}" {
-   m_killTimer 120
-   m_factionKeys {
-    "USSR"
-   }
-   m_visibility NONE
-  }
-  TILW_CoverMapComponent "{6473480FCAB7760B}" {
-   Enabled 1
-   m_ratioWidth 1.5
-  }
-  TILW_MapShapeComponent "{6508F54F9B461198}" {
-   m_drawArea 0
-  }
- }
- coords 14669.877 53.437 3567.224
- Points {
-  ShapePoint "{66472903556D71C6}" {
-   Position 1900 0 1900
-  }
-  ShapePoint "{66472903556DB3D3}" {
-   Position 1900 0 -1900
-  }
-  ShapePoint "{66472903556E5C56}" {
-   Position -1900 -40.68 -1900
-  }
-  ShapePoint "{66472903556EFABD}" {
-   Position -1900 44.375 1900
-  }
  }
 }
 PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
