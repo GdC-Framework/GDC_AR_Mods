@@ -27,11 +27,11 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  {
   coords 15505.293 52.126 4440.746
   m_sTitle "Situation"
-  m_sTextData "La situation ne s'est pas vraiment améliorée depuis votre dernière opération (Mission_02 \"Mal Ambushé\"), pour les raisons que vous savez. On ne va pas épiloguer sur ces résultats."\
+  m_sTextData "<i>Notre territoire est toujours sous pression des terroristes armés par les ennemis des démocraties populaires. Pour le moment, donc, nous défendons toujours et encore notre propre territoire contre les agressions des puissances capitalistes.</i>"\
   ""\
-  "Notre territoire est toujours sous pression des terroristes armés par les ennemis des démocraties populaires. Pour le moment, donc, nous défendons toujours et encore notre propre territoire contre les agressions des puissances capitalistes."\
+  "La situation ne s'est pas vraiment améliorée depuis votre dernière opération, pour les raisons que vous savez. On ne va pas épiloguer sur ces résultats."\
   ""\
-  "Cependant, votre dernière opération semble avoir mis fin, au moins provisoirement, aux sabotages ciblés. Malheureusement, les terroristes ont réorienté leur effort vers les embuscades qui se sont multipliées ces derniers jours."\
+  "Cependant, votre détermination - toute relative - semble avoir mis fin, au moins provisoirement, aux sabotages ciblés. Malheureusement, les terroristes ont réorienté leur effort vers les embuscades qui se sont multipliées ces derniers jours."\
   ""\
   "<b><color name=\"orange\">Tôt ce matin, notre Mi8 s'est durement fait accrocher par une arme lourde. La manoeuvre d'échappement de nos héroïques pilotes leur a permis de ramener leur engin à la base, mais il ne sera plus opérationnel pour plusieurs jours.</color></b>"\
   ""\
@@ -76,10 +76,10 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "<b><color name=\"red\">Objectif sur Graveronto Ropa</b></color>"\
   "Les tirs sont partis de la zone identifiée par le polygone bleu sur votre carte (124-044). Il s'agit d'un ancien camp militaire composé de complexes bunkerisés."\
-  "- Le bunker sud (Бункер-3) est entouré de tranchées"\
-  "- Le bunker nord (Бункер-4) est sur une zone plus réduite, mais domine toute la zone"\
+  "- Le bunker nord (Бункер-4) surplombe le bunker sud. On ne sait pas si cette zone est propre."\
+  "- Le bunker sud (Бункер-3) est entouré de tranchées. Elle est plus vaste que le bunker nord."\
   ""\
-  "Il est fort probable que ces armes lourdes ne soient pas venues toutes seules. Attendez-vous à tomber sur un nid de frelons."\
+  "Il est fort probable que les armes lourdes ne soient pas venues toutes seules. Attendez-vous à tomber sur un nid de frelons."\
   ""\
   "Une photo aérienne récente est consultable à https://urls.fr/5jI8M4"\
   ""\

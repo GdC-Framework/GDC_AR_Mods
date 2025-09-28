@@ -32,9 +32,6 @@ PolylineShapeEntity : "{25C6E66E6C14258D}Prefabs/Logic/Map/Cover_Map.et" {
   TILW_CoverMapComponent "{64734633ABA43B46}" {
    m_ratioWidth 1.2
   }
-  TILW_MapShapeComponent "{6508F5522A2E1971}" {
-   m_color 0.133 0.133 0.133 0.75
-  }
  }
  coords 15847.901 53.437 4968.53
  Points {
@@ -60,9 +57,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "Il y a quelques heures, l'équipe chargée d'empêcher le sabotage de l'installation située au nord de Sterini est tombée dans une violente embuscade. Avec les résultats que vous savez. No comment."\
   ""\
-  "Vous avez été envoyé sur place pour finir le travail et récupérer ce qui pouvait l'être. Les ordres pour la suite de l'opération vous sont parvenus en route."\
+  "Vous avez été envoyé sur place pour finir le travail et récupérer ce qui pouvait l'être. Vous avez fait le taf, les équipes médicales et logistiques ont fait le ménage, vous êtes à pied d'oeuvre."\
   ""\
-  "Vous avez fait le taf, les équipes médicales et logistiques ont fait le ménage, vous êtes à pied d'oeuvre pour la suite de l'opération."
+  "Les ordres pour la suite de l'opération vous sont parvenus en route."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 1
@@ -87,9 +84,17 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  {
   coords 15508.526 52.125 4434.998
   m_sTitle "Mission"
-  m_sTextData "> Neutralisez tous les éléments hostiles présent à Stéréni"\
+  m_sTextData "> Neutralisez tous les éléments hostiles présents à Stereni"\
   ""\
-  "> Rapportez des preuves de l'intervention US : armes, papiers d'identité, etc."
+  "> Rapportez des preuves de l'intervention US : armes, papiers d'identité, etc."\
+  ""\
+  "<b>Emploi du BTR</b>."\
+  ""\
+  "Souvenez-vous de ces points clés :"\
+  ""\
+  "- Le BTR n'est pas efficace en combat rapproché. Il lui faut des longues lignes de tir et une visibilité dégagée."\
+  "- Les RPG7 sont totalement inefficaces à plus de 300 m. et peu efficaces au dessus de 200 m. Leur menace ne doit donc pas être exagérée."\
+  "- Si vous avez un équipage de BTR compétent, laissez-lui la bride sur le coup. Partagez avec lui les axes de progression de votre infanterie, il vous dira s'il sait couvrir convenablement ou pas."
   m_aVisibleForFactions {
    "USSR"
   }
@@ -100,13 +105,13 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Renseignements"
   m_sTextData "Des habitants de <color name=\"orange\">Stereni</color> ont informé le QG que des éléments armés irréguliers (en clair, des enculés de terroristes) sont présents dans leur village."\
   ""\
-  "D'après eux, il y aurait <color name=\"orange\">une trentaine de pax</color>, dont pas mal tourent autour de la station service du village. Parmi eux, il y a aurait des soldats avec des uniformes étrangers. Nous avons toutes les raisons de penser qu'il s'agit <color name=\"orange\">\"d'instructeurs\" US</color>."\
+  "D'après eux, il y aurait <color name=\"orange\">entre trente et cinquante hommes armés</color>. Pas mal d'entre eux tournent autour de la station service du village. Parmi eux, il y a aurait des soldats avec des uniformes étrangers. Nous avons toutes les raisons de penser qu'il s'agit <color name=\"orange\">\"d'instructeurs\" US</color>."\
   ""\
   "Le <color name=\"orange\">BTR</color> des hostiles qui a tant fait flipper l'équipe précédente n'a pas été détruit. Il n'est pas exclu que vous le croisiez à nouveau."\
   ""\
   "A part ça, rien de bien nouveau : les terroristes sont toujours aussi fanatiques et bien entrainés."\
   ""\
-  "Et <color name=\"orange\">les embuscades sont toujours possibles</color>. Soyez prudent :  ce serait dommage (et dommageable pour votre avancement) de perdre encore des hommes durant votre retour à la base..."
+  "Et <color name=\"orange\">les embuscades sont toujours possibles</color>. Soyez prudent, ce serait dommage (et dommageable pour votre avancement) de perdre des hommes durant votre retour à la base..."
   m_aVisibleForFactions {
    "USSR"
   }
@@ -154,21 +159,11 @@ SCR_ChimeraCharacter : "{5117311FB822FD1F}Prefabs/Characters/Factions/OPFOR/USSR
  angleY -139.638
 }
 PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
- coords 15516.831 52.125 4438.434
+ coords 14102.782 79.969 3067.554
  angleY 0
  m_aVisibleForFactions {
   "USSR"
  }
  m_aHideOnGameModeStates {
  }
-}
-PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
- coords 14082.902 79.968 3082.987
- angleY 0
- m_MarkerColor 0 0.502 0.125 1
- m_sDescription "Sabotage"
- m_aVisibleForFactions {
-  "USSR"
- }
- m_bVisibleForEmptyFaction 0
 }
