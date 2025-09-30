@@ -1,0 +1,87 @@
+SCR_GameModeEditor GameMode_GameMaster_Full : "{DA3986AF1B5032B7}Prefabs/MP/Modes/Editor/GameMode_Editor_Full.et" {
+ components {
+  SCR_EditorCameraDefaultsComponent "{530EB67957FF1565}" {
+   m_aPositions {
+    SCR_CameraCoordinates "{530EB67B0FD7776F}" {
+     m_vCameraPosition 3091.22 105.48 1532.69
+     m_vCameraAngles -2.4 303.88 0
+    }
+    SCR_CameraCoordinates "{530EB67BCC8CA498}" {
+     m_vCameraPosition 2853.84 97.94 2969.39
+     m_vCameraAngles -12.02 479.26 0
+    }
+    SCR_CameraCoordinates "{530EB67BB8FC1FEC}" {
+     m_vCameraPosition 1893.28 58.29 2899.16
+     m_vCameraAngles -5.12 615.16 0
+    }
+    SCR_CameraCoordinates "{530ECD979F9A89CD}" {
+     m_vCameraPosition 1337.48 39.182 1363.03
+     m_vCameraAngles -2.4 134.683 0
+    }
+    SCR_CameraCoordinates "{530ECD967B114EDF}" {
+     m_vCameraPosition 2587 177.148 2193.25
+     m_vCameraAngles -13.5 -48.317 0
+    }
+    SCR_CameraCoordinates "{530ECD96618A88C5}" {
+     m_vCameraPosition 2567.42 51.28 950.664
+     m_vCameraAngles -19.8 87.282 0
+    }
+    SCR_CameraCoordinates "{530ECD9641E9FF5E}" {
+     m_vCameraPosition 2497.76 139.155 1632.75
+     m_vCameraAngles -17.7 -157.517 0
+    }
+    SCR_CameraCoordinates "{530ECD962E3DC5CF}" {
+     m_vCameraPosition 3673.41 74.144 2643.3
+     m_vCameraAngles -6.3 -99.017 0
+    }
+   }
+  }
+  SCR_InitWeatherComponent "{58DCAB6D83A0CB17}" {
+   m_sInitialStartingWeatherId "Overcast"
+   m_iSetWeatherConstant 0
+   m_initialWeatherDurationMin 0.167
+   m_initialWeatherDurationMax 0.167
+  }
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7ADCD4F95B9}" {
+   }
+  }
+  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
+   m_DebugHeaderResourceName "{2BBBE828037C6F4B}Missions/22_GM_Arland.conf"
+  }
+ }
+ coords 1436.045 38 2875.36
+}
+$grp SCR_AIGroup {
+ {
+  coords 1481.759 39.831 2908.989
+ }
+ {
+  coords 1465.789 38 2933.307
+ }
+}
+Vehicle Mi8MT_armed1 : "{7BD282AF716ED639}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed.et" {
+ components {
+  EventHandlerManagerComponent "{52CAB06F9C274D14}" {
+   EventHandlers {
+    BaseEventHandler "{665C95A13F8554FD}" {
+     EventName "OnInit"
+    }
+   }
+  }
+ }
+ coords 1473.226 38 2903.686
+ {
+  GenericEntity : "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et" {
+   coords 0 0 0
+  }
+ }
+}
+SCR_AIGroup group_1 : "{B7AB5D3F8A7ADAE4}Prefabs/Groups/BLUFOR/Group_US_PlatoonHQ.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+ }
+ coords 1465.743 38 2928.848
+}
