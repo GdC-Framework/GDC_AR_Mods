@@ -1,15 +1,3 @@
 This the **core** modpack for Grèce de canards community.
 
-## Contents
-
-"58D0FB3206B6F859" "60C4E0B49618CC62" "6214CEA5DA92BFF3" "62113AA293414DB9" "5EF8AADD3B3C81F2" "654B28FA8AC71D80" "63322D98EE763D6C" "5964E0B3BB7410CE" "64D0A6C521ED44FA" "655D72AF8DB4CB84" "62FCEB51DF8527B6" "60612C225328522E" "656AC01634459D8D" "609E8CAD8A403EA6" "644F4597DCA2F43F" "5F02F9A85FC5D93B" "62D023385506C7FF" "64ED6553B8AF6B62" "631CD0023FD58D35" "646139033F5805AD" "631D61C22E30D845" "631B7D6834D40F30" "65511244C89BFDA0" "606D03292879EF5B" "5AAAC70D754245DD" "61E42AE6714A3CC2" "6052A9DD45564825" "653A9EA84DDE05E7" "61DEF91D55CA4930" "6608C853B2C591E1"
-
-## Testing localy with the Peer tool
-
-### With Workbench mod versions
--addonsDir "<your_local_path>\Documents\My Games\ArmaReforgerWorkbench\addons" -addons 663710CD8BEB01D4
-
-### With Work mod versions
--addonsDir "<your_work_mod_path>","<your_local_path>\Documents\My Games\ArmaReforgerWorkbench\addons" -addons <your_GDC_AR_Core_Work_Version_Path>
-
-See https://reforger.armaplatform.com/workshop/663710CD8BEB01D4-GDCARCore for more details and a list of dependencies/contents
+To see mods and their features : https://reforger.armaplatform.com/workshop/663710CD8BEB01D4-GDCARCore
