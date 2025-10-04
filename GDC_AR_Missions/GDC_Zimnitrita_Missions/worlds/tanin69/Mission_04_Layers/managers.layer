@@ -27,6 +27,9 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
 PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 15524.039 52.125 4448.752
 }
+SCR_FactionManager "5EA8C932C68D400F" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 15234.099 64.233 1898.569
+}
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  components {
   SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
@@ -42,6 +45,7 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
   }
  }
  coords 15503.696 52.125 4457.534
+ m_eGME_GlobalAISkill REGULAR
  m_bTeamSwitch 1
  m_bRemoveSquadMarkers 1
  m_iFreezeTime 500

@@ -177,8 +177,19 @@ GenericEntity : "{525C793E1943EA05}Prefabs/Compositions/Slotted/SlotFlatLarge/He
  }
 }
 GenericEntity : "{8C1F8489BEA68441}Prefabs/Compositions/Misc/SubCompositions/Storage/Location/Storage_Helicopter_USSR_02.et" {
- coords 15460.099 52.125 4475.892
+ coords 15460.099 52.125 4475.891
  angleY -7.81
+ {
+  GenericEntity {
+   ID "5D92D7C76A5E0C9D"
+   {
+    GenericEntity {
+     ID "5D30E783900D2819"
+     coords 0 0.001 0
+    }
+   }
+  }
+ }
 }
 Vehicle Ural4320_repair1 : "{A5647958579A4149}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_repair.et" {
  Flags 1027

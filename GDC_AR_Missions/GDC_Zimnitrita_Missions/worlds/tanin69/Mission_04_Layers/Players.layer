@@ -1,0 +1,11 @@
+Vehicle Mi8MT_armed_gunship_HE1 : "{3C6B3ED0C3AC30D5}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed_gunship_HE.et" {
+ coords 15457.104 52.714 4451.172
+ angleY 81.892
+}
+SCR_AIGroup : "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et" {
+ coords 15464.491 52.125 4456.233
+ m_aUnitPrefabSlots {
+  "{A62FA97C4EC64F14}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_HeliPilot.et" "{A62FA97C4EC64F14}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_HeliPilot.et"
+ }
+ m_bSetPlayable 1
+}

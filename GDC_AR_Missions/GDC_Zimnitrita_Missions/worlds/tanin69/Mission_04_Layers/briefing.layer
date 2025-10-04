@@ -1,0 +1,273 @@
+PolylineShapeEntity : "{25C6E66E6C14258D}Prefabs/Logic/Map/Cover_Map.et" {
+ components {
+  TILW_CoverMapComponent "{64734633ABA43B46}" {
+   m_ratioWidth 1.2
+  }
+  TILW_MapShapeComponent "{6508F5522A2E1971}" {
+   m_color 0.937 0.82 0.91 1
+  }
+ }
+ coords 12151.807 12.112 3758.911
+ Points {
+  ShapePoint "{6669120400D18616}" {
+   Position 381.001 98.325 1489.656
+  }
+  ShapePoint "{666912040E25E06D}" {
+   Position 3614.829 28.883 1364.483
+  }
+  ShapePoint "{666912040B362C95}" {
+   Position 3603.75 41.326 45.858
+  }
+  ShapePoint "{666912041531AA44}" {
+   Position -74.213 41.91 330.547
+  }
+ }
+}
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<i>Grâce à la pugnacité de notre armée, nous avons réussi - non sans mal - à user les moyens des terroristes qui pourrissent notre belle République du Peuple de Zimnitrita. La guerre, cependant, se joue toujours sur notre territoire : la fertile Zimnitrita Est.</i>"\
+  ""\
+  "Notre dernière opération, peu importe la façon dont elle a été menée (ne revenons pas sur le sujet, s'il-vous-plait), nous a permis de sécuriser le ciel : nous avons de bonnes raisons de penser que les terroristes ne disposent plus d'armes lourdes anti aériennes (genre, des ZU-23). Cependant, les hostiles sont toujours répartis façon puzzle sur le sud de notre territoire."\
+  ""\
+  "Notre Mi8 est maintenant opérationnel et peut reprendre ses opérations. Malheureusement, l'équipage précedent est décimé : un des deux pilotes est mort de ses blessures, le reste de l'équipage a été évacué vers les hôpitaux civils. Il faut donc un nouvel équipage compétent : pilote, copilote, mitrailleurs..."\
+  ""\
+  ""\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Drawna, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
+  ""\
+  "Heureusement, grâce à l'action déterminée de notre grande soeur Russie et de tous les peuples gouvernés selon les préceptes du vrai  marxisme, l'ONU n'a pas reconnu ce régime à la solde des capitalistes."\
+  ""\
+  "La vraie Zimnitrita, la nôtre, la République du Peuple de Zimnitrita, espère bien retrouver, un jour, l'unité de notre pays. Pour cela, il faudra renverser, par les armes si besoin, le gouvernement bourgeois et anti social qui opprime notre peuple de l'Ouest."\
+  ""\
+  "Mais ce n'est pas pour tout de suite : notre grande soeur, dans sa sagesse et sa bienveillance, continue à nous fournir des armes et des conseils. Malheureusement, le rapport de force n'est pas encore en notre faveur."\
+  ""\
+  "Un jour... Peut-être..."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif prioritaire sur Gravento Ropa</b> : localisez et détruisez les armes lourdes, nous avons besoin de conserver la maitrise du ciel. Nettoyez tout ce qui peut se trouver autour de ces armes lourdes."\
+  ""\
+  "<b>Objectif secondaire</b> : déjouez les embuscades et faites le ménage nécessaire pour sécuriser un minimum vos déplacements. <i>Déjouer</i> ne veut pas dire éviter. Ca veut juste dire que vous devez être plus malin que les terroristes."\
+  ""\
+  "Des informations complémentaires concernant l'<b><color name=\"red\">exécution</color></b> de la mission et les <b><color name=\"red\">renseignements</color></b> vous seront livrées au briefing"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Matériel ennemi</b></color>"\
+  "Nous avons usé leurs capacités blindées. De ce côté là, nous sommes a priori rassurés."\
+  ""\
+  "<b><color name=\"red\">Objectif sur Graveronto Ropa</b></color>"\
+  "Les tirs sont partis de la zone identifiée par le polygone bleu sur votre carte (124-044). Il s'agit d'un ancien camp militaire composé de complexes bunkerisés."\
+  "- Le bunker nord (Бункер-4) surplombe le bunker sud. On ne sait pas si cette zone est propre."\
+  "- Le bunker sud (Бункер-3) est entouré de tranchées. Elle est plus vaste que le bunker nord."\
+  ""\
+  "Il est fort probable que les armes lourdes ne soient pas venues toutes seules. Attendez-vous à tomber sur un nid de frelons."\
+  ""\
+  "Une photo aérienne récente est consultable à https://urls.fr/5jI8M4"\
+  ""\
+  "<b><color name=\"red\">Embuscades</b></color>"\
+  "Les terroristes connaissent nos déplacements et nos habitudes et sont donc en mesure de nous tendre des embuscades quasiment à chaque virage."\
+  "Ils exploitent parfaitement le terrain : haies ou zones boisées, couverts en dur, relief... "
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 5
+ }
+ j_Insert_Extract {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
+  ""\
+  "Après votre opération, vous viendrez y faire votre rapport."\
+  ""\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
+  ""\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  Tête baissée comme il se doit."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 10
+ }
+ g_Equipment {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "<i>Les BTR ont été durement touchés lors de notre précédente opération. Ils sont en maintenance pour le moment</i>."\
+  ""\
+  "<b><color name=\"red\">Véhicules</color></b>"\
+  "Vous disposez de :"\
+  "- deux véhicules blindés de reconnaissance (BRDM),"\
+  "- de deux UAZ armés "\
+  "- de nos fidèles URAL pour le transport des troupes."\
+  ""\
+  "<b><color name=\"red\">Munitions et autres équipements</color></b>"\
+  "Des munitions et du matériel médical sont chargés dans les URAL"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss de la base de Varpadany"
+  m_sTextData "On ne peut plus foutre un pied en dehors de la zone propre sans se faire harceler. Ca commence à me les briser menu. D'autant que j'ai l'Etat Major sur le dos tous les jours."\
+  ""\
+  "Aux vues des moyens que nous vous allouons, Capitaine, ces embuscades ne devraient être qu'un hors d'oeuvre."\
+  ""\
+  "Les choses sérieuses ne commenceront que sur votre zone d'opération. Soyez professionnel :"\
+  "- Organisez votre assaut minutieusement"\
+  "- Utilisez vos différents moyens à bon escient. Vous avez des tireurs d'élite à disposition, ce n'est pas pour rien."\
+  "Mais ce n'est pas pour rien non plus que vous avez des grenadiers, des mitrailleurs lourds et tout le toutim. Vous connaissez votre métier, non ?"\
+  ""\
+  "Ces connards sont très agressifs. Je n'en attends pas moins de vous. Mais vous savez que chaque homme perdu alimente leur propagande. Démerdez-vous pour déboulonner tous ces enfoirés sans perte. C'est votre boulot, Capitaine. Pensez aux voeuves éplorées et surtout à votre carrière."\
+  ""\
+  "<b>SUIS-JE SUFFISAMMENT CLAIR, CAPITAINE ?</b>"\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vos deux BRDM ne seront pas de trop pour l'escorte. Ils ne vous serviront à rien, par contre, pour l'assaut sur l'objectif. Trop de relief, pas de lignes de tir."\
+  ""\
+  "> Dans les embuscades, maintenez les assaillants à plus de 200 m. A cette distance, les RPG devraient être relativement inefficaces."\
+  ""\
+  "> L'attaque de l'objectif par le haut (donc le Nord) est plus que conseillé."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
+ }
+}
+$grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "USSR"
+    }
+    m_visibleForEmptyFaction 0
+    m_drawArea 0
+    m_color 0.765 0.655 0.875 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+    m_lineWidth 7
+   }
+  }
+  coords 12365.333 125.55 4403.185
+  Points {
+   ShapePoint "{665B65509801DC37}" {
+    Position 101.784 41.993 187.397
+   }
+   ShapePoint "{665B6550A776F636}" {
+    Position 171.814 56.145 167.298
+   }
+   ShapePoint "{665B6550A345DAF1}" {
+    Position 167.547 -9.158 -108.599
+   }
+   ShapePoint "{665B6550ADFBA72C}" {
+    Position -37.326 -0.673 -115.707
+   }
+  }
+  LineColor 0 0.502 0.1255 1
+ }
+ {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "USSR"
+    }
+    m_drawArea 0
+    m_color 1 1 1 1
+    m_drawLine 1
+    m_lineColor 0.502 0 0 1
+   }
+  }
+  coords 14267.6 51.746 4417.294
+  Points {
+   ShapePoint "{666367397000D0D2}" {
+    Position 1568.78 1.692 -299.398
+   }
+   ShapePoint "{666367397D3AE622}" {
+    Position 1551.055 -21.158 347.864
+   }
+   ShapePoint "{6663673979895845}" {
+    Position 967.872 -20.466 515.196
+   }
+   ShapePoint "{6663673978BDFDED}" {
+    Position 553.312 -23.292 615.789
+   }
+   ShapePoint "{666367397B9D1B03}" {
+    Position 104.258 -31.496 626.533
+   }
+   ShapePoint "{666367397A54FED5}" {
+    Position -133.426 -39.177 580.4
+   }
+   ShapePoint "{6663673985A39ABF}" {
+    Position -38.438 -0.435 17.154
+   }
+   ShapePoint "{66636739847A74FA}" {
+    Position 418.354 0.184 -92.329
+   }
+   ShapePoint "{6663673986E77C3E}" {
+    Position 538.043 1.684 -188.328
+   }
+   ShapePoint "{6663673980BEFE13}" {
+    Position 734.07 1.692 -222.943
+   }
+   ShapePoint "{6663673983BB3119}" {
+    Position 989.664 1.692 -237.603
+   }
+   ShapePoint "{666367398215A502}" {
+    Position 1291.359 1.692 -276.737
+   }
+  }
+ }
+}
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ {
+  coords 12475.72 115.596 4335.879
+  angleY 0
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "mark-question"
+  m_sDescription "Бункер-3"
+ }
+ {
+  coords 12499.761 177.9 4557.051
+  angleY 0
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "mark-question"
+  m_sDescription "Бункер-4"
+ }
+}

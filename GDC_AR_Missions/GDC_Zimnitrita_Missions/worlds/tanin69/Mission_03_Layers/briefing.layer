@@ -24,7 +24,7 @@ PolylineShapeEntity : "{25C6E66E6C14258D}Prefabs/Logic/Map/Cover_Map.et" {
  }
 }
 $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
- {
+ b_Situation {
   coords 15505.293 52.126 4440.746
   m_sTitle "Situation"
   m_sTextData "<i>Notre territoire est toujours sous pression des terroristes armés par les ennemis des démocraties populaires. Pour le moment, donc, nous défendons toujours et encore notre propre territoire contre les agressions des puissances capitalistes.</i>"\
@@ -40,7 +40,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_bShowForAnyFaction 1
   m_iOrder 1
  }
- {
+ a_Contexte {
   coords 15513.606 52.44 4461.03
   m_sTitle "Contexte"
   m_sTextData "Zimnitrita, début des années 80."\
@@ -57,18 +57,22 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
  }
- {
+ d_Mission {
   coords 15508.526 52.125 4434.998
   m_sTitle "Mission"
   m_sTextData "<b>Objectif prioritaire sur Gravento Ropa</b> : localisez et détruisez les armes lourdes, nous avons besoin de conserver la maitrise du ciel. Nettoyez tout ce qui peut se trouver autour de ces armes lourdes."\
   ""\
-  "<b>Objectif secondaire</b> : déjouez les embuscades et faites le ménage nécessaire pour sécuriser un minimum vos déplacements. <i>Déjouer</i> ne veut pas dire éviter. Ca veut juste dire que vous devez être plus malin que les terroristes."
+  "<b>Objectif secondaire</b> : déjouez les embuscades et faites le ménage nécessaire pour sécuriser un minimum vos déplacements. <i>Déjouer</i> ne veut pas dire éviter. Ca veut juste dire que vous devez être plus malin que les terroristes."\
+  ""\
+  "Des informations complémentaires concernant l'<b><color name=\"red\">exécution</color></b> de la mission et les <b><color name=\"red\">renseignements</color></b> vous seront livrées au briefing"
   m_aVisibleForFactions {
    "USSR"
   }
-  m_iOrder 4
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
  }
- {
+ fh_Intel {
   coords 15500.642 52.125 4435.646
   m_sTitle "Renseignements"
   m_sTextData "<b><color name=\"red\">Matériel ennemi</b></color>"\
@@ -91,7 +95,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   }
   m_iOrder 5
  }
- {
+ j_Insert_Extract {
   coords 15514.452 52.125 4437.883
   m_sTitle "Insertion et Extraction"
   m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
@@ -108,9 +112,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   }
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
-  m_iOrder 2
+  m_iOrder 10
  }
- {
+ g_Equipment {
   coords 15505.979 52.125 4436.956
   m_sTitle "Matériel"
   m_sTextData "<i>Les BTR ont été durement touchés lors de notre précédente opération. Ils sont en maintenance pour le moment</i>."\
@@ -121,16 +125,16 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   "- de deux UAZ armés "\
   "- de nos fidèles URAL pour le transport des troupes."\
   ""\
-  "La logistique nous informe que l'on est à cours de pièces de rechange pour les UAZ et les URAL. IL faudra faire avec, prenez-en soin."\
-  ""\
   "<b><color name=\"red\">Munitions et autres équipements</color></b>"\
   "Des munitions et du matériel médical sont chargés dans les URAL"
   m_aVisibleForFactions {
    "USSR"
   }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
   m_iOrder 6
  }
- {
+ c_CommanderWord {
   coords 15499.244 52.124 4467.599
   m_sTitle "Mot du boss de la base de Varpadany"
   m_sTextData "On ne peut plus foutre un pied en dehors de la zone propre sans se faire harceler. Ca commence à me les briser menu. D'autant que j'ai l'Etat Major sur le dos tous les jours."\
@@ -151,7 +155,20 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   }
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
-  m_iOrder 10
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vos deux BRDM ne seront pas de trop pour l'escorte. Ils ne vous serviront à rien, par contre, pour l'assaut sur l'objectif. Trop de relief, pas de lignes de tir."\
+  ""\
+  "> Dans les embuscades, maintenez les assaillants à plus de 200 m. A cette distance, les RPG devraient être relativement inefficaces."\
+  ""\
+  "> L'attaque de l'objectif par le haut (donc le Nord) est plus que conseillé."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
  }
 }
 $grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {

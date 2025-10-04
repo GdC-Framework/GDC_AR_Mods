@@ -44,6 +44,7 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
   }
  }
  coords 15533.625 52.125 4472.869
+ m_eGME_GlobalAISkill ROOKIE
  m_bTeamSwitch 1
  m_bPublicCommandBriefing 1
  m_bRemoveSquadMarkers 1

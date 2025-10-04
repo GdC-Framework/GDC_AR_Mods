@@ -37,10 +37,9 @@ SCR_GameModeEditor GameMode_GameMaster_Full : "{DA3986AF1B5032B7}Prefabs/MP/Mode
    }
   }
   SCR_InitWeatherComponent "{58DCAB6D83A0CB17}" {
-   m_sInitialStartingWeatherId "Overcast"
    m_iSetWeatherConstant 0
    m_initialWeatherDurationMin 0.167
-   m_initialWeatherDurationMax 0.167
+   m_initialWeatherDurationMax 0.333
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
    m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7ADCD4F95B9}" {
@@ -52,36 +51,6 @@ SCR_GameModeEditor GameMode_GameMaster_Full : "{DA3986AF1B5032B7}Prefabs/MP/Mode
  }
  coords 1436.045 38 2875.36
 }
-$grp SCR_AIGroup {
- {
-  coords 1481.759 39.831 2908.989
- }
- {
-  coords 1465.789 38 2933.307
- }
-}
-Vehicle Mi8MT_armed1 : "{7BD282AF716ED639}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed.et" {
- components {
-  EventHandlerManagerComponent "{52CAB06F9C274D14}" {
-   EventHandlers {
-    BaseEventHandler "{665C95A13F8554FD}" {
-     EventName "OnInit"
-    }
-   }
-  }
- }
- coords 1473.226 38 2903.686
- {
-  GenericEntity : "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et" {
-   coords 0 0 0
-  }
- }
-}
-SCR_AIGroup group_1 : "{B7AB5D3F8A7ADAE4}Prefabs/Groups/BLUFOR/Group_US_PlatoonHQ.et" {
- components {
-  AIFormationComponent "{507E9DC12F541FE6}" {
-   DefaultFormation "Line"
-  }
- }
- coords 1465.743 38 2928.848
+SCR_AIGroup {
+ coords 1481.759 39.831 2908.989
 }
