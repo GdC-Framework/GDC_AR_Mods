@@ -1,0 +1,209 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<i>Grâce à la pugnacité de notre armée, nous avons réussi - non sans mal - à user les moyens des terroristes qui pourrissent notre belle République du Peuple de Zimnitrita. La guerre, cependant, se joue toujours sur notre territoire : la fertile Zimnitrita Est.</i>"\
+  ""\
+  "Notre dernière opération, peu importe la façon dont elle a été menée, nous a permis de sécuriser au moins partiellement le ciel : nous avons de bonnes raisons de penser que les terroristes ne disposent plus d'armes lourdes anti aériennes (genre, des ZU-23). "\
+  ""\
+  "Notre Mi8 est maintenant opérationnel, mais son équipage de référence est décimé. Il nous faut donc un nouvel équipage compétent."\
+  ""\
+  "Les hostiles ont été repoussés sur l'extrême sud-est de notre territoire (quadrilatère marqué sur carte). Ils pulluent dans cette zone comme les puces sur un chien galeux, mais sont nassés par nos troupes."\
+  ""\
+  "Le centre de l'infestation semble être la zone logistique proche de Glochy."\
+  ""\
+  ""\
+  ""\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Drawna, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
+  ""\
+  "Heureusement, grâce à l'action déterminée de notre grande soeur Russie et de tous les peuples gouvernés selon les préceptes du vrai  marxisme, l'ONU n'a pas reconnu ce régime à la solde des capitalistes."\
+  ""\
+  "La vraie Zimnitrita, la nôtre, la République du Peuple de Zimnitrita, espère bien retrouver, un jour, l'unité de notre pays. Pour cela, il faudra renverser, par les armes si besoin, le gouvernement bourgeois et anti social qui opprime notre peuple de l'Ouest."\
+  ""\
+  "Mais ce n'est pas pour tout de suite : notre grande soeur, dans sa sagesse et sa bienveillance, continue à nous fournir des armes et des conseils. Malheureusement, le rapport de force n'est pas encore en notre faveur."\
+  ""\
+  "Un jour... Peut-être..."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif principal</b>"\
+  "Nettoyer la zone logistique de Glochy (156-013)."\
+  ""\
+  "<b>Objectif secondaire</b>"\
+  "Désinfecter la zone autant que possible, mais sans y perdre trop de plumes."\
+  ""\
+  "Des informations complémentaires concernant l'<b><color name=\"red\">exécution</color></b> de la mission et les <b><color name=\"red\">renseignements</color></b> vous seront livrées au briefing"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Matériel ennemi</b></color>"\
+  "Nous avons usé leurs capacités blindées. De ce côté là, nous sommes a priori rassurés."\
+  ""\
+  "<b><color name=\"red\">Objectif sur Graveronto Ropa</b></color>"\
+  "Les tirs sont partis de la zone identifiée par le polygone bleu sur votre carte (124-044). Il s'agit d'un ancien camp militaire composé de complexes bunkerisés."\
+  "- Le bunker nord (Бункер-4) surplombe le bunker sud. On ne sait pas si cette zone est propre."\
+  "- Le bunker sud (Бункер-3) est entouré de tranchées. Elle est plus vaste que le bunker nord."\
+  ""\
+  "Il est fort probable que les armes lourdes ne soient pas venues toutes seules. Attendez-vous à tomber sur un nid de frelons."\
+  ""\
+  "Une photo aérienne récente est consultable à https://urls.fr/5jI8M4"\
+  ""\
+  "<b><color name=\"red\">Embuscades</b></color>"\
+  "Les terroristes connaissent nos déplacements et nos habitudes et sont donc en mesure de nous tendre des embuscades quasiment à chaque virage."\
+  "Ils exploitent parfaitement le terrain : haies ou zones boisées, couverts en dur, relief... "
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 5
+ }
+ j_Insert_Extract {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
+  ""\
+  "Après votre opération, vous viendrez y faire votre rapport."\
+  ""\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
+  ""\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  Tête baissée comme il se doit."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 10
+ }
+ g_Equipment {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "<i>Les BTR ont été durement touchés lors de notre précédente opération. Ils sont en maintenance pour le moment</i>."\
+  ""\
+  "<b><color name=\"red\">Véhicules</color></b>"\
+  "Vous disposez de :"\
+  "- deux véhicules blindés de reconnaissance (BRDM),"\
+  "- de deux UAZ armés "\
+  "- de nos fidèles URAL pour le transport des troupes."\
+  ""\
+  "<b><color name=\"red\">Munitions et autres équipements</color></b>"\
+  "Des munitions et du matériel médical sont chargés dans les URAL"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss de la base de Varpadany"
+  m_sTextData "Alors, c'est vous les nouveaux pilotes d'hélico ? J'espère que vous êtes des as, les mecs : au menu, c'est pas la glace à la vodka de votre babushka. On est plutôt partis pour bouffer une grosse tarte aux poils."\
+  ""\
+  "Prélevez au moins un mitrailleur dans l'infanterie. S'il sait se déplacer dans un hélico en vol, il devrait s'en sortir honorablement. Evidemment, si vous arrivez à négocier deux mitailleurs, vous serez plus confort."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vos deux BRDM ne seront pas de trop pour l'escorte. Ils ne vous serviront à rien, par contre, pour l'assaut sur l'objectif. Trop de relief, pas de lignes de tir."\
+  ""\
+  "> Dans les embuscades, maintenez les assaillants à plus de 200 m. A cette distance, les RPG devraient être relativement inefficaces."\
+  ""\
+  "> L'attaque de l'objectif par le haut (donc le Nord) est plus que conseillé."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ {
+  coords 14604.61 44.452 2041.358
+  angleY 0
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14568.67 25.777 1696.212
+  angleY 0
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14421.594 69.16 1366.564
+  angleY 0
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15985.618 33.623 3148.636
+  angleY 0
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14182.764 27.97 484.092
+  angleY 0
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15651.004 64.532 1340.124
+  angleY 0
+  m_MarkerColor 0 0.502 0.125 1
+  m_bUseWorldScale 0
+ }
+}
+PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_factionKeys {
+    "USSR"
+   }
+   m_drawArea 0
+   m_color 0.765 0.655 0.875 1
+   m_drawLine 1
+   m_lineColor 0 0.125 0.502 1
+   m_lineWidth 7
+  }
+ }
+ coords 14736.543 125.55 1951.291
+ Points {
+  ShapePoint "{665B65509801DC37}" {
+   Position 319.383 -71.522 225.569
+  }
+  ShapePoint "{665B6550A776F636}" {
+   Position 1511.038 -128.041 257.156
+  }
+  ShapePoint "{665B6550A345DAF1}" {
+   Position 1530.685 -208.808 -1808.604
+  }
+  ShapePoint "{665B6550ADFBA72C}" {
+   Position 290.889 -117.771 -1823.565
+  }
+ }
+ LineColor 0 0.502 0.1255 1
+}

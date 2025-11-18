@@ -1,0 +1,86 @@
+$grp SCR_AIGroup : "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et" {
+ grp_1 {
+  coords 8435.243 3.912 13264.318
+  m_aUnitPrefabSlots {
+   "{5436629450D8387A}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SL.et" "" "" ""
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_1_WP"
+  }
+ }
+ grp_2 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "line"
+   }
+  }
+  coords 8423.144 3.707 13253.794
+  m_aStaticWaypoints {
+   "grp_2_WP"
+  }
+ }
+ grp_3 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "line"
+   }
+  }
+  coords 8426.606 3.727 13248.979
+  angleY 48.883
+  m_aUnitPrefabSlots {
+   "{5436629450D8387A}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SL.et" "{23ADBBC31B6A3DC6}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AR.et" "" ""
+  }
+  m_aStaticWaypoints {
+   "grp_2_WP"
+  }
+ }
+ grp_4 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "line"
+   }
+  }
+  coords 8412.736 4.717 13258.597
+  angleY 11.401
+  m_aUnitPrefabSlots {
+   "{5436629450D8387A}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SL.et" "{23ADBBC31B6A3DC6}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AR.et" "" ""
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_2_WP"
+  }
+ }
+ grp_5 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "line"
+   }
+  }
+  coords 8410.525 8.616 13277.767
+  angleY 11.401
+  m_aUnitPrefabSlots {
+   "{5436629450D8387A}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SL.et" "{23ADBBC31B6A3DC6}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AR.et" "" ""
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_2_WP"
+  }
+ }
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ grp_1_WP {
+  coords 8434.952 3.899 13264.833
+  angleX -6.55
+  angleY -1.446
+  angleZ 12.478
+  CompletionRadius 2
+ }
+ grp_2_WP {
+  coords 8424.702 3.689 13254.078
+  angleX -6.55
+  angleY -1.446
+  angleZ 12.478
+  CompletionRadius 10
+ }
+}

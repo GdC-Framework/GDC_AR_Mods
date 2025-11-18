@@ -1,0 +1,37 @@
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{66D6FBFB2C3D2D22}" {
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{668AC5CD06C1569D}" {
+   m_flagNames {
+    "BRDM_1"
+    "BRDM_2"
+    "BRDM_3"
+    "BRDM_4"
+   }
+  }
+  TILW_FlagSampling "{668EAC4BDD90E646}" {
+   m_flagNames {
+    "Rdm_Gar_1"
+    "Rdm_Gar_2"
+    "Rdm_Gar_3"
+    "Rdm_Gar_4"
+    "Rdm_Gar_5"
+   }
+   m_k 3
+  }
+  TILW_FlagSampling "{668EAC4EA4748509}" {
+   m_flagNames {
+    "Ambush_1"
+    "Ambush_2"
+    "Ambush_3"
+    "Ambush_4"
+    "Ambush_5"
+   }
+   m_k 4
+  }
+ }
+}

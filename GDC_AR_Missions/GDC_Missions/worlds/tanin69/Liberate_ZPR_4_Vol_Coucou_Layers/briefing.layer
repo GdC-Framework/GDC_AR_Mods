@@ -1,0 +1,228 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "<i>Grâce à la pugnacité de notre armée, nous avons réussi - non sans mal - à user les moyens des terroristes qui pourrissent notre belle République du Peuple de Zimnitrita. La guerre, cependant, se joue toujours sur notre territoire : la fertile Zimnitrita Est.</i>"\
+  ""\
+  "Notre dernière opération, peu importe la façon dont elle a été menée, nous a permis de sécuriser au moins partiellement le ciel : nous avons de bonnes raisons de penser qu'il n'y a plus d'armes lourdes anti-aériennes."\
+  ""\
+  "Notre Mi8 est maintenant opérationnel, mais son équipage de référence est décimé. Il nous faut donc un nouvel équipage compétent."\
+  ""\
+  "Les hostiles ont été repoussés sur l'extrême sud-est de notre territoire (rectangle marqué sur carte). Ils pulluent dans cette zone comme les puces sur un chien galeux, mais sont nassés par nos troupes."\
+  ""\
+  "Le centre de l'infestation semble être la zone logistique proche de Glochy."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux . A l'ouest de la rivière Drawna, un coup d'état fomenté par les occidentaux a installé un régime fantoche. Il se fait appeler République Fédérale de Zimnitrita."\
+  ""\
+  "Heureusement, grâce à l'action déterminée de notre grande soeur Russie et de tous les peuples gouvernés selon les préceptes du vrai  marxisme, l'ONU n'a pas reconnu ce régime à la solde des capitalistes."\
+  ""\
+  "La vraie Zimnitrita, la nôtre, la République du Peuple de Zimnitrita, espère bien retrouver, un jour, l'unité de notre pays. Pour cela, il faudra renverser, par les armes si besoin, le gouvernement bourgeois et anti social qui opprime notre peuple de l'Ouest."\
+  ""\
+  "Mais ce n'est pas pour tout de suite : notre grande soeur, dans sa sagesse et sa bienveillance, continue à nous fournir des armes et des conseils. Malheureusement, le rapport de force n'est pas encore en notre faveur."\
+  ""\
+  "Un jour... Peut-être..."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif principal</b>"\
+  "Nettoyer la zone logistique de Glochy (156-013)."\
+  ""\
+  "<b>Objectifs secondaires</b>"\
+  "Selon la situation, à l'appréciation du CdO"\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "Petit matin, temps clair pour le moment, évolution incertaine."\
+  ""\
+  "<b><color name=\"red\">Nasse</b></color>"\
+  "Des unités alliées bloquent les hostiles dans le périmètre (BURAN et AKTIV)."\
+  ""\
+  "<b><color name=\"red\">Matériel ennemi</b></color>"\
+  "Un BRDM sur zone. Les positions probables sont marquées sur carte."\
+  "Mitrailleuses lourdes sur l'objectif."\
+  "Les RPG sont une menace pour le Mi-8 à 200 m."\
+  ""\
+  "<b><color name=\"red\">Troupes ennemies</b></color>"\
+  "Présence des troupes ennemies marquées par le rectangle bleu."\
+  "Troupes concentrées sur la zone logistique et ses environs immédiats. Petits groupes embusqués disséminés sur la zone."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ j_Insert_Extract {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
+  ""\
+  "Après votre opération, vous viendrez y faire votre rapport."\
+  ""\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
+  ""\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  Tête baissée comme il se doit."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 10
+ }
+ g_Equipment {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "<b><color name=\"red\">Véhicules</color></b>"\
+  "Mi-8."\
+  "La logistique n'est pas fiable : réparations, refuel et ré-armement à la base, si ça ne tombe pas en panne en cours d'opération. "\
+  ""\
+  "<b><color name=\"red\">Munitions et autres équipements</color></b>"\
+  "Matos dans le Mi-8"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss de la base de Varpadany"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Alors, c'est vous les nouveaux pilotes d'hélico ? J'espère que vous êtes des as, les mecs : au menu, c'est pas la glace à la vodka de votre babushka. On est plutôt partis pour bouffer une grosse tarte aux poils."\
+  ""\
+  "Le reste, je vous le dirai au moment du briefing"\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Héliportage de l'infanterie sur zone. Plusieurs rotations seront nécessaires."\
+  ""\
+  "> Pas de civil sur zone => pas de limitation de tir sur les infrastructures et les habitations."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ {
+  coords 14604.61 44.452 2041.358
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-1"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14568.67 25.777 1696.212
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-2"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14421.594 69.16 1366.564
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "AKTIV-1"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15985.618 33.623 3148.636
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-3"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14182.764 27.97 484.092
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "AKTIV-2"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15651.004 64.532 1340.124
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "objective-marker"
+  m_fWorldSize 50
+  m_sDescription "Objectif"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15508.857 52.125 4446.042
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "Base"
+  m_bUseWorldScale 0
+ }
+}
+PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_factionKeys {
+    "USSR"
+   }
+   m_drawArea 0
+   m_color 0.765 0.655 0.875 1
+   m_drawLine 1
+   m_lineColor 0 0.125 0.502 1
+   m_lineWidth 7
+  }
+ }
+ coords 14736.543 125.55 1951.291
+ Points {
+  ShapePoint "{665B65509801DC37}" {
+   Position 116.668 -89.811 -288.716
+  }
+  ShapePoint "{665B6550A776F636}" {
+   Position 1243.375 -71.223 -291.834
+  }
+  ShapePoint "{665B6550A345DAF1}" {
+   Position 1216.151 -162.202 -1812.422
+  }
+  ShapePoint "{665B6550ADFBA72C}" {
+   Position 106.663 -125.018 -1753.503
+  }
+ }
+ LineColor 0 0.502 0.1255 1
+}

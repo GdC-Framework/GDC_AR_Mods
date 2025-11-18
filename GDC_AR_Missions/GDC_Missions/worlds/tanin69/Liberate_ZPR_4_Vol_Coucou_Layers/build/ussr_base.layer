@@ -1,0 +1,198 @@
+$grp SCR_ChimeraCharacter : "{069118B2D809C9E1}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman_Variant_1.et" {
+ {
+  coords 15437.779 52.325 4579.898
+  angles 0 -105.036 0
+ }
+ {
+  coords 15405.163 59.11 4582.066
+  angles 0 -15.255 0
+ }
+}
+GenericEntity : "{06B10E092A40431B}Prefabs/Props/Military/Compositions/USSR/PersonnelService_USSR_Small.et" {
+ components {
+  ActionsManagerComponent "{5CB6953CEF1EFF85}" {
+   Enabled 0
+  }
+ }
+ coords 15483.285 52.796 4527.081
+ angles 0 174.487 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_BaseInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     ActionContexts {
+      UserActionContext "{61F4C18ECB0A8B85}" {
+       Position PointInfo "{61F4C18F31FA02AA}" {
+        Offset 0 1 0
+       }
+       "Display UI At Reference Point" 1
+       SkipCullingPlaneDetection 1
+      }
+     }
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Victoire"
+       m_factionKeys {
+        "USSR"
+       }
+       m_flagName "END_MISSION_WIN"
+      }
+     }
+    }
+   }
+   coords -0.445 1.128 0.299
+   angles 0 179.832 0
+  }
+ }
+}
+GenericEntity : "{0AAE7B205DC32793}Prefabs/Compositions/Misc/SubCompositions/Building/Helicopter_USSR_01.et" {
+ coords 15436.482 52.125 4441.479
+ angles 0 75 0
+ {
+  GenericEntity {
+   ID "5DB89921AC7D9B9F"
+   components {
+    SCR_CampaignBuildingProviderComponent "{5ED49CDEA85A0083}" {
+     Enabled 0
+    }
+   }
+  }
+ }
+}
+SCR_DoorOpenerEntity : "{11811A404E19275D}Prefabs/Systems/Logic/DoorOpener.et" {
+ coords 15431.942 52.125 4585.152
+}
+Vehicle UAZ469_uncovered2 : "{16A674FE31B0921C}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_uncovered.et" {
+ coords 15423.851 52.126 4552.778
+ angles 0 80.787 0
+}
+GenericEntity : "{1A4F79D83FBD5412}Prefabs/Compositions/Misc/SubCompositions/Storage/Misc/Storage_CanvasCover_Medium_USSR_01.et" {
+ coords 15506.45 52.125 4509.916
+ angles 0 0 0
+}
+Vehicle UAZ1 : "{259EE7B78C51B624}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469.et" {
+ coords 15423.231 52.125 4557.156
+ angles 0 80.787 0
+}
+GenericEntity : "{2A1F2B440ECF8725}Prefabs/Compositions/Misc/SubCompositions/Storage/Misc/Storage_CanvasCover_Small_USSR_01.et" {
+ coords 15506.379 52.125 4504.869
+ angles 0 0 0
+}
+SCR_AIGroup : "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et" {
+ coords 15456.577 52.125 4486.975
+ m_aUnitPrefabSlots {
+  "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+  "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+  "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+  "{98EB9CDD85B8C92C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Unarmed.et"
+ }
+ m_aStaticWaypoints {
+  "WP_Ambiant_Units"
+ }
+ m_bDeleteIfNoPlayer 0
+}
+Vehicle Ural4320_ammo2 : "{3336BE330C4F355B}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ammo.et" {
+ coords 15418.318 52.125 4570.145
+ angles 0 -100.001 0
+}
+Vehicle Ural4320_tanker1 : "{4C81D7ED8F8C0D87}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_tanker.et" {
+ components {
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 300
+     m_eFuelNodeType 11
+    }
+   }
+  }
+ }
+ coords 15419.346 52.125 4560.734
+ angles 0 -99.272 0
+}
+GenericEntity : "{525C793E1943EA05}Prefabs/Compositions/Slotted/SlotFlatLarge/Helipad_L_USSR_01.et" {
+ components {
+  SCR_CampaignBuildingCompositionComponent "{5E96A067C097D570}" {
+   Enabled 0
+  }
+  WCS_RearmSupportStationComponent "{6152E6F75B7A14B4}" {
+   m_fRange 40
+  }
+ }
+ coords 15454.269 52.125 4450.287
+ angles 0 79.041 0
+ {
+  GameEntity {
+   ID "627C9144DFA045D1"
+   {
+    GenericEntity {
+     ID "61B2A377DDDEF07E"
+     components {
+      SCR_SupportStationAreaMeshComponent "{5E6A90B0246F70C8}" {
+       Enabled 0
+      }
+     }
+    }
+   }
+  }
+  GenericEntity {
+   ID "5D22B941350A4D8F"
+   components {
+    SCR_CampaignBuildingProviderComponent "{5ED49CDEA85A0083}" {
+     Enabled 0
+    }
+    SCR_ResourceComponent "{5D7CC617B33EF1CF}" {
+     Enabled 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "5E64C0F6B629B0D8"
+   components {
+    SCR_ResourceComponent "{5D8AA552F85C2FBB}" {
+     Enabled 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "5E69068BDA9E9D25"
+   components {
+    SCR_SupportStationAreaMeshComponent "{5B2AD5B869A9C26D}" {
+     Enabled 0
+    }
+   }
+  }
+  GenericEntity {
+   ID "5E6A93840A294BB7"
+   {
+    GenericEntity {
+     ID "5E6A90B022FE573D"
+     components {
+      SCR_SupportStationAreaMeshComponent "{5E6A90B0246F70C8}" {
+       Enabled 0
+      }
+     }
+    }
+   }
+  }
+ }
+}
+GenericEntity : "{8C1F8489BEA68441}Prefabs/Compositions/Misc/SubCompositions/Storage/Location/Storage_Helicopter_USSR_02.et" {
+ coords 15460.099 52.125 4475.891
+ angles 0 -7.81 0
+ {
+  GenericEntity {
+   ID "5D92D7C76A5E0C9D"
+   {
+    GenericEntity {
+     ID "5D30E783900D2819"
+     coords 0 0.001 0
+    }
+   }
+  }
+ }
+}
+Vehicle Ural4320_repair1 : "{A5647958579A4149}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_repair.et" {
+ Flags 0x403 0
+ coords 15418.371 52.125 4565.153
+ angles 0 -99.458 0
+}

@@ -1,0 +1,288 @@
+$grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ Camp {
+  coords 12483.619 115.875 4342.346
+  {
+   Turret ZU_23 : "{1A407760EEAE4156}Prefabs/Vehicles/Static/BaconZU23/BaconZU23_Turret_Deployed.et" {
+    coords -133.88 11.963 -48.884
+   }
+   $grp SCR_AIGroup : "{22F33D3EC8F281AB}Prefabs/Groups/INDFOR/Group_FIA_MachineGunTeam.et" {
+    {
+     coords 102.751 -1.098 34.681
+     angles 12.953 59.132 -7.631
+    }
+    {
+     coords 230.9 73.852 378.173
+     angles 12.953 59.132 -7.631
+     m_bSnapToTerrain 0
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_3"
+     }
+    }
+   }
+   $grp SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+    WP_Defend_Bunker {
+     coords -3.633 -0.754 27.114
+     CompletionRadius 10
+    }
+    WP_Defend_Camp_1 {
+     coords -32.503 -0.656 -10.888
+     CompletionRadius 75
+    }
+    WP_Defend_Camp_2 {
+     coords 19.304 0.002 6.35
+     CompletionRadius 75
+    }
+    WP_Defend_Camp_3 {
+     coords 228.515 72.887 377.89
+     CompletionRadius 5
+    }
+    WP_Defend_Camp_4 {
+     coords 232.712 69.856 378.017
+     CompletionRadius 5
+    }
+   }
+   SCR_AIGroup : "{2E9C920C3ACA2C6F}Prefabs/Groups/INDFOR/Group_FIA_ReconTeam.et" {
+    coords 262.016 -57.024 -455.181
+   }
+   SCR_AIGroup : "{581106FA58919E89}Prefabs/Groups/INDFOR/Group_FIA_MedicalSection.et" {
+    coords 23.451 1.205 23.684
+   }
+   $grp SCR_AIGroup : "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et" {
+    {
+     coords -7.477 1.816 28.92
+     m_aStaticWaypoints {
+      "WP_Defend_Bunker"
+     }
+    }
+    {
+     coords 783.859 -53.515 355.295
+     angles 0 165 0
+    }
+   }
+   $grp SCR_AIGroup : "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et" {
+    {
+     coords -8.491 0.185 29.008
+     m_aStaticWaypoints {
+      "WP_Defend_Bunker"
+     }
+    }
+    {
+     coords -138.337 23.456 -51.063
+     m_aStaticWaypoints {
+      "WP_Defend_ZU_1"
+     }
+    }
+    {
+     coords -10.979 21.934 -1.53
+     m_aStaticWaypoints {
+      "WP_Defend_ZU_2"
+     }
+    }
+    {
+     coords 54.76 -0.164 -49.354
+     angles 0 59.738 0
+    }
+    {
+     coords -54.055 -1.243 -53.997
+     angles 0 -34.953 0
+    }
+    {
+     coords -44.482 41.031 155.662
+    }
+    {
+     coords -45.655 0.739 40.638
+     angles 0 -61.519 0
+    }
+    {
+     coords 236.135 69.868 382.737
+     angles 0 -34.953 0
+     m_bSnapToTerrain 0
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_4"
+     }
+    }
+   }
+   $grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+    WP_Defend_ZU_1 {
+     coords -133.694 11.905 -49.15
+     CompletionRadius 5
+    }
+    WP_Defend_ZU_2 {
+     coords -19.249 -0.656 -9.786
+     CompletionRadius 5
+    }
+   }
+   $grp SCR_AIGroup : "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et" {
+    {
+     coords -54.752 -0.656 -8.287
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_1"
+     }
+    }
+    {
+     coords 0.819 -0.346 -10.447
+     m_aStaticWaypoints {
+      "WP_Defend_Camp_2"
+     }
+    }
+   }
+   Vehicle UAZ469_UK59_FIA1 : "{E72D78E7F45532EC}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_UK59_FIA.et" {
+    coords -60.464 -0.656 -27.719
+   }
+   SCR_AIGroup : "{EE92725E9B949C3D}Prefabs/Groups/INDFOR/Group_FIA_PlatoonHQ.et" {
+    coords -10.748 3.241 30.039
+    m_aStaticWaypoints {
+     "WP_Defend_Bunker"
+    }
+   }
+   Vehicle Ural4320_ZU2 : "{FD109F3702AAB392}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ZU23.et" {
+    coords -19.508 -0.656 -9.864
+    angles 0 105 0
+   }
+  }
+ }
+ Embuscades {
+  coords 13919.392 16.451 4716.489
+  {
+   $grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+    Ambush_2_WP {
+     coords 9.817 2.38 -22.485
+     CompletionRadius 10
+    }
+    Ambush_4_WP {
+     coords -425.333 -4.979 -715.529
+     CompletionRadius 10
+    }
+    Ambush_5_WP {
+     coords -163.32 17.459 1155.283
+     CompletionRadius 40
+    }
+    Ambush_6_WP {
+     coords -737.78 10.885 -143.865
+     angles 2.234 0.087 2.239
+     CompletionRadius 20
+    }
+   }
+   SCR_AIGroup : "{6E725D44CA973C24}Prefabs/Groups/INDFOR/Group_FIA_SentryTeam.et" {
+    coords -1174.39 83.715 190.98
+   }
+   $grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+    Ambush_2_grp_1 {
+     coords -0.029 1.69 -17.865
+     angles 0 90 0
+     m_prefab "{1BB20A4B3A53D0F5}Prefabs/Groups/INDFOR/Group_FIA_LightFireTeam.et"
+     m_conditionFlag "Ambush_2"
+     m_waypointNames {
+      "Ambush_2_WP"
+     }
+    }
+    Ambush_2_grp_2 {
+     coords -76.083 -4.108 -22.562
+     angles 0 90 0
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+     m_conditionFlag "Ambush_2"
+    }
+    Ambush_3_grp_1 {
+     coords -50.468 15.896 329.337
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_conditionFlag "Ambush_3"
+    }
+    Ambush_3_grp_2 {
+     coords -132.555 8.325 283.637
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+     m_conditionFlag "Ambush_3"
+    }
+    Ambush_4_grp_1 {
+     coords -495.573 -4.666 -651.89
+     angles 0 90 0
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+     m_conditionFlag "Ambush_4"
+    }
+    Ambush_4_grp_2 {
+     coords -425.131 -4.972 -715.332
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_conditionFlag "Ambush_4"
+     m_waypointNames {
+      "Ambush_4_WP"
+     }
+    }
+    Ambush_5_grp_1 {
+     coords -191.746 16.169 1187.266
+     m_prefab "{2CC26054775FBA2C}Prefabs/Groups/INDFOR/Group_FIA_Team_AT.et"
+     m_conditionFlag "Ambush_5"
+     m_waypointNames {
+      "Ambush_5_WP"
+     }
+    }
+    Ambush_5_grp_2 {
+     coords -184.903 15.656 1108.169
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_conditionFlag "Ambush_5"
+    }
+    Ambush_1_grp_1 {
+     coords -394.66 10.343 332.566
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_conditionFlag "Ambush_1"
+    }
+    Ambush_6_grp_1 {
+     coords -753.516 11.261 -144.338
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_conditionFlag "Ambush_6"
+     m_waypointNames {
+      "Ambush_6_WP"
+     }
+    }
+   }
+   $grp PS_ManualMarker : "{BC5F78D7A380E856}PrefabsEditable/Markers/Group/Marker_GroupFlagsIndfor_Base.et" {
+    Ambush_1_mrk {
+     coords -353.109 11.548 267.372
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+    Ambush_2_mrk {
+     coords -29.267 -2.58 -5.714
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+    Ambush_3_mrk {
+     coords -84.729 7.33 261.043
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+    Ambush_4_mrk {
+     coords -462.658 -3.433 -678.052
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+    Ambush_5_mrk {
+     coords -212.203 15.698 1153.101
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+    Ambush_6_mrk {
+     coords -649.375 9.986 -118.213
+     angles 0 0 0
+     m_sImageSet "{67B3A6DC2D712B52}UI/Textures/Icons/icons_mapMarkersUI-glow.imageset"
+     m_MarkerColor 0 0.125 0.502 1
+     m_sQuadName "point-special"
+     m_bUseWorldScale 0
+    }
+   }
+  }
+ }
+}

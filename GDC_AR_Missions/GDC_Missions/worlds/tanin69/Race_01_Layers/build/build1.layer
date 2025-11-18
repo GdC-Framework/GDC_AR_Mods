@@ -1,0 +1,472 @@
+$grp GenericEntity : "{520626A206926F47}Prefabs/Props/Agriculture/Farm/Haystack_01.et" {
+ {
+  coords 8007.154 35.81 7288.223
+  angleY 90
+ }
+ {
+  coords 8008.938 35.81 7288.223
+  angleY 90
+ }
+ {
+  coords 8012.531 35.81 7288.223
+  angleY 90
+ }
+ {
+  coords 8010.748 35.81 7288.223
+  angleY 90
+ }
+ {
+  coords 7998.374 35.888 7278.771
+  angleY 0
+ }
+ {
+  coords 7998.374 35.875 7280.556
+  angleY 0
+ }
+ {
+  coords 7998.374 35.875 7282.366
+  angleY 0
+ }
+ {
+  coords 7998.374 35.875 7284.149
+  angleY 0
+ }
+ {
+  coords 8668.836 50.732 7368.401
+  angleY -45
+ }
+ {
+  coords 8672.639 50.745 7364.598
+  angleY -45
+ }
+ {
+  coords 8671.377 50.732 7365.86
+  angleY -45
+ }
+ {
+  coords 8670.097 50.732 7367.14
+  angleY -45
+ }
+ {
+  coords 8675.103 50.58 7358.688
+  angleY 0
+ }
+ {
+  coords 8675.103 50.769 7353.309
+  angleY 0
+ }
+ {
+  coords 8675.103 50.712 7355.094
+  angleY 0
+ }
+ {
+  coords 8675.103 50.635 7356.905
+  angleY 0
+ }
+ {
+  coords 8673.478 50.914 7345.569
+  angleY 30
+ }
+ {
+  coords 8670.787 50.949 7340.911
+  angleY 30
+ }
+ {
+  coords 8671.679 50.936 7342.456
+  angleY 30
+ }
+ {
+  coords 8672.584 50.928 7344.025
+  angleY 30
+ }
+ {
+  coords 8481.593 61.872 6461.134
+  angleX -8.365
+  angleY 31.108
+  angleZ -7.572
+ }
+ {
+  coords 8478.902 61.986 6456.475
+  angleX -0.267
+  angleY 30.01
+  angleZ -2.221
+ }
+ {
+  coords 8479.794 62.019 6458.021
+  angleX 1.563
+  angleY 29.926
+  angleZ -2.713
+ }
+ {
+  coords 8480.697 62.058 6459.59
+  angleX 1.118
+  angleY 29.962
+  angleZ -1.938
+ }
+ {
+  coords 8477.498 62.021 6454.259
+  angleX 4.618
+  angleY 64.199
+  angleZ -1.734
+ }
+ {
+  coords 8472.621 61.828 6451.984
+  angleX -5.595
+  angleY 67.747
+  angleZ -15.607
+ }
+ {
+  coords 8474.241 61.848 6452.74
+  angleX 0.808
+  angleY 64.584
+  angleZ -0.384
+ }
+ {
+  coords 8475.883 61.883 6453.505
+  angleX 1.408
+  angleY 65.637
+  angleZ -0.146
+ }
+ {
+  coords 8470.233 62 6451.03
+  angleX -4.871
+  angleY 64.304
+  angleZ -8.001
+ }
+ {
+  coords 8465.427 62.05 6448.61
+  angleX -2.808
+  angleY 62.702
+  angleZ -0.564
+ }
+ {
+  coords 8467.021 61.966 6449.412
+  angleX -2.202
+  angleY 63.284
+  angleZ -0.394
+ }
+ {
+  coords 8468.64 61.996 6450.228
+  angleX 5.726
+  angleY 62.658
+  angleZ -4.451
+ }
+ {
+  coords 8462.072 62.103 6445.2
+  angleX 2.956
+  angleY 92.202
+  angleZ -7.009
+ }
+ {
+  coords 8456.689 62.012 6445.458
+  angleX -0.127
+  angleY 92.734
+  angleZ -6.697
+ }
+ {
+  coords 8458.479 62.007 6445.374
+  angleX -0.127
+  angleY 92.734
+  angleZ -6.697
+ }
+ {
+  coords 8460.29 62.009 6445.286
+  angleX 2.958
+  angleY 92.214
+  angleZ -7.008
+ }
+ {
+  coords 7533.977 56.61 6306.282
+  angleX 0.434
+  angleY 75.889
+  angleZ -0.109
+ }
+ {
+  coords 7528.737 56.568 6305.021
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7530.478 56.582 6305.441
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7532.238 56.596 6305.864
+  angleX 0.434
+  angleY 75.9
+  angleZ -0.109
+ }
+ {
+  coords 7521.722 56.513 6303.258
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7523.463 56.527 6303.678
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7525.223 56.541 6304.101
+  angleX 0.434
+  angleY 75.9
+  angleZ -0.109
+ }
+ {
+  coords 7526.962 56.555 6304.519
+  angleX 0.434
+  angleY 75.889
+  angleZ -0.109
+ }
+ {
+  coords 7514.737 56.458 6301.502
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7516.478 56.472 6301.922
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7518.238 56.486 6302.345
+  angleX 0.434
+  angleY 75.9
+  angleZ -0.109
+ }
+ {
+  coords 7519.977 56.5 6302.763
+  angleX 0.434
+  angleY 75.889
+  angleZ -0.109
+ }
+ {
+  coords 7507.75 56.403 6299.746
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7509.491 56.417 6300.166
+  angleX 0.435
+  angleY 76.443
+  angleZ -0.105
+ }
+ {
+  coords 7511.251 56.431 6300.588
+  angleX 0.434
+  angleY 75.9
+  angleZ -0.109
+ }
+ {
+  coords 7512.99 56.445 6301.007
+  angleX 0.434
+  angleY 75.889
+  angleZ -0.109
+ }
+ {
+  coords 8453.117 58.954 6467.502
+  angleX 4.684
+  angleY 92.018
+  angleZ -6.062
+ }
+ {
+  coords 8451.338 58.822 6467.588
+  angleX 4.753
+  angleY 91.953
+  angleZ -8.261
+ }
+ {
+  coords 8449.523 58.667 6467.676
+  angleX 4.763
+  angleY 92.025
+  angleZ -8.255
+ }
+ {
+  coords 8447.737 58.509 6467.761
+  angleX 4.73
+  angleY 92.144
+  angleZ -6.932
+ }
+ {
+  coords 7771.383 47.458 5935.053
+  angleX -2.228
+  angleY 90.139
+  angleZ -3.579
+ }
+ {
+  coords 7769.383 47.537 5935.053
+  angleX -2.228
+  angleY 90.139
+  angleZ -3.579
+ }
+ {
+  coords 7767.383 47.604 5935.053
+  angleX -2.678
+  angleY 90.126
+  angleZ -2.687
+ }
+ {
+  coords 7765.383 47.699 5935.053
+  angleX -2.678
+  angleY 90.126
+  angleZ -2.687
+ }
+ {
+  coords 7763.383 47.771 5935.053
+  angleX -2.682
+  angleY 90.063
+  angleZ -1.344
+ }
+}
+$grp GenericEntity : "{55F1B5546EFC9D08}Prefabs/Structures/Signs/Warnings/SignGiveWay_01_pole.et" {
+ {
+  coords 8031.958 28.645 6944.71
+  angleY 177.597
+  scale 1.91
+  {
+   GenericEntity {
+    ID "569AF607AA3894C2"
+    coords 0 0 0
+    angleZ 180
+   }
+  }
+ }
+ {
+  coords 8020.358 28.645 6944.223
+  angleY 177.597
+  scale 1.91
+  {
+   GenericEntity {
+    ID "569AF607AA3894C2"
+    coords 0 0 0
+    angleZ 180
+   }
+  }
+ }
+}
+SCR_DestructibleBuildingEntity : "{92BF4D8171FECF83}Prefabs/Structures/Agriculture/Gates/GateCollectiveFarm_01/GateCollectiveFarm_01_Montignac.et" {
+ coords 7341.291 0.264 6261.146
+ angleY 75
+ scale 3.477
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ _track_1_start {
+  coords 7280.123 54.157 6266.357
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "point-of-interest-2"
+  m_sDescription "Départ"
+  m_bUseWorldScale 0
+ }
+ _track_1_finish {
+  coords 7345.912 54.223 6262.536
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "point-of-interest"
+  m_sDescription "Arrviée"
+  m_bUseWorldScale 0
+ }
+ mrk_1_1 {
+  coords 8015.516 35.904 7281.187
+  angleY 82.877
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "direction-of-attack"
+  m_sDescription ""
+  m_bUseWorldScale 0
+ }
+ mrk_1_2 {
+  coords 8658.938 51.305 7344.408
+  angleX -0.477
+  angleY -157.113
+  angleZ -1.173
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "direction-of-attack"
+  m_sDescription ""
+  m_bUseWorldScale 0
+ }
+ mrk_1_3 {
+  coords 8449.231 59.34 6461.217
+  angleX 0.777
+  angleY -97.125
+  angleZ -0.999
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "direction-of-attack"
+  m_sDescription ""
+  m_bUseWorldScale 0
+ }
+ mrk_1_4 {
+  coords 7523.077 56.68 6297.575
+  angleX 0.777
+  angleY -97.125
+  angleZ -0.999
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "direction-of-attack"
+  m_sDescription ""
+  m_bUseWorldScale 0
+ }
+ mrk_1_5 {
+  coords 7766.768 47.601 5940.097
+  angleX 0.777
+  angleY -97.125
+  angleZ -0.999
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "direction-of-attack"
+  m_sDescription ""
+  m_bUseWorldScale 0
+ }
+}
+$grp GenericEntity : "{CD18971542C21223}Prefabs/Structures/Signs/Warnings/SignDangerCurve_01_right.et" {
+ {
+  coords 8009.77 35.888 7287.976
+  angleY -180
+  scale 1.78
+ }
+ {
+  coords 14711.71 88.843 9479.473
+  angleY 93.78
+  scale 1.74
+ }
+ {
+  coords 8459.221 62.046 6445.36
+  angleY 2.214
+  scale 1.74
+ }
+ {
+  coords 13002.791 42.86 12374.74
+  angleY 23.809
+  scale 1.74
+ }
+}
+$grp GenericEntity : "{F54738CD001CB336}Prefabs/Structures/Signs/Warnings/SignDangerCurve_01_left.et" {
+ {
+  coords 7525.125 56.693 6304.101
+  angleY 166.443
+  scale 1.49
+ }
+ {
+  coords 7522.695 56.693 6303.515
+  angleY 166.443
+  scale 1.49
+ }
+ {
+  coords 7520.265 56.693 6302.929
+  angleY 166.443
+  scale 1.49
+ }
+ {
+  coords 7517.834 56.693 6302.343
+  angleY 166.443
+  scale 1.49
+ }
+ {
+  coords 7527.555 56.693 6304.687
+  angleY 166.443
+  scale 1.49
+ }
+}

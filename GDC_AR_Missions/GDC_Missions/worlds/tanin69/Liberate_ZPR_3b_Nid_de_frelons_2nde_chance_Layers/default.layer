@@ -1,0 +1,20 @@
+GenericEntity : "{1F3291C2A7E2BA00}Prefabs/Props/Wrecks/BRDM2_wreck/BRDM2_wreck_static.et" {
+ coords 13805.733 35.841 5895.395
+ angles -1.947 -25.028 -2.053
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15517.22 52.125 4435.85
+ m_randomFlags {
+  TILW_FlagSampling "{669AB6EBA536FF20}" {
+   m_flagNames {
+    "Ambush_1"
+    "Ambush_2"
+    "Ambush_3"
+    "Ambush_4"
+    "Ambush_5"
+    "Ambush_6"
+   }
+   m_k 4
+  }
+ }
+}
