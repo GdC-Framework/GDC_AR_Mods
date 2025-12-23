@@ -1,0 +1,193 @@
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ {
+  coords 12607.812 12.384 13227.554
+  m_queryRadius 300
+  m_flagName "OK_US"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+ {
+  coords 12157.321 6.915 13286.729
+  m_queryRadius 200
+  m_flagName "OK_US"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+ {
+  coords 12890.203 28.604 12329.47
+  m_queryRadius 200
+  m_flagName "OK_US"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+ {
+  coords 11894.748 8.298 13069.057
+  m_queryRadius 200
+  m_flagName "OK_US"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+ {
+  coords 13008.146 31.593 12771.188
+  m_queryRadius 400
+  m_flagName "OK_US"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{66D6FBFB2C3D2D22}" {
+   m_name "US AI Spawn"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{670362940455907D}" {
+     m_prefab "{F831DFB4A9B46152}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_RifleSquad.et"
+     m_locationName "Grp_US_Spawn"
+     m_waypointNames {
+      "Grp_US_1_1_WP"
+     }
+    }
+    TILW_SpawnGroupInstruction "{670362943E88E28D}" {
+     m_executionDelay 7
+     m_prefab "{19843E954790DF28}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_FireTeam.et"
+     m_locationName "Grp_US_Spawn"
+     m_waypointNames {
+      "Grp_US_1_1_WP"
+     }
+    }
+    TILW_SpawnGroupInstruction "{670362947775F2FE}" {
+     m_executionDelay 9
+     m_prefab "{19843E954790DF28}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_FireTeam.et"
+     m_locationName "Grp_US_Spawn"
+     m_waypointNames {
+      "Grp_US_1_3_WP"
+     }
+    }
+    TILW_SpawnGroupInstruction "{670362948932FACB}" {
+     m_executionDelay 11
+     m_prefab "{19843E954790DF28}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_FireTeam.et"
+     m_locationName "Grp_US_Spawn"
+     m_waypointNames {
+      "Grp_US_1_4_WP"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{6704F361C8AFD965}" {
+     m_executionDelay 240
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "BTR_HQ_Reinf_Spawn"
+     m_crewConfig TILW_CrewConfig "{6704F3621660F455}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6704F362105F846A}" {
+        m_crewStations {
+         TILW_CrewStation "{6704F3621D21ED98}" {
+          m_characters {
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "Grp_HQ_1_WP_SAD"
+        }
+        m_waypointDelay 60
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnVehicleInstruction "{6704F3643DC20B68}" {
+     m_executionDelay 240
+     m_prefab "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et"
+     m_locationName "BMP_HQ_Reinf_Spawn"
+     m_crewConfig TILW_CrewConfig "{6704F3621660F455}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6704F362105F846A}" {
+        m_crewStations {
+         TILW_CrewStation "{6704F3621D21ED98}" {
+          m_characters {
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+           "{2B97973CD921E6AC}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_AFRF_MSV_Flora_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "Grp_HQ_1_WP_SAD"
+        }
+        m_waypointDelay 30
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnGroupInstruction "{6704F3627907CA6D}" {
+     m_executionDelay 120
+     m_prefab "{D0273BB43CCC5B9D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_Team_AT.et"
+     m_locationName "Grp_HQ1_Reinf_Spawn"
+     m_waypointNames {
+      "Grp_HQ_1_WP_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6704F3657BF81E15}" {
+     m_executionDelay 125
+     m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+     m_locationName "Grp_HQ1_Reinf_Spawn"
+     m_waypointNames {
+      "Grp_HQ_1_WP_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6704F362F5AF3C42}" {
+     m_executionDelay 135
+     m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+     m_locationName "Grp_HQ2_Reinf_Spawn"
+     m_waypointNames {
+      "Grp_HQ_1_WP_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6704F365A045A158}" {
+     m_executionDelay 130
+     m_prefab "{D0273BB43CCC5B9D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_Team_AT.et"
+     m_locationName "Grp_HQ2_Reinf_Spawn"
+     m_waypointNames {
+      "Grp_HQ_1_WP_SAD"
+     }
+    }
+    TILW_SendMessageInstruction "{6703628845833434}" {
+     m_messageTitle "Message du QG"
+     m_messageBody "La section Charlie a pris position sur Csorgy. Ils vont engager les hostiles dans très peu de temps."\
+     ""\
+     "Over !"
+    }
+    TILW_SendMessageInstruction "{6706CB67F15B1F94}" {
+     m_executionDelay 120
+     m_messageTitle "Message du QG"
+     m_messageBody "Des hostiles venant de la zone logistique de Motyka ont été vus."
+    }
+    TILW_SendMessageInstruction "{6706CB6434D26BE4}" {
+     m_executionDelay 140
+     m_messageTitle "Message du QG"
+     m_messageBody "Je répète."\
+     ""\
+     "Des hostiles venant de la zone logistique de Motyka ont été vus."\
+     ""\
+     "Over !"
+    }
+   }
+   m_condition TILW_LiteralTerm "{670362976C853DC0}" {
+    m_flagName "OK_US"
+   }
+  }
+ }
+}

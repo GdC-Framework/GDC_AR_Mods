@@ -141,6 +141,8 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_aVisibleForFactions {
    "USSR"
   }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
   m_iOrder 4
  }
 }

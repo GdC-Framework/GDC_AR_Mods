@@ -1,0 +1,45 @@
+$grp Vehicle : "{21E9A875C0A3C409}Prefabs/Vehicles/Helicopters/UH1H/UH1H_armed_gunship_HE.et" {
+ UH1H_armed_gunship_HE1 {
+  coords 2637.181 24.219 5467.458
+  angles 0 90 0
+ }
+ UH1H_armed_gunship_HE2 {
+  coords 2637.181 24.219 5517.458
+  angles 0 90 0
+ }
+}
+$grp SCR_AIGroup : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et" {
+ grp_US_IA_1 {
+  coords 2635.05 24.219 5381.555
+  m_aStaticWaypoints {
+   "grp_US_IA_1_WP"
+  }
+ }
+ grp_US_IA_2 {
+  coords 2783.408 24.219 5394.077
+  angles 0 -90 0
+  m_aStaticWaypoints {
+   "grp_US_IA_2_WP"
+  }
+ }
+ grp_US_IA_3 {
+  coords 2720.656 24.219 5367.651
+  m_aStaticWaypoints {
+   "grp_US_IA_3_WP"
+  }
+ }
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ grp_US_IA_1_WP {
+  coords 2636.451 24.219 5389.665
+  CompletionRadius 15
+ }
+ grp_US_IA_2_WP {
+  coords 2789.44 24.219 5393.398
+  CompletionRadius 10
+ }
+ grp_US_IA_3_WP {
+  coords 2724.662 24.219 5370.561
+  CompletionRadius 10
+ }
+}

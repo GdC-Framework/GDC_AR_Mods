@@ -416,8 +416,22 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
  Ambushed {
   coords 15916.835 61.905 1267.597
   {
-   SCR_DefendWaypoint Grp_3_WP : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
-    coords -579.479 -0.749 240.05
+   $grp SCR_DefendWaypoint : "{2A81753527971941}Prefabs/AI/Waypoints/AIWaypoint_Defend_CP.et" {
+    Grp_3_WP {
+     coords -579.479 -0.749 240.05
+    }
+    Grp_12_WP {
+     coords -423.065 -14.999 -874.846
+     CompletionRadius 50
+    }
+    Grp_13_WP {
+     coords -164.283 -15.03 -767.666
+     CompletionRadius 50
+    }
+    Grp_14_WP {
+     coords -76.134 -39.351 -920.516
+     CompletionRadius 50
+    }
    }
    SCR_DefendWaypoint Grp_1_WP : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
     coords -17.332 1.084 -38.533
@@ -516,6 +530,34 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
       "Grp_1_WP"
      }
     }
+    Grp_12 {
+     coords -429.547 -14.998 -871.843
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_waypointNames {
+      "Grp_12_WP"
+     }
+    }
+    Grp_13 {
+     coords -165.554 -15.029 -764.112
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_waypointNames {
+      "Grp_13_WP"
+     }
+    }
+    Grp_14 {
+     coords -75.765 -39.687 -944.318
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_waypointNames {
+      "Grp_14_WP"
+     }
+    }
+    Grp_15 {
+     coords -335.185 -35.68 -974.862
+     m_prefab "{5BEA04939D148B1D}Prefabs/Groups/INDFOR/Group_FIA_FireTeam.et"
+     m_waypointNames {
+      "Grp_14_WP"
+     }
+    }
    }
    SCR_DefendWaypoint Grp_2_WP : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
     coords -5.34 0.468 -13.95
@@ -538,6 +580,9 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
  Assault {
   coords 15415.966 64.053 1389.194
   {
+   SCR_AIWaypoint Grp_Assaut_4_WP_1 : "{06E1B6EBD480C6E0}Prefabs/AI/Waypoints/AIWaypoint_ForcedMove.et" {
+    coords 326.885 0.104 93.83
+   }
    $grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
     Spawn_Grp_Assaut_1 {
      coords -544.499 -14.769 395.985
@@ -580,10 +625,11 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
      m_prefab "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et"
      m_conditionFlag "GO-FLY"
      m_spawnTimings {
-      600
+      480
      }
      m_waypointNames {
-      "Grp_Assaut_4_WP"
+      "Grp_Assaut_4_WP_2"
+      ""
      }
     }
     Spawn_Grp_Assaut_5 {
@@ -609,7 +655,7 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
     Grp_Assaut_3_WP {
      coords -977.909 5.257 -25.22
     }
-    Grp_Assaut_4_WP {
+    Grp_Assaut_4_WP_2 {
      coords 254.101 0.479 -42.883
      CompletionRadius 100
     }

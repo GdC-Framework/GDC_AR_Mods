@@ -1,0 +1,33 @@
+SCR_ChimeraCharacter : "{3967948B72443B25}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_BaseLoadout.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterRankComponent "{528E6D4286AA2D8F}" {
+   m_iRank LIEUTENANT
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Armband {
+     Prefab "{35E1283039FF0748}Prefabs/Characters/Armbands/Dual/Armband_Dual_Blue.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{651D048C906638EA}" {
+    }
+    ItemsInitConfigurationItem "{61B52E48B0B8D77D}" {
+    }
+    ItemsInitConfigurationItem "{62B69B4954817CE1}" {
+    }
+    ItemsInitConfigurationItem "{6702BBAB573EC096}" {
+     TargetStorage "Jacket/Jacket_FROG_Combat_Shirt.et"
+     PrefabsToSpawn {
+      "{8FF49793853DB2F9}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_17rnd_M1152.et" "{8FF49793853DB2F9}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_17rnd_M1152.et"
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ angles 0 -63.538 0
+}

@@ -1,0 +1,219 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Les russes ont pris le contrôle de l'aéroport international de Zimnitrita. A partir de là, ils disposent d'une solide base logistique et militaire pour lancer des asssauts sur tout l'est du territoire."\
+  ""\
+  "La compagnie mécanisée russe à laquelle nous faisons face a pris le contrôle de la zone logisitique de Motyka et pousse pour prendre le contrôle de Soperk."\
+  ""\
+  "La compagnie Easy est en position sur Soperk et pousse des éléments d'infanterie sur Csorgy pour bloquer l'avance des russes."\
+  ""\
+  "Notre section dédiée à la lutte anti-blindée a fait un contournement par l'ouest pour tenter une attaque par le flanc ou l'arrière. Nous sommes à pied d'oeuvre à l'ouest de la forêt entourant l'ancienne base militaire de Zar Shah."\
+  ""\
+  ""\
+  ""\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita, années 2000."\
+  ""\
+  "La Fédération de Russie est nostalgique de son empire. Elle décide de reprendre par la force les anciennes répuliques soviétiques, à commencer par la belle terre de Zimnitrita."\
+  ""\
+  "L'US Army est appelée à la rescousse pour empêcher l'ogre de faire main basse sur la liberté d'acheter ce qu'on veut quand on de l'argent."\
+  ""\
+  "Le choc frontal tant redouté depuis la guerre froide ne peut plus être évité."\
+  ""\
+  "La <b>compagnie Easy du 2nd bataillon du 2nd régiment de l'USMC</b> est engagée en première ligne. Elle fait face à une <b>compagnie mécanisée russe</b>, au matériel daté. Mais, comme toujours, les russes misent sur la masse pour prendre l'avantage."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif principal</b>"\
+  "Empêcher la concentration de l'assaut russe sur Csorgy en agressant le flanc ou les arrières de la compagnie russe."\
+  ""\
+  "La mission sera jugée réussie si au moins 2 des 3 pelotons de combat russes (1er,  2nd et  3ème \"platoon\") sont hors de combat."\
+  ""\
+  "<b>Objectifs secondaires</b>"\
+  "Selon la situation, à l'appréciation du CdO."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "Il faut un temps magnifique et ça devrait durer."\
+  ""\
+  "<b><color name=\"red\">Matériel ennemi</b></color>"\
+  "Chaque peloton russe est composé d'un BMP-1 et d'un BTR-70, avec 8 à 9 hommes pour chaque véhicule, hors équipage."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ j_Insert_Extract {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Fin de mlssion"
+  m_sTextData "Fin de mission à l'appréciation du chef de section."\
+  ""\
+  "En cas de retraite, les effectifs et le matériel devront être placés en sécurité hors de toute menace ennemie."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 10
+ }
+ g_Equipment {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "<b><color name=\"red\">Véhicules</color></b>"\
+  "- 2 Strykers Dragoon (canon de 30 mm + M240)"\
+  "- 1 Stryker CROWS (M2 téléopérée) "\
+  ""\
+  "<b><color name=\"red\">Equipes</color></b>"\
+  "- 1 équipe d'appui AT avec 2 binômes AT et AAT (MAAWS)"\
+  "- 2 équipes d'assaut"\
+  "- Médical, officiers, etc."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss de la base de Varpadany"
+  m_sTextData "Vous n'aurez pas de communication directe avec la section qui monte sur Csorgy. Et j'ai autre chose à foutre que de gérer vos chichis ou vos états d'âme. Démerdez-vous."\
+  ""\
+  "Et le premier qui chouine parce que ça manque de posters de femme à poil dans les strykers prendra mon pied au cul."
+  m_aVisibleForFactions {
+   ""
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Héliportage de l'infanterie sur zone. Plusieurs rotations seront nécessaires."\
+  ""\
+  "> Pas de civil sur zone => pas de limitation de tir sur les infrastructures et les habitations."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ RUS_HQ {
+  coords 13228.436 50.658 12495.533
+  angles 0 0 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "HQ"
+  m_bUseWorldScale 0
+ }
+ RUS_1st_Platoon {
+  coords 13138.646 14.186 13843.605
+  angles 0 0 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "1st Platoon"
+  m_bUseWorldScale 0
+ }
+ RUS_2nd_Platoon {
+  coords 12960.144 23.123 13083.348
+  angles 0 0 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "2nd Platoon"
+  m_bUseWorldScale 0
+ }
+ RUS_3rd_Platoon {
+  coords 12640.995 13.847 13101.825
+  angles 0 0 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "3rd Platoon"
+  m_bUseWorldScale 0
+ }
+ RUS_3rd_direction {
+  coords 12582.437 14.144 13045.107
+  angles 0 144.5 0
+  m_sImageSet "{3262679C50EF4F01}UI/Textures/Icons/icons_wrapperUI.imageset"
+  m_sQuadName "downloading"
+  m_fWorldSize 60
+  m_bUseWorldScale 0
+ }
+ RUS_2nd_direction {
+  coords 12857.615 8.822 13026.672
+  angles 0 153.574 0
+  m_sImageSet "{3262679C50EF4F01}UI/Textures/Icons/icons_wrapperUI.imageset"
+  m_sQuadName "downloading"
+  m_fWorldSize 60
+  m_bUseWorldScale 0
+ }
+ US_1st_Inf {
+  coords 11850.653 19.8 12109.921
+  angles 0 0 0
+  m_sImageSet "{1228936E5DB30403}UI/Textures/GroupManagement/FlagIcons/GroupFlagsBlufor.imageset"
+  m_MarkerColor 0.028 0.298 0.855 1
+  m_fWorldSize 60
+  m_sDescription "1st Platoon"
+  m_bUseWorldScale 0
+ }
+ US_HQ {
+  coords 11740.428 30.094 12013.325
+  angles 0 0 0
+  m_sImageSet "{1228936E5DB30403}UI/Textures/GroupManagement/FlagIcons/GroupFlagsBlufor.imageset"
+  m_MarkerColor 0.028 0.298 0.855 1
+  m_sQuadName "commander"
+  m_fWorldSize 60
+  m_sDescription "US HQ"
+  m_bUseWorldScale 0
+ }
+ US_Players {
+  coords 11185.075 10.015 14049.021
+  angles -0.895 0 0
+  m_sImageSet "{BCD5479864D1A79A}UI/Textures/Map/topographicIcons/icons_topographic_map.imageset"
+  m_MarkerColor 0.028 0.298 0.855 1
+  m_sQuadName "ancient-fortification"
+  m_fWorldSize 60
+  m_sDescription "You Are Here !"
+  m_bUseWorldScale 0
+ }
+ US_1st_direction {
+  coords 11868.484 28.844 12171.123
+  angles 0 -71.465 0
+  m_sImageSet "{3262679C50EF4F01}UI/Textures/Icons/icons_wrapperUI.imageset"
+  m_MarkerColor 0.028 0.046 0.855 1
+  m_sQuadName "downloading"
+  m_fWorldSize 60
+  m_bUseWorldScale 0
+ }
+}

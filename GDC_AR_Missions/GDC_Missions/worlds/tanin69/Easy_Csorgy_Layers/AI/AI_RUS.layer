@@ -1,0 +1,373 @@
+$grp GenericEntity {
+ BTR_HQ_Reinf_Spawn {
+  coords 12794.372 28.518 12342.637
+  angles -0.448 -89.937 -0.001
+ }
+ Grp_HQ1_Reinf_Spawn {
+  coords 12814.011 28.3 12286.525
+  angles -2.677 0.104 -4.023
+ }
+ Grp_HQ2_Reinf_Spawn {
+  coords 13046.9 41.594 12601.056
+  angles -2.677 0.104 -4.023
+ }
+ BMP_HQ_Reinf_Spawn {
+  coords 13136.476 30.466 12920.022
+  angles 0.223 150.064 0.388
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ BMP_1_1 {
+  coords 13141.883 22.007 13989.719
+  angles -0.181 -52.995 0.984
+  m_prefab "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BTR_1_2 {
+  coords 13072.652 15.95 13672.95
+  angles 0 -90 0
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BMP_2_1 {
+  coords 12961.041 19.76 13217.425
+  angles -0.181 -52.995 0.984
+  m_prefab "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BTR_2_2 {
+  coords 12972.978 22.823 13076.219
+  angles -0.998 22.006 0.079
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BMP_3_1 {
+  coords 12556.727 16.612 13113.873
+  angles 0.947 -134.587 0.324
+  m_prefab "{1DC01AAACFFA8B63}Prefabs/Vehicles/Tracked/BMP1/BMP1_base.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BTR_3_2 {
+  coords 12259.008 13.133 13050.235
+  angles -1.477 -132.894 -2.901
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ BTR_HQ_1 {
+  coords 13097.645 49.578 12475.164
+  angles 4.537 -66.026 -12.408
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_crewConfig TILW_CrewConfig "{66FCF7EEAFE03FF2}" {
+   m_crewGroups {
+    TILW_CrewGroup "{66FCF7EEA99E5B06}" {
+     m_crewStations {
+      TILW_CrewStation "{66FCF7EEB36236D6}" {
+       m_allowCargo 0
+       m_characters {
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+        "{D847E9108E4739F9}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VSR/Character_RHS_RF_MSV_VSR_Crew.et"
+       }
+      }
+     }
+     m_waypointNames {
+      ""
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+}
+SCR_SearchAndDestroyWaypoint Grp_HQ_1_WP_SAD : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+ coords 12527.869 16.86 13063.019
+ CompletionRadius 300
+}
+$grp SCR_AIGroup : "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et" {
+ Grp_1_1a {
+  coords 13205.144 22.502 13910.774
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{B3C496CCFA72D25E}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SL.et"
+   "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et"
+   "{C9CA4F02D899C1F8}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AMG.et"
+   "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_1_1a_WP"
+  }
+ }
+ Grp_1_2a {
+  coords 13065.445 16.457 13642.886
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{B3C496CCFA72D25E}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SL.et"
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_1_2a_WP"
+  }
+ }
+ Grp_2_1a {
+  coords 12890.725 19.849 13377.341
+  angles 0 -45 0
+  m_aUnitPrefabSlots +{
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_2_1a_WP"
+  }
+ }
+ Grp_2_2a {
+  coords 12872.668 22.422 13073.696
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{B3C496CCFA72D25E}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SL.et"
+   "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et"
+   "{C9CA4F02D899C1F8}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AMG.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_2_2a_WP"
+  }
+ }
+ Grp_3_1 {
+  coords 12322.385 10.394 13127.486
+  angles 0 -45 0
+  m_aUnitPrefabSlots +{
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_3_1_WP"
+  }
+ }
+ Grp_3_2 {
+  coords 12672.983 12.952 13047.146
+  angles 0 -45 0
+  m_aUnitPrefabSlots +{
+   "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et"
+   "{C9CA4F02D899C1F8}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AMG.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_3_2_WP"
+  }
+ }
+ Grp_HQ_1 {
+  coords 13082.214 49.151 12371.357
+  angles 0 -45 0
+  m_aUnitPrefabSlots +{
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_HQ_1_WP"
+  }
+ }
+ Grp_HQ_2 {
+  coords 13184.251 50.657 12497.738
+  angles 0 -45 0
+  m_aUnitPrefabSlots +{
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+  }
+  m_aStaticWaypoints {
+   "Grp_HQ_2_WP"
+  }
+ }
+ Grp_1_1b {
+  coords 12962.036 22.581 14091.622
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{9E5162BC890ADFCF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SR.et"
+   "{DE4C67D3C8F6704D}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AR.et"
+   "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et"
+   "{4375F8D9CF5FCB47}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AAT.et"
+  }
+ }
+ Grp_1_2b {
+  coords 13111.351 14.615 13754.925
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{9E5162BC890ADFCF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SR.et"
+   "{DE4C67D3C8F6704D}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AR.et"
+   "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et"
+   "{4375F8D9CF5FCB47}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AAT.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+  }
+ }
+ Grp_2_2b {
+  coords 12910.924 20.323 13081.564
+  angles 0 -45 0
+  m_aUnitPrefabSlots {
+   "{9E5162BC890ADFCF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SR.et"
+   "{06E40E12B17F6E11}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AT.et"
+   "{4375F8D9CF5FCB47}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AAT.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+  }
+ }
+}
+$grp SCR_DefendWaypoint : "{FAD1D789EE291964}Prefabs/AI/Waypoints/AIWaypoint_Defend_Large.et" {
+ Grp_1_1a_WP {
+  coords 13048.568 20.143 14050.954
+  angles 5.799 0.007 0.001
+  CompletionRadius 120
+ }
+ Grp_1_2a_WP {
+  coords 13042.354 16.748 13665.884
+  angles 5.799 0.007 0.001
+  CompletionRadius 120
+ }
+ Grp_2_1a_WP {
+  coords 12886.327 19.403 13361.341
+  angles 5.799 0.007 0.001
+  CompletionRadius 60
+ }
+ Grp_2_2a_WP {
+  coords 12902.836 22.212 13080.418
+  angles 5.799 0.007 0.001
+  CompletionRadius 60
+ }
+ Grp_3_1_WP {
+  coords 12314.399 16.824 13131.981
+  angles 5.799 0.007 0.001
+  CompletionRadius 60
+ }
+ Grp_3_2_WP {
+  coords 12651.863 18.903 13058.528
+  angles 0.001 0.058 -1.343
+  CompletionRadius 120
+ }
+ Grp_HQ_1_WP {
+  coords 13220.546 50.655 12565.463
+  angles -5.353 0.184 -0.908
+  CompletionRadius 80
+ }
+ Grp_HQ_2_WP {
+  coords 13086.172 49.236 12366.882
+  angles 3.073 -0.611 -5.381
+  CompletionRadius 80
+ }
+}

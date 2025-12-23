@@ -1,0 +1,19 @@
+GenericEntity Grp_US_Spawn {
+ coords 11994.049 19.789 12600.624
+}
+SCR_SearchAndDestroyWaypoint Grp_US_1_4_WP : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+ coords 12315.73 14.189 13124.231
+ CompletionRadius 60
+}
+$grp SCR_DefendWaypoint : "{FAD1D789EE291964}Prefabs/AI/Waypoints/AIWaypoint_Defend_Large.et" {
+ Grp_US_1_1_WP {
+  coords 12082.528 20.074 12608.106
+  angles 5.799 0.007 0.001
+  CompletionRadius 60
+ }
+ Grp_US_1_3_WP {
+  coords 12051.499 18.078 12723.871
+  angles 5.799 0.007 0.001
+  CompletionRadius 60
+ }
+}

@@ -1,0 +1,253 @@
+$grp SCR_AIGroup : "{19843E954790DF28}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_FireTeam.et" {
+ Stryker_Dragoon_1_Squad {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+   PS_GroupCallsignAssigner "{6702BB9A7D0BDF7E}" {
+    m_iCompanyCallsign 1
+    m_iPlatoonCallsign 1
+    m_iSquadCallsign 2
+   }
+  }
+  coords 11188.81 7.837 14063.658
+  angles 0 45 0
+  m_aUnitPrefabSlots {
+   "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+   "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+   "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+   "{9E0B5441B270B059}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AAR.et"
+   "{E5B18C3F27FFD5D8}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL_GL.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+  }
+  m_bSetPlayable 1
+ }
+ Stryker_CdO_Squad {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+   PS_GroupCallsignAssigner "{6702BB9ACB27F1F2}" {
+    m_iCompanyCallsign 1
+    m_iPlatoonCallsign 1
+    m_iSquadCallsign 1
+   }
+  }
+  coords 11163.895 8.699 14076.577
+  angles 0 3.757 0
+  m_aUnitPrefabSlots {
+   "{D67950161BE7FDD5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_PL.et"
+   "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+   "{0CC861F88F205BDB}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL.et"
+   "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+   "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+   "{BDE77F3F89FA3EF5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AAT.et"
+   "{FA4771514D0D700A}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AT.et"
+   "{BDE77F3F89FA3EF5}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AAT.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+  }
+  m_bSetPlayable 1
+ }
+ Stryker_Dragoon_2_Squad {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+   PS_GroupCallsignAssigner "{6702BB9ABC3BD16F}" {
+    m_iCompanyCallsign 1
+    m_iPlatoonCallsign 1
+    m_iSquadCallsign 3
+   }
+  }
+  coords 11207.917 7.808 14045.38
+  angles 0 50.934 0
+  m_aUnitPrefabSlots {
+   "{0B0F9BA9E9A6E118}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_SL.et"
+   "{0C1639553F575AD3}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Medic.et"
+   "{66876AB6DB22430B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AR.et"
+   "{9E0B5441B270B059}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_AAR.et"
+   "{E5B18C3F27FFD5D8}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_TL_GL.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{A0CF962CDFDECE30}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Rifleman_LAT.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+   "{7402385F6EE584DD}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Crew.et"
+  }
+  m_bSetPlayable 1
+ }
+}
+$grp Vehicle : "{45DDFA40E1CB6B82}Prefabs/Vehicles/Wheeled/Stryker/M1296/Stryker_Dragoon.et" {
+ Stryker_Dragoon_1 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5EAD79DA34C92091}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5EAD79DA34C92088}" {
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208E}" {
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208D}" {
+      SlotTemplate InventoryStorageSlot Torn {
+       Prefab "{5B2FD067D70C1E8F}Prefabs/Items/Medicine/EpinephrineInjection/ACE_Medical_EpinephrineInjection.et"
+      }
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208C}" {
+      NumSlots 4
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929E6}" {
+      NumSlots 6
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929E9}" {
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929EB}" {
+      SlotTemplate LoadoutSlotInfo MA {
+       Prefab "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et"
+      }
+      NumSlots 6
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929EA}" {
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{6704AA48A57EF700}" {
+      SlotTemplate LoadoutSlotInfo Salines {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{6704AA48CE40F25C}" {
+      SlotTemplate LoadoutSlotInfo Smoke_Red {
+       Prefab "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et"
+      }
+      NumSlots 6
+     }
+    }
+   }
+  }
+  coords 11182.955 8.234 14058.431
+  angles 0 45 0
+ }
+ Stryker_Dragoon_2 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5EAD79DA34C92091}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5EAD79DA34C92088}" {
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208E}" {
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208D}" {
+      SlotTemplate InventoryStorageSlot Torn {
+       Prefab "{5B2FD067D70C1E8F}Prefabs/Items/Medicine/EpinephrineInjection/ACE_Medical_EpinephrineInjection.et"
+      }
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{5EAD79DA34C9208C}" {
+      NumSlots 4
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929E6}" {
+      NumSlots 6
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929E9}" {
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929EB}" {
+      SlotTemplate LoadoutSlotInfo MA {
+       Prefab "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et"
+      }
+      NumSlots 6
+     }
+     MultiSlotConfiguration "{5EAD79DA34C929EA}" {
+      NumSlots 12
+     }
+     MultiSlotConfiguration "{6704AA48A57EF700}" {
+      SlotTemplate LoadoutSlotInfo Salines {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{6704AA48CE40F25C}" {
+      SlotTemplate LoadoutSlotInfo Smoke_Red {
+       Prefab "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et"
+      }
+      NumSlots 6
+     }
+    }
+   }
+  }
+  coords 11203.243 7.23 14036.138
+  angles 0 45 0
+ }
+}
+Vehicle Stryker_CdO : "{E3DD72FD06BA2320}Prefabs/Vehicles/Wheeled/Stryker/M1126/CROWS/Stryker_CROWS.et" {
+ components {
+  SCR_UniversalInventoryStorageComponent "{5EAD79DA34C92091}" {
+   MultiSlots {
+    MultiSlotConfiguration "{5EAD79DA34C92088}" {
+     NumSlots 20
+    }
+    MultiSlotConfiguration "{5EAD79DA34C9208E}" {
+     NumSlots 12
+    }
+    MultiSlotConfiguration "{5EAD79DA34C9208C}" {
+     SlotTemplate InventoryStorageSlot Grenade {
+      Prefab "{5B2FD067D70C1E8F}Prefabs/Items/Medicine/EpinephrineInjection/ACE_Medical_EpinephrineInjection.et"
+     }
+    }
+    MultiSlotConfiguration "{5EAD79DA34C929E6}" {
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{5EAD79DA34C929EB}" {
+     SlotTemplate InventoryStorageSlot MA {
+      Prefab "{CC7F787C3ECF678F}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4Ball_1Tracer.et"
+     }
+     NumSlots 5
+    }
+    MultiSlotConfiguration "{5EAD79DA34C929EA}" {
+     SlotTemplate LoadoutSlotInfo MAg {
+      Prefab "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et"
+     }
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{60DE236EF75CAE7B}" {
+     SlotTemplate LoadoutSlotInfo Ammo {
+      Prefab "{3343A055A83CB30D}Prefabs/Weapons/Grenades/M18/Smoke_M18_Red.et"
+     }
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{6704AA7E75BD0D36}" {
+     SlotTemplate LoadoutSlotInfo Smoke_Yellow {
+      Prefab "{9BBDEE253A16CC66}Prefabs/Weapons/Grenades/M18/Smoke_M18_Yellow.et"
+     }
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{6704AA7E753C11B8}" {
+     SlotTemplate LoadoutSlotInfo Smoke_Purple {
+      Prefab "{14C1A0F061D9DDEE}Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet.et"
+     }
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{6704AA7E74BF5AEC}" {
+     SlotTemplate LoadoutSlotInfo HEAT_AMMO {
+      Prefab "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et"
+     }
+     NumSlots 6
+    }
+    MultiSlotConfiguration "{6704AA7E743D8828}" {
+     SlotTemplate LoadoutSlotInfo HEDP_AMMO {
+      Prefab "{A0E2F8935E55FD92}Prefabs/Magazine/Magazine_84mm_HEDP.et"
+     }
+     NumSlots 6
+    }
+   }
+  }
+ }
+ coords 11163.622 8.714 14068.708
+ angles 0 8.315 0
+}
