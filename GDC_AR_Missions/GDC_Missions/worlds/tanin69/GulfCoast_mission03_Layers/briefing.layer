@@ -1,0 +1,309 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Après un résultat que l'on peut qualifier de discutable sur la mission précédente, l'étoile du commandant de la compagnie Easy a singuilèrement terni. Nos unités d'infanterie légère ne sont pas de taille (ou pas assez compétentes) pour faire face à des compagnies motorisées russes."\
+  ""\
+  "Le commandement du Battle Group reprend les choses et main : la Coy Delta \"Outlaws\" du 2nd Light Armored Reconnaissance Battalion, équipée de LAV-25, monte au feu en appui de la Coy Easy."\
+  ""\
+  "Le platoon Charlie de la Coy Easy (vous) est renforcé par un LAV-25 et un sergent de la Coy Delta \"Outlaws\", placés sous le commandement du Platoon leader de Charlie."\
+  ""\
+  "<b>Le LAV-25 embarque 60 obus APDST supplémentaires (META : attention, pas d'animation de rechargement, il faut attendre une dizaine de secondes pour reprendre la main sur les commandes).</b>"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Votre objectif prioritaire reste de neutraliser les défenses anti-aériennes  pour libérer nos hélicos."\
+  ""\
+  "<b><color name=\"red\">Objectif</color></b>"\
+  "Détruire la ZSU-23 \"Shilka\" sur Haven. Si vous en avez les moyens, détruire la ZU-23 sur Lake Haven Airport."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ d_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "Les 24 heures qui ont été nécessaires pour réarticuler notre dispositif ont permis aux russes de se réorganiser."\
+  ""\
+  "Les positions approximatives et les mouvements présumés des unités sovétiques sont marqués sur carte. En résumé :"\
+  "- Les 3 platoons survivants de la Coy 2 russe poussent sur toute la largeur de la zone"\
+  "- La Shilka s'est mise en protection sur Haven, protégée par 2 platoons de la Coy 3 venus de Lake Haven Airport."\
+  "- Lake Haven Airport est protégé par 2 platoons de la Coy 3 et les unités du QG du bataillon sovétique."\
+  ""\
+  "Mauvaise nouvelle : une reconnaissance aérienne de haute altitude nous a permis d'identifier une ZU-23 sur l'aéroport de Haven."\
+  ""\
+  "<b><color name=\"orange\">Météo</b></color>"\
+  "Temps pluvieux. L'évolution de la météo est incertaine."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vous êtes positionnés sur Navajo 2. Votre zone d'intervention est délimitée sur carte."\
+  ""\
+  "> Vous pouvez être accrochés par les platoons 1 et 2 de la Coy 2. Percez  ou contournez ces unités, inutile de vous user sur cette phase."\
+  ""\
+  "> Poussez sur Haven pour détruire la ZSU-23."\
+  "Si vous décidez de vous arrêter là, sécurisez Haven, puis allez arracher le drapeau soviétique à côté de l'église (victoire mineure)."\
+  ""\
+  "> Si vous poursuivez : détruisez la ZU-23 sur Lake Haven Airport."\
+  "Dès que la ZU-23 est détuite, repliez-vous sur Haven et allez déraciner le drapeau soviétique à côté de l'église (victoire majeure)."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ f_Intel2 {
+  coords 10956.793 18.97 2844.508
+  m_sTitle "Nouveaux renseignements"
+  m_sTextData "<i>Reco aérienne haute altitude datant de 30 minutes</i>"\
+  ""\
+  "<b><color name=\"red\">Mise à jour des renseignements sur Lake Haven Airport</color></b>"\
+  ""\
+  "- 4 BTR au nord de l'aéroport"\
+  "- 1 BTR au sud"\
+  "=> les positions sont marquées sur carte"\
+  ""\
+  "Pas d'information sur la localisation des troupes à pied. Nos analystes pensent qu'il y a environ 60 PAX sur zone."
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_iOrder 5
+ }
+}
+$grp PS_ManualMarker : "{60226647F08EF462}PrefabsEditable/Markers/Group/Marker_GroupFlagsSoviet_Base.et" {
+ yUSSR_Platoon_1 {
+  coords 10115.362 28.013 3329.235
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 1st Platoon"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon_2 {
+  coords 9973.149 15.623 3885.498
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 2nd Platoon"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon_3 {
+  coords 9738.384 19.958 4678.072
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 HQ & 3rd Platoon"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Shilka {
+  coords 10985.469 19 2800
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "anti-air-artilery"
+  m_fWorldSize 30
+  m_sDescription "ZSU-23 (1st objective)"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon_4_2 {
+  coords 10985.469 19 2840
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 3 2nd Plt"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon_4_1 {
+  coords 10985.469 19 2820
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 3 1st Plt"
+  m_bUseWorldScale 0
+ }
+ zUSSR_BTR_1 {
+  coords 10912.425 20.003 4198.1
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "BTR x 2"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_BTR_2 {
+  coords 11108.531 19.998 4244.54
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "BTR x 2"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_BTR_3 {
+  coords 11248.065 19.78 3604.899
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "BTR"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ yBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 50
+  m_sDescription "US Battle Group HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_QG {
+  coords 7454.562 14.125 4040.821
+  angles 0 90 0
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Coy Easy HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_Insertion {
+  coords 8553.554 14.094 3874.053
+  m_sQuadName "combined"
+  m_fWorldSize 30
+  m_sDescription "Vous"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_1 {
+  coords 8134.833 14.093 4140.342
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 1"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_2 {
+  coords 8588.275 14.094 3933.474
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 2"
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon3_push {
+  coords 9623.641 19.754 4668.549
+  angles 0 -99.067 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "arrow-medium-2"
+  m_fWorldSize 50
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon1_push {
+  coords 9957.08 37.917 3329.853
+  angles 0 -89.728 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "arrow-medium-2"
+  m_fWorldSize 50
+  m_bUseWorldScale 0
+ }
+ yUSSR_Platoon2_push {
+  coords 9830.525 14.934 3891.949
+  angles 0 -89.728 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "arrow-medium-2"
+  m_fWorldSize 50
+  m_bUseWorldScale 0
+ }
+}
+PolylineShapeEntity ylimit_2 : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_factionKeys {
+    "US"
+   }
+   m_drawArea 0
+   m_color 0 0.125 0.502 1
+   m_drawLine 1
+   m_lineColor 0 0.125 0.502 1
+  }
+ }
+ coords 10021.908 37.1 4650.931
+ Points {
+  ShapePoint "{689D1B55F7D358CE}" {
+   Position 2309.743 -5.152 -1857.497
+  }
+  ShapePoint "{68AF151BF8A0C87F}" {
+   Position 1520.202 66.335 -135.152
+  }
+  ShapePoint "{68AF151D3CB4F7FC}" {
+   Position 681.278 -17.124 -32.047
+  }
+  ShapePoint "{689D1B55FAA59356}" {
+   Position -1637.191 19.725 -237.161
+  }
+  ShapePoint "{68AF151AF7A5EDC9}" {
+   Position -3224.713 -34.263 -204.335
+  }
+  ShapePoint "{68AF151AF351E424}" {
+   Position -3227.551 -36.007 -187.564
+  }
+  ShapePoint "{689D1B5674065844}" {
+   Position -1635.745 17.376 -226.259
+  }
+  ShapePoint "{68AF151D2CE48DED}" {
+   Position 682.817 -17.131 -25.732
+  }
+  ShapePoint "{689D1B5671CD84AA}" {
+   Position 1509.525 65.737 -137.444
+  }
+  ShapePoint "{68AF151A64326EB3}" {
+   Position 2324.055 -8.788 -1861.484
+  }
+  ShapePoint "{68A3455307536415}" {
+   Position 825.933 -50.917 -2655.502
+  }
+  ShapePoint "{68A34553022BF6A8}" {
+   Position 824.747 -50.03 -2649.517
+  }
+ }
+ LineColor 0.502 0 0 1
+}

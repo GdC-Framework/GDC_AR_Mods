@@ -1,0 +1,105 @@
+$grp GenericEntity {
+ veh_2_spawn {
+  coords 3795.26 199.124 7344.426
+ }
+ veh_BTR_spawn1 {
+  coords 7290.391 50.353 8803.101
+  angles 0 30.558 0
+ }
+ veh_BTR_spawn2 {
+  coords 6635.399 130.827 7992.915
+  angles 0 -72.139 0
+ }
+ inf_spawn1 {
+  coords 6608.738 118.945 8203.636
+  angles 0 -72.139 0
+ }
+ inf_spawn2 {
+  coords 6635.802 91.58 8331.31
+  angles 0 -72.139 0
+ }
+}
+SCR_EntityWaypoint WP_Attack : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
+ coords 6256.735 35.982 8012.333
+ CompletionRadius 200
+ m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{688A921AE51D66A0}" {
+  m_sEntityName "players"
+ }
+}
+$grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ WP_veh_2_1 {
+  coords 4401.773 110.773 7665.119
+ }
+ WP_veh_2_2 {
+  coords 5126.253 11.628 8123.102
+ }
+ WP_veh_2_3 {
+  coords 5437.083 7.719 8119.93
+ }
+ WP_veh_2_4 {
+  coords 6366.98 5.314 8470.462
+ }
+ WP_veh_2_5 {
+  coords 8244.3 119.779 9265.689
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ inf_exfil_spawn1 {
+  coords 5137.919 11.154 8119.623
+  m_prefab "{60E2D587BE5A9B43}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_MachineGunTeam.et"
+  m_conditionFlag "US-DETECTED"
+ }
+ inf_exfil_spawn2 {
+  coords 4613.895 9.659 8124.118
+  angles 0 90 0
+  m_prefab "{0ACD74AD27EEEE7D}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_FireGroup.et"
+  m_conditionFlag "US-DETECTED"
+ }
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ UW_WP_1_1 {
+  coords 4874.093 13.618 8153.796
+  m_queryRadius 100
+  m_flagName "US-WP1-REACHED"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ UW_WP_1_2 {
+  coords 4742.58 64.23 8051.564
+  m_queryRadius 100
+  m_flagName "US-WP1-REACHED"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ UW_WP_1_3 {
+  coords 4597.514 67.764 7969.006
+  m_queryRadius 100
+  m_flagName "US-WP1-REACHED"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ UW_WP_1_4 {
+  coords 4436.544 83.811 7887.92
+  m_queryRadius 100
+  m_flagName "US-WP1-REACHED"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ Final_Reinf {
+  coords 6228.524 37.06 8018.206
+  m_queryRadius 200
+  m_captureTime 2400
+  m_flagName "FINAL-REINF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+}
+SCR_SearchAndDestroyWaypoint WP_SAD : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+ coords 6254.071 37.555 8000.649
+ CompletionRadius 200
+}

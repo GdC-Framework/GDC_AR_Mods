@@ -1,0 +1,418 @@
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{68B132E5A90BEF83}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5BD0C0639}" {
+     m_executionDelay 2
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5B9ED9E54}" {
+    m_flagName "US_VICTORY"
+   }
+  }
+  TILW_MissionEvent "{68B132E5D6237066}" {
+   m_name "US Defeat"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5D623702D}" {
+     m_executionDelay 2
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5D623702F}" {
+    m_flagName "US_DEFEAT"
+   }
+  }
+  TILW_MissionEvent "{68D738C91A459A3E}" {
+   m_name "Spawn mortars Rdm 1"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D738C92F180FDD}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_1"
+    }
+    TILW_RunEventsInstruction "{68D738D0C3314BE7}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D938296CC064F2}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_1"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C1AC730C7}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_1"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D738C81062D0D2}" {
+    m_flagName "SPAWN_MORTARS1"
+   }
+  }
+  TILW_MissionEvent "{68D9382A8320B026}" {
+   m_name "Spawn mortars Rdm 2"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D9382A8320B0C2}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_2"
+    }
+    TILW_RunEventsInstruction "{68D9382A8320B0C4}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D9382E742B2BB4}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_2"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C398D5883}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_2"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9382A8320B0C6}" {
+    m_flagName "SPAWN_MORTARS2"
+   }
+  }
+  TILW_MissionEvent "{68D9382A9865AFBB}" {
+   m_name "Spawn mortars Rdm 3"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D9382A9865AE55}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_3"
+    }
+    TILW_RunEventsInstruction "{68D9382A9865AE5A}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D9382E78D8B4CF}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_3"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C426F763F}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_3"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9382A9865AE5B}" {
+    m_flagName "SPAWN_MORTARS3"
+   }
+  }
+  TILW_MissionEvent "{68D9382AA9FB5A66}" {
+   m_name "Spawn mortars Rdm 4"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D9382AA9FB5A38}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_4"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382E8DC1BB42}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_4"
+    }
+    TILW_RunEventsInstruction "{68D9382AA9FB5A3B}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C57060D4B}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_4"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9382AA9FB5A3D}" {
+    m_flagName "SPAWN_MORTARS4"
+   }
+  }
+  TILW_MissionEvent "{68D9382ABF755122}" {
+   m_name "Spawn mortars Rdm 5"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D9382ABF7551FB}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_5"
+    }
+    TILW_RunEventsInstruction "{68D9382ABF7551FE}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D9382E9522BE18}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_5"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C580BC4A2}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_5"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9382ABF7551C0}" {
+    m_flagName "SPAWN_MORTARS5"
+   }
+  }
+  TILW_MissionEvent "{68D9382AC35D18FA}" {
+   m_name "Spawn mortars Rdm 6"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{68D9382AC35D1895}" {
+     m_executionDelay 0
+     m_prefab "{DD8C466ECE0984B4}Prefabs/Compositions/Mortars_GroupA.et"
+     m_locationName "Spawn_Arty_6"
+    }
+    TILW_SpawnPrefabInstruction "{68D9382E981B0CF3}" {
+     m_prefab "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+     m_locationName "Spawn_Arty_6"
+    }
+    TILW_RunEventsInstruction "{68D9382AC35D1898}" {
+     m_executionDelay 10
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+    TILW_SpawnPrefabInstruction "{68D9382C6D58D7AB}" {
+     m_executionDelay 10
+     m_prefab "{135FE33130D903DF}Prefabs/AI/Waypoints/AI_WP_SAD_60m_prio200.et"
+     m_locationName "Spawn_Arty_6"
+     m_setEntityName "WP_SAD_Mortars"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9382AC35D189A}" {
+    m_flagName "SPAWN_MORTARS6"
+   }
+  }
+  TILW_MissionEvent "{68D738D073F1E397}" {
+   m_name "Arty fire mission"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68D738D08F5DC650}" {
+     m_groupName "MortarA_1"
+     m_waypointNames {
+      "WP_Mortar_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D738D09C731066}" {
+     m_executionDelay 7
+     m_groupName "MortarA_2"
+     m_waypointNames {
+      "WP_Mortar_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D738D0A15E8096}" {
+     m_executionDelay 8
+     m_groupName "MortarA_3"
+     m_waypointNames {
+      "WP_Mortar_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_RunEventsInstruction "{68D9383CE280C414}" {
+     m_executionDelay 226
+     m_eventNames {
+      "Arty fire mission 2"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D738D0EEE56EA1}" {
+    m_flagName "NOFLAG"
+   }
+  }
+  TILW_MissionEvent "{68D9383CA872A61A}" {
+   m_name "Arty fire mission 2"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68D9383CA872A96B}" {
+     m_executionDelay 3
+     m_groupName "MortarA_1"
+     m_waypointNames {
+      "WP_Mortar_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9383CA872A96E}" {
+     m_executionDelay 7
+     m_groupName "MortarA_2"
+     m_waypointNames {
+      "WP_Mortar_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9383CA872A96F}" {
+     m_executionDelay 8
+     m_groupName "MortarA_3"
+     m_waypointNames {
+      "WP_Mortar_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_RunEventsInstruction "{68D9383D0825E0C6}" {
+     m_executionDelay 183
+     m_eventNames {
+      "Arty fire mission"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D9383CA872A970}" {
+    m_flagName "NOFLAG"
+   }
+  }
+  TILW_MissionEvent "{68D9382986F8B9C9}" {
+   m_name "US On Mortars"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68D93826AA245A81}" {
+     m_executionDelay 300
+     m_groupName "Grp_Inf_7"
+     m_waypointNames {
+      "WP_SAD_Mortars"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9382C72D1E877}" {
+     m_executionDelay 300
+     m_groupName "Grp_Inf_1"
+     m_waypointNames {
+      "WP_SAD_Mortars"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9382D45DBA825}" {
+     m_executionDelay 180
+     m_groupName "Grp_Inf_2"
+     m_waypointNames {
+      "WP_Move_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D93823E009CB74}" {
+     m_executionDelay 180
+     m_groupName "BTR4_Crew"
+     m_waypointNames {
+      "WP_Move_2b"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9382D55C510A5}" {
+     m_executionDelay 180
+     m_groupName "Grp_Inf_3"
+     m_waypointNames {
+      "WP_Move_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9382047B27582}" {
+     m_executionDelay 180
+     m_groupName "BTR2_Crew"
+     m_waypointNames {
+      "WP_Move_1b"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D9382D6552F686}" {
+     m_executionDelay 600
+     m_groupName "Grp_Inf_4"
+     m_waypointNames {
+      "WP_SAD_Mortars"
+     }
+     m_clearExisting 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D93829E3C4D93B}" {
+    m_flagName "US_IN_AREA"
+   }
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{68D9382A6D9E767A}" {
+   m_flagNames {
+    "SPAWN_MORTARS1"
+    "SPAWN_MORTARS2"
+    "SPAWN_MORTARS3"
+    "SPAWN_MORTARS4"
+    "SPAWN_MORTARS5"
+    "SPAWN_MORTARS6"
+   }
+  }
+ }
+ m_factionPlayersKilledFlags {
+  TILW_FactionPlayersKilledFlag "{68DD768CF6152AA4}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "US"
+  }
+ }
+}
+GenericEntity : "{A9CAD0E46BE21AB7}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_USA.et" {
+ coords 7446.57 14.495 4048.849
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Déclarer la victoire"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "VICTORY"
+       m_conditionFlag "US_IN_AREA"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Officer.et" {
+ components {
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_sDefaultWeaponBehaviorTree "{B62F3C5AA48FFEEF}AI/BehaviorTrees/Chimera/Soldier/Wait.bt"
+  }
+ }
+ coords 7449.195 14.181 4049.219
+ angles 0 -145.87 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Fin de mission (défaite)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "DEFEAT"
+      }
+     }
+    }
+   }
+   coords 0 0.895 0
+  }
+ }
+}

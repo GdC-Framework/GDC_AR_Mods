@@ -1,0 +1,144 @@
+GenericEntity : "{6E9190BC2713551D}Prefabs/Compositions/Slotted/BuildableComposition_Base.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  SCR_CampaignBuildingCompositionComponent "{5E96A067C097D570}" {
+   Enabled 0
+   m_AudioSourceConfigurationSpawn SCR_AudioSourceConfiguration "{5E96A067C355978C}" {
+    m_sSoundEventName "SOUND_BUILD_MORTAR_POSITION"
+   }
+   m_AudioSourceConfigurationDespawn SCR_AudioSourceConfiguration "{5E96A0643BAAEAF8}" {
+    m_sSoundEventName "SOUND_DESTROY_MORTAR_POSITION"
+   }
+  }
+  ActionsManagerComponent "{5D66ED1096104FD8}" {
+   Enabled 0
+  }
+  Hierarchy "{60AAE974D17AF54E}" {
+   Enabled 1
+  }
+ }
+ coords 6286.366 1.801 8469.601
+ angles 0 150 0
+ {
+  GenericEntity : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+   ID "690AC7204899C597"
+   coords 2.198 0.462 0.465
+   angles 0 3.587 0
+   {
+    GenericEntity {
+     ID "60B8D36A59BEEAC8"
+     components {
+      Hierarchy "{6186DB2F4F553985}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "60B8D36A59BEEACD"
+     components {
+      Hierarchy "{6186DB2F4F562E48}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E8404F61A5F"
+     components {
+      Hierarchy "{6186DB2F4F5168C8}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E93336290C0"
+     components {
+      Hierarchy "{6186DB2F4F572314}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E93336290D9"
+     components {
+      Hierarchy "{6186DB2F4F503CA9}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E93336290EF"
+     components {
+      Hierarchy "{6186DB2F4F527212}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E9333629100"
+     components {
+      Hierarchy "{6186DB2F4F537C8C}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E9333629115"
+     components {
+      Hierarchy "{6186DB2F4F5C49C9}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E9333629132"
+     components {
+      Hierarchy "{6186DB2F4F5D5BC6}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E9333629147"
+     components {
+      Hierarchy "{6186DB2F4F5E4FEB}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "61869E9333629155"
+     components {
+      Hierarchy "{6186DB2F4F5F7350}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "6186CCEA6FABAA76"
+     components {
+      Hierarchy "{6186DB2F4EA8B729}" {
+      }
+     }
+    }
+    GenericEntity {
+     ID "6186CCEA93C28875"
+     components {
+      Hierarchy "{6186DB2F4EAD15CB}" {
+      }
+     }
+    }
+    Turret {
+     ID "60B8D36A59BEEA2F"
+     components {
+      TILW_VehicleCrewComponent "{690AC723CA5C49C6}" {
+       m_crewConfig TILW_CrewConfig "{690AC723D46F8BCA}" {
+        m_crewGroups {
+         TILW_CrewGroup "{690AC723D6782E68}" {
+          m_crewStations {
+           TILW_CrewStation "{690AC723D3C19D3B}" {
+            m_characters {
+             "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+            }
+           }
+          }
+          m_entityName "mortar4"
+         }
+        }
+        m_noTurretDismount 1
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

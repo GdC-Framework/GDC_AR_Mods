@@ -1,0 +1,361 @@
+$grp GenericEntity {
+ Sp_ZSU_1 {
+  coords 10461.507 64.33 3823.226
+ }
+ Sp_Plt_1 {
+  coords 10373.793 14.123 3292.781
+ }
+ Sp_Plt_2 {
+  coords 10144.687 40.508 4064.263
+ }
+ Sp_Plt_3 {
+  coords 10668.491 19.999 4400.018
+ }
+ Sp_Btl_QG_1 {
+  coords 11037.46 20 3891.473
+ }
+ Sp_Btl_QG_2 {
+  coords 10963.339 20 4011.926
+  angles 0 -106.642 0
+ }
+ Sp_Btl_QG_3 {
+  coords 10945.693 20.001 4006.552
+  angles 0 -107.527 0
+ }
+ Sp_Plt_4_1 {
+  coords 9855.616 15.492 3012.156
+  angles 0 -92.305 0
+ }
+ Sp_Plt_4_2 {
+  coords 10082.832 17.275 2902.329
+  angles 0 61.084 0
+ }
+}
+SCR_AIGroup inf_HQ_1 : "{0D10CCEEC7B3EC34}Prefabs/Groups/OPFOR/Group_USSR_PlatoonHQ.et" {
+ coords 9490.063 14.094 3865.771
+ angles 0 -60 0
+ m_aStaticWaypoints {
+  "WP_Def_1_2"
+ }
+}
+$grp SCR_DoorOpenerEntity : "{11811A404E19275D}Prefabs/Systems/Logic/DoorOpener.et" {
+ {
+  coords 10918.925 20.111 4003.799
+ }
+ {
+  coords 10924.159 21.294 3891.241
+ }
+ {
+  coords 11019.336 19.999 3940.32
+ }
+}
+$grp SCR_EntityWaypoint : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
+ WP_Attack_1 {
+  coords 10371.884 46.187 3725.998
+  angles 23.054 -6.261 -15.651
+  CompletionRadius 400
+  m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{68AAA166BBE3F3A2}" {
+   m_sEntityName "Alpha_1"
+  }
+ }
+ WP_Attack_2 {
+  coords 10371.884 46.187 3725.998
+  angles 23.054 -6.261 -15.651
+  CompletionRadius 400
+  m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{68AAA166BBE3F3A2}" {
+   m_sEntityName "Alpha_2"
+  }
+ }
+ WP_Attack_3 {
+  coords 10371.884 46.187 3725.998
+  angles 23.054 -6.261 -15.651
+  CompletionRadius 400
+  m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{68AAA166BBE3F3A2}" {
+   m_sEntityName "CdO"
+  }
+ }
+}
+$grp Tank : "{3868E03D9A4AF186}Prefabs/Vehicles/Tracked/BMP1/BMP1P_base.et" {
+ BMP1P_1_1 {
+  components {
+   TILW_VehicleCrewComponent "{68A34559769697C9}" {
+    m_crewConfig TILW_CrewConfig "{68A34559700370E7}" {
+     m_crewGroups {
+      TILW_CrewGroup "{68A3455972602E66}" {
+       m_crewStations {
+        TILW_CrewStation "{68A345597BF08D42}" {
+         m_allowCargo 0
+         m_characters {
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+         }
+        }
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+  coords 9570.45 14.582 3933.76
+  angles 0 -75 0
+ }
+ BMP1P_1_2 {
+  components {
+   TILW_VehicleCrewComponent "{68A34559769697C9}" {
+    m_crewConfig TILW_CrewConfig "{68A34559700370E7}" {
+     m_crewGroups {
+      TILW_CrewGroup "{68A3455972602E66}" {
+       m_crewStations {
+        TILW_CrewStation "{68A345597BF08D42}" {
+         m_allowCargo 0
+         m_characters {
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+         }
+        }
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+  coords 9502.156 13.281 3345.26
+  angles 0 -47.197 0
+ }
+}
+Vehicle M1 : "{4A71F755A4513227}Prefabs/Vehicles/Wheeled/M998/M1025.et" {
+ coords 7435.304 14.125 4029.629
+ angles 0 121.346 0
+}
+GenericEntity : "{5519B339E041781E}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Wall_BarbedWire_US_01.et" {
+ coords 7453.021 14.125 4021.108
+ angles 0 118.198 0
+}
+GenericEntity : "{57FB5E487EC91D64}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Barricade_Logs_02.et" {
+ coords 7470.152 14.147 4055.374
+ angles 0 -145.195 0
+}
+GenericEntity : "{5D13B51F8B2F9A87}Prefabs/Compositions/Misc/SubCompositions/Furniture/Table_Books_US_01.et" {
+ coords 7451.498 14.165 4046.996
+ angles 0 -137.465 0
+}
+$grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ WP_Move_BTR3_1 {
+  coords 9162.907 14.494 4640.472
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTR3_2 {
+  coords 9288.658 14.094 4735.007
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTR3_3 {
+  coords 9254.815 14.093 4470.044
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTR4_1 {
+  coords 9764.537 13.849 3580.578
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTR4_2 {
+  coords 9493.471 13.145 3330.885
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTRBtl_1 {
+  coords 10036.256 10.779 3716.667
+  m_fPriorityLevel 200
+ }
+ WP_Move_BTRBtl_2 {
+  coords 10128.926 14.343 3617.728
+  m_fPriorityLevel 200
+ }
+ WP_Move_InfBtl_1 {
+  coords 10670.377 23.592 3911.108
+  m_fPriorityLevel 200
+  m_aSettings {
+   SCR_AIGroupCharactersMovementSpeedSetting "{68AB39207A9BBC83}" {
+    m_eSpeed SPRINT
+   }
+  }
+ }
+ WP_Move_InfBtl_2 {
+  coords 10664.133 41.976 3789.51
+  m_fPriorityLevel 200
+  m_aSettings {
+   SCR_AIGroupCharactersMovementSpeedSetting "{68AB39207D04D26E}" {
+    m_eSpeed SPRINT
+   }
+  }
+ }
+ WP_Move_InfBtl_3 {
+  coords 10452.539 37.677 3963.595
+  m_fPriorityLevel 200
+  m_aSettings {
+   SCR_AIGroupCharactersMovementSpeedSetting "{68AB39207D04D26E}" {
+    m_eSpeed SPRINT
+   }
+  }
+ }
+}
+SCR_AIGroup : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_sDefaultWeaponBehaviorTree "{B62F3C5AA48FFEEF}AI/BehaviorTrees/Chimera/Soldier/Wait.bt"
+  }
+ }
+ coords 7441.143 14.125 4026.279
+ angles 0 32.323 0
+}
+GenericEntity : "{8B547947F5804285}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_MG_US_01.et" {
+ coords 7476.636 14.125 4050.157
+ angles 0 35.845 0
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_Def_ZSU {
+  coords 10459.101 64.252 3824.833
+  CompletionRadius 100
+ }
+ WP_Def_Plt_1_1 {
+  coords 10342.603 14.127 3350.008
+ }
+ WP_Def_Plt_1_2 {
+  coords 10451.432 14.725 3204.215
+ }
+ WP_Def_Plt_2_1 {
+  coords 10112.488 18.077 4191.095
+ }
+ WP_Def_Plt_2_2 {
+  coords 10103.853 39.138 4010.164
+ }
+ WP_Def_Plt_3_1 {
+  coords 10601.749 20.002 4480.343
+ }
+ WP_Def_Plt_3_2 {
+  coords 10493.855 20.001 4307.634
+ }
+ WP_Def_Plt_3_3 {
+  coords 10721.173 20.001 4329.421
+ }
+ WP_Def_Plt_3_A {
+  coords 9203.233 14.156 4642.3
+  CompletionRadius 150
+  m_fPriorityLevel 200
+ }
+ WP_Def_Plt_4_1 {
+  coords 9763.252 14.094 3582.883
+  CompletionRadius 80
+  m_fPriorityLevel 200
+ }
+ WP_Def_Plt_4_2 {
+  coords 9499.993 14.757 3346.659
+  CompletionRadius 80
+  m_fPriorityLevel 200
+ }
+}
+Vehicle M151A2_transport_MERDC1 : "{94DE32169691AC34}Prefabs/Vehicles/Wheeled/M151A2/M151A2_transport_MERDC.et" {
+ coords 7443.842 14.125 4040.946
+ angles 0 128.029 0
+}
+$grp SCR_AIGroup : "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et" {
+ inf_1_1 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 9250.446 14.162 3358
+ }
+ inf_1_4 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 9601.404 20.467 4050.553
+ }
+}
+$grp Vehicle : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
+ BTR_1_3 {
+  components {
+   TILW_VehicleCrewComponent "{68A345588914470B}" {
+    m_crewConfig TILW_CrewConfig "{68A345588A08A3FD}" {
+     m_crewGroups {
+      TILW_CrewGroup "{68A3455972602E66}" {
+       m_crewStations {
+        TILW_CrewStation "{68A345597BF08D42}" {
+         m_allowCargo 0
+         m_characters {
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+         }
+        }
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+  coords 9399.149 13.311 3253.689
+  angles 0 -60 0
+ }
+ BTR_1_4 {
+  components {
+   TILW_VehicleCrewComponent "{68A345588914470B}" {
+    m_crewConfig TILW_CrewConfig "{68A345588A08A3FD}" {
+     m_crewGroups {
+      TILW_CrewGroup "{68A3455972602E66}" {
+       m_crewStations {
+        TILW_CrewStation "{68A345597BF08D42}" {
+         m_allowCargo 0
+         m_characters {
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+         }
+        }
+       }
+      }
+     }
+     m_noTurretDismount 1
+    }
+   }
+  }
+  coords 9694.915 14.094 3808.44
+  angles 0 -165 0
+ }
+}
+GenericEntity : "{C02107463294142B}Prefabs/Compositions/Misc/SubCompositions/Furniture/Table_RadioStation_US_01.et" {
+ coords 7450.197 14.125 4048.175
+ angles 0 -138.401 0
+}
+SCR_AIGroup Inf_med_1 : "{D815658156080328}Prefabs/Groups/OPFOR/Group_USSR_MedicalSection.et" {
+ coords 9482.484 14.095 3842.941
+}
+$grp SCR_AIGroup : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ inf_1_2 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 9415.246 13.63 3263.288
+  angles 0 -41.171 0
+  m_aStaticWaypoints {
+   "WP_Def_1_1"
+  }
+ }
+ inf_1_3 {
+  coords 9423.906 29.451 3504.091
+ }
+ inf_1_5 {
+  coords 9264.436 46.473 4187.991
+ }
+}
+GenericEntity : "{FB41F48964E04C5B}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Corner_BarbedWire_US_01.et" {
+ coords 7460.535 14.125 4027.62
+ angles 0 -137.839 0
+}

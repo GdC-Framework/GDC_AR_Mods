@@ -1,0 +1,5 @@
+SCR_AIWaypointArtillerySupport : "{13D5D8457DD61A4C}Prefabs/AI/Waypoints/AI_WP_Arty_400m_5Shots.et" {
+ ID "663CBEF736DEBDE0"
+ coords 5642.849 2.312 8249.496
+ CompletionRadius 20
+}

@@ -1,0 +1,44 @@
+$grp SCR_ChimeraCharacter : "{E6A629723004E6C2}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_Unarmed.et" {
+ US_Hostage_1 {
+  coords 6186.771 34.936 8044.706
+  angles 0 135 0
+  EOnInit ""\
+  "				"\
+  "		super.EOnInit(owner);"\
+  "		"\
+  "		if (!Replication.IsServer())"\
+  "        	return;"\
+  ""\
+  "	    SCR_ChimeraCharacter character = SCR_ChimeraCharacter.Cast(owner);"\
+  "	    if (!character)"\
+  "	        return;"\
+  "	"\
+  "	    SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast(character.GetCharacterController());"\
+  "	    if (!controller)"\
+  "	        return;"\
+  "	"\
+  "	    controller.ACE_Captives_SetCaptive(true);"\
+  "	"
+ }
+ US_Hostage_2 {
+  coords 6176.833 45.002 8042.021
+  angles 0 31.195 0
+  EOnInit ""\
+  "				"\
+  "		super.EOnInit(owner);"\
+  "		"\
+  "		if (!Replication.IsServer())"\
+  "        	return;"\
+  ""\
+  "	    SCR_ChimeraCharacter character = SCR_ChimeraCharacter.Cast(owner);"\
+  "	    if (!character)"\
+  "	        return;"\
+  "	"\
+  "	    SCR_CharacterControllerComponent controller = SCR_CharacterControllerComponent.Cast(character.GetCharacterController());"\
+  "	    if (!controller)"\
+  "	        return;"\
+  "	"\
+  "	    controller.ACE_Captives_SetCaptive(true);"\
+  "	"
+ }
+}

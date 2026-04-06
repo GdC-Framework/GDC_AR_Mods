@@ -1,0 +1,315 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "La Coy Easy, en particulier le Plt Alpha, a fait un bon travail de défense. Nous avons désormais installé une solide position sur Iona et ses alentours."\
+  ""\
+  "Les russes se sont cassés les dents sur notre défense et sont en train de se replier. Il faut profiter de leur potentielle désorganisation des forces soviétiques pour pousser notre avantage."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Collecter des renseignements sur les positions hostiles. Une fois ces renseignements récupérés, le QG vous avisera de la suite de la mission."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ e_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "Temps est partiellement couvert. L'évolution de la météo est incertaine."\
+  ""\
+  "<b><color name=\"red\">Volume hostile</b></color>"\
+  "Le QG de la compagnie hostile dispose de 2 BTR et de 2 BMP-1. Il y a une trentaine d'hommes sur zone."\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ f_Nouvelle_Mission {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Nouvelle mission"
+  m_sTextData "<b><color name=\"green\">Nouvel objectif</color></b>"\
+  "Détruisez la ZSU-23 et désengagez-vous dès que c'est fait. Revenez au QG sur Iona avec tous vos hommes."\
+  ""\
+  "<b><color name=\"green\">Intels</color></b>"\
+  "Il y a une compagnie motorisée ENI avec le QG de bataillon sur l'aéroport. Vous ne tiendrez pas dans la durée face à une compagnie entière."\
+  ""\
+  "<b>Fin de mission</b>"\
+  ""\
+  "Revenez au QG de compagnie sur Iona. Pour déclarer la victoire, dans tous les cas, la ZSU-23 doit être détruite."\
+  ""\
+  "<color name=\"green\">Victoire</color>"\
+  "Saluez fièrement l'Union Jack."\
+  ""\
+  "<color name=\"red\">Défaite</color>"\
+  "Expliquez-vous au commandant de la compagnie."\
+  ""
+  m_iOrder 5
+ }
+ d_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vous êtes positionnés à la sortie Est de Iona. Votre zone d'intervention est délimitée sur carte."\
+  ""\
+  "> Le secteur est sécurisé jusqu'à Navajo 2"\
+  ""\
+  "> Nous avons localisé les positions possibles du QG de la compagnie qui nous a attaqué."\
+  ""\
+  "> Neutralisez les éléments du QG et récupérez les renseignements."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+$grp PS_ManualMarker : "{60226647F08EF462}PrefabsEditable/Markers/Group/Marker_GroupFlagsSoviet_Base.et" {
+ zUSSR_Platoon_1 {
+  coords 10373.793 14.123 3292.781
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 1st Platoon"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_Platoon_2 {
+  coords 10248.326 23.829 4152.917
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 2nd Platoon"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_Platoon_3_HQ {
+  coords 10668.077 20 4400.448
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 2 HQ & 3rd Platoon"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_Shilka {
+  coords 10461.507 64.33 3823.226
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "anti-air-artilery"
+  m_fWorldSize 30
+  m_sDescription "ZSU-23 !"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ zUSSR_Platoon_4 {
+  coords 10839.148 16.82 2636.115
+  angles 0 0 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Coy 3 3rd Platoon"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ yBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 30
+  m_sDescription "Base US"
+  m_bUseWorldScale 0
+ }
+ yUS_QG {
+  coords 7454.562 14.125 4040.821
+  angles 0 90 0
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Coy Easy HQ"
+  m_bUseWorldScale 0
+ }
+ zUSSR_Bataillon_HQ {
+  coords 11070.412 19.998 4018.801
+  angles 0 90 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Bataillon HQ"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "NONE"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ yUS_Insertion {
+  coords 7601.982 14.124 3929.018
+  angles 0 90 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 30
+  m_sDescription "Platoon Alpha (vous)"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_1 {
+  coords 8134.833 14.093 4140.342
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 1"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_2 {
+  coords 8388.153 14.093 3968.93
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 2"
+  m_bUseWorldScale 0
+ }
+}
+$grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ ylimit_1 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+   }
+  }
+  coords 8159.668 2.667 3689.076
+  Points {
+   ShapePoint "{689D1B55F7D358CE}" {
+    Position 1668.859 11.427 579.545
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -1102.128 -3.211 916.482
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -1102.869 -2.223 904.084
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 1661.437 11.427 573.076
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position 1563.363 -1.06 -1193.313
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position 1571.927 -0.689 -1191.437
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ zlimit_2 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "NONE"
+    }
+    m_visibleForEmptyFaction 0
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+   }
+  }
+  coords 10021.908 37.1 4650.931
+  Points {
+   ShapePoint "{689D1B55F7D358CE}" {
+    Position 1668.859 11.427 579.545
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -2097.366 -31.734 992.636
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -2092.61 -27.677 979.423
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 1661.437 11.427 573.076
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position 1340.421 25.007 -3189.976
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position 1634.959 -45.508 -4240.955
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ yUSSR_Coy_HQ_1 {
+  coords 9504.541 14.094 3866.232
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-question"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ yUSSR_Coy_HQ_2 {
+  coords 9415.233 13.285 3269.093
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-question"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+}

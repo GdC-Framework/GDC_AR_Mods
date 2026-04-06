@@ -1,0 +1,92 @@
+SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_BaseLoadout_SF.et" {
+ ID "520EC961A090B1EE"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+       Prefab "{03810BEF182ADA0B}Prefabs/Items/Equipment/Binoculars/Rangefinder_Vector21.et"
+      }
+     }
+    }
+   }
+  }
+  SCR_CharacterRankComponent "{528E6D4286AA2D8F}" {
+   m_iRank SERGEANT
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{5A14B8374A929933}Prefabs/Weapons/Rifles/M4A1/Rifle_M4A1_BLOCK_II_SU230_nocovers_NT4.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{F114A84F2B23ABC1}Prefabs/Characters/HeadGear/Helmet_OPSCORE/variants/Helmet_OPSCORE_MT_MC_AMP_MODDED_NoGoggles.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{61E88418254009AC}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/tako2/Pouch_Highspeed_Pistol.et"
+     TargetPurpose 1
+     PrefabsToSpawn {
+      "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et"
+     }
+    }
+    ItemsInitConfigurationItem "{61E884192043D2D2}" {
+     PrefabsToSpawn {
+      "{F8F7E82661C761DD}Prefabs/Items/Equipment/Radios/Radio_ANPRC150.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded.et"
+     }
+    }
+    ItemsInitConfigurationItem "{61E8E7117A3AF4D1}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/pistolpouch2/Pouch_Highspeed_Pistol.et"
+     PrefabsToSpawn {
+      "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6296C016CC93C7CD}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/m18_1/Pouch_Filbe_M18_1.et"
+    }
+    ItemsInitConfigurationItem "{6296C016CCF8722E}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/m18_2/Pouch_Filbe_M18_2.et"
+    }
+    ItemsInitConfigurationItem "{6296C016CCEC95EF}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/m67_1/Pouch_Filbe_M67_2.et"
+    }
+    ItemsInitConfigurationItem "{6296C016CC3F4C7A}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/m67_2/Pouch_Filbe_M67_Base.et"
+    }
+    ItemsInitConfigurationItem "{61E8906D4CD10238}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/tako/Pouch_FILBE_doubleM4_3.et"
+     PrefabsToSpawn {
+      "{AE484B2A9DBDF18E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_Coy_30rnd_M995.et" "{AE484B2A9DBDF18E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_Coy_30rnd_M995.et"
+     }
+    }
+    ItemsInitConfigurationItem "{61E8906D4CD10209}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/tako3/Pouch_FILBE_doubleM4_2.et"
+    }
+    ItemsInitConfigurationItem "{625B1A61D9DE2E42}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/flexcoret/Pouch_Shaw_Flex_MC.et"
+    }
+    ItemsInitConfigurationItem "{6296C0163F0C97FD}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/Pouch1/Pouch_jpc_placard_Coy.et"
+     PrefabsToSpawn {
+      "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6296C0163F73494C}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/pistolpered/Pouch_Shaw_Flex.et"
+    }
+    ItemsInitConfigurationItem "{688ADD268204CFCC}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/nerdmini/Pouch_Shaw_Nerd_Mini.et"
+     PrefabsToSpawn {
+      "{D69684663E89D6EA}Prefabs/Items/Equipment/Radios/Radio_ANPRC152A_OLD.et"
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ angles 0 -33.902 0
+}

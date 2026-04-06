@@ -1,0 +1,15 @@
+GameEntity : "{D928AB10EAB641BC}Prefabs/Characters/HeadGear/Helmet_OPSCORE/Helmet_OPSCORE_MT_MC_AMP.et" {
+ ID "50D485E1435D6C72"
+ components {
+  BaseLoadoutClothComponent "{5112706CD4157AF8}" {
+   Slots {
+    RHS_LoadoutSlotInfo Goggles {
+     Prefab ""
+     m_sInspectIconTexture ""
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ angles 0 62 0
+}

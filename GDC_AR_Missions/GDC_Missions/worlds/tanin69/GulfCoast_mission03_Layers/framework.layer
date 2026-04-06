@@ -1,0 +1,261 @@
+GenericEntity flag_haven : "{651E545B53BBD034}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1_USSR.et" {
+ coords 10913.92 18.969 2787.55
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       ActionTitle ""
+       m_actionName "Fin de mssion (victoire mineure)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "US_VICTORY"
+       m_conditionFlag "US_CONTROL_HAVEN"
+      }
+     }
+    }
+   }
+   coords 0 1.172 0
+  }
+ }
+}
+GenericEntity IntelFolder : "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et" {
+ coords 9480.694 15.908 3827.585
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Lire les intels"
+       m_flagName "INTEL_FOUND"
+      }
+     }
+    }
+   }
+  }
+ }
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ TRG_US_HAVEN {
+  coords 10962.348 18.969 2798.518
+  m_queryRadius 160
+  m_flagName "US_CONTROL_HAVEN"
+  m_stopAfterFirstChange 1
+  m_drawShapeOutline 0
+  m_ownerFactionKey "US"
+ }
+ TRG_US_ZU {
+  coords 11240.396 20 3818.207
+  m_queryRadius 80
+  m_flagName "US_ON_ZU"
+  m_stopAfterFirstChange 1
+  m_drawShapeOutline 0
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{68B132E5A90BEF83}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5BD0C0639}" {
+     m_executionDelay 2
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5B9ED9E54}" {
+    m_flagName "US_VICTORY"
+   }
+  }
+  TILW_MissionEvent "{68B132E5D6237066}" {
+   m_name "US Defeat"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5D623702D}" {
+     m_executionDelay 2
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5D623702F}" {
+    m_flagName "US_DEFEAT"
+   }
+  }
+  TILW_MissionEvent "{68B132E6AABB0130}" {
+   m_name "Shilka destroyed"
+   m_instructions {
+    TILW_SendMessageInstruction "{68B132E119C0A3D6}" {
+     m_executionDelay 120
+     m_messageTitle "Coy HQ"
+     m_messageBody "Nous avons reçu de nouveaux renseignements. Consultez le briefing"
+    }
+    TILW_EditMapItemInstruction "{68B132E101E2E595}" {
+     m_executionDelay 120
+     m_itemNames {
+      "f_Intel2"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68B132E101E2E45C}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68B132E6C4C1952A}" {
+     m_executionDelay 120
+     m_itemNames {
+      "zUSSR_BTR_1"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68B132E6D2439F3D}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68B132E13B3421B6}" {
+     m_executionDelay 120
+     m_itemNames {
+      "zUSSR_BTR_2"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68B132E13B342042}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68B132E6FEC416DA}" {
+     m_executionDelay 120
+     m_itemNames {
+      "zUSSR_BTR_3"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68B132E6FEC41962}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E6EE48423C}" {
+    m_flagName "ZSU_DESTROYED"
+   }
+  }
+  TILW_MissionEvent "{68B132E222A73EA4}" {
+   m_name "US Attack ZU"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68B132E23CCE9D55}" {
+     m_executionDelay 120
+     m_groupName "BTR_5_1_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_1"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68B132ECAD9A4A3B}" {
+     m_executionDelay 180
+     m_groupName "BTR_5_2_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_2"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68B132ECE30936D4}" {
+     m_executionDelay 120
+     m_groupName "BTR_5_3_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_3"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68B132ECF497A22E}" {
+     m_executionDelay 60
+     m_groupName "BTR_5_4_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_4"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E2340E6F8F}" {
+    m_flagName "US_ON_ZU"
+   }
+  }
+  TILW_MissionEvent "{68B132EA71F4776B}" {
+   m_name "US Aggro on first wave"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68B132EA88FED6DA}" {
+     m_groupName "BTR_1_3_crew"
+     m_waypointNames {
+      "WP_Move_BTR_1_3"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68B132F549D64968}" {
+     m_groupName "BTR_1_4_crew"
+     m_waypointNames {
+      "WP_Move_BTR_1_4"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132EA8569715F}" {
+    m_flagName "US_AGGRO"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionAIKilledFlag "{68B132E5EC7BEE4B}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "US"
+  }
+ }
+}
+GenericEntity : "{A9CAD0E46BE21AB7}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_USA.et" {
+ coords 7446.57 14.495 4048.849
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Déclarer la victoire"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "VICTORY"
+       m_conditionFlag "US_ZSU_1"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Officer.et" {
+ components {
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_sDefaultWeaponBehaviorTree "{B62F3C5AA48FFEEF}AI/BehaviorTrees/Chimera/Soldier/Wait.bt"
+  }
+ }
+ coords 7449.195 14.181 4049.219
+ angles 0 -145.87 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Fin de mission (défaite)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "DEFEAT"
+      }
+     }
+    }
+   }
+   coords 0 0.895 0
+  }
+ }
+}

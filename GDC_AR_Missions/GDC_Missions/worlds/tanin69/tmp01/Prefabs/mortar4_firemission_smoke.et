@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "690C957761BA0128"
+ components {
+  GDC_ArtilleryFireSupportComponent "{690C95775408E80B}" {
+   m_sAIGroupName "mortar4"
+   m_eAmmoType ILLUMINATION
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{690C95775408E825}" {
+     m_iShotCount -1
+    }
+   }
+  }
+ }
+ coords 6189.711 37.455 8023.145
+}

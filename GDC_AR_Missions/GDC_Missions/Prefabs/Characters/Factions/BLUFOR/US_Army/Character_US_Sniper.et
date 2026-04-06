@@ -1,0 +1,14 @@
+SCR_ChimeraCharacter : "{284E735C6C70DAD2}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_BaseLoadout.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6727115CACB4DA10}" {
+     PrefabsToSpawn {
+      "{C204374F722D5229}Prefabs/Items/Equipment/Radios/Radio_ANPRC117.et"
+     }
+    }
+   }
+  }
+ }
+}

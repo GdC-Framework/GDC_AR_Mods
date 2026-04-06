@@ -1,0 +1,94 @@
+GenericEntity Spawn_US_Officer {
+ coords 7447.667 14.125 4047.012
+ angles 0 21.771 0
+}
+SCR_TimedWaypoint WP_Officer_Wait : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ coords 7445.502 14.125 4045.242
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_Defend_Bravo1 {
+  coords 8133.428 14.095 4105.844
+  CompletionRadius 40
+ }
+ WP_Defend_Bravo2 {
+  coords 8122.528 14.347 4236.572
+  CompletionRadius 40
+ }
+ WP_Defend_Charlie1 {
+  coords 8584.537 14.095 4012.306
+  CompletionRadius 40
+ }
+ WP_Defend_Charlie2 {
+  coords 7627.297 14.125 3934.462
+ }
+ WP_Defend_Delta1 {
+  coords 7468.799 14.125 3973.466
+  CompletionRadius 40
+ }
+ WP_Defend_Delta2 {
+  coords 7544.812 14.125 4048.91
+  CompletionRadius 40
+ }
+ WP_Defend_HQ {
+  coords 7439.094 14.156 4080.673
+  CompletionRadius 40
+ }
+}
+$grp SCR_AIGroup : "{B7AB5D3F8A7ADAE4}Prefabs/Groups/BLUFOR/Group_US_PlatoonHQ.et" {
+ HQ_1 {
+  coords 7440.468 14.156 4086.845
+  m_aStaticWaypoints {
+   "WP_Defend_HQ"
+  }
+ }
+ HQ_2 {
+  coords 7431.028 14.187 4093.202
+  m_aStaticWaypoints {
+   "WP_Defend_HQ"
+  }
+ }
+}
+$grp SCR_AIGroup : "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et" {
+ Bravo_1 {
+  coords 8133.073 14.094 4113.139
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Bravo1"
+  }
+ }
+ Bravo_2 {
+  coords 8129.083 14.365 4234.908
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Bravo2"
+  }
+ }
+ Charlie_1 {
+  coords 8582.221 14.094 4013.414
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Charlie1"
+  }
+ }
+ Charlie_2 {
+  coords 7643.22 14.125 3941.315
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Charlie2"
+  }
+ }
+ Delta_1 {
+  coords 7469.977 14.125 3965.835
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Delta1"
+  }
+ }
+ Delta_2 {
+  coords 7539.456 14.125 4036.589
+  angles 0 90 0
+  m_aStaticWaypoints {
+   "WP_Defend_Delta2"
+  }
+ }
+}

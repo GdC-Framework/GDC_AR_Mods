@@ -1,0 +1,112 @@
+$grp GenericEntity {
+ Spawn_W1_BTR1 {
+  coords 8593.268 28.354 6455.64
+ }
+ Spawn_W1_BTR2 {
+  coords 8646.115 29.864 6444.408
+ }
+ Spawn_W1_Inf1 {
+  coords 8635.785 41.257 5879.983
+ }
+ Spawn_W1_Inf2 {
+  coords 8517.893 22.021 6187.314
+ }
+ Spawn_W2_BTR1 {
+  coords 9121.177 18.836 6021.803
+  angles 0 -138.242 0
+ }
+ Spawn_W2_BTR2 {
+  coords 9142.783 22.209 6052.396
+  angles 0 -150 0
+ }
+ Spawn_W2_Inf1 {
+  coords 8896.711 14.125 5843.761
+  angles 0 21.771 0
+ }
+ Spawn_W2_Inf2 {
+  coords 8930.344 20.171 5641.802
+ }
+ Spawn_W3_BTR1 {
+  coords 9334.536 16.407 5495.221
+  angles 0 59.786 0
+ }
+ Spawn_W3_BTR2 {
+  coords 9320.375 17.717 5528.735
+  angles 0 82.388 0
+ }
+ Spawn_W3_Inf1 {
+  coords 9354.875 14.094 5063.099
+  angles 0 21.771 0
+ }
+ Spawn_W3_Inf2 {
+  coords 9008.775 20.809 5321.734
+  angles 0 21.771 0
+ }
+ Spawn_W4_BTR1 {
+  coords 8939.601 14.437 3600.562
+  angles 0 22.388 0
+ }
+ Spawn_W4_BTR2 {
+  coords 9045.057 15.531 3565.857
+  angles 0 22.388 0
+ }
+ Spawn_W4_Inf1 {
+  coords 8528.113 20.083 3511.986
+ }
+ Spawn_W4_Inf2 {
+  coords 8373.856 14.579 3532.711
+ }
+}
+SCR_EntityWaypoint WP_Attack_HQ : "{1B0E3436C30FA211}Prefabs/AI/Waypoints/AIWaypoint_Attack.et" {
+ coords 7493.941 14.125 4009.187
+ CompletionRadius 200
+ m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{689D1B78AAE5B7F0}" {
+  m_sEntityName "HQ_1"
+ }
+}
+$grp SCR_AIWaypoint : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
+ WP_W1_Move1 {
+  coords 8350.004 14.125 5795.811
+ }
+ WP_W1_Move3 {
+  coords 8403.771 16.337 5687.338
+ }
+ WP_W1_Move2 {
+  coords 8181.412 20.67 5789.101
+ }
+ WP_W2_Move1 {
+  coords 8653.297 18.343 5451.686
+ }
+ WP_W2_Move2 {
+  coords 8575.829 14.095 5549.618
+ }
+ WP_W2_Move3 {
+  coords 8709.927 43.306 5384.973
+ }
+ WP_W3_Move1 {
+  coords 8876.9 14.074 4973.29
+ }
+ WP_W3_Move2 {
+  coords 8844.298 15.09 4802.042
+ }
+ WP_W3_Move3 {
+  coords 8773.537 15.682 5005.498
+ }
+ WP_W3_Move4 {
+  coords 9046.994 16.41 4836.872
+ }
+}
+$grp SCR_SearchAndDestroyWaypoint : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+ WP_W1_SAD {
+  coords 8063.18 14.125 5341.444
+  CompletionRadius 300
+ }
+ WP_W2_SAD {
+  coords 8265.616 21.632 4998.84
+  CompletionRadius 300
+ }
+ WP_W3_SAD {
+  coords 8263.164 40.481 4615.951
+  CompletionRadius 300
+ }
+}

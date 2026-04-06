@@ -1,0 +1,199 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Nosu avons été parachutés dans la cambrousse pas loin de Soperk pour pêter la gueule d'un haut gradé de la RPZ et détruire son QG. Arrivés sur place, on en a pris pliein la gueule, et nous avons décidé de nous barrer, la queue entre les jambes."\
+  ""\
+  "Nous avons réussi à nous extraire sur une exploitation agricole à louset de Soperk (marqueur \"Ici !\"). Mais évidemment, tout le coin est devenu un vrai nid de frelons, quadrillé par les affreux qui nous veulent du mal."\
+  ""\
+  "On n devrait pas trop trainer pour s'exfiltrer, mais la route est longue et semée d'embuches, comme ils disent dans les journaux."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, Zimnitrita est coupée en deux . A l'ouest de la rivière Drawna, la liberté et la prospérité (campagnarde) de la République Fédérale de Zimnitrita (RFZ). A l'est, une horrible dictature soutenue par l'URSS qui se fait appeler la République du Peuple de Zimnitrita (RPZ)."\
+  ""\
+  "Depuis plusieurs années, la RFZ, avec le soutien de toutes les nations du monde libre, mène différentes actions dont l'objectif, à terme, est de renverser ces salauds de cocos pour installer enfin la démocratie."\
+  ""\
+  "Enhardis par de récents succès, les USA se sont décidés à projeter des forces spéciales dans la profondeur pour tenter de renverser la table. Mais tout ne s'est pas passé comme prévu."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif principal</b>"\
+  "Nettoyer la zone logistique de Glochy (156-013)."\
+  ""\
+  "<b>Objectifs secondaires</b>"\
+  "Selon la situation, à l'appréciation du CdO"\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "Petit matin, temps clair pour le moment, évolution incertaine."\
+  ""\
+  "<b><color name=\"red\">Nasse</b></color>"\
+  "Des unités alliées bloquent les hostiles dans le périmètre (BURAN et AKTIV)."\
+  ""\
+  "<b><color name=\"red\">Matériel ennemi</b></color>"\
+  "Un BRDM sur zone. Les positions probables sont marquées sur carte."\
+  "Mitrailleuses lourdes sur l'objectif."\
+  "Les RPG sont une menace pour le Mi-8 à 200 m."\
+  ""\
+  "<b><color name=\"red\">Troupes ennemies</b></color>"\
+  "Présence des troupes ennemies marquées par le rectangle bleu."\
+  "Troupes concentrées sur la zone logistique et ses environs immédiats. Petits groupes embusqués disséminés sur la zone."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ j_Insert_Extract {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "Notre garnison est localisée sur la base militaire de Varpadany (155-044)."\
+  ""\
+  "Après votre opération, vous viendrez y faire votre rapport."\
+  ""\
+  "En cas de victoire, allez fièrement saluer l'officier et la statuette de Lénine dans le QG ."\
+  ""\
+  "En cas de défaite, contentez-vous d'un discret salut au drapeau situé devant la porte...  Tête baissée comme il se doit."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 10
+ }
+ g_Equipment {
+  coords 15505.979 52.125 4436.956
+  m_sTitle "Matériel"
+  m_sTextData "<b><color name=\"red\">Véhicules</color></b>"\
+  "Mi-8."\
+  "La logistique n'est pas fiable : réparations, refuel et ré-armement à la base, si ça ne tombe pas en panne en cours d'opération. "\
+  ""\
+  "<b><color name=\"red\">Munitions et autres équipements</color></b>"\
+  "Matos dans le Mi-8"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss de la base de Varpadany"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Alors, c'est vous les nouveaux pilotes d'hélico ? J'espère que vous êtes des as, les mecs : au menu, c'est pas la glace à la vodka de votre babushka. On est plutôt partis pour bouffer une grosse tarte aux poils."\
+  ""\
+  "Le reste, je vous le dirai au moment du briefing"\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ eh_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Héliportage de l'infanterie sur zone. Plusieurs rotations seront nécessaires."\
+  ""\
+  "> Pas de civil sur zone => pas de limitation de tir sur les infrastructures et les habitations."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ {
+  coords 14604.61 44.452 2041.358
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-1"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14568.67 25.777 1696.212
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-2"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14421.594 69.16 1366.564
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "AKTIV-1"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15985.618 33.623 3148.636
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "BURAN-3"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 14182.764 27.97 484.092
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "AKTIV-2"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15651.004 64.532 1340.124
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "objective-marker"
+  m_fWorldSize 50
+  m_sDescription "Objectif"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 15508.857 52.125 4446.042
+  angles 0 0 0
+  m_fWorldSize 30
+  m_sDescription "Base"
+  m_bUseWorldScale 0
+ }
+ Exfil {
+  coords 7704.565 -0 10687.536
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "objective-marker"
+  m_fWorldSize 50
+  m_sDescription "Objectif"
+  m_bUseWorldScale 0
+ }
+}

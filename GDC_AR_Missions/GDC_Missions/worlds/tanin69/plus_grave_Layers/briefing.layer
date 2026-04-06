@@ -1,0 +1,168 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ A_Contexte {
+  coords 2677.245 24.218 5568.411
+  m_sTitle "Contexte"
+  m_sTextData "Octobre 1984."\
+  ""\
+  "Le guerre n'est froide que pour l'opinion publique. En réalité, de nombreux combats directs ont lieu entre les USA et l'URSS... Mais en dessous des radars des journalistes."\
+  ""\
+  "C'est le cas d'un confetti perdu au milieu l'atlantique nord  : Kolguyev. La position de cette ile (52°22'19'' de latitude Nord et 24°1'26'' de longitude Ouest), vous l'avez bien compris (car vous êtes des as en navigation), est stratégique."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ B_Situation {
+  coords 2682.137 24.219 5572.818
+  m_sTitle "Situation"
+  m_sTextData "Le 1st Platoon de la <color name=\"blue\">5th Marine Expeditionary Brigade</color> a fait un taf honorable en neutralisant, certes péniblement, les ruskoffs sur Ugoldar. Ils tiennent la ville."\
+  ""\
+  "Malheureusement, la pénétration des éléments soviétiques a été bien plus rapide que ce que nous avions anticipé : ils ont rushé à partir du nord et pris des positions autour de Bovemont."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ C_Mission {
+  coords 2768.766 24.219 5418.655
+  m_sTitle "Objectif"
+  m_sTextData "Prendre le contrôle de Bovemont et tenir la position jusqu'à ce que la situation soit sous contrôle."\
+  ""\
+  "Si c'est intenable, organisez un repli tactique plutôt que de perdre tous vos hommes."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ D_Intels {
+  coords 2774.436 24.218 5439.377
+  m_sTitle "Renseignements"
+  m_sTextData "Grâce à la reconnaissnance, les <i>principales</i> concentrations de troupes hostiles sont marquées sur carte :"\
+  "- Bovemont"\
+  "- Les trois camps militaires (Babaorum, Petibonum et Aquarium)"\
+  "- Deux ZSU-23"\
+  ""\
+  "Ce sont des pelotons russes, donc attendez-vous à rencontrer des BTR-70."\
+  ""\
+  "Aucun civil sur zone."\
+  ""\
+  "La météo est variable..."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ E_Matos {
+  coords 2774.695 24.219 5439.215
+  m_sTitle "Matériel"
+  m_sTextData "- 2 HMMWV avec M2 (+ matériel et munitions)"\
+  "- 4 HMMWV non armés"\
+  "- 2 UH-1H Gunship (rockets et mitrailleuses de sabord)"\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ C2_Mot_du_commandant {
+  coords 3538.749 139.46 5201.432
+  m_sTitle "Mot du commandant"
+  m_sTextData "Les Hueys sont de nouveau opérationnels."\
+  ""\
+  "On va pouvoir leur foutre la patée, à ces connards de communistes !"\
+  ""\
+  "Vous avez démontré votre compétence sur votre précédente mission : <b>je vous laisse carte blanche</b> pour l'exécution de votre mission. "\
+  ""\
+  "Bon, si vous pouviez faire un peu plus vite pour que les boys puissent rentrer au mess avant la nuit, ce serait encore mieux."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ {
+  coords 2693.946 24.219 5478.988
+  angles 0 90 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 50
+  m_sDescription "US 5th MEB - 2nd Coy - 2nd Platoon (vous)"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 2636.648 24.218 5492.298
+  angles 0 90 0
+  m_sQuadName "helicopter"
+  m_fWorldSize 50
+  m_sDescription "UH-1 x 2 (vous)"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 2718.631 24.656 5668.097
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "flag-2"
+  m_fWorldSize 50
+  m_sDescription "Base US"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 6642.747 24.659 3836.269
+  angles 0 90 0
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 50
+  m_sDescription "US 5th MEB - 2nd Coy - 1st Platoon"
+  m_bUseWorldScale 0
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ {
+  coords 6076.521 418.656 6231.651
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "infantry"
+  m_fWorldSize 60
+  m_sDescription "Détruire et tenir"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 5679.097 420.658 6920.933
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "Petibonum"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 6864.747 438.406 6731.486
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "Babaorum"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 7088.384 313.226 6008.081
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "motorized-infantry"
+  m_fWorldSize 60
+  m_sDescription "Aquarium"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 6537.203 493.461 6621.563
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "anti-air"
+  m_fWorldSize 60
+  m_sDescription "ZSU-23"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 7100.102 313.346 6006.101
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.561 0.071 0.071 1
+  m_sQuadName "anti-air"
+  m_fWorldSize 60
+  m_sDescription "ZSU-23"
+  m_bUseWorldScale 0
+ }
+}

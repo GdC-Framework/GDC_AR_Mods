@@ -1,0 +1,223 @@
+GenericEntity flag_haven : "{651E545B53BBD034}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1_USSR.et" {
+ coords 5416.952 9.469 3180.621
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       ActionTitle ""
+       m_actionName "Fin de mssion"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "US_VICTORY"
+       m_conditionFlag "US_CONTROL"
+      }
+     }
+    }
+   }
+   coords 0 1.172 0
+  }
+ }
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ Trg_Camp {
+  coords 5379.803 9.469 3264.683
+  m_queryRadius 120
+  m_flagName "US_CAMP"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.9
+ }
+ Trg_Ussr_West {
+  coords 5285.615 4.956 3384.196
+  m_flagName "WEST_EXPLO_ON"
+  m_ownerFactionKey "USSR"
+  m_ratioThreshold 0.01
+ }
+ Trg_Us_Control {
+  coords 5384.239 9.469 3205.627
+  m_queryRadius 220
+  m_captureTime 300
+  m_flagName "US_CONTROL"
+  m_playersOnly 1
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.9
+ }
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{68B132E5A90BEF83}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5BD0C0639}" {
+     m_executionDelay 2
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5B9ED9E54}" {
+    m_flagName "US_VICTORY"
+   }
+  }
+  TILW_MissionEvent "{68B132E5D6237066}" {
+   m_name "US Defeat"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5D623702D}" {
+     m_executionDelay 2
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5D623702F}" {
+    m_flagName "US_DEFEAT"
+   }
+  }
+  TILW_MissionEvent "{68CD30EB637356A2}" {
+   m_name "US On Camp"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{68CD559F8E626D79}" {
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_2"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68D0D1B6DDFC7882}" {
+     m_executionDelay 60
+     m_prefab "{7318E9EFF22D1116}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_Team_GL_NI.et"
+     m_locationName "Spawn_Grp_2"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68CD559E1CD8F2D3}" {
+     m_executionDelay 10
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_2"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68D0D1B6CD365B56}" {
+     m_executionDelay 0
+     m_prefab "{10E7872ECBF80AC5}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_MachineGunTeam_NI.et"
+     m_locationName "Spawn_Grp_2"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68CD30EB7066505E}" {
+     m_executionDelay 60
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_1"
+     m_waypointNames {
+      "WP_Grp_1_Move_1"
+      "WP_Grp_1_Move_2"
+      "WP_Grp_1_Move_3"
+      "WP_Grp_1_Move_4"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68D0D1B6BA44E9EA}" {
+     m_executionDelay 180
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_1"
+     m_waypointNames {
+      "WP_Grp_1_Move_1"
+      "WP_Grp_1_Move_2"
+      "WP_Grp_1_Move_3"
+      "WP_Grp_1_Move_4"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68CD5599EB4917A8}" {
+     m_executionDelay 90
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_1"
+     m_waypointNames {
+      "WP_Grp_1_Move_1"
+      "WP_Grp_1_Move_2"
+      "WP_Grp_1_Move_3"
+      "WP_Grp_1_Move_4"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68CD559E2132582E}" {
+     m_executionDelay 60
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_3"
+     m_setEntityName "Grp_2_1"
+     m_waypointNames {
+      "WP_Grp_2_Move_1"
+      "WP_Grp_2_Move_2"
+      "WP_Grp_2_Move_3"
+      "WP_Grp_2_Move_4"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68CEFB9E2F5A4801}" {
+     m_executionDelay 90
+     m_prefab "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+     m_locationName "Spawn_Grp_3"
+     m_setEntityName "Grp_2_2"
+     m_waypointNames {
+      "WP_Grp_2_Move_1"
+      "WP_Grp_2_Move_2"
+      "WP_Grp_2_Move_3"
+      "WP_Grp_2_Move_4"
+     }
+    }
+    TILW_SetFlagInstruction "{68D15D609B664703}" {
+     m_executionDelay 300
+     m_flagName "USSR_REINF"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68CD559FF8A72279}" {
+    m_flagName "US_CAMP"
+   }
+  }
+  TILW_MissionEvent "{68D0D1BB0EAA1813}" {
+   m_name "US Control"
+   m_instructions {
+    TILW_SendMessageInstruction "{68D0D1BB16FCA37B}" {
+     m_messageTitle "QG"
+     m_messageBody "La situation semble sous contrôle. Dépendez-moi ce putain de drapeau rouge."
+     m_factionKeys {
+      "US"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D0D1BB2D644FF6}" {
+    m_flagName "US_CONTROL"
+   }
+  }
+  TILW_MissionEvent "{68D15D61650213A0}" {
+   m_name "USSR Breach"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68D15D618BAF5276}" {
+     m_executionDelay 180
+     m_groupName "Grp_2_1"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68D15D61AE235AA0}" {
+     m_executionDelay 180
+     m_groupName "Grp_2_2"
+     m_waypointNames {
+      "WP_Grp_2_SAD"
+     }
+     m_clearExisting 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{68D15D617A2CFA87}" {
+    m_flagName "USSR_BREACH"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionAIKilledFlag "{68B132E5EC7BEE4B}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "US"
+  }
+ }
+}

@@ -1,0 +1,31 @@
+SCR_DestructibleBuildingEntity : "{85028E0E494C3DD5}Prefabs/Structures/Core/RetainingWall_Base.et" {
+ ID "50F0A4C5B8E7DB4A"
+ components {
+  SCR_DestructibleBuildingComponent "{68D0D1B047F485F9}" {
+   "Additional hit zones" {
+    SCR_HitZone HZ_Main {
+     HZDefault 1
+     MaxHealth 5000
+     "Kinetic multiplier" 0.05
+     "Fragmentation multiplier" 0.2
+     "Explosive multiplier" 2
+    }
+   }
+   m_aEffects {
+    SCR_TimedParticle Particle_Dust_01 {
+     m_bSnapToTerrain 1
+     m_Particle SCR_ParticleSpawnable "{68D0D1B0A33411E4}" {
+      m_Particle "{B0D882F853DE2783}Particles/Enviroment/Building_Explosion_Smoke.ptc"
+     }
+    }
+   }
+   m_fSinkingSpeed 0.5
+   m_fRotationSpeed 0
+   m_fRotationTime 0
+  }
+  WorldSubsceneComponent "{68D0D1B036D5557A}" {
+  }
+  RplComponent "{68D0D1B03D037733}" {
+  }
+ }
+}

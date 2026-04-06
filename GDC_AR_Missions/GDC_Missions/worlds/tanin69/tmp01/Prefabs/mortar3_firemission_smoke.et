@@ -1,0 +1,15 @@
+GenericEntity {
+ ID "690C9577C74FC170"
+ components {
+  GDC_ArtilleryFireSupportComponent "{690C9577B4E3EF07}" {
+   m_sAIGroupName "mortar3"
+   m_eAmmoType SMOKE
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{690C9577B4E3EF02}" {
+     m_iShotCount -1
+    }
+   }
+  }
+ }
+ coords 6195.565 37.438 8026.374
+}

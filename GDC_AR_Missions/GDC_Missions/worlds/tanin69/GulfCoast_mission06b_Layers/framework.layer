@@ -1,0 +1,441 @@
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ TRG_US_ZU {
+  coords 11248.95 20 3795.346
+  m_queryRadius 80
+  m_flagName "US_ON_ZU"
+  m_stopAfterFirstChange 1
+  m_drawShapeOutline 0
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_US_APPROACH {
+  coords 9638.003 21.125 3593.92
+  m_queryRadius 1000
+  m_flagName "US_APPROACH"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.001
+ }
+ TRG_BOMB_1 {
+  coords 9450.672 15.19 3831.314
+  m_queryRadius 150
+  m_flagName "US_CLOSE_1"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_2 {
+  coords 9733.772 14.094 4164.141
+  m_queryRadius 150
+  m_flagName "US_CLOSE_2"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_3 {
+  coords 10140.184 37.978 3184.57
+  m_queryRadius 150
+  m_flagName "US_CLOSE_3"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_4 {
+  coords 9946.925 22.166 3692.298
+  m_queryRadius 150
+  m_flagName "US_CLOSE_4"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_5 {
+  coords 10593.963 58.512 4003.624
+  m_queryRadius 200
+  m_flagName "US_CLOSE_5"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_6 {
+  coords 10648.182 20 4357.345
+  m_queryRadius 200
+  m_flagName "US_CLOSE_6"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_7 {
+  coords 10658.762 15.519 3626.287
+  m_queryRadius 200
+  m_flagName "US_CLOSE_7"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_BOMB_8 {
+  coords 10868.048 14.25 3281.544
+  m_queryRadius 200
+  m_flagName "US_CLOSE_8"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+ TRG_US_Control_Airport {
+  coords 11078.646 20 3982.348
+  m_queryRadius 500
+  m_captureTime 60
+  m_sendStatusMessages 1
+  m_locationName "Lake Haven Airport"
+  m_flagName "US_CONTROL_AIRPORT"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.95
+ }
+}
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{68B132E5A90BEF83}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5BD0C0639}" {
+     m_executionDelay 2
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5B9ED9E54}" {
+    m_flagName "US_VICTORY"
+   }
+  }
+  TILW_MissionEvent "{68B132E5D6237066}" {
+   m_name "US Defeat"
+   m_instructions {
+    TILW_EndGameInstruction "{68B132E5D623702D}" {
+     m_executionDelay 2
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E5D623702F}" {
+    m_flagName "US_DEFEAT"
+   }
+  }
+  TILW_MissionEvent "{68B132E222A73EA4}" {
+   m_name "US Attack ZU"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68B132E23CCE9D55}" {
+     m_executionDelay 20
+     m_groupName "BTR_5_1_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_1"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68B132ECAD9A4A3B}" {
+     m_executionDelay 10
+     m_groupName "BTR_5_2_crew"
+     m_waypointNames {
+      "WP_Move_BTR_5_2"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{68E50E6EEAB96E98}" {
+     m_executionDelay 0
+     m_groupName "inf_5_5"
+     m_waypointNames {
+      "WP_def_ZU_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_SpawnVehicleInstruction "{68E50E688B2C3638}" {
+     m_executionDelay 600
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_BTR_5_3"
+     m_crewConfig TILW_CrewConfig "{68E50E6B18BA98F6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68E50E6B31233861}" {
+        m_crewStations {
+         TILW_CrewStation "{68A345597BF08D42}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Move_BTR_5_3"
+        }
+        m_entityName "BTR_5_3_crew"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68E538513F8B2107}" {
+     m_executionDelay 600
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_BTR_5_4"
+     m_crewConfig TILW_CrewConfig "{68E538513F8B2184}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68E538513F8B2186}" {
+        m_crewStations {
+         TILW_CrewStation "{68E538513F8B2187}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Move_BTR_5_4"
+        }
+        m_entityName "BTR_5_3_crew"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68E538513E085EEF}" {
+     m_executionDelay 600
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_BTR_5_5"
+     m_crewConfig TILW_CrewConfig "{68E538513E085E88}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68E538513E085E8A}" {
+        m_crewStations {
+         TILW_CrewStation "{68E538513E085E8B}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Move_BTR_5_5"
+        }
+        m_entityName "BTR_5_3_crew"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnGroupInstruction "{68E5385099D2E27C}" {
+     m_executionDelay 300
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_Inf_5_9"
+     m_waypointNames {
+      "WP_Inf_5_SAD_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68E538530121503D}" {
+     m_executionDelay 300
+     m_prefab "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et"
+     m_locationName "Spawn_Inf_5_9"
+     m_waypointNames {
+      "WP_Inf_5_SAD_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68E538531947B62C}" {
+     m_executionDelay 600
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_Inf_5_10"
+     m_waypointNames {
+      "WP_Inf_5_SAD_2"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68E538532DC1790D}" {
+     m_executionDelay 600
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_Inf_5_10"
+     m_waypointNames {
+      "WP_Inf_5_SAD_3"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68E538533444299D}" {
+     m_executionDelay 600
+     m_prefab "{A2F75E45C66B1C0A}Prefabs/Groups/OPFOR/Group_USSR_MachineGunTeam.et"
+     m_locationName "Spawn_Inf_5_10"
+     m_waypointNames {
+      "WP_Inf_5_SAD_2"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68B132E2340E6F8F}" {
+    m_flagName "US_ON_ZU"
+   }
+  }
+  TILW_MissionEvent "{68E747794DC413FE}" {
+   m_name "Bombing Haven IA"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68E747781156C913}" {
+     m_executionDelay 2
+     m_groupName "Mortar_Servant_2"
+     m_waypointNames {
+      "WP_Arty_Haven_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68E74778268C81C8}" {
+     m_executionDelay 1
+     m_groupName "Mortar_Servant_3"
+     m_waypointNames {
+      "WP_Arty_Haven_3"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{69067B2554C9EA4E}" {
+     m_executionDelay 31
+     m_groupName "Mortar_Servant_2"
+     m_waypointNames {
+      "WP_Arty_Haven_5"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{69067B255BE27AC4}" {
+     m_executionDelay 31.5
+     m_groupName "Mortar_Servant_3"
+     m_waypointNames {
+      "WP_Arty_Haven_6"
+     }
+     m_clearExisting 1
+    }
+    TILW_RunEventsInstruction "{68E91D025F1B8C9F}" {
+     m_executionDelay 360
+     m_eventNames {
+      "Bombing Haven IA"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{68E74779A0ED3230}" {
+    m_flagName "US_APPROACH"
+   }
+  }
+  TILW_MissionEvent "{68EC82A74B56EF91}" {
+   m_name "Bombing US 1"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{69075C8A9D552498}" {
+     m_executionDelay 0
+     m_prefab "{30B43335F48F298B}Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et"
+     m_locationName "TRG_BOMB_1"
+    }
+    TILW_ReactivateEventsInstruction "{68EC82A7AF0391EF}" {
+     m_executionDelay 180
+     m_eventNames {
+      "Bombing US 1"
+     }
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{68EC82AD12A71B8B}" {
+    m_operands {
+     TILW_LiteralTerm "{68EC82B3B46289A4}" {
+      m_flagName "US_CLOSE_1"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{69067B2C45A3EA82}" {
+   m_name "Bombing US 2"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{69067B2C45A3ED0C}" {
+     m_executionDelay 0
+     m_groupName "Mortar_Servant_1"
+     m_waypointNames {
+      "WP_Arty_2_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{69067B2C45A3ED0E}" {
+     m_executionDelay 20
+     m_groupName "Mortar_Servant_1"
+     m_waypointNames {
+      "WP_Arty_2_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{69067B2C45A3ED0F}" {
+     m_executionDelay 32
+     m_groupName "Mortar_Servant_1"
+     m_waypointNames {
+      "WP_Arty_2_3"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{69067B2C45A3ED10}" {
+     m_executionDelay 32.5
+     m_groupName "Mortar_Servant_2"
+     m_waypointNames {
+      "WP_Arty_2_4"
+     }
+     m_clearExisting 1
+    }
+    TILW_ReactivateEventsInstruction "{69067B2C45A3E32D}" {
+     m_executionDelay 240
+     m_eventNames {
+      "Bombing US 2"
+     }
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{69067B2C45A3E32F}" {
+    m_operands {
+     TILW_LiteralTerm "{69067B2C45A3E329}" {
+      m_flagName "US_CLOSE_2"
+     }
+    }
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{68F339C70029720D}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "US"
+  }
+ }
+}
+GenericEntity : "{A9CAD0E46BE21AB7}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_USA.et" {
+ coords 7446.57 14.495 4048.849
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Déclarer la victoire"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "US_VICTORY"
+       m_conditionFlag "US_CONTROL_AIRPORT"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Officer.et" {
+ components {
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_sDefaultWeaponBehaviorTree "{B62F3C5AA48FFEEF}AI/BehaviorTrees/Chimera/Soldier/Wait.bt"
+  }
+ }
+ coords 7449.195 14.181 4049.219
+ angles 0 -145.87 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Fin de mission (défaite)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "DEFEAT"
+      }
+     }
+    }
+   }
+   coords 0 0.895 0
+  }
+ }
+}

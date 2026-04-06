@@ -1,0 +1,81 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ brf_2_Timing {
+  coords 4559.384 0.652 8198.015
+  m_sTitle "Timing de l'opération"
+  m_sTextData "<b><color name=\"green\">Tant que vous n'êtes pas repéré par les russes, le temps joue pour vous. Par contre, dès que vous serez repéré, le chrono va tourner.</color></b>"\
+  ""\
+  "<b><color name=\"green\">Hypothèse maximale</color></b>"\
+  "- Délai maximal pour que la garnison locale appelle des renforts : environ 40 minutes"\
+  "- Délai pour l'arrivée des renforts : environ 20 minutes"\
+  "=> Vous disposez donc, dans le meilleur des cas, de 60 minutes avant l'arrivée des renforts"\
+  ""\
+  "<b><color name=\"green\">Hypothèse minimale</color></b>"\
+  "- L'officier de quart a le bon réflexe : il appelle les renforts dès que vous êtes repérés : vous ne disposez dans ce cas que d'environ 20 minutes avant l'arrivée des renforts."\
+  ""\
+  "<b><color name=\"green\">Gagner du temps</color></b>"\
+  "- Eliminer l'officier de quart dans les <i>5 minutes à partir de votre détection</i> empêchera l'appel précoce des renforts. Vous basculerez alors sur l'hypothèse de timing maximale."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ brf_0_Contexte {
+  coords 4559.395 0.629 8198.262
+  m_sTitle "Contexte"
+  m_sTextData "Années 2010. Kolguyev, confetti russe dans l'Atlantique Nord, s'est arrêtée à l'ère soviétique. Les russes y détiennent dans le plus grand secret deux soldats US."\
+  ""\
+  "Les MARSOC sont chargés de les libérer."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ brf_1_Intel {
+  coords 4559.516 0.578 8198.744
+  m_sTitle "Intel"
+  m_sTextData "Nuit profonde, pas de lune, ciel partiellement nuageux. La nuit est relativement claire."\
+  ""\
+  "Les MSV détiennent les deux otages dans le bâtiment marqué sur carte. On pense qu'il y en a un au sous-sol et le second au dernier étage. C'est un RdC + 2 étages. il dispose d'une entrée pincipale donnant sur la rue et deux entrées à l'arrière. Le groupe de bâtiment à son ouest sont 3 R+4 collés les uns aux autres."\
+  ""\
+  "Le batiment dans lequel se trouve l'officier de quart est marqué sur carte."\
+  ""\
+  "On estime la garnison sur place à environ 30 à 40 hommes. Il y a des patrouilles dans un large périmètre. Pas de blindé. Les MSV ne sont pas équipés de NVG."\
+  ""\
+  "Aucun civil sur zone."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ brf_3_Insertion {
+  coords 4559.596 0.645 8197.99
+  m_sTitle "Insertion et extraction"
+  m_sTextData "Vous êtes insérés sur le point sur carte. Vous devez impérativement exfiltrer nos gars sur cette position pour que la mission soit réussie."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+PS_ManualMarker Insertion : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ coords 4561.092 0.669 8197.351
+ m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+ m_sQuadName "entry-point"
+ m_fWorldSize 60
+ m_sDescription "Insertion / Extraction"
+ m_bUseWorldScale 0
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ Objective {
+  coords 6179.189 38.169 8037.238
+  angles 0 0 0
+  m_MarkerColor 0.502 0 0 1
+  m_fWorldSize 60
+  m_sDescription "Otages"
+  m_bUseWorldScale 0
+ }
+ Officer {
+  coords 6321.729 36.199 8124.64
+  angles 0 0 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "point-special"
+  m_fWorldSize 60
+  m_sDescription "Officier de quart"
+  m_bUseWorldScale 0
+ }
+}

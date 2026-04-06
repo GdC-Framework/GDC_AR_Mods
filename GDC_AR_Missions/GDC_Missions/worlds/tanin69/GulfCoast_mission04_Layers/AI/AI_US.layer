@@ -1,0 +1,53 @@
+$grp Vehicle : "{EC657C9B3C73E192}Prefabs/Vehicles/Wheeled/M923A1/M923A1_ammo_MERDC.et" {
+ M923A1_ammo_MERDC1 {
+  coords 5364.654 9.469 3207.135
+  angles 0 51.353 0
+  {
+   GenericEntity : "{EEBCDF30FAC5C725}PrefabsEditable/Explosives/E_DemoBlock_TSh400g_fuzed.et" {
+    components {
+     SCR_EditableExplosiveChargeComponent "{60447DEA56D9C5BD}" {
+      m_fDefaultFuzeTime 600
+      m_bGME_IsVisible 0
+     }
+    }
+    coords 0.06 2.173 2.527
+   }
+  }
+ }
+ M923A1_ammo_MERDC2 {
+  coords 5368.089 9.469 3202.84
+  angles 0 51.353 0
+ }
+ M923A1_ammo_MERDC3 {
+  coords 5528.793 14.603 3087.604
+  angles 0 51.353 0
+  {
+   GenericEntity : "{EEBCDF30FAC5C725}PrefabsEditable/Explosives/E_DemoBlock_TSh400g_fuzed.et" {
+    components {
+     SCR_EditableExplosiveChargeComponent "{60447DEA56D9C5BD}" {
+      m_fDefaultFuzeTime 600
+      m_bGME_IsVisible 0
+     }
+    }
+    coords -197.058 -3.548 -51.253
+    angles 0 -51.353 0
+   }
+  }
+ }
+ M923A1_ammo_MERDC4 {
+  coords 5374.646 9.469 3194.64
+  angles 0 51.353 0
+  {
+   GenericEntity : "{EEBCDF30FAC5C725}PrefabsEditable/Explosives/E_DemoBlock_TSh400g_fuzed.et" {
+    components {
+     SCR_EditableExplosiveChargeComponent "{60447DEA56D9C5BD}" {
+      m_fDefaultFuzeTime 600
+      m_bGME_IsVisible 0
+     }
+    }
+    coords 180.99 6.258 55.989
+    angles 0 -90.424 0
+   }
+  }
+ }
+}

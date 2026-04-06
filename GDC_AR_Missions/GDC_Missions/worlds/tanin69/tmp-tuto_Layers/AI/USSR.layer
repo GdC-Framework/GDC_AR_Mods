@@ -1,0 +1,31 @@
+GenericEntity : "{30B43335F48F298B}Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et" {
+ coords 6341.746 36.529 8090.146
+}
+GenericEntity checkpoint_ussr : "{7C85836D444E3797}Prefabs/Compositions/Slotted/SlotRoadMedium/Checkpoint_M_USSR_01.et" {
+ coords 6251.815 12.89 8318.851
+ angles 0 54.376 0
+ {
+  GenericEntity {
+   ID "5CC6B4BB106191D9"
+   {
+    Turret PKM1 {
+     ID "5CC6B4BEF18D0296"
+     components {
+      TILW_VehicleCrewComponent "{690AC72ECD14E0DC}" {
+       m_crewConfig TILW_CrewConfig "{690AC72F75F76583}" {
+        m_crewGroups {
+         TILW_CrewGroup "{690AC72FB4C29094}" {
+          m_crewStations {
+           TILW_CrewStation "{690AC72FC1FA6271}" {
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

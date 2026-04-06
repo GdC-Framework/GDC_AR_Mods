@@ -1,0 +1,88 @@
+$grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ ussr_grp_2_WP {
+  coords 14426.232 69.182 1370.947
+ }
+ ussr_grp_3_WP {
+  coords 14570.861 25.896 1696.525
+  CompletionRadius 30
+ }
+ ussr_grp_4_WP {
+  coords 14196.137 27.968 486.513
+  CompletionRadius 30
+ }
+ ussr_grp_5_WP {
+  coords 15980.339 33.626 3156.243
+  CompletionRadius 30
+ }
+}
+GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ coords 14610.947 44.284 2038.851
+ {
+  SCR_DefendWaypoint ussr_grp_1_WP : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+   coords -4.999 0.139 2.8
+  }
+  SCR_AIGroup ussr_grp_1 : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+   coords -8.105 1.89 6.078
+   angles 0 109.22 0
+   m_aStaticWaypoints {
+    "ussr_grp_1_WP"
+   }
+  }
+ }
+}
+TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ coords 15982.903 33.625 3140.992
+ angles 0 -180 0
+ m_prefab "{254289B9C09904AB}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2.et"
+ m_crewConfig TILW_CrewConfig "{66D702E2A46418B1}" {
+  m_crewGroups {
+   TILW_CrewGroup "{66D702E2A6958AF1}" {
+    m_crewStations {
+     TILW_CrewStation "{66D702E2B7D434B0}" {
+      m_allowCargo 0
+      m_characters {
+       "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+       "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+      }
+     }
+    }
+   }
+  }
+  m_noTurretDismount 1
+ }
+}
+$grp SCR_AIGroup : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ ussr_grp_2 {
+  coords 14420.101 69.149 1365.265
+  angles 0 105 0
+  m_aStaticWaypoints {
+   "ussr_grp_2_WP"
+  }
+ }
+ ussr_grp_3 {
+  coords 14563.152 25.325 1693.294
+  angles 0 105 0
+  m_aStaticWaypoints {
+   "ussr_grp_3_WP"
+  }
+ }
+ ussr_grp_4 {
+  coords 14191.571 27.968 490.371
+  angles 0 105 0
+  m_aStaticWaypoints {
+   "ussr_grp_4_WP"
+  }
+ }
+ ussr_grp_5 {
+  coords 15986.452 33.628 3155.571
+  angles 0 -180 0
+  m_aUnitPrefabSlots +{
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+   "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+  }
+  m_aStaticWaypoints {
+   "ussr_grp_5_WP"
+  }
+ }
+}

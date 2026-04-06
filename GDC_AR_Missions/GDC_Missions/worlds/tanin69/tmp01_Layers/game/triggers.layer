@@ -1,42 +1,9 @@
-$grp GenericEntity {
- Spawn_Reinf_1 {
-  coords 6971.856 7.825 4027.094
- }
- Spawn_Reinf_2 {
-  coords 6728.663 28.383 4151.066
- }
- Spawn_Reinf_3 {
-  coords 7206.33 2.563 4211.926
-  angles 0 -120 0
- }
-}
-$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
- US_CONTROL {
-  coords 6660.376 3.188 3643.611
-  m_queryRadius 200
-  m_flagName "US_CONTROL"
-  m_stopAfterFirstChange 1
-  m_ownerFactionKey "US"
-  m_ratioThreshold 0.7
- }
- US_Mil1 {
-  coords 5369.098 64.841 3387.667
-  m_queryRadius 100
-  m_sendStatusMessages 1
-  m_flagName "US_MIL1"
-  m_stopAfterFirstChange 1
-  m_ownerFactionKey "US"
-  m_ratioThreshold 0.01
- }
-}
-$grp SCR_SearchAndDestroyWaypoint : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
- WP_SAD_Reinf_1 {
-  coords 6685.75 5.469 3600.184
-  CompletionRadius 150
- }
- WP_SAD_2 {
-  coords 5363.986 65.095 3423.968
-  CompletionRadius 50
-  m_fPriorityLevel 1000
- }
+TILW_FactionTriggerEntity trg_attack : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 6275.894 35.515 8085.752
+ m_queryRadius 10
+ m_flagName "US_DOMIN"
+ m_eventsOnlyDuringGame 0
+ m_stopAfterFirstChange 1
+ m_ownerFactionKey "RHS_USAF"
+ m_ratioThreshold 0.001
 }

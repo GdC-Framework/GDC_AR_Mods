@@ -1,0 +1,10 @@
+GenericEntity : "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SCR_EditableExplosiveChargeComponent "{60447DEA659EA3B2}" {
+   m_bArmedByDefault 1
+   m_fDefaultFuzeTime 10
+   m_bGME_IsVisible 0
+  }
+ }
+}

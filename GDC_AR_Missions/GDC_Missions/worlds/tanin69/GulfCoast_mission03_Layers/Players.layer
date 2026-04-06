@@ -1,0 +1,265 @@
+$grp Vehicle : "{27E2E58E734A80EC}Prefabs/Vehicles/Wheeled/M998/M1025_MERDC.et" {
+ HMMWV_CdO {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5A60CECB549327C1}" {
+      SlotTemplate InventoryStorageSlot Bandages {
+       Prefab "{627255315038152A}Prefabs/Weapons/Magazines/Magazine_762x51_M14_20rnd_SpecialBall.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8531.486 14.094 3887.055
+  angles 0 123.951 0
+  m_sAttachmentGroupName "CdO"
+ }
+ HMMWV_C1_2 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EE5A0A6AC24FC}" {
+      SlotTemplate InventoryStorageSlot "{689EE5A0AD1339DD}" {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+      NumSlots 8
+     }
+    }
+   }
+  }
+  coords 8548.287 14.125 3882.801
+  angles 0 125.047 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+ HMMWV_C2_2 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8565.583 14.125 3862.211
+  angles 0 125.149 0
+  m_sAttachmentGroupName "Charlie_2"
+ }
+}
+Vehicle LAV25 : "{B7A8BAA37CB0AC2B}Prefabs/Vehicles/Wheeled/LAV25/LAV25_MERDC.et" {
+ components {
+  SCR_UniversalInventoryStorageComponent "{60488A9A95F85114}" {
+   MultiSlots {
+    MultiSlotConfiguration "{62EC8473EB55CFBE}" {
+     SlotTemplate InventoryStorageSlot tourniquet {
+      Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+     }
+    }
+    MultiSlotConfiguration "{6286B65912A66532}" {
+     NumSlots 8
+    }
+    MultiSlotConfiguration "{62C2BB5FC2782DE3}" {
+     SlotTemplate InventoryStorageSlot canister {
+      Prefab "{06809ADCCDBAB8FB}Prefabs/Weapons/Magazines/Magazine_M242/Box_25x137_M242_60rnd_APDST.et"
+     }
+     NumSlots 1
+    }
+    MultiSlotConfiguration "{62C2BB5FC4E44E4D}" {
+     SlotTemplate InventoryStorageSlot m249 {
+      Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+     }
+     NumSlots 1
+    }
+   }
+  }
+ }
+ coords 8593.333 14.156 3849.746
+ angles 0 125.472 0
+ m_sAttachmentGroupName "Charlie_3"
+}
+$grp Vehicle : "{DD774A8FD0989A78}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MERDC.et" {
+ HMMWV_C1_1 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5B1070686F48F485}" {
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{62EACA540865E9A9}" {
+      SlotTemplate InventoryStorageSlot ugl_flare {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+     }
+     MultiSlotConfiguration "{62EACA54619871BA}" {
+      SlotTemplate InventoryStorageSlot ATmine {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8558.75 14.125 3875.475
+  angles 0 123.996 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+ HMMWV_C2_1 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5B1070686F48F485}" {
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{62EACA540865E9A9}" {
+      SlotTemplate InventoryStorageSlot ugl_flare {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+     }
+     MultiSlotConfiguration "{62EACA54619871BA}" {
+      SlotTemplate InventoryStorageSlot ATmine {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8574.975 14.125 3855.649
+  angles 0 124.581 0
+  m_sAttachmentGroupName "Charlie_2"
+ }
+}
+$grp SCR_AIGroup : "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et" {
+ CdO {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 8535.404 14.094 3893.029
+  angles 0 -146.281 0
+  m_aUnitPrefabSlots {
+   "{0B3167BB0FB68110}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_PL.et"
+   "{1CA3D30464EE4674}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Spotter.et"
+   "{0F6689B491641155}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Sniper.et"
+   "{4FBA24F7BB43E17D}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Sergeant.et"
+  }
+  m_sCustomNameSet "Commandement"
+  m_bSetPlayable 1
+ }
+ Charlie_1 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 8546.988 14.125 3874.055
+  angles 0 34.026 0
+  m_aUnitPrefabSlots {
+   "{E45F1E163F5CA080}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_SL.et"
+   "{C9E4FEAF5AAC8D8C}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Medic.et"
+   "{E398E44759DA1A43}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TL.et"
+   "{5B1996C05B1E51A4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AR.et"
+   "{CD28EE7C5690D3BB}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Ammo.et"
+   "{E398E44759DA1A43}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TL.et"
+   "{27BF1FF235DD6036}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_LAT.et"
+   "{27BF1FF235DD6036}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_LAT.et"
+  }
+  m_sCustomNameSet "Charlie 1"
+  m_bSetPlayable 1
+ }
+ Charlie_2 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 8576.452 14.125 3864.434
+  angles 0 -144.131 0
+  m_aUnitPrefabSlots {
+   "{E45F1E163F5CA080}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_SL.et"
+   "{C9E4FEAF5AAC8D8C}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Medic.et"
+   "{E398E44759DA1A43}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TL.et"
+   "{5B1996C05B1E51A4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AR.et"
+   "{CD28EE7C5690D3BB}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Ammo.et"
+   "{E398E44759DA1A43}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_TL.et"
+   "{27BF1FF235DD6036}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_LAT.et"
+   "{27BF1FF235DD6036}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_LAT.et"
+  }
+  m_sCustomNameSet "Charlie 2"
+  m_bSetPlayable 1
+ }
+ Charlie_3 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Line"
+   }
+  }
+  coords 8589.829 14.156 3843.84
+  angles 0 37.061 0
+  m_aUnitPrefabSlots {
+   "{E1CB513B8B9B08F4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Crew.et"
+   "{E1CB513B8B9B08F4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Crew.et"
+   "{E1CB513B8B9B08F4}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Crew.et"
+   "{270F46FC595C0CCF}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AT_M67.et"
+   "{26B706256414280A}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AAT_M67.et"
+   "{270F46FC595C0CCF}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AT_M67.et"
+   "{26B706256414280A}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_AAT_M67.et"
+  }
+  m_sCustomNameSet "Charlie 3 (crew)"
+  m_bSetPlayable 1
+ }
+}

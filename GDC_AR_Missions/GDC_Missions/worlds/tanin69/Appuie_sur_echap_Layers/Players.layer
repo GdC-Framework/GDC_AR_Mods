@@ -1,0 +1,4 @@
+SCR_AIGroup : "{D0886786634E55AE}Prefabs/Groups/BLUFOR/GreenBerets/Group_US_GreenBeret_Squad.et" {
+ coords 10719.214 28.902 11390.461
+ m_bSetPlayable 1
+}

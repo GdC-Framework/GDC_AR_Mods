@@ -9,8 +9,9 @@ SCR_ChimeraCharacter : "{284E735C6C70DAD2}Prefabs/Characters/Factions/BLUFOR/US_
      }
     }
     ItemsInitConfigurationItem "{6727115CACB4DA10}" {
+     TargetStorage "Jacket/Suit_Tanker_US_01.et"
      PrefabsToSpawn {
-      ""
+      "{C204374F722D5229}Prefabs/Items/Equipment/Radios/Radio_ANPRC117.et"
      }
     }
    }

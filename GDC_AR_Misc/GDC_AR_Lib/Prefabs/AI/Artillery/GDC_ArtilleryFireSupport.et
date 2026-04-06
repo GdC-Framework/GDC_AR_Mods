@@ -1,0 +1,27 @@
+GenericEntity {
+ ID "690ABA0781257167"
+ components {
+  GDC_ArtilleryFireSupportComponent "{690ABA073A15F1BF}" {
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{690ABA074B1FD63A}" {
+     m_fMinRadius 85
+     m_fMaxRadius 100
+     m_fDelayAfter 15
+    }
+    GDC_ArtilleryFireOrder "{690ABA074AB40672}" {
+     m_iShotCount 3
+     m_fMinRadius 50
+     m_fMaxRadius 80
+     m_fDelayAfter 10
+    }
+    GDC_ArtilleryFireOrder "{690ABA074A0631AC}" {
+     m_iShotCount 10
+     m_fMinRadius 0
+     m_fMaxRadius 30
+     m_fDelayAfter 0
+    }
+   }
+  }
+ }
+ coords 6055.204 3.643 8257.226
+}

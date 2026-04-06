@@ -1,0 +1,125 @@
+TILW_MissionFrameworkEntity TilW_FMW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2663.836 24.217 5592.095
+ m_missionEvents {
+  TILW_MissionEvent "{67293922DDCF8027}" {
+   m_name "Renforts"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68554A4F5E177B57}" {
+     m_executionDelay 240
+     m_groupName "grp_c1_1"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4F6082012F}" {
+     m_executionDelay 240
+     m_groupName "grp_c1_2"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4B5E7C877A}" {
+     m_executionDelay 120
+     m_groupName "grp_c2_1"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{672AB52FD22F1CA8}" {
+     m_executionDelay 0
+     m_groupName "grp_c2_2"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4E9379D5FC}" {
+     m_executionDelay 360
+     m_groupName "grp_c3_1"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4EA2C9B360}" {
+     m_executionDelay 360
+     m_groupName "grp_c3_2"
+     m_waypointNames {
+      "WP_SAD_Bohemont"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4BD932EAF1}" {
+     m_executionDelay 360
+     m_groupName "BTR_c1_1"
+     m_waypointNames {
+      "WP_c1_BTR_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4BC031EA47}" {
+     m_executionDelay 380
+     m_groupName "BTR_c1_2"
+     m_waypointNames {
+      "WP_c1_BTR_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4FCA6871DF}" {
+     m_executionDelay 150
+     m_groupName "BTR_c2_1"
+     m_waypointNames {
+      "WP_c2_BTR_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4FEC612BAC}" {
+     m_executionDelay 170
+     m_groupName "BTR_c2_2"
+     m_waypointNames {
+      "WP_c2_BTR_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A4E38A02F7A}" {
+     m_executionDelay 480
+     m_groupName "BTR_c3_1"
+     m_waypointNames {
+      "WP_c3_BTR_1"
+     }
+     m_clearExisting 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{67293922E7F042A6}" {
+    m_flagName "US_CONTROL"
+   }
+  }
+  TILW_MissionEvent "{672AB53B5CF0588B}" {
+   m_name "US_ZU_1"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{672AB53B7B287F10}" {
+     m_executionDelay 240
+     m_groupName "grp_c1_def_1"
+     m_waypointNames {
+      "WP_SAD_ZU_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68554A441179192C}" {
+     m_executionDelay 0
+     m_groupName "grp_c1_def_2"
+     m_waypointNames {
+      "WP_SAD_ZU_1"
+     }
+     m_clearExisting 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{672AB53B630D2FAE}" {
+    m_flagName "US_CONTROLa"
+   }
+  }
+ }
+}

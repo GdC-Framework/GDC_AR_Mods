@@ -1,0 +1,36 @@
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2663.836 24.217 5592.095
+ m_missionEvents {
+  TILW_MissionEvent "{690AC7227A8F6F58}" {
+   m_name "mortar 3"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{690AC7228CD60317}" {
+     m_executionDelay 0
+     m_prefab "{20F5E0360E3A6AB3}worlds/tanin69/tmp01/Prefabs/mortar3_firemission_smoke.et"
+     m_locationName "BTR1"
+    }
+   }
+   m_condition TILW_LiteralTerm "{690AC7229CBA9112}" {
+    m_flagName "US_DOMIN"
+   }
+  }
+  TILW_MissionEvent "{690AC720B7A24596}" {
+   m_name "mortar 4"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{690AC720B85158AD}" {
+     m_executionDelay 0
+     m_prefab "{2BAE2ABD3A94F45B}worlds/tanin69/tmp01/Prefabs/mortar4_compo.et"
+     m_locationName "spawn_mortar4"
+    }
+    TILW_SpawnPrefabInstruction "{690AC720F262E1B2}" {
+     m_executionDelay 20
+     m_prefab "{C13C6EE0BAB2A759}worlds/tanin69/tmp01/Prefabs/mortar4_firemission_smoke.et"
+     m_locationName "trg_attack"
+    }
+   }
+   m_condition TILW_LiteralTerm "{690AC720EEA3C5DE}" {
+    m_flagName "US_DOMIN"
+   }
+  }
+ }
+}

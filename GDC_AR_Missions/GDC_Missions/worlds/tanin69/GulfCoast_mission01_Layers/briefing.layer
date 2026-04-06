@@ -1,0 +1,319 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Notre compagnie, la Cy Easy, doit interdire la zone autour de la petite ville de Iona pour permettre à notre génie de construire des positions renforcées sur les îlots entourant la zone."\
+  ""\
+  "Notre section, le section Alpha, est en charge du secteur Ripley."\
+  ""\
+  "La section Bravo et une partie de la section Charlie sont sur le secteur Navajo."\
+  ""\
+  "Le reste de la section Charlie et la section Delta sont en réserve sur le secteur Iona où est positionné le QG de compagnie."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Interdiction du secteur Ripley</b>"\
+  "Neutraliser tout élément hostile pénétrant ou approchant du secteur"\
+  ""\
+  "<b>Secteur Iona</b>"\
+  "Sauf ordre contraire du QG, votre mission est d'interdire le secteur Ripley. Cependant, sur ordre du QG, et uniquement dans ce cas, il peut vous êtes ordonné de vous replier sur le secteur Iona."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ e_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "Pour le moment, le temps est beau et dégagé, mais l'évolution de la météo est incertaine."\
+  ""\
+  "<b><color name=\"red\">Volume hostile</b></color>"\
+  "On pense qu'il y a au moins une compagnie motorisée en face : 4 pelotons avec 2 BTR et une vingtaine de pax pour chacun."\
+  ""\
+  "<b><color name=\"red\">Progression hostile</b></color>"\
+  "Les axes d'approche possibles sont marqués par les séries de points Whisky (secteur Ripley) et Zulu (secteur Navajo). Des éléments de reconnaissance avancés devraient nous fournir des informations sur l'avancée des troupes hostiles."\
+  ""\
+  "<b>On pense que les premiers contacts visuels avec les russes auront lieu une dizaine de minutes après votre arrivée sur le terrain.</b>"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ f_Conditions_victoire {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Fin de mission"
+  m_sTextData "<b><color name=\"green\">Victoire</color></b>"\
+  "au moins 90% des effectifs russes sont neutralisés. Le QG vous préviendra."\
+  ""\
+  "<b><color name=\"red\">Défaite</color></b>"\
+  "Iona est investie par les russes."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ d_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "> Vous êtes à pied d'oeuvre et positionnés sur le secteur Ripley"\
+  ""\
+  "> Les blindés sont vos cibles prioritaires"\
+  ""\
+  "> Vous disposez d'un HMMWV armé et d'un autre non armé pour chaque équipe."\
+  ""\
+  "> Vous avez toute liberté d'exécution pour remplir la mission d'interdiction, sauf ordre explicite du QG."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ zBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 30
+  m_sDescription "Base US"
+  m_bUseWorldScale 0
+ }
+ yBravo {
+  coords 8192.859 14.094 4065.444
+  m_sQuadName "motorized"
+  m_fWorldSize 30
+  m_sDescription "Bravo"
+  m_bUseWorldScale 0
+ }
+ yCharlie {
+  coords 8578.803 14.094 4012.598
+  m_sQuadName "motorized"
+  m_fWorldSize 30
+  m_sDescription "Charlie"
+  m_bUseWorldScale 0
+ }
+ yQG {
+  coords 7474.81 14.156 4061.611
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Delta et QG"
+  m_bUseWorldScale 0
+ }
+ yAlpha {
+  coords 7679.129 14.17 4984.754
+  m_sQuadName "motorized"
+  m_fWorldSize 40
+  m_sDescription "Alpha (vous)"
+  m_bUseWorldScale 0
+ }
+}
+$grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+   }
+  }
+  coords 8159.668 2.667 3689.076
+  Points {
+   ShapePoint "{689D1B55F7D358CE}" {
+    Position 487.857 -2.737 -258.691
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position 543.806 30.527 1085.245
+   }
+   ShapePoint "{689D1B56074FF000}" {
+    Position 215.322 11.458 1567.782
+   }
+   ShapePoint "{689D1B5606079300}" {
+    Position -283.954 1.378 1897.767
+   }
+   ShapePoint "{689D1B55F1E0620A}" {
+    Position -286.729 1.333 1895.008
+   }
+   ShapePoint "{689D1B5675891D52}" {
+    Position 213.655 11.458 1564.803
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position 552.647 29.899 1084.84
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 483.12 -2.678 -250.69
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_color 0 0.125 0.502 1
+   }
+  }
+  coords 8695.47 25.613 4646.199
+  Points {
+   ShapePoint "{689D1B57F38FC53E}" {
+    Position 12.159 -0.642 -43.238
+   }
+   ShapePoint "{689D1B57FC04CF89}" {
+    Position -177.388 12.234 -131.641
+   }
+   ShapePoint "{689D1B5003D9C540}" {
+    Position -642.024 -1.626 -258.31
+   }
+   ShapePoint "{689D1B50140C25E9}" {
+    Position -1474.88 -24.882 78.068
+   }
+   ShapePoint "{689D1B500E9D10C6}" {
+    Position -1475.12 -25.316 80.626
+   }
+   ShapePoint "{689D1B50476838E0}" {
+    Position -639.177 -0.954 -251.736
+   }
+   ShapePoint "{689D1B504D40EA6A}" {
+    Position -177.44 10.759 -122.892
+   }
+   ShapePoint "{689D1B502544D514}" {
+    Position 10.7 -0.984 -34
+   }
+  }
+ }
+ {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_color 0 0.125 0.502 1
+   }
+  }
+  coords 7934.09 32.599 4426.186
+  Points {
+   ShapePoint "{689D1B51E407F371}" {
+    Position 2.735 -18.381 11.854
+   }
+   ShapePoint "{689D1B51ECB7225A}" {
+    Position -2.937 -18.377 13.995
+   }
+   ShapePoint "{689D1B51E9432E12}" {
+    Position -682.339 -31.525 -930.606
+   }
+   ShapePoint "{689D1B51F5B20995}" {
+    Position -679.86 -31.409 -932.437
+   }
+  }
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ zArea_Ripley {
+  coords 8082.713 24.881 4898.843
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag"
+  m_sDescription "Ripley"
+  m_bUseWorldScale 0
+ }
+ zArea_Navajo {
+  coords 8213.925 17.722 4022.107
+  m_MarkerColor 0.157 0.275 0.624 1
+  m_sQuadName "flag"
+  m_fWorldSize 40
+  m_sDescription "Navajo"
+  m_bUseWorldScale 0
+ }
+ zArea_Iona {
+  coords 7202.068 17.24 4289.173
+  m_MarkerColor 0.157 0.275 0.624 1
+  m_sQuadName "flag"
+  m_fWorldSize 40
+  m_sDescription "Iona"
+  m_bUseWorldScale 0
+ }
+ zFleche_W1 {
+  coords 8355.702 14.176 5761.868
+  angles 0 -150.094 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Whisky 1"
+  m_bUseWorldScale 0
+ }
+ zFleche_W2 {
+  coords 8676.258 15.87 5470.921
+  angles 0 -137.775 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Whisky 2"
+  m_bUseWorldScale 0
+ }
+ zFleche_W3 {
+  coords 8893.765 17.959 4903.052
+  angles 0 -112.935 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Whisky 3"
+  m_bUseWorldScale 0
+ }
+ zFleche_Z1 {
+  coords 9191.996 14.095 4329.315
+  angles 0 -103.149 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Zulu 1"
+  m_bUseWorldScale 0
+ }
+ zFleche_Z2 {
+  coords 9511.438 14.093 3849.799
+  angles 0 -75.144 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Zulu 2"
+  m_bUseWorldScale 0
+ }
+ zFleche_Z3 {
+  coords 9415.775 13.977 3249.505
+  angles 0 -51.893 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_sDescription "Zulu 3"
+  m_bUseWorldScale 0
+ }
+}

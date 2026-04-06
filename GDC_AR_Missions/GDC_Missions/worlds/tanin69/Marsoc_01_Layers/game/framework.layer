@@ -1,0 +1,374 @@
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2663.836 24.217 5592.095
+ m_missionEvents {
+  TILW_MissionEvent "{67293922DDCF8027}" {
+   m_name "Ambient veh"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6729392950B9327D}" {
+     m_executionDelay 0
+     m_prefab "{9DD4FD3527CB46C8}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed.et"
+     m_locationName "veh_2_spawn"
+     m_crewConfig TILW_CrewConfig "{672939298708AEB7}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6729392981950507}" {
+        m_crewStations {
+         TILW_CrewStation "{67293929944A6D2F}" {
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_veh_2_1"
+         "WP_veh_2_2"
+         "WP_veh_2_3"
+         "WP_veh_2_4"
+         "WP_veh_2_5"
+        }
+       }
+      }
+      m_useIdleGroups 0
+     }
+     m_spawnPilot 0
+     m_spawnTurret 0
+     m_spawnCargo 0
+    }
+    TILW_SpawnVehicleInstruction "{6889361722A9E0D1}" {
+     m_executionDelay 30
+     m_prefab "{9DD4FD3527CB46C8}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed.et"
+     m_locationName "veh_2_spawn"
+     m_crewConfig TILW_CrewConfig "{672939298708AEB7}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6729392981950507}" {
+        m_crewStations {
+         TILW_CrewStation "{67293929944A6D2F}" {
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_veh_2_1"
+         "WP_veh_2_2"
+         "WP_veh_2_3"
+         "WP_veh_2_4"
+         "WP_veh_2_5"
+        }
+       }
+      }
+      m_useIdleGroups 0
+     }
+     m_spawnPilot 0
+     m_spawnTurret 0
+     m_spawnCargo 0
+    }
+    TILW_SpawnVehicleInstruction "{688936174E6D0129}" {
+     m_executionDelay 60
+     m_prefab "{9DD4FD3527CB46C8}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered_closed.et"
+     m_locationName "veh_2_spawn"
+     m_crewConfig TILW_CrewConfig "{672939298708AEB7}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6729392981950507}" {
+        m_crewStations {
+         TILW_CrewStation "{67293929944A6D2F}" {
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_veh_2_1"
+         "WP_veh_2_2"
+         "WP_veh_2_3"
+         "WP_veh_2_4"
+         "WP_veh_2_5"
+        }
+       }
+      }
+      m_useIdleGroups 0
+     }
+     m_spawnPilot 0
+     m_spawnTurret 0
+     m_spawnCargo 0
+    }
+   }
+   m_condition TILW_LiteralTerm "{688936127461F81B}" {
+    m_flagName "US-WP1-REACHED"
+   }
+  }
+  TILW_MissionEvent "{6889361A535DE1EE}" {
+   m_name "US Presence detected"
+   m_instructions {
+    TILW_SetFlagInstruction "{68893635DC1BCD94}" {
+     m_executionDelay 300
+     m_flagName "REPORT"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6889361A5B80331E}" {
+    m_flagName "US-DETECTED"
+   }
+  }
+  TILW_MissionEvent "{68893601B51F1B48}" {
+   m_name "Contact with HQ broken"
+   m_instructions {
+    TILW_SendMessageInstruction "{68893601FB323866}" {
+     m_executionDelay 0
+     m_messageTitle "Test à supprimer"
+     m_messageBody "La base locale ne peux plus communiquer pour contacter les renforts dans l'immédiat."
+     m_factionKeys {
+      "FAKE"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68893601E280AE04}" {
+    m_flagName "CANCEL-HQ-CALL"
+   }
+  }
+  TILW_MissionEvent "{688936043FB9140D}" {
+   m_name "RU Reinf launched"
+   m_instructions {
+    TILW_SendMessageInstruction "{68893604A96E8101}" {
+     m_executionDelay 0
+     m_messageTitle "Message QG US"
+     m_messageBody "Nous avons intercepté des communications russes : leur QG a été alerté et envoie des renforts. Ils seront sur vous d'ici une vingtaine de minutes."
+     m_factionKeys {
+      "FAKE"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A921F60F29BF5}" {
+     m_executionDelay 1200
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn1"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+       }
+      }
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A9219292FAA79}" {
+     m_executionDelay 1230
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn1"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+        m_waypointDelay 10
+       }
+      }
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A9219542EEAB0}" {
+     m_executionDelay 1200
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn2"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+       }
+      }
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A921993F89A31}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "veh_BTR_spawn2"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A9219F470D2A8}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "inf_spawn1"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A9218081852D1}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "inf_spawn2"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+    TILW_SetFlagInstruction "{688A92177DE47D28}" {
+     m_executionDelay 1200
+     m_flagName "REINF-ALREADY-LAUNCHED"
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{68893632749C0EBF}" {
+    m_operands {
+     TILW_LiteralTerm "{6889363270BF859F}" {
+      m_flagName "REPORT"
+     }
+     TILW_LiteralTerm "{6889363285E04D4C}" {
+      m_invertTerm 1
+      m_flagName "CANCEL-HQ-CALL"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{688A9215AC16DB15}" {
+   m_name "Final RU Reinf launched"
+   m_instructions {
+    TILW_SendMessageInstruction "{68893604A96E8101}" {
+     m_executionDelay 0
+     m_messageTitle "Message QG US"
+     m_messageBody "Nous avons intercepté des communications russes : leur QG a été alerté et envoie des renforts. Ils seront sur vous d'ici une vingtaine de minutes."
+     m_factionKeys {
+      "FAKE"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A921F60F29BF5}" {
+     m_executionDelay 1200
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn1"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+       }
+      }
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A9219292FAA79}" {
+     m_executionDelay 1230
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn1"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+        m_waypointDelay 10
+       }
+      }
+     }
+    }
+    TILW_SpawnVehicleInstruction "{688A9219542EEAB0}" {
+     m_executionDelay 1200
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "veh_BTR_spawn2"
+     m_crewConfig TILW_CrewConfig "{688A921F8086D8C6}" {
+      m_crewGroups {
+       TILW_CrewGroup "{688A921F8DCFA548}" {
+        m_crewStations {
+         TILW_CrewStation "{688A921F8ED3306D}" {
+          m_allowCargo 0
+          m_characters {
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+           "{0848BAB1B94FCBBA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack"
+        }
+       }
+      }
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A921993F89A31}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "veh_BTR_spawn2"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A9219F470D2A8}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "inf_spawn1"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+    TILW_SpawnGroupInstruction "{688A9218081852D1}" {
+     m_executionDelay 1230
+     m_prefab "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et"
+     m_locationName "inf_spawn2"
+     m_waypointNames {
+      "WP_Attack"
+     }
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{688A92178AF72B5A}" {
+    m_operands {
+     TILW_LiteralTerm "{688A9217979FE05C}" {
+      m_flagName "FINAL-REINF"
+     }
+     TILW_LiteralTerm "{688A9217936016A0}" {
+      m_invertTerm 1
+      m_flagName "REINF-ALREADY-LAUNCHED"
+     }
+    }
+   }
+  }
+ }
+}

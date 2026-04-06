@@ -1,0 +1,636 @@
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ USSR_ON_IONA {
+  coords 7495.851 14.125 4012.532
+  m_queryRadius 200
+  m_sendStatusMessages 1
+  m_locationName "Iona"
+  m_flagName "USSR_ON_IONA"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "USSR"
+  m_ratioThreshold 0.3
+ }
+ USSR_NEAR_IONA {
+  coords 7495.851 14.125 4012.532
+  m_queryRadius 500
+  m_locationName "Iona"
+  m_flagName "USSR_NEAR_IONA"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "USSR"
+  m_ratioThreshold 0.001
+ }
+ US_CTRL_IONA {
+  coords 7546.328 14.125 4046.255
+  m_queryRadius 30
+  m_locationName "Iona"
+  m_flagName "RUSH_IONA"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.01
+ }
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{689D1B65118DE302}" {
+   m_name "Assaut W1"
+   m_instructions {
+    TILW_RunEventsInstruction "{689D1B65277DCC31}" {
+     m_executionDelay 600
+     m_eventNames {
+      "Go assaut par W1"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B653A0C022E}" {
+    m_flagName "ASSAUT_W1"
+   }
+  }
+  TILW_MissionEvent "{689D1B65748BB600}" {
+   m_name "Assaut W2"
+   m_instructions {
+    TILW_RunEventsInstruction "{689D1B65748BB6D8}" {
+     m_executionDelay 600
+     m_eventNames {
+      "Go assaut par W2"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B65748BB6DC}" {
+    m_flagName "ASSAUT_W2"
+   }
+  }
+  TILW_MissionEvent "{689D1B65BAA8AB11}" {
+   m_name "Assaut W3"
+   m_instructions {
+    TILW_RunEventsInstruction "{689D1B65BAA8ABB0}" {
+     m_executionDelay 600
+     m_eventNames {
+      "Go assaut par W3"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B65BAA8ABB4}" {
+    m_flagName "ASSAUT_W3"
+   }
+  }
+  TILW_MissionEvent "{689D1B75C30C64D6}" {
+   m_name "Go assaut par W1"
+   m_instructions {
+    TILW_SendMessageInstruction "{689D1B664FED9565}" {
+     m_messageTitle "Reconnaissance"
+     m_messageBody "Un peloton russe est en mouvement vers le point Whisky 1 !"
+     m_factionKeys {
+      "US"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C36373195}" {
+     m_prefab "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et"
+     m_locationName "Spawn_W1_Inf1"
+     m_waypointNames {
+      "WP_W1_Move2"
+      "WP_W1_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B766F262A6A}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W1_Inf1"
+     m_waypointNames {
+      "WP_W1_Move2"
+      "WP_W1_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C50063699}" {
+     m_prefab "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et"
+     m_locationName "Spawn_W1_Inf2"
+     m_waypointNames {
+      "WP_W1_Move3"
+      "WP_W1_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B76C628B90E}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W1_Inf2"
+     m_waypointNames {
+      "WP_W1_Move3"
+      "WP_W1_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B76D337802D}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W1_BTR1"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W1_Move1"
+         "WP_W1_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B772B3BC398}" {
+     m_executionDelay 35
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W1_BTR2"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W1_Move1"
+         "WP_W1_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_RunEventsInstruction "{689E95A33672C108}" {
+     m_executionDelay 300
+     m_eventNames {
+      "Assaut W3"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B66FC0A6A98}" {
+   }
+  }
+  TILW_MissionEvent "{689D1B7182A57C58}" {
+   m_name "Go assaut par W2"
+   m_instructions {
+    TILW_SendMessageInstruction "{689D1B667DE03006}" {
+     m_messageTitle "Reconnaissance"
+     m_messageBody "Un peloton russe est en mouvement vers le point Whisky 2 !"
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C6AC72E89}" {
+     m_prefab "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et"
+     m_locationName "Spawn_W2_Inf1"
+     m_waypointNames {
+      "WP_W2_Move3"
+      "WP_W2_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B766F262A6A}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W2_Inf1"
+     m_waypointNames {
+      "WP_W2_Move3"
+      "WP_W2_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C857F92C8}" {
+     m_prefab "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et"
+     m_locationName "Spawn_W2_Inf2"
+     m_waypointNames {
+      "WP_W2_Move3"
+      "WP_W2_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B76C628B90E}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W2_Inf2"
+     m_waypointNames {
+      "WP_W2_Move3"
+      "WP_W2_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B76D337802D}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W2_BTR1"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W2_Move1"
+         "WP_W2_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B772B3BC398}" {
+     m_executionDelay 35
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W2_BTR2"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W2_Move2"
+         "WP_W2_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_RunEventsInstruction "{689E95A3519B553E}" {
+     m_executionDelay 300
+     m_eventNames {
+      "Assaut W3"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B66F1C00A77}" {
+   }
+  }
+  TILW_MissionEvent "{689D1B7ED0BC319A}" {
+   m_name "Go assaut par W3"
+   m_instructions {
+    TILW_SendMessageInstruction "{689D1B6696493D2B}" {
+     m_messageTitle "Reconnaissance"
+     m_messageBody "Un peloton russe est en mouvement vers le point Whisky 3 !"
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C6AC72E89}" {
+     m_prefab "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et"
+     m_locationName "Spawn_W3_Inf1"
+     m_waypointNames {
+      "WP_W3_Move2"
+      "WP_W3_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B766F262A6A}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W3_Inf1"
+     m_waypointNames {
+      "WP_W3_Move2"
+      "WP_W3_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B7C857F92C8}" {
+     m_prefab "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et"
+     m_locationName "Spawn_W3_Inf2"
+     m_waypointNames {
+      "WP_W3_Move3"
+      "WP_W3_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B76C628B90E}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W3_Inf2"
+     m_waypointNames {
+      "WP_W3_Move3"
+      "WP_W3_SAD"
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B76D337802D}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W3_BTR1"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W3_Move1"
+         "WP_W3_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B772B3BC398}" {
+     m_executionDelay 35
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W3_BTR2"
+     m_crewConfig TILW_CrewConfig "{689D1B76EA1AAEBB}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B76F4CD3CA0}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B76F673AED6}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_W3_Move4"
+         "WP_W3_SAD"
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_RunEventsInstruction "{689E95A36356C926}" {
+     m_executionDelay 300
+     m_eventNames {
+      "Assaut W1"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B66F5E18C62}" {
+   }
+  }
+  TILW_MissionEvent "{689D1B7A1B69EBDD}" {
+   m_name "USSR Near Iona"
+   m_instructions {
+    TILW_SendMessageInstruction "{689D1B79B46521C0}" {
+     m_messageTitle "QG"
+     m_messageBody "Les russes s'approchent de Iona."\
+     ""\
+     "Alpha, venez en renfort sur le secteur Iona immédiatement !"\
+     ""\
+     "Je répète : Alpha, venez en renfort sur le secteur Iona immédiatement !"
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B79CE3E1F1F}" {
+    m_flagName "USSR_NEAR_IONA"
+   }
+  }
+  TILW_MissionEvent "{689D1B628659D6E2}" {
+   m_name "Rush to Iona countown init"
+   m_instructions {
+    TILW_RunEventsInstruction "{689D1B628659D684}" {
+     m_executionDelay 2100
+     m_eventNames {
+      "Go Rush Iona"
+     }
+    }
+    TILW_SendMessageInstruction "{689EE5B877D84D47}" {
+     m_messageTitle "QG"
+     m_messageBody "Le QG est en place sur Iona"
+     m_factionKeys {
+      "US"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B628659D68A}" {
+    m_flagName "RUSH_IONA"
+   }
+  }
+  TILW_MissionEvent "{689D1B62A2E9A995}" {
+   m_name "Go Rush Iona"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{689D1B62A2E9A8BC}" {
+     m_prefab "{96BAB56E6558788E}Prefabs/Groups/OPFOR/Group_USSR_Team_AT.et"
+     m_locationName "Spawn_W4_Inf1"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B62A2E9A8BD}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W4_Inf1"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B6C63146F0B}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W4_Inf1"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B62A2E94574}" {
+     m_prefab "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et"
+     m_locationName "Spawn_W4_Inf2"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B62A2E94577}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W4_Inf2"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SpawnGroupInstruction "{689D1B6C6F368625}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_W4_Inf2"
+     m_waypointNames {
+      "WP_Attack_HQ"
+     }
+    }
+    TILW_SendMessageInstruction "{689D1B6C77E2E466}" {
+     m_executionDelay 0
+     m_messageTitle "Bravo"
+     m_messageBody "Ici Bravo. On est en train de se faire contourner par le sud."
+    }
+    TILW_SpawnVehicleInstruction "{689D1B62A2E94576}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W4_BTR1"
+     m_crewConfig TILW_CrewConfig "{689D1B62A2E94548}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B62A2E9454A}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B62A2E9454D}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+    TILW_SpawnVehicleInstruction "{689D1B62A2E9454F}" {
+     m_executionDelay 35
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Spawn_W4_BTR2"
+     m_crewConfig TILW_CrewConfig "{689D1B62A2E9454E}" {
+      m_crewGroups {
+       TILW_CrewGroup "{689D1B62A2E94543}" {
+        m_crewStations {
+         TILW_CrewStation "{689D1B62A2E94542}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Attack_HQ"
+        }
+       }
+      }
+      m_noTurretDismount 1
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B62A2E94559}" {
+   }
+  }
+  TILW_MissionEvent "{689D1B6F5E57D775}" {
+   m_name "All CLear"
+   m_instructions {
+    TILW_SetFlagInstruction "{689D1B6F632CBC57}" {
+     m_executionDelay 0
+     m_flagName "ALL_CLEAR"
+    }
+    TILW_SendMessageInstruction "{689D1B6FB301EA79}" {
+     m_executionDelay 0
+     m_messageTitle "QG"
+     m_messageBody "La situation semble sous contrôle. Venez boire un pot au pub de Iona."
+    }
+    TILW_SpawnGroupInstruction "{689D1B6871D14FE4}" {
+     m_executionDelay 0
+     m_prefab "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Officer.et"
+     m_locationName "Spawn_US_Officer"
+     m_waypointNames {
+      "WP_Officer_Wait"
+     }
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{689D1B6F74963FB1}" {
+    m_operands {
+     TILW_LiteralTerm "{689D1B1492C1BB8E}" {
+      m_flagName "US_CTRL_FINAL"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{689D1B6F2F8A66E5}" {
+   m_name "Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{689D1B6F3B379234}" {
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B6F44091CF9}" {
+    m_flagName "VICTORY"
+   }
+  }
+  TILW_MissionEvent "{689D1B79A64B48C6}" {
+   m_name "USSR On Iona (Defeat)"
+   m_instructions {
+    TILW_SendMessageInstruction "{689D1B79B46521C0}" {
+     m_messageTitle "QG"
+     m_messageBody "Les russes prennent le contrôle de Iona. La mission est un échec !"
+    }
+    TILW_EndGameInstruction "{689D1B79D7155F8F}" {
+     m_executionDelay 10
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{689D1B79CE3E1F1F}" {
+    m_flagName "USSR_ON_IONA"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionAIKilledFlag "{689E95A185F7A8C8}" {
+   m_flagName "US_CTRL_FINAL"
+   m_factionKey "USSR"
+   m_casualtyRatio 0.9
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{689D1B758779D917}" {
+   m_flagNames {
+    "ASSAUT_W1"
+    "ASSAUT_W2"
+    "ASSAUT_W3"
+   }
+  }
+ }
+}
+GenericEntity : "{A9CAD0E46BE21AB7}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_USA.et" {
+ coords 7446.502 14.275 4049.674
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Déclarer la victoire"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "VICTORY"
+       m_conditionFlag "ALL_CLEAR"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}

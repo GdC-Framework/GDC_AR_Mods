@@ -1,0 +1,17 @@
+GenericEntity : "{97064F8597F2D7BF}Prefabs/Weapons/Explosives/DemoBlock_TSh400g/DemoBlock_TSh400g.et" {
+ ID "5968D2B6A82C6019"
+ components {
+  SCR_EditableExplosiveChargeComponent "{60447DEA56D9C5BD}" : "{79EDB1EC8C7ED3A0}PrefabsEditable/Explosives/Components/EditableExplosiveCharge.ct" {
+   m_UIInfo SCR_EditableEntityUIInfo "{60447DEA5B847C14}" {
+    Name "#AR-Weapon_TNTBlock_Name"
+    m_sFaction "USSR"
+    m_aAuthoredLabels {
+     ENTITYTYPE_SYSTEM FACTION_USSR TRAIT_EXPLOSIVE
+    }
+    m_bFullBackgroundAssetCard 0
+   }
+   m_bArmedByDefault 1
+   m_fDefaultFuzeTime 10
+  }
+ }
+}

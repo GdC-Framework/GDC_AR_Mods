@@ -1,0 +1,730 @@
+GenericEntity IntelFolder : "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et" {
+ coords 9480.694 15.908 3827.585
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Lire les intels"
+       m_flagName "INTEL_FOUND"
+      }
+     }
+    }
+   }
+  }
+ }
+}
+TILW_FactionTriggerEntity TRG_ZSU : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 10461.507 64.33 3823.226
+ m_queryRadius 200
+ m_flagName "US_ZSU_1"
+ m_stopAfterFirstChange 1
+ m_drawShapeOutline 0
+ m_ownerFactionKey "US"
+ m_ratioThreshold 0.01
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{68A34556137BB7CC}" {
+   m_name "Intel Found"
+   m_instructions {
+    TILW_DeleteEntitiesInstruction "{68A3454BFE761571}" {
+     m_executionDelay 0
+     m_entityNames {
+      "yUSSR_Coy_HQ_1"
+      "yUSSR_Coy_HQ_2"
+      "ylimit_1"
+     }
+    }
+    TILW_SendMessageInstruction "{68A34540BF16188B}" {
+     m_messageTitle "QG"
+     m_messageBody "Les intels ont été récupérées. Les positions ENI connues sont marquées sur carte."\
+     ""\
+     "<b>Ouvrez votre briefing pour la suite.</b>"
+    }
+    TILW_EditMapItemInstruction "{68A345409FB69D9E}" {
+     m_executionDelay 0
+     m_itemNames {
+      "f_Nouvelle_Mission"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A345409FB69C2A}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A3455627814878}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zlimit_2"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A3455635500848}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A34556DD44E925}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Bataillon_HQ"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A34556DD44E9D3}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A34556DFD3728E}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Platoon_1"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A34556DFD37550}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A34556DE45D61B}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Platoon_2"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A34556DE45D6DB}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A34556E4EDFE8E}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Platoon_3_HQ"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A34556E4EDE14D}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68A34556E74EF223}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Shilka"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68A34556E74EF2EA}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_EditMapItemInstruction "{68AAA16F4753A3C2}" {
+     m_executionDelay 0
+     m_itemNames {
+      "zUSSR_Platoon_4"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{68AAA16F4753A3B0}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A757253F8A82C2}" {
+     m_executionDelay 0
+     m_prefab "{28AACA9B9F572748}Prefabs/Vehicles/Tracked/ZSU-23-4/ZSU-23-4_Radar.et"
+     m_locationName "Sp_ZSU_1"
+     m_crewConfig TILW_CrewConfig "{68A75725528C19CC}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A757255C019AFF}" {
+        m_crewStations {
+         TILW_CrewStation "{68A757255E2674CA}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A7572413884041}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Sp_ZSU_1"
+     m_waypointNames {
+      "WP_Def_ZSU"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A757249C63BCD5}" {
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Sp_ZSU_1"
+     m_waypointNames {
+      "WP_Def_ZSU"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A7572303D6E8C1}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_1_1"
+     m_crewConfig TILW_CrewConfig "{68A75723242CB501}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A7572326DD852E}" {
+        m_crewStations {
+         TILW_CrewStation "{68A7572320352CA0}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A757226F1930CF}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_1_2"
+     m_crewConfig TILW_CrewConfig "{68A757226F193346}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A757226F193349}" {
+        m_crewStations {
+         TILW_CrewStation "{68A757226F19334A}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A7572384848C6A}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_1_1"
+     m_waypointNames {
+      "WP_Def_Plt_1_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A75723A6CB53DD}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_1_2"
+     m_waypointNames {
+      "WP_Def_Plt_1_2"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A7572361E7EE2E}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_2_1"
+     m_crewConfig TILW_CrewConfig "{68A7572361E7EED9}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A7572361E7EEDB}" {
+        m_crewStations {
+         TILW_CrewStation "{68A7572361E7EEDC}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A75722A9818233}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_2_2"
+     m_crewConfig TILW_CrewConfig "{68A75722A98182D5}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A75722A98182D7}" {
+        m_crewStations {
+         TILW_CrewStation "{68A75722A98182D8}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A75722B0988974}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_2_1"
+     m_waypointNames {
+      "WP_Def_Plt_2_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A75722C59D45AA}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_2_2"
+     m_waypointNames {
+      "WP_Def_Plt_2_2"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A7572124BBFB39}" {
+     m_executionDelay 10
+     m_prefab "{3868E03D9A4AF186}Prefabs/Vehicles/Tracked/BMP1/BMP1P_base.et"
+     m_locationName "WP_Def_Plt_3_1"
+     m_crewConfig TILW_CrewConfig "{68A7572124BBFBA4}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A7572124BBFBA5}" {
+        m_crewStations {
+         TILW_CrewStation "{68A7572124BBFBA7}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_entityName "BTR_Plt_3_1"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A7572146190E97}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_3_2"
+     m_crewConfig TILW_CrewConfig "{68A757214619F13C}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A757214619F13E}" {
+        m_crewStations {
+         TILW_CrewStation "{68A757214619F13F}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_entityName "BTR_Plt_3_2"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68A757215119FFBF}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "WP_Def_Plt_3_3"
+     m_crewConfig TILW_CrewConfig "{68A757215119FE5E}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68A757215119FE20}" {
+        m_crewStations {
+         TILW_CrewStation "{68A757215119FE22}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_entityName "BTR_Plt_3_3"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A75721587AF879}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_3_1"
+     m_setEntityName "Inf_Plt_3_1"
+     m_waypointNames {
+      "WP_Def_Plt_3_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A7572168E1F20F}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_3_2"
+     m_setEntityName "Inf_Plt_3_2"
+     m_waypointNames {
+      "WP_Def_Plt_3_2"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68A7572172E2E6FB}" {
+     m_executionDelay 15
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_3_3"
+     m_setEntityName "Inf_Plt_3_3"
+     m_waypointNames {
+      "WP_Def_Plt_3_3"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68AAA1602F0B7DA5}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Sp_Btl_QG_2"
+     m_crewConfig TILW_CrewConfig "{68AAA1602F0B7C20}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68AAA1602F0B7C21}" {
+        m_crewStations {
+         TILW_CrewStation "{68AAA1602F0B7C22}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_entityName "BTR_Btl_HQ_1"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68AAA16054B8D720}" {
+     m_executionDelay 10
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Sp_Btl_QG_3"
+     m_crewConfig TILW_CrewConfig "{68AAA16054B8D7C4}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68AAA16054B8D7C5}" {
+        m_crewStations {
+         TILW_CrewStation "{68AAA16054B827FF}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_entityName "BTR_Btl_HQ_2"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68A345563E5C50FD}" {
+    m_flagName "INTEL_FOUND"
+   }
+  }
+  TILW_MissionEvent "{68AAA1664AAABF82}" {
+   m_name "US on ZSU"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{68AAA16749C70AC6}" {
+     m_executionDelay 35
+     m_groupName "BTR_Btl_HQ_1"
+     m_waypointNames {
+      "WP_Move_BTRBtl_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA1676059E51B}" {
+     m_groupName "BTR_Btl_HQ_2"
+     m_waypointNames {
+      "WP_Move_BTRBtl_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA1645F4A354C}" {
+     m_groupName "BTR_Plt_3_1"
+     m_waypointNames {
+      "WP_Move_BTR3_1"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA164250BA5C9}" {
+     m_groupName "BTR_Plt_3_2"
+     m_waypointNames {
+      "WP_Move_BTR3_2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA16E7DC3C6A2}" {
+     m_groupName "BTR_Plt_3_3"
+     m_waypointNames {
+      "WP_Move_BTR3_3"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA16470C6D002}" {
+     m_groupName "Inf_Plt_3_1"
+     m_waypointNames {
+      "WP_Def_Plt_3_A"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA16489707786}" {
+     m_groupName "Inf_Plt_3_2"
+     m_waypointNames {
+      "WP_Def_Plt_3_A"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{68AAA164911F4D15}" {
+     m_groupName "Inf_Plt_3_3"
+     m_waypointNames {
+      "WP_Def_Plt_3_A"
+     }
+     m_clearExisting 1
+    }
+    TILW_SpawnGroupInstruction "{68AB3923A6EE367B}" {
+     m_executionDelay 300
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_4_1"
+     m_setEntityName "Inf_Plt_4_1"
+     m_waypointNames {
+      "WP_Def_Plt_4_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68AB3923BAC14C93}" {
+     m_executionDelay 300
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "WP_Def_Plt_4_2"
+     m_setEntityName "Inf_Plt_4_2"
+     m_waypointNames {
+      "WP_Def_Plt_4_2"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68AB392200713C5B}" {
+     m_executionDelay 240
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Sp_Plt_4_1"
+     m_setEntityName "BTR_Plt_4_A"
+     m_crewConfig TILW_CrewConfig "{68AAD828979BC5E2}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68AAD828979BC5E4}" {
+        m_crewStations {
+         TILW_CrewStation "{68AAD828979B22ED}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Move_BTR4_1"
+        }
+        m_waypointDelay 60
+        m_entityName "BTR_Plt_4_1"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SpawnVehicleInstruction "{68AB3922432F27A8}" {
+     m_executionDelay 240
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "Sp_Plt_4_2"
+     m_setEntityName "BTR_Plt_4_B"
+     m_crewConfig TILW_CrewConfig "{68AB3922432F2659}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68AB3922432F265B}" {
+        m_crewStations {
+         TILW_CrewStation "{68AB3922432F265C}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+        m_waypointNames {
+         "WP_Move_BTR4_2"
+        }
+        m_waypointDelay 60
+        m_entityName "BTR_Plt_4_1"
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_RunEventsInstruction "{68AB3925B01FBF25}" {
+     m_executionDelay 0
+     m_eventNames {
+      "Reinforcements"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{68AAA1665D3D3D10}" {
+    m_flagName "US_ZSU_1"
+   }
+  }
+  TILW_MissionEvent "{68AB39251D09A1C3}" {
+   m_name "Reinforcements"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{68AB392541B5DEBD}" {
+     m_executionDelay 0
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Sp_Btl_QG_1"
+     m_waypointNames {
+      "WP_Move_InfBtl_1"
+      "WP_Attack_3"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68AB39258FD6267A}" {
+     m_executionDelay 0
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Sp_Btl_QG_1"
+     m_waypointNames {
+      "WP_Move_InfBtl_3"
+      "WP_Attack_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{68AB39257415E0E1}" {
+     m_executionDelay 0
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Sp_Btl_QG_1"
+     m_waypointNames {
+      "WP_Move_InfBtl_2"
+      "WP_Attack_2"
+     }
+    }
+    TILW_RunEventsInstruction "{68AB3925D18141BB}" {
+     m_executionDelay 300
+     m_eventNames {
+      "Reinforcements"
+     }
+     m_allowRerun 1
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{68AB3935CDBA583C}" {
+    m_operands {
+     TILW_LiteralTerm "{68AB3935C9BD8F67}" {
+      m_flagName "US_ZSU_1"
+     }
+     TILW_LiteralTerm "{68AB3935CAF5CFAF}" {
+      m_invertTerm 1
+      m_flagName "US_KO"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{68AB3933D480AB60}" {
+   m_name "End mission - Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{68AB3933D8A3124C}" {
+    }
+   }
+   m_condition TILW_LiteralTerm "{68AB3933E086812C}" {
+    m_flagName "VICTORY"
+   }
+  }
+  TILW_MissionEvent "{68AB3933FFD6C50C}" {
+   m_name "End mission - Defeat"
+   m_instructions {
+    TILW_EndGameInstruction "{68AB3933FFD6C5D4}" {
+     m_gameOverType EDITOR_FACTION_DEFEAT
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{68AB3933FFD6C5D6}" {
+    m_flagName "DEFEAT"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{68AB392B7EE8B969}" {
+   m_flagName "US_KO"
+   m_factionKey "US"
+   m_casualtyRatio 0.75
+  }
+ }
+}
+GenericEntity : "{A9CAD0E46BE21AB7}Prefabs/Props/Furniture/FlagDecorative_01/FlagDecorative_01_USA.et" {
+ coords 7446.57 14.495 4048.849
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Déclarer la victoire"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "VICTORY"
+       m_conditionFlag "US_ZSU_1"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}
+SCR_AIGroup : "{EACD97CF4A702FAE}Prefabs/Groups/BLUFOR/Group_US_Officer.et" {
+ components {
+  SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+   m_sDefaultWeaponBehaviorTree "{B62F3C5AA48FFEEF}AI/BehaviorTrees/Chimera/Soldier/Wait.bt"
+  }
+ }
+ coords 7449.195 14.181 4049.219
+ angles 0 -145.87 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Fin de mission (défaite)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "DEFEAT"
+      }
+     }
+    }
+   }
+   coords 0 0.895 0
+  }
+ }
+}

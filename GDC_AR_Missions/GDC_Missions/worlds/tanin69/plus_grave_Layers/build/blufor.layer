@@ -1,0 +1,10 @@
+$grp GenericEntity : "{A13F6A7F82DF031B}Prefabs/Compositions/Slotted/SlotFlatLarge/Helipad_L_US_01.et" {
+ {
+  coords 2635.601 24.219 5465.558
+  angles 0 90 0
+ }
+ {
+  coords 2635.601 24.219 5517.058
+  angles 0 90 0
+ }
+}

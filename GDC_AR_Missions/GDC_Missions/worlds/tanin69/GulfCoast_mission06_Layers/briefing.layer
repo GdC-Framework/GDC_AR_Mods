@@ -1,0 +1,309 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "La seconde offensive russe pour reprendre Iona s'est soldée par un échec cuisant. Nos gars ont tenu les positions avec peu de pertes, alors que du côté russe, c'est la quasi intégralité de la compagnie motorisée d'assaut et une bonne partie de la compagnie de réserve d'Haven Airport qui ont été décimées."\
+  ""\
+  "C'est le moment d'aller faire péter cette ZU et de prendre l'aéroport. Les <i>cannon fodder</i> (platoon Charlie de la Easy) sont, évidemment, chargés de cette mission."\
+  ""\
+  "En cas de réussite, cette mission amenera ses hommes au statut de héros au sein du Battle Group... à titre posthume ou au mess du Battle Group ?"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."\
+  ""\
+  "L'opération souffre visiblement d'un grand manque de préparation. Sûrement la faute aux politichiens."\
+  ""\
+  "<h2>Situation générale à J+8</h2>"\
+  ""\
+  "Pour le moment, l'opération <i>Baie des pochons</i> n'est pas une grande réussite, c'est le moins que l'on puisse dire. Plus d'une semaine après son lancement, les résultats sont maigres et les pertes lourdes."\
+  ""\
+  "\"Allez les gars, cette fois-ci, on va le prendre ce foutu aéroport !\" a déclaré le commandant de la Coy Easy au briefing du QG."\
+  ""\
+  "Quand il dit \"on\", il veut dire, évidemment, le platoon Charlie, que l'on surnomme déja <i>cannon fodder</i> (chair à canon) dans le Battle Group."\
+  ""\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b><color name=\"red\">Zone d'opération</color></b>"\
+  "la zone d'opération doit être strictement respectée, tant par l'infanterie que par l'élément aérien. Les autres secteurs n'ont pas été reconnus. Vous ne devez ni ne pouvez passer par les iles et ponts au sud."\
+  ""\
+  "<b><color name=\"blue\">Platoon Charlie : attaque de Lake Haven Airport</color></b>"\
+  ""\
+  "Départ à l'Est de Iona."\
+  ""\
+  "- Détruire les défenses anti-aériennes sur zone"\
+  "- S'emparer de l'aéroport"\
+  ""\
+  "<i>Une fois l'aéroport et ses environs immédiats sous contrôle, rendez-vous dans la salle principale de la tour de contrôle et récupérez le buste de Lénine (interaction 'Fin de mission')</i>"\
+  ""\
+  "<b><color color name=\"blue\">Elément aérien : sécurité et protection de Charlie</color></b>"\
+  ""\
+  "Départ sur la base du QG du Battle Group (Gasparilla Airfield). <i>Il est possible que la communication radio avec le platoon Charlie soit difficile voire impossible tant que vous ne serez pas en vol et plus proche</i>."\
+  ""\
+  "- Reconnaitre et dégager la progression de Charlie en restant hors de portée de l'anti aérien"\
+  "- Apporter un appui rapproché en tant que de besoin jusqu'à stabilisation de la situation"\
+  ""\
+  "Réarmement et refuel possible sur base."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ f_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "> On pense que la zone est sûre jusqu'à Navajo 2."\
+  ""\
+  "> La position de la ZU-23 est connue et marquée sur carte."\
+  ""\
+  "> 4 blindés (BTR-70 et BPM-1 en proportion inconnue) et une trentaine d'hommes sont répartis entre Whisky 1 et Whisky 2."\
+  ""\
+  "> Des groupes épars sont en cours de repli vers Lake Haven Airport. Nous pensons qu'ils n'hésiteront pas à vous prendre à partie."\
+  ""\
+  "> Sur Lake Haven Airport, on pense qu'il y a 2 BTR et une trentaine d'hommes, peut-être plus."\
+  ""\
+  "> Le secteur Xanadu (Haven et son est) est intensivement bombardé par une baterrie de mortiers. N'y pénétrez pas."\
+  ""\
+  "> La position de la batterie de mortiers est inconnue. Elle peut vous prendre pour cible."\
+  ""\
+  "> Des renforts sont possibles."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ e_Execution {
+  coords 8571.886 14.125 3856.151
+  m_sTitle "Exécution"
+  m_sTextData "> La coordination entre l'équipe au sol et le Huey est déterminante. Avec la végétation, l'hélico aura du mal à repérer ses cibles. Le spotter et les grenadiers sont équipés de grenades fumi. Les TL et SL de fumis à main."\
+  ""\
+  "> Attendez-vous à être occasionnellement ciblés par des tirs de mortiers. Adaptez votre action en conséquence."\
+  ""\
+  "> Haven Airport est lourdement défendu. Il est conseillé de libérer au plus tôt le Huye de la menace anti-aérienne pour bénéficier de son appui."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ yBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 50
+  m_sDescription "US Battle Group HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_QG {
+  coords 7454.562 14.125 4040.821
+  angles 0 90 0
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Coy Easy HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_Insertion {
+  coords 7861.61 20.935 3911.916
+  angles 0 90 0
+  m_fWorldSize 30
+  m_sDescription "Vous"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_1 {
+  coords 8134.833 14.093 4140.342
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 1"
+  m_bUseWorldScale 0
+ }
+ yUS_Navajo_2 {
+  coords 8588.275 14.094 3933.474
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_sQuadName "recon-outpost-2"
+  m_fWorldSize 30
+  m_sDescription "Navajo 2"
+  m_bUseWorldScale 0
+ }
+ yWhisky_2 {
+  coords 9915.182 13.663 3741.819
+  angles 0 -89.728 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "target-reference-point-2"
+  m_fWorldSize 40
+  m_sDescription "Whisky 2"
+  m_bUseWorldScale 0
+ }
+ yWhisky_1 {
+  coords 9227.797 14.285 3080.257
+  angles 0 -89.728 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "target-reference-point-2"
+  m_fWorldSize 40
+  m_sDescription "Whisky 1"
+  m_bUseWorldScale 0
+ }
+ yMortarMarker {
+  coords 11549.086 45.026 2977.542
+  angles 0 -89.728 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mine-single-2"
+  m_fWorldSize 100
+  m_sDescription "Danger : bombed Zone"
+  m_bUseWorldScale 0
+ }
+ yZU_23 {
+  coords 11219.869 20 3781.966
+  angles 0 90 0
+  m_sImageSet "{7CD99D22C7AE8195}UI/Textures/GroupManagement/FlagIcons/GroupFlagsOpfor.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "anti-air-artilery"
+  m_fWorldSize 30
+  m_sDescription "ZU-23"
+  m_bUseWorldScale 0
+ }
+}
+$grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ ylimit_2 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+   }
+  }
+  coords 10021.908 37.1 4650.931
+  Points {
+   ShapePoint "{689D1B55F7D358CE}" {
+    Position 2309.743 -5.152 -1857.497
+   }
+   ShapePoint "{68AF151BF8A0C87F}" {
+    Position 1520.202 66.335 -135.152
+   }
+   ShapePoint "{68AF151D3CB4F7FC}" {
+    Position 681.278 -17.124 -32.047
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -1637.191 19.725 -237.161
+   }
+   ShapePoint "{68AF151AF7A5EDC9}" {
+    Position -3224.713 -34.263 -204.335
+   }
+   ShapePoint "{68AF151AF351E424}" {
+    Position -3227.551 -36.007 -187.564
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -1635.745 17.376 -226.259
+   }
+   ShapePoint "{68AF151D2CE48DED}" {
+    Position 682.817 -17.131 -25.732
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 1509.525 65.737 -137.444
+   }
+   ShapePoint "{68AF151A64326EB3}" {
+    Position 2324.055 -8.788 -1861.484
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position 825.933 -50.917 -2655.502
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position 824.747 -50.03 -2649.517
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ yMortarFire {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_drawArea 0
+    m_drawLine 1
+    m_lineColor 0.502 0 0 1
+    m_lineWidth 10
+   }
+  }
+  coords 10790.449 14.463 2606.175
+  Points {
+   ShapePoint "{68E3373B7D36F8C5}" {
+    Position 7.361 20.355 -349.618
+   }
+   ShapePoint "{68E3373B81FB167E}" {
+    Position 1576.591 20.2 53.916
+   }
+   ShapePoint "{68E3373B823301DF}" {
+    Position 1168.568 -0.115 1001.936
+   }
+   ShapePoint "{68E3373B8F9FC251}" {
+    Position -12.098 2.946 603.192
+   }
+  }
+ }
+}
+GenericEntity zLenineBust : "{D82E143ECF70892F}Prefabs/Props/Cultural/CharacterBust_01/CharacterBust_01.et" {
+ coords 10987.958 36.279 4054.851
+ angles 0 -120.362 0
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     ActionContexts {
+      UserActionContext "{61F4C18ECB0A8B85}" {
+       ContextName "Fin de mission"
+      }
+     }
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       ParentContextList {
+        "Fin de mission"
+       }
+       m_actionName "Fin de mission (victoire)"
+       m_factionKeys {
+        "US"
+       }
+       m_flagName "US_VICTORY"
+       m_conditionFlag "US_CONTROL_AIRPORT"
+      }
+     }
+    }
+   }
+   coords 0 0 0
+  }
+ }
+}

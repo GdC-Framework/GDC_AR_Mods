@@ -1,105 +1,35 @@
-PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
- components {
-  SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
-   m_sInitialStartingWeatherId "Rainy"
-   m_initialWeatherDurationMin 0.15
-   m_initialWeatherDurationMax 0.2
-  }
- }
- coords 2651.035 24.218 5589.746
- m_bTeamSwitch 1
- m_bPublicCommandBriefing 1
- m_bRemoveSquadMarkers 1
- m_iFreezeTime 0
- m_bDisableGarbageSystem 1
- m_bDisableArmaVision 0
- m_bDisableBuildingModeAfterFreezeTime 1
- m_eJIPState Auto
-}
-TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
  coords 2663.836 24.217 5592.095
  m_missionEvents {
-  TILW_MissionEvent "{67293922DDCF8027}" {
-   m_name "Renforts"
+  TILW_MissionEvent "{690AC7227A8F6F58}" {
+   m_name "mortar 3"
    m_instructions {
-    TILW_SpawnGroupInstruction "{67293922F96DA994}" {
-     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
-     m_locationName "Spawn_Reinf_1"
-     m_waypointNames {
-      "WP_SAD_Reinf_1"
-     }
-    }
-    TILW_SpawnGroupInstruction "{6729392E2AD5A49D}" {
-     m_executionDelay 10
-     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
-     m_locationName "Spawn_Reinf_1"
-     m_waypointNames {
-      "WP_SAD_Reinf_1"
-     }
-    }
-    TILW_SpawnGroupInstruction "{6729392DD222DDE4}" {
-     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
-     m_locationName "Spawn_Reinf_2"
-     m_waypointNames {
-      "WP_SAD_Reinf_1"
-     }
-    }
-    TILW_SpawnGroupInstruction "{672939294610C62F}" {
-     m_executionDelay 10
-     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
-     m_locationName "Spawn_Reinf_2"
-     m_waypointNames {
-      "WP_SAD_Reinf_1"
-     }
-    }
-    TILW_SpawnVehicleInstruction "{6729392950B9327D}" {
-     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
-     m_locationName "Spawn_Reinf_3"
-     m_crewConfig TILW_CrewConfig "{672939298708AEB7}" {
-      m_crewGroups {
-       TILW_CrewGroup "{6729392981950507}" {
-        m_crewStations {
-         TILW_CrewStation "{67293929944A6D2F}" {
-          m_allowCargo 0
-          m_characters {
-           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
-           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
-           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
-          }
-         }
-        }
-        m_waypointNames {
-         "WP_SAD_Reinf_1"
-        }
-       }
-      }
-      m_noTurretDismount 1
-     }
-    }
-    TILW_AssignWaypointsInstruction "{672AB52FD22F1CA8}" {
-     m_executionDelay 30
-     m_groupName "BTR_Reinf_2"
-     m_waypointNames {
-      "WP_SAD_2"
-     }
+    TILW_SpawnPrefabInstruction "{690AC7228CD60317}" {
+     m_executionDelay 0
+     m_prefab "{20F5E0360E3A6AB3}worlds/tanin69/tmp01/Prefabs/mortar3_firemission_smoke.et"
+     m_locationName "BTR1"
     }
    }
-   m_condition TILW_LiteralTerm "{67293922E7F042A6}" {
-    m_flagName "US_CONTROL"
+   m_condition TILW_LiteralTerm "{690AC7229CBA9112}" {
+    m_flagName "US_DOMIN"
    }
   }
-  TILW_MissionEvent "{672AB53B5CF0588B}" {
-   m_name "US Military base Ugo"
+  TILW_MissionEvent "{690AC720B7A24596}" {
+   m_name "mortar 4"
    m_instructions {
-    TILW_AssignWaypointsInstruction "{672AB53B7B287F10}" {
-     m_groupName "BTR_MIL"
-     m_waypointNames {
-      "WP_SAD_2"
-     }
+    TILW_SpawnPrefabInstruction "{690AC720B85158AD}" {
+     m_executionDelay 0
+     m_prefab "{2BAE2ABD3A94F45B}worlds/tanin69/tmp01/Prefabs/mortar4_compo.et"
+     m_locationName "spawn_mortar4"
+    }
+    TILW_SpawnPrefabInstruction "{690AC720F262E1B2}" {
+     m_executionDelay 20
+     m_prefab "{C13C6EE0BAB2A759}worlds/tanin69/tmp01/Prefabs/mortar4_firemission_smoke.et"
+     m_locationName "mortar_fire4"
     }
    }
-   m_condition TILW_LiteralTerm "{672AB53B630D2FAE}" {
-    m_flagName "US_MIL1"
+   m_condition TILW_LiteralTerm "{690AC720EEA3C5DE}" {
+    m_flagName "US_DOMIN"
    }
   }
  }

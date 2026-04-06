@@ -1,0 +1,175 @@
+$grp DecalEntity : "{1DC3A792132D86CB}Prefabs/Decals/Blood/BloodStain_Large_02.et" {
+ {
+  coords 8420.668 0 3955.005
+  angles -90 -180 -180
+  scale 1.5
+ }
+ {
+  coords 8384.843 0 3973.014
+  angles -90 -180 -180
+  scale 1.5
+ }
+}
+$grp GenericEntity : "{25B265F3E7CBDFC8}Prefabs/Props/Wrecks/BMP1_wreck/BMP1_wreck.et" {
+ {
+  coords 8382.989 14.411 3975.788
+  angles 0 -121.615 0
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords -0.591 1.432 0.099
+    angles 0 121.615 0
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords -0.389 1.453 -0.293
+    angles 0 121.615 0
+   }
+  }
+ }
+ {
+  coords 8352.778 16.064 3859.984
+  angles 0 -87.417 -121.856
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords -0.591 1.432 0.099
+    angles 0 121.615 0
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords 0.863 0.545 -0.834
+    angles 0 121.615 0
+   }
+  }
+ }
+ {
+  coords 8111.443 35.315 3977.763
+  angles 16.597 -121.49 0.438
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords -0.591 1.432 0.099
+    angles 0 121.615 0
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords -0.389 1.453 -0.293
+    angles 0 121.615 0
+   }
+  }
+ }
+}
+DecalEntity : "{2840BA559B15F6F2}Prefabs/Decals/Fluids/Decal_PetrolStain_01_V3.et" {
+ coords 8424.38 0 3952.327
+ angles -90 -180 -180
+ scale 3
+}
+DecalEntity : "{3BD66CDD309673DB}Prefabs/Decals/Blood/BloodStain_Drops_01.et" {
+ coords 8386.539 0 3973.375
+ angles -90 -180 -180
+ scale 2
+}
+ParticleEffectEntity : "{4BE47BA2B7E3877E}Prefabs/Systems/Fire/Wrapper_Fire_Large_Damage.et" {
+ coords 8566.449 14.639 3845.177
+}
+$grp DecalEntity : "{71979372AFE909E5}Prefabs/Decals/Blood/BloodStain_Large_01.et" {
+ {
+  coords 8423.764 0 3957.104
+  angles -90 -180 -180
+  scale 1.5
+ }
+ {
+  coords 8379.224 0 3976.519
+  angles -90 -180 -180
+  scale 1.5
+ }
+}
+DecalEntity : "{80B1153302345834}Prefabs/Decals/Miscellaneous/Decal_Damage_Burnt_03.et" {
+ coords 8422.979 14.162 3949.399
+ angles -90 -180 -180
+ scale 5
+}
+$grp ParticleEffectEntity : "{81EA5D4928E33D47}Prefabs/Systems/Fire/Wrapper_Fire_Medium_Damage.et" {
+ {
+  coords 8395.849 14.572 3953.269
+ }
+ {
+  coords 8564.408 14.094 3843.854
+ }
+}
+DecalEntity : "{86571585DB88CB6A}Prefabs/Decals/Logistics/Explosion/Decal_Logistics_Explosion_01_large.et" {
+ coords 8422.393 0.009 3955.148
+ angles -90 -180 -180
+}
+ParticleEffectEntity : "{954E95A3DC2202C2}Prefabs/Systems/Fire/Wrapper_Fire_Small_Damage.et" {
+ coords 8567.001 14.095 3848.218
+}
+$grp DecalEntity : "{A69D551ECF2DEE00}Prefabs/Decals/Logistics/Explosion/Decal_Logistics_Fire_01_large.et" {
+ {
+  coords 8566.419 0 3845.306
+  angles -90 -180 -180
+ }
+ {
+  coords 8564.202 0 3844.334
+  angles -90 -180 -180
+ }
+ {
+  coords 8566.432 0 3848.14
+  angles -90 -180 -180
+ }
+}
+SCR_TreeDebrisSmallEntity : "{A708DE5404481883}Prefabs/Vegetation/Tree/Dst/t_carpinus_betulus/T_Carpinus_betulus_2f_dst_top01.et" {
+ coords 8421.523 16.505 3951.879
+ angles -60.072 -27.069 112.96
+}
+$grp GenericEntity : "{B90E5414AB7C325B}Prefabs/Props/Wrecks/BTR70_Wreck/BTR70_wreck_static.et" {
+ {
+  coords 8423.293 16.196 3952.143
+  angles 0 0 164.123
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords 0.229 0.476 -2.368
+    angles 13.472 -122.619 171.52
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords -0.026 0.507 -2.161
+    angles 0 0 -164.123
+   }
+  }
+ }
+ {
+  coords 8790.727 32.091 3853.995
+  angles 0 0 164.123
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords 0.229 0.476 -2.368
+    angles 13.472 -122.619 171.52
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords -0.026 0.507 -2.161
+    angles 0 0 -164.123
+   }
+  }
+ }
+ {
+  coords 8118.646 15.973 3884.612
+  angles 0 0 164.123
+  {
+   ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+    coords 0.229 0.476 -2.368
+    angles 13.472 -122.619 171.52
+   }
+   ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+    coords -0.026 0.507 -2.161
+    angles 0 0 -164.123
+   }
+  }
+ }
+}
+DecalEntity : "{CCE57C4C9C0E5009}Prefabs/Decals/Blood/BloodStain_Small_01.et" {
+ coords 8386.866 0 3974.364
+ angles -90 -180 -180
+ scale 0.8
+}
+DecalEntity : "{D53741D03AB3A652}Prefabs/Decals/Fluids/Decal_OilStain_01_extralarge.et" {
+ coords 8425.264 0 3954.643
+ angles -90 -180 -180
+}
+ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+ coords 8424.682 14.158 3952.874
+}

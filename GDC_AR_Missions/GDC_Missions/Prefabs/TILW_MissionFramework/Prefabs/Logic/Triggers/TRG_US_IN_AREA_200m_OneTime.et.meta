@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{A2470FAE95B74A0D}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m_OneTime.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}

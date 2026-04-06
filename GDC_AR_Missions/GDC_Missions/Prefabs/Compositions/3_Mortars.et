@@ -1,0 +1,401 @@
+GenericEntity : "{28D63631873AA636}Prefabs/Compositions/Slotted/SlotFlatSmall/MortarPlacement_S_USSR_01.et" {
+ ID "5282DCB5DFC8538F"
+ components {
+  SCR_CampaignBuildingCompositionComponent "{5E96A067C097D570}" {
+   Enabled 0
+  }
+  ActionsManagerComponent "{5D66ED1096104FD8}" {
+   Enabled 0
+  }
+ }
+ coords 10215.95 14.295 6582.851
+ angles 0 180 0
+ {
+  GenericEntity {
+   ID "6186DB2F1DE37192"
+   coords 2.198 0.462 0.465
+   angles 0 3.587 0
+   {
+    Turret {
+     ID "60B8D36A59BEEA2F"
+     components {
+      TILW_VehicleCrewComponent "{68D713127F11D17D}" {
+       m_crewConfig TILW_CrewConfig "{68D713127B419844}" {
+        m_crewGroups {
+         TILW_CrewGroup "{68D7131285DD1AEE}" {
+          m_crewStations {
+           TILW_CrewStation "{68D71312873EB623}" {
+            m_allowPilot 0
+            m_allowCargo 0
+            m_characters {
+             "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+            }
+           }
+          }
+          m_entityName "Mortar_1_3"
+         }
+        }
+        m_noTurretDismount 1
+        m_useIdleGroups 0
+       }
+      }
+     }
+    }
+   }
+  }
+  $grp GenericEntity : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+   {
+    ID "68D738C90AA2A12A"
+    coords -21.076 1.112 2.603
+    angles 0 2.438 0
+    {
+     GenericEntity {
+      ID "60B8D36A59BEEAC8"
+      components {
+       Hierarchy "{6186DB2F4F553985}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "60B8D36A59BEEACD"
+      components {
+       Hierarchy "{6186DB2F4F562E48}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E8404F61A5F"
+      components {
+       Hierarchy "{6186DB2F4F5168C8}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290C0"
+      components {
+       Hierarchy "{6186DB2F4F572314}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290D9"
+      components {
+       Hierarchy "{6186DB2F4F503CA9}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290EF"
+      components {
+       Hierarchy "{6186DB2F4F527212}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629100"
+      components {
+       Hierarchy "{6186DB2F4F537C8C}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629115"
+      components {
+       Hierarchy "{6186DB2F4F5C49C9}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629132"
+      components {
+       Hierarchy "{6186DB2F4F5D5BC6}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629147"
+      components {
+       Hierarchy "{6186DB2F4F5E4FEB}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629155"
+      components {
+       Hierarchy "{6186DB2F4F5F7350}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "6186CCEA6FABAA76"
+      components {
+       Hierarchy "{6186DB2F4EA8B729}" {
+       }
+      }
+      {
+       GenericEntity {
+        ID "6186CCEA53FABBE8"
+        components {
+         Hierarchy "{6186DB2F4EA95A9C}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399D"
+        components {
+         Hierarchy "{6186DB2F4EAA6F9F}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399E"
+        components {
+         Hierarchy "{6186DB2F4EAB318E}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399F"
+        components {
+         Hierarchy "{6186DB2F4F543DA6}" {
+         }
+        }
+       }
+      }
+     }
+     GenericEntity {
+      ID "6186CCEA93C28875"
+      components {
+       Hierarchy "{6186DB2F4EAD15CB}" {
+       }
+      }
+      {
+       GenericEntity {
+        ID "6186CBE3FD01DC2B"
+        components {
+         Hierarchy "{6186DB2F4EAE0DC2}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CBE3FD01DC4E"
+        components {
+         Hierarchy "{6186DB2F4EAED12A}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEAB192AD3D"
+        components {
+         Hierarchy "{6186DB2F4EAFE3A5}" {
+         }
+        }
+       }
+      }
+     }
+     Turret {
+      ID "60B8D36A59BEEA2F"
+      components {
+       TILW_VehicleCrewComponent "{68D738C32476B7E7}" {
+        m_crewConfig TILW_CrewConfig "{68D738C3214B8B6B}" {
+         m_crewGroups {
+          TILW_CrewGroup "{68D7131285DD1AEE}" {
+           m_crewStations {
+            TILW_CrewStation "{68D71312873EB623}" {
+             m_allowPilot 0
+             m_allowCargo 0
+             m_characters {
+              "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+             }
+            }
+           }
+           m_entityName "Mortar_1_2"
+          }
+         }
+         m_noTurretDismount 1
+         m_useIdleGroups 0
+        }
+       }
+      }
+     }
+    }
+   }
+   {
+    ID "68D738C90AA2A12F"
+    coords 22.925 0.342 -1
+    angles 0 3.762 0
+    {
+     GenericEntity {
+      ID "60B8D36A59BEEAC8"
+      components {
+       Hierarchy "{6186DB2F4F553985}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "60B8D36A59BEEACD"
+      components {
+       Hierarchy "{6186DB2F4F562E48}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E8404F61A5F"
+      components {
+       Hierarchy "{6186DB2F4F5168C8}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290C0"
+      components {
+       Hierarchy "{6186DB2F4F572314}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290D9"
+      components {
+       Hierarchy "{6186DB2F4F503CA9}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E93336290EF"
+      components {
+       Hierarchy "{6186DB2F4F527212}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629100"
+      components {
+       Hierarchy "{6186DB2F4F537C8C}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629115"
+      components {
+       Hierarchy "{6186DB2F4F5C49C9}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629132"
+      components {
+       Hierarchy "{6186DB2F4F5D5BC6}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629147"
+      components {
+       Hierarchy "{6186DB2F4F5E4FEB}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "61869E9333629155"
+      components {
+       Hierarchy "{6186DB2F4F5F7350}" {
+       }
+      }
+     }
+     GenericEntity {
+      ID "6186CCEA6FABAA76"
+      components {
+       Hierarchy "{6186DB2F4EA8B729}" {
+       }
+      }
+      {
+       GenericEntity {
+        ID "6186CCEA53FABBE8"
+        components {
+         Hierarchy "{6186DB2F4EA95A9C}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399D"
+        components {
+         Hierarchy "{6186DB2F4EAA6F9F}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399E"
+        components {
+         Hierarchy "{6186DB2F4EAB318E}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEA53FD399F"
+        components {
+         Hierarchy "{6186DB2F4F543DA6}" {
+         }
+        }
+       }
+      }
+     }
+     GenericEntity {
+      ID "6186CCEA93C28875"
+      components {
+       Hierarchy "{6186DB2F4EAD15CB}" {
+       }
+      }
+      {
+       GenericEntity {
+        ID "6186CBE3FD01DC2B"
+        components {
+         Hierarchy "{6186DB2F4EAE0DC2}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CBE3FD01DC4E"
+        components {
+         Hierarchy "{6186DB2F4EAED12A}" {
+         }
+        }
+       }
+       GenericEntity {
+        ID "6186CCEAB192AD3D"
+        components {
+         Hierarchy "{6186DB2F4EAFE3A5}" {
+         }
+        }
+       }
+      }
+     }
+     Turret {
+      ID "60B8D36A59BEEA2F"
+      components {
+       TILW_VehicleCrewComponent "{68D738C3382768B0}" {
+        m_crewConfig TILW_CrewConfig "{68D738C3459CD218}" {
+         m_crewGroups {
+          TILW_CrewGroup "{68D7131285DD1AEE}" {
+           m_crewStations {
+            TILW_CrewStation "{68D71312873EB623}" {
+             m_allowPilot 0
+             m_allowCargo 0
+             m_characters {
+              "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+             }
+            }
+           }
+           m_entityName "Mortar_1_1"
+          }
+         }
+         m_noTurretDismount 1
+         m_useIdleGroups 0
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

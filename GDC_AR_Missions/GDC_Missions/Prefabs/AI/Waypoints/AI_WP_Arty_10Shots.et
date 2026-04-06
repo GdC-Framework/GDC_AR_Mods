@@ -1,0 +1,5 @@
+SCR_AIWaypointArtillerySupport : "{6215CF8BB58C3ABA}Prefabs/AI/Waypoints/AI_WP_Arty_5Shots.et" {
+ ID "663CBEF736DEBDE0"
+ coords 9668.344 14.094 3626.125
+ m_iTargetShotCount 10
+}

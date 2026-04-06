@@ -1,0 +1,24 @@
+GenericEntity : "{03B44EA7652D0D17}Prefabs/Props/Military/Radios/RadioStation_R123M_01.et" {
+ components {
+  SCR_DestructionMultiPhaseComponent "{5624A88D86EFE8BA}" {
+   Enabled 1
+  }
+  TILW_Flag_EntityDamage "{68893601748D130B}" {
+   m_flagName "CANCEL-HQ-CALL"
+  }
+  RplComponent "{5624A88DC2D9928D}" {
+   Enabled 1
+  }
+ }
+ coords 6322.215 37.595 8130.775
+ angles 0 92.207 0
+}
+SCR_ChimeraCharacter officer : "{124C018E4FE2DE7B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Officer.et" {
+ components {
+  TILW_Flag_EntityDamage "{688936014F75E277}" {
+   m_flagName "CANCEL-HQ-CALL"
+  }
+ }
+ coords 6323.444 36.689 8131.898
+ angles 0 135 0
+}

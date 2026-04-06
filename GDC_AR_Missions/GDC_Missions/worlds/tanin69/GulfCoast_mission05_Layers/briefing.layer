@@ -1,0 +1,428 @@
+$grp Vehicle : "{27E2E58E734A80EC}Prefabs/Vehicles/Wheeled/M998/M1025_MERDC.et" {
+ HMMWV_C1_7 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EE5A0A6AC24FC}" {
+      SlotTemplate InventoryStorageSlot "{689EE5A0AD1339DD}" {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+      NumSlots 8
+     }
+    }
+   }
+  }
+  coords 7640.981 14.125 3938.76
+  angles 0 20.047 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+ HMMWV_C2_3 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 7662.105 14.125 3971.497
+  angles 0 33.084 0
+  m_sAttachmentGroupName "Charlie_2"
+ }
+}
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "La Easy, grâce (ou à cause) de l'action du platoon Charlie sur la reprise de la base militaire de Sanibel, peut remettre 100 balles dans le bastringue. Le commandement de la compagnie leur a royalement accordé une journée ENTIERE de repos."\
+  ""\
+  "Malheureusement, les russes ont amené des mortiers au nord de la zone Iona. Les copains du secteur Ripley sont salement sous le feu.  Il faut mettre fin à ce pilonnage au plus vite. "\
+  ""\
+  "Le platoon Charlie est de nouveau sur la brèche (avez-vous écrit à votre femme ?)."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."\
+  ""\
+  "Mais il semble que l'opération <i>Baie des Pochons</i> soit plutôt improvisée... Sûrement la faute aux politichiens !"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Localiser et détruire la position d'artillerie."\
+  ""\
+  "<b>Raid :"\
+  ""\
+  "Opération de petite ou moyenne envergure avec un objectif très précis (capturer un chef, détruire un pont, libérer des prisonniers…). Cette activité se termine toujours par un retrait planifié une fois l'objectif atteint, sans chercher à tenir le terrain conquis.</b>"\
+  ""\
+  "<i>la_Vieille, d'après l'OTAN ATP 3.2.1</i>"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ d_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b>Les brillants analystes de la Coy Easy pensent que :</b>"\
+  "  - les mortiers se trouvent dans le quadrilatère marqué sur carte"\
+  "  - des observateurs d'artillerie (genre BRDM) ont pris des positions avancées pour diriger les tirs de leurs gas (sic)"\
+  "  - deux pelotons d'infanterie motorisée sont sur zone, probablement un sur le flanc est et l'autre sur la flanc ouest"\
+  "  - il y a probablement quelques patrouilles sur zone"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "<b>Tous les supports sont mobilisés sur d'autres missions. Vous devez faire avec les moyens à votre disposition.</b>"\
+  ""\
+  "> Départ du carrefour Est de Iona (mythiquement défendu)."\
+  ""\
+  "> Votre zone d'intervention est délimitée sur carte."\
+  ""\
+  "> L'est de Iona est interdit pour vous (painted red) car trop de combats sur cette zone. N'y pénétrez pas."\
+  ""\
+  "> N'engagez les pelotons motorisés russes qu'en cas de nécessité. La charge \"sabre au clair\" ne parait pas la meilleure option... Mais à vous de voir !"\
+  ""\
+  "> Trouvez et détruisez la position des mortiers. Rendez tout véhicule ou matériel sur place inutilisable."\
+  ""\
+  "> Une fois votre objectif accompli, tirez-vous de ce merdier et venez rendre compte au QG de la Coy Easy."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ yBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 50
+  m_sDescription "US Battle Group HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_QG {
+  coords 7454.562 14.125 4040.821
+  angles 0 90 0
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Coy Easy HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_Insertion {
+  coords 7568.368 14.125 3951.7
+  angles 0 90 0
+  m_fWorldSize 30
+  m_sDescription "Vous"
+  m_bUseWorldScale 0
+ }
+}
+$grp PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ ylimit_2 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0 0.125 0.502 1
+   }
+  }
+  coords 10021.908 37.1 4650.931
+  Points {
+   ShapePoint "{68AF151BF8A0C87F}" {
+    Position -1193.318 -9.326 -730.552
+   }
+   ShapePoint "{68AF151D3CB4F7FC}" {
+    Position -873.398 -23.006 366.317
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -1386.366 -22.968 573.2
+   }
+   ShapePoint "{68AF151AF7A5EDC9}" {
+    Position -2250.643 -23.089 701.917
+   }
+   ShapePoint "{68AF151AF351E424}" {
+    Position -2247.419 -23.152 711.157
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -1385.803 -22.975 583.286
+   }
+   ShapePoint "{68AF151D2CE48DED}" {
+    Position -871.109 -23.006 367.944
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position -1193.084 -7.913 -737.518
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position -1299.539 -28.962 -1712.353
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position -1311.968 -32.512 -1713.154
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ ylimit_3 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0 0.125 0.502 1
+    m_drawLine 1
+    m_lineColor 0.502 0 0 1
+   }
+  }
+  coords 10267.895 39.107 5672.858
+  Points {
+   ShapePoint "{68AF151BF8A0C87F}" {
+    Position 199.99 1.559 -393.197
+   }
+   ShapePoint "{68AF151D3CB4F7FC}" {
+    Position -493.415 -22.629 -895.188
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -1619.894 -24.982 -414.603
+   }
+   ShapePoint "{68AF151AF7A5EDC9}" {
+    Position -2518.683 -32.478 -274.999
+   }
+   ShapePoint "{68AF151AF351E424}" {
+    Position -2517.838 -33.237 -267.494
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -1614.533 -24.982 -404.817
+   }
+   ShapePoint "{68AF151D2CE48DED}" {
+    Position -488 -25.645 -879.224
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 189.869 2.701 -384.065
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position 1952.088 -2.465 1309.626
+   }
+   ShapePoint "{68D71315538E8880}" {
+    Position 1112.855 -30.971 1866.564
+   }
+   ShapePoint "{68D7131551F6B4A3}" {
+    Position 1141.498 -31.141 1881.821
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position 1974.455 -2.617 1303.89
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ ylimit_4 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_color 0.502 0 0 1
+    m_lineColor 0.502 0 0 1
+   }
+  }
+  coords 9184.224 17.435 4523.579
+  Points {
+   ShapePoint "{68AF151BF8A0C87F}" {
+    Position 1301.403 20.783 733.755
+   }
+   ShapePoint "{68AF151D3CB4F7FC}" {
+    Position 593.813 2.404 233.541
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position 24.894 -3.341 492.084
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -333.712 14.218 -601.747
+   }
+   ShapePoint "{68AF151D2CE48DED}" {
+    Position -428.371 -2.229 -1593.292
+   }
+   ShapePoint "{68D713112B08D047}" {
+    Position -345.92 -20.813 -2476.898
+   }
+   ShapePoint "{68D713113A0ABE59}" {
+    Position 36.781 -24.803 -2466.061
+   }
+   ShapePoint "{68D7131131532CA8}" {
+    Position 301.5 -21.255 -2262.682
+   }
+   ShapePoint "{68D7131136FDC313}" {
+    Position -43.437 -10.704 -2149.909
+   }
+   ShapePoint "{68D7131140837CAC}" {
+    Position -47.869 -11.944 -1959.447
+   }
+   ShapePoint "{68D713112BA7CE42}" {
+    Position 263.218 -16.698 -1940.972
+   }
+   ShapePoint "{68D713112BC3D5AD}" {
+    Position 989.624 -7.857 -2201.695
+   }
+   ShapePoint "{68D7131148D8D7FD}" {
+    Position 1368.216 -15.942 -2298.063
+   }
+   ShapePoint "{68D713114E5BB4EF}" {
+    Position 1698.621 -10.671 -2505.897
+   }
+   ShapePoint "{689D1B5671CD84AA}" {
+    Position 2407.618 -13.486 -2810.098
+   }
+   ShapePoint "{68A3455307536415}" {
+    Position 2640.684 56.383 -83.77
+   }
+   ShapePoint "{68A34553022BF6A8}" {
+    Position 2294.073 30.879 137.025
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+ ylimit_5 {
+  components {
+   TILW_MapShapeComponent "{6508F5526836BC09}" {
+    m_factionKeys {
+     "US"
+    }
+    m_drawArea 0
+    m_color 0.502 0 0 1
+    m_drawLine 1
+    m_lineColor 0.502 0 0 1
+    m_lineWidth 3
+   }
+  }
+  coords 9874.968 69.115 6474.023
+  Points {
+   ShapePoint "{68AF151D3CB4F7FC}" {
+    Position 702.542 -53.03 238.391
+   }
+   ShapePoint "{689D1B55FAA59356}" {
+    Position -284.047 -54.912 768.893
+   }
+   ShapePoint "{689D1B5674065844}" {
+    Position -888.392 -54.695 -236.025
+   }
+   ShapePoint "{68AF151D2CE48DED}" {
+    Position 152.289 -38.147 -874.333
+   }
+  }
+  LineColor 0.502 0 0 1
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ yArea_Ripley {
+  coords 8619.399 27.751 5029.597
+  angles 0 90 0
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag"
+  m_sDescription "Ripley"
+  m_bUseWorldScale 0
+ }
+ yArea_Iona {
+  coords 7425.892 14.219 4125.308
+  angles 0 90 0
+  m_MarkerColor 0.157 0.275 0.624 1
+  m_sQuadName "flag"
+  m_fWorldSize 50
+  m_sDescription "Iona"
+  m_bUseWorldScale 0
+ }
+ yArea_Navajo {
+  coords 8271.771 14.435 3924.798
+  angles 0 90 0
+  m_MarkerColor 0.157 0.275 0.624 1
+  m_sQuadName "flag"
+  m_fWorldSize 50
+  m_sDescription "Navajo"
+  m_bUseWorldScale 0
+ }
+ yBombing_1 {
+  coords 8209.216 14.125 5218.263
+  angles 0 90 0
+  m_sImageSet "{88966C7AB9720818}UI/Textures/DeployMenu/Objectives-Briefing/Objectives-briefing.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "Sabotage"
+  m_fWorldSize 60
+  m_sDescription "Bombing"
+  m_bUseWorldScale 0
+ }
+ yBombing_2 {
+  coords 9012.405 16.621 4838.696
+  angles 0 90 0
+  m_sImageSet "{88966C7AB9720818}UI/Textures/DeployMenu/Objectives-Briefing/Objectives-briefing.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "Sabotage"
+  m_fWorldSize 60
+  m_sDescription "Bombing"
+  m_bUseWorldScale 0
+ }
+}

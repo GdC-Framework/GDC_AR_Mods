@@ -1,0 +1,524 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Alors que ça cogne sur Lake Haven Airport et que ça chauffe sur Iona, des enfoirés de spetsnaz ont fait le coup de point la nuit dernière sur notre hub logistique à Sanibel. Avant que nous ayons pu réagir, ils ont été renforcés par l'infanterie de marine russe."\
+  ""\
+  "Les vilains coupent nos lignes logistiques entre le QG du Battle Group et nos troupes engagées sur Iona et Lake Haven Airport. Il faut réagir vite."\
+  ""\
+  "La Easy (compagnie d'infanterie légère), bien qu'elle ait subit de lourdes pertes matérielles et humaines, semble disposer d'éléments doués pour mener des actions coup de points, en mode quasi commando."\
+  ""\
+  "Le platoon Charlie est reformé avec des éléments de Delta pour mener à bien cette nouvelle mission."\
+  ""\
+  "C'est la dernière chance pour la Easy de redorer son blason."\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Fin des années 80. Un archipel tropical dans les caraïbes constitue le poste avancé de l'URSS proche, trop proche des USA."\
+  ""\
+  "Le gouvernement Etats-Unien décide de lancer une opération militaire pour tenter de contenir la croissance des moyens militaires de ce territoire."\
+  ""\
+  "L'US Army a pris pied à Gasparilla, à l'extrême sud ouest de l'archipel."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Reprendre le contrôle de la base militaire de Sanibel."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ d_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "La carte a été corrigée et abondée de renseignements par nos brillants analystes."\
+  ""\
+  "Il s'agit d'une camp fortifié de la seconde guerre mondiale. L'enceinte extérieure, épaisse de plus d'un mètre, ne pourra pas être breachée avec ce dont vous disposez. Les bunkers de l'enceinte sont abandonnés et inutilisables pour la défense. En revanche, de nombreuses échelles (ladder) permettent d'escalader ces murs."\
+  ""\
+  "Les positions de nos M2 sont indiquées. On ne sait pas lesquelles seront encore en place après l'attaque des spetsnaz, mais on pense qu'ils ont pu en récupérer tout ou partie."\
+  ""\
+  "Nous pensons qu'il y a environ 40 pax sur place, mix de spetsnaz et d'infanterie navale."\
+  ""\
+  "Entre 50 et 60 hostiles sont occupés à miner l'axe routier (infanterie navale et génie/explo). Ils ne resteront sûrement pas inactifs lors de votre attaque."\
+  ""\
+  "Il s'agit de troupes russes aguerries."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Execution {
+  coords 15508.594 52.125 4435.263
+  m_sTitle "Exécution"
+  m_sTextData "Ne vous faites pas repérer par les troupes à l'extérieur de la base."\
+  ""\
+  "Le gros des troupes extérieures est probablement occupé à miner (Zulu 2 et Zulu 3), mais on ne peut pas exclure que des observateurs et des patrouilles soient positionnés aux environs immédiats de Zulu 1."\
+  ""\
+  "Une fois sur la base, vous avez carte blanche."\
+  ""\
+  "Déclarez la victoire sur le drapeau quand la zone est sous votre contrôle."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+}
+$grp PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ yBase_US {
+  coords 1166.913 2.281 1347.185
+  m_sQuadName "undefined"
+  m_fWorldSize 50
+  m_sDescription "US Battle Group HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_QG {
+  coords 7454.562 14.125 4040.821
+  angles 0 90 0
+  m_sQuadName "commander"
+  m_fWorldSize 30
+  m_sDescription "Coy Easy HQ"
+  m_bUseWorldScale 0
+ }
+ yUS_Insertion {
+  coords 6251.885 16.216 3949.056
+  angles 0 90 0
+  m_fWorldSize 50
+  m_sDescription "Vous"
+  m_bUseWorldScale 0
+ }
+ y_M2_1 {
+  coords 5374.225 10.681 3303.508
+  angles 0 -49.067 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_fWorldSize 5
+  m_sDescription "M2"
+ }
+ y_M2_2 {
+  coords 5419.375 10.292 3248.589
+  angles 0 57.718 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_fWorldSize 5
+  m_sDescription "M2"
+ }
+ y_M2_3 {
+  coords 5434.096 9.469 3204.89
+  angles 0 140.439 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_fWorldSize 5
+  m_sDescription "M2"
+ }
+ y_M2_4 {
+  coords 5323.718 10.157 3270.871
+  angles 0 67.738 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_fWorldSize 5
+  m_sDescription "M2"
+ }
+ y_M2_5 {
+  coords 5284.114 10.147 3345.304
+  angles 0 63.109 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "attack"
+  m_fWorldSize 5
+  m_sDescription "M2"
+ }
+ y_Ladder_1 {
+  coords 5431.66 9.469 3303.026
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_2 {
+  coords 5388.948 9.469 3308.552
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_3 {
+  coords 5341.71 9.462 3375.639
+  angles 0 -126.295 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_4 {
+  coords 5310.181 9.294 3373.781
+  angles 0 151.057 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_5 {
+  coords 5280.938 8.532 3321.513
+  angles 0 65.034 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_6 {
+  coords 5317.176 8.752 3235.051
+  angles 0 65.802 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_7 {
+  coords 5366.619 9.143 3171.418
+  angles 0 47.146 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_8 {
+  coords 5410.615 9.466 3141.359
+  angles 0 -40.374 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_9 {
+  coords 5470.351 9.96 3187.18
+  angles 0 -39.096 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_Ladder_10 {
+  coords 5499.456 9.458 3241.651
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "direction-of-attack"
+  m_fWorldSize 12
+  m_sDescription "Ladder"
+ }
+ y_no_building_1 {
+  coords 5433.174 9.469 3259.594
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 7
+  m_sDescription "No building"
+ }
+ y_no_building_2 {
+  coords 5370.077 9.469 3200.85
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 7
+  m_sDescription "No building"
+ }
+ y_Zulu_1 {
+  coords 5536.011 14.689 3129.747
+  angles 0 -49.067 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "circle"
+  m_fWorldSize 20
+  m_sDescription "Zulu 1"
+ }
+ y_Zulu_2 {
+  coords 5635.556 6.53 2980.299
+  angles 0 -49.067 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "circle"
+  m_fWorldSize 20
+  m_sDescription "Zulu 2"
+ }
+ y_Zulu_3 {
+  coords 5572.932 6.533 2839.11
+  angles 0 -49.067 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "circle"
+  m_fWorldSize 20
+  m_sDescription "Zulu 3"
+ }
+ y_PC {
+  coords 5427.577 21.086 3179.971
+  angles 0 -132.854 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 7
+  m_sDescription "Command Post"
+ }
+}
+PolylineShapeEntity y_Enceinte : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_drawLine 1
+   m_lineWidth 2
+  }
+ }
+ coords 5450.413 13.313 3279.618
+ Points {
+  ShapePoint "{68C5546A8786F4EE}" {
+   Position -44.501 0 -136.591
+  }
+  ShapePoint "{68C5546A867ED01E}" {
+   Position -52.222 -3.844 -137.473
+  }
+  ShapePoint "{68C5546A803EA522}" {
+   Position -106.518 -4.061 -78.227
+  }
+  ShapePoint "{68C5546A833539B0}" {
+   Position -116.02 -3.871 -59.906
+  }
+  ShapePoint "{68C5546A8F024CB8}" {
+   Position -121.184 -4.111 -59.205
+  }
+  ShapePoint "{68C5546A96CACF77}" {
+   Position -154.016 -5.395 2.549
+  }
+  ShapePoint "{68C5546BA51510EF}" {
+   Position -148.243 -4.201 7.939
+  }
+  ShapePoint "{68C5546BB549F405}" {
+   Position -148.367 -4.205 10.642
+  }
+  ShapePoint "{68C5546BE7AFC81A}" {
+   Position -159.641 -4.242 28.712
+  }
+  ShapePoint "{68C5546BBF4910E0}" {
+   Position -169.629 -4.247 50.75
+  }
+  ShapePoint "{68C554680CCAC022}" {
+   Position -176.594 -5.183 65.521
+  }
+  ShapePoint "{68C554682ADC65CF}" {
+   Position -176.275 -5.351 69.213
+  }
+  ShapePoint "{68C55468373CF2D9}" {
+   Position -172.58 -4.793 73.784
+  }
+  ShapePoint "{68C5546A9142AD40}" {
+   Position -119.179 -4.009 99.393
+  }
+  ShapePoint "{68C55468FCD537D7}" {
+   Position -115.133 -3.844 97.371
+  }
+  ShapePoint "{68C554691AE4408E}" {
+   Position -111.032 -3.844 93.742
+  }
+  ShapePoint "{68C55468FD059E37}" {
+   Position -90.161 -3.844 55.269
+  }
+  ShapePoint "{68C554694C843627}" {
+   Position -85.16 -3.844 49.052
+  }
+  ShapePoint "{68C554695CB38666}" {
+   Position -60.104 -3.844 21.285
+  }
+  ShapePoint "{68C554696463E143}" {
+   Position -56.722 -3.844 21.927
+  }
+  ShapePoint "{68C5546979DFB67A}" {
+   Position -49.809 -3.844 24.963
+  }
+  ShapePoint "{68C554698D917CD8}" {
+   Position -46.599 -3.844 25.229
+  }
+  ShapePoint "{68C554699D83179F}" {
+   Position -40.635 -3.844 28.616
+  }
+  ShapePoint "{68C55469A6A0A6C9}" {
+   Position -37.216 -3.844 30.468
+  }
+  ShapePoint "{68C55469A3368B78}" {
+   Position -33.154 -3.862 30.996
+  }
+  ShapePoint "{68C55469AED699DB}" {
+   Position -29.18 -3.864 28.589
+  }
+  ShapePoint "{68C55469B2D46000}" {
+   Position -1.57 -3.868 0.49
+  }
+  ShapePoint "{68C55469D3D03B26}" {
+   Position 52.728 -3.844 -47.001
+  }
+  ShapePoint "{68C55466026B7614}" {
+   Position 53.929 -3.856 -51.832
+  }
+  ShapePoint "{68C5546610612A0B}" {
+   Position 52.189 -3.852 -55.933
+  }
+  ShapePoint "{68C5546610F3A753}" {
+   Position 50.384 -3.867 -58.221
+  }
+  ShapePoint "{68C554662D9A4436}" {
+   Position 13.226 -3.568 -92.554
+  }
+  ShapePoint "{68C55466486E4826}" {
+   Position 7.383 -3.636 -96.614
+  }
+  ShapePoint "{68C554665C46167C}" {
+   Position 4.54 -3.673 -97.112
+  }
+  ShapePoint "{68C55466524D5189}" {
+   Position 4.653 -3.621 -98.728
+  }
+  ShapePoint "{68C55466579364E7}" {
+   Position 9.709 -3.565 -97.379
+  }
+  ShapePoint "{68C5546635C8BF4B}" {
+   Position 15.074 -3.494 -93.227
+  }
+  ShapePoint "{68C554660EFFBA69}" {
+   Position 51.15 -3.884 -60.327
+  }
+  ShapePoint "{68C55469FC48BBE8}" {
+   Position 54.814 -3.85 -54.919
+  }
+  ShapePoint "{68C55469F93F7A6F}" {
+   Position 55.854 -3.849 -50.38
+  }
+  ShapePoint "{68C55469DB2F68E3}" {
+   Position 54.671 -3.844 -46.604
+  }
+  ShapePoint "{68C55469AF18BB4F}" {
+   Position -0.11 -3.883 1.329
+  }
+  ShapePoint "{68C5546982218647}" {
+   Position -26.219 -3.894 28.573
+  }
+  ShapePoint "{68C554699A6C08E6}" {
+   Position -31.529 -3.905 32.429
+  }
+  ShapePoint "{68C554697E029765}" {
+   Position -36.57 -3.852 32.83
+  }
+  ShapePoint "{68C5546976B85922}" {
+   Position -44.88 -3.844 28.571
+  }
+  ShapePoint "{68C554696595F156}" {
+   Position -57.958 -3.844 23.356
+  }
+  ShapePoint "{68C5546955C9ABEF}" {
+   Position -60.328 -3.844 23.61
+  }
+  ShapePoint "{68C5546935C8566F}" {
+   Position -87.193 -3.844 54.193
+  }
+  ShapePoint "{68C554692A56F5D0}" {
+   Position -94.9 -3.844 67.39
+  }
+  ShapePoint "{68C554692AFF84E2}" {
+   Position -110.49 -3.848 96.017
+  }
+  ShapePoint "{68C55468FDB52BA5}" {
+   Position -115.615 -3.853 100.177
+  }
+  ShapePoint "{68C5546810452D72}" {
+   Position -120.73 -4.133 100.808
+  }
+  ShapePoint "{68C55468E25B3438}" {
+   Position -172.108 -4.746 75.921
+  }
+  ShapePoint "{68C5546815B155EE}" {
+   Position -176.831 -5.77 72.184
+  }
+  ShapePoint "{68C5546BF630DFEE}" {
+   Position -179.111 -6.175 65.9
+  }
+  ShapePoint "{68C5546A924B698E}" {
+   Position -172.013 -4.794 48.511
+  }
+  ShapePoint "{68C5546BC00447DB}" {
+   Position -160.521 -2.399 26.992
+  }
+  ShapePoint "{68C5546A9CF2AD46}" {
+   Position -153.698 0 16.191
+  }
+  ShapePoint "{68C5546A98C32C1C}" {
+   Position -150.237 -4.464 8.834
+  }
+  ShapePoint "{68C5546A9811D329}" {
+   Position -157.269 -6.275 3.08
+  }
+  ShapePoint "{68C5546AA4CA7F7B}" {
+   Position -122.979 -4.451 -60.707
+  }
+  ShapePoint "{68C5546AA7FC5E2F}" {
+   Position -116.715 -3.901 -61.887
+  }
+  ShapePoint "{68C5546AA10E69EA}" {
+   Position -107.521 -4.352 -80.682
+  }
+  ShapePoint "{68C5546AA226D5AA}" {
+   Position -53.41 0 -137.51
+  }
+  ShapePoint "{68C5546B1119768D}" {
+   Position -48.123 0 -139.283
+  }
+  ShapePoint "{68C5546AAD329D43}" {
+   Position -43.375 0 -137.911
+  }
+  ShapePoint "{68C5546AAC290EC7}" {
+   Position -5.258 0 -108.986
+  }
+  ShapePoint "{68C5546AAF629E1C}" {
+   Position -3 0 -102.214
+  }
+  ShapePoint "{68C5546AB3B29716}" {
+   Position -4.879 0 -102.245
+  }
+  ShapePoint "{68C5546ADF838B96}" {
+   Position -7.036 0 -108.366
+  }
+ }
+}

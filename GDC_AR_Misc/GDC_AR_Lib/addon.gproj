@@ -1,0 +1,8 @@
+GameProject {
+ ID "GDC AR Lib"
+ GUID "690756F509F253EB"
+ TITLE "GDC AR Lib"
+ Dependencies {
+  "58D0FB3206B6F859"
+ }
+}

@@ -1,0 +1,21 @@
+SCR_DoorOpenerEntity : "{11811A404E19275D}Prefabs/Systems/Logic/DoorOpener.et" {
+ coords 15715.678 64.219 1473.771
+}
+GenericEntity : "{1FE6CA907FA552E7}Prefabs/Compositions/Slotted/SlotFlatSmall/SupplyCache_S_FIA_04.et" {
+ coords 15562.466 65.105 1376.109
+ angles 0 -71.908 0.027
+ {
+  GenericEntity {
+   ID "5D1ED92353BB9E3E"
+   coords 5.028 -2.414 0.146
+   angles 0 -85.487 0
+  }
+ }
+}
+TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 15668.021 64.531 1378.376
+ m_queryRadius 250
+ m_flagName "GO-FLY"
+ m_ownerFactionKey "USSR"
+ m_ratioThreshold 0.6
+}

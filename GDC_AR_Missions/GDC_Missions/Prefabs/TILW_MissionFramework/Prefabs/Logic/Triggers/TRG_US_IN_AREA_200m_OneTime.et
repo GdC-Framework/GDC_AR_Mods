@@ -1,0 +1,5 @@
+TILW_FactionTriggerEntity : "{B794C9D680B3C554}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_IN_AREA_200m.et" {
+ ID "61F339AC7B7B5324"
+ coords 8459.923 14.683 3825.504
+ m_stopAfterFirstChange 1
+}

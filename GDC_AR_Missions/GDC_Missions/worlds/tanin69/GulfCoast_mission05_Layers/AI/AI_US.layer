@@ -1,0 +1,177 @@
+$grp SCR_AIGroup : "{0A8E20F50DA233E1}Prefabs/Groups/BLUFOR/Group_US_FireTeam_Guard.et" {
+ Grp_US_AI_1 {
+  coords 8901.988 14.681 4990.628
+  m_aStaticWaypoints {
+   "WP_US_Def_1"
+  }
+ }
+ Grp_US_AI_2 {
+  coords 8838.308 15.86 4914.26
+  angles 0 -27.997 0
+  m_aStaticWaypoints {
+   "WP_US_Def_2"
+  }
+ }
+ Grp_US_AI_3 {
+  coords 8321.579 14.627 5189.555
+  m_aStaticWaypoints {
+   "WP_US_Def_3"
+  }
+ }
+ Grp_US_AI_4 {
+  coords 8198.686 14.434 5166.62
+  m_aStaticWaypoints {
+   "WP_US_Def_4"
+  }
+ }
+}
+$grp SCR_DoorOpenerEntity : "{11811A404E19275D}Prefabs/Systems/Logic/DoorOpener.et" {
+ {
+  coords 8844.7 15.816 4908.908
+ }
+ {
+  coords 8312.548 14.872 5183.882
+ }
+}
+$grp Vehicle : "{27E2E58E734A80EC}Prefabs/Vehicles/Wheeled/M998/M1025_MERDC.et" {
+ HMMWV_C1_4 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EE5A0A6AC24FC}" {
+      SlotTemplate InventoryStorageSlot "{689EE5A0AD1339DD}" {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+      NumSlots 8
+     }
+    }
+   }
+  }
+  coords 8895.953 15.164 4939.256
+  angles 0 20.047 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+ HMMWV_C1_6 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{689EC2EABF39CE56}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B5C56803}" {
+      SlotTemplate InventoryStorageSlot Medibag {
+       Prefab "{AE578EEA4244D41F}Prefabs/Items/Equipment/Kits/MedicalKit_01/MedicalKit_01_US.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EC2E9B294F2B9}" {
+      SlotTemplate InventoryStorageSlot repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{689EE5A0A6AC24FC}" {
+      SlotTemplate InventoryStorageSlot "{689EE5A0AD1339DD}" {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+      NumSlots 8
+     }
+    }
+   }
+  }
+  coords 8291.905 14.125 5202.802
+  angles 0 20.047 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_US_Def_1 {
+  coords 8906.135 14.681 4986.243
+  CompletionRadius 10
+ }
+ WP_US_Def_2 {
+  coords 8841.552 15.861 4912.474
+  CompletionRadius 4
+ }
+ WP_US_Def_3 {
+  coords 8321.868 14.627 5184.613
+  CompletionRadius 4
+ }
+ WP_US_Def_4 {
+  coords 8199.426 14.434 5167.402
+  CompletionRadius 4
+ }
+}
+$grp Vehicle : "{DD774A8FD0989A78}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MERDC.et" {
+ HMMWV_C1_3 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5B1070686F48F485}" {
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{62EACA540865E9A9}" {
+      SlotTemplate InventoryStorageSlot ugl_flare {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+     }
+     MultiSlotConfiguration "{62EACA54619871BA}" {
+      SlotTemplate InventoryStorageSlot ATmine {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8880.889 14.176 4961.351
+  angles 0 -16.661 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+ HMMWV_C1_5 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5916C587FC993363}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5B1070686F48F485}" {
+      NumSlots 8
+     }
+     MultiSlotConfiguration "{62EACA540865E9A9}" {
+      SlotTemplate InventoryStorageSlot ugl_flare {
+       Prefab "{4D44C563104F77BB}Prefabs/Weapons/Ammo/BC_Ammo_Rocket_M37A1.et"
+      }
+     }
+     MultiSlotConfiguration "{62EACA54619871BA}" {
+      SlotTemplate InventoryStorageSlot ATmine {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+  }
+  coords 8192.789 14.125 5153.611
+  angles 0 -64.223 0
+  m_sAttachmentGroupName "Charlie_1"
+ }
+}

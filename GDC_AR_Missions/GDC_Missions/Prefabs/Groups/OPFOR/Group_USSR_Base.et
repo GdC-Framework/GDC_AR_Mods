@@ -1,0 +1,8 @@
+SCR_AIGroup : "{000CD338713F2B5A}Prefabs/AI/Groups/Group_Base.et" {
+ ID "0000000000000001"
+ components {
+  AIChimeraBehaviorTreeComponent "{13BAA835864B8992}" {
+   LoadOnProxies 1
+  }
+ }
+}
