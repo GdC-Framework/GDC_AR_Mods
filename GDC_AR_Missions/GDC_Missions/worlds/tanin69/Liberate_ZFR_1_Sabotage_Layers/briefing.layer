@@ -1,0 +1,227 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "<i>Après 20 ans d'un très relatif status quo, nous (les gentils de l'Ouest, la RFZ) avons décidé de passer à l'action.</i>"\
+  ""\
+  "Collecte de renseignements, éliminations ciblées d'officiers, sabotages,  embuscades :  tout est bon pour déstabiliser le régime fantoche de la République du Peuple de Zimnitrita."\
+  ""\
+  "Notre équipement est, pour le moment, très limité : armes tchèques (VZ58) ou soviétiques, peu de blindés (pris à l'ennemi)... Le courage et l'intelligence de nos patriotes sont notre principale force. Si nos premières opérations sont couronnées de succès, nous espérons bien recevoir du matériel US."\
+  ""\
+  "En face, nous avons une armée régulière, bien entrainée, et généreusement équipée à la mode russe."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux."\
+  ""\
+  "A l'ouest de la rivière Drawna, la population s'est libérée du joug soviétique... Avec l'aide de leurs amis occidentaux. La République Fédérale de Zimnitrita (RFZ) est née. Malheureusement, la RFZ, à cause d'un lobbying intense du bloc soviétique et de ses alliés, n'est pas encore reconnue par les Nations Unies."\
+  ""\
+  "A l'est, la République du Peuple de Zimnitrita (RPZ) est sous perfusion de l'URSS et ne tient que grâce à son soutien."\
+  ""\
+  "Chaque camp espère réunifier Zimnitrita."\
+  ""\
+  "Quels moyens recevront les parties de leurs soutiens externes ? Quel camp sera le plus malin ? Le plus adroit dans ses opérations militaires ? Le plus pervers dans la diplomacie ? Et qui fait les meilleurs grillades ?"\
+  ""\
+  "Seule votre compétence permettra d'apporter des réponses à ces nombreuses questions : le destin de Zimnitrita est entre vos mains !"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif principal</b>"\
+  "Saboter le générateur électrique du port industriel de Gruwice."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b><color name=\"red\">Météo</b></color>"\
+  "4h15. Temps couvert pour le moment, évolution incertaine. Le soleil se lève à 5h15 (à l'orient, évidemment)."\
+  ""\
+  "<b><color name=\"red\">Global</b></color>"\
+  "Vous êtes en territoire ennemi. Tirez-en toutes les conclusions nécessaires."\
+  ""\
+  "<b><color name=\"red\">Hostiles sur la zone d'opération</b></color>"\
+  "Nous pensons qu'il y a une vingtaine de pax sur la zone industrielle (gardes, patrouilles) et probablement des BRDM qui trainent par-ci par-là."\
+  ""\
+  "Dès qu'ils seront réveillés, de nombreux renforts sont à attendre de la base militaire à l'est immédiat de la zone industrielle."\
+  ""\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ g_Victory_condition {
+  coords 15514.452 52.125 4437.883
+  m_sTitle "Conditions de victoire"
+  m_sTextData "<b><color name=\"green\">Victoire éclatante</b></color>"\
+  "- Moins de 25% de pertes"\
+  "- Objectif accompli"\
+  "- Point <b>\"exfil\"</b> atteint"\
+  ""\
+  "<b><color name=\"green\">Victoire majeure</b></color>"\
+  "- Moins de 25% de pertes"\
+  "- Objectif accompli"\
+  "- Point <b>\"rejoindre\"</b> atteint"\
+  ""\
+  "<b><color name=\"green\">Victoire mineure</b></color>"\
+  "- Moins de 50% de pertes"\
+  "- Objectif accompli"\
+  "- Point <b>\"Exfil\"</b> ou <b>\"rejoindre\"</b> atteint"\
+  ""\
+  "<b><color name=\"red\">Défaite</b></color>"\
+  "Si vous avez plus de 50% de pertes, dans tous les cas, le haut commandement considérera la mission comme un échec (cf. Le mot de commandant)."\
+  ""\
+  "Vous pouvez néanmoins, entre vous, au niveau de votre groupe, avoir une appréciation différente de la défaite... Qui restera locale !"
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 6
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du boss"
+  m_sTextData "On ne va pas se mentir : le recrutement et l'entrainement de notre petite armée est très difficile. Nous misons sur la qualité, plus que sur la quantité."\
+  ""\
+  "Conséquence : chaque homme perdu est une perte majeure. Votre PREMIERE consigne est donc de <b>préserver vos effectifs</b>."\
+  ""\
+  "Je vous demande donc de peser avec la plus grande attention l'équilibre entre l'<i>atteinte de l'objectif</i> et la <i>survie de chacun de vos hommes</i>."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ f_Insert_Extract {
+  coords 15495.137 52.124 4449.113
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "<b><color name=\"green\">Insertion</b></color>"\
+  "De nuit, vous êtes arrivés par bateau de la rive ouest et êtes arrivés près de la zone d'opération (point \"Insertion\")"\
+  ""\
+  "<b><color name=\"green\">Exfiltration</b></color>"\
+  "Des véhicules et quelques caisses, gardés par un partisan, vous attendent sur le point \"Rejoindre\". Si vous êtes épuisés, vous pouvez vous arrêter là (mais voir les conditions de victoire)."\
+  ""\
+  "<b><color name=\"green\">Extraction</b></color>"\
+  "Rejoignez le point \"Exfil\" (ponton). NE PRENEZ PAS les chemins principaux et routes. Les sentiers sont pratiquables en véhicule. <i>En théorie</i>, ils sont plus sûrs..."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ Mrk_Obj_Sabotage {
+  coords 9811.136 19.141 4777.815
+  angles 0 0 0
+  m_sImageSet "{88966C7AB9720818}UI/Textures/DeployMenu/Objectives-Briefing/Objectives-briefing.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "Sabotage"
+  m_fWorldSize 50
+  m_sDescription "Saboter"
+  m_bUseWorldScale 0
+ }
+ Mrk_Insertion {
+  coords 8823.438 8.989 4562.148
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Insertion"
+  m_bUseWorldScale 0
+ }
+ Mrk_Join {
+  coords 8904.46 43.616 5121.023
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "help-2"
+  m_fWorldSize 50
+  m_sDescription "Rejoindre"
+  m_bUseWorldScale 0
+ }
+ Mrk_Exfil {
+  coords 8862.271 0.795 3893.326
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "join-3"
+  m_fWorldSize 50
+  m_sDescription "Exfil"
+  m_bUseWorldScale 0
+ }
+ Mrk_Bridge {
+  coords 9773.792 10.884 4795.55
+  angles 0 90 0
+  m_sImageSet "{10C0A9A305E8B3A4}UI/Imagesets/Tasks/Task_Icons.imageset"
+  m_MarkerColor 0.009 0.004 0.008 1
+  m_sQuadName "Icon_Task_Evac_UI"
+  m_fWorldSize 50
+  m_sDescription "Passage"
+ }
+ Mrk_Danger1 {
+  coords 10420.038 26.469 4689.185
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_sDescription "Ouais, ça craint"
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger2 {
+  coords 9614.638 76.218 4314.088
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_sDescription "Sapuduku"
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger3 {
+  coords 8723.882 28.88 4221.134
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_sDescription "Ca brûle"
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger4 {
+  coords 9313.801 69.496 5652.421
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_sDescription "Chaud"
+  m_bUseWorldScale 0
+ }
+}
+GenericEntity : "{8DCF642905449796}Prefabs/Props/Military/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Launcher_FIA.et" {
+ coords 8903.775 41.089 5123.806
+}

@@ -1,0 +1,105 @@
+GenericEntity Spawn_Obj_1 {
+ coords 14770.472 50.907 11953.264
+}
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "Zimnitrita, début des années 80."\
+  ""\
+  "Les forces locales (FIA) se sont retranchées dans le QG de l'aéroport principal de Zimnitrita Est."\
+  ""\
+  "La position est convoitée tant par les US que par les soviétiques."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Prendre le QG et tenir le périmètre (30 m. autour du drapeau) au moins 5 minutes."\
+  ""
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ fh_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "Une petite dizaine d'hommes tiennent le QG."
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ Marker_Objective {
+  coords 14256.995 51.18 11806.654
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0 0.502 0.125 1
+  m_sQuadName "objective-marker"
+  m_fWorldSize 50
+  m_sDescription "Objectif"
+  m_bUseWorldScale 0
+ }
+ Marker_Spawn_USSR {
+  coords 14206.976 51.957 11232.057
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "flag"
+  m_fWorldSize 50
+  m_sDescription "Spawn"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "USSR"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_aHideOnGameModeStates {
+  }
+  m_bShowForAnyFaction 0
+ }
+ Marker_Spawn_US {
+  coords 13679.467 49.682 11751.587
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag"
+  m_fWorldSize 50
+  m_sDescription "Spawn"
+  m_bUseWorldScale 0
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bVisibleForEmptyFaction 0
+  m_aHideOnGameModeStates {
+  }
+  m_bShowForAnyFaction 0
+ }
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ TRG_US_CAPTURE {
+  coords 14256.356 52.306 11804.913
+  m_queryRadius 30
+  m_captureTime 5
+  m_sendStatusMessages 1
+  m_locationName "the HQ"
+  m_flagName "US_CAPTURE"
+  m_ownerFactionKey "US"
+  m_ratioThreshold 0.8
+ }
+ TRG_USSR_CAPTURE {
+  coords 14256.356 52.306 11804.913
+  m_queryRadius 30
+  m_captureTime 5
+  m_sendStatusMessages 1
+  m_locationName "the HQ"
+  m_flagName "USSR_CAPTURE"
+  m_ownerFactionKey "USSR"
+  m_ratioThreshold 0.8
+ }
+}

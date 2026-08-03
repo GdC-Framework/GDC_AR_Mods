@@ -1,0 +1,533 @@
+$grp Vehicle : "{D7C51A961BF675B2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_brown.et" {
+ UAZ469_covered_CIV_brown10 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 12072.667 44.865 9173.226
+  angles 1.369 169.007 -0.448
+ }
+ UAZ469_covered_CIV_brown8 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 12039.716 45.125 9171.101
+  angles 1.369 169.007 -0.448
+ }
+ UAZ469_covered_CIV_brown9 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 12029.995 45.125 9163.167
+  angles 1.369 169.007 -0.448
+ }
+ UAZ469_covered_CIV_brown2 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13119.307 43.662 9318.6
+  angles 1.369 94.007 -0.448
+ }
+ UAZ469_covered_CIV_brown6 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13121.07 43.978 9312.021
+  angles 1.369 67.328 -0.448
+ }
+ UAZ469_covered_CIV_brown7 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13128.499 44.239 9304.919
+  angles 1.369 10.232 -0.448
+ }
+ UAZ469_covered_CIV_brown3 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13337.765 49.86 10244.368
+  angles 1.369 -85.993 -0.448
+ }
+ UAZ469_covered_CIV_brown5 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13337.728 49.942 10250.915
+  angles 1.369 -78.253 -0.448
+ }
+ UAZ469_covered_CIV_brown4 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5AD4F813E67ECB5D}" {
+    MultiSlots {
+     MultiSlotConfiguration "{5AD4F813E67ECB53}" {
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{5E86A8C9C339E7A1}" {
+      SlotTemplate InventoryStorageSlot Salines {
+       Prefab "{527D7C5D2E476BDC}Prefabs/Items/Medicine/SalineBag_01/SalineBag_USSR_01.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{5EB0D397D958C6E8}" {
+      SlotTemplate InventoryStorageSlot Ammo_762 {
+       Prefab "{A827B610B7CD4158}Prefabs/Weapons/Magazines/Vz58/Magazine_762x39_Vz58_30rnd_Last_5Tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{69C8A30DEA87190A}" {
+      SlotTemplate InventoryStorageSlot Smoke {
+       Prefab "{77EAE5E07DC4678A}Prefabs/Weapons/Grenades/Smoke_RDG2.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{69C8A30DA85EEA2E}" {
+      SlotTemplate InventoryStorageSlot Ammo_762_MG {
+       Prefab "{03094E059B554A9C}Prefabs/Weapons/Magazines/UK59/Box_762x54_UK59_50rnd_4Ball_1Tracer.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E0BCD8BA4}" {
+      SlotTemplate InventoryStorageSlot Grenade {
+       Prefab "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+      }
+     }
+     MultiSlotConfiguration "{69C8A30E2313D5DB}" {
+      SlotTemplate InventoryStorageSlot Ammo_Sniper {
+       Prefab "{9CCB46C6EE632C1A}Prefabs/Weapons/Magazines/Magazine_762x54_SVD_10rnd_Sniper.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A30E3B0A7FDD}" {
+      SlotTemplate InventoryStorageSlot Ammo_PG7VM {
+       Prefab "{32E12D322E107F1C}Prefabs/Weapons/Ammo/Ammo_Rocket_PG7VM.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{69C8A33BED125C20}" {
+      SlotTemplate InventoryStorageSlot Radio {
+       Prefab "{540C08AD5F21A5FA}Prefabs/Items/Equipment/Radios/Radio_R148_FIA.et"
+      }
+     }
+    }
+   }
+  }
+  coords 13338.423 50.006 10260.575
+  angles 1.369 4.007 -0.448
+ }
+}

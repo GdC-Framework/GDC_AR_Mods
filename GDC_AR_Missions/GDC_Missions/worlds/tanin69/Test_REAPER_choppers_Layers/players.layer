@@ -1,0 +1,10 @@
+SCR_AIGroup : "{DDF3799FA1387848}Prefabs/Groups/BLUFOR/Group_US_RifleSquad.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+ }
+ coords 3843.137 8.132 3826.254
+ angles 0 -40.305 0
+ m_bSetPlayable 1
+}

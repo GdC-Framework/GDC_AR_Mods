@@ -1,0 +1,38 @@
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ US_LZ_1 {
+  coords 7358.76 0.261 7380.445
+  m_queryRadius 50
+  m_flagName "US_LZ_1"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ US_LZ_2 {
+  coords 5545.979 0 8558.568
+  m_queryRadius 50
+  m_flagName "US_LZ_2"
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ US_LZ_3 {
+  coords 3759.789 0.97 7372.453
+  m_queryRadius 50
+  m_flagName "US_LZ_3"
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ US_ON_E2 {
+  coords 5857.646 242.485 7258.22
+  m_queryRadius 200
+  m_ratioThreshold 0.01
+ }
+}
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{68F339C70029720D}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "US"
+  }
+ }
+}

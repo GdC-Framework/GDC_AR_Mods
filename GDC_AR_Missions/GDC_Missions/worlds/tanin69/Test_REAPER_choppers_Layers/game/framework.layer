@@ -1,0 +1,7 @@
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2663.836 24.217 5592.095
+ m_missionEvents {
+  TILW_MissionEvent "{69DCD023E54318A1}" {
+  }
+ }
+}

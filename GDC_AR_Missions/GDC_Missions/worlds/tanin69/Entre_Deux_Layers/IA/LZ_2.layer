@@ -1,0 +1,81 @@
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ WP_Patrol_lz_2_1_1 {
+  coords 5729.323 115.198 7905.088
+ }
+ WP_Patrol_lz_2_1_2 {
+  coords 5910.535 80.08 8137.037
+ }
+ WP_Patrol_lz_2_1_3 {
+  coords 5762.093 94.068 8098.987
+ }
+ WP_Patrol_lz_2_1_4 {
+  coords 5653.102 76.804 8164.732
+ }
+ WP_Patrol_lz_2_1_5 {
+  coords 5536.401 74.125 8019.186
+ }
+}
+AIWaypointCycle WP_Cycle_lz_2_1 : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ coords 5538.202 74.231 8014.524
+ CycleWaypoints {
+  "WP_Patrol_lz_2_1_1"
+  "WP_Patrol_lz_2_1_2"
+  "WP_Patrol_lz_2_1_3"
+  "WP_Patrol_lz_2_1_4"
+  "WP_Patrol_lz_2_1_5"
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ veh_lz_2_1 {
+  coords 5517.671 74.555 7999.378
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_conditionFlag "US_LZ_2"
+  m_crewConfig TILW_CrewConfig "{692305257D355CF7}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6923052582DC17D5}" {
+     m_crewStations {
+      TILW_CrewStation "{692305271140C334}" {
+       m_characters {
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+       }
+      }
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ veh_lz_2_2 {
+  coords 5166.783 121.312 7816.464
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_conditionFlag "US_LZ_2"
+  m_crewConfig TILW_CrewConfig "{692305257D355CF7}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6923052582DC17D5}" {
+     m_crewStations {
+      TILW_CrewStation "{692305271140C334}" {
+       m_characters {
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+       }
+      }
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ grp_lz_2_1 {
+  coords 5535.122 74.468 8010.508
+  m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+  m_conditionFlag "US_LZ_2"
+  m_waypointNames {
+   "WP_Cycle_lz_2_1"
+  }
+ }
+}

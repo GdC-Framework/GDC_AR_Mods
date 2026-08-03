@@ -37,16 +37,19 @@ SCR_GameModeEditor GameMode_GameMaster_Full : "{DA3986AF1B5032B7}Prefabs/MP/Mode
    }
   }
   SCR_InitWeatherComponent "{58DCAB6D83A0CB17}" {
+   m_sInitialStartingWeatherId "Stormy"
    m_iSetWeatherConstant 0
-   m_initialWeatherDurationMin 0.167
-   m_initialWeatherDurationMax 0.333
+   m_initialWeatherDurationMin 0.33
+   m_initialWeatherDurationMax 0.5
   }
   SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
    m_SpawnLogic SCR_MenuSpawnLogic "{5D28B7ADCD4F95B9}" {
    }
   }
-  SCR_SaveLoadComponent "{58FA739CBE3E9FC5}" {
-   m_DebugHeaderResourceName "{2BBBE828037C6F4B}Missions/22_GM_Arland.conf"
+  SCR_TimeAndWeatherHandlerComponent "{69BB35ACF58C6671}" {
+   m_bFogOverride 1
+   m_fFogAmount 0.85
+   m_fFogHeightDensity 0.1
   }
  }
  coords 1436.045 38 2875.36

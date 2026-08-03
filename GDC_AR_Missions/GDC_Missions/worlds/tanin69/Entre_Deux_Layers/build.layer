@@ -1,0 +1,59 @@
+$grp GenericEntity : "{68463F7F9770E933}Prefabs/Structures/Civilian/MessageBoard/Filled/MessageBoardSmall_01_pole_filled_V2.et" {
+ {
+  coords 11333.262 62.328 11228.426
+  angles 0 173.408 0
+  {
+   GenericEntity : "{5B462DF843A26368}Prefabs/Utils/Interactions/TILW_TeleportInteraction.et" {
+    components {
+     ActionsManagerComponent "{62EF76E0D47ED96A}" {
+      additionalActions {
+       TILW_TeleportInteraction "{62EF76E608B6CB36}" {
+        m_actionName "Teleport: LZ 1"
+        m_locationName "LZ_1"
+       }
+      }
+     }
+    }
+    coords 0 1.195 0
+   }
+  }
+ }
+ {
+  coords 11384.769 69.406 11183.682
+  angles 0 -70.448 0
+  {
+   GenericEntity : "{5B462DF843A26368}Prefabs/Utils/Interactions/TILW_TeleportInteraction.et" {
+    components {
+     ActionsManagerComponent "{62EF76E0D47ED96A}" {
+      additionalActions {
+       TILW_TeleportInteraction "{62EF76E608B6CB36}" {
+        m_actionName "Teleport: LZ 2"
+        m_locationName "LZ_2"
+       }
+      }
+     }
+    }
+    coords 0 1.195 0
+   }
+  }
+ }
+ {
+  coords 11383.473 69.486 11211.253
+  angles 0 -90.785 0
+  {
+   GenericEntity : "{5B462DF843A26368}Prefabs/Utils/Interactions/TILW_TeleportInteraction.et" {
+    components {
+     ActionsManagerComponent "{62EF76E0D47ED96A}" {
+      additionalActions {
+       TILW_TeleportInteraction "{62EF76E608B6CB36}" {
+        m_actionName "Teleport: LZ 3"
+        m_locationName "LZ_3"
+       }
+      }
+     }
+    }
+    coords 0 1.195 0
+   }
+  }
+ }
+}

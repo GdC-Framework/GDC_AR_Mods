@@ -3,6 +3,20 @@ GameProject {
  GUID "690756F509F253EB"
  TITLE "GDC AR Lib"
  Dependencies {
-  "58D0FB3206B6F859"
+  "58D0FB3206B6F859" "61F0E6AB2D06B1C6" "1337133713371337" "0315131312150202"
+ }
+ Configurations {
+  GameProjectConfig PC {
+  }
+  GameProjectConfig XBOX_ONE {
+  }
+  GameProjectConfig XBOX_SERIES {
+  }
+  GameProjectConfig PS4 {
+  }
+  GameProjectConfig PS5 {
+  }
+  GameProjectConfig HEADLESS {
+  }
  }
 }

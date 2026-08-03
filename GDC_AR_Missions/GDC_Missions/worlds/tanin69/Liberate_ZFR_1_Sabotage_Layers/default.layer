@@ -1,0 +1,137 @@
+SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{665AF5247F44B9C0}" {
+     NavmeshFile "{395CA63E8E456BE7}World/Data/Zimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE5536BF701}" {
+     NavmeshFile "{FA02CD1FDA9A7EE4}World/Data/BTRLikeZimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{118D26584E97D8E6}World/Data/LowResZimnitrita.nmn"
+    }
+   }
+  }
+ }
+ coords 15524.731 52.125 4453.456
+ Formations {
+  AIFormationDefinition "{50AA998BDEDBC499}" {
+   Offsets +{
+    18 0 0
+    -18 0 0
+   }
+  }
+ }
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 15524.039 52.125 4448.752
+}
+SCR_FactionManager "5EA8C932C68D400F" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 15234.099 64.233 1898.569
+}
+PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
+ components {
+  SCR_AdditionalGameModeSettingsComponent "{6170E11C3C452ACC}" {
+   m_bEnableTeamKillPunishment 0
+  }
+  SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
+   m_sInitialStartingWeatherId "Cloudy"
+   m_initialWeatherDurationMin 0.75
+   m_initialWeatherDurationMax 1
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
+   m_iStartingHours 4
+   m_iStartingMinutes 15
+   m_bUseSpecifiedDate 1
+   m_iSetDay 6
+   m_iSetMonth 6
+   m_iSetYear 1983
+  }
+ }
+ coords 15503.696 52.125 4457.534
+ m_eGME_GlobalAISkill REGULAR
+ m_bTeamSwitch 1
+ m_bPublicCommandBriefing 1
+ m_bRemoveSquadMarkers 1
+ m_iFreezeTime 500
+ m_bDisableGarbageSystem 1
+ m_bDisableArmaVision 0
+}
+TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 9782.438 19.161 4774.166
+ m_queryRadius 60
+ m_flagName "QRF"
+ m_stopAfterFirstChange 1
+ m_ownerFactionKey "FIA"
+ m_ratioThreshold 0.01
+}
+TILW_MissionFrameworkEntity TFM : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{699F32DEEAC92901}" {
+   m_name "QRF"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{699F32DEFD98024F}" {
+     m_executionDelay 600
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_0"
+     m_waypointNames {
+      "QRF_WP_Attack_FIA_1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{699F32D8F2A2D1C6}" {
+     m_executionDelay 900
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_0"
+     m_waypointNames {
+      "QRF_WP_Attack_FIA_2"
+     }
+    }
+    TILW_SpawnGroupInstruction "{699F32D55985A26D}" {
+     m_executionDelay 1200
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_3"
+     m_waypointNames {
+      "QRF_WP_Attack_FIA_3"
+     }
+    }
+    TILW_SpawnGroupInstruction "{699F32D5979782F8}" {
+     m_executionDelay 900
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_5"
+     m_waypointNames {
+      "QRF_WP_Attack_FIA_4"
+     }
+    }
+    TILW_SpawnGroupInstruction "{699F32D5FE63CE9C}" {
+     m_executionDelay 1500
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_4"
+     m_waypointNames {
+      "QRF_WP_Attack_FIA_5"
+     }
+    }
+    TILW_SpawnGroupInstruction "{69A12E63D0E5D1FD}" {
+     m_executionDelay 1500
+     m_prefab "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et"
+     m_locationName "Spawn_QRF_6"
+     m_waypointNames {
+      "QRF_WP_Defend_FIA_6"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{699F32D862C34C05}" {
+    m_flagName "QRF"
+   }
+  }
+ }
+}

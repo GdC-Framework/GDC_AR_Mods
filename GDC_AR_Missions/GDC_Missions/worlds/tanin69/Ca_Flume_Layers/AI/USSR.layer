@@ -1,0 +1,192 @@
+$grp GenericEntity {
+ Spawn_BTR {
+  coords 6324.231 5.84 8430.01
+ }
+ spawn_mortar4 {
+  coords 6287.495 2.039 8472.005
+  angles 0 -180 0
+ }
+ mortar_fire4 {
+  coords 6082.235 4.526 8262.041
+ }
+ Mortar_Mission1 {
+  coords 6197.382 38.476 8014.297
+ }
+}
+GenericEntity : "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et" {
+ coords 6247.133 37 8037.363
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   components {
+    ActionsManagerComponent "{61F4C18E835074FF}" {
+     additionalActions {
+      TILW_BaseInteraction "{61F4C18E863E752C}" {
+       m_actionName "Spawn des IA"
+       m_factionKeys {
+        "RHS_USAF"
+       }
+       m_flagName "US_INTEL"
+      }
+     }
+    }
+   }
+   coords 4.1 0 5.388
+  }
+ }
+}
+GenericEntity Mortars_Compo : "{6E9190BC2713551D}Prefabs/Compositions/Slotted/BuildableComposition_Base.et" {
+ components {
+  SCR_CampaignBuildingCompositionComponent "{5E96A067C097D570}" {
+   Enabled 0
+   m_AudioSourceConfigurationSpawn SCR_AudioSourceConfiguration "{5E96A067C355978C}" {
+    m_sSoundEventName "SOUND_BUILD_MORTAR_POSITION"
+   }
+   m_AudioSourceConfigurationDespawn SCR_AudioSourceConfiguration "{5E96A0643BAAEAF8}" {
+    m_sSoundEventName "SOUND_DESTROY_MORTAR_POSITION"
+   }
+  }
+  ActionsManagerComponent "{5D66ED1096104FD8}" {
+   Enabled 0
+  }
+  Hierarchy "{60AAE974D17AF54E}" {
+   Enabled 1
+  }
+ }
+ coords 5617.818 2.387 8229.213
+ angles 0 120.188 0
+ {
+  SCR_AIGroup : "{1C0502B5729E7231}Prefabs/Groups/OPFOR/Group_USSR_Team_Suppress.et" {
+   coords 28.23 0.255 -6.506
+   angles 0 140.124 0
+  }
+  Vehicle BRDM1 : "{254289B9C09904AB}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2.et" {
+   components {
+    TILW_VehicleCrewComponent "{68D738D46917679B}" {
+     m_crewConfig TILW_CrewConfig "{68D738D4682FB0BC}" {
+      m_crewGroups {
+       TILW_CrewGroup "{68D738D46AC23326}" {
+        m_crewStations {
+         TILW_CrewStation "{68D738D4752C6DB1}" {
+          m_allowCargo 0
+          m_characters {
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+           "{9FFEF10757E742EB}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   coords 19.627 0.237 -12.869
+   angles 0 64.342 0
+  }
+  SCR_DefendWaypoint WP_Def : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+   coords -0.21 0.072 -6.458
+   angles 0 -180 0
+  }
+  Vehicle Ural4320_transport_filled1 : "{B845B8B82C76BA68}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_filled.et" {
+   coords 0.931 0.061 -13.811
+   angles 0 -136.144 0
+  }
+  $grp GenericEntity : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+   {
+    coords 2.197 0.241 0.465
+    angles 0 3.587 0
+    {
+     Turret mortarA2 {
+      ID "60B8D36A59BEEA2F"
+     }
+     SCR_AIGroup mortar3 : "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et" {
+      coords -0.428 0.209 -0.936
+      angles 0 -123.775 0
+      m_aUnitPrefabSlots {
+       "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+      }
+      m_aStaticWaypoints {
+       "WP_GetIn_MortarA2"
+      }
+     }
+    }
+   }
+   {
+    coords -21.076 1.112 2.603
+    angles 0 2.438 0
+    {
+     Turret {
+      ID "60B8D36A59BEEA2F"
+      components {
+       TILW_VehicleCrewComponent "{690ABA04B0116359}" {
+        m_crewConfig TILW_CrewConfig "{690ABA04BC65824B}" {
+         m_crewGroups {
+          TILW_CrewGroup "{690ABA04BE45DE23}" {
+           m_crewStations {
+            TILW_CrewStation "{690ABA04BAEBD4ED}" {
+             m_characters {
+              "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+             }
+            }
+           }
+           m_entityName "mortar2"
+          }
+         }
+         m_noTurretDismount 1
+        }
+       }
+      }
+     }
+    }
+   }
+   {
+    coords 22.925 0.342 -1
+    angles 0 3.762 0
+    {
+     Turret {
+      ID "60B8D36A59BEEA2F"
+     }
+    }
+   }
+  }
+  Vehicle Ural4320_transport_covered1 : "{D9B91FAB817A6033}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_transport_covered.et" {
+   coords -18.816 -0.051 -12.49
+   angles 0 -87.947 0
+  }
+  SCR_AIGroup : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+   components {
+    AIFormationComponent "{507E9DC12F541FE6}" {
+     DefaultFormation "Line"
+    }
+   }
+   coords 1.983 0.017 -8.807
+   angles 0 -175.853 0
+   DynamicsimLastlodDistance 0
+   m_aUnitPrefabSlots {
+    "{5436629450D8387A}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SL.et"
+    "{23ADBBC31B6A3DC6}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AR.et"
+    "{1C78331E156A3D65}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AT.et"
+    "{631158F6898738A4}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AAT.et"
+    "{333DA6244C7DA34C}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_SR.et"
+    "{8E0FE664CE7D1CA9}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_GL.et"
+    "{D1BFE06CC12C08E1}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_AKOfficer.et"
+   }
+   m_aStaticWaypoints {
+    "WP_Def"
+   }
+  }
+ }
+}
+SCR_BoardingEntityWaypoint WP_GetIn_MortarA2 : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
+ coords 5617.672 2.828 8227.021
+ CompletionRadius 2
+ m_fPriorityLevel 100
+ m_EntityWaypointParameters SCR_AIEntityWaypointParameters "{60D10A783D086D37}" {
+  m_sEntityName "mortarA2"
+ }
+}
+SCR_DestructibleBuildingEntity : "{F7B9B2DD8B512720}Prefabs/Structures/Walls/Concrete/ConcreteRetainingWall_02/ConcreteRetainingWall_02_8m.et" {
+ coords 6255.646 37.063 8049.083
+ angles 0 38.366 0
+}

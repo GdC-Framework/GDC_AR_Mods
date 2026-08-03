@@ -1,0 +1,303 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Depuis quelques semaines, avec l'aide de la population, nous nous sommes installés clandestinement au coeur d'Andruhanov, dans le quartier Saint-Pierre. Notre base avancée nous permet de mener des actions de harcèlement contre l'armée de la RPZ dans la capitale de Zimnitrita Est."\
+  ""\
+  "Malheureusement, nous avons fini par être \"logés\" par les hostiles. Nous avons prévenu les habitants qui ont discrètement déserté le quartier la nuit dernière pour nous laisser le champ libre."\
+  ""\
+  "L'armée de la RPZ est en train de poser une nasse autour du quartier. En clair : nous sommes en passe d'être encerclés. Il n'est plus possible de fuir purement et simplement."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita, début des années 80."\
+  ""\
+  "Depuis les années 60, notre fier pays est coupé en deux."\
+  ""\
+  "A l'ouest de la rivière Drawna, la population s'est libérée du joug soviétique... Avec l'aide de leurs amis occidentaux. La République Fédérale de Zimnitrita (RFZ) est née. Malheureusement, la RFZ, à cause d'un lobbying intense du bloc soviétique et de ses alliés, n'est pas encore reconnue par les Nations Unies."\
+  ""\
+  "A l'est, la République du Peuple de Zimnitrita (RPZ) est sous perfusion de l'URSS et ne tient que grâce à son soutien."\
+  ""\
+  "Chaque camp espère réunifier Zimnitrita."\
+  ""\
+  "Quels moyens recevront les parties de leurs soutiens externes ? Quel camp sera le plus malin ? Le plus adroit dans ses opérations militaires ? Le plus pervers dans la diplomacie ? Et qui fait les meilleurs grillades ?"\
+  ""\
+  "Seule votre compétence permettra d'apporter des réponses à ces nombreuses questions : le destin de Zimnitrita est entre vos mains !"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ d_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif</b>"\
+  "Résister à l'assaut et s'échapper de la ville vers l'un des trois points d'exfiltration."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "Assaut :"\
+  "On pense que l'assaut sera donné dans 10 minutes. Nous pensons qu'il sera mené par une trentaine d'hommes appuyés par un BTR."\
+  ""\
+  "Evasion :"\
+  "> Les grands axes, carrefours et points névralgiques de la ville sont bien gardés (voir les points d'exclamation sur la carte)."\
+  ">Quelques patrouilles à pied ou véhiculées quadrillent Andruhanov."\
+  ""\
+  "Météo :"\
+  "Temps pluvieux, évolution incertaine"\
+  ""\
+  ""\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ c_CommanderWord {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Mot du commandant"
+  m_sTextData "Ne tentez aucune sortie avant d'avoir usé l'assaut, sans quoi, ils vont tailleront en pièce dès que vous mettrez le nez en dehors du quartier."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ f_Insert_Extract {
+  coords 15495.137 52.124 4449.113
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "<b><color name=\"green\">Insertion</b></color>"\
+  "Vous êtes sur le mignon et petit quartier Saint-Pierre."\
+  ""\
+  "<b><color name=\"green\">Exfiltration</b></color>"\
+  "Des véhicules chargés avec des munitions et du matériel médical vous attendent sur les points \"Extraction\". Vous y serez <i>grosso modo</i> hors de danger."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ g_Hide {
+  coords 13264.642 44.532 10175.505
+  m_sTitle "Se mettre en sécurité"
+  m_sTextData "On vous a déposé des véhicules avec du matos. Vous pouvez faire une pause si vous êtes vraiment épuisés, personne ne vous le reprochera (fin de mission)."\
+  ""\
+  "Mais il serait plus prudent de dégager de là pour vous rendre sur la cache (marquée sur carte). Ramenez tous les véhicules, nous n'avons pas les moyens de sacrifier du matériel."\
+  ""\
+  "Souvenez-vous que vous êtes en territoire ennemi."\
+  ""
+  m_iOrder 6
+ }
+}
+$grp PS_ManualMarker : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ Mrk_Danger1 {
+  coords 12265.489 46.708 9874.143
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Exfil1 {
+  coords 13339.689 49.572 10256.842
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "help-2"
+  m_fWorldSize 40
+  m_sDescription "Exfil"
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger2 {
+  coords 12523.412 41.085 10098.441
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger3 {
+  coords 12566.238 49.915 9859.457
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger4 {
+  coords 12604.775 51.814 9682.566
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger5 {
+  coords 12296.63 43.582 9541.634
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger6 {
+  coords 11976.751 41.626 9890.803
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Exfil2 {
+  coords 13122.659 43.905 9315.495
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "help-2"
+  m_fWorldSize 40
+  m_sDescription "Exfil"
+  m_bUseWorldScale 0
+ }
+ Mrk_Exfil3 {
+  coords 12034.767 45.125 9167.421
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "help-2"
+  m_fWorldSize 40
+  m_sDescription "Exfil"
+  m_bUseWorldScale 0
+ }
+ Mrk_Insertion {
+  coords 12354.821 44.196 9703.125
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 30
+  m_sDescription "Quartier Saint-Pierre"
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger7 {
+  coords 12494.831 51.712 9557.613
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger8 {
+  coords 12056.902 41.753 9694.592
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Danger9 {
+  coords 12676.32 45.378 9304.322
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 30
+  m_bUseWorldScale 0
+ }
+ Mrk_Hide1 {
+  coords 13375.214 33.204 13043.518
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "point-of-interest"
+  m_fWorldSize 50
+  m_sDescription "Planque"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ Mrk_Hide2 {
+  coords 16025.529 259.51 9546.181
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "point-of-interest"
+  m_fWorldSize 50
+  m_sDescription "Planque"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+ Mrk_Hide3 {
+  coords 9735.016 78.617 9051.912
+  angles 0 90 0
+  m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+  m_MarkerColor 0.502 0 0.376 1
+  m_sQuadName "point-of-interest"
+  m_fWorldSize 50
+  m_sDescription "Planque"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 0
+  m_bShowForAnyFaction 0
+ }
+}
+PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_drawArea 0
+   m_drawLine 1
+   m_lineColor 0.251 0 0.502 1
+   m_lineWidth 2
+  }
+ }
+ coords 12323.133 41.61 9649.896
+ Points {
+  ShapePoint "{69A9454FD695BAB0}" {
+   Position -0.6 -0.004 0.585
+  }
+  ShapePoint "{69A9454FD2958D01}" {
+   Position 34.207 2.691 1.507
+  }
+  ShapePoint "{69A9454FE0AA7ECC}" {
+   Position 40.732 3.72 3.943
+  }
+  ShapePoint "{69A9454FE9D9296A}" {
+   Position 74.294 8.641 36.355
+  }
+  ShapePoint "{69A9454FEBA770DC}" {
+   Position 87.782 9.293 39.084
+  }
+  ShapePoint "{69A9454FF536C3C7}" {
+   Position 65.557 6.626 105.267
+  }
+  ShapePoint "{69A9454E0A8E5C25}" {
+   Position -6.486 -0.136 73.89
+  }
+  ShapePoint "{69A9454E17FBC464}" {
+   Position -20.976 0.046 67.805
+  }
+  ShapePoint "{69A9454E16D73F3D}" {
+   Position -40.502 0.015 59.998
+  }
+  ShapePoint "{69A9454E1017DB32}" {
+   Position -27.482 0.015 43.915
+  }
+  ShapePoint "{69A9454E132BDC30}" {
+   Position -15.349 0.01 33.422
+  }
+  ShapePoint "{69A9454E1D8053D3}" {
+   Position -5.027 -0.051 17.573
+  }
+ }
+}

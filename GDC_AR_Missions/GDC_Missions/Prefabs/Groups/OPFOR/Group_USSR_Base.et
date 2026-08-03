@@ -4,5 +4,7 @@ SCR_AIGroup : "{000CD338713F2B5A}Prefabs/AI/Groups/Group_Base.et" {
   AIChimeraBehaviorTreeComponent "{13BAA835864B8992}" {
    LoadOnProxies 1
   }
+  GDC_ForceGroupActiveLODComponent "{69DD40582D0209B2}" {
+  }
  }
 }

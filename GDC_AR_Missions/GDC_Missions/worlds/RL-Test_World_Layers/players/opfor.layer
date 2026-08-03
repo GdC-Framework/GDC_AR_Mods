@@ -1,0 +1,5 @@
+SCR_AIGroup : "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et" {
+ coords 3156.106 13.272 2782.342
+ angles 0 34.017 0
+ m_bSetPlayable 1
+}

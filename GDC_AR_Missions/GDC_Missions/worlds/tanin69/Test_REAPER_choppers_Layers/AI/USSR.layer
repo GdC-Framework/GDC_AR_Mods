@@ -1,0 +1,268 @@
+GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 2677.895 24.219 5240.728
+ {
+  $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   USSR_Heli_Patrol {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 4.42 0.003 -9.124
+    {
+     GenericEntity Chopper1 : "{355D143ADB4FA41B}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopter.et" {
+      components {
+       REAPER_SlotAiHelicopter "{69A8BAA5EDDC9444}" {
+        m_sObjectToSpawn "{DBEC63C9DEE4358C}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed_gunship_HEDP.et"
+        m_sHelicopterPilotGroup "Chopper_Crew"
+       }
+      }
+      coords -47.493 -0.003 235.558
+      angles 0 -91.755 0
+     }
+     GenericEntity WP_Layer_Chopper1 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      coords 0.058 -0.003 -0.176
+      {
+       $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+        Chopper1_WP1 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{69DCA0AB3585A809}" {
+           }
+          }
+         }
+         coords 1804.715 14.888 -1696.943
+        }
+        Chopper1_WP2 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{69DCA0AB43C83DA6}" {
+           }
+          }
+         }
+         coords 4022.92 14.647 -1174.206
+        }
+        Chopper1_WP3 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{69DCA0AB43C83DA6}" {
+           }
+          }
+         }
+         coords 3465.25 3.916 2843.896
+        }
+        SlotWaypointCycle {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{69DCA0AB802904E7}" {
+            m_aLayersWithWaypointsToCycle {
+             "WP_Layer_Chopper1"
+            }
+            m_bUseRandomOrder 1
+           }
+          }
+         }
+         coords 0 0 0
+        }
+       }
+      }
+     }
+     GenericEntity Chopper1_Crew : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_sObjectToSpawn "{B10210712040A7C9}Prefabs/Groups/OPFOR/REAPER_USSR_HelicopterCrew.et"
+        m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{69DB19677D8DFBB7}" {
+         m_aLayerName {
+          "SlotWaypointCycle"
+         }
+        }
+       }
+      }
+      coords -47.064 -0.002 242.102
+     }
+    }
+   }
+   Triggers {
+    coords 0 0 0
+    {
+     GenericEntity trgGo_Heli : "{16506C40E83DE953}Prefabs/Systems/ScenarioFramework/Components/SlotTriggerClearArea.et" {
+      components {
+       SCR_ScenarioFrameworkSlotTrigger "{5A4B5098DE424991}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{5AC53D73FCB1F805}" {
+          m_sActivatedByThisFaction "US"
+          m_bOnce 1
+          m_fMinimumPlayersNeededPercentage 0.1
+          m_bNotificationEnabled 1
+          m_sPlayerActivationNotificationTitle "Go Heli !"
+         }
+        }
+        m_aTriggerActions {
+         SCR_ScenarioFrameworkActionSpawnObjects "{69DCD024DFB75C3C}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "USSR_Heli_Patrol"
+          }
+         }
+        }
+       }
+      }
+      coords 1165.379 -12.713 -1400.12
+     }
+    }
+   }
+   USSR_Heli_Drop {
+    coords 0 0 0
+    {
+     GenericEntity Chopper2 : "{355D143ADB4FA41B}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopter.et" {
+      components {
+       REAPER_SlotAiHelicopter "{69A8BAA5EDDC9444}" {
+        m_sObjectToSpawn "{3C6B3ED0C3AC30D5}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed_gunship_HE.et"
+        m_sHelicopterPilotGroup "Chopper2_Crew"
+       }
+      }
+      coords -37.839 0 278.248
+      angles 0 90 0
+     }
+     $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      WP_Layer_Chopper2 {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{25987969FAFEB4ED}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopterLandWaypoint.et" {
+         Chopper2_WP_Drop {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{69A756AC09092151}" {
+            m_Waypoint REAPER_FrameworkWaypointHelicopterLand "{69A756AC1F77CEFE}" {
+             m_aActionsOnLandingSucceeded {
+              SCR_ScenarioFrameworkActionAI "{69DCD03CAF12F9D5}" {
+               m_Getter SCR_ScenarioFrameworkGetEntityByName "{69DCD03CBDAFC693}" {
+                m_sEntityName "grpDrop1"
+               }
+               m_aAIActions {
+                SCR_ScenarioFrameworkAIAddWaypoint "{69DCD03CCABA3F14}" {
+                 m_Getter SCR_ScenarioFrameworkGetEntityByName "{69DCD03CDCEE8E01}" {
+                  m_sEntityName "grpDrop1_Getout"
+                 }
+                 m_bAddOnTopOfQueue 1
+                 m_bClearPreviousWaypoints 1
+                }
+                SCR_ScenarioFrameworkAIAddWaypoint "{69DCD03CF6A0E723}" {
+                 m_Getter SCR_ScenarioFrameworkGetEntityByName "{69DCD03CFDA14F72}" {
+                  m_sEntityName "grpDrop1_Defend"
+                 }
+                }
+               }
+              }
+             }
+             m_bWaitAiGroupGetOut 1
+            }
+           }
+          }
+          coords 1937.444 8.695 -1932.099
+         }
+         Chopper2_WP_Load {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{69A756AC09092151}" {
+            m_Waypoint REAPER_FrameworkWaypointHelicopterLand "{69A756AC1F77CEFE}" {
+             m_sImportantEntityName "grpDrop1"
+            }
+           }
+          }
+          coords -40.042 0 278.387
+         }
+        }
+        GenericEntity Chopper2_WP_MoveOut : "{E2F332EBD8EBBE57}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopterMoveWaypoint.et" {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{69A756AF94717507}" {
+           m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{69A756AC37444088}" {
+            m_bDeleteHelicopterAndCrew 1
+           }
+          }
+         }
+         coords 2624.894 -18.477 -2857.385
+        }
+       }
+      }
+      WP_Layer_Group {
+       coords 0 0 0
+       {
+        $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+         grpDrop1_GetIn {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{69DD221D06F0FAD6}" {
+             m_fCompletionRadius 10
+             m_fPriorityLevel 2000
+             m_bDriverAllowed 0
+             m_bGunnerAllowed 0
+            }
+           }
+          }
+          coords -42.691 0 280.339
+         }
+         grpDrop1_Getout {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointGetOut "{69DCD03D2DAF8181}" {
+             m_aSettings {
+              SCR_AIGroupCharactersMovementSpeedSetting "{69DD1493C2069607}" {
+               m_eSpeed SPRINT
+              }
+             }
+             m_fCompletionRadius 50
+             m_fPriorityLevel 500
+            }
+           }
+          }
+          coords 1935.667 8.725 -1932.055
+         }
+         grpDrop1_Defend {
+          components {
+           SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+            m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{69DCD00326758247}" {
+            }
+           }
+          }
+          coords 2191.374 -8.348 -2122.323
+         }
+        }
+       }
+      }
+     }
+     $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+      Chopper2_Crew {
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sObjectToSpawn "{B10210712040A7C9}Prefabs/Groups/OPFOR/REAPER_USSR_HelicopterCrew.et"
+         m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{69DB19677D8DFBB7}" {
+          m_aLayerName {
+           "Chopper2_WP_Load"
+           "Chopper2_WP_Drop"
+           "Chopper2_WP_MoveOut"
+          }
+         }
+        }
+       }
+       coords -12.278 0 277.867
+       angles 0 -90 0
+      }
+      grpDrop1 {
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sObjectToSpawn "{250BBF11AA24076F}Prefabs/Groups/OPFOR/Naval_Infantry/Group_USSR_RifleSquad_NI.et"
+         m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{69DD221DBDF8016F}" {
+          m_aLayerName {
+           "grpDrop1_GetIn"
+          }
+         }
+         m_sGroupPrefab "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et"
+        }
+       }
+       coords -27.043 0 291.839
+      }
+     }
+    }
+   }
+  }
+ }
+}

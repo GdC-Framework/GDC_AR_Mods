@@ -1,0 +1,12 @@
+GenericEntity : "{1D2887BB9A7D4670}Prefabs/Compositions/Misc/SubCompositions/Tents/Tent_CommandPost_USSR_01.et" {
+ components {
+  ActionsManagerComponent "{5D66ED1096104FD8}" {
+   Enabled 0
+  }
+ }
+ coords 14211.808 51.513 11226.124
+}
+GenericEntity : "{5A25DAC561B3BFF8}Prefabs/Compositions/Misc/SubCompositions/Tents/Tent_Medical_USSR_01.et" {
+ coords 14200.472 52.005 11226.218
+ angles 2.234 0.087 2.239
+}

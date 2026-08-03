@@ -1,0 +1,105 @@
+SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{665AF5247F44B9C0}" {
+     NavmeshFile "{395CA63E8E456BE7}World/Data/Zimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE5536BF701}" {
+     NavmeshFile "{FA02CD1FDA9A7EE4}World/Data/BTRLikeZimnitrita.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{118D26584E97D8E6}World/Data/LowResZimnitrita.nmn"
+    }
+   }
+  }
+ }
+ coords 15524.731 52.125 4453.456
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 15524.039 52.125 4448.752
+}
+SCR_FactionManager "5EA8C932C68D400F" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 15234.099 64.233 1898.569
+}
+PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
+ components {
+  SCR_AdditionalGameModeSettingsComponent "{6170E11C3C452ACC}" {
+   m_bEnableTeamKillPunishment 0
+  }
+  SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
+   m_sInitialStartingWeatherId "Clear"
+   m_initialWeatherDurationMin 0.75
+   m_initialWeatherDurationMax 1
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
+   m_iStartingHours 6
+   m_iStartingMinutes 50
+   m_bRandomStartingDaytimeRange 1
+   m_iRangeHoursStart 7
+   m_iRangeHoursEnd 18
+   m_bRandomStartingWeather 1
+   m_bRandomWeatherChanges 1
+   m_iSetDay 18
+   m_iSetMonth 9
+   m_iSetYear 1984
+  }
+ }
+ coords 15503.696 52.125 4457.534
+ m_eGME_GlobalAISkill REGULAR
+ m_bTeamSwitch 1
+ m_bPublicCommandBriefing 1
+ m_bRemoveSquadMarkers 1
+ m_iFreezeTime 500
+ m_bDisableGarbageSystem 1
+ m_bDisableArmaVision 0
+}
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{6A055E18AC748801}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{6A055E18B219D5F6}" {
+     m_executionDelay 300
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A055E18BAFC0CA5}" {
+    m_flagName "US_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A055E18CC767B36}" {
+   m_name "USSR Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{6A055E18CC767B9E}" {
+     m_executionDelay 300
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A055E18CC767A61}" {
+    m_flagName "USSR_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A069BF78E4EDEE7}" {
+   m_name "Init mission"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A069BF79D0902A6}" {
+     m_prefab "{979481CC55316A33}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_CAPTURE.et"
+     m_locationName "Spawn_Obj_1"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A069BF7CF41D6BB}" {
+   }
+   m_pregameEvent 1
+  }
+ }
+}

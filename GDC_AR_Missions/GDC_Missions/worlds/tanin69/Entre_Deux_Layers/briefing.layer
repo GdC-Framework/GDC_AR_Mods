@@ -1,0 +1,99 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Everon est occupée en totalité par des troupes de la fédération de Russie."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Eté 2027. Le président D.T. aka \"TACO\" décide d'envoyer des troupes chatouiller son grand ami V.P. Rien que pour de rire."\
+  ""\
+  "L'idée du commandement des MARSOC est de se sortir de ce merdier en y laissant le moins de plumes possible..."\
+  ""\
+  "... Quand bien même le Président a dit \"Nos gars sont invincibles, on va vous foutre la paté\""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Détruire le transfo au pied de la tour radio"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ e_Execution {
+  coords 8571.886 14.125 3856.151
+  m_sTitle "Exécution"
+  m_sTextData "Faites au mieux, D.T. vous fait confiance."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ d_Intel {
+  coords 5887.263 241.077 7351.6
+  m_sTitle "Renseignements"
+  m_sTextData "Y'en a partout, mais on sait pas où."\
+  ""\
+  "Quelques blindés par ci par là."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ LZ_1 {
+  coords 7357.958 0.359 7379.04
+  angles 0 -90 0
+  m_MarkerColor 0 0.125 0.5 1
+  m_sQuadName "join"
+  m_sDescription "LZ 1"
+  m_bUseWorldScale 0
+ }
+ LZ_2 {
+  coords 5558.619 0 8580.594
+  angles 0 -180 0
+  m_MarkerColor 0 0.125 0.5 1
+  m_sQuadName "join"
+  m_sDescription "LZ 2"
+  m_bUseWorldScale 0
+ }
+ LZ_3 {
+  coords 3733.793 1.156 7381.737
+  angles 0 93.392 0
+  m_MarkerColor 0 0.125 0.5 1
+  m_sQuadName "join"
+  m_sDescription "LZ 3"
+  m_bUseWorldScale 0
+ }
+ {
+  coords 5860.135 232.207 7260.183
+  angles 0 0 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "point-special-2"
+  m_fWorldSize 40
+  m_sDescription "Détruire"
+  m_bUseWorldScale 0
+ }
+}

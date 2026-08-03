@@ -1,0 +1,15 @@
+GenericEntity Garrisons : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ coords 15650.821 64.499 1339.395
+ {
+  SCR_DefendWaypoint Grp_Gar_1_WP : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+   coords -1394.84 -13.593 10464.533
+   CompletionRadius 40
+  }
+  SCR_AIGroup Group_FIA_Garrison : "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et" {
+   coords -1393.501 -13.105 10463.127
+   m_aStaticWaypoints {
+    "Grp_Gar_1_WP"
+   }
+  }
+ }
+}

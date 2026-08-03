@@ -24,8 +24,6 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
  components {
   SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
    m_sInitialStartingWeatherId "Clear"
-   m_initialWeatherDurationMin 0.15
-   m_initialWeatherDurationMax 0.2
   }
  }
  coords 2651.035 24.218 5589.746

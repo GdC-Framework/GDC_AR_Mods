@@ -1,0 +1,25 @@
+GenericEntity : "{0AA94C2082A4A3A0}Prefabs/Props/Military/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Medical_FIA.et" {
+ coords 8911.625 41.325 5122.966
+ angles 2.435 -30.377 -5.557
+}
+GenericEntity : "{10F9EE0FB9EC0E4E}Prefabs/Props/Military/Arsenal/AmmoBoxes/FIA/AmmoBoxArsenal_Ammunition_FIA.et" {
+ coords 8903.492 41.224 5125.22
+ angles -0.732 -88.509 -6.262
+}
+GenericEntity : "{BA80DD7144145924}Prefabs/Structures/Military/CamoNets/FIA/CamoNet_Large_FIA_01_V1.et" {
+ coords 8910.033 41.615 5127.367
+}
+$grp Vehicle : "{D7C51A961BF675B2}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_covered_CIV_brown.et" {
+ UAZ469_covered_CIV_brown5 {
+  coords 8906.601 41.341 5126.042
+  angles 4.826 -4.533 -1.277
+ }
+ UAZ469_covered_CIV_brown4 {
+  coords 8909.079 41.61 5128.03
+  angles 6.362 1.766 -3.804
+ }
+ UAZ469_covered_CIV_brown3 {
+  coords 8912.329 41.728 5126.771
+  angles 5.309 -0.499 -5.379
+ }
+}

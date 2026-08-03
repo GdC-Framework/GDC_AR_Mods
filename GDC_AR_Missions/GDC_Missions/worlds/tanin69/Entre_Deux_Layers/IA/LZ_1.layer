@@ -1,0 +1,207 @@
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ WP_Patrol_lz_1_1_1 {
+  coords 6799.157 128.288 7361.719
+ }
+ WP_Patrol_lz_1_1_2 {
+  coords 6725.634 129.89 7491.693
+ }
+ WP_Patrol_lz_1_1_3 {
+  coords 6798.829 123.299 7531.447
+ }
+ WP_Patrol_lz_1_1_4 {
+  coords 6844.629 94.266 7456.279
+ }
+ WP_Patrol_lz_1_1_5 {
+  coords 6947.276 74.566 7453.749
+ }
+ WP_Patrol_lz_1_1_6 {
+  coords 6969.231 91.567 7376.98
+ }
+ WP_Patrol_lz_1_1_7 {
+  coords 6875.464 123.371 7300.207
+ }
+ WP_Patrol_lz_1_2_1 {
+  coords 6958.287 108.002 7284.876
+ }
+ WP_Patrol_lz_1_2_2 {
+  coords 7041.736 84.54 7295.326
+ }
+ WP_Patrol_lz_1_2_3 {
+  coords 7152.51 62.507 7150.407
+ }
+ WP_Patrol_lz_1_2_4 {
+  coords 7042.663 93.001 7128.965
+ }
+ WP_Patrol_lz_1_2_5 {
+  coords 6950.888 110.068 7265.174
+ }
+ WP_Patrol_lz_1_3_1 {
+  coords 6395.93 174.628 7544.688
+ }
+ WP_Patrol_lz_1_3_2 {
+  coords 6633.398 152.245 7695.145
+ }
+ WP_Patrol_lz_1_3_3 {
+  coords 6718.43 141.815 7722.792
+ }
+ WP_Patrol_lz_1_3_4 {
+  coords 6690.789 150.684 7872.83
+ }
+ WP_Patrol_lz_1_3_5 {
+  coords 6498.503 114.415 7900.655
+ }
+ WP_Patrol_lz_1_3_6 {
+  coords 6517.052 140.992 7725.559
+ }
+ WP_Patrol_lz_1_3_7 {
+  coords 6427.372 172.35 7572.667
+ }
+ WP_Patrol_lz_1_4_1 {
+  coords 6356.465 175.856 7414.649
+ }
+ WP_Patrol_lz_1_4_2 {
+  coords 6453.825 159.988 7108.209
+ }
+ WP_Patrol_lz_1_4_3 {
+  coords 6655.874 148.597 7110.62
+ }
+ WP_Patrol_lz_1_4_4 {
+  coords 6641.838 151.098 7212.166
+ }
+ WP_Patrol_lz_1_4_5 {
+  coords 6521.475 158.112 7243.85
+ }
+ WP_Patrol_lz_1_4_6 {
+  coords 6504.815 171.33 7531.017
+ }
+ WP_Patrol_lz_1_4_7 {
+  coords 6371.878 177.982 7515.669
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ WP_Cycle_lz_1_1 {
+  coords 6862.463 126.249 7296.856
+  CycleWaypoints {
+   "WP_Patrol_lz_1_1_1"
+   "WP_Patrol_lz_1_1_2"
+   "WP_Patrol_lz_1_1_3"
+   "WP_Patrol_lz_1_1_4"
+   "WP_Patrol_lz_1_1_5"
+   "WP_Patrol_lz_1_1_6"
+   "WP_Patrol_lz_1_1_7"
+  }
+ }
+ WP_Cycle_lz_1_2 {
+  coords 6891.874 120.143 7290.09
+  CycleWaypoints {
+   "WP_Patrol_lz_1_2_1"
+   "WP_Patrol_lz_1_2_2"
+   "WP_Patrol_lz_1_2_3"
+   "WP_Patrol_lz_1_2_4"
+   "WP_Patrol_lz_1_2_5"
+  }
+ }
+ WP_Cycle_lz_1_3 {
+  coords 6381.914 178.279 7518.628
+  CycleWaypoints {
+   "WP_Patrol_lz_1_3_1"
+   "WP_Patrol_lz_1_3_2"
+   "WP_Patrol_lz_1_3_3"
+   "WP_Patrol_lz_1_3_4"
+   "WP_Patrol_lz_1_3_5"
+   "WP_Patrol_lz_1_3_6"
+   "WP_Patrol_lz_1_3_7"
+  }
+ }
+ WP_Cycle_lz_1_4 {
+  coords 6357.764 174.991 7487.546
+  CycleWaypoints {
+   "WP_Patrol_lz_1_4_1"
+   "WP_Patrol_lz_1_4_2"
+   "WP_Patrol_lz_1_4_3"
+   "WP_Patrol_lz_1_4_4"
+   "WP_Patrol_lz_1_4_5"
+   "WP_Patrol_lz_1_4_6"
+   "WP_Patrol_lz_1_4_7"
+  }
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ veh_lz_1_1 {
+  coords 6877.655 123.929 7282.35
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_conditionFlag "US_LZ_1"
+  m_crewConfig TILW_CrewConfig "{692305257D355CF7}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6923052582DC17D5}" {
+     m_crewStations {
+      TILW_CrewStation "{692305271140C334}" {
+       m_characters {
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+       }
+      }
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ grp_lz_1_1 {
+  coords 6857.85 125.044 7297.592
+  m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+  m_conditionFlag "US_LZ_1"
+  m_waypointNames {
+   "WP_Cycle_lz_1_1"
+  }
+ }
+ grp_lz_1_2 {
+  coords 6892.538 119.14 7300.308
+  m_prefab "{AB905EF799E0A0AE}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_FireGroup.et"
+  m_conditionFlag "US_LZ_1"
+  m_waypointNames {
+   "WP_Cycle_lz_1_2"
+  }
+ }
+ veh_lz_1_2 {
+  coords 6370.81 177.626 7508.007
+  angles 0 75 0
+  m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+  m_conditionFlag "US_LZ_1"
+  m_crewConfig TILW_CrewConfig "{692305257D355CF7}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6923052582DC17D5}" {
+     m_crewStations {
+      TILW_CrewStation "{692305271140C334}" {
+       m_characters {
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+       }
+      }
+     }
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ grp_lz_1_3 {
+  coords 6381.454 178.319 7509.474
+  m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+  m_conditionFlag "US_LZ_1"
+  m_waypointNames {
+   "WP_Cycle_lz_2_1"
+  }
+ }
+ grp_lz_1_4 {
+  coords 6356.641 175.011 7494.839
+  m_prefab "{AB905EF799E0A0AE}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_FireGroup.et"
+  m_conditionFlag "US_LZ_1"
+  m_waypointNames {
+   "WP_Cycle_lz_2_2"
+  }
+ }
+}

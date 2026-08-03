@@ -1,0 +1,96 @@
+Vehicle BRDM1 : "{254289B9C09904AB}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2.et" {
+ components {
+  TILW_VehicleCrewComponent "{69231B58F0D430D0}" {
+   m_crewConfig TILW_CrewConfig "{69231B58F365D2F5}" {
+    m_crewGroups {
+     TILW_CrewGroup "{69231B58F237B0E3}" {
+      m_crewStations {
+       TILW_CrewStation "{69231B58FC1BF166}" {
+        m_characters {
+         "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        }
+       }
+      }
+     }
+    }
+    m_noTurretDismount 1
+    m_useIdleGroups 0
+   }
+  }
+ }
+ coords 6054.586 210.099 7081.591
+ angles 0 60 0
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_grp_e2_1 {
+  coords 5855.858 239.346 7262.92
+ }
+ WP_grp_e2_sent1 {
+  coords 5856.546 273.087 7260.779
+  CompletionRadius 3
+ }
+}
+SCR_AIGroup grp_e2_sent1 : "{AE252B0A692DA762}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_Base.et" {
+ coords 5854.828 275.623 7254.785
+ m_aUnitPrefabSlots {
+  "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+ }
+ m_bSnapToTerrain 0
+ m_aStaticWaypoints {
+  "WP_grp_e2_sent1"
+ }
+}
+Vehicle BTR1 : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
+ components {
+  TILW_VehicleCrewComponent "{69211986C9F53DB0}" {
+   m_crewConfig TILW_CrewConfig "{69211986CB87A837}" {
+    m_crewGroups {
+     TILW_CrewGroup "{69211986CA42A12E}" {
+      m_crewStations {
+       TILW_CrewStation "{69211986D7CDE3FF}" {
+        m_characters {
+         "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 5605.314 211.685 7101.288
+}
+$grp SCR_AIGroup : "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et" {
+ grp_e2_1 {
+  coords 5849.69 237.602 7260.314
+  m_aUnitPrefabSlots +{
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et"
+   "{C9CA4F02D899C1F8}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AMG.et"
+   "{A67F5A2E875AEB72}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Officer.et"
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+  }
+  m_aStaticWaypoints {
+   "WP_grp_e2_1"
+  }
+ }
+ grp_e2_2 {
+  coords 5745.511 218.036 7071.048
+  m_aUnitPrefabSlots +{
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+   "{8C5BB9C9A6B964AE}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_MG.et"
+   "{C9CA4F02D899C1F8}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_AMG.et"
+   "{A67F5A2E875AEB72}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Officer.et"
+   "{D9AF475A4E5DC52C}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Medic.et"
+  }
+  m_aStaticWaypoints {
+  }
+ }
+}
