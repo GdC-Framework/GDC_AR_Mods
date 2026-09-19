@@ -1,11 +1,11 @@
-[ComponentEditorProps(category: "GDC/AI", description: "Force la simulation complète du groupe et de ses agents (LOD=0, AI activée) indépendamment de la distance aux joueurs")]
+[ComponentEditorProps(category: "GDC/AI", description: "Forces full simulation of the group and its agents (LOD=0, AI active) regardless of distance to players")]
 class GDC_ForceGroupActiveLODComponentClass : ScriptComponentClass {}
 
 class GDC_ForceGroupActiveLODComponent : ScriptComponent
 {
     override void EOnInit(IEntity owner)
     {
-        // Serveur uniquement
+        // Server only
         SCR_BaseGameMode gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());
         if (!gameMode || !gameMode.IsMaster())
             return;
@@ -14,20 +14,20 @@ class GDC_ForceGroupActiveLODComponent : ScriptComponent
         if (!group)
             return;
 
-        // Force le LOD du groupe (simulation collective : waypoints, formation, coordination)
+        // Force the group's LOD (collective simulation: waypoints, formation, coordination)
         group.SetPermanentLOD(0);
 
-        // Attend la fin du spawn de tous les membres avant de les forcer
+        // Wait for all members to finish spawning before forcing them
         group.GetOnInit().Insert(OnGroupFullyInitialized);
 
-        // Couvre les agents ajoutés après le spawn initial
+        // Covers agents added after the initial spawn
         group.GetOnAgentAdded().Insert(OnAgentAdded);
 
         super.EOnInit(owner);
     }
 
     //------------------------------------------------------------------------------------------------
-    // Appelé une fois que tous les membres du groupe sont spawnés
+    // Called once all group members have spawned
     protected void OnGroupFullyInitialized(SCR_AIGroup group)
     {
         array<AIAgent> agents = {};
@@ -39,7 +39,7 @@ class GDC_ForceGroupActiveLODComponent : ScriptComponent
     }
 
     //------------------------------------------------------------------------------------------------
-    // Appelé à chaque ajout d'un agent au groupe
+    // Called whenever an agent is added to the group
     protected void OnAgentAdded(AIAgent agent)
     {
         SetAgentPermanentLOD(agent);
@@ -51,7 +51,7 @@ class GDC_ForceGroupActiveLODComponent : ScriptComponent
         if (!agent)
             return;
 
-        // Bloque le système Dynamic Simulation
+        // Blocks the Dynamic Simulation system
         agent.SetPermanentLOD(0);
     }
 

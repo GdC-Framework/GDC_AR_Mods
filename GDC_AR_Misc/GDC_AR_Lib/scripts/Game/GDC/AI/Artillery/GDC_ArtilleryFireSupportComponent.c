@@ -37,6 +37,12 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	[Attribute("5", UIWidgets.EditBox, "Delay in seconds between the condition being met and the first round being fired.")]
 	protected float m_fInitialDelay;
 
+	[Attribute("10", UIWidgets.EditBox, "Maximum number of retries when the AI group cannot be resolved yet (e.g. crew not seated in the vehicle). Set to 0 to disable retrying.")]
+	protected int m_iGroupResolveMaxRetries;
+
+	[Attribute("1000", UIWidgets.EditBox, "Delay in milliseconds between AI group resolution retries.")]
+	protected int m_iGroupResolveRetryDelayMs;
+
 	[Attribute("0", UIWidgets.CheckBox, "If enabled, the whole fire mission is repeated after the last fire order finishes.")]
 	protected bool m_bLooped;
 
@@ -63,6 +69,7 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	protected bool m_bCurrentOrderInfinite;
 	protected bool m_bActive;
 	protected SCR_AIGroupUtilityComponent m_CurrentOrderUtility;
+	protected int m_iGroupResolveRetryCount;
 
 #ifdef WORKBENCH
 	[Attribute("1", UIWidgets.CheckBox, "When enabled, fire order rings are drawn in the World Editor when the entity is selected.")]
@@ -133,9 +140,11 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 		m_CurrentOrderUtility = ResolveGroupUtility();
 		if (!m_CurrentOrderUtility)
 		{
-			m_bActive = false;
+			RetryGroupResolutionOrAbort();
 			return;
 		}
+
+		m_iGroupResolveRetryCount = 0;
 
 		if (m_bCurrentOrderInfinite)
 		{
@@ -167,9 +176,11 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 		SCR_AIGroupUtilityComponent utility = ResolveGroupUtility();
 		if (!utility)
 		{
-			m_bActive = false;
+			RetryGroupResolutionOrAbort();
 			return;
 		}
+
+		m_iGroupResolveRetryCount = 0;
 
 		SCR_AIStaticArtilleryActivity activity = new SCR_AIStaticArtilleryActivity(
 			utility,
@@ -187,16 +198,36 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Fires one shot activity for the current order.
-	//! A new random target is generated for each shot to spread impacts across the configured ring.
-	protected void FireNextShotInCurrentOrder()
+	//! Retries resolving the AI group after a delay (e.g. crew not yet seated in the vehicle).
+	//! Aborts the mission once the configured retry budget is exhausted.
+	protected void RetryGroupResolutionOrAbort()
 	{
-		if (m_iCurrentOrderIndex >= m_aFireOrders.Count())
+		int maxRetries = m_iGroupResolveMaxRetries;
+		if (maxRetries < 0)
+			maxRetries = 0;
+
+		if (m_iGroupResolveRetryCount >= maxRetries)
 		{
+			Print("[GDC_ArtilleryFireSupport] AI group could not be resolved after retrying. Mission aborted.", LogLevel.WARNING);
 			m_bActive = false;
 			return;
 		}
 
+		m_iGroupResolveRetryCount++;
+
+		int retryDelayMs = m_iGroupResolveRetryDelayMs;
+		if (retryDelayMs < 100)
+			retryDelayMs = 100;
+
+		Print(string.Format("[GDC_ArtilleryFireSupport] AI group not ready yet. Retrying resolution %1/%2...", m_iGroupResolveRetryCount, maxRetries), LogLevel.WARNING);
+		GetGame().GetCallqueue().CallLater(ExecuteCurrentOrder, retryDelayMs, false);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Fires one shot activity for the current order.
+	//! A new random target is generated for each shot to spread impacts across the configured ring.
+	protected void FireNextShotInCurrentOrder()
+	{
 		if (!m_bCurrentOrderInfinite)
 		{
 			if (m_iShotsRemainingInOrder <= 0)
