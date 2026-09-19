@@ -8,6 +8,9 @@ class GDC_ArtilleryFireOrder
 	[Attribute("1", UIWidgets.EditBox, "Number of rounds to fire in this order. Set to -1 for infinite firing.")]
 	int m_iShotCount;
 
+	[Attribute("0", UIWidgets.CheckBox, "If disabled, all rounds in this order are fired at one random point in the ring. If enabled, a new random point in the ring is selected for each round.")]
+	bool m_bRandomized;
+
 	[Attribute("80", UIWidgets.EditBox, "Inner radius of the impact ring (m). Rounds will not fall closer than this distance from the center. Set to 0 for a full disc.")]
 	float m_fMinRadius;
 
@@ -34,6 +37,18 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	[Attribute("5", UIWidgets.EditBox, "Delay in seconds between the condition being met and the first round being fired.")]
 	protected float m_fInitialDelay;
 
+	[Attribute("0", UIWidgets.CheckBox, "If enabled, the whole fire mission is repeated after the last fire order finishes.")]
+	protected bool m_bLooped;
+
+	[Attribute("-1", UIWidgets.EditBox, "Number of additional full mission loops when Looped is enabled. -1 = infinite. 0 = no extra loop.")]
+	protected int m_iLoopCount;
+
+	[Attribute("0", UIWidgets.EditBox, "Delay in seconds before starting the next full mission loop.")]
+	protected int m_iLoopDelayInSeconds;
+
+	[Attribute("0", UIWidgets.EditBox, "If larger than Loop Delay In Seconds, delay is randomized between these two values for each loop.")]
+	protected int m_iLoopDelayInSecondsMax;
+
 	[Attribute(typename.EnumToString(SCR_EAIArtilleryAmmoType, SCR_EAIArtilleryAmmoType.HIGH_EXPLOSIVE),
 		UIWidgets.ComboBox, "Ammunition type used for all fire orders in this mission.", enumType: SCR_EAIArtilleryAmmoType)]
 	protected SCR_EAIArtilleryAmmoType m_eAmmoType;
@@ -42,7 +57,12 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	protected ref array<ref GDC_ArtilleryFireOrder> m_aFireOrders;
 
 	protected int m_iCurrentOrderIndex;
+	protected int m_iShotsRemainingInOrder;
+	protected int m_iRemainingMissionLoops;
+	protected bool m_bCurrentOrderRandomized;
+	protected bool m_bCurrentOrderInfinite;
 	protected bool m_bActive;
+	protected SCR_AIGroupUtilityComponent m_CurrentOrderUtility;
 
 #ifdef WORKBENCH
 	[Attribute("1", UIWidgets.CheckBox, "When enabled, fire order rings are drawn in the World Editor when the entity is selected.")]
@@ -69,12 +89,29 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 
 		m_bActive = true;
 		m_iCurrentOrderIndex = 0;
+		InitializeMissionLoopState();
 
 		GetGame().GetCallqueue().CallLater(ExecuteCurrentOrder, m_fInitialDelay * 1000, false);
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Submits the current fire order as a single activity. The AI manages firing cadence.
+	//! Initializes mission-level loop state for this activation chain.
+	protected void InitializeMissionLoopState()
+	{
+		if (!m_bLooped)
+		{
+			m_iRemainingMissionLoops = 0;
+			return;
+		}
+
+		if (m_iLoopCount < 0)
+			m_iRemainingMissionLoops = -1;
+		else
+			m_iRemainingMissionLoops = m_iLoopCount;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Starts the current fire order and initializes per-shot state.
 	protected void ExecuteCurrentOrder()
 	{
 		if (m_iCurrentOrderIndex >= m_aFireOrders.Count())
@@ -84,6 +121,48 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 		}
 
 		GDC_ArtilleryFireOrder order = m_aFireOrders[m_iCurrentOrderIndex];
+		m_bCurrentOrderRandomized = order.m_bRandomized;
+		m_bCurrentOrderInfinite = (order.m_iShotCount < 0);
+
+		if (!m_bCurrentOrderRandomized)
+		{
+			StartGroupedCurrentOrder(order);
+			return;
+		}
+
+		m_CurrentOrderUtility = ResolveGroupUtility();
+		if (!m_CurrentOrderUtility)
+		{
+			m_bActive = false;
+			return;
+		}
+
+		if (m_bCurrentOrderInfinite)
+		{
+			m_iShotsRemainingInOrder = -1;
+		}
+		else
+		{
+			m_iShotsRemainingInOrder = order.m_iShotCount;
+			if (m_iShotsRemainingInOrder <= 0)
+			{
+				OnCurrentOrderFinished();
+				return;
+			}
+		}
+
+		FireNextShotInCurrentOrder();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Fires this order as one activity: all rounds impact around one random target point.
+	protected void StartGroupedCurrentOrder(GDC_ArtilleryFireOrder order)
+	{
+		if (!m_bCurrentOrderInfinite && order.m_iShotCount <= 0)
+		{
+			OnCurrentOrderFinished();
+			return;
+		}
 
 		SCR_AIGroupUtilityComponent utility = ResolveGroupUtility();
 		if (!utility)
@@ -108,16 +187,118 @@ class GDC_ArtilleryFireSupportComponent : ScriptComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Called when the current fire order completes or fails. Schedules the next order.
+	//! Fires one shot activity for the current order.
+	//! A new random target is generated for each shot to spread impacts across the configured ring.
+	protected void FireNextShotInCurrentOrder()
+	{
+		if (m_iCurrentOrderIndex >= m_aFireOrders.Count())
+		{
+			m_bActive = false;
+			return;
+		}
+
+		if (!m_bCurrentOrderInfinite)
+		{
+			if (m_iShotsRemainingInOrder <= 0)
+			{
+				OnCurrentOrderFinished();
+				return;
+			}
+
+			m_iShotsRemainingInOrder--;
+		}
+
+		GDC_ArtilleryFireOrder order = m_aFireOrders[m_iCurrentOrderIndex];
+
+		SCR_AIStaticArtilleryActivity activity = new SCR_AIStaticArtilleryActivity(
+			m_CurrentOrderUtility,
+			null,
+			GetRandomPositionInRing(order.m_fMinRadius, order.m_fMaxRadius),
+			m_eAmmoType,
+			1,
+			SCR_AIActionBase.PRIORITY_ACTIVITY_ARTILLERY_SUPPORT
+		);
+
+		activity.m_OnActionCompleted.Insert(OnShotActivityFinished);
+		activity.m_OnActionFailed.Insert(OnShotActivityFinished);
+
+		m_CurrentOrderUtility.AddAction(activity);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Called when a single-shot activity completes or fails.
+	//! Continues the current order until shot count is exhausted, then advances to next order.
+	protected void OnShotActivityFinished()
+	{
+		if (!m_bActive)
+			return;
+
+		if (m_bCurrentOrderInfinite || m_iShotsRemainingInOrder > 0)
+			FireNextShotInCurrentOrder();
+		else
+			OnCurrentOrderFinished();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Called when the current fire order has exhausted its shots. Schedules the next order.
 	protected void OnCurrentOrderFinished()
 	{
+		if (!m_bActive)
+			return;
+
+		if (m_iCurrentOrderIndex >= m_aFireOrders.Count())
+		{
+			m_bActive = false;
+			return;
+		}
+
 		float delayAfter = m_aFireOrders[m_iCurrentOrderIndex].m_fDelayAfter;
 		m_iCurrentOrderIndex++;
 
 		if (m_iCurrentOrderIndex < m_aFireOrders.Count())
+		{
 			GetGame().GetCallqueue().CallLater(ExecuteCurrentOrder, delayAfter * 1000, false);
+			return;
+		}
+
+		if (ShouldLoopMissionAgain())
+		{
+			if (m_iRemainingMissionLoops > 0)
+				m_iRemainingMissionLoops--;
+
+			m_iCurrentOrderIndex = 0;
+			GetGame().GetCallqueue().CallLater(ExecuteCurrentOrder, GetMissionLoopDelayMs(), false);
+		}
 		else
 			m_bActive = false;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Returns true when mission-level loop policy allows another full mission pass.
+	protected bool ShouldLoopMissionAgain()
+	{
+		if (!m_bLooped)
+			return false;
+
+		if (m_iRemainingMissionLoops < 0)
+			return true;
+
+		return (m_iRemainingMissionLoops > 0);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Returns loop delay in milliseconds.
+	//! If max > min, a new random value is picked for every mission loop.
+	protected int GetMissionLoopDelayMs()
+	{
+		int delaySeconds = m_iLoopDelayInSeconds;
+		if (m_iLoopDelayInSecondsMax > m_iLoopDelayInSeconds)
+			delaySeconds = Math.RandomIntInclusive(m_iLoopDelayInSeconds, m_iLoopDelayInSecondsMax);
+
+		if (delaySeconds < 0)
+			delaySeconds = 0;
+
+		return delaySeconds * 1000;
 	}
 
 	//------------------------------------------------------------------------------------------------
