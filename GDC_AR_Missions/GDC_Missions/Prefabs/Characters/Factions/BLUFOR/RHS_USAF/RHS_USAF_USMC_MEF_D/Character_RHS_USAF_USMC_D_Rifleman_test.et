@@ -1,0 +1,95 @@
+SCR_ChimeraCharacter : "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_CharacterInventoryStorageComponent "{520EA1D2DB118DAC}" {
+   components {
+    SCR_EquipmentStorageComponent "{56B49DA9722B635D}" {
+     InitialStorageSlots {
+      SCR_EquipmentStorageSlot BinocularSlot {
+       Prefab "{0CF54B9A85D8E0D4}Prefabs/Items/Equipment/Binoculars/Binoculars_M22/Binoculars_M22.et"
+      }
+     }
+    }
+   }
+  }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{D190F29521A9E6E0}Prefabs/Weapons/Rifles/M27IAR/Rifle_M27IAR_SU230.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Vest {
+     Prefab "{6712E321EDCF23AB}Prefabs/Characters/Vests/Vest_PCGen_III/Variants/Vest_PCGen_III_AT_shawplacard3.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{60C562134DF9E2FF}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{61B52C452F5B2BED}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/radio/Pouch_152_Radio.et"
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{651D048C848632D6}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652B48EEB578AC6E}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{607EC165EA2B4CBE}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652C8D1D61E104A4}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{607F3D079897B13A}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{625C007517C952E2}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652C8D1D7C7E233A}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{62B716DC4F21D17E}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67/Pouch_Filbe_M67_2.et"
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{62B716DC4F5F9191}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67_2/Pouch_Filbe_M67_Base.et"
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{62B716DC4E8EBE91}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m18_1/Pouch_Filbe_M18_1.et"
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{62B716DC4E31865C}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{6A7486A9604CF540}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{6A7486A96046238B}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/ifak/Pouch_PCGEN3_ifak.et"
+     PrefabsToSpawn {
+     }
+    }
+   }
+  }
+ }
+}

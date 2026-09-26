@@ -27,6 +27,14 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
     }
     ItemsInitConfigurationItem "{62B716EFC3B8B749}" {
      TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/flex3/Pouch_Shaw_Flex.et"
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{6A752998869EB4BA}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/nerd/Pouch_PCGEN3_ifak.et"
+     PrefabsToSpawn {
+      "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et"
+     }
     }
    }
   }

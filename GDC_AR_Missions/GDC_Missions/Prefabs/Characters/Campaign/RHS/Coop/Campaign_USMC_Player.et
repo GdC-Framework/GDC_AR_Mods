@@ -8,6 +8,11 @@ SCR_ChimeraCharacter : "{C8A52273222448C0}Prefabs/Characters/Campaign/RHS/Coop/C
       "{8091BEE87781EFBE}Prefabs/Items/Equipment/Radios/Radio_PRC349_Single.et"
      }
     }
+    ItemsInitConfigurationItem "{5538C040738A83D1}" {
+     PrefabsToSpawn {
+      "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et" "{DEDC311A2B0F9235}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1_Last_5Tracer.et"
+     }
+    }
    }
   }
  }

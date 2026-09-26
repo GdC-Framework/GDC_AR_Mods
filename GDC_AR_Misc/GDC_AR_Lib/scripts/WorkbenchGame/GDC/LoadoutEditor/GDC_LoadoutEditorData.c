@@ -2,6 +2,69 @@
 //! Shared helpers of the GDC loadout editor.
 class GDC_LoadoutUtils
 {
+	//! Separates the name part (upper case) from the details part (lower case) of panel titles.
+	static const string SEPARATOR = "  ·  ";
+
+	//! Title icons: an item will not be spawned (capacity, weight, size, type), storage not on the worn gear, items placed by the game.
+	static const string ICON_OVER_LIMIT = "❗";
+	static const string ICON_WARNING = "⚠";
+	static const string ICON_AUTOMATIC = "🟡";
+
+	//! Dialog icons, shown at the start of the text: Workbench dialogs have no icon option.
+	static const string DIALOG_WARNING = "⚠️";
+	static const string DIALOG_INFORMATION = "ℹ️";
+	static const string DIALOG_QUESTION = "❓";
+
+	static string DialogText(string icon, string text)
+	{
+		return icon + "  " + text;
+	}
+
+	static string Upper(string text)
+	{
+		string result = text;
+		result.ToUpper();
+		return result;
+	}
+
+	//! "equipment attachment" for PURPOSE_EQUIPMENT_ATTACHMENT, combinations joined with " + ".
+	static string ReadablePurpose(int purpose)
+	{
+		string name = PurposeName(purpose);
+		name.Replace("PURPOSE_", string.Empty);
+		name.Replace("_", " ");
+		name.ToLower();
+		return name;
+	}
+
+	//! True when an item of the given dimensions fits within the size limit, whatever its orientation.
+	//! A limit of zero on every axis means no limit.
+	static bool FitsIn(vector dimensions, vector maxSize)
+	{
+		if (maxSize[0] <= 0 && maxSize[1] <= 0 && maxSize[2] <= 0)
+			return true;
+
+		array<float> item = { dimensions[0], dimensions[1], dimensions[2] };
+		array<float> limit = { maxSize[0], maxSize[1], maxSize[2] };
+		item.Sort();
+		limit.Sort();
+		for (int axis = 0; axis < 3; axis++)
+		{
+			if (item[axis] > limit[axis])
+				return false;
+		}
+
+		return true;
+	}
+
+	static string ItemCountText(int count)
+	{
+		if (count == 1)
+			return "1 item";
+
+		return string.Format("%1 items", count);
+	}
+
 	//! File name of a prefab without extension, or "empty".
 	static string ShortName(ResourceName prefab)
 	{
@@ -11,22 +74,39 @@ class GDC_LoadoutUtils
 		return FilePath.StripExtension(FilePath.StripPath(prefab.GetPath()));
 	}
 
+	//! Removes a leading "{GUID}" from a path. Done on the text: storage paths such as "Vest/Vest.et/radio/Pouch.et"
+	//! are not resources, and converting them to ResourceName makes the engine log a "Wrong GUID/name" error.
+	static string StripGuid(string path)
+	{
+		if (!path.StartsWith("{"))
+			return path;
+
+		int closing = path.IndexOf("}");
+		if (closing < 0)
+			return path;
+
+		return path.Substring(closing + 1, path.Length() - closing - 1);
+	}
+
 	//! Case-insensitive comparison, GUID prefixes ignored.
 	static bool SamePath(string left, string right)
 	{
-		ResourceName leftName = left;
-		ResourceName rightName = right;
-		string leftPath = leftName.GetPath();
-		string rightPath = rightName.GetPath();
+		string leftPath = StripGuid(left);
+		string rightPath = StripGuid(right);
 		leftPath.ToLower();
 		rightPath.ToLower();
 		return leftPath == rightPath;
 	}
 
 	//! Purposes that designate the regular storage of an item (as opposed to special storages such as flashlight holders).
+	//! StoragePurpose is a bit field: a storage flagged for regular storage plus other uses (e.g. 0x41 on RHS pouches) is still regular.
 	static bool IsGeneralPurpose(int purpose)
 	{
-		return purpose == 0 || purpose == 1 || purpose == EStoragePurpose.PURPOSE_UNSET || purpose == EStoragePurpose.PURPOSE_DEPOSIT;
+		if (purpose == 0 || purpose == 1)
+			return true;
+
+		int generalBits = EStoragePurpose.PURPOSE_UNSET | EStoragePurpose.PURPOSE_DEPOSIT;
+		return (purpose & generalBits) != 0;
 	}
 
 	static bool SamePurpose(int left, int right)
@@ -37,13 +117,39 @@ class GDC_LoadoutUtils
 		return left == right;
 	}
 
+	//! Enum name of a purpose, or the names of its bits joined with " + " for a combination.
 	static string PurposeName(int purpose)
 	{
-		string name = typename.EnumToString(EStoragePurpose, purpose);
-		if (name.IsEmpty())
+		array<int> values = {
+			EStoragePurpose.PURPOSE_UNSET,
+			EStoragePurpose.PURPOSE_DEPOSIT,
+			EStoragePurpose.PURPOSE_WEAPON_PROXY,
+			EStoragePurpose.PURPOSE_GADGET_PROXY,
+			EStoragePurpose.PURPOSE_LOADOUT_PROXY,
+			EStoragePurpose.PURPOSE_ATTACHMENT_PROXY,
+			EStoragePurpose.PURPOSE_EQUIPMENT_ATTACHMENT,
+			EStoragePurpose.PURPOSE_ANY
+		};
+
+		string names;
+		foreach (int value : values)
+		{
+			if (value == purpose)
+				return typename.EnumToString(EStoragePurpose, value);
+
+			if (value == 0 || (purpose & value) != value)
+				continue;
+
+			if (!names.IsEmpty())
+				names += " + ";
+
+			names += typename.EnumToString(EStoragePurpose, value);
+		}
+
+		if (names.IsEmpty())
 			return string.Format("purpose %1", purpose);
 
-		return name;
+		return names;
 	}
 
 	//! Same prefabs with the same multiplicity, order ignored.
@@ -105,7 +211,7 @@ class GDC_LoadoutUtils
 	}
 }
 
-//! Title "<label>: <prefab file name>" for panel entries holding one prefab.
+//! Title "LABEL  ·  prefab file name" for panel entries holding one prefab.
 class GDC_LoadoutEntryTitle : BaseContainerCustomTitle
 {
 	protected string m_sLabelField;
@@ -125,7 +231,7 @@ class GDC_LoadoutEntryTitle : BaseContainerCustomTitle
 		ResourceName prefab;
 		source.Get(m_sPrefabField, prefab);
 
-		title = string.Format("%1: %2", label, GDC_LoadoutUtils.ShortName(prefab));
+		title = GDC_LoadoutUtils.Upper(label) + GDC_LoadoutUtils.SEPARATOR + GDC_LoadoutUtils.ShortName(prefab);
 		return true;
 	}
 }
@@ -264,8 +370,7 @@ class GDC_LoadoutContainer
 
 	static string MakeKey(string path, int purpose)
 	{
-		ResourceName pathName = path;
-		string key = pathName.GetPath();
+		string key = GDC_LoadoutUtils.StripGuid(path);
 		key.ToLower();
 		int keyPurpose = purpose;
 		if (GDC_LoadoutUtils.IsGeneralPurpose(purpose))
@@ -343,6 +448,38 @@ class GDC_LoadoutContainer
 	}
 }
 
+//! Offered after Apply: the tool changes the prefab in memory, the Workbench save writes the file.
+class GDC_LoadoutSaveDialog
+{
+	[ButtonAttribute("Save world", true)]
+	protected int ButtonSave()
+	{
+		return 1;
+	}
+
+	[ButtonAttribute("Later")]
+	protected int ButtonLater()
+	{
+		return 0;
+	}
+}
+
+//! Confirmation before emptying the inventory; Cancel is the default button.
+class GDC_LoadoutClearDialog
+{
+	[ButtonAttribute("Clear")]
+	protected int ButtonClear()
+	{
+		return 1;
+	}
+
+	[ButtonAttribute("Cancel", true)]
+	protected int ButtonCancel()
+	{
+		return 0;
+	}
+}
+
 //! Confirmation before a destructive write; Cancel is the default button.
 class GDC_LoadoutConfirmDialog
 {
@@ -356,29 +493,6 @@ class GDC_LoadoutConfirmDialog
 	protected int ButtonCancel()
 	{
 		return 0;
-	}
-}
-
-//! Buttons of the report dialog.
-class GDC_LoadoutReportDialog
-{
-	protected string m_sReport;
-
-	void GDC_LoadoutReportDialog(string report)
-	{
-		m_sReport = report;
-	}
-
-	[ButtonAttribute("Copy To Log")]
-	void ButtonCopyToLog()
-	{
-		Print(m_sReport);
-	}
-
-	[ButtonAttribute("Close", true)]
-	bool ButtonClose()
-	{
-		return false;
 	}
 }
 #endif

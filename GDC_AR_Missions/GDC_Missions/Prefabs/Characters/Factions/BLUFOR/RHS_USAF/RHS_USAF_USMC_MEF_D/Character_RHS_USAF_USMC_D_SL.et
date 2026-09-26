@@ -57,7 +57,7 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
    InitialInventoryItems {
     ItemsInitConfigurationItem "{60C562134DF9E2FF}" {
      PrefabsToSpawn {
-      "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{922F95F91943F69A}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{D70216B1B2889129}Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et" "{F088066F5F807748}Prefabs/Weapons/Attachments/Bayonets/Bayonet_OKC3S.et"
+      "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{922F95F91943F69A}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{D70216B1B2889129}Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et" "{F088066F5F807748}Prefabs/Weapons/Attachments/Bayonets/Bayonet_OKC3S.et" "{F088066F5F807748}Prefabs/Weapons/Attachments/Bayonets/Bayonet_OKC3S.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{61B52C452F5B2BED}" {
@@ -68,19 +68,13 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{6A7507344835B1FA}" {
      TargetStorage "Jacket/Jacket_FROG_Combat_Shirt_Arid.et"
      PrefabsToSpawn {
-      "{B1798B0F1258B765}Prefabs/Items/Equipment/Navigation/DAGR/DAGR.et"
+      "{B1798B0F1258B765}Prefabs/Items/Equipment/Navigation/DAGR/DAGR.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{6A7507344835B1DF}" {
      TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/Pouch2/Pouch_Blueforce_Tri.et"
      PrefabsToSpawn {
-      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
-     }
-    }
-    ItemsInitConfigurationItem "{6A75073448354BFD}" {
-     TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/Placard/Pouch_Placard_m81.et"
-     PrefabsToSpawn {
-      "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
      }
     }
     ItemsInitConfigurationItem "{6A75073448354B83}" {
@@ -92,7 +86,7 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{6A75073448354FD1}" {
      TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/flex/Pouch_Shaw_Flex.et"
      PrefabsToSpawn {
-      "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+      "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
      }
     }
     ItemsInitConfigurationItem "{6A75073448354FD2}" {
@@ -119,11 +113,22 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
       "{14C1A0F061D9DDEE}Prefabs/Weapons/Grenades/M18/Smoke_M18_Violet.et"
      }
     }
-    ItemsInitConfigurationItem "{6A7507349EAFC620}" {
-     TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/m18/Pouch_Filbe_M18_1.et"
-     TargetPurpose 65
+    ItemsInitConfigurationItem "{6A75299AA1395680}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/Placard/Pouch_Placard.et"
+     PrefabsToSpawn {
+      "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A75299AA3D09D04}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/nerd/Pouch_Shaw_Nerd_Mini.et"
      PrefabsToSpawn {
       "{D41D22DD1B8E921E}Prefabs/Weapons/Grenades/M18/Smoke_M18_Green.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A75299AA2F7C428}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/ifak2/Pouch_PCGEN3_ifak.et"
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
      }
     }
    }

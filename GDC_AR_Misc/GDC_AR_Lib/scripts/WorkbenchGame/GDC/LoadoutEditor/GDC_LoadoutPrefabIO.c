@@ -182,7 +182,7 @@ class GDC_LoadoutPrefabIO
 		int managerIndex = SCR_BaseContainerTools.FindComponentIndex(prefab, BaseLoadoutManagerComponent);
 		if (managerIndex < 0)
 		{
-			Print(string.Format("GDC Loadout Editor: %1 has no BaseLoadoutManagerComponent, it is not a character.", prefabName), LogLevel.ERROR);
+			Print(string.Format("[GDC LoadoutEditor] %1 has no BaseLoadoutManagerComponent, it is not a character.", prefabName), LogLevel.ERROR);
 			return false;
 		}
 
@@ -592,13 +592,14 @@ class GDC_LoadoutPrefabIO
 				new ContainerIdPathEntry(INITIAL_ITEMS, entryIndex)
 			};
 
-			if (targets[entryIndex] != original.m_sTargetStorage)
+			// the destination of an entry left empty does not matter: it is not rewritten
+			if (!finalContent.IsEmpty() && targets[entryIndex] != original.m_sTargetStorage)
 			{
 				plan.m_aWrites.Insert(new GDC_LoadoutWrite(label, entryPath, TARGET_STORAGE, targets[entryIndex]));
 				plan.m_aChanges.Insert(string.Format("%1: destination -> '%2'", label, DescribeTarget(targets[entryIndex])));
 			}
 
-			if (purposes[entryIndex] != original.m_iTargetPurpose)
+			if (!finalContent.IsEmpty() && purposes[entryIndex] != original.m_iTargetPurpose)
 				plan.m_aWrites.Insert(new GDC_LoadoutWrite(label, entryPath, TARGET_PURPOSE, purposes[entryIndex].ToString()));
 
 			if (!GDC_LoadoutUtils.SamePrefabOrder(finalContent, original.m_aPrefabs))
@@ -622,13 +623,30 @@ class GDC_LoadoutPrefabIO
 	//------------------------------------------------------------------------------------------------
 
 	//! Applies a validated plan. Must be called inside a World Editor entity action.
-	static bool Execute(notnull WorldEditorAPI api, notnull IEntitySource prefab, notnull GDC_LoadoutSnapshot snapshot, notnull GDC_LoadoutPlan plan)
+	protected static void ReportProgress(WBProgressDialog progress, int step, int stepCount, string action)
 	{
+		if (!progress || stepCount <= 0)
+			return;
+
+		progress.SetMainTitle(string.Format("Applying the loadout (%1 / %2)", step + 1, stepCount));
+		progress.SetActionTitle(action);
+		float ratio = step;
+		ratio /= stepCount;
+		progress.SetProgress(ratio);
+	}
+
+	static bool Execute(notnull WorldEditorAPI api, notnull IEntitySource prefab, notnull GDC_LoadoutSnapshot snapshot, notnull GDC_LoadoutPlan plan, WBProgressDialog progress = null)
+	{
+		// each write makes the World Editor recreate the entities using the prefab, so progress is reported per write
+		int stepCount = plan.m_aWrites.Count() + plan.m_aNewEntries.Count() + plan.m_aRemovals.Count();
+		int step;
+
 		foreach (GDC_LoadoutWrite write : plan.m_aWrites)
 		{
+			ReportProgress(progress, step++, stepCount, write.m_sLabel);
 			if (!api.SetVariableValue(prefab, write.m_aPath, write.m_sField, write.m_sValue))
 			{
-				Print(string.Format("GDC Loadout Editor: could not write %1 of %2", write.m_sField, write.m_sLabel), LogLevel.ERROR);
+				Print(string.Format("[GDC LoadoutEditor] could not write %1 of %2", write.m_sField, write.m_sLabel), LogLevel.ERROR);
 				return false;
 			}
 		}
@@ -640,9 +658,10 @@ class GDC_LoadoutPrefabIO
 		int nextIndex = snapshot.m_aEntries.Count();
 		foreach (GDC_LoadoutNewEntry newEntry : plan.m_aNewEntries)
 		{
+			ReportProgress(progress, step++, stepCount, "New entry for " + DescribeTarget(newEntry.m_sTargetStorage));
 			if (!api.CreateObjectArrayVariableMember(prefab, managerPath, INITIAL_ITEMS, ITEMS_INIT_CLASS, nextIndex))
 			{
-				Print(string.Format("GDC Loadout Editor: could not create an inventory entry for '%1'", DescribeTarget(newEntry.m_sTargetStorage)), LogLevel.ERROR);
+				Print(string.Format("[GDC LoadoutEditor] could not create an inventory entry for '%1'", DescribeTarget(newEntry.m_sTargetStorage)), LogLevel.ERROR);
 				return false;
 			}
 
@@ -660,7 +679,7 @@ class GDC_LoadoutPrefabIO
 
 			if (!written)
 			{
-				Print(string.Format("GDC Loadout Editor: could not fill the new inventory entry for '%1'", DescribeTarget(newEntry.m_sTargetStorage)), LogLevel.ERROR);
+				Print(string.Format("[GDC LoadoutEditor] could not fill the new inventory entry for '%1'", DescribeTarget(newEntry.m_sTargetStorage)), LogLevel.ERROR);
 				return false;
 			}
 
@@ -673,6 +692,8 @@ class GDC_LoadoutPrefabIO
 		removals.Sort(true);
 		foreach (int removedIndex : removals)
 		{
+			ReportProgress(progress, step++, stepCount, string.Format("Removing empty entry %1", removedIndex));
+
 			// the call can report success on an inherited entry that stays in place: check the entry is really gone
 			// (same identifier still at this index), and never touch another entry that moved into its place
 			int countBefore = CountInitialItems(prefab, snapshot.m_iStorageManagerIndex);
@@ -694,11 +715,11 @@ class GDC_LoadoutPrefabIO
 
 			if (!api.SetVariableValue(prefab, removedPath, PREFABS_TO_SPAWN, string.Empty))
 			{
-				Print(string.Format("GDC Loadout Editor: could not remove or empty inventory entry %1", removedIndex), LogLevel.ERROR);
+				Print(string.Format("[GDC LoadoutEditor] could not remove or empty inventory entry %1", removedIndex), LogLevel.ERROR);
 				return false;
 			}
 
-			Print(string.Format("GDC Loadout Editor: inventory entry %1 is inherited and cannot be removed, it was emptied instead.", removedIndex), LogLevel.WARNING);
+			Print(string.Format("[GDC LoadoutEditor] inventory entry %1 is inherited and cannot be removed, it was emptied instead.", removedIndex), LogLevel.WARNING);
 		}
 
 		return true;
