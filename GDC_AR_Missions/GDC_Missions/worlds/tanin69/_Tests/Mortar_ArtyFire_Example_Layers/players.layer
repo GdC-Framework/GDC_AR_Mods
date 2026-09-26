@@ -1,0 +1,7 @@
+SCR_AIGroup players : "{7A43006F3F254FB2}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Group_USAF_USMC_MARSOC_SentryTeam.et" {
+ coords 6279.558 37.455 8038.592
+ m_aStaticWaypoints {
+  "grp_C_WP_Loiter"
+ }
+ m_bSetPlayable 1
+}

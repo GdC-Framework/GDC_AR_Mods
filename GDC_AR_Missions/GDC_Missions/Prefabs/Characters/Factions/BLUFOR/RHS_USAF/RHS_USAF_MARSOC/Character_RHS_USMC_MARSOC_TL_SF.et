@@ -60,19 +60,25 @@ SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{61E8906D4CD10238}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/tako/Pouch_FILBE_doubleM4_3.et"
      PrefabsToSpawn {
-      "{AE484B2A9DBDF18E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_Coy_30rnd_M995.et" "{AE484B2A9DBDF18E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_Coy_30rnd_M995.et"
+      "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et" "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et"
      }
     }
     ItemsInitConfigurationItem "{61E8906D4CD10209}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/tako3/Pouch_FILBE_doubleM4_2.et"
+     PrefabsToSpawn {
+      "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et" "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et"
+     }
     }
     ItemsInitConfigurationItem "{625B1A61D9DE2E42}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/flexcoret/Pouch_Shaw_Flex_MC.et"
+     PrefabsToSpawn {
+      "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et" "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et"
+     }
     }
     ItemsInitConfigurationItem "{6296C0163F0C97FD}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x6_2.et/Pouch1/Pouch_jpc_placard_Coy.et"
-     PrefabsToSpawn {
-      "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et"
+     PrefabsToSpawn + {
+      "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et" "{BD30BE4A3D8B9DAC}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_30rnd_M855A1_last5tracer.et"
      }
     }
     ItemsInitConfigurationItem "{6296C0163F73494C}" {
@@ -88,5 +94,5 @@ SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS
   }
  }
  coords 0 0 0
- angles 0 -33.902 0
+ angles 0 27.681 0
 }

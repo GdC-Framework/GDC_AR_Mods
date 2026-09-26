@@ -1,0 +1,196 @@
+StaticModelEntity : "{605A7848CB4D361A}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Bunker_Camouflaged_USSR_01.et" {
+ coords 14069.1 54.503 12845.129
+}
+$grp GameEntity : "{6BD2AC60C5EB7CDF}Prefabs/Props/Military/Generators/GeneratorHighBeamLight_USSR_01.et" {
+ {
+  coords 13667.338 49.563 12148.58
+  angles 0 -65.608 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 13667.997 49.563 12143.857
+  angles 0 -123.881 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 13767.3 49.563 12662.229
+  angles 0 -18.691 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_eFlickerMode INTENSITY_VARIATION
+      m_fBaseLV 6.3
+      m_fMaxLVMultiplier 1
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 13766.742 49.563 12656.359
+  angles 0 -83.651 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_eFlickerMode BALANCED
+      m_fMinDuration 30
+      m_fMaxDuration 90
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 14070.143 49.563 12952.538
+  angles 0 0 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_fMicroOffMinDuration 0.01
+      m_fMicroOffMaxDuration 0.1
+      m_iMinBurstCount 4
+      m_iMaxBurstCount 10
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 14001.136 54 12514.553
+  angles 0 -69.881 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_eFlickerMode BALANCED
+      m_fMinDuration 60
+      m_fMaxDuration 90
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+  }
+ }
+ {
+  coords 14065.589 49.563 12951.254
+  angles 0 -71.397 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+    coords 0.539 3.55 0
+    angles -9.973 19.281 -0.743
+    LV 4.35
+    DistanceAttenuation 0.2
+   }
+  }
+ }
+ {
+  coords 13993.303 47.462 12701.025
+  angles -8.809 -83.023 0
+  {
+   LightEntity {
+    ID "6A3CD96390582ED5"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+    LV 2
+   }
+   LightEntity {
+    ID "6A3CD963CFCB919B"
+    components {
+     GDC_LightStateComponent "{5C2D8E3F7B1A9046}" {
+      m_bAutoFlickerEnabled 0
+     }
+    }
+    LV 2
+   }
+  }
+ }
+}
+GenericEntity : "{C09CC8FB1B3CEDF2}PrefabsEditable/Auto/Props/Industrial/E_BarrelMetal_01_military.et" {
+ coords 13972.618 49.563 12694.165
+ {
+  ParticleEffectEntity : "{F336A692A1C03491}Particles/Logistics/Fire/Tire/Fire_Tire_Small.et" {
+   coords 0 0.891 0
+  }
+ }
+}

@@ -1,0 +1,102 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ A_Contexte {
+  coords 2677.245 24.218 5568.411
+  m_sTitle "Contexte"
+  m_sTextData "Octobre 1984."\
+  ""\
+  "Le guerre n'est froide que pour l'opinion publique. En réalité, de nombreux combats directs ont lieu entre les USA et l'URSS... Mais en dessous des radars des journalistes."\
+  ""\
+  "C'est le cas d'un confetti perdu au milieu l'atlantique nord  : Kolguyev. La position de cette ile (52°22'19'' de latitude Nord et 24°1'26'' de longitude Ouest), vous l'avez bien compris (car vous êtes des as en navigation), est stratégique."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ B_Situation {
+  coords 2682.137 24.219 5572.818
+  m_sTitle "Situation"
+  m_sTextData "Une partie de la <color name=\"blue\">5th Marine Expeditionary Brigade</color> est stationnée sur <color name=\"blue\"><b>l'aéroport</b></color> de Kolguyev. Son équipement (notamment aéroporté) et sa position sont censés défendre l'ile."\
+  ""\
+  "Il y a 24 heures, <color name=\"red\">les russes</color> ont réussi à organiser un débarquement suprise sur <color name=\"red\"><b>Ugoldar</b></color> (Simply-City pour les soldats US, qui sont connus pour leur grande maîtrise des langues étrangères)."\
+  ""\
+  "Cette tête de pont ouvre au rouges un boulevard et menace le contrôle US sur Kolgu."\
+  ""\
+  "Nos moyens aériens sont cloués au sol à cause d'une météo exécrable."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ C_Mission {
+  coords 2768.766 24.219 5418.655
+  m_sTitle "Objectif"
+  m_sTextData "Neutraliser les hostiles sur Ugoldar, détruire tout véhicule, récupérer de possibles intels et tenir la position."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ D_Intels {
+  coords 2774.436 24.218 5439.377
+  m_sTitle "Renseignements"
+  m_sTextData "Aucun civil sur zone."\
+  ""\
+  "Michurino, Udarnik et Soumont sont libres."\
+  ""\
+  "La côte au nord d'Ugoldar n'a pas pu être reconnue. Le contournement complet par le Nord est donc fortement déconseillé."\
+  ""\
+  "Plusieurs BTR et BRDM sur zone. Les blindés ont probablement été positionnés pour verrouiller les accès à Ugoldar. "\
+  ""\
+  "Au moins 70 hommes sur le périmètre d'Ulgodar et ses environs."\
+  ""\
+  "La concentration principale des hostiles est sur le port et ses environs."\
+  ""\
+  "Renforts très probables."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ E_Matos {
+  coords 2774.695 24.219 5439.215
+  m_sTitle "Matériel"
+  m_sTextData "<b>Véhicules</b>"\
+  ""\
+  "- <color name=\"green\">Un LAV25</color> (+ matériel et munitions) :"\
+  "  > 3 + 1 boîtes d'APDS 25mm (60 munitions par boîte)"\
+  "  > 2 + 1 boîtes de HEI 25mm (120 munitions par boîte)"\
+  "  > 4 + 1 boîtes de 7.62 pour la M240 (200 munitions par boîte)"\
+  ""\
+  "- 2 HMMWV avec M2 (+ matériel et munitions)"\
+  ""\
+  "- 4 HMMWV non armés"\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ C2_Mot_du_commandant {
+  coords 3538.749 139.46 5201.432
+  m_sTitle "Mot du commandant"
+  m_sTextData "Les Hueys sont cloués au sol, on ne pourra pas compter sur eux pour cette mission."\
+  ""\
+  "Notre groupe est limité en matériel de combat : un seul LAV25 est disponible, il faudra faire avec. Ne le perdez pas, c'est votre seul équipement réellement efficace contre les blindés russes."\
+  ""\
+  "Notre reconnaissance s'est limitée aux villages environnant l'aéroport."\
+  ""\
+  "Nous avons en face au moins un peloton motorisé russe. Les russes ont peut-être débarqué aussi sur le reste de la côte Est, on ne sait pas."\
+  ""\
+  "Pour le reste des renseignements, nous faisons confiance aux analystes."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+}
+PS_ManualMarker : "{676B84E0291E12D6}PrefabsEditable/Markers/Group/Marker_GroupFlagsBlufor_Base.et" {
+ coords 2769.214 24.208 5432.705
+ m_fWorldSize 50
+ m_bUseWorldScale 0
+}
+PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ coords 6697.3 5.383 3600.468
+ angles 0 0 0
+ m_MarkerColor 0.561 0.071 0.071 1
+ m_fWorldSize 60
+ m_bUseWorldScale 0
+}

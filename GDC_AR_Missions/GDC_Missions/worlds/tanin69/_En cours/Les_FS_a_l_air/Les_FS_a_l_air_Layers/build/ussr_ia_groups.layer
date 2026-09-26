@@ -1,0 +1,559 @@
+$grp SCR_DefendWaypoint : "{1E4818C263E3AB78}Prefabs/AI/Waypoints/AIWaypoint_Defend_Small_CO_Interior.et" {
+ grp_3_WP_Defend {
+  coords 14071.242 49.562 12944.676
+ }
+ grp_4_WP_Defend {
+  coords 13773.617 49.562 12656.858
+ }
+}
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ BRDM2_1_WP_Patrol1 {
+  coords 14066.573 49.563 12937.376
+ }
+ BRDM2_1_WP_Patrol2 {
+  coords 13766.052 49.562 12670.446
+ }
+ BRDM2_1_WP_Patrol3 {
+  coords 13660.715 49.562 12135.419
+ }
+ BRDM2_1_WP_Patrol4 {
+  coords 13791.603 50.344 11925.167
+ }
+ BRDM2_1_WP_Patrol5 {
+  coords 14202.179 50.904 12084.653
+ }
+ BRDM2_1_WP_Patrol6 {
+  coords 14411.411 50.906 12238.789
+ }
+ BRDM2_1_WP_Patrol7 {
+  coords 14398.162 50.906 12546.414
+ }
+ grp_2_WP_Patrol1 {
+  coords 14048.483 54 12830.143
+ }
+ grp_2_WP_Patrol2 {
+  coords 14005.774 53.357 12795.901
+  angles 6.674 0.262 2.252
+ }
+ grp_2_WP_Patrol3 {
+  coords 13940.918 54 12745.914
+ }
+ grp_2_WP_Patrol4 {
+  coords 13867.755 53.977 12689.418
+  angles 0 0 -5.356
+ }
+ grp_2_WP_Patrol5 {
+  coords 13877.605 54 12635.556
+ }
+ grp_2_WP_Patrol6 {
+  coords 14065.819 49.563 12807.764
+ }
+ grp_10_WP_Patrol3 {
+  coords 14010.096 54 12510.307
+ }
+ grp_10_WP_Patrol5 {
+  coords 13936.321 54 12578.86
+ }
+ grp_10_WP_Patrol1 {
+  coords 14168.864 51.323 12653.477
+ }
+ grp_10_WP_Patrol6 {
+  coords 14139.091 50.906 12733.644
+ }
+ grp_10_WP_Patrol4 {
+  coords 13971.772 54 12544.805
+ }
+ grp_10_WP_Patrol2 {
+  coords 14106.421 52.108 12597.68
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ BRDM2_1_WP_Cycle {
+  coords 14317.499 50.906 12616.253
+  CycleWaypoints {
+   "BRDM2_1_WP_Patrol1"
+   "BRDM2_1_WP_Patrol2"
+   "BRDM2_1_WP_Patrol3"
+   "BRDM2_1_WP_Patrol4"
+   "BRDM2_1_WP_Patrol5"
+   "BRDM2_1_WP_Patrol6"
+   "BRDM2_1_WP_Patrol7"
+  }
+ }
+ grp_2_WP_Cycle {
+  coords 14048.097 54 12830.284
+  CycleWaypoints {
+   "grp_2_WP_Patrol1"
+   "grp_2_WP_Patrol2"
+   "grp_2_WP_Patrol3"
+   "grp_2_WP_Patrol4"
+   "grp_2_WP_Patrol5"
+   "grp_2_WP_Patrol6"
+  }
+ }
+ grp_10_WP_Cycle {
+  coords 14207.292 50.906 12704.447
+  CycleWaypoints {
+   "grp_10_WP_Patrol1"
+   "grp_10_WP_Patrol2"
+   "grp_10_WP_Patrol3"
+   "grp_10_WP_Patrol4"
+   "grp_10_WP_Patrol5"
+   "grp_10_WP_Patrol6"
+  }
+ }
+}
+$grp SCR_AIAnimationWaypoint : "{4481F98AAFA79B1C}Prefabs/AI/Waypoints/AIWaypoint_Animation.et" {
+ grp_A_WP_Anim {
+  coords 13968.769 49.666 12694.791
+  angles 0 -44.685 0
+  CompletionRadius 3
+  m_aAnimationScripts {
+   SCR_AIAnimationScript "{6A3F344EA5625820}" {
+    m_aAgentAnimationParameters {
+     SCR_AIAnimationWaypointParameters "{6A3F344EA6ACE5C2}" {
+      m_oAnimationLocalTransform PointInfo "{6A3F344EA88E4609}" {
+      }
+      m_oAnimationClass SCR_AIAnimation_Loitering "{6A3F344EA2FFA5BD}" {
+      }
+     }
+    }
+   }
+  }
+ }
+ grp_B_WP_Anim {
+  coords 14049.561 55.287 12703.971
+  CompletionRadius 3
+  m_aAnimationScripts {
+   SCR_AIAnimationScript "{6A3F344EA5625820}" {
+    m_aAgentAnimationParameters {
+     SCR_AIAnimationWaypointParameters "{6A3F344EA6ACE5C2}" {
+      m_oAnimationLocalTransform PointInfo "{6A3F344EA88E4609}" {
+      }
+      m_oAnimationClass SCR_AIAnimation_Loitering "{6A3F344EA2FFA5BD}" {
+      }
+     }
+    }
+   }
+  }
+ }
+}
+SCR_DefendWaypoint grp_9_WP_Loiter : "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et" {
+ coords 14046.285 55.344 12696.199
+ CompletionRadius 10
+}
+SCR_AIGroup grp_1 : "{61DD5A8910ECF5C6}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_LightFireTeam.et" {
+ components {
+  TILW_ControlModeFlag "{6A432D916D2EC8A9}" {
+   m_flagName "US_DETECTED"
+   m_continuous 1
+  }
+ }
+ coords 14068.975 54.633 12845.293
+ m_aStaticWaypoints {
+  "grp_1_WP_Defend"
+ }
+}
+$grp SCR_AIGroup : "{85591815191600FC}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_SentryTeam.et" {
+ grp_9 {
+  components {
+   TILW_ControlModeFlag "{6A432D92CC6BD39E}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14043.915 55.344 12699.063
+  angles 0 -125.868 0
+  m_aStaticWaypoints {
+   "grp_9_WP_Loiter"
+  }
+ }
+ grp_2 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Column"
+   }
+   SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+    m_Skill 0.4
+   }
+   TILW_ControlModeFlag "{6A432D8C66A60209}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14047.159 54.001 12828.622
+  angles 0 -125.868 0
+  m_aStaticWaypoints {
+   "grp_2_WP_Cycle"
+  }
+  m_bDeleteIfNoPlayer 0
+ }
+ grp_3 {
+  components {
+   SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+    m_Skill 0.4
+   }
+   TILW_ControlModeFlag "{6A432D8FDAF00C11}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14072.829 49.563 12946.018
+  angles 0 -125.868 0
+  m_aStaticWaypoints {
+   "grp_3_WP_Defend"
+  }
+ }
+ grp_4 {
+  components {
+   TILW_ControlModeFlag "{6A432D92A711682E}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 13775.92 49.563 12654.403
+  angles 0 -125.868 0
+  m_aStaticWaypoints {
+   "grp_4_WP_Defend"
+  }
+ }
+ grp_5 {
+  components {
+   TILW_ControlModeFlag "{6A432D92AE053304}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 13771.976 57.157 12657.946
+  angles 0 -125.868 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_4_WP_Defend"
+  }
+ }
+ grp_6 {
+  components {
+   TILW_ControlModeFlag "{6A432D92B1337709}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14070.557 56.881 12946.088
+  angles 0 -125.868 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_6_WP_Defend"
+  }
+ }
+ grp_7 {
+  components {
+   TILW_ControlModeFlag "{6A432D92B999F25A}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14008.138 61.313 12513.367
+  angles 0 -125.868 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_7_WP_Defend"
+  }
+ }
+ grp_8 {
+  components {
+   TILW_ControlModeFlag "{6A432D92C6F38792}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14214.364 57.921 12694.253
+  angles 0 -125.868 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "grp_8_WP_Defend"
+  }
+ }
+ grp_A {
+  components {
+   TILW_ControlModeFlag "{6A432D92D74E1276}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 13969.209 49.666 12694.299
+  angles 0 -91.385 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "grp_A_WP_Anim"
+  }
+ }
+ grp_B {
+  components {
+   TILW_ControlModeFlag "{6A432D92DFF0A3B5}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14049.626 55.288 12703.908
+  angles 0 15.588 0
+  m_aUnitPrefabSlots {
+   "{5C75226D45102461}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/RandomSoldiers/Character_RHS_RF_MSV_VKPO_S_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "grp_B_WP_Anim"
+  }
+ }
+ grp_10 {
+  components {
+   AIFormationComponent "{507E9DC12F541FE6}" {
+    DefaultFormation "Column"
+   }
+   SCR_AIConfigComponent "{512CC1759AE69D6D}" {
+    m_Skill 0.4
+   }
+   TILW_ControlModeFlag "{6A432D9293D38063}" {
+    m_flagName "US_DETECTED"
+    m_continuous 1
+   }
+  }
+  coords 14207.847 50.906 12703.18
+  angles 0 -125.868 0
+  m_aStaticWaypoints {
+   "grp_10_WP_Cycle"
+  }
+  m_bDeleteIfNoPlayer 0
+ }
+}
+SCR_DefendWaypoint grp_1_WP_Defend : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ coords 14067.571 54.049 12840.24
+ CompletionRadius 10
+}
+Vehicle BRDM2_1 : "{9AEDF323A812F9ED}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2_AFRF.et" {
+ components {
+  TILW_VehicleCrewComponent "{6A3CA185650FFBC6}" {
+   m_crewConfig TILW_CrewConfig "{6A3CA185A2BBB19B}" {
+    m_crewGroups {
+     TILW_CrewGroup "{6A3CA185AF30AD2C}" {
+      m_crewStations {
+       TILW_CrewStation "{6A3CA185ABECE6F4}" {
+        m_allowCargo 0
+        m_characters {
+         "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+         "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+        }
+       }
+      }
+      m_waypointNames {
+       "BRDM2_1_WP_Cycle"
+      }
+     }
+    }
+    m_noTurretDismount 1
+   }
+  }
+  ChimeraAIVehicleControlComponent "{61C2E46781A66E82}" {
+   components {
+    AICarMovementComponent "{61C2E46796C28D80}" {
+     CruiseVehicleSpeedKmh 20
+    }
+   }
+  }
+ }
+ coords 14323.731 50.907 12611.237
+ angles 0 -49.791 0
+}
+$grp SCR_DefendWaypoint : "{A70634B518C5C3B8}Prefabs/AI/Waypoints/AIWaypoint_Defend_Small.et" {
+ grp_5_WP_Defend {
+  coords 13771.236 56.83 12657.124
+  CompletionRadius 2
+ }
+ grp_6_WP_Defend {
+  coords 14069.817 56.554 12945.266
+  CompletionRadius 2
+ }
+ grp_7_WP_Defend {
+  coords 14007.398 60.986 12512.545
+  CompletionRadius 2
+ }
+ grp_8_WP_Defend {
+  coords 14213.625 57.594 12693.431
+  CompletionRadius 2
+ }
+}
+GenericEntity A_Chopper : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 14384.726 51.267 12022.557
+ {
+  $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   L_Chopper {
+    coords 0 0 0
+    {
+     GenericEntity S_Mi8 : "{355D143ADB4FA41B}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopter.et" {
+      components {
+       REAPER_SlotAiHelicopter "{69A8BAA5EDDC9444}" {
+        m_sObjectToSpawn "{7BD282AF716ED639}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed.et"
+        m_sHelicopterPilotGroup "S_Mi8_Crew"
+        m_bLockForPlayers 1
+       }
+      }
+      coords 0.393 0.028 -0.649
+      angles 0 -31.118 0
+     }
+     GenericEntity S_Mi8_Crew : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_sObjectToSpawn "{B10210712040A7C9}Prefabs/Groups/OPFOR/REAPER_USSR_HelicopterCrew.et"
+        m_bCanBeGarbageCollected 0
+        m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6A432D85F1FCE803}" {
+         m_aLayerName {
+          "S_Mi8_WP_Cycle"
+         }
+        }
+        m_eAISkill VETERAN
+       }
+      }
+      coords 6.782 -0.361 10.164
+     }
+    }
+   }
+   L_Chopper_WP {
+    coords 0 0 0
+    {
+     $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+      S_Mi8_WP_Cycle {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_sObjectToSpawn "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et"
+         m_Waypoint SCR_ScenarioFrameworkWaypointCycle "{6A432D83C7D098BE}" {
+          m_aLayersWithWaypointsToCycle {
+           "L_Chopper_WP"
+          }
+          m_bUseRandomOrder 1
+         }
+        }
+       }
+       coords -2.067 -0.03 -2.517
+      }
+      S_Mi8_WP_Move1 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords 146.277 -0.36 -399.754
+      }
+      S_Mi8_WP_Move2 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -148.76 -0.358 -192.643
+      }
+      S_Mi8_WP_Move3 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -488.492 -0.361 -259.551
+      }
+      S_Mi8_WP_Move4 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -461.069 -0.246 134.292
+      }
+      S_Mi8_WP_Move5 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -349.053 -1.536 654.836
+      }
+      S_Mi8_WP_Move6 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -25.453 -0.569 863.749
+      }
+      S_Mi8_WP_Move7 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -549.642 -1.698 387.823
+      }
+      S_Mi8_WP_Move8 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -133.414 -0.464 357.494
+      }
+      S_Mi8_WP_Move9 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords 34.666 -0.36 -139.241
+      }
+      S_Mi8_WP_Move10 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A432D83ED2F0FC5}" {
+          m_fMaxSpeed 50
+         }
+        }
+       }
+       coords -752.966 10.906 384.529
+      }
+     }
+    }
+   }
+  }
+ }
+}
+Vehicle Ural4320_ZU1 : "{FD109F3702AAB392}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ZU23.et" {
+ coords 13981.68 49.666 12701.546
+ angles 0 90 0
+}

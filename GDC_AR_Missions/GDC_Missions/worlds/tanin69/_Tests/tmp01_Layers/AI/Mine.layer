@@ -1,0 +1,17 @@
+SCR_BoardingEntityWaypoint WP_GetIn : "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et" {
+ coords 5708.271 2.183 8231.165
+}
+SCR_AIGroup grp_Servant : "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et" {
+ coords 5703.363 2.188 8236.396
+ angles 0 148.779 0
+ m_aUnitPrefabSlots {
+  "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+ }
+ m_aStaticWaypoints {
+  "WP_GetIn"
+ }
+}
+GenericEntity Mortar_Compo : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+ coords 5708.363 2.182 8230.96
+ angles 0 131.596 0
+}

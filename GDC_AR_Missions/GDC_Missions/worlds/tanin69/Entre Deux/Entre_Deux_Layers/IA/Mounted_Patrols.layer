@@ -1,0 +1,304 @@
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ BRDM1_WP_Patrol1 {
+  coords 5928.297 209.464 7027.581
+ }
+ BRDM1_WP_Patrol2 {
+  coords 5766.955 211.891 7009.874
+ }
+}
+$grp Vehicle : "{254289B9C09904AB}Prefabs/Vehicles/Wheeled/BRDM2/BRDM2.et" {
+ BRDM1 {
+  components {
+   TILW_VehicleCrewComponent "{69231B58F0D430D0}" {
+    m_crewConfig TILW_CrewConfig "{69231B58F365D2F5}" {
+     m_crewGroups {
+      TILW_CrewGroup "{69231B58F237B0E3}" {
+       m_crewStations {
+        TILW_CrewStation "{69231B58FC1BF166}" {
+         m_allowCargo 0
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "BRDM1_WP_Cycle"
+       }
+       m_waypointDelay 5
+       m_entityName "BRDM1_crew"
+      }
+     }
+     m_noTurretDismount 1
+     m_useIdleGroups 0
+    }
+   }
+   ChimeraAIVehicleControlComponent "{61C2E46781A66E82}" {
+    components {
+     AICarMovementComponent "{61C2E46796C28D80}" {
+      "Max Speed" 40
+      CruiseVehicleSpeedKmh 30
+     }
+    }
+   }
+  }
+  coords 5969.754 208.383 7037.333
+  angles 0 -30.719 0
+ }
+ BRDM2 {
+  components {
+   TILW_VehicleCrewComponent "{69231B58F0D430D0}" {
+    m_crewConfig TILW_CrewConfig "{69231B58F365D2F5}" {
+     m_crewGroups {
+      TILW_CrewGroup "{69231B58F237B0E3}" {
+       m_crewStations {
+        TILW_CrewStation "{69231B58FC1BF166}" {
+         m_allowCargo 0
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "BRDM2_WP_Cycle"
+       }
+       m_waypointDelay 5
+      }
+     }
+     m_noTurretDismount 1
+     m_useIdleGroups 0
+    }
+   }
+   ChimeraAIVehicleControlComponent "{61C2E46781A66E82}" {
+    components {
+     AICarMovementComponent "{61C2E46796C28D80}" {
+      "Max Speed" 40
+      CruiseVehicleSpeedKmh 30
+     }
+    }
+   }
+  }
+  coords 4922.429 36.339 9088.856
+  angles 0 -142.102 0
+ }
+ BRDM3 {
+  components {
+   TILW_VehicleCrewComponent "{69231B58F0D430D0}" {
+    m_crewConfig TILW_CrewConfig "{69231B58F365D2F5}" {
+     m_crewGroups {
+      TILW_CrewGroup "{69231B58F237B0E3}" {
+       m_crewStations {
+        TILW_CrewStation "{69231B58FC1BF166}" {
+         m_allowCargo 0
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "BRDM3_WP_Cycle"
+       }
+       m_waypointDelay 5
+      }
+     }
+     m_noTurretDismount 1
+     m_useIdleGroups 0
+    }
+   }
+   ChimeraAIVehicleControlComponent "{61C2E46781A66E82}" {
+    components {
+     AICarMovementComponent "{61C2E46796C28D80}" {
+      "Max Speed" 40
+      CruiseVehicleSpeedKmh 30
+     }
+    }
+   }
+  }
+  coords 4601.491 156.611 6817.386
+  angles 0 155.309 0
+ }
+ BRDM4 {
+  components {
+   TILW_VehicleCrewComponent "{69231B58F0D430D0}" {
+    m_crewConfig TILW_CrewConfig "{69231B58F365D2F5}" {
+     m_crewGroups {
+      TILW_CrewGroup "{69231B58F237B0E3}" {
+       m_crewStations {
+        TILW_CrewStation "{69231B58FC1BF166}" {
+         m_allowCargo 0
+         m_characters {
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+         }
+        }
+       }
+       m_waypointNames {
+        "BRDM4_WP_Cycle"
+       }
+       m_waypointDelay 5
+      }
+     }
+     m_noTurretDismount 1
+     m_useIdleGroups 0
+    }
+   }
+   ChimeraAIVehicleControlComponent "{61C2E46781A66E82}" {
+    components {
+     AICarMovementComponent "{61C2E46796C28D80}" {
+      "Max Speed" 30
+      CruiseVehicleSpeedKmh 30
+     }
+    }
+   }
+  }
+  coords 7416.64 7.352 6645.691
+  angles 6.777 -69.708 -0.343
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ BRDM1_WP_Cycle {
+  coords 5968.106 208.449 7037.189
+  CycleWaypoints {
+   "BRDM1_WP_Wait1"
+   "BRDM1_WP_Patrol1"
+   "BRDM1_WP_Wait2"
+   "BRDM1_WP_Patrol2"
+   "BRDM1_WP_Wait3"
+  }
+ }
+ BRDM2_WP_Cycle {
+  coords 4923.579 36.354 9087.872
+  CycleWaypoints {
+   "BRDM2_WP_Wait1"
+   "BRDM2_WP_Wait2"
+   "BRDM2_WP_Wait3"
+   "BRDM2_WP_Wait4"
+  }
+ }
+ BRDM3_WP_Cycle {
+  coords 4600.724 158.35 6819.677
+  CycleWaypoints {
+   "BRDM3_WP_Wait1"
+   "BRDM3_WP_Wait2"
+   "BRDM3_WP_Wait3"
+   "BRDM3_WP_Wait4"
+   "BRDM3_WP_Wait5"
+   "BRDM3_WP_Wait6"
+   "BRDM3_WP_Wait7"
+  }
+ }
+ BRDM4_WP_Cycle {
+  coords 7415.746 7.545 6648.456
+  CycleWaypoints {
+   "BRDM4_WP_Wait1"
+   "BRDM4_WP_Wait2"
+   "BRDM4_WP_Wait3"
+   "BRDM4_WP_Wait4"
+   "BRDM4_WP_Wait5"
+  }
+ }
+}
+$grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ BRDM1_WP_Wait1 {
+  coords 5978.6 218.924 7154.258
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM1_WP_Wait2 {
+  coords 5773.293 217.413 7065.718
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM1_WP_Wait3 {
+  coords 5140.75 171.518 7150.581
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 20
+  }
+ }
+ BRDM2_WP_Wait1 {
+  coords 4693.439 128.262 7797.125
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM2_WP_Wait2 {
+  coords 4881.646 112.59 8157.212
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM2_WP_Wait3 {
+  coords 5248.011 40.463 8382.433
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM2_WP_Wait4 {
+  coords 5009.328 39.729 9037.663
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait1 {
+  coords 4750.652 127.652 6626.051
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait2 {
+  coords 3459.54 101.113 6484.333
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait3 {
+  coords 3302.702 92.776 6473.78
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait4 {
+  coords 3316.135 37.831 6937.631
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait5 {
+  coords 3394 35.762 6989.028
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait6 {
+  coords 4628.188 159.876 6935.18
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM3_WP_Wait7 {
+  coords 4594.888 157.659 6835.619
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM4_WP_Wait1 {
+  coords 7118.08 58.887 7064.451
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 180
+  }
+ }
+ BRDM4_WP_Wait2 {
+  coords 7068.581 80.964 7236.28
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+  }
+ }
+ BRDM4_WP_Wait3 {
+  coords 7043.17 92.761 7134.75
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 180
+  }
+ }
+ BRDM4_WP_Wait4 {
+  coords 6932.437 116.297 6840.229
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 10
+  }
+ }
+ BRDM4_WP_Wait5 {
+  coords 6715.522 147.949 7110.291
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 240
+  }
+ }
+}

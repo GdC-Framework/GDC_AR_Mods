@@ -1,0 +1,318 @@
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2663.836 24.217 5592.095
+ m_missionEvents {
+  TILW_MissionEvent "{6A12B4C42DFC5CA5}" {
+   m_name "Init Position 1"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12B4C4F8761078}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_1"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12C77D24FFDA34}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_1"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12C77D80BE4AEE}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_1"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12C77C1C2F40DD}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12C77B85C46563}" {
+    m_flagName "INIT_1"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12C772722DF88E}" {
+   m_name "Init Position 2"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12C772722DF816}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_2"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12C772722DF810}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_2"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12C772722DF813}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_2"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12C772722D06E9}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12C772722D06F7}" {
+    m_flagName "INIT_2"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12F62EA0FCE4C2}" {
+   m_name "Init Position 3"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12F62EA0FCE761}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_3"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62EA0FCE763}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_3"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62EA0FCE764}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_3"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12F62EA0FCE768}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12F62EA0FCE76A}" {
+    m_flagName "INIT_3"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12F62FE65D890D}" {
+   m_name "Init Position 4"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12F62FE65D89A7}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_4"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62FE65D89A9}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_4"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62FE65D89AA}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_4"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12F62FE65D89AB}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12F62FE65D89AD}" {
+    m_flagName "INIT_4"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12F6290B82A821}" {
+   m_name "Init Position 5"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12F6290B82A8C0}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_5"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F6290B82A8C3}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_5"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F6290B82A8C4}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_5"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12F6290B82A8C6}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12F6290B82A8C8}" {
+    m_flagName "INIT_5"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12F629B3B7A5FD}" {
+   m_name "Init Position 6"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12F629B3B7A598}" {
+     m_executionDelay 0
+     m_prefab "{FE16E25F7CA9AD61}PrefabsEditable/Markers/objective_marker.et"
+     m_locationName "Spawn_Pos_Objective_6"
+     m_setEntityName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F629B3B7A59A}" {
+     m_executionDelay 0
+     m_prefab "{02C6415E4FE2DC29}PrefabsEditable/Markers/US_flag.et"
+     m_locationName "Spawn_Pos_US_6"
+     m_setEntityName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F629B3B7A59B}" {
+     m_executionDelay 0
+     m_prefab "{DD4481B36008F2EC}PrefabsEditable/Markers/USSR_flag.et"
+     m_locationName "Spawn_Pos_USSR_6"
+     m_setEntityName "Mrk_Spawn_USSR"
+    }
+    TILW_SetFlagInstruction "{6A12F629B3B7A59C}" {
+     m_flagName "INIT_MISSION"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12F629B3B7A59E}" {
+    m_flagName "INIT_6"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12C77F582F3764}" {
+   m_name "Init Mission"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A12C77F582F3F30}" {
+     m_executionDelay 0
+     m_prefab "{979481CC55316A33}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_CAPTURE.et"
+     m_locationName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12DE92D4E3B0CE}" {
+     m_executionDelay 0
+     m_prefab "{1E3C29233D91119A}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_USSR_CAPTURE.et"
+     m_locationName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12DE9EDA3C653C}" {
+     m_executionDelay 0
+     m_prefab "{BC357974A560F679}Prefabs/Groups/BLUFOR/Group_US_RifleSquad_P.et"
+     m_locationName "Mrk_Spawn_US"
+    }
+    TILW_SpawnPrefabInstruction "{6A12DE9F0B795A9C}" {
+     m_executionDelay 0
+     m_prefab "{E3545CFEDD312D55}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad_P.et"
+     m_locationName "Mrk_Spawn_USSR"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62CEE8856D9}" {
+     m_executionDelay 0
+     m_prefab "{A4D90CAA4F220CBE}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V2_FIA.et"
+     m_locationName "Mrk_Obj"
+    }
+    TILW_SpawnPrefabInstruction "{6A12F62DFF9F2ACD}" {
+     m_executionDelay 0
+     m_prefab "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et"
+     m_locationName "Mrk_Obj"
+     m_setEntityName "WP_FIA_Defend"
+    }
+    TILW_SpawnGroupInstruction "{6A12F62E2744A65B}" {
+     m_prefab "{CE41AF625D05D0F0}Prefabs/Groups/INDFOR/Group_FIA_RifleSquad.et"
+     m_locationName "Mrk_Obj"
+     m_waypointNames {
+      "WP_FIA_Defend"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12C77F582F3F32}" {
+    m_flagName "INIT_MISSION"
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A1323F931756C09}" {
+   m_name "US Victory Capture"
+   m_instructions {
+    TILW_EndGameInstruction "{6A1323F9488F2067}" {
+     m_executionDelay 600
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A1323F942D5CB1B}" {
+    m_flagName "US_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A1323F977E48922}" {
+   m_name "USSR Victory Capture"
+   m_instructions {
+    TILW_EndGameInstruction "{6A1323F977E489D4}" {
+     m_executionDelay 600
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A1323F977E489DA}" {
+    m_flagName "USSR_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A1323F98E12BA69}" {
+   m_name "US Victory No more ENI"
+   m_instructions {
+    TILW_EndGameInstruction "{6A1323F99FF9F7C8}" {
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{6A1323F9DC2717E4}" {
+    m_operands {
+     TILW_LiteralTerm "{6A1323F9D8196C03}" {
+      m_flagName "NO_MORE_USSR"
+     }
+     TILW_LiteralTerm "{6A1323F9EDA69A59}" {
+      m_flagName "NO_MORE_FIA"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{6A1323F80FC4E4A1}" {
+   m_name "USSR Victory No more ENI"
+   m_instructions {
+    TILW_EndGameInstruction "{6A1323F80FC4E776}" {
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{6A1323F80FC4E779}" {
+    m_operands {
+     TILW_LiteralTerm "{6A1323F80FC4E77A}" {
+      m_flagName "NO_MORE_US"
+     }
+     TILW_LiteralTerm "{6A1323F80FC4E77C}" {
+      m_flagName "NO_MORE_FIA"
+     }
+    }
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{6A1323F9A6E1A967}" {
+   m_flagName "NO_MORE_USSR"
+   m_factionKey "USSR"
+  }
+  TILW_FactionPlayersKilledFlag "{6A1323F9B05ABD78}" {
+   m_flagName "NO_MORE_US"
+   m_factionKey "US"
+  }
+  TILW_FactionAIKilledFlag "{6A1323F89BB18019}" {
+   m_flagName "NO_MORE_FIA"
+   m_factionKey "FIA"
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{6A12C77F4ED684C0}" {
+   m_flagNames {
+    "INIT_1"
+    "INIT_2"
+    "INIT_3"
+    "INIT_4"
+    "INIT_5"
+    "INIT_6"
+   }
+  }
+ }
+}

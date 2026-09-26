@@ -1,0 +1,92 @@
+PS_ManualMarker Marker_Rdm_Obj : "{63BCE30CF8B65BCE}PrefabsEditable/Markers/Group/Marker_GroupFlagsOpfor_Base.et" {
+ coords 14550.049 50.912 12254.758
+ m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+ m_MarkerColor 0 0.502 0.125 1
+ m_sQuadName "objective-marker"
+ m_fWorldSize 50
+ m_sDescription "Objectif"
+ m_bUseWorldScale 0
+ m_bVisibleForEmptyFaction 0
+ m_bShowForAnyFaction 0
+ m_bringToFront 0
+}
+TILW_FactionTriggerEntity TRG_INIT : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 14551.941 50.905 12273.432
+ m_queryRadius 5
+ m_flagName "START_INIT"
+ m_eventsOnlyDuringGame 0
+ m_stopAfterFirstChange 1
+ m_ownerFactionKey "US"
+ m_ratioThreshold 0
+}
+TILW_MissionFrameworkEntity _TMF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{6A055E18AC748801}" {
+   m_name "US Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{6A055E18B219D5F6}" {
+     m_executionDelay 300
+     m_factionKey "US"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A055E18BAFC0CA5}" {
+    m_flagName "US_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A055E18CC767B36}" {
+   m_name "USSR Victory"
+   m_instructions {
+    TILW_EndGameInstruction "{6A055E18CC767B9E}" {
+     m_executionDelay 300
+     m_factionKey "USSR"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A055E18CC767A61}" {
+    m_flagName "USSR_CAPTURE"
+   }
+  }
+  TILW_MissionEvent "{6A069BF78E4EDEE7}" {
+   m_name "Init test"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A069BF79D0902A6}" {
+     m_prefab "{979481CC55316A33}Prefabs/TILW_MissionFramework/Prefabs/Logic/Triggers/TRG_US_CAPTURE.et"
+     m_locationName "Spawn_Obj_1"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A069BF7CF41D6BB}" {
+   }
+   m_pregameEvent 1
+  }
+  TILW_MissionEvent "{6A12B4C86D19F187}" {
+   m_name "Init Mission"
+   m_instructions {
+    TILW_SendMessageInstruction "{6A12B4C873189AF1}" {
+    }
+    TILW_EditMapItemInstruction "{6A12B4C8DE144AF5}" {
+     m_executionDelay 0
+     m_itemNames {
+      "Marker_Rdm_Obj"
+     }
+     m_factionVisibility {
+      TILW_FactionVisibility "{6A12B4C8E2E8C3D2}" {
+       m_factionKey "US"
+       m_visible 1
+      }
+      TILW_FactionVisibility "{6A12B4C8E94FEEA7}" {
+       m_factionKey "USSR"
+       m_visible 1
+      }
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A12B4C87C30642F}" {
+    m_flagName "START_INIT"
+   }
+   m_pregameEvent 1
+  }
+ }
+}
+GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 14556.391 50.91 12270.717
+}

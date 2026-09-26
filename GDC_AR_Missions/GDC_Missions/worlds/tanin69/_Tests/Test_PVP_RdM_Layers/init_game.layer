@@ -1,0 +1,97 @@
+$grp GenericEntity {
+ Spawn_Pos_Objective_1 {
+  coords 6201.813 37.221 8006.889
+ }
+ Spawn_Pos_Objective_2 {
+  coords 6087.862 2.252 8431.948
+ }
+ Spawn_Pos_US_1 {
+  coords 6071.054 4.197 8263.457
+  angles 0 90 0
+ }
+ Spawn_Pos_USSR_1 {
+  coords 5927.458 42.605 7994.82
+  angles 0 90 0
+ }
+ Spawn_Pos_US_2 {
+  coords 5711.707 2.188 8234.511
+  angles 0 90 0
+ }
+ Spawn_Pos_USSR_2 {
+  coords 6344.398 37.691 8049.879
+  angles 0 90 0
+ }
+ Spawn_Pos_Objective_3 {
+  coords 6544.625 493.467 6628.095
+ }
+ Spawn_Pos_US_3 {
+  coords 6048.874 419.75 6526.258
+  angles 0 90 0
+ }
+ Spawn_Pos_USSR_3 {
+  coords 7003.646 435.473 6836.261
+  angles 0 -90 0
+ }
+ Spawn_Pos_Objective_4 {
+  coords 5053.09 691.503 6292.3
+ }
+ Spawn_Pos_US_4 {
+  coords 4862.876 436.528 5577.396
+  angles 0 90 0
+ }
+ Spawn_Pos_USSR_4 {
+  coords 5910.322 425.161 6217.185
+  angles 0 90 0
+ }
+ Spawn_Pos_Objective_5 {
+  coords 4421.745 1.164 8206.541
+ }
+ Spawn_Pos_USSR_5 {
+  coords 4289.342 100.727 7738.879
+  angles 0 90 0
+ }
+ Spawn_Pos_US_5 {
+  coords 4765.761 63.18 7926.826
+  angles 0 90 0
+ }
+ Spawn_Pos_Objective_6 {
+  coords 11100.291 35.689 1663.046
+ }
+ Spawn_Pos_US_6 {
+  coords 11493.091 2.783 2567.984
+  angles 0 90 0
+ }
+ Spawn_Pos_USSR_6 {
+  coords 10047.931 25.999 1835.523
+  angles 0 90 0
+ }
+ Obs {
+  components {
+   AISmartActionComponent "{6A152A7FC0A7CEF9}" {
+    Tags {
+     "ObservationPost"
+    }
+    ActionOffset 0.704 0 -5.459
+   }
+  }
+  coords 2664.047 24.625 5675.452
+ }
+}
+SCR_CharacterTriggerEntity : "{9DB5EBFFEC1A54B4}Prefabs/Systems/ScenarioFramework/Triggers/TriggerAnyPlayerSlow.et" {
+ coords 2630.774 25.056 5574.489
+ SphereRadius 100
+ DrawShape 1
+ m_aCustomTriggerConditions {
+  SCR_ScenarioFrameworkAIThreatStateCondition "{6A152A750F17A440}" {
+   m_eAIThreatState ALERTED
+  }
+ }
+ m_bNotificationEnabled 1
+ m_sPlayerActivationNotificationTitle "Vu !"
+}
+SCR_AIGroup : "{E552DABF3636C2AD}Prefabs/Groups/OPFOR/Group_USSR_RifleSquad.et" {
+ coords 2673.352 24.216 5574.175
+ m_aStaticWaypoints {
+  "WP_Capture"
+ }
+}

@@ -1,0 +1,920 @@
+SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{665AF5247F44B9C0}" {
+     NavmeshFile "{E1014B625283F344}worlds/MP/Navmeshes/Coop_CombatOps_Eden.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5584F30EEFEE1223}" {
+   NavmeshSettings ChimeraNavmeshWorld "{50FC63BEBE3973C5}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{60CA9BE5536BF701}" {
+     NavmeshFile "{67F9E6C31E25B003}worlds/MP/Navmeshes/Coop_CombatOps_Eden_vehicles.nmn"
+    }
+   }
+  }
+  NavmeshWorldComponent "{5C8C9B750D124A63}" {
+   NavmeshSettings NavmeshWorld "{5C8C9B750B60C6E2}" {
+    NavmeshFilesConfig BaseNavmeshFilesConfig "{5C90BD0EC793647D}" {
+     NavmeshFile "{5E19E60F26327356}worlds/MP/Navmeshes/LowResEden.nmn"
+    }
+   }
+  }
+ }
+ coords 15524.731 52.125 4453.456
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 15524.039 52.125 4448.752
+}
+PS_GameModeCoop PS_GameMode_Lobby_GC1 : "{4CFD54745CD45673}Prefabs/MP/Modes/PS_GameMode_Lobby_GC.et" {
+ components {
+  SCR_InitWeatherComponent "{61B68227C35BFE9A}" {
+   m_sInitialStartingWeatherId "Overcast"
+  }
+  SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
+   m_iStartingHours 3
+   m_iStartingMinutes 30
+   m_bDateOverride 1
+   m_iDay 7
+   m_iMonth 7
+   m_iYear 2027
+  }
+ }
+ coords 7714.382 132.703 5009.566
+ m_bDisableGarbageSystem 1
+ m_bFreezeTimeShootingForbiden 1
+}
+PK_EntityDeleter {
+ coords 5857.021 235.952 7261.051
+ m_fRadius 10
+ m_prefabFilterList {
+  "{7E2380494811A5FB}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01_medium.et"
+ }
+}
+TILW_MissionFrameworkEntity TILW_MFW : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{6A68BEC7A4F30CBA}" {
+   m_name "Init Game"
+   m_instructions {
+    TILW_SetFlagInstruction "{6A68BEC7BD474F37}" {
+     m_executionDelay 600
+     m_flagName "GAME_INIT_OK"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A68BEC7B4785B26}" {
+    m_flagName "GAME_INIT"
+   }
+  }
+  TILW_MissionEvent "{6A553638E84B48D8}" {
+   m_name "US on Entre Deux"
+   m_instructions {
+    TILW_AssignWaypointsInstruction "{6A553638FAB356E9}" {
+     m_executionDelay 0
+     m_groupName "grp_e2_2"
+     m_waypointNames {
+      "WP_Attack_E2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{6A55363999F4EF26}" {
+     m_executionDelay 0
+     m_groupName "grp_e2_3"
+     m_waypointNames {
+      "WP_Attack_E2"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{6A5536266E6B8EA2}" {
+     m_executionDelay 60
+     m_groupName "BTR3g"
+     m_waypointNames {
+      "BTR3_WP_Move"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{6A570D1B70ECBB52}" {
+     m_executionDelay 120
+     m_groupName "BTR2g"
+     m_waypointNames {
+      "BTR1_WP_Move"
+     }
+     m_clearExisting 1
+    }
+    TILW_AssignWaypointsInstruction "{6A553639F498B5DA}" {
+     m_executionDelay 30
+     m_groupName "BRDM1_crew"
+     m_waypointNames {
+      "BRDM1_WP_Move"
+     }
+     m_clearExisting 1
+    }
+    TILW_RandomFlagInstruction "{6A5A8099AF2BB29E}" {
+     m_executionDelay 720
+     m_flagName "GO_HELI"
+     m_chance 0.55
+    }
+    TILW_RandomFlagInstruction "{6A5AA419EDE5A24D}" {
+     m_executionDelay 0
+     m_flagName "GO_MORTAR"
+     m_chance 0.55
+    }
+    TILW_RandomFlagInstruction "{6A688C409BAEEFB2}" {
+     m_executionDelay 600
+     m_flagName "GO_LZ_COMPROMISSION"
+     m_chance 0.55
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A553638FD4448AF}" {
+    m_flagName "US_ON_E2"
+   }
+  }
+  TILW_MissionEvent "{6A53254E71CB0248}" {
+   m_name "LZ_B Spawn BTR1 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254E8EFA5B59}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR1_1"
+     m_crewConfig TILW_CrewConfig "{6A53254EBA124DD7}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254EC48CD45E}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254EC0F8654E}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F0A3038A9}" {
+    m_flagName "LZ_B_Sp_BTR1_1"
+   }
+  }
+  TILW_MissionEvent "{6A53254EF6DD41C1}" {
+   m_name "LZ_B Spawn BTR1 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254EF6DD4074}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR1_2"
+     m_crewConfig TILW_CrewConfig "{6A53254EF6DD4076}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254EF6DD4078}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254EF6DDDDDC}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F12F6974D}" {
+    m_flagName "LZ_B_Sp_BTR1_2"
+   }
+  }
+  TILW_MissionEvent "{6A53254EF8F4CE14}" {
+   m_name "LZ_B Spawn BTR1 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254EF8F4CFEA}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR1_3"
+     m_crewConfig TILW_CrewConfig "{6A53254EF8F4CFF4}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254EF8F4CFF0}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254EF8F4CFF2}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F1AAC4A81}" {
+    m_flagName "LZ_B_Sp_BTR1_3"
+   }
+  }
+  TILW_MissionEvent "{6A53254F3EC442CE}" {
+   m_name "LZ_B Spawn BTR2 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254F3EC442AF}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR2_1"
+     m_crewConfig TILW_CrewConfig "{6A53254F3EC442A9}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254F3EC442AB}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254F3EC442B4}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F3EC442B7}" {
+    m_flagName "LZ_B_Sp_BTR2_1"
+   }
+  }
+  TILW_MissionEvent "{6A53254F55F8BE1D}" {
+   m_name "LZ_B Spawn BTR2 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254F55F8BF84}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR2_2"
+     m_crewConfig TILW_CrewConfig "{6A53254F55F8BF86}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254F55F8BF80}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254F55F8BF81}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F55F8BF8C}" {
+    m_flagName "LZ_B_Sp_BTR2_2"
+   }
+  }
+  TILW_MissionEvent "{6A53254F5B3DED3E}" {
+   m_name "LZ_B Spawn BTR2 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254F5B3DEEA6}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_B_Spawn_BTR2_3"
+     m_crewConfig TILW_CrewConfig "{6A53254F5B3DEEA0}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254F5B3DEEA2}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254F5B3DEEA3}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254F5B3DEEAE}" {
+    m_flagName "LZ_B_Sp_BTR2_3"
+   }
+  }
+  TILW_MissionEvent "{6A53254556559D1F}" {
+   m_name "LZ_W Spawn BTR1 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254556559E97}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR1_1"
+     m_crewConfig TILW_CrewConfig "{6A53254556559E92}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254556559E93}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254556559E9D}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254556559E98}" {
+    m_flagName "LZ_W_Sp_BTR1_1"
+   }
+  }
+  TILW_MissionEvent "{6A5325456C9AB149}" {
+   m_name "LZ_W Spawn BTR1 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A5325456C9AB2C5}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR1_2"
+     m_crewConfig TILW_CrewConfig "{6A5325456C9AB2C0}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A5325456C9AB2C2}" {
+        m_crewStations {
+         TILW_CrewStation "{6A5325456C9AB2CC}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A5325456C9AB2CF}" {
+    m_flagName "LZ_W_Sp_BTR1_2"
+   }
+  }
+  TILW_MissionEvent "{6A5325457DDFF440}" {
+   m_name "LZ_W Spawn BTR1 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A5325457DDFF42B}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR1_3"
+     m_crewConfig TILW_CrewConfig "{6A5325457DDFF435}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A5325457DDFF431}" {
+        m_crewStations {
+         TILW_CrewStation "{6A5325457DDFF433}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A5325457DDFF43E}" {
+    m_flagName "LZ_W_Sp_BTR1_3"
+   }
+  }
+  TILW_MissionEvent "{6A53254583B8AA21}" {
+   m_name "LZ_W Spawn BTR2 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254583B8AB97}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR2_1"
+     m_crewConfig TILW_CrewConfig "{6A53254583B8AB93}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254583B8AB9D}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254583B8AB9E}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254583B8AB9B}" {
+    m_flagName "LZ_W_Sp_BTR2_1"
+   }
+  }
+  TILW_MissionEvent "{6A53254593F95408}" {
+   m_name "LZ_W Spawn BTR2 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A53254593F955FE}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR2_2"
+     m_crewConfig TILW_CrewConfig "{6A53254593F955FA}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A53254593F95584}" {
+        m_crewStations {
+         TILW_CrewStation "{6A53254593F95586}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A53254593F95581}" {
+    m_flagName "LZ_W_Sp_BTR2_2"
+   }
+  }
+  TILW_MissionEvent "{6A532545A66E40E2}" {
+   m_name "LZ_W Spawn BTR2 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A532545A66E406E}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_W_Spawn_BTR2_3"
+     m_crewConfig TILW_CrewConfig "{6A532545A66E4068}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A532545A66E406A}" {
+        m_crewStations {
+         TILW_CrewStation "{6A532545A66E4074}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A532545A66E4077}" {
+    m_flagName "LZ_W_Sp_BTR2_3"
+   }
+  }
+  TILW_MissionEvent "{6A5536355F7C7872}" {
+   m_name "LZ_R Spawn BTR1 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A5536355F7C781B}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR1_1"
+     m_crewConfig TILW_CrewConfig "{6A5536355F7C781E}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A5536355F7C781F}" {
+        m_crewStations {
+         TILW_CrewStation "{6A5536355F7C78E1}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A5536355F7C78E5}" {
+    m_flagName "LZ_R_Sp_BTR1_1"
+   }
+  }
+  TILW_MissionEvent "{6A553635693D536E}" {
+   m_name "LZ_R Spawn BTR1 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A553635693D5310}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR1_2"
+     m_crewConfig TILW_CrewConfig "{6A553635693D5315}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A553635693D5317}" {
+        m_crewStations {
+         TILW_CrewStation "{6A553635693D531A}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A553635693D531E}" {
+    m_flagName "LZ_R_Sp_BTR1_2"
+   }
+  }
+  TILW_MissionEvent "{6A5536357E1A54D7}" {
+   m_name "LZ_R Spawn BTR1 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A5536357E1A5740}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR1_3"
+     m_crewConfig TILW_CrewConfig "{6A5536357E1A5743}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A5536357E1A5745}" {
+        m_crewStations {
+         TILW_CrewStation "{6A5536357E1A5749}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A5536357E1A574E}" {
+    m_flagName "LZ_R_Sp_BTR1_3"
+   }
+  }
+  TILW_MissionEvent "{6A55363596CA4F3D}" {
+   m_name "LZ_R Spawn BTR2 1"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A55363596CA4FB1}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR2_1"
+     m_crewConfig TILW_CrewConfig "{6A55363596CA4FB3}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A55363596CA4FB5}" {
+        m_crewStations {
+         TILW_CrewStation "{6A55363596CA4FB7}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A55363596CA4FBB}" {
+    m_flagName "LZ_R_Sp_BTR2_1"
+   }
+  }
+  TILW_MissionEvent "{6A553635A124DD6D}" {
+   m_name "LZ_R Spawn BTR2 2"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A553635A124DD11}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR2_2"
+     m_crewConfig TILW_CrewConfig "{6A553635A124DD12}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A553635A124DD17}" {
+        m_crewStations {
+         TILW_CrewStation "{6A553635A124DD19}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A553635A124DD1F}" {
+    m_flagName "LZ_R_Sp_BTR2_2"
+   }
+  }
+  TILW_MissionEvent "{6A553635B644ED42}" {
+   m_name "LZ_R Spawn BTR2 3"
+   m_instructions {
+    TILW_SpawnVehicleInstruction "{6A553635B644EDEE}" {
+     m_prefab "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et"
+     m_locationName "LZ_R_Spawn_BTR2_3"
+     m_crewConfig TILW_CrewConfig "{6A553635B644EDF1}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A553635B644EDF3}" {
+        m_crewStations {
+         TILW_CrewStation "{6A553635B644EDF5}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A553635B644EDFA}" {
+    m_flagName "LZ_R_Sp_BTR2_3"
+   }
+  }
+  TILW_MissionEvent "{6A688C4BF9562806}" {
+   m_name "Go Mortar"
+   m_instructions {
+    TILW_SpawnPrefabInstruction "{6A688C4A0A621B81}" {
+     m_executionDelay 300
+     m_prefab "{E88DBD392FF1924A}worlds/tanin69/Entre_Deux/Prefabs/FireMission_Dyn.et"
+     m_locationName "PlayerPos"
+    }
+    TILW_SpawnPrefabInstruction "{6A688C4F312C8FD9}" {
+     m_executionDelay 900
+     m_prefab "{E88DBD392FF1924A}worlds/tanin69/Entre_Deux/Prefabs/FireMission_Dyn.et"
+     m_locationName "PlayerPos"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A688C4A003500EB}" {
+    m_flagName "GO_MORTAR"
+   }
+  }
+  TILW_MissionEvent "{6A688C40BDC087EA}" {
+   m_name "LZ Compromission"
+   m_instructions {
+    TILW_FlagSamplingInstruction "{6A688C40CD330E81}" {
+     m_flagNames {
+      "LZ_B_COMPROMIZED"
+      "LZ_R_COMPROMIZED"
+      "LZ_W_COMPROMIZED"
+     }
+     m_k 2
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A688C40C51E2C20}" {
+    m_flagName "GO_LZ_COMPROMISSION"
+   }
+  }
+  TILW_MissionEvent "{6A688C40F123B326}" {
+   m_name "LZ B Compromission"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A688C430A76C3B9}" {
+     m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+     m_locationName "LZ_B"
+     m_waypointNames {
+      "WP_Defend_LZ_B"
+     }
+    }
+    TILW_SendMessageInstruction "{6A688C434880D2F9}" {
+     m_messageTitle "HQ Message"
+     m_messageBody "LZ Barber is compromized ! Enemy Rifle Squad and BTR on position."
+    }
+    TILW_SpawnVehicleInstruction "{6A688C457660B476}" {
+     m_prefab "{562B728760E7471F}Prefabs/Vehicles/Wheeled/BTR70/BTR82A_Base.et"
+     m_locationName "Spawn_BTR_LZ_B"
+     m_crewConfig TILW_CrewConfig "{6A688C4591DFEE97}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A688C4590266CDE}" {
+        m_crewStations {
+         TILW_CrewStation "{6A688C45B15EC45E}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A688C430433E69A}" {
+    m_flagName "LZ_B_COMPROMIZED"
+   }
+  }
+  TILW_MissionEvent "{6A688C438224363E}" {
+   m_name "LZ R Compromission"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A688C4382243970}" {
+     m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+     m_locationName "LZ_R"
+     m_waypointNames {
+      "WP_Defend_LZ_R"
+     }
+    }
+    TILW_SendMessageInstruction "{6A688C4382243973}" {
+     m_executionDelay 15
+     m_messageTitle "HQ Message"
+     m_messageBody "LZ Rider is compromized ! Enemy Rifle Squad and BTR on position."
+    }
+    TILW_SpawnVehicleInstruction "{6A688C45DC3F7471}" {
+     m_prefab "{562B728760E7471F}Prefabs/Vehicles/Wheeled/BTR70/BTR82A_Base.et"
+     m_locationName "Spawn_BTR_LZ_R"
+     m_crewConfig TILW_CrewConfig "{6A688C45FE29923A}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A688C4402830829}" {
+        m_crewStations {
+         TILW_CrewStation "{6A688C44099420FD}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A688C4382243976}" {
+    m_flagName "LZ_R_COMPROMIZED"
+   }
+  }
+  TILW_MissionEvent "{6A688C43B08A6B8D}" {
+   m_name "LZ W Compromission"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A688C43B08A6A5B}" {
+     m_prefab "{D3940577D05FE450}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_RifleSquad.et"
+     m_locationName "LZ_W"
+     m_waypointNames {
+      "WP_Defend_LZ_W"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{6A688C442EAE7E31}" {
+     m_prefab "{562B728760E7471F}Prefabs/Vehicles/Wheeled/BTR70/BTR82A_Base.et"
+     m_locationName "Spawn_BTR_LZ_W"
+     m_crewConfig TILW_CrewConfig "{6A688C4438D39362}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6A688C443B5457BB}" {
+        m_crewStations {
+         TILW_CrewStation "{6A688C444569CFE1}" {
+          m_allowCargo 0
+          m_characters {
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+           "{08D5860833E95CA4}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO3_EMR/Character_RHS_RF_MSV_VKPO_3.0_Crew.et"
+          }
+         }
+        }
+       }
+      }
+      m_noTurretDismount 1
+      m_useIdleGroups 0
+     }
+    }
+    TILW_SendMessageInstruction "{6A688C43B08A6A5D}" {
+     m_executionDelay 25
+     m_messageTitle "HQ Message"
+     m_messageBody "LZ Whiskey is compromized ! Enemy Rifle Squad and BTR on position."
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A688C43B08A6A20}" {
+    m_flagName "LZ_W_COMPROMIZED"
+   }
+  }
+  TILW_MissionEvent "{6A68BEC06120656E}" {
+   m_name "End Mission"
+   m_instructions {
+    TILW_EndGameInstruction "{6A68BEC077B6153F}" {
+     m_executionDelay 0
+     m_gameOverType NEUTRAL
+     m_factionKey "RHS_USAF"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A68BEC078A5BC14}" {
+    m_flagName "END_MISSION"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{68F339C70029720D}" {
+   m_flagName "US_DEFEAT"
+   m_factionKey "RHS_USAF"
+  }
+ }
+ m_randomFlags {
+  TILW_FlagSampling "{6A53254E4553814E}" {
+   m_flagNames {
+    "LZ_B_Sp_BTR1_1"
+    "LZ_B_Sp_BTR1_2"
+    "LZ_B_Sp_BTR1_3"
+   }
+  }
+  TILW_FlagSampling "{6A53254F2936EDEE}" {
+   m_flagNames {
+    "LZ_B_Sp_BTR2_1"
+    "LZ_B_Sp_BTR2_2"
+    "LZ_B_Sp_BTR2_3"
+   }
+  }
+  TILW_FlagSampling "{6A53254535CC756A}" {
+   m_flagNames {
+    "LZ_W_Sp_BTR1_1"
+    "LZ_W_Sp_BTR1_2"
+    "LZ_W_Sp_BTR1_3"
+   }
+  }
+  TILW_FlagSampling "{6A532545252AEC93}" {
+   m_flagNames {
+    "LZ_W_Sp_BTR2_1"
+    "LZ_W_Sp_BTR2_2"
+    "LZ_W_Sp_BTR2_3"
+   }
+  }
+  TILW_FlagSampling "{6A55363531DFDEE7}" {
+   m_flagNames {
+    "LZ_R_Sp_BTR1_1"
+    "LZ_R_Sp_BTR1_2"
+    "LZ_R_Sp_BTR1_3"
+   }
+  }
+  TILW_FlagSampling "{6A5536354400142C}" {
+   m_flagNames {
+    "LZ_R_Sp_BTR2_1"
+    "LZ_R_Sp_BTR2_2"
+    "LZ_R_Sp_BTR2_3"
+   }
+  }
+ }
+}
+PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_drawArea 0
+   m_drawLine 1
+  }
+ }
+ coords 2894.807 87.344 6343.843
+ Points {
+  ShapePoint "{6A4F37F1D0E5B5E9}" {
+   Position -48.805 0 -19.292
+  }
+  ShapePoint "{6A4F37F6277CBE1C}" {
+   Position 4828.848 0 286.591
+  }
+  ShapePoint "{6A4F37F635540485}" {
+   Position 2051.965 0 2706.308
+  }
+ }
+}
+StaticModelEntity : "{DBCDEC45DB834E8A}Prefabs/Structures/Infrastructure/Towers/TransmitterTower_01/TransmitterTower_01.et" {
+ coords 5855.565 235.956 7260.75
+ angles 0 18.862 0
+}

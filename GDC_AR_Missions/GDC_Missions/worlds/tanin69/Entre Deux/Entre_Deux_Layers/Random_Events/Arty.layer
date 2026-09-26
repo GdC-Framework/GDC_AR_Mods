@@ -1,0 +1,97 @@
+GDC_FollowNearestPlayerEntity PlayerPos {
+ coords 5846.108 207.742 6990.988
+ m_fRefreshInterval 10
+ m_bShowMarker 0
+}
+Vehicle UAZ469_PKM1 : "{0B4DEA8078B78A9B}Prefabs/Vehicles/Wheeled/UAZ469/UAZ469_PKM.et" {
+ components {
+  TILW_VehicleCrewComponent "{6A5AA4182FB371AE}" {
+   m_crewConfig TILW_CrewConfig "{6A5AA4182E0D8B8D}" {
+    m_crewGroups {
+     TILW_CrewGroup "{6A5AA41828DD5570}" {
+      m_crewStations {
+       TILW_CrewStation "{6A5AA4183567C5A8}" {
+        m_allowPilot 0
+        m_allowCargo 0
+        m_characters {
+         "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+ coords 5127.634 172.594 6931.054
+ angles 0 -39.168 0
+}
+GenericEntity : "{30B43335F48F298B}Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et" {
+ components {
+  GDC_ArtilleryFireSupportComponent "{690ABA073A15F1BF}" {
+   m_sAIGroupName "Mortar_Crew"
+   m_sConditionFlag "GO_MORTAR"
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{6A68809E5673F528}" {
+     m_iShotCount 3
+     m_bRandomized 1
+     m_fMinRadius 45
+     m_fMaxRadius 60
+     m_fDelayAfter 60
+    }
+    GDC_ArtilleryFireOrder "{6A68809E53F2572E}" {
+     m_iShotCount 10
+     m_fMinRadius 0
+     m_fMaxRadius 40
+    }
+   }
+  }
+ }
+ coords 5932.132 222.913 7306.866
+}
+SCR_DefendWaypoint WP_Mortar_Defend : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ coords 5098.873 175.271 6947.864
+ angles 0 -39.168 0
+ m_bFastInit 1
+}
+SCR_AIGroup Mortar_Crew : "{AE252B0A692DA762}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_Base.et" {
+ components {
+  GDC_ForceGroupActiveLODComponent "{6A5A808F864DF6F8}" {
+  }
+ }
+ coords 5094.229 175.525 6947.972
+ angles 0 45.953 0
+ m_aUnitPrefabSlots {
+  "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+ }
+ m_aStaticWaypoints {
+  "WP_Mortar_GetIn"
+ }
+}
+SCR_BoardingTimedWaypoint WP_Mortar_GetIn : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+ coords 5100.45 175.279 6951.627
+ angles 0 -39.168 0
+ m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D1159AE7F2C5EE}" {
+  m_holdingTime 5
+ }
+}
+GenericEntity : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+ coords 5101.057 175.24 6951.62
+ angles 0 52.335 0
+ {
+  Turret {
+   ID "60B8D36A59BEEA2F"
+  }
+ }
+}
+SCR_AIGroup Mortar_Defend_Grp : "{F009E2968D0327E4}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/Flora/Group_RHS_RF_MSV_Flora_LightFireTeam.et" {
+ coords 5095.737 175.279 6942.808
+ angles 0 -39.168 0
+ m_aUnitPrefabSlots {
+  "{9E5162BC890ADFCF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_SR.et"
+  "{7CCAB195F5A1D9CA}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/Flora/Character_RHS_RF_MSV_Flora_Rifleman.et"
+ }
+ m_aStaticWaypoints {
+  "WP_Mortar_Defend"
+ }
+}

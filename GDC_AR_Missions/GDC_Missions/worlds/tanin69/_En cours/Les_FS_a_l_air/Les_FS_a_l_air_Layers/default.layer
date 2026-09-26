@@ -1,0 +1,30 @@
+TILW_MissionFrameworkEntity : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{66D6FBFB2C3D2D22}" {
+   m_name "US Detected"
+   m_instructions {
+    TILW_RandomFlagInstruction "{6A45237A2B93FD12}" {
+     m_executionDelay 15
+     m_flagName "ALERT"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A432D8F64010505}" {
+    m_flagName "US_DETECTED"
+   }
+  }
+  TILW_MissionEvent "{6A432D8F885FD833}" {
+   m_name "Alert"
+   m_instructions {
+    TILW_SendMessageInstruction "{6A432D8F9B790E8A}" {
+     m_executionDelay 0
+     m_messageTitle "Alerte"
+     m_messageBody "L'alerte est donnée"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A432D8F93E04E76}" {
+    m_flagName "ALERT"
+   }
+  }
+ }
+}

@@ -1,0 +1,27 @@
+SCR_DefendWaypoint grp_C_WP_Loiter : "{4ECD14650D82F5CA}Prefabs/AI/Waypoints/AIWaypoint_Loiter_CO.et" {
+ coords 6285.081 36.501 8038.293
+ CompletionRadius 20
+}
+SCR_AIGroup grp_C : "{7A43006F3F254FB2}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Group_USAF_USMC_MARSOC_SentryTeam.et" {
+ coords 6279.558 37.455 8038.592
+ m_aStaticWaypoints {
+  "grp_C_WP_Loiter"
+ }
+}
+SCR_AIGroup grp_1 : "{D31888A77B1C4310}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_FORECON/Group_USAF_USMC_FORECON_Squad.et" {
+ coords 6259.109 37.308 8084.938
+ m_bSetPlayable 1
+ {
+  $grp GenericEntity {
+   target_100m_R {
+    coords 98.778 1.479 -9.269
+   }
+   target_100m_L {
+    coords -94.09 -3.269 16.909
+   }
+   target_100m_F {
+    coords 26.08 -6.313 98.181
+   }
+  }
+ }
+}

@@ -1,0 +1,140 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ Z_Intel {
+  coords 866.198 159.365 1893.564
+  m_sTitle "Intel"
+  m_sTextData "Il y a plein d'hommes mal rasés - voire barbus -  plus ou moins armés partout."\
+  ""\
+  "Ils ont des amis : les petits hommes verts. Ces derniers sortent rarement sans leurs blindés et leurs hélicos."\
+  ""\
+  "Parfois, tous ces joyeux lurons aiment bien tirer des feux d'artifice de cal. 80 environ."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ B_Situation {
+  coords 866.356 159.357 1893.607
+  m_sTitle "Situation"
+  m_sTextData "Les Marines se sont fait torcher comme des merdes lors de leur dernière sortie du camp de Babaorum."\
+  ""\
+  "Votre unité se retrouve complètement isolée après le \"repli stratégique\" de vos frères d'arme. En réalité, ça a été une totale débandade !"\
+  ""\
+  "Avec nos JLTV lourdement armés, on devrait arriver à parcer. Mais... Fuel, munitions et matériel médical au plus bas, plus de communication avec Baba... En gros : c'est la merde ! "\
+  ""\
+  "Et avec ces putains de JLTV qui pompent du diesel comme la mère de Polo fume des clopes, ça n'arrange rien (consommation des véhicules augmentée : surveillez votre jauge de carburant)."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ A_Contexte {
+  coords 866.332 159.364 1893.505
+  m_sTitle "Contexte"
+  m_sTextData "TACO montre ses gros muscles."\
+  ""\
+  "\"On va leur mettre la patée à ses dégénérés d'Iraliniens. Leur pétrole sera à nous dans 24 heures\"."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ C_Mission {
+  coords 866.398 159.357 1893.597
+  m_sTitle "Mission"
+  m_sTextData "RTB : Return To Babaorum, c'est votre priorité."\
+  ""\
+  "Vous aurez besoin de prendre de l'essence et des munitions au passage."\
+  ""\
+  "En bons Marines, vous ne laisserez aucun matériel sur place (détuire tout matériel qui ne peut pas être emporté avec vous, y compris ce qui est trouvé sur le terrain)."\
+  ""\
+  "Vous n'utiliserez le matériel ennemi qu'en dernier recours, parce que vous êtes de fiers Marines."\
+  ""\
+  "Ah, j'oubliais : si tu peux acheter une baguette avant de rentrer à la maison, je pourrais faire des sandouiches au paté de foi."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+}
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ {
+  coords 2459.512 156.441 2450.627
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 2069.433 166.95 1622.546
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 2053.169 167.163 1571.405
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 3074.231 125.597 1775.865
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 3218.435 121.921 1873.789
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 3095.621 175.168 1955.933
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Abandonned CROWSII"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 3075.537 125.604 1780.901
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "pick-up"
+  m_fWorldSize 40
+  m_sDescription "Cal. 30 ammo"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 3603.229 190.375 1508.188
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "mark-exclamation"
+  m_fWorldSize 40
+  m_sDescription "Green pigs (les petits hommes verts)"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 869.171 158.882 1907.443
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "circle"
+  m_fWorldSize 40
+  m_sDescription "You are here !"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+ {
+  coords 5150.863 207.22 1803.246
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag"
+  m_fWorldSize 40
+  m_sDescription "Babaorum : you have to go there..."
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+ }
+}

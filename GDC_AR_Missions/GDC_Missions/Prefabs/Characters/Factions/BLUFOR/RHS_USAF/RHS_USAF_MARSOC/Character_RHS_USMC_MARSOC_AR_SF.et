@@ -30,7 +30,7 @@ SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{6232E24D3EDF42D8}" {
      TargetStorage "Back/Backpack_511_rush12_Coy.et"
      PrefabsToSpawn + {
-      "{06D722FC2666EB83}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et"
+      "{06D722FC2666EB83}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et" "{06D722FC2666EB83}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_4Ball_1Tracer.et"
      }
     }
    }

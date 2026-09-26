@@ -1,0 +1,19 @@
+LightEntity : "{354FD1DA18DA9383}Prefabs/Vehicles/Core/Lights/VehicleLight_Searchlight_Base.et" {
+ ID "514ED7499ABC28FF"
+ components {
+  GDC_LightStateComponent "{5C2D8E3F7B1A9047}" {
+   m_bInitiallyEnabled 1
+   m_bAutoFlickerEnabled 1
+   m_eFlickerMode INTENSITY_VARIATION
+   m_fBaseLV 6.3
+   m_fMinLVMultiplier 0.6
+   m_fMaxLVMultiplier 1.0
+   m_fIntensityMinDuration 0.3
+   m_fIntensityMaxDuration 1.5
+  }
+ }
+ coords 0 0 0
+ LV 6.3
+ SpotAngle 40
+ DistanceAttenuation 0.25
+}

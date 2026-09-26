@@ -1,0 +1,132 @@
+GenericEntity A_Chopper : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 4863.037 28.594 11782.262
+ {
+  $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   L_Chopper {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 0 0 0
+    {
+     GenericEntity S_Chopper : "{355D143ADB4FA41B}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopter.et" {
+      components {
+       REAPER_SlotAiHelicopter "{69A8BAA5EDDC9444}" {
+        m_sObjectToSpawn "{DBEC63C9DEE4358C}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed_gunship_HEDP.et"
+        m_bWeaponPlayersOnly 1
+        m_iWeaponAutoReloadDelay 360
+        m_sHelicopterPilotGroup "S_ChopperCrew"
+        m_bLockForPlayers 1
+       }
+      }
+      coords 0 0 0
+      angles 0 -90 0
+     }
+     GenericEntity L_Chopper_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      coords 56.696 0.181 -19.806
+      {
+       GenericEntity WP_Heli_Move : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+        components {
+         SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+          m_aActivationActions {
+           SCR_ScenarioFrameworkActionSetEntityPosition "{6A5935651A6206B1}" {
+            m_DestinationEntityGetter SCR_ScenarioFrameworkGetClosestPlayerEntity "{6A59356528135B18}" {
+             m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A5935653300DCD4}" {
+              m_sEntityName "S_Chopper"
+             }
+            }
+           }
+           SCR_ScenarioFrameworkActionWaitAndExecute "{6A5935665C05BA29}" {
+            m_iDelayInSeconds 15
+            m_bLooped 1
+            m_aActions {
+             SCR_ScenarioFrameworkActionSetEntityPosition "{6A593566668E6C28}" {
+              m_DestinationEntityGetter SCR_ScenarioFrameworkGetClosestPlayerEntity "{6A59356672CEAB18}" {
+               m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A5935667F9F177B}" {
+                m_sEntityName "S_Chopper"
+               }
+              }
+             }
+            }
+           }
+          }
+          m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A593559E5B7E520}" {
+           m_fHeightAboveTerrain 70
+          }
+         }
+        }
+        coords -962.89 -23.153 -1009.82
+       }
+      }
+     }
+     GenericEntity S_ChopperCrew : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_aActivationActions {
+         SCR_ScenarioFrameworkActionWaitAndExecute "{6A593566B6F775F6}" {
+          m_iDelayInSeconds 30
+          m_bLooped 1
+          m_aActions {
+           SCR_ScenarioFrameworkActionAI "{6A593566BE1C523B}" {
+            m_aAIActions {
+             SCR_ScenarioFrameworkAIAddWaypoint "{6A593566C72AD95C}" {
+              m_Getter SCR_ScenarioFrameworkGetLayerBase "{6A593566CBCEAF84}" {
+               m_sLayerBaseName "WP_Heli_Move"
+              }
+              m_bAddOnTopOfQueue 1
+              m_bClearPreviousWaypoints 1
+             }
+            }
+           }
+          }
+         }
+        }
+        m_sObjectToSpawn "{B10210712040A7C9}Prefabs/Groups/OPFOR/REAPER_USSR_HelicopterCrew.et"
+        m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6A59355B725444AA}" {
+         m_aLayerName {
+          "WP_Heli_Move"
+         }
+        }
+        m_eAIGroupFormation Line
+        m_eAISkill VETERAN
+       }
+      }
+      coords -9.699 0.181 -0.245
+      angles 0 90 0
+     }
+    }
+   }
+   L_Trigger {
+    coords 0 0 0
+    {
+     GenericEntity SlotTriggerChopper : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/SlotTrigger.et" {
+      components {
+       SCR_ScenarioFrameworkSlotTrigger "{6118D659EDB7084E}" {
+        m_bShowDebugShapesInWorkbench 0
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{6118D659EDB7085B}" {
+          m_aCustomTriggerConditions {
+           GDC_CustomTriggerConditionsTilwFlag "{6A593544499E6A41}" {
+            m_sFlagName "GO_HELI"
+           }
+          }
+         }
+        }
+        m_aTriggerActions {
+         SCR_ScenarioFrameworkActionSpawnObjects "{6A59354924B28330}" {
+          m_iMaxNumberOfActivations 1
+          m_aNameOfObjectsToSpawnOnActivation {
+           "L_Chopper"
+          }
+         }
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+  }
+ }
+}

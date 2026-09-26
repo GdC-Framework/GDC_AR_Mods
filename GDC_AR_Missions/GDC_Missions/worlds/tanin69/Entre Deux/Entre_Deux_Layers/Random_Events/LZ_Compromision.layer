@@ -1,0 +1,22 @@
+$grp GenericEntity {
+ Spawn_BTR_LZ_W {
+  coords 5581.946 2.466 8530.031
+ }
+ Spawn_BTR_LZ_B {
+  coords 7324.88 27.88 7208.074
+ }
+ Spawn_BTR_LZ_R {
+  coords 3834.791 15.76 7402.827
+ }
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ WP_Defend_LZ_B {
+  coords 7325.764 5.996 7379.549
+ }
+ WP_Defend_LZ_R {
+  coords 3769.132 0.969 7375.523
+ }
+ WP_Defend_LZ_W {
+  coords 5525.557 1.407 8564.368
+ }
+}

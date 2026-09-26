@@ -1,0 +1,270 @@
+$grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+ Armored {
+  coords 3447.968 184.419 1709.712
+  {
+   AIWaypointCycle BTR1_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+    coords 5.967 0.055 15.537
+    CycleWaypoints {
+     "BTR1_WP1"
+     "BTR1_WP2"
+     "BTR1_WP3"
+     "BTR1_WP4"
+     "BTR1_WP5"
+     "BTR1_WP6"
+     "BTR1_WP7"
+     "BTR1_WP8"
+     "BTR1_WP9"
+    }
+   }
+   $grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+    BTR1_WP1 {
+     coords 13.962 0.433 21.866
+     m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+      m_holdingTime 10
+     }
+    }
+    BTR1_WP2 {
+     coords 113.372 10.102 308.536
+    }
+    BTR1_WP3 {
+     coords -643.481 -11.624 489.663
+    }
+    BTR1_WP4 {
+     coords -868.242 -28.778 688.555
+    }
+    BTR1_WP5 {
+     coords -972.462 -41.307 832.006
+    }
+    BTR1_WP6 {
+     coords -1053.379 -33.577 1198.739
+    }
+    BTR1_WP7 {
+     coords 42.942 -18.827 1398.355
+    }
+    BTR1_WP8 {
+     coords 252.868 -16.247 1083.14
+    }
+    BTR1_WP9 {
+     coords 124.037 11.207 308.662
+    }
+   }
+   Vehicle BTR82_1 : "{562B728760E7471F}Prefabs/Vehicles/Wheeled/BTR70/BTR82A_Base.et" {
+    components {
+     TILW_VehicleCrewComponent "{6A73472D1E8BEF69}" {
+      m_crewConfig TILW_CrewConfig "{6A73472D19A05072}" {
+       m_crewGroups {
+        TILW_CrewGroup "{6A73472D1874C343}" {
+         m_crewStations {
+          TILW_CrewStation "{6A73472D1A534607}" {
+           m_allowCargo 0
+           m_characters {
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+           }
+          }
+         }
+        }
+       }
+       m_noTurretDismount 1
+       m_useIdleGroups 0
+      }
+     }
+    }
+    coords 101.847 23.981 -1073.942
+    angles 0 -84.789 0
+   }
+   Vehicle k17_1 : "{944D59BF5EC046D6}Prefabs/Vehicles/Wheeled/K17/APC_K17_Berezok_tan.et" {
+    components {
+     TILW_VehicleCrewComponent "{6A72FC8528B92B23}" {
+      m_crewConfig TILW_CrewConfig "{6A72FC852AC89660}" {
+       m_crewGroups {
+        TILW_CrewGroup "{6A72FC8535C2535E}" {
+         m_crewStations {
+          TILW_CrewStation "{6A72FC8530098E25}" {
+           m_allowCargo 0
+           m_characters {
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+            "{F1E1A7A59FE370C6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Character_RHS_RF_MSV_VKPO_S_Crew.et"
+           }
+          }
+         }
+         m_waypointNames {
+          "BTR1_WP_Cycle"
+         }
+        }
+       }
+       m_noTurretDismount 1
+       m_useIdleGroups 0
+      }
+     }
+    }
+    coords -1.47 -0.13 0.663
+    angles 0 27.858 0
+   }
+  }
+ }
+ Infantry {
+  coords 3549.719 208.397 637.902
+  {
+   $grp SCR_AIGroup : "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et" {
+    {
+     coords -31.056 0.041 -10.362
+    }
+    {
+     coords -41.893 5.625 49.834
+    }
+    {
+     coords -60.433 -9.986 969.676
+    }
+   }
+   $grp SCR_AIGroup : "{3C3A6867982DC57A}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_AT.et" {
+    {
+     coords -128.707 -7.744 -29.306
+    }
+    {
+     coords -70.884 -18.023 900.262
+    }
+   }
+   SCR_AIGroup : "{F3A1617AA0E08276}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_Suppress.et" {
+    coords -84.334 3.718 130.084
+   }
+  }
+ }
+}
+GenericEntity A_Heli : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 3645.818 190.375 1488.77
+ {
+  $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   L_Heli {
+    coords 14.059 0.085 -5.559
+    {
+     GenericEntity REAPER_SlotAiHelicopter1 : "{355D143ADB4FA41B}Prefabs/Systems/ScenarioFramework/REAPER_SlotAiHelicopter.et" {
+      components {
+       REAPER_SlotAiHelicopter "{69A8BAA5EDDC9444}" {
+        m_sObjectToSpawn "{DBEC63C9DEE4358C}Prefabs/Vehicles/Helicopters/Mi8MT/Mi8MT_armed_gunship_HEDP.et"
+        m_iWeaponAutoReloadDelay 300
+        m_bLockForPlayers 1
+       }
+      }
+      coords 0.77 0.009 5.536
+      angles 0 77.326 0
+     }
+    }
+   }
+   L_Trigger {
+    coords 13.65 0.085 -5.75
+    {
+     GenericEntity SlotTrigger1 : "{032C15BBEBE9E1E9}Prefabs/Systems/ScenarioFramework/Components/SlotTrigger.et" {
+      components {
+       SCR_ScenarioFrameworkSlotTrigger "{6118D659EDB7084E}" {
+        m_aPlugins {
+         SCR_ScenarioFrameworkPluginTrigger "{6118D659EDB7085B}" {
+          m_aCustomTriggerConditions {
+           GDC_CustomTriggerConditionsTilwFlag "{6A734731D37DBA82}" {
+            m_sFlagName "GO_HELI"
+           }
+          }
+         }
+        }
+        m_aTriggerActions {
+         SCR_ScenarioFrameworkActionSpawnObjects "{6A7347325C4EDD8B}" {
+          m_aNameOfObjectsToSpawnOnActivation {
+           "L_Crew"
+          }
+         }
+        }
+       }
+      }
+      coords 0 0 0
+     }
+    }
+   }
+   L_Crew {
+    components {
+     SCR_ScenarioFrameworkLayerBase "{5A2283EA2A0B4B14}" {
+      m_eActivationType ON_TRIGGER_ACTIVATION
+     }
+    }
+    coords 14.059 0.085 -5.559
+    {
+     GenericEntity L_WP : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+      coords 0.07 -0.001 -0.391
+      {
+       $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+        Crew_Heli1_WP_GetIn {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_Waypoint SCR_ScenarioFrameworkWaypointGetInNearest "{6A73472B64ED8A09}" {
+            m_fPriorityLevel 200
+           }
+          }
+         }
+         coords -3.377 -0.084 5.688
+        }
+        Crew_Heli1_WP_Move1 {
+         components {
+          SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+           m_aActivationActions {
+            SCR_ScenarioFrameworkActionSetEntityPosition "{6A7486B52D03F6D1}" {
+             m_iMaxNumberOfActivations 1
+             m_DestinationEntityGetter SCR_ScenarioFrameworkGetClosestPlayerEntity "{6A7486B556ACAD8F}" {
+              m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A7486B55DB4FE6F}" {
+               m_sEntityName "Crew_Heli1"
+              }
+             }
+            }
+            SCR_ScenarioFrameworkActionWaitAndExecute "{6A7486B5601B2E25}" {
+             m_iDelayInSeconds 15
+             m_bLooped 1
+             m_aActions {
+              SCR_ScenarioFrameworkActionSetEntityPosition "{6A7486B57C766C39}" {
+               m_DestinationEntityGetter SCR_ScenarioFrameworkGetClosestPlayerEntity "{6A7486B5841A79BC}" {
+                m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A7486B583AA3400}" {
+                 m_sEntityName "Crew_Heli1"
+                }
+               }
+              }
+             }
+            }
+           }
+           m_Waypoint REAPER_FrameworkWaypointHelicopterMove "{6A7486BDBC8C867D}" {
+           }
+          }
+         }
+         coords 160.4 43.958 -541.036
+        }
+       }
+      }
+     }
+     GenericEntity Crew_Heli1 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+      components {
+       SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+        m_aActivationActions {
+         SCR_ScenarioFrameworkActionAI "{6A73472A46328826}" {
+          m_aAIActions {
+           SCR_ScenarioFrameworkAIActionDisableLOD "{6A73472ADADFBE0A}" {
+           }
+          }
+         }
+        }
+        m_sObjectToSpawn "{B10210712040A7C9}Prefabs/Groups/OPFOR/REAPER_USSR_HelicopterCrew.et"
+        m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6A73472B5D4D1BDE}" {
+         m_aLayerName {
+          "Crew_Heli1_WP_GetIn"
+          "Crew_Heli1_WP_Move1"
+         }
+        }
+        m_eAIGroupFormation Line
+        m_eAISkill VETERAN
+       }
+      }
+      coords 28.633 -0.012 59.467
+      angles 0 -105.073 0
+     }
+    }
+   }
+  }
+ }
+}

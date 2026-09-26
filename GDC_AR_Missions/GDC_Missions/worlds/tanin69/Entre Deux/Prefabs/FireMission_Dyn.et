@@ -1,0 +1,30 @@
+GenericEntity : "{30B43335F48F298B}Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et" {
+ ID "690ABA0781257167"
+ components {
+  GDC_ArtilleryFireSupportComponent "{690ABA073A15F1BF}" {
+   m_sAIGroupName "Mortar_Crew"
+   m_sConditionFlag "GO_MORTAR"
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{6A68809E5673F528}" {
+     m_iShotCount 3
+     m_bRandomized 1
+     m_fMinRadius 45
+     m_fMaxRadius 60
+     m_fDelayAfter 30
+    }
+    GDC_ArtilleryFireOrder "{6A68809E53F2572E}" {
+     m_iShotCount 10
+     m_fMinRadius 0
+     m_fMaxRadius 20
+     m_fDelayAfter 60
+    }
+    GDC_ArtilleryFireOrder "{6A6F296EB5EF1DF9}" {
+     m_iShotCount 10
+     m_fMinRadius 0
+     m_fMaxRadius 20
+    }
+   }
+  }
+ }
+ coords 6373.911 167.463 6879.779
+}

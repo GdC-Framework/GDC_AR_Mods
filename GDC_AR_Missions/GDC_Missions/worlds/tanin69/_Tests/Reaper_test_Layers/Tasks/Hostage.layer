@@ -1,0 +1,49 @@
+GenericEntity Area2 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 1428.08 38.139 2136.886
+ {
+  GenericEntity REAPER_LayerTask_RescueHostage1 : "{F0D7FF1D8A599137}Prefabs/Task/LayerTask/REAPER_LayerTask_RescueHostage.et" {
+   components {
+    SCR_ScenarioFrameworkLayerTask "{628E7463B7FCF8C0}" {
+     m_bShowDebugShapesDuringRuntime 1
+     m_eTypeOfTask EXTRACTION
+    }
+   }
+   coords 0 0 0
+   {
+    GenericEntity SlotAI1 : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
+     components {
+      SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+       m_sObjectToSpawn "{951528789F7C2441}Prefabs/Task/SlotItems/REAPER_SlotItem_Hostage2.et"
+      }
+     }
+     coords 0 0 0
+    }
+    GenericEntity REAPER_SlotRescueHostage1 : "{9918C9AC5CD16C97}Prefabs/Task/SlotTask/REAPER_SlotRescueHostage.et" {
+     components {
+      REAPER_SF_SlotRescueHostage "{628E7463E0C2E8BD}" {
+       m_bCanBeGarbageCollected 0
+       m_EndMissionOnTaskFinished 1
+       m_followUpdateMovement 1
+       m_DisableMovement 0
+       m_FinalDestination "Dest"
+       m_aActionsOnFinalDestination {
+        SCR_ScenarioFrameworkActionChangeTaskState "{6A335101E6EED614}" {
+         m_Getter SCR_ScenarioFrameworkGetTask "{6A335101E3D19CC7}" {
+          m_sLayerTaskName "REAPER_LayerTask_RescueHostage1"
+         }
+        }
+       }
+      }
+     }
+     coords 0 0 0
+    }
+    SCR_BaseTriggerEntity Dest : "{B7AB0899A91A985D}Prefabs/Systems/ScenarioFramework/Triggers/Trigger_Base.et" {
+     coords -12.401 0.777 43.549
+     TriggerShapeType Sphere
+     SphereRadius 5
+     DrawShape 1
+    }
+   }
+  }
+ }
+}

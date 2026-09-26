@@ -1,0 +1,18 @@
+GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 1380.155 39 2200.967
+ {
+  GenericEntity Layer1 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   coords 0 0 0
+   {
+    GenericEntity REAPER_SlotSpawnpoint1 : "{37B50E47C9C1F41E}Prefabs/Task/Slot/REAPER_SlotSpawnpoint.et" {
+     components {
+      REAPER_SF_SlotSpawnpoint "{5A22E1D67E712EC8}" {
+       m_sFactionKey "US"
+      }
+     }
+     coords 0 0 0
+    }
+   }
+  }
+ }
+}

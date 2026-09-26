@@ -1,0 +1,129 @@
+SCR_AIGroup players : "{878712C430CDA837}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Group_USAF_USMC_MEF_D_RifleSquad.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+ }
+ coords 845.601 159.837 1897.622
+ angles -2.54 45.453 1.245
+ m_aUnitPrefabSlots {
+  "{12B99C8D8662DFDC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_SL.et"
+  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
+  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
+  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
+  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+ }
+ m_bSetPlayable 1
+}
+GenericEntity A_Players : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ components {
+  SCR_ScenarioFrameworkArea "{59E8CDC50969206E}" {
+   m_aActivationActions {
+    SCR_ScenarioFrameworkActionSetFuelConsumption "{6A714CEB779F541A}" {
+     m_iMaxNumberOfActivations 1
+     m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A714CEB7FA933AB}" {
+      m_sEntityName "JLTV_OGPK1"
+     }
+     m_fFuelConsumption 900
+     m_fFuelConsumptionIdle 300
+    }
+    SCR_ScenarioFrameworkActionSetFuelConsumption "{6A714CF9C3614C0C}" {
+     m_iMaxNumberOfActivations 1
+     m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A714CF9DD8D2769}" {
+      m_sEntityName "JLTV_CROWSII1"
+     }
+     m_fFuelConsumption 900
+     m_fFuelConsumptionIdle 300
+    }
+   }
+  }
+ }
+ coords 865.642 159.136 1902.146
+ {
+  GenericEntity L_Vehicles : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   coords 0.151 -0.1 6.381
+   {
+    Vehicle JLTV_CROWSII1 : "{49B5C8D1F28E7B7F}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/JLTV_CROWSII.et" {
+     components {
+      SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+       FuelNodes {
+        SCR_FuelNode "{5622A70CD4036C5A}" {
+         m_fInitialFuelTankState 15
+        }
+       }
+      }
+      SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+       MultiSlots {
+        MultiSlotConfiguration "{633A2A73E1980EEC}" {
+         SlotTemplate InventoryStorageSlot Magazines {
+          Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+         }
+         NumSlots 2
+        }
+        MultiSlotConfiguration "{5DE8B00C63335F32}" {
+         NumSlots 0
+        }
+        MultiSlotConfiguration "{6A714CE6A3FBBD75}" {
+         SlotTemplate InventoryStorageSlot Item2 {
+          Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
+         }
+        }
+        MultiSlotConfiguration "{6A714CE68EDDE744}" {
+         SlotTemplate InventoryStorageSlot Item1 {
+          Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+         }
+         NumSlots 2
+        }
+       }
+      }
+     }
+     coords -3.403 -0.067 9.33
+     angles 0 84.999 0
+    }
+    Vehicle JLTV_OGPK1 : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_OGPK.et" {
+     components {
+      SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+       FuelNodes {
+        SCR_FuelNode "{5622A70CD4036C5A}" {
+         m_fInitialFuelTankState 20
+        }
+       }
+      }
+      SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+       MultiSlots {
+        MultiSlotConfiguration "{5DE8B00DB02BE538}" {
+         NumSlots 0
+        }
+        MultiSlotConfiguration "{6A714CED4D689382}" {
+         SlotTemplate InventoryStorageSlot Fuel_Can {
+          Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+         }
+         NumSlots 2
+        }
+        MultiSlotConfiguration "{6A714CEDAC761348}" {
+         SlotTemplate InventoryStorageSlot Repair {
+          Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+         }
+         NumSlots 2
+        }
+        MultiSlotConfiguration "{6A714CE0BAC159C0}" {
+         SlotTemplate InventoryStorageSlot Item1 {
+          Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
+         }
+         NumSlots 5
+        }
+       }
+      }
+     }
+     coords 11.532 -0.421 10.419
+     angles -3.68 86.452 -1.561
+    }
+   }
+  }
+ }
+}

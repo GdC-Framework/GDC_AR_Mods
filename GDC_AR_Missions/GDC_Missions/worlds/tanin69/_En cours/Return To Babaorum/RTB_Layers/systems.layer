@@ -1,0 +1,38 @@
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ trg_US_On_Kaza {
+  coords 964.796 166.674 1370.418
+  m_queryRadius 30
+  m_captureTime 90
+  m_flagName "GO_KAZA_QRF"
+  m_ownerFactionKey "RHS_USAF"
+ }
+ trg_US_On_Petrol1 {
+  coords 2184.978 159.779 2213.893
+  m_queryRadius 30
+  m_captureTime 90
+  m_flagName "GO_PETROL1_QRF"
+  m_ownerFactionKey "RHS_USAF"
+ }
+ trg_US_On_Temple1 {
+  coords 2051.643 161.719 1610.104
+  m_queryRadius 30
+  m_captureTime 90
+  m_flagName "GO_TEMPLE1_QRF"
+  m_ownerFactionKey "RHS_USAF"
+ }
+ trg_US_On_Amaro {
+  coords 3100.307 173 1961.202
+  m_queryRadius 30
+  m_captureTime 20
+  m_flagName "GO_AMARO_QRF"
+  m_ownerFactionKey "RHS_USAF"
+ }
+ trg_US_On_Heli {
+  coords 3508.3 190.375 1288.862
+  m_queryRadius 700
+  m_captureTime 10
+  m_flagName "GO_HELI"
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.001
+ }
+}

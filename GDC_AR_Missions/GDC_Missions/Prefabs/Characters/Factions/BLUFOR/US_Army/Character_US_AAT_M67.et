@@ -17,6 +17,9 @@ SCR_ChimeraCharacter : "{CD28EE7C5690D3BB}Prefabs/Characters/Factions/BLUFOR/US_
     Name "AT Assistant (M67)"
    }
   }
+  CharacterWeaponSlotComponent "{520EA1D2F659CFB7}" {
+   WeaponTemplate ""
+  }
   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
    Slots {
     LoadoutSlotInfo Back {

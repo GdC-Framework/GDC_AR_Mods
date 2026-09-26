@@ -1,0 +1,34 @@
+GDC_FollowNearestPlayerEntity {
+ coords 5723.834 2.187 8278.941
+}
+GenericEntity : "{30B43335F48F298B}Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et" {
+ components {
+  GDC_ArtilleryFireSupportComponent "{690ABA073A15F1BF}" {
+   m_sAIGroupName "Mortar"
+   m_aFireOrders {
+    GDC_ArtilleryFireOrder "{6A66E9DB5C8C3965}" {
+     m_iShotCount 5
+     m_bRandomized 1
+     m_fMinRadius 51
+     m_fMaxRadius 100
+    }
+    GDC_ArtilleryFireOrder "{6A66E9DB5D878D4B}" {
+     m_iShotCount 5
+     m_bRandomized 1
+     m_fMinRadius 0
+     m_fMaxRadius 40
+    }
+   }
+  }
+ }
+ coords 6252.442 36.374 8045.109
+}
+TILW_FactionTriggerEntity trg_us_in : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 6254.306 36.833 8042.35
+ m_queryRadius 10
+ m_flagName "GO_BOMBING"
+ m_eventsOnlyDuringGame 0
+ m_stopAfterFirstChange 1
+ m_ownerFactionKey "RHS_USAF"
+ m_ratioThreshold 0.001
+}

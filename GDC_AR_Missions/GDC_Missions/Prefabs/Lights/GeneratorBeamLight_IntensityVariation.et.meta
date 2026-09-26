@@ -1,0 +1,7 @@
+MetaFileClass {
+ Name "{A7E9F3B5D2C14608}Prefabs/Lights/GeneratorBeamLight_IntensityVariation"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+ }
+}

@@ -1,0 +1,25 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ Contexte {
+  coords 2671.558 24.218 5573.415
+  m_sTitle "Contexte"
+  m_sTextData "Guerre froide, début des années 80. Les USA et l'URSS se disputent un territoire défendu par une milice locale."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ Mission {
+  coords 2664.035 24.219 5578.354
+  m_sTitle "Mission"
+  m_sTextData "Capturez l'objectif et tenez-le 10 minutes (périmètre de 30 mètres autour du drapeau). L'élimination de tous les hostiles entraine une victoire instantanée."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ Renseignements {
+  coords 2672.718 24.208 5611.58
+  m_sTitle "Renseignements"
+  m_sTextData "L'objectif est défendu par une petite dizaine de PAX de la FIA."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+}

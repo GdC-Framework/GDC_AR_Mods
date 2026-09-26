@@ -1,0 +1,23 @@
+SCR_ChimeraCharacter : "{1162A64DF9C25BA6}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_AR.et" {
+ ID "520EC961A090BBD5"
+ components {
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{60C562134DF9E2FF}" {
+     PrefabsToSpawn +{
+     }
+    }
+    ItemsInitConfigurationItem "{61B52C452F5B2BED}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652C8D117828608B}" {
+     PrefabsToSpawn {
+     }
+    }
+   }
+  }
+ }
+ coords 0 0 0
+ angles 0 -60.474 0
+}

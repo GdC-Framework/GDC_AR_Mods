@@ -1,0 +1,99 @@
+SCR_AIWorld : "{3D0FE80570D5BFCC}Prefabs/AI/SCR_AIWorld_Anizay.et" {
+ coords 5079.356 130.02 5274.077
+}
+PerceptionManager PerceptionManager2 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 5070.722 129.739 5285.294
+}
+PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
+ coords 5082.799 130.209 5269.685
+ m_bTeamSwitch 1
+ m_bPublicCommandBriefing 1
+ m_bRemoveSquadMarkers 1
+ m_iFreezeTime 0
+ m_bDisableGarbageSystem 1
+ {
+  SCR_FactionManager "6A7347240E257729" {
+   ID "5ED9088735FF2D8B"
+   Factions {
+    SCR_Faction "{5978B9CE6585BBE8}" {
+     m_aFriendlyFactionsIds {
+      "MEI"
+      "USSR"
+     }
+    }
+    SCR_Faction "{6A4624294CD7E4A0}" {
+     m_aFriendlyFactionsIds {
+      "USSR"
+      "CIV"
+      "RHS_AFRF"
+     }
+    }
+   }
+  }
+ }
+}
+TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 5085.434 130.49 5263.489
+ m_missionEvents {
+  TILW_MissionEvent "{6A72B26D8287E54F}" {
+   m_name "US On Kaza"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A72B26D90EC753B}" {
+     m_prefab "{BDBE43FE17B323D7}Prefabs/Groups/MEI/Group_MEI_FireTeam.et"
+     m_locationName "Spawn_Kaza_QRF"
+     m_waypointNames {
+      "WP_SAD1"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A72B26D8B2E2DF8}" {
+    m_flagName "GO_KAZA_QRF"
+   }
+  }
+  TILW_MissionEvent "{6A72B26291457CBB}" {
+   m_name "US On Petrol1"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A72B26291457FFB}" {
+     m_prefab "{BDBE43FE17B323D7}Prefabs/Groups/MEI/Group_MEI_FireTeam.et"
+     m_locationName "Spawn_Petrol1_QRF"
+     m_waypointNames {
+      "WP_SAD2"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A72B26291457FC0}" {
+    m_flagName "GO_PETROL1_QRF"
+   }
+  }
+  TILW_MissionEvent "{6A72FC9E8FC11145}" {
+   m_name "US On Temple1"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A72FC9E8FC111D4}" {
+     m_prefab "{BDBE43FE17B323D7}Prefabs/Groups/MEI/Group_MEI_FireTeam.et"
+     m_locationName "Spawn_Temple1_QRF"
+     m_waypointNames {
+      "WP_SAD3"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A72FC9E8FC111D9}" {
+    m_flagName "GO_TEMPLE1_QRF"
+   }
+  }
+  TILW_MissionEvent "{6A734720B0C50E8C}" {
+   m_name "US On Amaro"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A734720B0C5F12E}" {
+     m_prefab "{BDBE43FE17B323D7}Prefabs/Groups/MEI/Group_MEI_FireTeam.et"
+     m_locationName "Spawn_Amaro_QRF"
+     m_waypointNames {
+      "WP_SAD4"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A734720B0C5F132}" {
+    m_flagName "GO_AMARO_QRF"
+   }
+  }
+ }
+}

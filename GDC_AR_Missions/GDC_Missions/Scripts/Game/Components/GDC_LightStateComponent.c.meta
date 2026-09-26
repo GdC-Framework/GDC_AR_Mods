@@ -1,0 +1,7 @@
+MetaFileClass {
+ Name "{4A9E2F7D8C3B1605}Scripts/Game/Components/GDC_LightStateComponent"
+ Configurations {
+  ScriptResourceClass PC {
+  }
+ }
+}

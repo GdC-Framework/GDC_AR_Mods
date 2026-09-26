@@ -1,0 +1,34 @@
+SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_BaseLoadout.et" {
+ ID "520EC961A090BBD5"
+ components {
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{D190F29521A9E6E0}Prefabs/Weapons/Rifles/M27IAR/Rifle_M27IAR_SU230.et"
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{60C562134DF9E2FF}" {
+     PrefabsToSpawn {
+      "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{922F95F91943F69A}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{D70216B1B2889129}Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et"
+     }
+    }
+    ItemsInitConfigurationItem "{61B52C452F5B2BED}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652B48EEB578AC6E}" {
+     PrefabsToSpawn + {
+      "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
+     }
+    }
+    ItemsInitConfigurationItem "{62D6A4F8911C90AF}" {
+     PrefabsToSpawn + {
+      "{C204374F722D5229}Prefabs/Items/Equipment/Radios/Radio_ANPRC117.et"
+     }
+    }
+    ItemsInitConfigurationItem "{62B716EFC3B8B749}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_blueforcetriple.et/flex3/Pouch_Shaw_Flex.et"
+    }
+   }
+  }
+ }
+}

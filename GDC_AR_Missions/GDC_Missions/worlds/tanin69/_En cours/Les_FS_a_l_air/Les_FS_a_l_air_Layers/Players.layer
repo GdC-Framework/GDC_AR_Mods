@@ -1,0 +1,10 @@
+SCR_AIGroup Alpha : "{F2B7D404B66FD853}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Group_USAF_USMC_MARSOC_FireTeam.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+ }
+ coords 13934.692 51.755 13136.105
+ angles 0 135 0
+ m_bSetPlayable 1
+}

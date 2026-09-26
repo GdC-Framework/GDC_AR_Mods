@@ -1,0 +1,13 @@
+ParticleEffectEntity {
+ ID "6A3F34472997C1B8"
+ components {
+  SignalsManagerComponent "{6A3F344700A420A2}" {
+  }
+  RplComponent "{6A3F34470AEEFD50}" {
+  }
+  Hierarchy "{6A3F34471DE6AA3D}" {
+  }
+ }
+ coords 13971.635 49.666 12699.067
+ EffectPath "{AAB37B9AFD47F723}Particles/Logistics/Fire/Tire/Fire_small.ptc"
+}

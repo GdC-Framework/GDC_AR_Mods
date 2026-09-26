@@ -1,0 +1,277 @@
+$grp GenericEntity : "{0A6B5B1CC60EC137}Prefabs/Props/Wrecks/LAV25_wreck/LAV25_wreck_static.et" {
+ {
+  coords 1716.187 158.471 1496.488
+  angles 0 120 0
+ }
+ {
+  coords 1692.31 148.092 2477.933
+  angles 0 28.293 0
+ }
+}
+GenericEntity : "{1F3291C2A7E2BA00}Prefabs/Props/Wrecks/BRDM2_wreck/BRDM2_wreck_static.et" {
+ coords 1552.66 140.897 2389.245
+}
+$grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/AmmoBoxes/US/E_EquipmentBoxWooden_Ammunition_01_US.et" {
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+      }
+      NumSlots 1
+     }
+     MultiSlotConfiguration "{6A714CE07E011855}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 2
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 2069.259 166.852 1622.795
+ }
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+      }
+     }
+     MultiSlotConfiguration "{6A714CE07E011855}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 10
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 2053.183 166.852 1571.343
+  angles 0 -13.971 0
+ }
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      }
+      NumSlots 50
+     }
+     MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A714CE07E011855}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 10
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 2459.512 156.441 2450.627
+  angles 0 79.313 0
+ }
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      }
+      NumSlots 4
+     }
+     MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A714CE07E011855}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 1
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 3074.056 125.286 1776.1
+ }
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+      }
+      NumSlots 20
+     }
+     MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+      }
+     }
+     MultiSlotConfiguration "{6A714CE07E011855}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 3218.313 121.61 1873.709
+ }
+ {
+  components {
+   SCR_DestructionMultiPhaseComponent "{58F89684469E44B1}" {
+    Enabled 1
+   }
+   SCR_SoundDataComponent "{5C53391603B5CF41}" {
+    Enabled 1
+   }
+   SCR_UniversalInventoryStorageComponent "{5476A2F100DF4EFF}" {
+    Enabled 1
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CE1BB0E0097}" {
+      SlotTemplate InventoryStorageSlot item1 {
+       Prefab "{9B8CDC3CD2E535D2}Prefabs/Weapons/Magazines/Box_30x113_M230LF_250rnd_HEDP.et"
+      }
+      NumSlots 4
+     }
+    }
+   }
+   ActionsManagerComponent "{5476B36C403D4CC0}" {
+    Enabled 1
+   }
+  }
+  coords 3075.398 125.293 1780.856
+ }
+}
+Vehicle JLTV_CROWSII2 : "{49B5C8D1F28E7B7F}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/JLTV_CROWSII.et" {
+ components {
+  SCR_BaseLockComponent "{54D6FBC0EA806FE5}" {
+   m_bIsLocked 1
+   m_lockPilot 1
+   m_lockTurret 1
+   m_lockCargo 1
+   m_factionLock {
+    "RHS_AFRF"
+   }
+  }
+  SCR_DestructionTireInitialDamageDataComponent "{6A72FC97CA871EE0}" {
+   InitialData SCR_DamagePhaseData "{6A72FC97D444CEBC}" {
+    m_fPhaseHealth 50
+   }
+  }
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 0
+    }
+   }
+  }
+ }
+ coords 3096.473 172.847 1955.79
+ angles 0 153.898 0
+}
+GenericEntity : "{654B33C808C4D93E}Prefabs/Props/Wrecks/M151A2_wreck/M151A2_wreck_static.et" {
+ coords 1982.062 166.774 1671.58
+ angles 0 114.111 0
+}
+$grp ParticleEffectEntity : "{9B6CF4159F23B019}Prefabs/Systems/Fire/Wrapper_Fire_Medium.et" {
+ {
+  coords 1716.793 160.381 1496.585
+ }
+ {
+  coords 1691.581 149.658 2476.169
+ }
+}
+$grp ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smoke_Inf_Black_Large.et" {
+ {
+  coords 1718.389 160.327 1495.676
+ }
+ {
+  coords 1552.907 142.364 2386.854
+ }
+ {
+  coords 1691.967 149.841 2476.395
+ }
+}
+ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
+ coords 1981.928 167.422 1671.601
+}

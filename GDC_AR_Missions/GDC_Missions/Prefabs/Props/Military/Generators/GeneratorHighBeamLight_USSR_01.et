@@ -1,0 +1,24 @@
+GameEntity : "{616F4E93658E5A3A}Prefabs/Props/Military/Generators/GeneratorFloodlight_USSR_01.et" {
+ ID "F0DBA538AC2A0552"
+ components {
+  SCR_BaseInteractiveLightComponent "{5882B9E6B4EFC9DF}" {
+   Enabled 0
+  }
+ }
+ coords 6241.62 36.101 8090.778
+ angles -3.682 0 0
+ {
+  $grp LightEntity : "{3750F0AD75592422}Prefabs/Lights/GeneratorBeamLight_Searchlight.et" {
+   {
+    ID "6A3CD96390582ED5"
+    coords -0.54 3.55 0
+    angles -10 -15.203 0
+   }
+   {
+    ID "6A3CD963CFCB919B"
+    coords 0.54 3.55 0
+    angles -10 15 0
+   }
+  }
+ }
+}

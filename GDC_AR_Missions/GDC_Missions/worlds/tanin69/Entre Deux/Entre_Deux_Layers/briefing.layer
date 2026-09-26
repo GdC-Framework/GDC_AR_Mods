@@ -1,0 +1,138 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Everon est occupée en totalité par des troupes de la fédération de Russie."\
+  ""\
+  "Notre zone d'opération (ZOP) est grossièrement délimitée par un triangle Tyrone-Villeneuve-Phare de Fisherman's Bay (marqué sur carte)."\
+  ""\
+  "Il est 3h30. La nuit vous permet de vous déployer sur la côte discrètement."\
+  ""\
+  "Vous avez entre 3/4h et 1h de pénombre devant vous."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Context {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Eté 2027. Le président D.T. aka \"TACO\" décide d'envoyer des troupes chatouiller son grand ami V.P. Rien que pour de rire."\
+  ""\
+  "\"I've sent a great and wonderful unit. Very strong guys, the best in the world\" a-t-il déclaré aux derniers journalistes autorisés à accéder à la Maison Blanche."\
+  ""\
+  "L'idée du commandement des MARSOC est de se sortir de ce merdier en y laissant le moins de plumes possible..."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "Détruire la tour radio (une charge sur un des piliers) et le transformateur à ses pieds (une charge sur l'armoire électrique)."\
+  ""\
+  "La neutralisation de tout ou partie des BTR-80, outre qu'elle sécurisera votre mission, permettra un engagement plus facile de nos moyens blindés pour la phase suivante de l'opération."\
+  ""\
+  "A part ça, n'oubliez pas que Trump Always Chickens Out... Donc garez vos fesses avant tout !"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ g_InsertExtract {
+  coords 8571.886 176.867 3856.151
+  m_sTitle "Insertion et extraction"
+  m_sTextData "Vous pouvez choisir l'insertion au choix sur les zones Barber, Whiskey ou Rider."\
+  ""\
+  "L'extraction doit se faire sur une de ces trois zones également (Interaction \"Fin de mission\" sur l'avant du RHIB)."
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ d_Intel {
+  coords 5887.263 241.077 7351.6
+  m_sTitle "Renseignements"
+  m_sTextData "Il y a trois pelotons de MSV sur zone :"\
+  ""\
+  "> Un peloton en garde sur Montignac et Entre Deux. Il est équipé de BTR-80. Un groupe se trouve sur l'objectif, les deux autres répartis entre Montignac et Entre Deux."\
+  "> Deux autres pelotons équipés de BTR-70 patrouillent la ZOP, renforcés de quelques véhicules de patrouille (BRDM-2)."\
+  ""\
+  "La densité des patrouilles devrait vous permettre de vous faufiler vers l'objectif sans ouvrir le feu. Dans tous les cas, gardez l'intiative : toute réplique des hostiles alertera immédiatement les patrouilles à proximité."\
+  ""\
+  ""
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ f_Reminder {
+  coords 8565.897 177.212 3856.885
+  m_sTitle "Rappel"
+  m_sTextData "Un peloton de MSV est composé de :"\
+  "- 3 BTR"\
+  "- 27 Pax"\
+  ""\
+  "Le peloton de commandement MSV (HQ) peut comporter des éléments complémentaires (BRDM-2, équipe radio, logistique, éclaireurs, sentinelles, etc.)"
+  m_aVisibleForFactions {
+   "US"
+  }
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+}
+$grp PS_ManualMarker : "{BA3177FCACC39F3A}PrefabsEditable/Markers/Icons/Marker_Objective_Base.et" {
+ LZ_B {
+  coords 7357.958 0.359 7379.04
+  angles 0 -90 0
+  m_MarkerColor 0 0.125 0.5 1
+  m_sQuadName "join"
+  m_sDescription "LZ Barber"
+  m_bUseWorldScale 0
+ }
+ LZ_W {
+  coords 5558.619 0 8580.594
+  angles 0 -180 0
+  m_MarkerColor 1 1 1 1
+  m_sQuadName "join"
+  m_sDescription "LZ Whiskey"
+  m_bUseWorldScale 0
+ }
+ LZ_R {
+  coords 3733.793 1.156 7381.737
+  angles 0 93.392 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "join"
+  m_sDescription "LZ Rider (-s on the storm)"
+  m_bUseWorldScale 0
+ }
+ Objective {
+  coords 5860.135 235.993 7260.183
+  angles 0 0 0
+  m_MarkerColor 0.502 0 0 1
+  m_sQuadName "point-special-2"
+  m_fWorldSize 60
+  m_sDescription "Détruire"
+  m_bUseWorldScale 0
+ }
+ Spawn {
+  coords 11355.968 62.031 11231.966
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag-2"
+  m_sDescription "Spawn"
+  m_bUseWorldScale 0
+ }
+}

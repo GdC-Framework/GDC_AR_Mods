@@ -1,0 +1,49 @@
+SCR_AIGroup grp_Servant : "{8DE0C0830FE0C33D}Prefabs/Groups/OPFOR/Group_USSR_Base.et" {
+ coords 5703.363 2.188 8236.396
+ angles 0 148.779 0
+ m_aUnitPrefabSlots {
+  "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+ }
+ m_aStaticWaypoints {
+  "WP_GetInNearest"
+ }
+}
+SCR_BoardingTimedWaypoint WP_GetInNearest : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+ coords 5709.222 2.171 8230.938
+ CompletionRadius 5
+}
+$grp GenericEntity : "{CB56A2564414B7D6}Prefabs/Compositions/Misc/SubCompositions/Foundation_Mortar_USSR.et" {
+ Mortar_Compo {
+  coords 5708.363 2.182 8230.96
+  angles 0 131.596 0
+ }
+ Mortar_Compo2 {
+  coords 5741.782 2.187 8259.817
+  angles 0 145.316 0
+  {
+   Turret Mortar {
+    ID "60B8D36A59BEEA2F"
+    components {
+     TILW_VehicleCrewComponent "{6A66E9DC3A8D71C9}" {
+      m_crewConfig TILW_CrewConfig "{6A66E9DC44098C80}" {
+       m_crewGroups {
+        TILW_CrewGroup "{6A66E9DC46F02FC4}" {
+         m_crewStations {
+          TILW_CrewStation "{6A66E9DC40F49B6D}" {
+           m_allowCargo 0
+           m_characters {
+            "{DCB41B3746FDD1BE}Prefabs/Characters/Factions/OPFOR/USSR_Army/Character_USSR_Rifleman.et"
+           }
+          }
+         }
+        }
+       }
+       m_useIdleGroups 0
+      }
+      m_pregameSpawn 1
+     }
+    }
+   }
+  }
+ }
+}

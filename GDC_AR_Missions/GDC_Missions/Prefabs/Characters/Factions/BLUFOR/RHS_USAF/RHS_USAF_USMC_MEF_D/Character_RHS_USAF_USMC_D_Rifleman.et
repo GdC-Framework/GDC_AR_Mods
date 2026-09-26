@@ -1,0 +1,73 @@
+SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_BaseLoadout.et" {
+ ID "520EC961A090BBD5"
+ components {
+  CharacterWeaponSlotComponent "{520EA1D2F659CFAB}" {
+   WeaponTemplate "{D190F29521A9E6E0}Prefabs/Weapons/Rifles/M27IAR/Rifle_M27IAR_SU230.et"
+  }
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Vest {
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{60C562134DF9E2FF}" {
+     PrefabsToSpawn {
+      "{F088066F5F807748}Prefabs/Weapons/Attachments/Bayonets/Bayonet_OKC3S.et" "{61D4F80E49BF9B12}Prefabs/Items/Equipment/Compass/Compass_SY183.et" "{922F95F91943F69A}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded_US.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{D70216B1B2889129}Prefabs/Items/Medicine/Tourniquet_01/Tourniquet_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et"
+     }
+    }
+    ItemsInitConfigurationItem "{61B52C452F5B2BED}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{651D048C848632D6}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{652B48EEB578AC6E}" {
+     PrefabsToSpawn {
+     }
+    }
+    ItemsInitConfigurationItem "{607EC165EA2B4CBE}" {
+    }
+    ItemsInitConfigurationItem "{652C8D1D61E104A4}" {
+    }
+    ItemsInitConfigurationItem "{607F3D079897B13A}" {
+    }
+    ItemsInitConfigurationItem "{625C007517C952E2}" {
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{652C8D1D7C7E233A}" {
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{62B716DC4F21D17E}" {
+    }
+    ItemsInitConfigurationItem "{62B716DC4F5F9191}" {
+    }
+    ItemsInitConfigurationItem "{62B716DC4E8EBE91}" {
+    }
+    ItemsInitConfigurationItem "{62B716DC4E31865C}" {
+    }
+    ItemsInitConfigurationItem "{6A7486A9604CF540}" {
+     TargetStorage "Jacket/Jacket_FROG_Combat_Shirt_Arid.et"
+     TargetPurpose 1
+     PrefabsToSpawn {
+      "{3A421547BC29F679}Prefabs/Items/Equipment/Flashlights/Flashlight_MX991/Flashlight_MX991.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7486A96046238B}" {
+     TargetStorage "Vest/Vest_PCGen_III_rifleman_filbe.et/nerd/Pouch_PCGEN3_ifak.et"
+     TargetPurpose 1
+     PrefabsToSpawn {
+      "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
+     }
+    }
+   }
+  }
+ }
+}
