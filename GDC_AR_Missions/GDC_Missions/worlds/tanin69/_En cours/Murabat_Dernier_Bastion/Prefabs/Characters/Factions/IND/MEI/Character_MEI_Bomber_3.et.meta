@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{07B7A9B5AB9130AD}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}

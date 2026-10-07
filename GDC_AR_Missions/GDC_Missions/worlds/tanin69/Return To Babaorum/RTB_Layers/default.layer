@@ -1,8 +1,12 @@
 SCR_AIWorld : "{3D0FE80570D5BFCC}Prefabs/AI/SCR_AIWorld_Anizay.et" {
+ components {
+  NavmeshWorldComponent "{5584F30E67F617AD}" {
+   NavmeshSettings NavmeshWorld "{50FC63BEBE3973C5}" {
+   }
+  }
+ }
  coords 5079.356 130.02 5274.077
-}
-PerceptionManager PerceptionManager2 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
- coords 5070.722 129.739 5285.294
+ "Active AI limit" 256
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  coords 5082.799 130.209 5269.685
@@ -94,6 +98,78 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_condition TILW_LiteralTerm "{6A734720B0C5F132}" {
     m_flagName "GO_AMARO_QRF"
    }
+  }
+  TILW_MissionEvent "{6A76BA694ACF4BE3}" {
+   m_name "US On CROWS AA"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6A76BA694ACF4BAD}" {
+     m_prefab "{3C3A6867982DC57A}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_AT.et"
+     m_locationName "Spawn_CROWSAA_QRF1"
+     m_waypointNames {
+      "WP_SAD5"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6A76BA69CE410092}" {
+     m_executionDelay 90
+     m_prefab "{F3A1617AA0E08276}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_Suppress.et"
+     m_locationName "Spawn_CROWSAA_QRF2"
+     m_waypointNames {
+      "WP_SAD5"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A76BA694ACF4BB1}" {
+    m_flagName "GO_CROWSAA_QRF"
+   }
+  }
+  TILW_MissionEvent "{6A76BA75A59B7A3B}" {
+   m_name "Message Baba"
+   m_instructions {
+    TILW_SendMessageInstruction "{6A76BA75ABA7673A}" {
+     m_executionDelay 0
+     m_messageTitle "HQ Message"
+     m_messageBody "Coucou mes bichons. On a préféré partir devant, il y a soirée burgers à l'aéroport de Landay."\
+     ""\
+     "Envoyez nous un SMS, on vous enverra un taxi."\
+     ""\
+     "Allez, bisous, à tout' !"\
+     ""\
+     "(Fin de mission sur le drapeau)"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A76BA75BD6E50E4}" {
+    m_flagName "GO_MESSAGE_US"
+   }
+  }
+  TILW_MissionEvent "{6A76BA766F0D91FC}" {
+   m_name "End Mission"
+   m_instructions {
+    TILW_EndGameInstruction "{6A76BA76728272A8}" {
+     m_executionDelay 0
+     m_gameOverType EDITOR_NEUTRAL
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A76BA76749AF72B}" {
+    m_flagName "END_MISSION"
+   }
+  }
+  TILW_MissionEvent "{6A76BA76AF8F471D}" {
+   m_name "All Players Dead"
+   m_instructions {
+    TILW_EndGameInstruction "{6A76BA76B719968E}" {
+     m_gameOverType LOOSE
+     m_factionKey "RHS_UASF"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6A76BA76B93F2CBC}" {
+    m_flagName "ALl_PLAYERS_DEAD"
+   }
+  }
+ }
+ m_casualtyFlags {
+  TILW_FactionPlayersKilledFlag "{6A76BA76934DA4F6}" {
+   m_flagName "ALl_PLAYERS_DEAD"
+   m_factionKey "RHS_USAF"
   }
  }
 }

@@ -24,19 +24,19 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     Enabled 1
     MultiSlots {
      MultiSlotConfiguration "{6A714CE1BB0E0097}" {
-      SlotTemplate InventoryStorageSlot item1 {
+      SlotTemplate InventoryStorageSlot Mags_556 {
        Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
       }
       NumSlots 10
      }
      MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
-      SlotTemplate InventoryStorageSlot Item2 {
+      SlotTemplate InventoryStorageSlot Boxes_127 {
        Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
       }
       NumSlots 1
      }
      MultiSlotConfiguration "{6A714CE07E011855}" {
-      SlotTemplate InventoryStorageSlot Item3 {
+      SlotTemplate InventoryStorageSlot Salines {
        Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
       }
       NumSlots 2
@@ -61,21 +61,34 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     Enabled 1
     MultiSlots {
      MultiSlotConfiguration "{6A714CE1BB0E0097}" {
-      SlotTemplate InventoryStorageSlot item1 {
+      SlotTemplate InventoryStorageSlot Mags_556 {
        Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
       }
-      NumSlots 2
+      NumSlots 5
      }
      MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
-      SlotTemplate InventoryStorageSlot Item2 {
+      SlotTemplate InventoryStorageSlot Boxes_127 {
        Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
       }
+      NumSlots 1
      }
      MultiSlotConfiguration "{6A714CE07E011855}" {
-      SlotTemplate InventoryStorageSlot Item3 {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      SlotTemplate InventoryStorageSlot Ammonium {
+       Prefab "{58CF3AB87C441295}Prefabs/Items/Medicine/AmmoniumCarbonatePackage/ACE_Medical_AmmoniumCarbonatePackage.et"
       }
-      NumSlots 10
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A7550EFCE85718B}" {
+      SlotTemplate InventoryStorageSlot Boxes_556 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 3
+     }
+     MultiSlotConfiguration "{6A7550EFDA7DDFAC}" {
+      SlotTemplate InventoryStorageSlot Item2 {
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
+      }
+      NumSlots 20
      }
     }
    }
@@ -98,22 +111,34 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     Enabled 1
     MultiSlots {
      MultiSlotConfiguration "{6A714CE1BB0E0097}" {
-      SlotTemplate InventoryStorageSlot item1 {
+      SlotTemplate InventoryStorageSlot Mags_556 {
        Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
       }
-      NumSlots 50
+      NumSlots 15
      }
      MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
       SlotTemplate InventoryStorageSlot Item2 {
        Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
       }
-      NumSlots 5
+      NumSlots 1
      }
      MultiSlotConfiguration "{6A714CE07E011855}" {
       SlotTemplate InventoryStorageSlot Item3 {
        Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
       }
-      NumSlots 10
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A7550EE451BA1A3}" {
+      SlotTemplate InventoryStorageSlot Item3 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 3
+     }
+     MultiSlotConfiguration "{6A7550EE54C419C5}" {
+      SlotTemplate InventoryStorageSlot Item4 {
+       Prefab "{5B2FD067D70C1E8F}Prefabs/Items/Medicine/EpinephrineInjection/ACE_Medical_EpinephrineInjection.et"
+      }
+      NumSlots 5
      }
     }
    }
@@ -139,7 +164,7 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
       SlotTemplate InventoryStorageSlot item1 {
        Prefab "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
       }
-      NumSlots 4
+      NumSlots 10
      }
      MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
       SlotTemplate InventoryStorageSlot Item2 {
@@ -180,13 +205,21 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
      }
      MultiSlotConfiguration "{6A714CE1D18C7DD5}" {
       SlotTemplate InventoryStorageSlot Item2 {
-       Prefab "{C820846B0521423B}Prefabs/Weapons/Magazines/Box_127x99_M2_100rnd_4AP_1APIT.et"
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
       }
+      NumSlots 6
      }
      MultiSlotConfiguration "{6A714CE07E011855}" {
       SlotTemplate InventoryStorageSlot Item3 {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
       }
+      NumSlots 25
+     }
+     MultiSlotConfiguration "{6A76BA6CD143E298}" {
+      SlotTemplate InventoryStorageSlot Boxes_Cal30 {
+       Prefab "{9B8CDC3CD2E535D2}Prefabs/Weapons/Magazines/Box_30x113_M230LF_250rnd_HEDP.et"
+      }
+      NumSlots 1
      }
     }
    }
@@ -194,7 +227,20 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     Enabled 1
    }
   }
-  coords 3218.313 121.61 1873.709
+  coords 3177.878 121.61 1816.942
+  angles 0 -59.154 0
+  {
+   PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+    coords 0 0 0
+    angles 0 149.154 0
+    m_MarkerColor 0.561 0.021 0.021 1
+    m_sQuadName "pick-up"
+    m_fWorldSize 40
+    m_sDescription "Cal. 30 ammo"
+    m_bUseWorldScale 0
+    m_bVisibleForEmptyFaction 1
+   }
+  }
  }
  {
   components {
@@ -209,7 +255,7 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     MultiSlots {
      MultiSlotConfiguration "{6A714CE1BB0E0097}" {
       SlotTemplate InventoryStorageSlot item1 {
-       Prefab "{9B8CDC3CD2E535D2}Prefabs/Weapons/Magazines/Box_30x113_M230LF_250rnd_HEDP.et"
+       Prefab "{6BDE074614145A32}Prefabs/Weapons/Magazines/Magazine_M2_CROWS/Box_127x99_M2_CROWS_200rnd_4AP_1APIT.et"
       }
       NumSlots 4
      }
@@ -219,7 +265,17 @@ $grp GenericEntity : "{2E69D62B83685BC6}PrefabsEditable/Auto/Props/Military/Ammo
     Enabled 1
    }
   }
-  coords 3075.398 125.293 1780.856
+  coords 3725.108 197.314 1749.5
+  {
+   PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+    coords -0.154 0.311 0.042
+    m_MarkerColor 0.561 0.021 0.021 1
+    m_sQuadName "pick-up"
+    m_fWorldSize 40
+    m_bUseWorldScale 0
+    m_bVisibleForEmptyFaction 1
+   }
+  }
  }
 }
 Vehicle JLTV_CROWSII2 : "{49B5C8D1F28E7B7F}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/JLTV_CROWSII.et" {
@@ -253,6 +309,19 @@ GenericEntity : "{654B33C808C4D93E}Prefabs/Props/Wrecks/M151A2_wreck/M151A2_wrec
  coords 1982.062 166.774 1671.58
  angles 0 114.111 0
 }
+Vehicle JLTV_CROWSII_AIM1 : "{6BBA4A0E747D2215}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/AIM92/JLTV_CROWSII_AIM92.et" {
+ components {
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 30
+    }
+   }
+  }
+ }
+ coords 3728.125 197.281 1762.146
+ angles 0 -105 0
+}
 $grp ParticleEffectEntity : "{9B6CF4159F23B019}Prefabs/Systems/Fire/Wrapper_Fire_Medium.et" {
  {
   coords 1716.793 160.381 1496.585
@@ -271,6 +340,18 @@ $grp ParticleEffectEntity : "{C4A16F2433002F7E}Prefabs/Systems/Smoke/Wrapper_Smo
  {
   coords 1691.967 149.841 2476.395
  }
+}
+PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ coords 3729.232 199.605 1762.555
+ m_MarkerColor 0.561 0.021 0.021 1
+ m_sQuadName "dot"
+ m_fWorldSize 40
+ m_sDescription "Abandonned CROWSII (AA)"
+ m_bUseWorldScale 0
+ m_bVisibleForEmptyFaction 1
+}
+GenericEntity : "{E55FC02F8C1518A2}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1_US.et" {
+ coords 5120.792 207.219 1782.092
 }
 ParticleEffectEntity : "{F335BAEA4345B1BD}Prefabs/Systems/Fire/Wrapper_Fire_Small.et" {
  coords 1981.928 167.422 1671.601

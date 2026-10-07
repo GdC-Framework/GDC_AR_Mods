@@ -108,6 +108,14 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
  Infantry {
   coords 3549.719 208.397 637.902
   {
+   $grp GenericEntity {
+    Spawn_CROWSAA_QRF1 {
+     coords 466.566 -9.261 954.306
+    }
+    Spawn_CROWSAA_QRF2 {
+     coords 339.431 -16.663 1378.097
+    }
+   }
    $grp SCR_AIGroup : "{256AEA338E84EC28}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_RifleSquad.et" {
     {
      coords -31.056 0.041 -10.362
@@ -118,6 +126,9 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
     {
      coords -60.433 -9.986 969.676
     }
+    {
+     coords 92.594 -17.928 958.827
+    }
    }
    $grp SCR_AIGroup : "{3C3A6867982DC57A}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_AT.et" {
     {
@@ -126,6 +137,9 @@ $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Compon
     {
      coords -70.884 -18.023 900.262
     }
+   }
+   SCR_SearchAndDestroyWaypoint WP_SAD5 : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+    coords 181.162 -11.115 1123.105
    }
    SCR_AIGroup : "{F3A1617AA0E08276}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Summer/Group_RHS_RF_MSV_VKPO_S_Team_Suppress.et" {
     coords -84.334 3.718 130.084

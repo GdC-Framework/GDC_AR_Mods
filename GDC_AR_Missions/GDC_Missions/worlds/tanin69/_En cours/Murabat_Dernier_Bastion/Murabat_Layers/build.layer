@@ -1,0 +1,159 @@
+GenericEntity : "{00EC57C047FB8AE9}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Sandbag_Wall_Light_USSR_01.et" {
+ coords 8773.8 72.14 1405.444
+ angles 0 32.489 0
+}
+StaticModelEntity : "{086E85DB687EA38F}Prefabs/Props/Construction/GravelPile_01/GravelPile_01_medium.et" {
+ coords 9607.738 112.596 1082.275
+ angles -8.627 -1.494 9.865
+}
+SCR_IndestructibleEnvironmentalEntity : "{104DB868BAFE0DF7}Prefabs/Models/props/tem_brick_debris2.et" {
+ coords 8569.851 101.723 2289.841
+ angles 8.455 -35.186 2.726
+}
+GenericEntity : "{1588AF49224B5E4E}Prefabs/Props/Industrial/CargoContainers/CargoContainer_01/Dst/CargoContainer_01_20ft_Dst_base.et" {
+ coords 8777.977 73.793 1397.151
+ angles 0 -59.755 0
+}
+$grp GenericEntity : "{2A27606856B8A914}Prefabs/Compositions/Slotted/SlotRoadLarge/Barricade_L_USSR_01.et" {
+ {
+  coords 8715.586 68.273 1481.216
+  angles 0 -99.311 0
+ }
+ {
+  coords 8555.486 103.615 2280.252
+  angles 0.512 -37.676 10.786
+ }
+}
+GenericEntity : "{2B24356C351A2538}Prefabs/Props/Wrecks/M113_wreck/M113_wreck.et" {
+ coords 8335.462 113.941 2552.051
+ angles 15.557 -1.967 -4.831
+}
+SCR_IndestructibleEnvironmentalEntity : "{2EABAD6A7429CCBA}Prefabs/Models/Rocks/tem_r_tk_boulder_03.et" {
+ coords 8667.235 -0.003 1560.583
+}
+GenericEntity : "{3C44DBCDA1FD917A}Prefabs/Props/Construction/BoxMortar_01/BoxMortar_01.et" {
+ coords 9608.662 112.943 1079.566
+ angles -11.378 -0.859 7.154
+}
+SCR_IndestructibleEnvironmentalEntity : "{45BE489A63A25CA6}Prefabs/Rocks/Granite/Granite_BeachCluster_01.et" {
+ coords 8711.488 -0.001 1438.872
+}
+GenericEntity : "{4A34979DC19CA9ED}Prefabs/Props/Construction/ConcreteMixer_01.et" {
+ coords 9612.879 111.531 1084.08
+ angles -10.457 -1.322 7.246
+}
+GenericEntity : "{5E249786B7A6896D}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Large.et" {
+ coords 8784.277 73.709 1392.379
+ angles -1.005 82.49 -0.77
+}
+GenericEntity : "{6720CD0D5B7B7768}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Long.et" {
+ coords 8785.33 73.601 1396.479
+}
+GenericEntity : "{67B5336A6D63CCA4}Prefabs/Props/Construction/PlankPile/PlankPile_01_Medium.et" {
+ coords 9610.477 111.152 1088.229
+ angles -3.449 -28.803 13.856
+}
+$grp GenericEntity : "{6AE7F9D91B93CCAF}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_USSR_01_NSV.et" {
+ {
+  coords 9583.731 39.281 1373.375
+  angles 0 -135 0
+ }
+ {
+  coords 9448.29 41.531 1455.786
+  angles -7.123 0.112 -0.902
+ }
+}
+SCR_DestructibleBuildingEntity : "{6DF062B77D4F27B5}Prefabs/Structures/Infrastructure/Bridges/BridgeConcrete_E_01_small/BridgeConcrete_E_01_small.et" {
+ coords 9612.781 -1.577 1076.163
+ angles -1.384 -60.349 -6.464
+}
+$grp GenericEntity : "{75FEF1CA582431F3}Prefabs/Props/Wrecks/BTR70_Wreck/BTR70_wreck.et" {
+ {
+  coords 8710.702 68.628 1471.087
+ }
+ {
+  coords 8329.476 113.646 2547.089
+  angles -0.893 0.042 -2.684
+ }
+}
+GenericEntity : "{76D2EFB2D92B2E35}Prefabs/Props/Military/MilitaryCrates/CrateStack_01/Dst/CrateStack_01_Dst_1_dark.et" {
+ coords 8786.399 74.967 1383.436
+ angles -7.91 0.871 -6.302
+}
+SCR_IndestructibleEnvironmentalEntity : "{7C198C88063A82D9}Prefabs/Models/props/tem_brick_debris1.et" {
+ coords 8566.195 101.984 2286.642
+ angles 3.521 0.441 7.139
+}
+GenericEntity : "{8DFAE025A4EE2A3A}Prefabs/Props/Military/MilitaryCrates/CrateStack_01/Dst/CrateStack_01_Dst_2_decal_02.et" {
+ coords 8786.968 75.565 1379.66
+ angles -5.878 -92.324 9.074
+}
+GenericEntity : "{8E0A17590AA58A72}Prefabs/Compositions/Misc/FreeRoamBuilding/Layouts/FRB_CzechHedgehog.et" {
+ coords 8559.159 103.883 2287.833
+ angles -0.869 -0.149 9.754
+}
+GenericEntity : "{9CBBE8B23794214D}Prefabs/Props/Commercial/CabinetCardFile_01/Dst/CabinetCardFile_01_dst_green.et" {
+ coords 8785.029 73.811 1390.078
+}
+SCR_IndestructibleEnvironmentalEntity : "{A763D573C408D4FF}Prefabs/Models/Rocks/tem_r_tk_boulder_01.et" {
+ coords 8734.443 -4.311 1556.372
+ angles 3.312 -43.229 -3.108
+}
+StaticModelEntity : "{AE28D47CF26E91EA}Prefabs/Props/Military/Fortification/CzechHedgehog_01_rusty.et" {
+ coords 8564.105 0 2284.456
+ angles 2.632 0.37 8.013
+}
+$grp GenericEntity : "{B26712B1722C8A09}Prefabs/Compositions/Misc/SubCompositions/Fortifications/Barricade_Logs_03.et" {
+ {
+  coords 8717.745 69.429 1460.942
+  angles 1.521 -127.516 7.81
+  {
+   StaticModelEntity {
+    ID "5CB0D990AEB49121"
+    coords 5.861 0 -0.863
+   }
+  }
+ }
+ {
+  coords 8720.089 68.785 1465.09
+  angles -1.231 58.441 -0.294
+ }
+ {
+  coords 8716.919 71.88 1429.63
+  angles -3.335 68.813 1.292
+ }
+ {
+  coords 8790.54 75.028 1385.996
+  angles -8.776 0.967 -6.316
+ }
+}
+$grp StaticModelEntity : "{C46702822629C334}Prefabs/Compositions/Misc/CustomEntities/DestructionEntities/CzechHedgehog_01_rusty_CompositionDestruction.et" {
+ {
+  coords 8562.029 0 2289.443
+  angles -5.636 63.854 6.702
+ }
+ {
+  coords 8566 0 2290.5
+  angles -4.849 115.318 6.315
+ }
+ {
+  coords 8572.903 -0.001 2289.306
+  angles -1.966 34.92 10.511
+ }
+ {
+  coords 8569.708 0 2286.896
+  angles -1.467 34.997 9.801
+ }
+}
+GenericEntity : "{C707F02B5A64AA08}Prefabs/Props/Wrecks/BRDM2_wreck/BRDM2_wreck.et" {
+ coords 8719.452 71.987 1437.421
+ angles -0.91 0.32 2.678
+}
+GenericEntity : "{DB17133F11B2B8C5}Prefabs/Props/Construction/ConcretePipe/ConcretePipe_01_Short.et" {
+ coords 8786.148 74.187 1388.391
+ angles -0.22 60.747 -12.989
+}
+SCR_DestructibleEntity : "{FE43934149F46BFC}Prefabs/Props/Industrial/CompressorTrailerWreck_01/CompressorTrailerWreck_01_Yellow.et" {
+ coords 8713.599 71.801 1441.529
+ angles -10.617 0.168 -0.911
+}

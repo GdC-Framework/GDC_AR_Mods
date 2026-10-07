@@ -7,16 +7,16 @@ SCR_AIGroup players : "{878712C430CDA837}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF
  coords 845.601 159.837 1897.622
  angles -2.54 45.453 1.245
  m_aUnitPrefabSlots {
-  "{12B99C8D8662DFDC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_SL.et"
-  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
-  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
-  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
-  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
-  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
-  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
-  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
-  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
-  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Players_loadout/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{8CD91237B6AC0F3D}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_SL_low_ammo.et"
+  "{BEC3FEDADC0F6225}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_Medic_low_ammo.et"
+  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
+  "{52DB398D1CE75E86}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_TL_low_ammo.et"
+  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
+  "{CC9B1BD5EF939491}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_AR_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
+  "{30138B6321E53561}worlds/tanin69/_En cours/Return To Babaorum/Prefabs/Characters/Character_RHS_USAF_USMC_D_Rifleman_low_ammo.et"
  }
  m_bSetPlayable 1
 }
@@ -36,6 +36,14 @@ GenericEntity A_Players : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/C
      m_iMaxNumberOfActivations 1
      m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A714CF9DD8D2769}" {
       m_sEntityName "JLTV_CROWSII1"
+     }
+     m_fFuelConsumption 900
+     m_fFuelConsumptionIdle 300
+    }
+    SCR_ScenarioFrameworkActionSetFuelConsumption "{6A76BA680A5C960A}" {
+     m_iMaxNumberOfActivations 1
+     m_Getter SCR_ScenarioFrameworkGetEntityByName "{6A76BA680A5C96C6}" {
+      m_sEntityName "JLTV_CROWSII_AIM1"
      }
      m_fFuelConsumption 900
      m_fFuelConsumptionIdle 300
@@ -72,12 +80,19 @@ GenericEntity A_Players : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/C
          SlotTemplate InventoryStorageSlot Item2 {
           Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
          }
+         NumSlots 3
         }
         MultiSlotConfiguration "{6A714CE68EDDE744}" {
          SlotTemplate InventoryStorageSlot Item1 {
           Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
          }
          NumSlots 2
+        }
+        MultiSlotConfiguration "{6A7550EC9AA1E2AD}" {
+         SlotTemplate InventoryStorageSlot Item3 {
+          Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
+         }
+         NumSlots 5
         }
        }
       }
@@ -116,6 +131,12 @@ GenericEntity A_Players : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/C
           Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
          }
          NumSlots 5
+        }
+        MultiSlotConfiguration "{6A7550EF3D1BC635}" {
+         SlotTemplate InventoryStorageSlot Items3 {
+          Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
+         }
+         NumSlots 3
         }
        }
       }

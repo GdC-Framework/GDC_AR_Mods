@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{8746F2E7FC8B88E0}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Leader_Dead_Flag.et"
+ Configurations {
+  EntityTemplateResourceClass PC {
+  }
+  EntityTemplateResourceClass XBOX_ONE : PC {
+  }
+  EntityTemplateResourceClass XBOX_SERIES : PC {
+  }
+  EntityTemplateResourceClass PS4 : PC {
+  }
+  EntityTemplateResourceClass PS5 : PC {
+  }
+  EntityTemplateResourceClass HEADLESS : PC {
+  }
+  EntityTemplateResourceClass Xbox : PC {
+  }
+ }
+}

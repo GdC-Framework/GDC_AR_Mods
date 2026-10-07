@@ -63,12 +63,12 @@ SCR_ChimeraCharacter : "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS
     }
     ItemsInitConfigurationItem "{62B716DC4F21D17E}" {
      TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67/Pouch_Filbe_M67_2.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{62B716DC4F5F9191}" {
      TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/m67_2/Pouch_Filbe_M67_Base.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{62B716DC4E8EBE91}" {
@@ -82,11 +82,37 @@ SCR_ChimeraCharacter : "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS
     }
     ItemsInitConfigurationItem "{6A7486A9604CF540}" {
      PrefabsToSpawn {
+      "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
      }
     }
     ItemsInitConfigurationItem "{6A7486A96046238B}" {
      TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/ifak/Pouch_PCGEN3_ifak.et"
      PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7550E42644D35E}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/Placard/Pouch_Placard.et"
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7550E4216C440D}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/flex2/Pouch_Shaw_Flex.et"
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7550E42073B987}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/flex_3/Pouch_Shaw_Flex.et"
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7550E423198A2E}" {
+     TargetStorage "Vest/Vest_PCGen_III_AT_shawplacard3.et/saw2/Pouch_PCGEN3_util.et"
+     PrefabsToSpawn {
+      "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et"
      }
     }
    }

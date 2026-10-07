@@ -45,7 +45,7 @@ SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{61E8906DA0015B19}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/nerd/Pouch_Shaw_Flex.et"
      PrefabsToSpawn {
-      "{32FEAE3A26BBF05D}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M995.et" "{32FEAE3A26BBF05D}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M995.et"
+      "{32FEAE3A26BBF05D}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M995.et"
      }
     }
     ItemsInitConfigurationItem "{625B1A605C331FC0}" {
@@ -61,6 +61,18 @@ SCR_ChimeraCharacter : "{3260D71D5EFE2C56}Prefabs/Characters/Factions/BLUFOR/RHS
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/pistolcamer/Pouch_Highspeed_Pistol.et"
      PrefabsToSpawn {
       "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7724D06D2BA8AF}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/ifak/Pouch_PCGEN3_ifak.et"
+     PrefabsToSpawn {
+      "{32FEAE3A26BBF05D}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M995.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A7724D06E9CFC62}" {
+     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/saw/Pouch_PCGEN3_util.et"
+     PrefabsToSpawn {
+      "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
      }
     }
    }

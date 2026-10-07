@@ -1,0 +1,8 @@
+SCR_ChimeraCharacter : "{15CD0954AEE19BF2}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Leader.et" {
+ ID "520EC961A090B1EE"
+ components {
+  TILW_Flag_EntityDamage "{6A8D4748BFDF25C5}" {
+   m_flagName "MEI_LEADER_DEAD"
+  }
+ }
+}

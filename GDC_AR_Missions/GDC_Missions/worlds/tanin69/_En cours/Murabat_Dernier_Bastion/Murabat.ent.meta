@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{5E6F0BA4DF5EE847}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Murabat.ent"
+ Configurations {
+  ENTResourceClass PC {
+  }
+  ENTResourceClass XBOX_ONE : PC {
+  }
+  ENTResourceClass XBOX_SERIES : PC {
+  }
+  ENTResourceClass PS4 : PC {
+  }
+  ENTResourceClass PS5 : PC {
+  }
+  ENTResourceClass HEADLESS : PC {
+  }
+  ENTResourceClass Xbox : PC {
+  }
+ }
+}

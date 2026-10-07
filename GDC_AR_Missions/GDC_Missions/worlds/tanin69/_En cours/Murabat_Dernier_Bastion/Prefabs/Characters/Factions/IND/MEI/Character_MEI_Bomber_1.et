@@ -1,0 +1,35 @@
+SCR_ChimeraCharacter : "{958C0AB8ECDA03F9}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber.et" {
+ ID "520EC961A090B1EE"
+ components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{B56AC45A258C3C1F}Prefabs/Characters/HeadGear/Hat_FlatCap_01/TakHat02_b.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{AC1A0384598C48E6}Prefabs/Characters/Uniforms/TakShirts/TakShirt03.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{06DD34811F667806}Prefabs/Characters/Uniforms/TakPants/TakPant02.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{68E0CE61F6EBE490}" {
+     TargetStorage "Jacket/TakShirt03.et"
+    }
+    ItemsInitConfigurationItem "{68E0CE61F753EEA7}" {
+     TargetStorage "Pants/TakPant02.et"
+     PrefabsToSpawn + {
+      "{60E8DE0BFDF6BDED}Prefabs/Items/PersonalBelongings/PersonalBelongings_MEI.et" "{645C73791ECA1698}Prefabs/Weapons/Grenades/Grenade_RGD5.et"
+     }
+    }
+    ItemsInitConfigurationItem "{68E0CE61F770DA0F}" {
+     PrefabsToSpawn {
+     }
+    }
+   }
+  }
+ }
+}

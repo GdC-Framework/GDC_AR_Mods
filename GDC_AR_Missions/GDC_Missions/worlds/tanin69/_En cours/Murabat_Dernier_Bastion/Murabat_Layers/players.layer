@@ -1,0 +1,64 @@
+SCR_AIGroup players : "{878712C430CDA837}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Group_USAF_USMC_MEF_D_RifleSquad.et" {
+ components {
+  AIFormationComponent "{507E9DC12F541FE6}" {
+   DefaultFormation "Line"
+  }
+ }
+ coords 7119.502 337.913 3550.689
+ angles -1.354 133.004 -2.484
+ m_aUnitPrefabSlots {
+  "{12B99C8D8662DFDC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_SL.et"
+  "{FE4D2AC5D50E2125}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Medic.et"
+  "{7B2DAD03ADC04376}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_TL.et"
+  "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et"
+  ""
+  ""
+  ""
+  "{12B99C8D8662DFDC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_SL.et"
+  "{FE4D2AC5D50E2125}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Medic.et"
+  "{7B2DAD03ADC04376}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_TL.et"
+  "{1162A64DF9C25BA6}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_AR.et"
+  "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et"
+  "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et"
+  "{7B2DAD03ADC04376}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_TL.et"
+  "{1162A64DF9C25BA6}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_AR.et"
+  "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et"
+  "{CA8780615993A41E}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF_D/Character_RHS_USAF_USMC_D_Rifleman.et"
+ }
+ m_bSetPlayable 1
+}
+GenericEntity Area2 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Components/Area.et" {
+ coords 7124.243 337.929 3545.289
+ angles -10.008 125.725 4.773
+ {
+  GenericEntity Layer2 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
+   coords 0.151 -0.1 6.381
+   {
+    Vehicle JLTV_OGPK1 : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_OGPK.et" {
+     components {
+      SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+       MultiSlots {
+        MultiSlotConfiguration "{5DE8B00DB02BE538}" {
+        }
+        MultiSlotConfiguration "{6A714CEDAC761348}" {
+         SlotTemplate InventoryStorageSlot Repair {
+          Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+         }
+         NumSlots 2
+        }
+        MultiSlotConfiguration "{6A833AAA87106981}" {
+         SlotTemplate InventoryStorageSlot Repair_Kit {
+          Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+         }
+         NumSlots 2
+        }
+       }
+      }
+     }
+     coords 11.325 2.06 9.981
+     angles 3.473 27.09 -10.594
+    }
+   }
+  }
+ }
+}

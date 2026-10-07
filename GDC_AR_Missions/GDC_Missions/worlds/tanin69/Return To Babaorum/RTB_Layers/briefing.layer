@@ -2,7 +2,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  Z_Intel {
   coords 866.198 159.365 1893.564
   m_sTitle "Intel"
-  m_sTextData "Il y a plein d'hommes mal rasés - voire barbus -  plus ou moins armés partout."\
+  m_sTextData "Il y a plein d'hommes mal rasés - voire barbus -  plus ou moins armés, partout."\
   ""\
   "Ils ont des amis : les petits hommes verts. Ces derniers sortent rarement sans leurs blindés et leurs hélicos."\
   ""\
@@ -18,7 +18,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "Votre unité se retrouve complètement isolée après le \"repli stratégique\" de vos frères d'arme. En réalité, ça a été une totale débandade !"\
   ""\
-  "Avec nos JLTV lourdement armés, on devrait arriver à parcer. Mais... Fuel, munitions et matériel médical au plus bas, plus de communication avec Baba... En gros : c'est la merde ! "\
+  "Avec nos JLTV lourdement armés, on devrait arriver à passer. Mais... Fuel, munitions et matériel médical au plus bas, plus de communication avec Baba... En gros : c'est la merde ! "\
   ""\
   "Et avec ces putains de JLTV qui pompent du diesel comme la mère de Polo fume des clopes, ça n'arrange rien (consommation des véhicules augmentée : surveillez votre jauge de carburant)."
   m_bEmptyFactionVisibility 1
@@ -30,7 +30,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Contexte"
   m_sTextData "TACO montre ses gros muscles."\
   ""\
-  "\"On va leur mettre la patée à ses dégénérés d'Iraliniens. Leur pétrole sera à nous dans 24 heures\"."
+  "\"On va leur mettre la patée à ses dégénérés d'Iraliniens*. Leur pétrole sera à nous dans 24 heures\"."\
+  ""\
+  "*TACO n'est pas très fort en géographie ni en costume."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
  }
@@ -43,9 +45,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "En bons Marines, vous ne laisserez aucun matériel sur place (détuire tout matériel qui ne peut pas être emporté avec vous, y compris ce qui est trouvé sur le terrain)."\
   ""\
-  "Vous n'utiliserez le matériel ennemi qu'en dernier recours, parce que vous êtes de fiers Marines."\
+  "Vous n'utiliserez le matériel ennemi qu'en dernier recours et uniquement avec l'autorisation de votre chef, parce que vous êtes de fiers Marines."\
   ""\
-  "Ah, j'oubliais : si tu peux acheter une baguette avant de rentrer à la maison, je pourrais faire des sandouiches au paté de foi."
+  "Ah, j'oubliais : si tu peux acheter une baguette avant de rentrer à la maison, je pourrais faire des sandouiches au paté de foie."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 2
@@ -85,28 +87,11 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   m_bVisibleForEmptyFaction 1
  }
  {
-  coords 3218.435 121.921 1873.789
-  m_MarkerColor 0.561 0.021 0.021 1
-  m_sQuadName "pick-up"
-  m_fWorldSize 40
-  m_bUseWorldScale 0
-  m_bVisibleForEmptyFaction 1
- }
- {
   coords 3095.621 175.168 1955.933
   m_MarkerColor 0.561 0.021 0.021 1
   m_sQuadName "dot"
   m_fWorldSize 40
   m_sDescription "Abandonned CROWSII"
-  m_bUseWorldScale 0
-  m_bVisibleForEmptyFaction 1
- }
- {
-  coords 3075.537 125.604 1780.901
-  m_MarkerColor 0.561 0.021 0.021 1
-  m_sQuadName "pick-up"
-  m_fWorldSize 40
-  m_sDescription "Cal. 30 ammo"
   m_bUseWorldScale 0
   m_bVisibleForEmptyFaction 1
  }

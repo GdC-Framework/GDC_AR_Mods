@@ -24,6 +24,9 @@ SCR_AIGroup TACO : "{F2B7D404B66FD853}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_MA
   "{39DE841FBF372194}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_AR_SF.et"
   "{9299ABBCA76665B9}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Explo_SF.et"
   "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Rifleman_SF.et"
+  "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Rifleman_SF.et"
+  "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Rifleman_SF.et"
+  "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_MARSOC/Character_RHS_USMC_MARSOC_Rifleman_SF.et"
  }
  m_sCustomNameSet "TACO"
  m_bSetPlayable 1

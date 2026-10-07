@@ -110,7 +110,7 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
  }
  trg_US_ON_E2 {
   coords 5857.646 242.485 7258.22
-  m_queryRadius 150
+  m_queryRadius 80
   m_flagName "US_ON_E2"
   m_stopAfterFirstChange 1
   m_ownerFactionKey "RHS_USAF"

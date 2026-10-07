@@ -29,6 +29,11 @@ SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS
   }
   SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
    InitialInventoryItems {
+    ItemsInitConfigurationItem "{61E88418254009A3}" {
+     PrefabsToSpawn + {
+      "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et"
+     }
+    }
     ItemsInitConfigurationItem "{61E884192043D2D2}" {
      PrefabsToSpawn {
       "{13772C903CB5E4F7}Prefabs/Items/Equipment/Maps/Map_Paper_01/PaperMap_01_folded.et" "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{0D9A5DCF89AE7AA9}Prefabs/Items/Medicine/MorphineInjection_01/MorphineInjection_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et" "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
@@ -36,22 +41,22 @@ SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS
     }
     ItemsInitConfigurationItem "{61E8E7117A3AF4D1}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/tako2/Pouch_Highspeed_Pistol.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{6296C016CC93C7CD}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/m18_1/Pouch_Filbe_M18_2.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{6296C016CCF8722E}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/m18_2/Pouch_Filbe_M18_2.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{6296C016CCEC95EF}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/m67_1/Pouch_Filbe_M67_2.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{6296C016CC3F4C7A}" {
@@ -82,15 +87,11 @@ SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS
     ItemsInitConfigurationItem "{6296C0166C6E8D5A}" {
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/Pouch1/Pouch_avs_front_elastic_Coy.et"
      PrefabsToSpawn {
+      "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et"
      }
     }
     ItemsInitConfigurationItem "{688ADD2287867E45}" {
-     PrefabsToSpawn {
-     }
-    }
-    ItemsInitConfigurationItem "{6A6D392748BCCA8D}" {
-     TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et/pistolcamer/Pouch_Highspeed_Pistol.et"
-     PrefabsToSpawn {
+     PrefabsToSpawn +{
      }
     }
     ItemsInitConfigurationItem "{6A6D3927A150DCD3}" {
@@ -104,7 +105,7 @@ SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS
      TargetStorage "Vest/Vest_AVS_okinawa_Coy_6x9.et"
      TargetPurpose 1
      PrefabsToSpawn {
-      "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{DD5358193169908B}Prefabs/Weapons/Magazines/Magazine_556x45_STANAG_30rnd_M855A1.et" "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et" "{9DB69176CEF0EE97}Prefabs/Weapons/Grenades/Smoke_ANM8HC.et" "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et" "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et" "{378685356C8F72E6}Prefabs/Weapons/Magazines/m17_magazines/Magazine_9x19_m17_24rnd_M1152.et" "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et" "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et"
+      "{E8F00BF730225B00}Prefabs/Weapons/Grenades/Grenade_M67.et"
      }
     }
     ItemsInitConfigurationItem "{6A6D3927A1700B3F}" {
@@ -118,7 +119,7 @@ SCR_ChimeraCharacter : "{1FA45046DA1FC409}Prefabs/Characters/Factions/BLUFOR/RHS
      TargetStorage "Back/Backpack_511_rush12_MC.et"
      TargetPurpose 1
      PrefabsToSpawn {
-      "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et"
+      "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{5B9BCFE7BBB5B55C}Prefabs/Magazine/Magazine_84mm_HEAT551.et" "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
      }
     }
    }

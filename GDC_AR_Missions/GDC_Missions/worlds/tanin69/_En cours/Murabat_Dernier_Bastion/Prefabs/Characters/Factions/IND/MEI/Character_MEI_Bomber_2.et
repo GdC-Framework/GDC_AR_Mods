@@ -1,0 +1,28 @@
+SCR_ChimeraCharacter : "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et" {
+ ID "520EC961A090B1EE"
+ components {
+  BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {
+   Slots {
+    LoadoutSlotInfo Hat {
+     Prefab "{79CFB5C05B450BC5}Prefabs/Characters/HeadGear/Hat_FlatCap_01/TurbanM01.et"
+    }
+    LoadoutSlotInfo Jacket {
+     Prefab "{628E14D57618CBFA}Prefabs/Characters/Uniforms/TakShirts/TakShirt08.et"
+    }
+    LoadoutSlotInfo Pants {
+     Prefab "{B22169A0DA2BE974}Prefabs/Characters/Uniforms/TakPants/TakPant07.et"
+    }
+   }
+  }
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{68E0CE61F6EBE490}" {
+     TargetStorage "Jacket/TakShirt08.et"
+    }
+    ItemsInitConfigurationItem "{68E0CE61F753EEA7}" {
+     TargetStorage "Pants/TakPant07.et"
+    }
+   }
+  }
+ }
+}

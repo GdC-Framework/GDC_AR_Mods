@@ -1,3 +1,17 @@
+GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+ components {
+  ActionsManagerComponent "{61F4C18E835074FF}" {
+   additionalActions {
+    TILW_BaseInteraction "{61F4C18E863E752C}" {
+     m_actionName "Fin de mission"
+     m_flagName "END_MISSION"
+     m_conditionFlag "GO_MESSAGE_US"
+    }
+   }
+  }
+ }
+ coords 5120.796 208.731 1782.098
+}
 $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
  trg_US_On_Kaza {
   coords 964.796 166.674 1370.418
@@ -29,10 +43,25 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
  }
  trg_US_On_Heli {
   coords 3508.3 190.375 1288.862
-  m_queryRadius 700
+  m_queryRadius 800
   m_captureTime 10
   m_flagName "GO_HELI"
   m_ownerFactionKey "RHS_USAF"
   m_ratioThreshold 0.001
+ }
+ trg_US_On_CROWS_AA {
+  coords 3733.744 197.281 1760.164
+  m_queryRadius 30
+  m_captureTime 10
+  m_flagName "GO_CROWSAA_QRF"
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_Baba {
+  coords 5125.49 207.219 1775.557
+  m_queryRadius 20
+  m_captureTime 30
+  m_flagName "GO_MESSAGE_US"
+  m_ownerFactionKey "RHS_USAF"
  }
 }

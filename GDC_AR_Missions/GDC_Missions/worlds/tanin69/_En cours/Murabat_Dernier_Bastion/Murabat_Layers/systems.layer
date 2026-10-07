@@ -1,0 +1,107 @@
+GenericEntity LeaderDocuments : "{65BD05D59E6B4F1D}Prefabs/Props/Military/PaperHolder_01/PaperHolder_01_MissionBriefing.et" {
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{65DECBDE574140A0}" {
+     AssignedMaterial "{B0AA36EDE3FF4589}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Assets/PaperHolder_01/PaperHolder_01_MuharibuAllah.emat"
+    }
+   }
+  }
+ }
+ coords 9501.471 50.471 1319.228
+}
+GenericEntity LeaderDocuments_Interaction : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+ components {
+  ActionsManagerComponent "{61F4C18E835074FF}" {
+   ActionContexts {
+    UserActionContext "{61F4C18ECB0A8B85}" {
+     "Display UI At Reference Point" 1
+    }
+   }
+   additionalActions {
+    TILW_BaseInteraction "{61F4C18E863E752C}" {
+     m_actionName "Saisir les documents de Muharibu Allah"
+     m_factionKeys {
+      "RHS_USAF"
+     }
+     m_flagName "END_MISSION"
+     m_conditionFlag "MEI_LEADER_DEAD"
+    }
+   }
+  }
+ }
+ coords 9501.471 50.471 1319.228
+}
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ trg_US_On_Ambush1 {
+  coords 8539.918 103.479 2288.339
+  m_flagName "GO_AMBUSH1_QRF"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_Ambush2 {
+  coords 8015.208 120.606 2593.405
+  m_captureTime 30
+  m_flagName "GO_AMBUSH2_QRF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_Ambush3 {
+  coords 8297.875 114.321 2558.539
+  m_queryRadius 60
+  m_captureTime 60
+  m_flagName "GO_AMBUSH3_QRF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg1_US_On_Bled1 {
+  coords 8063.875 107.662 1639.342
+  m_queryRadius 100
+  m_captureTime 600
+  m_flagName "GO_BLED_BOMBING"
+  m_stopAfterFirstChange 1
+  m_drawShapeOutline 0
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_Ambush4 {
+  coords 8679.448 83.38 1443.691
+  m_queryRadius 60
+  m_captureTime 60
+  m_flagName "GO_AMBUSH4_QRF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg2_US_On_Bled1 {
+  coords 8004.352 106.507 1645.364
+  m_queryRadius 100
+  m_flagName "GO_BLED_QRF"
+  m_stopAfterFirstChange 1
+  m_drawShapeOutline 0
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_ZU {
+  coords 9625.63 113.749 1104.183
+  m_queryRadius 20
+  m_captureTime 20
+  m_flagName "GO_ZU_QRF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+ trg_US_On_Ambush4a {
+  coords 8752.18 74.534 1378.25
+  m_queryRadius 60
+  m_captureTime 60
+  m_flagName "GO_AMBUSH4_QRF"
+  m_stopAfterFirstChange 1
+  m_ownerFactionKey "RHS_USAF"
+  m_ratioThreshold 0.01
+ }
+}

@@ -1,0 +1,236 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ D_Intel {
+  coords 866.198 159.365 1893.564
+  m_sTitle "Intel"
+  m_sTextData "En recoupant les informations des reconnaissances et celles apportées par les civils ayant fuit la zone, voici ce que nous savons :"\
+  ""\
+  "> AUCUNE présence hostile signalée en dehors de la zone d'opération (ZOP) délimitée sur carte."\
+  "> Il y aurait environ 120 HOSTILES SUR ZONE, dont approximativement 70 sur Murabat même et le reste réparti sur la ZOP."\
+  "> Il y aurait au moins 5 BLINDES SUR ZONE, mais on n'a pas réussi à compter le nombre de roues (BRDM ou BTR, voire un mix des deux) ni à les localiser précisément."\
+  "> Plusieurs POINTS D'INTERET autour de Murubat sont repérés sur carte."\
+  "> La localisation probable de l'habitation où loge le chef de Muharibu Allah nous a été indiquée (marquée sur carte)."\
+  "> Certains hostiles sont équipés de déclencheur \"Homme Mort\" (Dead Man Switch), surtout la garde rapprochée de Muharibu Allah."\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ B_Situation {
+  coords 866.356 159.357 1893.607
+  m_sTitle "Situation"
+  m_sTextData "Les éléments de la \"Brigade Muharibu Allah\" (les <i>guerriers de Dieu</i>) a été chassée de la majorité du territoire."\
+  ""\
+  "Ils se sont repliés dans une zone qu'on peut qualifier \"d'accidentée\". C'est un véritable coupe-gorge."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ A_Contexte {
+  coords 866.332 159.364 1893.505
+  m_sTitle "Contexte"
+  m_sTextData "Années 2020. Les USA mènent une lutte acharnée contre une guerilla islamique dans un pays du Moyen-Orient."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ C_Mission {
+  coords 866.398 159.357 1893.597
+  m_sTitle "Mission"
+  m_sTextData "Eliminer le chef de la Brigade Muharibu Allah... Et de tout hostile s'interpossant entre votre objectif et vous !"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ E_Materiel {
+  coords 866.282 159.37 1893.438
+  m_sTitle "Matériel"
+  m_sTextData "<b><color name=\"green\">Véhicules</color></b>"\
+  "JLTV équipés de M2 avec kit de protection pour le tireur."\
+  ""\
+  "Les JLTV résistent aux tirs d'arme légère. <i>Dans certaines conditions</i>, ils peuvent encaisser quelques tirs de RPG-7."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ F_FinMission {
+  coords 866.31 159.362 1893.52
+  m_sTitle "Fin de mission"
+  m_sTextData "Fin de mission déclarée par le CdO."\
+  ""\
+  "Utiliser l'action <b>\"Saisir les documents de Muharibu Allah\"</b> (documents sur la table de nuit à l'étage de la turne du méchant)."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+}
+PolylineShapeEntity : "{A0468F86F76FCEE7}Prefabs/Logic/Map/TILW_MapShape.et" {
+ components {
+  TILW_MapShapeComponent "{6508F5526836BC09}" {
+   m_drawArea 0
+   m_color 0.156 0.156 0.156 0.75
+   m_drawLine 1
+   m_lineColor 0.561 0.071 0.071 1
+   m_lineWidth 8
+  }
+ }
+ coords 8740.088 98.631 2324.951
+ Points {
+  ShapePoint "{6A7D03787AE61A30}" {
+   Position 1513.247 0 102.529
+  }
+  ShapePoint "{6A7D037AC64DAA1F}" {
+   Position 1347.768 0 118.696
+  }
+  ShapePoint "{6A7D037AC7F5083B}" {
+   Position 761.039 0 -29.807
+  }
+  ShapePoint "{6A7D037AC4440982}" {
+   Position 110.323 0 170.166
+  }
+  ShapePoint "{6A7D03789629CC44}" {
+   Position -149.267 0 176.192
+  }
+  ShapePoint "{6A7D037A385EF565}" {
+   Position -861.422 0 -443.264
+  }
+  ShapePoint "{6A7D037A3EC71CD5}" {
+   Position -807.668 0 -831.594
+  }
+  ShapePoint "{6A7D037A5D04A961}" {
+   Position -214.323 0 -1277.899
+  }
+  ShapePoint "{6A7D0378BA2E11A6}" {
+   Position -34.717 0 -1789.317
+  }
+  ShapePoint "{6A7D037A77B3A222}" {
+   Position 232.049 -167.53 -2325.503
+  }
+  ShapePoint "{6A7D037B0EEDAB00}" {
+   Position 1495.848 0 -2307.656
+  }
+ }
+}
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ zEntrance0 {
+  coords 9699.506 47.445 1338.991
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Entrée véhicule"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance2 {
+  coords 9463.428 40.42 1624.455
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Entrée véhicule"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance3 {
+  coords 9653.816 50.36 1565.382
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Entrée véhicule"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance4 {
+  coords 9420.747 76.659 1197.303
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Entrée véhicule"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance5 {
+  coords 9278.471 49.113 1599.161
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Entrée véhicule"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance6 {
+  coords 9142.574 69.166 1352.298
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Passage"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance7 {
+  coords 9207.498 64.908 1455.954
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Brèche"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance8 {
+  coords 9236.576 74.063 1238.023
+  angles 0 90 0
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Brèche"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance9 {
+  coords 9709.712 126.909 1406.874
+  angles 0 90 0
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Surplomb"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance10 {
+  coords 9593.748 113.753 1200.091
+  angles 0 90 0
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "dot"
+  m_fWorldSize 40
+  m_sDescription "Surplomb"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zEntrance11 {
+  coords 9499.181 53.626 1321.052
+  m_MarkerColor 0.561 0.021 0.021 1
+  m_sQuadName "objective-marker"
+  m_fWorldSize 40
+  m_sDescription "HVT"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ zSpawn {
+  coords 7126.041 337.827 3545.418
+  m_MarkerColor 0 0.125 0.502 1
+  m_sQuadName "flag"
+  m_fWorldSize 40
+  m_sDescription "You are here !"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+}
