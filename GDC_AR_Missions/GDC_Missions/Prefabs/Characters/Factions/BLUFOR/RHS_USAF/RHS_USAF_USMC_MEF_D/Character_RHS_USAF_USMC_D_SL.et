@@ -45,6 +45,9 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
     LoadoutSlotInfo ArmoredVest {
      Prefab "{1300A5F6CA51B206}Prefabs/Characters/Vests/Vest_PCGen_III/Vest_PCGen_III.et"
     }
+    LoadoutSlotInfo Back {
+     Prefab "{46D824AAD12330B2}Prefabs/Items/Equipment/Backpacks/backpack_511_rush12/Backpack_511_rush12_Coy.et"
+    }
     LoadoutSlotInfo Vest {
      Prefab "{D151BC8AB3AB9674}Prefabs/Characters/Vests/Vest_PCGen_III/Variants/Vest_PCGen_III_rifleman_shawplacard1.et"
     }
@@ -132,6 +135,12 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
      TargetStorage "Vest/Vest_PCGen_III_rifleman_shawplacard1.et/ifak2/Pouch_PCGEN3_ifak.et"
      PrefabsToSpawn {
       "{A540E8600876C2A2}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M855A1_last5tracer.et" "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+     }
+    }
+    ItemsInitConfigurationItem "{6A8F0E140F63CA45}" {
+     TargetStorage "Back/Backpack_511_rush12_Coy.et"
+     PrefabsToSpawn {
+      "{C204374F722D5229}Prefabs/Items/Equipment/Radios/Radio_ANPRC117.et"
      }
     }
    }

@@ -158,7 +158,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_instructions {
     TILW_EndGameInstruction "{6A76BA76B719968E}" {
      m_gameOverType LOOSE
-     m_factionKey "RHS_UASF"
+     m_factionKey "RHS_USAF"
     }
    }
    m_condition TILW_LiteralTerm "{6A76BA76B93F2CBC}" {

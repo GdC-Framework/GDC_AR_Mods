@@ -1,6 +1,11 @@
 GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
  components {
   ActionsManagerComponent "{61F4C18E835074FF}" {
+   ActionContexts {
+    UserActionContext "{61F4C18ECB0A8B85}" {
+     "Display UI At Reference Point" 1
+    }
+   }
    additionalActions {
     TILW_BaseInteraction "{61F4C18E863E752C}" {
      m_actionName "Fin de mission"

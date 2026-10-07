@@ -16,7 +16,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Situation"
   m_sTextData "Les Marines se sont fait torcher comme des merdes lors de leur dernière sortie du camp de Babaorum."\
   ""\
-  "Votre unité se retrouve complètement isolée après le \"repli stratégique\" de vos frères d'arme. En réalité, ça a été une totale débandade !"\
+  "Votre unité se retrouve complètement isolée après le \"repli stratégique\" de vos frères d'armes. En réalité, ça a été une totale débandade !"\
   ""\
   "Avec nos JLTV lourdement armés, on devrait arriver à passer. Mais... Fuel, munitions et matériel médical au plus bas, plus de communication avec Baba... En gros : c'est la merde ! "\
   ""\
@@ -32,7 +32,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "\"On va leur mettre la patée à ses dégénérés d'Iraliniens*. Leur pétrole sera à nous dans 24 heures\"."\
   ""\
-  "*TACO n'est pas très fort en géographie ni en costume."
+  "*TACO n'est pas très fort ni en géographie, ni en costume, ni en orthographe."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
  }
@@ -43,7 +43,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "Vous aurez besoin de prendre de l'essence et des munitions au passage."\
   ""\
-  "En bons Marines, vous ne laisserez aucun matériel sur place (détuire tout matériel qui ne peut pas être emporté avec vous, y compris ce qui est trouvé sur le terrain)."\
+  "En bons Marines, vous ne laisserez aucun matériel sur place (détruire tout matériel qui ne peut pas être emporté avec vous, y compris ce qui est trouvé sur le terrain)."\
   ""\
   "Vous n'utiliserez le matériel ennemi qu'en dernier recours et uniquement avec l'autorisation de votre chef, parce que vous êtes de fiers Marines."\
   ""\
