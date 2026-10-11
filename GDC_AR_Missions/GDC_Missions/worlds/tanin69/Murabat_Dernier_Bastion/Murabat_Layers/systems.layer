@@ -1,15 +1,3 @@
-GenericEntity LeaderDocuments : "{65BD05D59E6B4F1D}Prefabs/Props/Military/PaperHolder_01/PaperHolder_01_MissionBriefing.et" {
- components {
-  MeshObject "{5872F0EB7FA40561}" {
-   Materials {
-    MaterialAssignClass "{65DECBDE574140A0}" {
-     AssignedMaterial "{B0AA36EDE3FF4589}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Assets/PaperHolder_01/PaperHolder_01_MuharibuAllah.emat"
-    }
-   }
-  }
- }
- coords 9501.471 50.471 1319.228
-}
 GenericEntity LeaderDocuments_Interaction : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
  components {
   ActionsManagerComponent "{61F4C18E835074FF}" {
@@ -26,6 +14,18 @@ GenericEntity LeaderDocuments_Interaction : "{584EB34600E9698D}Prefabs/Utils/Int
      }
      m_flagName "END_MISSION"
      m_conditionFlag "MEI_LEADER_DEAD"
+    }
+   }
+  }
+ }
+ coords 9501.471 50.471 1319.228
+}
+GenericEntity LeaderDocuments : "{65BD05D59E6B4F1D}Prefabs/Props/Military/PaperHolder_01/PaperHolder_01_MissionBriefing.et" {
+ components {
+  MeshObject "{5872F0EB7FA40561}" {
+   Materials {
+    MaterialAssignClass "{65DECBDE574140A0}" {
+     AssignedMaterial "{B0AA36EDE3FF4589}worlds/tanin69/Murabat_Dernier_Bastion/Assets/PaperHolder_01/PaperHolder_01_MuharibuAllah.emat"
     }
    }
   }
@@ -60,11 +60,10 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
  }
  trg1_US_On_Bled1 {
   coords 8063.875 107.662 1639.342
-  m_queryRadius 100
-  m_captureTime 600
+  m_queryRadius 150
+  m_captureTime 300
   m_flagName "GO_BLED_BOMBING"
   m_stopAfterFirstChange 1
-  m_drawShapeOutline 0
   m_ownerFactionKey "RHS_USAF"
   m_ratioThreshold 0.01
  }
@@ -78,11 +77,10 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
   m_ratioThreshold 0.01
  }
  trg2_US_On_Bled1 {
-  coords 8004.352 106.507 1645.364
-  m_queryRadius 100
+  coords 7998.268 106.507 1649.249
+  m_queryRadius 120
   m_flagName "GO_BLED_QRF"
   m_stopAfterFirstChange 1
-  m_drawShapeOutline 0
   m_ownerFactionKey "RHS_USAF"
   m_ratioThreshold 0.01
  }

@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{0FC8FE4F0844380B}worlds/tanin69/Murabat_Dernier_Bastion/Configs/Murabat_Frequencies.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

@@ -69,6 +69,22 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
        coords 14.891 9.926 23.122
       }
+      SlotAI4 {
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sObjectToSpawn "{015F1AAC16472DD2}Prefabs/Groups/MEI/Group_MEI_MachineGunTeam.et"
+         m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6A7D42C1C50EB2B2}" {
+          m_aLayerName {
+           "WP_Infantery1_4"
+          }
+         }
+         m_bSpawnAIOnWPPos 1
+         m_eAIGroupFormation Line
+        }
+       }
+       coords -165.48 -37.293 -226.769
+       angles 0 -44.703 0
+      }
      }
      $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
       WP_Infantery1_1 {
@@ -104,6 +120,18 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
        coords 15.486 10.192 22.135
        angles -7.063 -0.072 -3.977
+      }
+      WP_Infantery1_4 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{6A7D03753EAFAA93}" {
+          m_fCompletionRadius 10
+          m_bFastInit 1
+         }
+        }
+       }
+       coords -168.974 -33.576 -221.601
+       angles -6.786 -16.912 11.205
       }
      }
     }
@@ -163,12 +191,22 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
    GenericEntity L_Infrantry4 : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
     coords 0 0 0
     {
-     GenericEntity Spawn_Bled1_QRF1 {
-      coords 115.823 13.238 -361.472
-      angles 0 -75 0
+     $grp GenericEntity {
+      Spawn_Bled1_QRF1 {
+       coords 115.823 13.238 -361.472
+       angles 0 -75 0
+      }
+      Spawn_Bled1_QRF2 {
+       coords -424.258 36.222 -36.238
+       angles 0 -75 0
+      }
+      Spawn_Bled1_QRF3 {
+       coords 159.549 -4.466 1.293
+       angles 0 -75 0
+      }
      }
      SCR_AIWaypoint WP_Move1 : "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et" {
-      coords 79.871 -0.189 -116.193
+      coords -62.557 10.441 -84.778
      }
      $grp GenericEntity : "{8D43830F02C3F114}Prefabs/Systems/ScenarioFramework/Components/SlotAI.et" {
       SlotAI1 {
@@ -194,16 +232,45 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        }
        coords -15.57 8.637 -36.459
       }
-     }
-     GenericEntity WP_Defend1 : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
-      components {
-       SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
-        m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{6A86A16981293A56}" {
-         m_fCompletionRadius 5
+      SlotAI5 {
+       components {
+        SCR_ScenarioFrameworkSlotAI "{5A26B3E02AC77BA0}" {
+         m_sObjectToSpawn "{015F1AAC16472DD2}Prefabs/Groups/MEI/Group_MEI_MachineGunTeam.et"
+         m_WaypointSet SCR_ScenarioFrameworkWaypointSet "{6A86A169AB0076E0}" {
+          m_aLayerName {
+           "WP_Defend16"
+          }
+         }
+         m_bSpawnAIOnWPPos 1
         }
        }
+       coords -26.28 12.164 34.089
       }
-      coords -16.073 8.722 -37.498
+     }
+     SCR_SearchAndDestroyWaypoint WP_SAD5 : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+      coords -39.331 1.362 1.64
+     }
+     $grp GenericEntity : "{EBD91177954E8236}Prefabs/Systems/ScenarioFramework/Components/SlotWaypoint.et" {
+      WP_Defend1 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{6A86A16981293A56}" {
+          m_fCompletionRadius 5
+         }
+        }
+       }
+       coords -16.073 8.722 -37.498
+      }
+      WP_Defend16 {
+       components {
+        SCR_ScenarioFrameworkSlotWaypoint "{5EEEE11FAD8EE85C}" {
+         m_Waypoint SCR_ScenarioFrameworkWaypointDefend "{6A86A16981293A56}" {
+          m_fCompletionRadius 5
+         }
+        }
+       }
+       coords -26.994 12.16 34.818
+      }
      }
     }
    }
@@ -430,14 +497,39 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
  A_Murabat {
   coords 9547.764 39.162 1442.139
   {
+   Turret : "{1A407760EEAE4156}Prefabs/Vehicles/Static/BaconZU23/BaconZU23_Turret_Deployed.et" {
+    components {
+     TILW_VehicleCrewComponent "{6A9127F188696712}" {
+      m_crewConfig TILW_CrewConfig "{6A9127F18AFF53B5}" {
+       m_crewGroups {
+        TILW_CrewGroup "{6A9127F19501A8F2}" {
+         m_crewStations {
+          TILW_CrewStation "{6A9127F196DD7008}" {
+           m_allowCargo 0
+           m_characters {
+            "{F95AEA26749B12EC}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Rifleman1.et"
+            "{950EDEC6C85F9DC2}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Rifleman2.et"
+            "{7092923FC4BA0AA9}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Rifleman3.et"
+           }
+          }
+         }
+        }
+       }
+       m_useIdleGroups 0
+      }
+     }
+    }
+    coords 36.205 0.088 -61.754
+    angles 0 -56.522 0
+   }
    $grp GenericEntity : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
     L_Infantry7 {
      coords 0 0 0
      {
       $grp SCR_AIGroup : "{015F1AAC16472DD2}Prefabs/Groups/MEI/Group_MEI_MachineGunTeam.et" {
        {
-        coords 41.576 0.119 -65.621
-        angles 0 -135 0
+        coords -8.386 0.368 -111.568
+        angles 12.936 -136.309 -5.827
         m_aStaticWaypoints {
          "WP_Defend10"
         }
@@ -455,9 +547,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        {
         coords -50.238 7.34 -120.866
         m_aUnitPrefabSlots {
-         "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
-         "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
-         "{07B7A9B5AB9130AD}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
+         "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
+         "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
+         "{07B7A9B5AB9130AD}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
         }
         m_aStaticWaypoints {
          "WP_Defend7"
@@ -467,9 +559,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -47.827 7.146 -118.402
         angles 0 -45 0
         m_aUnitPrefabSlots {
-         "{E22BE54CA774A7C6}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
-         "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
-         "{07B7A9B5AB9130AD}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
+         "{E22BE54CA774A7C6}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
+         "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
+         "{07B7A9B5AB9130AD}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
         }
         m_aStaticWaypoints {
          "WP_Defend8"
@@ -479,9 +571,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords -52.877 6.515 -133.809
         angles 0 -45 0
         m_aUnitPrefabSlots {
-         "{E22BE54CA774A7C6}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
-         "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
-         "{07B7A9B5AB9130AD}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
+         "{E22BE54CA774A7C6}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
+         "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
+         "{07B7A9B5AB9130AD}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
         }
         m_aStaticWaypoints {
          "WP_Defend9"
@@ -491,9 +583,9 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         coords 50.995 4.099 -0.577
         angles 0 -45 0
         m_aUnitPrefabSlots {
-         "{E22BE54CA774A7C6}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
-         "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
-         "{07B7A9B5AB9130AD}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
+         "{E22BE54CA774A7C6}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_2.et"
+         "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et"
+         "{07B7A9B5AB9130AD}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_3.et"
         }
         m_bSnapToTerrain 0
         m_aStaticWaypoints {
@@ -541,8 +633,8 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
         CompletionRadius 10
        }
        WP_Defend10 {
-        coords 39.238 0.205 -68.381
-        angles 0 -60 0
+        coords -16.669 2.797 -115.289
+        angles 0 -58.503 0
         CompletionRadius 5
        }
        WP_Defend11 {
@@ -572,7 +664,7 @@ $grp GenericEntity : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compon
        {
         coords -50.019 10.564 -121.891
         m_aUnitPrefabSlots {
-         "{8746F2E7FC8B88E0}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Leader_Dead_Flag.et"
+         "{8746F2E7FC8B88E0}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Leader_Dead_Flag.et"
          "{950EDEC6C85F9DC2}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Rifleman2.et"
         }
         m_bSnapToTerrain 0

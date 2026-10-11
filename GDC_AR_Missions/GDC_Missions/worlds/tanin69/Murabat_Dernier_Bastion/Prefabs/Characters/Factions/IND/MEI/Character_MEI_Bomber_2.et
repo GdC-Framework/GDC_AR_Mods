@@ -1,4 +1,4 @@
-SCR_ChimeraCharacter : "{7BC158017513B71E}worlds/tanin69/_En cours/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et" {
+SCR_ChimeraCharacter : "{7BC158017513B71E}worlds/tanin69/Murabat_Dernier_Bastion/Prefabs/Characters/Factions/IND/MEI/Character_MEI_Bomber_1.et" {
  ID "520EC961A090B1EE"
  components {
   BaseLoadoutManagerComponent "{520EA1D2DB11821E}" {

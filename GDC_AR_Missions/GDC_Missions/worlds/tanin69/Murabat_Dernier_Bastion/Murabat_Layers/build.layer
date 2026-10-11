@@ -55,8 +55,8 @@ GenericEntity : "{67B5336A6D63CCA4}Prefabs/Props/Construction/PlankPile/PlankPil
 }
 $grp GenericEntity : "{6AE7F9D91B93CCAF}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_USSR_01_NSV.et" {
  {
-  coords 9583.731 39.281 1373.375
-  angles 0 -135 0
+  coords 9530.836 42.193 1326.014
+  angles 12.099 -155.855 -3.247
  }
  {
   coords 9448.29 41.531 1455.786

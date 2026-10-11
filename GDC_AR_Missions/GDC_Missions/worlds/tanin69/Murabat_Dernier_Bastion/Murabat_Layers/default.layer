@@ -9,6 +9,19 @@ SCR_AIWorld : "{3D0FE80570D5BFCC}Prefabs/AI/SCR_AIWorld_Anizay.et" {
  "Active AI limit" 256
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
+ components {
+  SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
+   m_iStartingHours 6
+   m_iStartingMinutes 33
+   m_bDateOverride 1
+   m_iDay 21
+   m_iMonth 9
+   m_iYear 2019
+  }
+  CVON_VONGameModeComponent "{6624E607CC6D4CC8}" {
+   m_sFreqConfig "{0FC8FE4F0844380B}worlds/tanin69/Murabat_Dernier_Bastion/Configs/Murabat_Frequencies.conf"
+  }
+ }
  coords 5082.799 130.209 5269.685
  m_bTeamSwitch 1
  m_bPublicCommandBriefing 1
@@ -44,7 +57,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_instructions {
     TILW_SpawnGroupInstruction "{6A72B26D90EC753B}" {
      m_executionDelay 30
-     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_prefab "{E4160FF3ED018519}Prefabs/Groups/MEI/Group_MEI_Team_LAT.et"
      m_locationName "Spawn_Ambush1_QRF1"
      m_waypointNames {
       "WP_SAD1"
@@ -68,7 +81,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_instructions {
     TILW_SpawnGroupInstruction "{6A7D42C5D0F6924F}" {
      m_executionDelay 0
-     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_prefab "{E4160FF3ED018519}Prefabs/Groups/MEI/Group_MEI_Team_LAT.et"
      m_locationName "Spawn_Ambush2_QRF1"
      m_waypointNames {
       "WP_SAD2"
@@ -76,7 +89,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
     }
     TILW_SpawnGroupInstruction "{6A7D42C45DC50226}" {
      m_executionDelay 20
-     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_prefab "{E4160FF3ED018519}Prefabs/Groups/MEI/Group_MEI_Team_LAT.et"
      m_locationName "Spawn_Ambush2_QRF2"
      m_waypointNames {
       "WP_SAD2"
@@ -92,7 +105,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_instructions {
     TILW_SpawnGroupInstruction "{6A833AAD8D86C0F5}" {
      m_executionDelay 0
-     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_prefab "{E4160FF3ED018519}Prefabs/Groups/MEI/Group_MEI_Team_LAT.et"
      m_locationName "Spawn_Ambush3_QRF1"
      m_waypointNames {
       "WP_SAD3"
@@ -116,7 +129,7 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
    m_instructions {
     TILW_SpawnGroupInstruction "{6A8B34798B2140F0}" {
      m_executionDelay 0
-     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_prefab "{E4160FF3ED018519}Prefabs/Groups/MEI/Group_MEI_Team_LAT.et"
      m_locationName "Spawn_Ambush4_QRF1"
      m_waypointNames {
       "WP_SAD4"
@@ -138,14 +151,38 @@ TILW_MissionFrameworkEntity TILW_MF : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_Mission
   TILW_MissionEvent "{6A86A16A1C80FAD6}" {
    m_name "US On Bled1"
    m_instructions {
-    TILW_SpawnVehicleInstruction "{6A86A16A36A10545}" {
+    TILW_SpawnGroupInstruction "{6A9127E143A7A0F5}" {
+     m_prefab "{C289D03E4F13A740}Prefabs/Groups/MEI/Group_MEI_RifleSquad.et"
+     m_locationName "Spawn_Bled1_QRF2"
+     m_waypointNames {
+      "WP_SAD5"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6A9127E304CE02F2}" {
+     m_executionDelay 20
+     m_prefab "{4AAF649CEA888EC6}Prefabs/Groups/MEI/Group_MEI_Team_AT.et"
+     m_locationName "Spawn_Bled1_QRF3"
+     m_waypointNames {
+      "WP_SAD5"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6A9127E3171884C9}" {
+     m_executionDelay 120
+     m_prefab "{C289D03E4F13A740}Prefabs/Groups/MEI/Group_MEI_RifleSquad.et"
+     m_locationName "Spawn_Bled1_QRF3"
+     m_waypointNames {
+      "WP_SAD5"
+     }
+    }
+    TILW_SpawnVehicleInstruction "{6A9127E32ABDEA0F}" {
+     m_executionDelay 120
      m_prefab "{B47110AA1A806556}Prefabs/Vehicles/Wheeled/BTR70/BTR70_FIA.et"
      m_locationName "Spawn_Bled1_QRF1"
-     m_crewConfig TILW_CrewConfig "{6A86A16A6530451A}" {
+     m_crewConfig TILW_CrewConfig "{6A9127E34E13D535}" {
       m_crewGroups {
-       TILW_CrewGroup "{6A86A16A67638C06}" {
+       TILW_CrewGroup "{6A9127E34B99C285}" {
         m_crewStations {
-         TILW_CrewStation "{6A86A16A634084B5}" {
+         TILW_CrewStation "{6A9127E3537A2B4D}" {
           m_allowCargo 0
           m_characters {
            "{8B556AC161BE7405}Prefabs/Characters/Factions/IND/MEI/Character_MEI_Crew.et"

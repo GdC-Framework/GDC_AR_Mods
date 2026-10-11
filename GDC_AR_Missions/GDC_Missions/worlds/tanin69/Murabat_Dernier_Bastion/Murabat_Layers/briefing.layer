@@ -2,12 +2,12 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  D_Intel {
   coords 866.198 159.365 1893.564
   m_sTitle "Intel"
-  m_sTextData "En recoupant les informations des reconnaissances et celles apportées par les civils ayant fuit la zone, voici ce que nous savons :"\
+  m_sTextData "En recoupant les informations des reconnaissances et celles apportées par les civils ayant fui la zone, voici ce que nous savons :"\
   ""\
   "> AUCUNE présence hostile signalée en dehors de la zone d'opération (ZOP) délimitée sur carte."\
   "> Il y aurait environ 120 HOSTILES SUR ZONE, dont approximativement 70 sur Murabat même et le reste réparti sur la ZOP."\
   "> Il y aurait au moins 5 BLINDES SUR ZONE, mais on n'a pas réussi à compter le nombre de roues (BRDM ou BTR, voire un mix des deux) ni à les localiser précisément."\
-  "> Plusieurs POINTS D'INTERET autour de Murubat sont repérés sur carte."\
+  "> Plusieurs POINTS D'INTERET autour de Murabat sont repérés sur carte."\
   "> La localisation probable de l'habitation où loge le chef de Muharibu Allah nous a été indiquée (marquée sur carte)."\
   "> Certains hostiles sont équipés de déclencheur \"Homme Mort\" (Dead Man Switch), surtout la garde rapprochée de Muharibu Allah."\
   ""
@@ -18,7 +18,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  B_Situation {
   coords 866.356 159.357 1893.607
   m_sTitle "Situation"
-  m_sTextData "Les éléments de la \"Brigade Muharibu Allah\" (les <i>guerriers de Dieu</i>) a été chassée de la majorité du territoire."\
+  m_sTextData "Les éléments de la \"Brigade Muharibu Allah\" (les <i>guerriers de Dieu</i>) ont été chassés de la majorité du territoire."\
   ""\
   "Ils se sont repliés dans une zone qu'on peut qualifier \"d'accidentée\". C'est un véritable coupe-gorge."
   m_bEmptyFactionVisibility 1
@@ -28,14 +28,14 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  A_Contexte {
   coords 866.332 159.364 1893.505
   m_sTitle "Contexte"
-  m_sTextData "Années 2020. Les USA mènent une lutte acharnée contre une guerilla islamique dans un pays du Moyen-Orient."
+  m_sTextData "Septembre 2019. Les USA mènent une lutte acharnée contre une guerilla islamique dans un pays du Moyen-Orient."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
  }
  C_Mission {
   coords 866.398 159.357 1893.597
   m_sTitle "Mission"
-  m_sTextData "Eliminer le chef de la Brigade Muharibu Allah... Et de tout hostile s'interpossant entre votre objectif et vous !"
+  m_sTextData "Éliminer le chef de la Brigade Muharibu Allah... et tout hostile s'interposant entre votre objectif et vous !"
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 2
@@ -43,10 +43,17 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  E_Materiel {
   coords 866.282 159.37 1893.438
   m_sTitle "Matériel"
-  m_sTextData "<b><color name=\"green\">Véhicules</color></b>"\
-  "JLTV équipés de M2 avec kit de protection pour le tireur."\
+  m_sTextData "<b><color name=\"green\">JLTV</color></b>"\
   ""\
-  "Les JLTV résistent aux tirs d'arme légère. <i>Dans certaines conditions</i>, ils peuvent encaisser quelques tirs de RPG-7."
+  "Nous sommes équipés des tout nouveaux JLTV qui ont fait la preuve de leur efficacité dans les semaines précédentes."\
+  ""\
+  "> Peu de visibilité en conduite."\
+  "> Equipés de M2 avec kit de protection contre les armes légères pour le tireur."\
+  "> La M2 est efficace contre les blindés légers et moyens, en particulier si vous touchez la tourelle de tir"\
+  "> Résistance au RPG-7 (PG-7VM) : un coup au but peut immobiliser le véhicule et tuer tout ou partie de l'équipage. Deux coups neutralisent véhicule et équipage dans presque tous les cas."\
+  ""\
+  "<b><color name=\"green\">Munitions et matériel</color></b>"\
+  "Les JLTV sont chargés ras la gueule de matos supplémentaire. Vous ne devriez pas manquer."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 4
