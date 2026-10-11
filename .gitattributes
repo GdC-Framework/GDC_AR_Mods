@@ -1,0 +1,9 @@
+# Source media (outside addons) stored with Git LFS
+_Media/**/*.png filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.psd filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.xcf filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.kra filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.tif filter=lfs diff=lfs merge=lfs -text
+_Media/**/*.tiff filter=lfs diff=lfs merge=lfs -text

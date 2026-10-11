@@ -1,5 +1,8 @@
 Arma Reforger stuff made by Grèce de canards community
 
+## _Media
+Source images (loading screens, thumbnails, Workshop pages, custom textures), kept outside the addons and stored with Git LFS. See [_Media/README.md](_Media/README.md) (French).
+
 ## GDC_AR_Misc
 Various mods, notably GDC AR Lib
 
