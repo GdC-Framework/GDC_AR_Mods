@@ -13,6 +13,7 @@ Il est volontairement **en dehors des dossiers d'addons** pour ne pas être affi
 | `Thumbnails/` | Vignettes de missions (`m_sIcon`) |
 | `Workshop/` | Images des pages Workshop (`thumbnail.png`, preview, galerie) |
 | `Textures/` | Sources des textures custom (affiches, panneaux, etc.) |
+| `Docs/` | Sources des documents pour les joueurs (aide-mémoire, etc.), à exporter vers le wiki |
 
 Les dossiers `_Originaux/` peuvent être ajoutés dans chaque catégorie si besoin.
 

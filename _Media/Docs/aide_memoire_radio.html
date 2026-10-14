@@ -1,0 +1,214 @@
+<title>Aide-mémoire radio CVON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: laminated field card, two columns of panels; keycaps drawn as physical keys */
+:root {
+  --paper: #e8ebe2;
+  --panel: #f6f7f2;
+  --ink: #1d251c;
+  --muted: #56604f;
+  --olive: #4a5a36;
+  --signal: #c95a1c;
+  --line: #c3c9b8;
+  --key: #fdfdfb;
+  --key-edge: #a9b09c;
+  --font-display: "Saira Condensed", "Arial Narrow", sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Consolas", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #161b14; --panel: #1f261c; --ink: #e3e8da; --muted: #a2ac97;
+    --olive: #a3b883; --signal: #f0874a; --line: #35402f; --key: #2a3226; --key-edge: #4d5a45;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #161b14; --panel: #1f261c; --ink: #e3e8da; --muted: #a2ac97;
+  --olive: #a3b883; --signal: #f0874a; --line: #35402f; --key: #2a3226; --key-edge: #4d5a45;
+  color-scheme: dark;
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.45; }
+.sheet { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 40px; display: grid; gap: 18px; }
+
+header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; border-bottom: 3px solid var(--olive); padding-bottom: 10px; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.9rem, 4vw, 2.6rem); letter-spacing: .02em; text-transform: uppercase; margin: 0; line-height: 1; text-wrap: balance; }
+h1 span { color: var(--signal); }
+.meta { font-family: var(--font-mono); font-size: .78rem; color: var(--muted); text-align: right; }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 820px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 16px 18px 18px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.panel.wide { grid-column: 1 / -1; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 1.35rem; text-transform: uppercase; letter-spacing: .05em; margin: 0; display: flex; align-items: baseline; gap: 10px; color: var(--olive); }
+h2 small { font-family: var(--font-body); font-weight: 500; font-size: .85rem; text-transform: none; letter-spacing: 0; color: var(--muted); }
+
+.rows { display: grid; gap: 0; }
+.row { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 4px 16px; align-items: center; padding-block: 8px; border-top: 1px dashed var(--line); }
+.row:first-child { border-top: 0; }
+@media (max-width: 520px) { .row { grid-template-columns: minmax(0, 1fr); } }
+.row p { margin: 0; }
+.row p b { font-weight: 600; }
+.row .note { display: block; color: var(--muted); font-size: .86rem; }
+
+.keys { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; }
+kbd { font-family: var(--font-mono); font-weight: 700; font-size: .8rem; min-width: 2.1em; text-align: center; padding: 4px 7px 5px; background: var(--key); color: var(--ink); border: 1px solid var(--key-edge); border-bottom-width: 3px; border-radius: 5px; white-space: nowrap; }
+kbd.hot { border-color: var(--signal); color: var(--signal); }
+.plus { color: var(--muted); font-weight: 600; }
+.hold { font-family: var(--font-mono); font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: var(--signal); border: 1px solid var(--signal); border-radius: 3px; padding: 1px 5px; }
+
+/* radio list diagram */
+.stack { display: grid; gap: 6px; }
+.slot { display: grid; grid-template-columns: 2.4rem minmax(0, 1fr) auto; align-items: center; gap: 10px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.slot.active { border-color: var(--signal); box-shadow: inset 4px 0 0 var(--signal); }
+.slot .n { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; line-height: 1; color: var(--olive); text-align: center; }
+.slot .what { min-width: 0; }
+.slot .what b { display: block; font-weight: 600; }
+.slot .what span { color: var(--muted); font-size: .85rem; }
+.caption { font-size: .86rem; color: var(--muted); margin: 0; }
+
+/* radio screen steps */
+.steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; counter-reset: step; }
+@media (max-width: 820px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 440px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+.step { border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; display: grid; gap: 6px; align-content: start; background: var(--paper); min-width: 0; }
+.step::before { counter-increment: step; content: "Étape " counter(step); font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--signal); }
+.step p { margin: 0; font-size: .9rem; }
+.lcd { font-family: var(--font-mono); font-weight: 700; font-size: 1.05rem; letter-spacing: .12em; padding: 6px 10px; border-radius: 3px; background: var(--ink); color: var(--panel); justify-self: start; }
+
+.rule { font-family: var(--font-mono); font-size: .82rem; padding: 8px 12px; border-left: 4px solid var(--olive); background: var(--paper); margin: 0; }
+
+ol.reflexes { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+ol.reflexes li::marker { font-family: var(--font-display); font-weight: 700; color: var(--signal); }
+
+/* equipment profiles */
+.profiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 980px) { .profiles { grid-template-columns: minmax(0, 1fr); } }
+.profile { display: grid; gap: 10px; align-content: start; min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 4px; }
+h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; text-transform: uppercase; letter-spacing: .04em; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+h3 span { font-family: var(--font-body); font-weight: 500; font-size: .82rem; text-transform: none; letter-spacing: 0; color: var(--muted); }
+.slot .keys { justify-content: flex-end; }
+ul.tips { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; font-size: .88rem; }
+ul.tips li::marker { color: var(--signal); }
+.panel.wide ol.reflexes { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+@media (max-width: 720px) { .panel.wide ol.reflexes { grid-template-columns: minmax(0, 1fr); } }
+
+ul.legend { margin: 0; padding: 10px 14px 10px 1.9em; display: grid; gap: 4px; font-size: .9rem; border-left: 4px solid var(--olive); background: var(--paper); }
+ul.legend li::marker { color: var(--olive); }
+
+.rule.warn { border-left-color: var(--signal); font-family: var(--font-body); font-size: .92rem; font-weight: 600; }
+
+h2 small b.em { font-weight: 700; color: var(--signal); }
+
+footer { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 20px; border-top: 1px solid var(--line); padding-top: 10px; }
+</style>
+
+<div class="sheet">
+  <header>
+    <h1>Radios <span>CVON</span> · aide-mémoire</h1>
+    <div class="meta">Coalition VON 3.0.3 · raccourcis par défaut<br>Grèce de Canards (GDC)</div>
+  </header>
+
+  <div class="grid">
+
+    <section class="panel wide">
+      <h2>Émettre <small>maintenir la touche pendant le message</small></h2>
+      <p class="rule warn">Pas de duplex chez GDC : une seule personne parle à la fois, pour garder des communications disciplinées. Relâcher la touche dès la fin du message.</p>
+      <div class="profiles">
+
+        <article class="profile">
+          <h3>J'ai une radio</h3>
+          <div class="stack">
+            <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b><span>CP</span></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
+          </div>
+        </article>
+
+        <article class="profile">
+          <h3>J'ai deux radios</h3>
+          <div class="stack">
+            <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b><span>CP</span></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot"><span class="n">2</span><span class="what"><b>Radio 2</b><span>CP ou LP</span></span><span class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
+          </div>
+        </article>
+
+        <article class="profile">
+          <h3>Je dois gérer trois radios</h3>
+          <div class="stack">
+            <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot"><span class="n">2</span><span class="what"><b>Radio 2</b></span><span class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot"><span class="n">3</span><span class="what"><b>Radio 3</b></span><span class="keys"><kbd>Alt</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
+          </div>
+        </article>
+
+      </div>
+      <ul class="legend">
+        <li><b>Radio 1</b> : pour les fantassins, c'est la radio courte portée (PRC-152).</li>
+        <li><b>Radio 2</b> : pour les TL, c'est souvent une deuxième CP, parfois une LP. Pour les SL, une LP pour le canal de commandement.</li>
+        <li><b>Radio 3</b> : pour un CdO, à prévoir avec de l'aérien, en véhicule, avec une unité d'appui, etc.</li>
+      </ul>
+    </section>
+
+    <section class="panel">
+      <h2>Régler une radio <small><b class="em">fréquence</b>, canal, volume, oreille</small></h2>
+      <div class="rows">
+        <div class="row">
+          <div class="keys"><kbd class="hot">G</kbd></div>
+          <p><b>Choisir la radio à régler</b><span class="note">Son écran s'ouvre.</span></p>
+        </div>
+        <div class="row">
+          <div class="keys"><kbd>Help</kbd></div>
+          <p><b>Toutes les commandes de la radio</b><span class="note">Bouton en haut à droite de l'écran de la radio.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Changer de radio active <small>quelle radio est sur quelle touche</small></h2>
+      <div class="rows">
+        <div class="row">
+          <div class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Maj</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></div>
+          <p><b>Faire tourner les radios</b><span class="note">La dernière radio passe en radio 1, les autres descendent d'un cran.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>En véhicule <small>poste d'équipage</small></h2>
+      <div class="rows">
+        <div class="row">
+          <div class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Début</kbd></div>
+          <p><b>Charger sa clé dans la radio du véhicule</b><span class="note">Sans clé, la radio n'entend pas votre camp. Elle repart sur son canal 1 : vérifier la fréquence.</span></p>
+        </div>
+        <div class="row">
+          <div class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Fin</kbd></div>
+          <p><b>Haut-parleur du véhicule</b><span class="note">Allumé par défaut : les joueurs proches entendent le trafic radio.</span></p>
+        </div>
+        <div class="row">
+          <div class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Maj</kbd><span class="plus">+</span><kbd>Verr. Maj</kbd><span class="plus">puis</span><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Alt</kbd><span class="plus">+</span><kbd>Verr. Maj</kbd></div>
+          <p><b>Régler la radio du véhicule</b><span class="note">Absente du menu G : la mettre en radio 1, puis ouvrir son écran.</span></p>
+        </div>
+      </div>
+      <p class="caption">Conducteur, tireur et chef de bord ont la radio du véhicule. Les passagers n'y ont pas accès. L'équipage s'entend par l'interphone, quel que soit le bruit du moteur.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Réflexes</h2>
+      <ol class="reflexes">
+        <li>Au départ : vérifier sur quelle fréquence est chaque radio (Verr. Maj, Ctrl + Verr. Maj).</li>
+        <li>Une radio par oreille quand on en porte deux : moins de confusion.</li>
+        <li>En montant à un poste d'équipage : Ctrl + Début, puis régler la radio du véhicule.</li>
+        <li>Avant de parler, savoir qui écoute : équipe, groupe ou commandement.</li>
+      </ol>
+    </section>
+
+  </div>
+
+  <footer>
+    <span>Raccourcis par défaut de Coalition VON et du jeu : à vérifier dans Paramètres › Commandes si vous les avez modifiés.</span>
+    <span>Version du 14/10/2026</span>
+  </footer>
+</div>
