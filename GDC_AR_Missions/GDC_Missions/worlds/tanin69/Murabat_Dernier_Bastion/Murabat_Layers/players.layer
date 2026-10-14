@@ -120,41 +120,11 @@ $grp Vehicle : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_O
    SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
     MultiSlots {
      MultiSlotConfiguration "{5DE8B00DB02BE538}" {
-      NumSlots 6
+      NumSlots 3
      }
      MultiSlotConfiguration "{6A714CEDAC761348}" {
       SlotTemplate InventoryStorageSlot Repair {
        Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-      }
-      NumSlots 2
-     }
-     MultiSlotConfiguration "{6A833AAA87106981}" {
-      SlotTemplate InventoryStorageSlot Mag_556 {
-       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
-      }
-      NumSlots 40
-     }
-     MultiSlotConfiguration "{6A8F0E1489328679}" {
-      SlotTemplate InventoryStorageSlot Saline {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
-      }
-      NumSlots 5
-     }
-     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
-      SlotTemplate InventoryStorageSlot Field_Dressing {
-       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
-      }
-      NumSlots 30
-     }
-     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
-      SlotTemplate InventoryStorageSlot Box_M249 {
-       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
-      }
-      NumSlots 10
-     }
-     MultiSlotConfiguration "{6A9127FE637EF83F}" {
-      SlotTemplate InventoryStorageSlot M72 {
-       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
       }
       NumSlots 2
      }
@@ -168,217 +138,19 @@ $grp Vehicle : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_O
     }
    }
   }
-  coords 7140.269 335.846 3531.084
-  angles -5.456 -151.879 -4.92
- }
- JLTV_OGPK2 {
-  components {
-   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
-    MultiSlots {
-     MultiSlotConfiguration "{5DE8B00DB02BE538}" {
-      NumSlots 6
-     }
-     MultiSlotConfiguration "{6A714CEDAC761348}" {
-      SlotTemplate InventoryStorageSlot Repair {
-       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-      }
-      NumSlots 2
-     }
-     MultiSlotConfiguration "{6A833AAA87106981}" {
-      SlotTemplate InventoryStorageSlot Mag_556 {
-       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
-      }
-      NumSlots 40
-     }
-     MultiSlotConfiguration "{6A8F0E1489328679}" {
-      SlotTemplate InventoryStorageSlot Saline {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
-      }
-      NumSlots 5
-     }
-     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
-      SlotTemplate InventoryStorageSlot Field_Dressing {
-       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
-      }
-      NumSlots 30
-     }
-     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
-      SlotTemplate InventoryStorageSlot Box_M249 {
-       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
-      }
-      NumSlots 10
-     }
-     MultiSlotConfiguration "{6A9127FE637EF83F}" {
-      SlotTemplate InventoryStorageSlot M72 {
-       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
-      }
-      NumSlots 2
-     }
-    }
-   }
-   SCR_WheeledDamageManagerComponent "{141326E9FD94FE40}" {
-    "Additional hit zones" {
-     SCR_FlammableHitZone Hull {
-      "Explosive multiplier" 0.5
-     }
-    }
-   }
-  }
-  coords 7142.189 335.063 3522.704
-  angles -5.456 -151.879 -4.92
- }
- JLTV_OGPK3 {
-  components {
-   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
-    MultiSlots {
-     MultiSlotConfiguration "{5DE8B00DB02BE538}" {
-      NumSlots 6
-     }
-     MultiSlotConfiguration "{6A714CEDAC761348}" {
-      SlotTemplate InventoryStorageSlot Repair {
-       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-      }
-      NumSlots 2
-     }
-     MultiSlotConfiguration "{6A833AAA87106981}" {
-      SlotTemplate InventoryStorageSlot Mag_556 {
-       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
-      }
-      NumSlots 40
-     }
-     MultiSlotConfiguration "{6A8F0E1489328679}" {
-      SlotTemplate InventoryStorageSlot Saline {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
-      }
-      NumSlots 5
-     }
-     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
-      SlotTemplate InventoryStorageSlot Field_Dressing {
-       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
-      }
-      NumSlots 30
-     }
-     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
-      SlotTemplate InventoryStorageSlot Box_M249 {
-       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
-      }
-      NumSlots 10
-     }
-     MultiSlotConfiguration "{6A9127FE637EF83F}" {
-      SlotTemplate InventoryStorageSlot M72 {
-       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
-      }
-      NumSlots 2
-     }
-    }
-   }
-   SCR_WheeledDamageManagerComponent "{141326E9FD94FE40}" {
-    "Additional hit zones" {
-     SCR_FlammableHitZone Hull {
-      "Explosive multiplier" 0.5
-     }
-    }
-   }
-  }
-  coords 7144.043 334.042 3513.474
-  angles -5.456 -151.879 -4.92
- }
- JLTV_OGPK4 {
-  components {
-   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
-    MultiSlots {
-     MultiSlotConfiguration "{5DE8B00DB02BE538}" {
-      NumSlots 6
-     }
-     MultiSlotConfiguration "{6A714CEDAC761348}" {
-      SlotTemplate InventoryStorageSlot Repair {
-       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-      }
-      NumSlots 2
-     }
-     MultiSlotConfiguration "{6A833AAA87106981}" {
-      SlotTemplate InventoryStorageSlot Mag_556 {
-       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
-      }
-      NumSlots 40
-     }
-     MultiSlotConfiguration "{6A8F0E1489328679}" {
-      SlotTemplate InventoryStorageSlot Saline {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
-      }
-      NumSlots 5
-     }
-     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
-      SlotTemplate InventoryStorageSlot Field_Dressing {
-       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
-      }
-      NumSlots 30
-     }
-     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
-      SlotTemplate InventoryStorageSlot Box_M249 {
-       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
-      }
-      NumSlots 10
-     }
-     MultiSlotConfiguration "{6A9127FE637EF83F}" {
-      SlotTemplate InventoryStorageSlot M72 {
-       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
-      }
-      NumSlots 2
-     }
-    }
-   }
-   SCR_WheeledDamageManagerComponent "{141326E9FD94FE40}" {
-    "Additional hit zones" {
-     SCR_FlammableHitZone Hull {
-      "Explosive multiplier" 0.5
-     }
-    }
-   }
-  }
-  coords 7144.284 332.011 3502.201
-  angles -5.456 -151.879 -4.92
+  coords 7139.932 336.19 3533.315
+  angles -10.287 -139.573 -2.928
  }
  JLTV_OGPK5 {
   components {
    SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
     MultiSlots {
      MultiSlotConfiguration "{5DE8B00DB02BE538}" {
-      NumSlots 6
+      NumSlots 3
      }
      MultiSlotConfiguration "{6A714CEDAC761348}" {
       SlotTemplate InventoryStorageSlot Repair {
        Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-      }
-      NumSlots 2
-     }
-     MultiSlotConfiguration "{6A833AAA87106981}" {
-      SlotTemplate InventoryStorageSlot Mag_556 {
-       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
-      }
-      NumSlots 40
-     }
-     MultiSlotConfiguration "{6A8F0E1489328679}" {
-      SlotTemplate InventoryStorageSlot Saline {
-       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
-      }
-      NumSlots 5
-     }
-     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
-      SlotTemplate InventoryStorageSlot Field_Dressing {
-       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
-      }
-      NumSlots 30
-     }
-     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
-      SlotTemplate InventoryStorageSlot Box_M249 {
-       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
-      }
-      NumSlots 10
-     }
-     MultiSlotConfiguration "{6A9127FE637EF83F}" {
-      SlotTemplate InventoryStorageSlot M72 {
-       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
       }
       NumSlots 2
      }
@@ -394,5 +166,191 @@ $grp Vehicle : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_O
   }
   coords 7145.502 329.101 3491.212
   angles -4.308 -139.817 -5.951
+ }
+}
+$grp Vehicle : "{E62EEF185EC31C54}Prefabs/Vehicles/Wheeled/JLTV/Unarmed/JLTV_Unarmed.et" {
+ JLTV_Unarmed3 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CEDAC761348}" {
+      SlotTemplate InventoryStorageSlot Repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A833AAA87106981}" {
+      SlotTemplate InventoryStorageSlot Mag_556 {
+       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+      }
+      NumSlots 40
+     }
+     MultiSlotConfiguration "{6A8F0E1489328679}" {
+      SlotTemplate InventoryStorageSlot Saline {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
+      SlotTemplate InventoryStorageSlot Field_Dressing {
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
+      }
+      NumSlots 30
+     }
+     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
+      SlotTemplate InventoryStorageSlot Box_M249 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{6A9127FE637EF83F}" {
+      SlotTemplate InventoryStorageSlot M72 {
+       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+      }
+      NumSlots 2
+     }
+    }
+   }
+  }
+  coords 7143.951 334.782 3519.685
+  angles -4.394 -134.495 -3.191
+ }
+ JLTV_Unarmed2 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CEDAC761348}" {
+      SlotTemplate InventoryStorageSlot Repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A833AAA87106981}" {
+      SlotTemplate InventoryStorageSlot Mag_556 {
+       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+      }
+      NumSlots 40
+     }
+     MultiSlotConfiguration "{6A8F0E1489328679}" {
+      SlotTemplate InventoryStorageSlot Saline {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
+      SlotTemplate InventoryStorageSlot Field_Dressing {
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
+      }
+      NumSlots 30
+     }
+     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
+      SlotTemplate InventoryStorageSlot Box_M249 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{6A9127FE637EF83F}" {
+      SlotTemplate InventoryStorageSlot M72 {
+       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+      }
+      NumSlots 2
+     }
+    }
+   }
+  }
+  coords 7145.979 333.744 3511.968
+  angles -7.277 -133.434 -10.142
+ }
+ JLTV_Unarmed1 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CEDAC761348}" {
+      SlotTemplate InventoryStorageSlot Repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A833AAA87106981}" {
+      SlotTemplate InventoryStorageSlot Mag_556 {
+       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+      }
+      NumSlots 40
+     }
+     MultiSlotConfiguration "{6A8F0E1489328679}" {
+      SlotTemplate InventoryStorageSlot Saline {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
+      SlotTemplate InventoryStorageSlot Field_Dressing {
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
+      }
+      NumSlots 30
+     }
+     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
+      SlotTemplate InventoryStorageSlot Box_M249 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{6A9127FE637EF83F}" {
+      SlotTemplate InventoryStorageSlot M72 {
+       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+      }
+      NumSlots 2
+     }
+    }
+   }
+  }
+  coords 7146.405 331.936 3503.127
+  angles 0.062 -134.743 -13.662
+ }
+ JLTV_Unarmed4 {
+  components {
+   SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+    MultiSlots {
+     MultiSlotConfiguration "{6A714CEDAC761348}" {
+      SlotTemplate InventoryStorageSlot Repair {
+       Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+      }
+      NumSlots 2
+     }
+     MultiSlotConfiguration "{6A833AAA87106981}" {
+      SlotTemplate InventoryStorageSlot Mag_556 {
+       Prefab "{F4DB91811DF2794E}Prefabs/Weapons/Magazines/Pmag/Magazine_556x45_PmagWindowed_MCT_30rnd_M856A1_Tracer.et"
+      }
+      NumSlots 40
+     }
+     MultiSlotConfiguration "{6A8F0E1489328679}" {
+      SlotTemplate InventoryStorageSlot Saline {
+       Prefab "{00E36F41CA310E2A}Prefabs/Items/Medicine/SalineBag_01/SalineBag_US_01.et"
+      }
+      NumSlots 5
+     }
+     MultiSlotConfiguration "{6A8F0E14A54EB06E}" {
+      SlotTemplate InventoryStorageSlot Field_Dressing {
+       Prefab "{A81F501D3EF6F38E}Prefabs/Items/Medicine/FieldDressing_01/FieldDressing_US_01.et"
+      }
+      NumSlots 30
+     }
+     MultiSlotConfiguration "{6A8F0E14EC3D1333}" {
+      SlotTemplate InventoryStorageSlot Box_M249 {
+       Prefab "{BEE3897D2286992A}Prefabs/Weapons/Magazines/Box_556x45_M249_200rnd_M855A1_4Ball_1Tracer.et"
+      }
+      NumSlots 10
+     }
+     MultiSlotConfiguration "{6A9127FE637EF83F}" {
+      SlotTemplate InventoryStorageSlot M72 {
+       Prefab "{9C5C20FB0E01E64F}Prefabs/Weapons/Launchers/M72/Launcher_M72A3.et"
+      }
+      NumSlots 2
+     }
+    }
+   }
+  }
+  coords 7142.575 335.359 3526.721
+  angles -2.502 -134.572 -3.808
  }
 }

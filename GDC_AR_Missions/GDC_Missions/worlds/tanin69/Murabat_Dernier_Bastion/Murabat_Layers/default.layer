@@ -10,6 +10,9 @@ SCR_AIWorld : "{3D0FE80570D5BFCC}Prefabs/AI/SCR_AIWorld_Anizay.et" {
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  components {
+  CVON_VONGameModeComponent "{6624E607CC6D4CC8}" {
+   m_sFreqConfig "{0FC8FE4F0844380B}worlds/tanin69/Murabat_Dernier_Bastion/Configs/Murabat_Frequencies.conf"
+  }
   SCR_TimeAndWeatherHandlerComponent "{5EE3229927D4D2F5}" {
    m_iStartingHours 6
    m_iStartingMinutes 33
@@ -17,9 +20,6 @@ PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_Game
    m_iDay 21
    m_iMonth 9
    m_iYear 2019
-  }
-  CVON_VONGameModeComponent "{6624E607CC6D4CC8}" {
-   m_sFreqConfig "{0FC8FE4F0844380B}worlds/tanin69/Murabat_Dernier_Bastion/Configs/Murabat_Frequencies.conf"
   }
  }
  coords 5082.799 130.209 5269.685

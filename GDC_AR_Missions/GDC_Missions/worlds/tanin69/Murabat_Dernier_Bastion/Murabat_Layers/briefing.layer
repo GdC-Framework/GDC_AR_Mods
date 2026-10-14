@@ -2,13 +2,18 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  D_Intel {
   coords 866.198 159.365 1893.564
   m_sTitle "Intel"
-  m_sTextData "En recoupant les informations des reconnaissances et celles apportées par les civils ayant fui la zone, voici ce que nous savons :"\
+  m_sTextData "<i>En recoupant les informations des reconnaissances et celles apportées par les civils ayant fui la zone, voici ce que nous savons :</i>"\
   ""\
   "> AUCUNE présence hostile signalée en dehors de la zone d'opération (ZOP) délimitée sur carte."\
+  ""\
   "> Il y aurait environ 120 HOSTILES SUR ZONE, dont approximativement 70 sur Murabat même et le reste réparti sur la ZOP."\
+  ""\
   "> Il y aurait au moins 5 BLINDES SUR ZONE, mais on n'a pas réussi à compter le nombre de roues (BRDM ou BTR, voire un mix des deux) ni à les localiser précisément."\
+  ""\
   "> Plusieurs POINTS D'INTERET autour de Murabat sont repérés sur carte."\
+  ""\
   "> La localisation probable de l'habitation où loge le chef de Muharibu Allah nous a été indiquée (marquée sur carte)."\
+  ""\
   "> Certains hostiles sont équipés de déclencheur \"Homme Mort\" (Dead Man Switch), surtout la garde rapprochée de Muharibu Allah."\
   ""
   m_bEmptyFactionVisibility 1
@@ -48,12 +53,13 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   "Nous sommes équipés des tout nouveaux JLTV qui ont fait la preuve de leur efficacité dans les semaines précédentes."\
   ""\
   "> Peu de visibilité en conduite."\
-  "> Equipés de M2 avec kit de protection contre les armes légères pour le tireur."\
-  "> La M2 est efficace contre les blindés légers et moyens, en particulier si vous touchez la tourelle de tir"\
-  "> Résistance au RPG-7 (PG-7VM) : un coup au but peut immobiliser le véhicule et tuer tout ou partie de l'équipage. Deux coups neutralisent véhicule et équipage dans presque tous les cas."\
   ""\
-  "<b><color name=\"green\">Munitions et matériel</color></b>"\
-  "Les JLTV sont chargés ras la gueule de matos supplémentaire. Vous ne devriez pas manquer."
+  "> 2 équipés de M2 avec kit de protection contre les armes légères pour le tireur (4 boites de 200 cartouches pour chacun). La M2 est efficace contre les blindés légers et moyens, en particulier si vous touchez la tourelle de tir"\
+  ""\
+  "> 4 non armés, avec du matériel supplémentaire pour les fantassins."\
+  ""\
+  "<color name=\"orange\">Résistance au RPG-7 (PG-7VM) : un coup au but peut immobiliser le véhicule et tuer tout ou partie de l'équipage. Deux coups neutralisent véhicule et équipage dans presque tous les cas.</color>"\
+  ""
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 4
