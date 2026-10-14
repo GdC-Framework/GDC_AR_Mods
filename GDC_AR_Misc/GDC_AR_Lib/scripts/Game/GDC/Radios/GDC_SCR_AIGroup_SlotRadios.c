@@ -3,13 +3,13 @@
 //! and the frequencies are stored on the character when it is added to the group.
 modded class SCR_AIGroup
 {
-	[Attribute(desc: "Short-range radio (e.g. PRC-152) frequency for each slot, in the same order as the unit prefab slots. Leave an entry empty to keep the Coalition VON default.", category: "GDC Radios")]
+	[Attribute(desc: "Short-range radio (e.g. PRC-152) frequencies for each slot, in the same order as the unit prefab slots. Several radios: comma-separated list, first radio first (e.g. 32000, 31000). Leave an entry empty to keep the Coalition VON default.", category: "GDC Radios")]
 	ref array<string> m_aGDC_SlotShortRangeFrequencies;
 
-	[Attribute(desc: "Long-range radio (e.g. PRC-117) frequency for each slot, in the same order as the unit prefab slots. Leave an entry empty to use the group long-range frequency below.", category: "GDC Radios")]
+	[Attribute(desc: "Long-range radio (e.g. PRC-117) frequencies for each slot, in the same order as the unit prefab slots. Several radios: comma-separated list, first radio first. Leave an entry empty to use the group long-range frequency below.", category: "GDC Radios")]
 	ref array<string> m_aGDC_SlotLongRangeFrequencies;
 
-	[Attribute(desc: "Long-range radio (e.g. PRC-117) frequency for every member of this group who carries one and has no slot frequency above. Leave empty to keep the Coalition VON default.", category: "GDC Radios")]
+	[Attribute(desc: "Long-range radio (e.g. PRC-117) frequency for the first long-range radio of every member of this group who has no slot frequency above. Vehicle radios key-filled by such a member are tuned to it too. Leave empty to keep the Coalition VON default.", category: "GDC Radios")]
 	string m_sGDC_LongRangeFrequency;
 
 	//! Slot index of the member currently being spawned, -1 outside SpawnGroupMember
@@ -42,10 +42,27 @@ modded class SCR_AIGroup
 			return;
 
 		if (m_aGDC_SlotShortRangeFrequencies && m_aGDC_SlotShortRangeFrequencies.IsIndexValid(slotIndex))
-			character.m_sGDC_SlotShortRangeFrequency = m_aGDC_SlotShortRangeFrequencies[slotIndex];
+			GDC_ParseFrequencyList(m_aGDC_SlotShortRangeFrequencies[slotIndex], character.m_aGDC_SlotShortRangeFrequencies);
 
-		character.m_sGDC_SlotLongRangeFrequency = m_sGDC_LongRangeFrequency;
-		if (m_aGDC_SlotLongRangeFrequencies && m_aGDC_SlotLongRangeFrequencies.IsIndexValid(slotIndex) && !m_aGDC_SlotLongRangeFrequencies[slotIndex].IsEmpty())
-			character.m_sGDC_SlotLongRangeFrequency = m_aGDC_SlotLongRangeFrequencies[slotIndex];
+		if (m_aGDC_SlotLongRangeFrequencies && m_aGDC_SlotLongRangeFrequencies.IsIndexValid(slotIndex))
+			GDC_ParseFrequencyList(m_aGDC_SlotLongRangeFrequencies[slotIndex], character.m_aGDC_SlotLongRangeFrequencies);
+
+		if (character.m_aGDC_SlotLongRangeFrequencies.IsEmpty() && !m_sGDC_LongRangeFrequency.IsEmpty())
+			character.m_aGDC_SlotLongRangeFrequencies.Insert(m_sGDC_LongRangeFrequency.Trim());
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Splits a comma-separated frequency list ("32000, 31000") into outFrequencies
+	protected void GDC_ParseFrequencyList(string list, notnull array<string> outFrequencies)
+	{
+		outFrequencies.Clear();
+		array<string> tokens = {};
+		list.Split(",", tokens, true);
+		foreach (string token : tokens)
+		{
+			token.TrimInPlace();
+			if (!token.IsEmpty())
+				outFrequencies.Insert(token);
+		}
 	}
 }

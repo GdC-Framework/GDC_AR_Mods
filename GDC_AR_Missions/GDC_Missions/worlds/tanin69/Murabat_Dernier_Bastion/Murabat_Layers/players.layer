@@ -42,26 +42,14 @@ $grp SCR_AIGroup : "{878712C430CDA837}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_US
   m_aGDC_SlotShortRangeFrequencies {
    "31000"
    "31000"
+   "32000, 31000"
    "32000"
    "32000"
    "32000"
-   "32000"
+   "33000, 31000"
    "33000"
    "33000"
    "33000"
-   "33000"
-  }
-  m_aGDC_SlotLongRangeFrequencies {
-   ""
-   ""
-   "31000"
-   ""
-   ""
-   ""
-   "31000"
-   ""
-   ""
-   ""
   }
   m_sGDC_LongRangeFrequency "48000"
  }
@@ -90,26 +78,14 @@ $grp SCR_AIGroup : "{878712C430CDA837}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_US
   m_aGDC_SlotShortRangeFrequencies {
    "34000"
    "34000"
+   "35000, 34000"
    "35000"
    "35000"
    "35000"
-   "35000"
+   "36000, 34000"
    "36000"
    "36000"
    "36000"
-   "36000"
-  }
-  m_aGDC_SlotLongRangeFrequencies {
-   ""
-   ""
-   "34000"
-   ""
-   ""
-   ""
-   "34000"
-   ""
-   ""
-   ""
   }
   m_sGDC_LongRangeFrequency "48000"
  }

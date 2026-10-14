@@ -15,15 +15,16 @@ modded class SCR_GroupsManagerComponent
 		if (!character || character.m_bGDC_SlotRadiosTuned)
 			return;
 
-		if (character.m_sGDC_SlotShortRangeFrequency.IsEmpty() && character.m_sGDC_SlotLongRangeFrequency.IsEmpty())
+		if (character.m_aGDC_SlotShortRangeFrequencies.IsEmpty() && character.m_aGDC_SlotLongRangeFrequencies.IsEmpty())
 			return;
 
 		SCR_PlayerController playerController = SCR_PlayerController.Cast(GetGame().GetPlayerManager().GetPlayerController(playerId));
 		if (!playerController)
 			return;
 
-		bool shortRangeDone;
-		bool longRangeDone;
+		// the n-th radio of each type follows the n-th slot frequency of that type
+		int shortRangeIndex;
+		int longRangeIndex;
 		foreach (IEntity radio : playerController.m_aRadios)
 		{
 			if (!radio)
@@ -33,21 +34,24 @@ modded class SCR_GroupsManagerComponent
 			if (!radioComp)
 				continue;
 
-			// only the first radio of each type follows the slot preset
-			if (radioComp.m_eRadioType == CVON_ERadioType.SHORT && !shortRangeDone)
+			if (radioComp.m_eRadioType == CVON_ERadioType.SHORT)
 			{
-				GDC_TuneRadio(radioComp, character.m_sGDC_SlotShortRangeFrequency);
-				shortRangeDone = true;
+				if (character.m_aGDC_SlotShortRangeFrequencies.IsIndexValid(shortRangeIndex))
+					GDC_TuneRadio(radioComp, character.m_aGDC_SlotShortRangeFrequencies[shortRangeIndex]);
+
+				shortRangeIndex++;
 			}
-			else if (radioComp.m_eRadioType == CVON_ERadioType.LONG && !longRangeDone)
+			else if (radioComp.m_eRadioType == CVON_ERadioType.LONG)
 			{
-				GDC_TuneRadio(radioComp, character.m_sGDC_SlotLongRangeFrequency);
-				longRangeDone = true;
+				if (character.m_aGDC_SlotLongRangeFrequencies.IsIndexValid(longRangeIndex))
+					GDC_TuneRadio(radioComp, character.m_aGDC_SlotLongRangeFrequencies[longRangeIndex]);
+
+				longRangeIndex++;
 			}
 		}
 
 		// radios not initialized yet: Coalition VON calls this again when the player joins a group
-		if (shortRangeDone || longRangeDone)
+		if (shortRangeIndex > 0 || longRangeIndex > 0)
 			character.m_bGDC_SlotRadiosTuned = true;
 	}
 

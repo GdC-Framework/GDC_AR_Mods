@@ -29,7 +29,7 @@ SCR_ChimeraCharacter : "{313361C0EF9E114B}Prefabs/Characters/Factions/BLUFOR/RHS
     }
     ItemsInitConfigurationItem "{62D6A4F8911C90AF}" {
      PrefabsToSpawn + {
-      "{C204374F722D5229}Prefabs/Items/Equipment/Radios/Radio_ANPRC117.et"
+      "{E82129A6CC014808}Prefabs/Items/Equipment/Radios/Radio_ANPRC152.et"
      }
     }
     ItemsInitConfigurationItem "{62B716EFC3B8B749}" {
