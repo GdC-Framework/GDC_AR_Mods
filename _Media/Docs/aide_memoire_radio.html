@@ -97,8 +97,6 @@ ul.tips li::marker { color: var(--signal); }
 .panel.wide ol.reflexes { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
 @media (max-width: 720px) { .panel.wide ol.reflexes { grid-template-columns: minmax(0, 1fr); } }
 
-ul.legend { margin: 0; padding: 10px 14px 10px 1.9em; display: grid; gap: 4px; font-size: .9rem; border-left: 4px solid var(--olive); background: var(--paper); }
-ul.legend li::marker { color: var(--olive); }
 
 .rule.warn { border-left-color: var(--signal); font-family: var(--font-body); font-size: .92rem; font-weight: 600; }
 
@@ -121,35 +119,30 @@ footer { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; 
       <div class="profiles">
 
         <article class="profile">
-          <h3>J'ai une radio</h3>
+          <h3>Je parle sur une radio</h3>
           <div class="stack">
             <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b><span>CP</span></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
           </div>
         </article>
 
         <article class="profile">
-          <h3>J'ai deux radios</h3>
+          <h3>Je parle sur deux radios</h3>
           <div class="stack">
-            <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b><span>CP</span></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
-            <div class="slot"><span class="n">2</span><span class="what"><b>Radio 2</b><span>CP ou LP</span></span><span class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot"><span class="n">1</span><span class="what"><b>Radio 1</b><span>CP</span></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot active"><span class="n">2</span><span class="what"><b>Radio 2</b><span>CP ou LP</span></span><span class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
           </div>
         </article>
 
         <article class="profile">
-          <h3>Je dois gérer trois radios</h3>
+          <h3>Je parle sur trois radios</h3>
           <div class="stack">
-            <div class="slot active"><span class="n">1</span><span class="what"><b>Radio 1</b></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot"><span class="n">1</span><span class="what"><b>Radio 1</b></span><span class="keys"><kbd class="hot">Verr. Maj</kbd></span></div>
             <div class="slot"><span class="n">2</span><span class="what"><b>Radio 2</b></span><span class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
-            <div class="slot"><span class="n">3</span><span class="what"><b>Radio 3</b></span><span class="keys"><kbd>Alt</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
+            <div class="slot active"><span class="n">3</span><span class="what"><b>Radio 3</b></span><span class="keys"><kbd>Alt</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></span></div>
           </div>
         </article>
 
       </div>
-      <ul class="legend">
-        <li><b>Radio 1</b> : pour les fantassins, c'est la radio courte portée (PRC-152).</li>
-        <li><b>Radio 2</b> : pour les TL, c'est souvent une deuxième CP, parfois une LP. Pour les SL, une LP pour le canal de commandement.</li>
-        <li><b>Radio 3</b> : pour un CdO, à prévoir avec de l'aérien, en véhicule, avec une unité d'appui, etc.</li>
-      </ul>
     </section>
 
     <section class="panel">
@@ -167,11 +160,11 @@ footer { font-size: .8rem; color: var(--muted); display: flex; flex-wrap: wrap; 
     </section>
 
     <section class="panel">
-      <h2>Changer de radio active <small>quelle radio est sur quelle touche</small></h2>
+      <h2>Radio primaire / secondaire <small>quelle radio sur quelle touche</small></h2>
       <div class="rows">
         <div class="row">
           <div class="keys"><kbd>Ctrl</kbd><span class="plus">+</span><kbd>Maj</kbd><span class="plus">+</span><kbd class="hot">Verr. Maj</kbd></div>
-          <p><b>Faire tourner les radios</b><span class="note">La dernière radio passe en radio 1, les autres descendent d'un cran.</span></p>
+          <p><b>Échanger primaire et secondaire</b><span class="note">La radio 1 et la radio 2 changent de touche.</span></p>
         </div>
       </div>
     </section>
