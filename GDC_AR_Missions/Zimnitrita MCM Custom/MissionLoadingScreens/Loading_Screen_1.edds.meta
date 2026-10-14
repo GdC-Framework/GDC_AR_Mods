@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{63AA69DBAF244A75}MissionLoadingScreens/Loding_Screen_1.edds"
+ Name "{63AA69DBAF244A75}MissionLoadingScreens/Loading_Screen_1.edds"
  Configurations {
   PNGResourceClass PC : "{DC555BD399D92412}Configs/System/ResourceTypes/PC/TextureUnspecified.conf" {
   }

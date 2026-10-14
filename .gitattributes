@@ -7,3 +7,6 @@ _Media/**/*.xcf filter=lfs diff=lfs merge=lfs -text
 _Media/**/*.kra filter=lfs diff=lfs merge=lfs -text
 _Media/**/*.tif filter=lfs diff=lfs merge=lfs -text
 _Media/**/*.tiff filter=lfs diff=lfs merge=lfs -text
+
+# PNG sources next to UI images in addons (needed to publish scenario icons/previews); same files as _Media, deduplicated by LFS
+GDC_AR_ModPack/**/UI/**/*.png filter=lfs diff=lfs merge=lfs -text
