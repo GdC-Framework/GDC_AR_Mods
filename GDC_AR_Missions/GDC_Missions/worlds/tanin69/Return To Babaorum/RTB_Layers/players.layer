@@ -61,95 +61,49 @@ GenericEntity A_Players : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/C
   GenericEntity L_Vehicles : "{5F9FFF4BF027B3A3}Prefabs/Systems/ScenarioFramework/Components/Layer.et" {
    coords 0.151 -0.1 6.381
    {
-    $grp Vehicle : "{49B5C8D1F28E7B7F}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/JLTV_CROWSII.et" {
-     JLTV_CROWSII1 {
-      components {
-       SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
-        FuelNodes {
-         SCR_FuelNode "{5622A70CD4036C5A}" {
-          m_fInitialFuelTankState 15
-         }
-        }
-       }
-       SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
-        MultiSlots {
-         MultiSlotConfiguration "{633A2A73E1980EEC}" {
-          SlotTemplate InventoryStorageSlot Magazines {
-           Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
-          }
-          NumSlots 2
-         }
-         MultiSlotConfiguration "{5DE8B00C63335F32}" {
-          NumSlots 0
-         }
-         MultiSlotConfiguration "{6A714CE6A3FBBD75}" {
-          SlotTemplate InventoryStorageSlot Item2 {
-           Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
-          }
-          NumSlots 3
-         }
-         MultiSlotConfiguration "{6A714CE68EDDE744}" {
-          SlotTemplate InventoryStorageSlot Item1 {
-           Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-          }
-          NumSlots 2
-         }
-         MultiSlotConfiguration "{6A7550EC9AA1E2AD}" {
-          SlotTemplate InventoryStorageSlot Item3 {
-           Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
-          }
-          NumSlots 5
-         }
+    Vehicle JLTV_CROWSII1 : "{49B5C8D1F28E7B7F}Prefabs/Vehicles/Wheeled/JLTV/CROWS_2/JLTV_CROWSII.et" {
+     components {
+      SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+       FuelNodes {
+        SCR_FuelNode "{5622A70CD4036C5A}" {
+         m_fInitialFuelTankState 15
         }
        }
       }
-      coords -2.334 0.106 9.589
-      angles 0 84.999 0
-     }
-     JLTV_CROWSII3 {
-      components {
-       SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
-        FuelNodes {
-         SCR_FuelNode "{5622A70CD4036C5A}" {
-          m_fInitialFuelTankState 15
+      SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+       MultiSlots {
+        MultiSlotConfiguration "{633A2A73E1980EEC}" {
+         SlotTemplate InventoryStorageSlot Magazines {
+          Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
          }
+         NumSlots 2
         }
-       }
-       SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
-        MultiSlots {
-         MultiSlotConfiguration "{633A2A73E1980EEC}" {
-          SlotTemplate InventoryStorageSlot Magazines {
-           Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
-          }
-          NumSlots 2
+        MultiSlotConfiguration "{5DE8B00C63335F32}" {
+         NumSlots 0
+        }
+        MultiSlotConfiguration "{6A714CE6A3FBBD75}" {
+         SlotTemplate InventoryStorageSlot Item2 {
+          Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
          }
-         MultiSlotConfiguration "{5DE8B00C63335F32}" {
-          NumSlots 0
+         NumSlots 3
+        }
+        MultiSlotConfiguration "{6A714CE68EDDE744}" {
+         SlotTemplate InventoryStorageSlot Item1 {
+          Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
          }
-         MultiSlotConfiguration "{6A714CE6A3FBBD75}" {
-          SlotTemplate InventoryStorageSlot Item2 {
-           Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
-          }
-          NumSlots 3
+         NumSlots 2
+        }
+        MultiSlotConfiguration "{6A7550EC9AA1E2AD}" {
+         SlotTemplate InventoryStorageSlot Item3 {
+          Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
          }
-         MultiSlotConfiguration "{6A714CE68EDDE744}" {
-          SlotTemplate InventoryStorageSlot Item1 {
-           Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
-          }
-          NumSlots 2
-         }
-         MultiSlotConfiguration "{6A7550EC9AA1E2AD}" {
-          SlotTemplate InventoryStorageSlot Item3 {
-           Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
-          }
-          NumSlots 5
-         }
+         NumSlots 5
         }
        }
       }
-      coords -16.015 0.724 9.295
-      angles 0 84.999 0
      }
+     coords -2.334 0.106 9.589
+     angles 0 84.999 0
     }
     Vehicle JLTV_OGPK1 : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_OGPK.et" {
      components {

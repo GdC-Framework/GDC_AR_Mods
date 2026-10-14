@@ -1,0 +1,8 @@
+SCR_AIGroup : "{EE8D60FCE6D3B856}Prefabs/Groups/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Group_USAF_USMC_MEF_Base.et" {
+ coords 2633.831 24.219 5473.388
+ angles 0 -90 0
+ m_aUnitPrefabSlots {
+  "{42A502E3BB727CEC}Prefabs/Characters/Factions/BLUFOR/RHS_USAF/RHS_USAF_USMC_MEF/Character_RHS_USAF_USMC_HeliPilot.et"
+ }
+ m_bSetPlayable 1
+}

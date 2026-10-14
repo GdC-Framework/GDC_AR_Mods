@@ -123,3 +123,47 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   m_bVisibleForEmptyFaction 1
  }
 }
+Vehicle JLTV_OGPK2 : "{E49B4C9AEA70BE3F}Prefabs/Vehicles/Wheeled/JLTV/OGPK/M2HB/JLTV_OGPK.et" {
+ components {
+  SCR_FuelManagerComponent "{5622A70CD78A9E2C}" {
+   FuelNodes {
+    SCR_FuelNode "{5622A70CD4036C5A}" {
+     m_fInitialFuelTankState 20
+    }
+   }
+  }
+  SCR_UniversalInventoryStorageComponent "{5C946CE5223089AE}" {
+   MultiSlots {
+    MultiSlotConfiguration "{5DE8B00DB02BE538}" {
+     NumSlots 0
+    }
+    MultiSlotConfiguration "{6A714CED4D689382}" {
+     SlotTemplate InventoryStorageSlot Fuel_Can {
+      Prefab "{12D5AD21E383B768}Prefabs/Items/Fuel/Jerrycan_01/Jerrycan_01_item.et"
+     }
+     NumSlots 2
+    }
+    MultiSlotConfiguration "{6A714CEDAC761348}" {
+     SlotTemplate InventoryStorageSlot Repair {
+      Prefab "{33B2DFDCD0EBA3DB}Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_wrench.et"
+     }
+     NumSlots 2
+    }
+    MultiSlotConfiguration "{6A714CE0BAC159C0}" {
+     SlotTemplate InventoryStorageSlot Item1 {
+      Prefab "{C5E7592C94DC6D4C}Prefabs/Items/Equipment/Backpacks/backpack_Wartech_BB102/Backpack_Wartech_BB102_MC.et"
+     }
+     NumSlots 5
+    }
+    MultiSlotConfiguration "{6A7550EF3D1BC635}" {
+     SlotTemplate InventoryStorageSlot Items3 {
+      Prefab "{33CBDE73AB48172A}Prefabs/Weapons/Explosives/DemoBlock_M112/DemoBlock_M112.et"
+     }
+     NumSlots 3
+    }
+   }
+  }
+ }
+ coords 851.389 159.685 1917.05
+ angles -3.68 86.452 -1.561
+}

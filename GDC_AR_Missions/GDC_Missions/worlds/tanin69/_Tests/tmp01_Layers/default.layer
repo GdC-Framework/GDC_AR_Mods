@@ -54,6 +54,10 @@ GDC_TILWFrameworkEntity {
 GenericEntity Spawn_Alarm {
  coords 6335.972 42.392 8098.416
 }
+Vehicle AH64D_USArmy_AGM65_X1 : "{2B2364D74EFA7D4E}Prefabs/Vehicles/Helicopters/AH64D/USArmy/AH64D_USArmy_AGM65_X4.et" {
+ coords 6223.578 37.062 8012.661
+ angles 0 52.092 0
+}
 Vehicle BTR1 : "{C012BB3488BEA0C2}Prefabs/Vehicles/Wheeled/BTR70/BTR70.et" {
  coords 6280.758 31.329 8134.363
  angles 0 144.878 0

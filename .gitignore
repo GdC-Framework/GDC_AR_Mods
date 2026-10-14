@@ -1,2 +1,5 @@
 # Ignore all .rdb files
 *.rdb
+
+# Windows folder settings
+desktop.ini
