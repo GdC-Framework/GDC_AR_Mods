@@ -18,3 +18,12 @@ GenericEntity Area1 : "{C72F956E4AC6A6E7}Prefabs/Systems/ScenarioFramework/Compo
   }
  }
 }
+Vehicle M151A1 : "{F649585ABB3706C4}Prefabs/Vehicles/Wheeled/M151A2/M151A2.et" {
+ coords 1278.261 37.656 2927.95
+ {
+  SCR_SpawnPoint : "{69D81D4A5FB98F58}Prefabs/MP/Spawning/SpawnPoint_USMC_CP.et" {
+   coords 0 0 0
+   m_bShowInDeployMapOnly 0
+  }
+ }
+}

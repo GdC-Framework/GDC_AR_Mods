@@ -1,7 +1,7 @@
 GameProject {
- ID "GDCLoadoutUSMC"
+ ID "GDC AR Loadouts"
  GUID "6518A7C00A4DD9E6"
- TITLE "GDC Loadouts USMC"
+ TITLE "GDC AR Loadouts"
  Dependencies {
   "58D0FB3206B6F859" "595F2BF2F44836FB"
  }

@@ -1,0 +1,32 @@
+FrameWidgetClass {
+ {
+  OverlayWidgetClass "{5D6CA755503DAC04}" {
+   Prefab "{5D6CA755503DAC04}"
+   {
+    VerticalLayoutWidgetClass "{5D6CA755503DAC07}" {
+     Prefab "{5D6CA755503DAC07}"
+     {
+      SizeLayoutWidgetClass "{5D6CA755503DAC06}" {
+       Prefab "{5D6CA755503DAC06}"
+       {
+        OverlayWidgetClass "{5D6CA755503DAC19}" {
+         Prefab "{5D6CA755503DAC19}"
+         {
+          VerticalLayoutWidgetClass "{5D6CA755503DAC10}" {
+           Prefab "{5D6CA755503DAC10}"
+           components {
+            SCR_LoadoutGallery "{5CFAA251DC0CFA01}" {
+             m_iCountShownItems 5
+            }
+           }
+          }
+         }
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}
