@@ -9,14 +9,17 @@ class GDC_FireMission : Managed
 	//! Time left after the last launch for the shell to land before the mission is reported as finished.
 	protected const int IMPACT_MARGIN_MS = 5000;
 
+	//! Rough speed of a spawned shell, used to deduct the end of its fall from the flight time. Vanilla shells start between 66 and 152 m/s.
+	protected const float SHELL_FALL_SPEED = 70;
+
+	//! Height above the ground at which shells are spawned, in metres.
+	protected const float SPAWN_HEIGHT = 200;
+
 	protected ResourceName m_sAmmoPrefab;
 	protected vector m_vCenter;
 	protected int m_iRoundsLeft;
 	protected float m_fDispersion;
 	protected float m_fInterval;
-	protected float m_fSpawnHeight;
-
-	protected bool m_bFirstRoundFired;
 
 	protected ref ScriptInvokerVoid m_OnFirstRound = new ScriptInvokerVoid();
 	protected ref ScriptInvokerVoid m_OnFinished = new ScriptInvokerVoid();
@@ -27,19 +30,17 @@ class GDC_FireMission : Managed
 	//! \param rounds Number of shells to fire
 	//! \param dispersion Radius of the impact disc in metres
 	//! \param interval Delay between two shells in seconds
-	//! \param spawnHeight Height above the ground at which shells are spawned, in metres
-	void GDC_FireMission(ResourceName ammoPrefab, vector center, int rounds, float dispersion, float interval, float spawnHeight)
+	void GDC_FireMission(ResourceName ammoPrefab, vector center, int rounds, float dispersion, float interval)
 	{
 		m_sAmmoPrefab = ammoPrefab;
 		m_vCenter = center;
 		m_iRoundsLeft = rounds;
 		m_fDispersion = dispersion;
 		m_fInterval = interval;
-		m_fSpawnHeight = spawnHeight;
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Invoked once, when the first shell is launched.
+	//! Invoked once, when the first shell leaves the virtual tube, a flight time before its impact.
 	ScriptInvokerVoid GetOnFirstRound()
 	{
 		return m_OnFirstRound;
@@ -54,18 +55,28 @@ class GDC_FireMission : Managed
 
 	//------------------------------------------------------------------------------------------------
 	//! Starts the mission. To be called by the authority of the support module only.
-	//! \param delay Delay before the first shell is launched, in seconds
-	void Start(float delay)
+	//! \param firingDelay Delay before the first shot, in seconds
+	//! \param flightTime Time between a shot and its impact, in seconds
+	void Start(float firingDelay, float flightTime)
 	{
-		GetGame().GetCallqueue().CallLater(FireNextRound, delay * 1000, false);
+		float launchDelay = firingDelay + Math.Max(flightTime - SPAWN_HEIGHT / SHELL_FALL_SPEED, 0);
+		GetGame().GetCallqueue().CallLater(NotifyFirstRound, firingDelay * 1000, false);
+		GetGame().GetCallqueue().CallLater(FireNextRound, launchDelay * 1000, false);
 	}
 
 	//------------------------------------------------------------------------------------------------
 	//! Stops the mission: remaining shells are not fired and OnFinished is not invoked.
 	void Cancel()
 	{
+		GetGame().GetCallqueue().Remove(NotifyFirstRound);
 		GetGame().GetCallqueue().Remove(FireNextRound);
 		GetGame().GetCallqueue().Remove(Finish);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void NotifyFirstRound()
+	{
+		m_OnFirstRound.Invoke();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -81,12 +92,6 @@ class GDC_FireMission : Managed
 		#ifdef DEBUG
 		Print(string.Format("[GDC_FireMission] Round launched: %1, target %2, distance to center %3 m, dispersion %4 m, rounds left %5", launched, target, vector.DistanceXZ(target, m_vCenter), m_fDispersion, m_iRoundsLeft));
 		#endif
-
-		if (!m_bFirstRoundFired)
-		{
-			m_bFirstRoundFired = true;
-			m_OnFirstRound.Invoke();
-		}
 
 		if (m_iRoundsLeft > 0)
 			GetGame().GetCallqueue().CallLater(FireNextRound, m_fInterval * 1000, false);
@@ -127,7 +132,7 @@ class GDC_FireMission : Managed
 		BaseWorld world = GetGame().GetWorld();
 
 		vector spawnPos = m_vCenter;
-		spawnPos[1] = world.GetSurfaceY(spawnPos[0], spawnPos[2]) + m_fSpawnHeight;
+		spawnPos[1] = world.GetSurfaceY(spawnPos[0], spawnPos[2]) + SPAWN_HEIGHT;
 
 		EntitySpawnParams params = new EntitySpawnParams();
 		params.TransformMode = ETransformMode.WORLD;

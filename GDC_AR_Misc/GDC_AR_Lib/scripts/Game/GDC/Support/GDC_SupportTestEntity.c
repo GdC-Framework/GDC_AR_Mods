@@ -14,6 +14,12 @@ class GDC_SupportTestEntity : GenericEntity
 	protected const vector TARGET_IN_ZONE = "1086 39 2453";
 	protected const vector TARGET_OUT_OF_ZONE = "1500 39 2300";
 
+	// Distances from T_Sequence, at 1100 39 2400.
+	protected const vector TARGET_IN_RANGE = "1100 39 2700";
+	protected const vector TARGET_NEAR_MAX_RANGE = "1100 39 5300";
+	protected const vector TARGET_TOO_FAR = "1100 39 5900";
+	protected const vector TARGET_TOO_CLOSE = "1105 39 2400";
+
 	protected int m_iStep;
 	protected int m_iPassed;
 	protected int m_iFailed;
@@ -131,8 +137,72 @@ class GDC_SupportTestEntity : GenericEntity
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Expected values come from the vanilla ballistic tables of the M821 and M819 shells.
+	protected void TestRange()
+	{
+		GDC_FireSupportModuleComponent fire = GDC_FireSupportModuleComponent.Cast(m_Sequence);
+		array<ref GDC_FireSupportAmmo> ammo = fire.GetAmmo();
+
+		float maxRange = ammo[0].GetMaxRange();
+		Check("HE max range", maxRange > 2940 && maxRange < 2980, string.Format("%1 m", maxRange));
+		maxRange = ammo[1].GetMaxRange();
+		Check("Smoke max range", maxRange > 2440 && maxRange < 2480, string.Format("%1 m", maxRange));
+
+		float minRange = ammo[0].GetMinRange();
+		Check("HE min range", minRange > 60 && minRange < 90, string.Format("%1 m", minRange));
+		minRange = ammo[1].GetMinRange();
+		Check("Smoke min range", minRange > 115 && minRange < 150, string.Format("%1 m", minRange));
+
+		Check("In range", fire.IsTargetInRange(TARGET_IN_RANGE, 0));
+		Check("Too far", !fire.IsTargetInRange(TARGET_TOO_FAR, 0));
+		Check("Too close", !fire.IsTargetInRange(TARGET_TOO_CLOSE, 0));
+		Check("Smoke range differs from HE", fire.IsTargetInRange(TARGET_NEAR_MAX_RANGE, 0) && !fire.IsTargetInRange(TARGET_NEAR_MAX_RANGE, 1));
+
+		float flightTime = fire.GetFlightTime(TARGET_IN_RANGE, 0);
+		Check("Flight time at 300 m", flightTime > 8 && flightTime < 15, string.Format("%1 s", flightTime));
+		flightTime = fire.GetFlightTime(TARGET_NEAR_MAX_RANGE, 0);
+		Check("Flight time near max range", flightTime > 24 && flightTime < 32, string.Format("%1 s", flightTime));
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \return The marker of a support among those this player can see, null if there is none
+	protected SCR_MapMarkerBase FindMarker(string supportName)
+	{
+		SCR_MapMarkerManagerComponent markerManager = SCR_MapMarkerManagerComponent.GetInstance();
+		array<SCR_MapMarkerBase> markers = markerManager.GetStaticMarkers();
+		markers.InsertAll(markerManager.GetDisabledMarkers());
+		foreach (SCR_MapMarkerBase marker : markers)
+		{
+			if (marker.GetCustomText() == supportName)
+				return marker;
+		}
+
+		return null;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! T_Limits has a marker for all players. T_Inverted has one for the US, and this player is from the USSR.
+	protected void TestMarkers()
+	{
+		SCR_MapMarkerBase marker = FindMarker("T_Limits");
+		Check("Marker received by the client", marker != null);
+		if (marker)
+		{
+			Check("Marker is a military one", marker.GetType() == SCR_EMapMarkerType.PLACED_MILITARY);
+			CheckInt("Marker is a mortar", marker.GetFlags(), EMilitarySymbolIcon.MORTAR);
+
+			int position[2];
+			marker.GetWorldPos(position);
+			Check("Marker at the position of the module", position[0] == 1105 && position[1] == 2400, string.Format("%1 %2", position[0], position[1]));
+		}
+
+		Check("No marker for the other faction", FindMarker("T_Inverted") == null);
+		Check("No marker by default", FindMarker("T_Sequence") == null);
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Sends a request as a real client would, without any local check: the server has to refuse it.
-	protected void SendRequest(int option, int quantity, int spread, vector target = TARGET_IN_ZONE, GDC_SupportModuleComponent module = null)
+	protected void SendRequest(int option, int quantity, int spread, vector target = TARGET_IN_RANGE, GDC_SupportModuleComponent module = null)
 	{
 		if (!module)
 			module = m_Sequence;
@@ -192,46 +262,53 @@ class GDC_SupportTestEntity : GenericEntity
 
 			case 7:
 				CheckInt("Server refuses a rank too low", FindModule("T_RankHigh").GetMissionsLeft(), 5);
+				SendRequest(0, 2, 15, TARGET_TOO_FAR);
+				NextStep(1.5);
+				return;
+
+			case 8:
+				CheckInt("Server refuses a target out of range", m_Sequence.GetMissionsLeft(), 2);
 				SendRequest(0, 4, 15);
 				NextStep(0.5);
 				return;
 
-			case 8:
+			case 9:
 				CheckInt("Accepted request consumes a mission", m_Sequence.GetMissionsLeft(), 1);
 				CheckRefusal("Mission active", m_Sequence.CheckAvailability(), GDC_ESupportRefusal.MISSION_ACTIVE);
 				SendRequest(0, 4, 15);
 				NextStep(1.5);
 				return;
 
-			case 9:
+			case 10:
 				CheckInt("Refused while active, not consumed", m_Sequence.GetMissionsLeft(), 1);
-				NextStep(7.5);
+				// From now on, the mission ends about 2.7 s after the flight time, then the cooldown lasts 6 s.
+				NextStep(GDC_FireSupportModuleComponent.Cast(m_Sequence).GetFlightTime(TARGET_IN_RANGE, 0) + 5);
 				return;
 
-			case 10:
+			case 11:
 				CheckRefusal("Cooldown after the mission", m_Sequence.CheckAvailability(), GDC_ESupportRefusal.COOLDOWN);
 				Check("Cooldown remaining replicated", m_Sequence.GetCooldownRemaining() > 0 && m_Sequence.GetCooldownRemaining() <= 6, string.Format("%1 s", m_Sequence.GetCooldownRemaining()));
 				SendRequest(0, 4, 15);
 				NextStep(1);
 				return;
 
-			case 11:
+			case 12:
 				CheckInt("Refused during cooldown, not consumed", m_Sequence.GetMissionsLeft(), 1);
 				NextStep(6.5);
 				return;
 
-			case 12:
+			case 13:
 				CheckRefusal("Available after the cooldown", m_Sequence.CheckAvailability(), GDC_ESupportRefusal.NONE);
 				SendRequest(1, 1, 10);
 				NextStep(0.5);
 				return;
 
-			case 13:
+			case 14:
 				CheckInt("Last mission consumed", m_Sequence.GetMissionsLeft(), 0);
 				NextStep(8);
 				return;
 
-			case 14:
+			case 15:
 				CheckRefusal("No mission left", m_Sequence.CheckAvailability(), GDC_ESupportRefusal.NO_MISSION_LEFT);
 				SendRequest(0, 1, 10);
 				NextStep(1.5);
@@ -277,6 +354,8 @@ class GDC_SupportTestEntity : GenericEntity
 		TestLimits();
 		TestAccess();
 		TestZones();
+		TestRange();
+		TestMarkers();
 		NextStep(1);
 	}
 

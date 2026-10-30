@@ -481,7 +481,12 @@ class GDC_SupportMapPanel : Managed
 			if (!m_Module.IsTargetAllowed(m_vTarget))
 			{
 				refusal = GDC_ESupportRefusal.TARGET_FORBIDDEN;
-				status = "Zone interdite au tir.";
+				status = "Zone d'interdiction de tir.";
+			}
+			else if (!m_Module.IsTargetInRange(m_vTarget, GetOption()))
+			{
+				refusal = GDC_ESupportRefusal.OUT_OF_RANGE;
+				status = "Cible hors de portée.";
 			}
 			else if (refusal != GDC_ESupportRefusal.NONE && controller)
 				status = GetUnavailableText(controller, refusal);

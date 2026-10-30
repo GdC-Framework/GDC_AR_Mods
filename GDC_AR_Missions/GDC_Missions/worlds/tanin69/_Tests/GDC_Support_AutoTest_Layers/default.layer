@@ -57,6 +57,8 @@ $grp GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.e
     m_iMaxRoundsPerFireMission 80
     m_iMinDispersion 1
     m_iMaxDispersion 900
+    m_bShowMapMarker 1
+    m_eMarkerFaction OPFOR
    }
   }
   coords 1105 39 2400
@@ -67,6 +69,8 @@ $grp GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.e
     m_sDisplayName "T_Inverted"
     m_iMinDispersion 300
     m_iMaxDispersion 40
+    m_bShowMapMarker 1
+    m_sMarkerVisibleToFaction "US"
    }
   }
   coords 1110 39 2400

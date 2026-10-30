@@ -64,16 +64,18 @@ modded class SCR_PlayerController
 		switch (feedback)
 		{
 			case GDC_ESupportFeedback.ACCEPTED:
-				return string.Format("Demande acceptée, premier coup dans %1 s.", seconds);
+				return string.Format("Mission reçue, tir dans %1 s.", seconds);
 
 			case GDC_ESupportFeedback.FIRST_ROUND:
-				return "Coups partis.";
+				// The flight time is an estimate: only a 5 s window aligned on multiples of 5 is announced.
+				int windowStart = (seconds - 1) / 5 * 5;
+				return string.Format("Coups partis, arrivée dans %1 à %2 s.", windowStart, windowStart + 5);
 
 			case GDC_ESupportFeedback.FINISHED:
-				return "Fin de mission.";
+				return "Fin de tir.";
 		}
 
-		return "Demande refusée : " + GDC_GetSupportRefusalText(refusal, seconds);
+		return "Mission refusée : " + GDC_GetSupportRefusalText(refusal, seconds);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -82,13 +84,13 @@ modded class SCR_PlayerController
 		switch (refusal)
 		{
 			case GDC_ESupportRefusal.NO_MISSION_LEFT:
-				return "plus de mission disponible.";
+				return "plus de mission de tir disponible.";
 
 			case GDC_ESupportRefusal.MISSION_ACTIVE:
-				return "une mission est déjà en cours.";
+				return "pièces déjà en action.";
 
 			case GDC_ESupportRefusal.COOLDOWN:
-				return string.Format("support indisponible pendant %1 s.", seconds);
+				return string.Format("pièces indisponibles pendant %1 s.", seconds);
 
 			case GDC_ESupportRefusal.RANK_TOO_LOW:
 				return "grade insuffisant.";
@@ -97,9 +99,12 @@ modded class SCR_PlayerController
 				return "équipement requis manquant.";
 
 			case GDC_ESupportRefusal.TARGET_FORBIDDEN:
-				return "cible en zone interdite au tir.";
+				return "cible en zone d'interdiction de tir.";
+
+			case GDC_ESupportRefusal.OUT_OF_RANGE:
+				return "cible hors de portée.";
 		}
 
-		return "demande invalide.";
+		return "demande de tir invalide.";
 	}
 }

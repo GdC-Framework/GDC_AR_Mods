@@ -23,9 +23,12 @@ GenericEntity GDC_Mortar : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mo
    m_aAreaNames {
     "GDC_Zone_Test"
    }
+   m_bShowRangeRings 0
+   m_bShowMapMarker 1
+   m_eMarkerFaction OPFOR
   }
  }
- coords 1164.955 39 2295.212
+ coords 1704.377 49.048 2352.353
 }
 Vehicle UAZ452_transport1 : "{1FBB492E86002BF5}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_transport.et" {
  coords 1082.443 39 2450.488

@@ -11,7 +11,8 @@ enum GDC_ESupportRefusal
 	COOLDOWN,
 	RANK_TOO_LOW,
 	MISSING_ITEM,
-	TARGET_FORBIDDEN
+	TARGET_FORBIDDEN,
+	OUT_OF_RANGE
 }
 
 //! Messages sent to the player who requested a support.
@@ -276,7 +277,19 @@ class GDC_SupportModuleComponent : ScriptComponent
 		if (!IsOptionValid(option) || quantity < 1 || quantity > GetMaxQuantity() || spread < GetMinSpread() || spread > GetMaxSpread())
 			return GDC_ESupportRefusal.INVALID_REQUEST;
 
+		if (!IsTargetInRange(target, option))
+			return GDC_ESupportRefusal.OUT_OF_RANGE;
+
 		return GDC_ESupportRefusal.NONE;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Valid on server and clients.
+	//! \param option Index of the option chosen by the player (ammo type...)
+	//! \return Whether this support can reach the target
+	bool IsTargetInRange(vector target, int option)
+	{
+		return true;
 	}
 
 	//------------------------------------------------------------------------------------------------
