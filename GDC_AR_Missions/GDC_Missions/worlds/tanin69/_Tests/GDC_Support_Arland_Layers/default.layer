@@ -1,0 +1,56 @@
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_AutoSpawnLogic "{5D36888CC966608A}" {
+    m_sForcedFaction "USSR"
+   }
+  }
+ }
+ coords 1145 51 1345
+}
+SCR_FactionManager "6ABCD25B0FC919AA" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 1150 51 1345
+}
+GenericEntity GDC_Mortar : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.et" {
+ components {
+  GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+   m_eTargetingMode MILSIM
+   m_fCooldown 20
+   m_aRequiredItems {
+    "{E1A5D4B878AA8980}Prefabs/Items/Equipment/Radios/Radio_R148.et"
+   }
+   m_eFireAreaMode BLACKLIST
+   m_aAreaNames {
+    "GDC_Zone_Test"
+   }
+  }
+ }
+ coords 1164.955 39 2295.212
+}
+Vehicle UAZ452_transport1 : "{1FBB492E86002BF5}Prefabs/Vehicles/Wheeled/UAZ452/UAZ452_transport.et" {
+ coords 1082.443 39 2450.488
+}
+SCR_SpawnPoint GDC_Spawn : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 1285.249 39 2258.188
+}
+PolylineShapeEntity GDC_Zone_Test : "{72B1111AF22BA033}Prefabs/Support/GDC_SupportZone.et" {
+ coords 1128.448 38.994 2356.924
+ angles 0 -34.426 0
+ Points {
+  ShapePoint "{7A1C40E2B95D3F16}" {
+   Position -100 0.447 -100
+  }
+  ShapePoint "{3E96D1B07C42A8F5}" {
+   Position 100 0.006 -100
+  }
+  ShapePoint "{C25F8A7316E0D94B}" {
+   Position 100 1.271 100
+  }
+  ShapePoint "{91B3E6C45D0A27F8}" {
+   Position -100 0.006 100
+  }
+ }
+}
+SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutManager_USxUSSR.et" {
+ coords 1140 51 1345
+}

@@ -1,0 +1,21 @@
+GenericEntity {
+ ID "48B35068C9A5B1D7"
+ components {
+  GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+   m_sDisplayName "Mortier"
+   m_aAmmo {
+    GDC_FireSupportAmmo "{55BCB9A94CE671B2}" {
+     m_sName "Explosif"
+     m_sPrefab "{8AEB3E3846780747}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_M821_EffectModule.et"
+    }
+    GDC_FireSupportAmmo "{5748645126359741}" {
+     m_sName "Fumigène"
+     m_sPrefab "{6F041895D8456D90}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_Smoke_M819_EffectModule.et"
+    }
+   }
+  }
+  RplComponent "{714AEB7922FE3DF1}" {
+   Streamable Disabled
+  }
+ }
+}

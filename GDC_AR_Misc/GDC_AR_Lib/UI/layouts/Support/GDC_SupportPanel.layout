@@ -1,0 +1,168 @@
+FrameWidgetClass {
+ Name "GDC_SupportPanel"
+ Slot FrameWidgetSlot "{DB6D74F13971C524}" {
+  OffsetLeft 0
+  OffsetTop 0
+  SizeX 480
+  OffsetRight -480
+  SizeY 520
+  OffsetBottom -520
+ }
+ {
+  SmartPanelWidgetClass "{1C180F6367E0BC4D}" {
+   Name "Background"
+   Slot FrameWidgetSlot "{0D2745234E8BA6DA}" {
+    Anchor 0 0 1 1
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    SizeX 0
+    OffsetRight 0
+    SizeY 0
+    OffsetBottom 0
+   }
+   Opacity 0.98
+   Color 0.0075 0.0123 0.0144 1
+   style rounded_4px
+  }
+  VerticalLayoutWidgetClass "{005D9F7516946DC3}" {
+   Name "Content"
+   Slot FrameWidgetSlot "{08C97FB314A222FE}" {
+    Anchor 0 0 1 1
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    SizeX 0
+    OffsetRight 0
+    SizeY 0
+    OffsetBottom 0
+   }
+   {
+    RichTextWidgetClass "{E236D5588D893F09}" : "{45BA2EA46F09C0FF}UI/layouts/WidgetLibrary/RichTextWidgets/RichText_InteractiveSmall.layout" {
+     Name "Title"
+     Slot LayoutSlot "{4B44CBA8C7E34663}" {
+      Padding 16 12 16 8
+     }
+     Text "APPUI FEU"
+    }
+    ButtonWidgetClass "{4C4E58F222A722F6}" : "{4B5AE6E64037FFB4}UI/layouts/WidgetLibrary/ComboBox/WLib_ComboBox.layout" {
+     Name "ComboSupport"
+     Slot LayoutSlot "{6F4E7C980992468C}" {
+      HorizontalAlign 3
+      Padding 16 2 16 2
+     }
+     components {
+      SCR_ComboBoxComponent "{546B1D464BC32853}" {
+       m_sLabel "Support"
+      }
+     }
+    }
+    ButtonWidgetClass "{58EF3B109DAA7607}" : "{4B5AE6E64037FFB4}UI/layouts/WidgetLibrary/ComboBox/WLib_ComboBox.layout" {
+     Name "ComboOption"
+     Slot LayoutSlot "{FF9000D1C04A2652}" {
+      HorizontalAlign 3
+      Padding 16 2 16 2
+     }
+     components {
+      SCR_ComboBoxComponent "{546B1D464BC32853}" {
+       m_sLabel "Munition"
+      }
+     }
+    }
+    ButtonWidgetClass "{D84A17F3C260B9E5}" : "{4A41296C0E9A889F}UI/layouts/WidgetLibrary/WLib_Slider.layout" {
+     Name "SliderQuantity"
+     Slot LayoutSlot "{39B7E05A1C6D42F8}" {
+      HorizontalAlign 3
+      Padding 16 2 16 2
+     }
+     components {
+      SCR_SliderComponent "{548294960C7399D9}" {
+       m_sLabel "Nombre de coups"
+       m_sFormatText "%1"
+       m_bRoundValue 1
+      }
+     }
+    }
+    ButtonWidgetClass "{72C0E9B14F8D36A5}" : "{4A41296C0E9A889F}UI/layouts/WidgetLibrary/WLib_Slider.layout" {
+     Name "SliderSpread"
+     Slot LayoutSlot "{A5F31D7806CE4B92}" {
+      HorizontalAlign 3
+      Padding 16 2 16 2
+     }
+     components {
+      SCR_SliderComponent "{548294960C7399D9}" {
+       m_sLabel "Dispersion"
+       m_sFormatText "%1 m"
+       m_bRoundValue 1
+      }
+     }
+    }
+    ButtonWidgetClass "{4EF537A8E57B4A4A}" : "{0022F0B45ADBC5AC}UI/layouts/WidgetLibrary/EditBox/WLib_EditBox.layout" {
+     Name "EditTarget"
+     Slot LayoutSlot "{2E43F406649E9203}" {
+      HorizontalAlign 3
+      Padding 16 2 16 2
+     }
+     components {
+      SCR_EditBoxComponent "{547290FFBD5B33E9}" {
+       m_sLabel "Cible (coordonnées)"
+      }
+     }
+    }
+    RichTextWidgetClass "{E54B85DA6F201395}" : "{45BA2EA46F09C0FF}UI/layouts/WidgetLibrary/RichTextWidgets/RichText_InteractiveSmall.layout" {
+     Name "Status"
+     Slot LayoutSlot "{7D3A61C2E84F1B90}" {
+      Padding 16 8 16 2
+     }
+     Text ""
+    }
+    RichTextWidgetClass "{A92F40D7163CE85B}" : "{45BA2EA46F09C0FF}UI/layouts/WidgetLibrary/RichTextWidgets/RichText_InteractiveSmall.layout" {
+     Name "Missions"
+     Slot LayoutSlot "{36C8E1F75B0A4D92}" {
+      Padding 16 2 16 8
+     }
+     Text ""
+    }
+    HorizontalLayoutWidgetClass "{B51E7A093D6C2F84}" {
+     Name "Buttons"
+     Slot LayoutSlot "{82D4F6A17E3B095C}" {
+      Padding 16 8 16 12
+     }
+     {
+      ButtonWidgetClass "{1F60C3B8A47D92E5}" : "{CB8563509DEF3E0E}UI/layouts/WidgetLibrary/Buttons/WLib_NavigationButtonSmall.layout" {
+       Name "ButtonCancel"
+       Slot LayoutSlot "{E07B25D94C1A86F3}" {
+        HorizontalAlign 2
+        VerticalAlign 1
+       }
+       components {
+        SCR_InputButtonComponent "{5D346C3DD81D95CD}" {
+         m_sActionName "MenuBack"
+         m_sLabel "Annuler"
+         m_bOverrideTextSize 1
+        }
+       }
+      }
+      ButtonWidgetClass "{6A92D4E01B7F35C8}" : "{CB8563509DEF3E0E}UI/layouts/WidgetLibrary/Buttons/WLib_NavigationButtonSmall.layout" {
+       Name "ButtonFire"
+       Slot LayoutSlot "{C3F1786BE2049AD5}" {
+        HorizontalAlign 2
+        VerticalAlign 1
+        Padding 20 0 0 0
+       }
+       components {
+        SCR_InputButtonComponent "{5D346C3DD81D95CD}" {
+         m_sActionName "MenuSelect"
+         m_sLabel "Tirer"
+         m_bOverrideTextSize 1
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

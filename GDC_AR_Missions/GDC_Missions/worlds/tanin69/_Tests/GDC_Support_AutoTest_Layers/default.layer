@@ -1,0 +1,153 @@
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_AutoSpawnLogic "{5D36888CC966608A}" {
+    m_sForcedFaction "USSR"
+   }
+  }
+ }
+ coords 1145 51 1345
+}
+SCR_FactionManager "6ABCD25B0FC919AB" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 1150 51 1345
+}
+SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutManager_USxUSSR.et" {
+ coords 1140 51 1345
+}
+SCR_SpawnPoint T_Spawn : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 1285.249 39 2258.188
+}
+PolylineShapeEntity T_Zone : "{72B1111AF22BA033}Prefabs/Support/GDC_SupportZone.et" {
+ coords 1086 39 2453
+ Points {
+  ShapePoint "{7A1C40E2B95D3F17}" {
+   Position -100 0 -100
+  }
+  ShapePoint "{3E96D1B07C42A8F6}" {
+   Position 100 0 -100
+  }
+  ShapePoint "{C25F8A7316E0D94C}" {
+   Position 100 0 100
+  }
+  ShapePoint "{91B3E6C45D0A27F9}" {
+   Position -100 0 100
+  }
+ }
+}
+$grp GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.et" {
+ T_Sequence {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Sequence"
+    m_iFireMissionCount 2
+    m_fCooldown 6
+    m_iMaxRoundsPerFireMission 4
+    m_iMinDispersion 10
+    m_iMaxDispersion 20
+    m_fIntervalBetweenRounds 0.5
+    m_fFirstRoundDelay 1
+   }
+  }
+  coords 1100 39 2400
+ }
+ T_Limits {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Limits"
+    m_iMaxRoundsPerFireMission 80
+    m_iMinDispersion 1
+    m_iMaxDispersion 900
+   }
+  }
+  coords 1105 39 2400
+ }
+ T_Inverted {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Inverted"
+    m_iMinDispersion 300
+    m_iMaxDispersion 40
+   }
+  }
+  coords 1110 39 2400
+ }
+ T_Milsim {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Milsim"
+    m_eTargetingMode MILSIM
+   }
+  }
+  coords 1115 39 2400
+ }
+ T_RankHigh {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_RankHigh"
+    m_iFireMissionCount 5
+    m_eMinRankRequired GENERAL
+   }
+  }
+  coords 1120 39 2400
+ }
+ T_RankLow {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_RankLow"
+    m_eMinRankRequired RENEGADE
+   }
+  }
+  coords 1125 39 2400
+ }
+ T_ItemMissing {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_ItemMissing"
+    m_aRequiredItems {
+     "{8AEB3E3846780747}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_M821_EffectModule.et"
+    }
+   }
+  }
+  coords 1130 39 2400
+ }
+ T_RankAndItem {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_RankAndItem"
+    m_eMinRankRequired RENEGADE
+    m_aRequiredItems {
+     "{8AEB3E3846780747}Prefabs/Weapons/Ammo/Ammo_Shell_81mm_HE_M821_EffectModule.et"
+    }
+   }
+  }
+  coords 1135 39 2400
+ }
+ T_Whitelist {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Whitelist"
+    m_iFireMissionCount 5
+    m_eFireAreaMode WHITELIST
+    m_aAreaNames {
+     "T_Zone"
+    }
+   }
+  }
+  coords 1140 39 2400
+ }
+ T_Blacklist {
+  components {
+   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
+    m_sDisplayName "T_Blacklist"
+    m_eFireAreaMode BLACKLIST
+    m_aAreaNames {
+     "T_Zone"
+    }
+   }
+  }
+  coords 1145 39 2400
+ }
+}
+GDC_SupportTestEntity T_Test {
+ coords 1150 39 2400
+}
