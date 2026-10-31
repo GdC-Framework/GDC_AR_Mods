@@ -21,7 +21,7 @@ GenericEntity GDC_Mortar : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mo
    }
    m_eFireAreaMode BLACKLIST
    m_aAreaNames {
-    "GDC_Zone_Test"
+    "GDC_Area_Test"
    }
    m_bShowRangeRings 0
    m_bShowMapMarker 1
@@ -36,7 +36,44 @@ Vehicle UAZ452_transport1 : "{1FBB492E86002BF5}Prefabs/Vehicles/Wheeled/UAZ452/U
 SCR_SpawnPoint GDC_Spawn : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
  coords 1285.249 39 2258.188
 }
-PolylineShapeEntity GDC_Zone_Test : "{72B1111AF22BA033}Prefabs/Support/GDC_SupportZone.et" {
+PolylineShapeEntity GDC_Area_Concave : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et" {
+ components {
+  GDC_MarkerAreaComponent "{64E2A91C7B3D5F08}" {
+   m_bShowOnMap 1
+   m_OutlineColor 0 0.4 1 1
+   m_fOutlineWidth 6
+   m_FillColor 0 0.8 1 1
+   m_fFillOpacity 0.5
+  }
+ }
+ coords 1400 39 2400
+ Points {
+  ShapePoint "{1D7E4A92C35B60F1}" {
+   Position -100 0 -100
+  }
+  ShapePoint "{2F8B05D6E41C73A2}" {
+   Position 100 0 -100
+  }
+  ShapePoint "{3A9C16E7F52D84B3}" {
+   Position 100 0 0
+  }
+  ShapePoint "{4BAD27F8063E95C4}" {
+   Position 0 0 0
+  }
+  ShapePoint "{5CBE3809174FA6D5}" {
+   Position 0 0 100
+  }
+  ShapePoint "{6DCF491A2850B7E6}" {
+   Position -100 0 100
+  }
+ }
+}
+PolylineShapeEntity GDC_Area_Test : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et" {
+ components {
+  GDC_MarkerAreaComponent "{64E2A91C7B3D5F08}" {
+   m_bShowOnMap 1
+  }
+ }
  coords 1128.448 38.994 2356.924
  angles 0 -34.426 0
  Points {

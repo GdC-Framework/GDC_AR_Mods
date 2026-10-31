@@ -11,8 +11,8 @@ class GDC_SupportTestEntityClass : GenericEntityClass
 
 class GDC_SupportTestEntity : GenericEntity
 {
-	protected const vector TARGET_IN_ZONE = "1086 39 2453";
-	protected const vector TARGET_OUT_OF_ZONE = "1500 39 2300";
+	protected const vector TARGET_IN_AREA = "1086 39 2453";
+	protected const vector TARGET_OUT_OF_AREA = "1500 39 2300";
 
 	// Distances from T_Sequence, at 1100 39 2400.
 	protected const vector TARGET_IN_RANGE = "1100 39 2700";
@@ -123,17 +123,70 @@ class GDC_SupportTestEntity : GenericEntity
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected void TestZones()
+	protected void TestAreas()
 	{
 		GDC_SupportModuleComponent whitelist = FindModule("T_Whitelist");
-		Check("Whitelist allows inside", whitelist.IsTargetAllowed(TARGET_IN_ZONE));
-		Check("Whitelist refuses outside", !whitelist.IsTargetAllowed(TARGET_OUT_OF_ZONE));
+		Check("Whitelist allows inside", whitelist.IsTargetAllowed(TARGET_IN_AREA));
+		Check("Whitelist refuses outside", !whitelist.IsTargetAllowed(TARGET_OUT_OF_AREA));
 
 		GDC_SupportModuleComponent blacklist = FindModule("T_Blacklist");
-		Check("Blacklist refuses inside", !blacklist.IsTargetAllowed(TARGET_IN_ZONE));
-		Check("Blacklist allows outside", blacklist.IsTargetAllowed(TARGET_OUT_OF_ZONE));
+		Check("Blacklist refuses inside", !blacklist.IsTargetAllowed(TARGET_IN_AREA));
+		Check("Blacklist allows outside", blacklist.IsTargetAllowed(TARGET_OUT_OF_AREA));
 
-		Check("No zone allows anything", m_Sequence.IsTargetAllowed(TARGET_OUT_OF_ZONE));
+		Check("No area allows anything", m_Sequence.IsTargetAllowed(TARGET_OUT_OF_AREA));
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected float TrianglesArea(array<vector> polygon, array<int> triangles)
+	{
+		float area = 0;
+		for (int i = 0; i + 2 < triangles.Count(); i += 3)
+		{
+			vector a = polygon[triangles[i]];
+			vector b = polygon[triangles[i + 1]];
+			vector c = polygon[triangles[i + 2]];
+			area += Math.AbsFloat((b[0] - a[0]) * (c[2] - a[2]) - (b[2] - a[2]) * (c[0] - a[0])) * 0.5;
+		}
+
+		return area;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void CheckTriangulation(string testName, array<vector> polygon, int expectedIndices, float expectedArea)
+	{
+		array<int> triangles = {};
+		Check(testName + " is complete", GDC_MarkerAreaComponent.Triangulate(polygon, triangles));
+		CheckInt(testName + " triangles", triangles.Count(), expectedIndices);
+		Check(testName + " area", Math.AbsFloat(TrianglesArea(polygon, triangles) - expectedArea) < 0.01, string.Format("expected %1, got %2", expectedArea, TrianglesArea(polygon, triangles)));
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void TestMarkerArea()
+	{
+		array<vector> square = {"0 0 0", "10 0 0", "10 0 10", "0 0 10"};
+		CheckTriangulation("Square", square, 6, 100);
+
+		array<vector> clockwise = {"0 0 10", "10 0 10", "10 0 0", "0 0 0"};
+		CheckTriangulation("Clockwise square", clockwise, 6, 100);
+
+		array<vector> concave = {"0 0 0", "10 0 0", "10 0 5", "5 0 5", "5 0 10", "0 0 10"};
+		CheckTriangulation("Concave polygon", concave, 12, 75);
+
+		array<vector> withMidpoint = {"0 0 0", "5 0 0", "10 0 0", "10 0 10", "0 0 10"};
+		CheckTriangulation("Point in the middle of a side", withMidpoint, 9, 100);
+
+		array<int> triangles = {};
+		array<vector> crossing = {"0 0 0", "10 0 10", "10 0 0", "0 0 10"};
+		GDC_MarkerAreaComponent.Triangulate(crossing, triangles);
+		Check("Crossing outline ends", true);
+
+		IEntity entity = GetGame().GetWorld().FindEntityByName("T_Area");
+		GDC_MarkerAreaComponent area;
+		if (entity)
+			area = GDC_MarkerAreaComponent.Cast(entity.FindComponent(GDC_MarkerAreaComponent));
+
+		Check("Area prefab has the component", area != null);
+		Check("Area is listed for the map", GDC_MarkerAreaComponent.GetShownAreas().Contains(area));
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -250,13 +303,13 @@ class GDC_SupportTestEntity : GenericEntity
 
 			case 5:
 				CheckInt("Server refuses unknown ammunition", m_Sequence.GetMissionsLeft(), 2);
-				SendRequest(0, 2, 15, TARGET_OUT_OF_ZONE, FindModule("T_Whitelist"));
+				SendRequest(0, 2, 15, TARGET_OUT_OF_AREA, FindModule("T_Whitelist"));
 				NextStep(1.5);
 				return;
 
 			case 6:
 				CheckInt("Server refuses a target out of the whitelist", FindModule("T_Whitelist").GetMissionsLeft(), 5);
-				SendRequest(0, 2, 15, TARGET_IN_ZONE, FindModule("T_RankHigh"));
+				SendRequest(0, 2, 15, TARGET_IN_AREA, FindModule("T_RankHigh"));
 				NextStep(1.5);
 				return;
 
@@ -353,7 +406,8 @@ class GDC_SupportTestEntity : GenericEntity
 		TestGrid();
 		TestLimits();
 		TestAccess();
-		TestZones();
+		TestAreas();
+		TestMarkerArea();
 		TestRange();
 		TestMarkers();
 		NextStep(1);

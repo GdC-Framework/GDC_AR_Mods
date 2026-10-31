@@ -24,11 +24,11 @@ enum GDC_ESupportFeedback
 	FINISHED
 }
 
-enum GDC_ESupportZoneMode
+enum GDC_ESupportAreaMode
 {
 	NONE,		//!< Any target is allowed
-	WHITELIST,	//!< Targets are only allowed inside the zones
-	BLACKLIST	//!< Targets are allowed everywhere except inside the zones
+	WHITELIST,	//!< Targets are only allowed inside the areas
+	BLACKLIST	//!< Targets are allowed everywhere except inside the areas
 }
 
 //! How players designate a target on the map.
@@ -62,8 +62,8 @@ class GDC_SupportModuleComponent : ScriptComponent
 	[Attribute("", UIWidgets.ResourceNamePicker, "The player must carry one of these items (exact prefab, inherited prefabs don't count). Empty = no item requirement. If a minimum rank is also set, both conditions apply.", "et")]
 	protected ref array<ResourceName> m_aRequiredItems;
 
-	[Attribute(typename.EnumToString(GDC_ESupportZoneMode, GDC_ESupportZoneMode.NONE), UIWidgets.ComboBox, "How the areas restrict targets. NONE: any target. WHITELIST: targets only inside the areas. BLACKLIST: no-fire areas, targets anywhere except inside them.", enumType: GDC_ESupportZoneMode)]
-	protected GDC_ESupportZoneMode m_eFireAreaMode;
+	[Attribute(typename.EnumToString(GDC_ESupportAreaMode, GDC_ESupportAreaMode.NONE), UIWidgets.ComboBox, "How the areas restrict targets. NONE: any target. WHITELIST: targets only inside the areas. BLACKLIST: no-fire areas, targets anywhere except inside them.", enumType: GDC_ESupportAreaMode)]
+	protected GDC_ESupportAreaMode m_eFireAreaMode;
 
 	[Attribute("", UIWidgets.EditBox, "Names of the closed polyline entities used as areas.")]
 	protected ref array<string> m_aAreaNames;
@@ -78,7 +78,7 @@ class GDC_SupportModuleComponent : ScriptComponent
 	protected WorldTimestamp m_fCooldownEnd;
 
 	//! Area polygons in world coordinates, built on first use.
-	protected ref array<ref array<vector>> m_aZonePolygons;
+	protected ref array<ref array<vector>> m_aAreaPolygons;
 
 	protected RplComponent m_RplComponent;
 
@@ -203,43 +203,43 @@ class GDC_SupportModuleComponent : ScriptComponent
 	//! Checks the areas for a target position. Valid on server and clients.
 	bool IsTargetAllowed(vector target)
 	{
-		if (m_eFireAreaMode == GDC_ESupportZoneMode.NONE)
+		if (m_eFireAreaMode == GDC_ESupportAreaMode.NONE)
 			return true;
 
-		if (!m_aZonePolygons)
-			BuildZonePolygons();
+		if (!m_aAreaPolygons)
+			BuildAreaPolygons();
 
-		bool inZone = false;
-		foreach (array<vector> polygon : m_aZonePolygons)
+		bool inArea = false;
+		foreach (array<vector> polygon : m_aAreaPolygons)
 		{
 			if (Math2D.IsPointInPolygonXZ(polygon, target))
 			{
-				inZone = true;
+				inArea = true;
 				break;
 			}
 		}
 
-		if (m_eFireAreaMode == GDC_ESupportZoneMode.WHITELIST)
-			return inZone;
+		if (m_eFireAreaMode == GDC_ESupportAreaMode.WHITELIST)
+			return inArea;
 
-		return !inZone;
+		return !inArea;
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected void BuildZonePolygons()
+	protected void BuildAreaPolygons()
 	{
-		m_aZonePolygons = {};
+		m_aAreaPolygons = {};
 
 		if (!m_aAreaNames)
 			return;
 
 		BaseWorld world = GetGame().GetWorld();
-		foreach (string zoneName : m_aAreaNames)
+		foreach (string areaName : m_aAreaNames)
 		{
-			PolylineShapeEntity shape = PolylineShapeEntity.Cast(world.FindEntityByName(zoneName));
+			PolylineShapeEntity shape = PolylineShapeEntity.Cast(world.FindEntityByName(areaName));
 			if (!shape)
 			{
-				Print(string.Format("[GDC_Support] '%1': area '%2' is not a polyline entity of this world.", m_sDisplayName, zoneName), LogLevel.WARNING);
+				Print(string.Format("[GDC_Support] '%1': area '%2' is not a polyline entity of this world.", m_sDisplayName, areaName), LogLevel.WARNING);
 				continue;
 			}
 
@@ -250,7 +250,7 @@ class GDC_SupportModuleComponent : ScriptComponent
 				polygon[i] = shape.CoordToParent(polygon[i]);
 			}
 
-			m_aZonePolygons.Insert(polygon);
+			m_aAreaPolygons.Insert(polygon);
 		}
 	}
 

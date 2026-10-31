@@ -17,7 +17,12 @@ SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutMana
 SCR_SpawnPoint T_Spawn : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
  coords 1285.249 39 2258.188
 }
-PolylineShapeEntity T_Zone : "{72B1111AF22BA033}Prefabs/Support/GDC_SupportZone.et" {
+PolylineShapeEntity T_Area : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et" {
+ components {
+  GDC_MarkerAreaComponent "{64E2A91C7B3D5F08}" {
+   m_bShowOnMap 1
+  }
+ }
  coords 1086 39 2453
  Points {
   ShapePoint "{7A1C40E2B95D3F17}" {
@@ -133,7 +138,7 @@ $grp GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.e
     m_iFireMissionCount 5
     m_eFireAreaMode WHITELIST
     m_aAreaNames {
-     "T_Zone"
+     "T_Area"
     }
    }
   }
@@ -145,7 +150,7 @@ $grp GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.e
     m_sDisplayName "T_Blacklist"
     m_eFireAreaMode BLACKLIST
     m_aAreaNames {
-     "T_Zone"
+     "T_Area"
     }
    }
   }

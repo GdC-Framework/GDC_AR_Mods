@@ -1,5 +1,5 @@
 MetaFileClass {
- Name "{72B1111AF22BA033}Prefabs/Support/GDC_SupportZone.et"
+ Name "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et"
  Configurations {
   EntityTemplateResourceClass PC {
   }

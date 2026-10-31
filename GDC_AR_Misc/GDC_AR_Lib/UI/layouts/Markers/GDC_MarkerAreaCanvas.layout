@@ -1,0 +1,14 @@
+CanvasWidgetClass {
+ Name "GDC_MarkerAreaCanvas"
+ Slot FrameWidgetSlot "{8C3E51F7A2D6904B}" {
+  Anchor 0 0 1 1
+  PositionX 0
+  OffsetLeft 0
+  PositionY 0
+  OffsetTop 0
+  SizeX 0
+  OffsetRight 0
+  SizeY 0
+  OffsetBottom 0
+ }
+}
