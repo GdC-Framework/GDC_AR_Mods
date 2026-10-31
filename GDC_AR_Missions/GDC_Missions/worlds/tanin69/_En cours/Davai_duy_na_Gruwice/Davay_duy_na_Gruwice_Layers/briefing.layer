@@ -14,7 +14,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Situation"
   m_sTextData "Gruwice est le foyer de l'invasion des vilains. Il faut tuer le virus dans l'oeuf."\
   ""\
-  "Nous partons de notre base sur l'aéroport international de Zimnitrita. "\
+  "Nous partons de notre base sur l'aéroport international de Zimnitrita."\
   ""\
   "Nous avons posé une batterie de mortiers prête à nous dérouler le tapis rouge vers l'objectif."
   m_bEmptyFactionVisibility 1
@@ -24,100 +24,98 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  a_Contexte {
   coords 15513.606 52.44 4461.03
   m_sTitle "Contexte"
-  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  m_sTextData "<i>Zimnitrita Est, années 2000. La \"belle contrée\" est toujours ravagée par les conflits.</i>"\
   ""\
-  "Zimnitrita Est, années 2000. La \"belle contrée\" est toujours ravagée par les conflits."\
+  "<i>Une milice armée par les forces occultes occidentales tient Gruwice.</i>"\
   ""\
-  "Une milice armée par les forces occultes occidentales tient Gruwice."\
+  "<i>Nous, gentils soldats de la Fédération de Rouchie devons intervenir pour remettre de l'ordre sur la zone.</i>"\
   ""\
-  "Nous, gentils soldats de la Fédération de Rouchie devons intervenir pour remettre de l'ordre sur la zone. "\
-  ""\
-  "Na zdorovia !"
+  "<i>Na zdorovia !</i>"
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
  }
  c_Mission {
   coords 15508.526 52.125 4434.998
   m_sTitle "Mission"
-  m_sTextData "<b>Objectif</b>"\
-  "- Couper la tête du serpent (ie neutraliser tout hostile dans le centre de Gruwice)."\
-  "- Faire parler l'oracle (ie récupérer les intels dans le rdc de l'hôtel Météor)."\
-  "- Si nécessaire, passer l'aspirateur (ie nettoyer les étages de l'hôtel)"\
-  ""
+  m_sTextData "<color name=\"green\"><b>Objectifs</b></color>"\
+  ""\
+  "- <b>Couper la tête du serpent</b> : neutraliser tout hostile dans le centre de Gruwice."\
+  "- <b>Faire parler l'oracle</b> : récupérer les intels au rdc de l'hôtel Météor."\
+  ""\
+  "<color name=\"green\"><b>Si nécessaire</b></color>"\
+  ""\
+  "- <b>Passer l'aspirateur</b> : nettoyer les étages de l'hôtel."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 2
  }
- f_Intel {
+ d_Intel {
   coords 15500.642 52.125 4435.646
   m_sTitle "Renseignements"
-  m_sTextData "<b>Topo</b>"\
+  m_sTextData "<color name=\"green\"><b>Topo</b></color>"\
   ""\
-  "> Un canal ceinture entièrement Gruwice. Les trois-quarts (Nord, Est et Sud) sont bétonnés. Le passage à pied n'est possible que par les ponts, passerelles et échelles marqués sur carte. Le reste du canal est bordé de rives escarpées, pratiquables par des soldats bien entrainés."\
+  "- <b>Canal</b> : ceinture entièrement Gruwice."\
+  "- <b>Nord, Est, Sud</b> : canal bétonné, passage à pied uniquement par les ponts, passerelles et échelles marqués sur carte."\
+  "- <b>Ouest</b> : rives escarpées, praticables par des soldats bien entraînés."\
+  "- <b>Au nord du canal</b> : zone humide, praticable à pied en cette saison."\
   ""\
-  "> Au nord, se situe une zone humide. Elle est pratiquable à pied en cette saison."\
+  "<color name=\"green\"><b>Hostiles</b></color>"\
   ""\
-  "<b>Positions probables</b>"\
+  "- <b>Volume</b> : au moins une centaine de pax, renforts en cours par le sud."\
+  "- <b>Équipement</b> : milice paramilitaire très mobile, armement léger, plusieurs véhicules légers armés."\
+  "- <b>Civils</b> : ont fui la zone."\
   ""\
-  "> Attendez-vous à des positions renforcées sur la périphérie. Les mecs ont récupéré quelques armes lourdes soviétiques."\
+  "<color name=\"green\"><b>Positions probables</b></color>"\
   ""\
-  "> Les immeubles et autres positions de tir favorables sont probablement exploitées."\
-  ""\
-  "> Sur la place Lénine, seul l'hôtel Météor est occupé."\
-  ""\
-  "<b>Equipement et volume des hostiles</b>"\
-  ""\
-  "> Les civils ont fui la zone."\
-  ""\
-  "> Il s'agit une milice paramilitaire équipée d'armement léger, ils sont très mobiles. Plusieurs véhicules légers armés ont été identifiés."\
-  ""\
-  "> Pour le moment, il y a au moins une centaine de pax sur place, mais des renforts continuent à débarquer par le sud."\
-  ""\
-  ""
+  "- <b>Périphérie</b> : positions renforcées, quelques armes lourdes soviétiques."\
+  "- <b>Immeubles et positions de tir favorables</b> : probablement exploités."\
+  "- <b>Place Lénine</b> : seul l'hôtel Météor est occupé."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
-  m_iOrder 5
+  m_iOrder 3
  }
- e_Arty {
+ f_Arty {
   coords 15499.244 52.124 4467.599
   m_sTitle "Support artillerie"
-  m_sTextData "L'appuin feu est utilisable par le porteur de la radio R187 (Cdo)"\
+  m_sTextData "<color name=\"green\"><b>Dotation</b></color>"\
   ""\
-  "5 missions d'appui feu avec 30 obus maximum sur chaque mission."\
+  "- <b>Accès</b> pour le porteur de la radio R168 (CdO)."\
+  "- <b>5 Missions</b> avec 30 obus maximum par mission."\
+  "- <b>Cooldown de 5 minutes</b> entre deux missions : les mecs rechargent les muns et fument une clope."\
+  "- <b>No-fire zone</b> sur la place Lénine, rectangle orange sur carte."\
   ""\
-  "Entre chaque mission, les mecs auront besoin de recharger les muns et de fumer une clope : cooldown de 5 minutes."\
-  ""\
-  "La place Lénine est une no-fire zone. Elle est identifiée sur carte par un rectangle orange."\
+  "<color name=\"green\"><b>Mode d'emploi</b></color>"\
   ""\
   "Comme le CdO est un débutant, il a le droit à un support type arcade :"\
   ""\
-  "1) Faites un clic droit sur la position que vous voulez faire bombarder."\
-  "2) Dans le menu radial, choisissez le support artillerie."\
-  "3) Réglez les options dans le panneau de commande qui s'ouvre, confirmez ou annulez..."\
+  "1) Clic droit sur la position à bombarder."\
+  "2) Dans le menu radial, choisir le support artillerie."\
+  "3) Régler les options dans le panneau, puis confirmer ou annuler."\
   ""\
   "Et davai !"
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
-  m_iOrder 4
+  m_iOrder 5
  }
- d_Insert_Extract {
+ e_Insert_Extract {
   coords 15495.137 52.124 4449.113
-  m_sTitle "Insertion et Extraction"
+  m_sTitle "Insertion et Exfiltration"
   m_sTextData "<color name=\"green\"><b>Insertion</b></color>"\
   ""\
   "Trois points d'insertion possibles :"\
-  "- Rouge / Groza"\
-  "- Bleu / Kassatka"\
-  "- Vert / Sokol"\
+  ""\
+  "- <color name=\"red\"><b>Rouge / Groza</b></color> : axe nord."\
+  "- <color name=\"blue\"><b>Bleu / Kassatka</b></color> : axe ouest."\
+  "- <color name=\"green\"><b>Vert / Sokol</b></color> : axe est."\
   ""\
   "Choisissez le drapeau en fonction des ordres du CdO."\
   ""\
   "<color name=\"green\"><b>Exfiltration</b></color>"\
-  "TODO"\
-  ""
+  ""\
+  "Sur un des trois points d'insertion."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
-  m_iOrder 3
+  m_iOrder 4
  }
 }
 PolylineShapeEntity NoFireArea : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et" {
@@ -281,7 +279,7 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   angles 0 -25.933 0
   m_MarkerColor 0.007 0.002 0.002 1
   m_sQuadName "entry-point"
-  m_fWorldSize 50
+  m_fWorldSize 40
   m_sDescription "Passerelle"
   m_bUseWorldScale 0
   m_bVisibleForEmptyFaction 1
@@ -292,7 +290,7 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   angles 0 28.539 0
   m_MarkerColor 0.007 0.002 0.002 1
   m_sQuadName "entry-point"
-  m_fWorldSize 50
+  m_fWorldSize 40
   m_sDescription "Passerelle"
   m_bUseWorldScale 0
   m_bVisibleForEmptyFaction 1

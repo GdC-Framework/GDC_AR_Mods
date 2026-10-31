@@ -70,7 +70,10 @@ GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.et" {
   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
    m_sDisplayName "Mortiers"
    m_iFireMissionCount 5
-   m_fCooldown 20
+   m_fCooldown 300
+   m_aRequiredItems {
+    "{421001C003F947AF}Prefabs/Items/Equipment/Radios/Radio_R168.et"
+   }
    m_eFireAreaMode BLACKLIST
    m_aAreaNames {
     "NoFireArea"
