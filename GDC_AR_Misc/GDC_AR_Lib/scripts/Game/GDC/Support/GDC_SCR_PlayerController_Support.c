@@ -103,6 +103,9 @@ modded class SCR_PlayerController
 
 			case GDC_ESupportRefusal.OUT_OF_RANGE:
 				return "cible hors de portée.";
+
+			case GDC_ESupportRefusal.GAME_NOT_RUNNING:
+				return "la partie n'est pas en cours.";
 		}
 
 		return "demande de tir invalide.";

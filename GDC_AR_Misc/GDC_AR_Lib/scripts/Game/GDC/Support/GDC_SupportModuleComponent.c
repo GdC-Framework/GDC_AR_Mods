@@ -12,7 +12,8 @@ enum GDC_ESupportRefusal
 	RANK_TOO_LOW,
 	MISSING_ITEM,
 	TARGET_FORBIDDEN,
-	OUT_OF_RANGE
+	OUT_OF_RANGE,
+	GAME_NOT_RUNNING
 }
 
 //! Messages sent to the player who requested a support.
@@ -162,11 +163,14 @@ class GDC_SupportModuleComponent : ScriptComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Checks the rank and item requirements for a character. Valid on server and clients.
+	//! Checks the state of the game and the rank and item requirements for a character. Valid on server and clients.
 	GDC_ESupportRefusal CheckAccess(IEntity character)
 	{
 		if (!character)
 			return GDC_ESupportRefusal.INVALID_REQUEST;
+
+		if (!IsGameRunning())
+			return GDC_ESupportRefusal.GAME_NOT_RUNNING;
 
 		if (m_eMinRankRequired != SCR_ECharacterRank.INVALID)
 		{
@@ -179,6 +183,15 @@ class GDC_SupportModuleComponent : ScriptComponent
 			return GDC_ESupportRefusal.MISSING_ITEM;
 
 		return GDC_ESupportRefusal.NONE;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Mods that add steps before the game (lobby, briefing...) use other states of the vanilla game mode.
+	//! \return false before and after the main phase of the game
+	protected bool IsGameRunning()
+	{
+		SCR_BaseGameMode gameMode = SCR_BaseGameMode.Cast(GetGame().GetGameMode());
+		return !gameMode || gameMode.IsRunning();
 	}
 
 	//------------------------------------------------------------------------------------------------
