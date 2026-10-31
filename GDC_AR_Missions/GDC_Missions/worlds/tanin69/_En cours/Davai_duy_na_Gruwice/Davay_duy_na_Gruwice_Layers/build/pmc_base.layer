@@ -1,0 +1,26 @@
+$grp GameEntity : "{6BE6E583708A59A7}Prefabs/Structures/BuildingParts/Ladders/Ladder_CoalLoader_01/Ladder_CoalLoader_crane01_404.et" {
+ {
+  coords 10461.777 6.114 5515.582
+  angles 0 -89.408 0
+ }
+ {
+  coords 10493.615 9.336 5593.077
+  angles 0 -47.548 0
+ }
+ {
+  coords 10475.494 12.834 5515.441
+  angles 0 90.592 0
+ }
+ {
+  coords 10502.57 5.065 5584.885
+  angles 0 121.836 0
+ }
+ {
+  coords 10510.946 10.044 5804.291
+  angles 0 -123.263 0
+ }
+ {
+  coords 10523.616 12.225 5812.586
+  angles 0 49.998 0
+ }
+}

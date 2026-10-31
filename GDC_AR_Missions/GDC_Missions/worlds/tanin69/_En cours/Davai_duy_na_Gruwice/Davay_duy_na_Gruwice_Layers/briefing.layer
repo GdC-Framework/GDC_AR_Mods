@@ -1,0 +1,301 @@
+$grp GenericEntity : "{2535412C99887CC1}Prefabs/Structures/FootBridge/Metal_Footbridge_01.et" {
+ {
+  coords 10450.791 10.359 5376.222
+  angles 0 -90.766 0
+ }
+ {
+  coords 10203.258 8.044 5927.839
+  angles 0 63.375 0
+ }
+}
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ b_Situation {
+  coords 15505.293 52.126 4440.746
+  m_sTitle "Situation"
+  m_sTextData "Gruwice est le foyer de l'invasion des vilains. Il faut tuer le virus dans l'oeuf."\
+  ""\
+  "Nous partons de notre base sur l'aéroport international de Zimnitrita. "\
+  ""\
+  "Nous avons posé une batterie de mortiers prête à nous dérouler le tapis rouge vers l'objectif."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ a_Contexte {
+  coords 15513.606 52.44 4461.03
+  m_sTitle "Contexte"
+  m_sTextData "<b><color name=\"green\">NARRATIF</color></b>"\
+  ""\
+  "Zimnitrita Est, années 2000. La \"belle contrée\" est toujours ravagée par les conflits."\
+  ""\
+  "Une milice armée par les forces occultes occidentales tient Gruwice."\
+  ""\
+  "Nous, gentils soldats de la Fédération de Rouchie devons intervenir pour remettre de l'ordre sur la zone. "\
+  ""\
+  "Na zdorovia !"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+ }
+ c_Mission {
+  coords 15508.526 52.125 4434.998
+  m_sTitle "Mission"
+  m_sTextData "<b>Objectif</b>"\
+  "- Couper la tête du serpent (ie neutraliser tout hostile dans le centre de Gruwice)."\
+  "- Faire parler l'oracle (ie récupérer les intels dans le rdc de l'hôtel Météor)."\
+  "- Si nécessaire, passer l'aspirateur (ie nettoyer les étages de l'hôtel)"\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ f_Intel {
+  coords 15500.642 52.125 4435.646
+  m_sTitle "Renseignements"
+  m_sTextData "<b>Topo</b>"\
+  ""\
+  "> Un canal ceinture entièrement Gruwice. Les trois-quarts (Nord, Est et Sud) sont bétonnés. Le passage à pied n'est possible que par les ponts, passerelles et échelles marqués sur carte. Le reste du canal est bordé de rives escarpées, pratiquables par des soldats bien entrainés."\
+  ""\
+  "> Au nord, se situe une zone humide. Elle est pratiquable à pied en cette saison."\
+  ""\
+  "<b>Positions probables</b>"\
+  ""\
+  "> Attendez-vous à des positions renforcées sur la périphérie. Les mecs ont récupéré quelques armes lourdes soviétiques."\
+  ""\
+  "> Les immeubles et autres positions de tir favorables sont probablement exploitées."\
+  ""\
+  "> Sur la place Lénine, seul l'hôtel Météor est occupé."\
+  ""\
+  "<b>Equipement et volume des hostiles</b>"\
+  ""\
+  "> Les civils ont fui la zone."\
+  ""\
+  "> Il s'agit une milice paramilitaire équipée d'armement léger, ils sont très mobiles. Plusieurs véhicules légers armés ont été identifiés."\
+  ""\
+  "> Pour le moment, il y a au moins une centaine de pax sur place, mais des renforts continuent à débarquer par le sud."\
+  ""\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 5
+ }
+ e_Arty {
+  coords 15499.244 52.124 4467.599
+  m_sTitle "Support artillerie"
+  m_sTextData "L'appuin feu est utilisable par le porteur de la radio R187 (Cdo)"\
+  ""\
+  "5 missions d'appui feu avec 30 obus maximum sur chaque mission."\
+  ""\
+  "Entre chaque mission, les mecs auront besoin de recharger les muns et de fumer une clope : cooldown de 5 minutes."\
+  ""\
+  "La place Lénine est une no-fire zone. Elle est identifiée sur carte par un rectangle orange."\
+  ""\
+  "Comme le CdO est un débutant, il a le droit à un support type arcade :"\
+  ""\
+  "1) Faites un clic droit sur la position que vous voulez faire bombarder."\
+  "2) Dans le menu radial, choisissez le support artillerie."\
+  "3) Réglez les options dans le panneau de commande qui s'ouvre, confirmez ou annulez..."\
+  ""\
+  "Et davai !"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+ d_Insert_Extract {
+  coords 15495.137 52.124 4449.113
+  m_sTitle "Insertion et Extraction"
+  m_sTextData "<color name=\"green\"><b>Insertion</b></color>"\
+  ""\
+  "Trois points d'insertion possibles :"\
+  "- Rouge / Groza"\
+  "- Bleu / Kassatka"\
+  "- Vert / Sokol"\
+  ""\
+  "Choisissez le drapeau en fonction des ordres du CdO."\
+  ""\
+  "<color name=\"green\"><b>Exfiltration</b></color>"\
+  "TODO"\
+  ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+}
+PolylineShapeEntity NoFireArea : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_Area.et" {
+ components {
+  GDC_MarkerAreaComponent "{64E2A91C7B3D5F08}" {
+   m_bShowOnMap 1
+   m_fOutlineWidth 1
+  }
+ }
+ coords 10216.43 19.781 5462.174
+ Points {
+  ShapePoint "{6ABEA0E15906069B}" {
+   Position 67.126 -5.156 118.793
+  }
+  ShapePoint "{6ABEA0E15AF6C98B}" {
+   Position -110.396 -5.125 80.036
+  }
+  ShapePoint "{6ABEA0E18FEDEB86}" {
+   Position -55.56 -9.781 -151.486
+  }
+  ShapePoint "{6ABEA0E18E380802}" {
+   Position 118.765 -4.994 -108.847
+  }
+ }
+}
+$grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
+ Insert_1 {
+  coords 10055.956 38.685 6486.003
+  angles 0 90 0
+  m_MarkerColor 0.8 0 0 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Rouge (Groza)"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Insert_2 {
+  coords 9313.399 69.509 5652.037
+  angles 0 90 0
+  m_MarkerColor 0 0.2 0.8 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Bleu (Kassatka)"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Insert_3 {
+  coords 11136.547 19.463 5485.094
+  angles 0 90 0
+  m_MarkerColor 0 0.502 0 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Vert (Sokol)"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Spawn {
+  coords 14302.997 50.907 11969.89
+  angles 0 90 0
+  m_MarkerColor 0.8 0 0 1
+  m_sQuadName "flag-2"
+  m_fWorldSize 50
+  m_sDescription "Base russe"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Objective {
+  coords 10180.274 24.045 5429.725
+  angles 0 90 0
+  m_MarkerColor 0.251 0 0.502 1
+  m_sQuadName "destroy-2"
+  m_fWorldSize 50
+  m_sDescription "Objectif"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder1 {
+  coords 10510.478 10.675 5803.999
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder2 {
+  coords 10524.207 10.879 5813.224
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder3 {
+  coords 10502.935 10.9 5584.548
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder4 {
+  coords 10493.315 10.881 5593.373
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder5 {
+  coords 10475.819 11.455 5515.701
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder6 {
+  coords 10461.206 10.898 5515.596
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "dot"
+  m_fWorldSize 50
+  m_sDescription "Echelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_Ladder7 {
+  coords 10465.317 16.232 5367.503
+  angles 0 90 0
+  m_MarkerColor 0 0 0 1
+  m_sQuadName "waypoint"
+  m_fWorldSize 50
+  m_sDescription "Passerelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_BeginConcrete {
+  coords 10108.705 11.627 5944.227
+  angles 0 -25.933 0
+  m_MarkerColor 0.007 0.002 0.002 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Passerelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+ Marker_EndConcrete {
+  coords 9884.585 5.945 5274.58
+  angles 0 28.539 0
+  m_MarkerColor 0.007 0.002 0.002 1
+  m_sQuadName "entry-point"
+  m_fWorldSize 50
+  m_sDescription "Passerelle"
+  m_bUseWorldScale 0
+  m_bVisibleForEmptyFaction 1
+  m_bShowForAnyFaction 1
+ }
+}

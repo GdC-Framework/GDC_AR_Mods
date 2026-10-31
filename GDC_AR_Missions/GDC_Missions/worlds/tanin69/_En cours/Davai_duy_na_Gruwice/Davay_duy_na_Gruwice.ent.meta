@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{5D3DC0D3E5516A27}worlds/tanin69/_En cours/Liberate ZFR - Gruwice/Davai_duy_na_Gruwice/Davay_duy_na_Gruwice.ent"
+ Configurations {
+  ENTResourceClass PC {
+  }
+  ENTResourceClass XBOX_ONE : PC {
+  }
+  ENTResourceClass XBOX_SERIES : PC {
+  }
+  ENTResourceClass PS4 : PC {
+  }
+  ENTResourceClass PS5 : PC {
+  }
+  ENTResourceClass HEADLESS : PC {
+  }
+  ENTResourceClass Xbox : PC {
+  }
+ }
+}
