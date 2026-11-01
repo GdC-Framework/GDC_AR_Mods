@@ -1,0 +1,106 @@
+SCR_AIWorld : "{01DC74137CFDDB6A}Prefabs/AI/SCR_AIWorld_Arland.et" {
+ coords 3281.982 2.031 2879.319
+}
+PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
+ coords 3279.552 2.031 2877.784
+}
+SCR_FactionManager "6ABCD25B0FC919AB" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 3276 2.031 2876
+}
+PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
+ coords 3282.178 2 2876.974
+ m_iFreezeTime 0
+}
+$grp GenericEntity {
+ Dest_Base {
+  coords 3156.106 13.272 2782.342
+ }
+ Dest_Near {
+  coords 3275.935 2.01 2881.304
+ }
+ Dest_Far {
+  coords 1704.377 49.048 2352.353
+ }
+}
+SCR_AIGroup : "{30ED11AA4F0D41E5}Prefabs/Groups/OPFOR/Group_USSR_FireGroup.et" {
+ coords 3156.106 13.272 2782.342
+ angles 0 34.017 0
+ m_bSetPlayable 1
+}
+$grp GenericEntity : "{90B7CEB4C665B1E2}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1.et" {
+ Flag_Group {
+  coords 3160 11.531 2790
+ }
+ Flag_Individual {
+  coords 3168 11.5 2786
+ }
+ Flag_Instant {
+  coords 3176 11.313 2782
+ }
+ Flag_BackFar {
+  coords 1712 50.316 2352.353
+ }
+ Flag_BackNear {
+  coords 3283 2 2881.304
+ }
+}
+$grp GenericEntity : "{A83D5F1E06C7B942}Prefabs/Teleport/GDC_Teleport.et" {
+ TP_Group {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Groupe, avec ellipse et texte (Far)"
+    m_sDestinationName "Dest_Far"
+    m_eMode GROUP
+    m_sText "Deux heures plus tard..."
+    m_sBackgroundImage "{B1BB90106188632C}UI/MissionLoadingScreens/AFRF_BRT81_Firing.edds"
+    m_fBackgroundMaxScreenPercent 80
+   }
+  }
+  coords 3160 12.731 2790
+ }
+ TP_Individual {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Individuel, avec ellipse sans texte (Far)"
+    m_sDestinationName "Dest_Far"
+   }
+  }
+  coords 3168 12.7 2786
+ }
+ TP_Instant {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Individuel, immédiat (Near)"
+    m_sDestinationName "Dest_Near"
+    m_fFadeOutDuration 0
+    m_fBlackDuration 0
+    m_fFadeInDuration 0
+   }
+  }
+  coords 3176 12.513 2782
+ }
+ TP_BackFar {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Retour base"
+    m_sDestinationName "Dest_Base"
+    m_fFadeOutDuration 0
+    m_fBlackDuration 0
+    m_fFadeInDuration 0
+   }
+  }
+  coords 1712 51.516 2352.353
+ }
+ TP_BackNear {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Retour base"
+    m_sDestinationName "Dest_Base"
+    m_fFadeOutDuration 0
+    m_fBlackDuration 0
+    m_fFadeInDuration 0
+   }
+  }
+  coords 3283 3.2 2881.304
+ }
+}

@@ -1,0 +1,87 @@
+FrameWidgetClass {
+ Name "GDC_TimeSkipScreen"
+ Slot FrameWidgetSlot "{8E2A61D47C03B95F}" {
+  Anchor 0 0 1 1
+  PositionX 0
+  OffsetLeft 0
+  PositionY 0
+  OffsetTop 0
+  SizeX 0
+  OffsetRight 0
+  SizeY 0
+  OffsetBottom 0
+ }
+ {
+  ImageWidgetClass "{1F9D3C70A84E62B6}" {
+   Name "Black"
+   Slot FrameWidgetSlot "{A5B70E23D16F94C8}" {
+    Anchor 0 0 1 1
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    SizeX 0
+    OffsetRight 0
+    SizeY 0
+    OffsetBottom 0
+   }
+   Color 0 0 0 1
+  }
+  OverlayWidgetClass "{36C8F1057EA9D24B}" {
+   Name "Content"
+   Slot FrameWidgetSlot "{D07E4B92168AC3F5}" {
+    Anchor 0 0 1 1
+    PositionX 0
+    OffsetLeft 0
+    PositionY 0
+    OffsetTop 0
+    SizeX 0
+    OffsetRight 0
+    SizeY 0
+    OffsetBottom 0
+   }
+   {
+    ImageWidgetClass "{7D20F6B1E3A94C58}" {
+     Name "Background"
+     Slot OverlayWidgetSlot "{C3986A1D04F7E25B}" {
+      HorizontalAlign 1
+      VerticalAlign 1
+     }
+    }
+    OverlayWidgetClass "{B84E17D3C06A92F5}" {
+     Name "TextPanel"
+     Slot OverlayWidgetSlot "{2D7FA0E6915C38B4}" {
+      HorizontalAlign 1
+      VerticalAlign 1
+     }
+     Opacity 0
+     {
+      ImageWidgetClass "{E16B39C8A07D42F5}" {
+       Name "Veil"
+       Slot OverlayWidgetSlot "{50A9D2F7C31E684B}" {
+        HorizontalAlign 3
+        VerticalAlign 3
+       }
+       Opacity 0.45
+       Color 0 0 0 1
+      }
+      TextWidgetClass "{92E5A07C4D1B68F3}" {
+       Name "Text"
+       Slot OverlayWidgetSlot "{4BC16E89F0372DA5}" {
+        HorizontalAlign 1
+        VerticalAlign 1
+        Padding 32 12 32 12
+       }
+       Text ""
+       "Font Size" 40
+       "Min Font Size" 36
+       FontProperties FontProperties "{6A18D3E05FB7C924}" {
+        Font "{CD2634D279AB011A}UI/Fonts/Roboto/Roboto_Bold.fnt"
+       }
+      }
+     }
+    }
+   }
+  }
+ }
+}

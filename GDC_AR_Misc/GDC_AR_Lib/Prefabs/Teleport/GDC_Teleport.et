@@ -1,0 +1,31 @@
+GenericEntity {
+ ID "5D2E87A1C04B96F3"
+ components {
+  ActionsManagerComponent "{68A3F19D27C4E05B}" {
+   ActionContexts {
+    UserActionContext "{61D7C40E93B8A2F6}" {
+     ContextName "GDC_Teleport"
+     Position PointInfo "{6F05B2E8A17D34C9}" {
+     }
+     Radius 2
+     "Display UI At Reference Point" 1
+    }
+   }
+   additionalActions {
+    GDC_TeleportAction "{64C9E2710BD85FA3}" {
+     ParentContextList {
+      "GDC_Teleport"
+     }
+     Duration 1
+    }
+   }
+  }
+  GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+  }
+  RplComponent "{60E4A8D3F27B1C96}" {
+   Streamable Disabled
+  }
+  Hierarchy "{67B2D95E0C8F41A3}" {
+  }
+ }
+}
