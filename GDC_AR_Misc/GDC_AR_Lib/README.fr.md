@@ -16,11 +16,14 @@ Prefab : `Prefabs/Teleport/GDC_Teleport.et`, à poser en entité racine à côt�
 
 - **Destination :** le nom d'une entité du monde. Les joueurs arrivent répartis autour d'elle.
 - **Mode `INDIVIDUAL` :** chaque joueur utilise l'action et part seul.
-- **Mode `GROUP` :** seul le chef de groupe voit l'action. Il emmène les joueurs de son groupe présents dans un rayon réglable autour du module. Les IA, les joueurs morts ou en véhicule ne partent pas.
+- **Mode `GROUP` :** seul le chef de groupe voit l'action. Il emmène les joueurs de son groupe présents dans un rayon réglable autour du module.
+- **Mode `ALL_PLAYERS` :** seul un joueur du grade minimum réglé voit l'action. Il emmène tous les joueurs présents dans le rayon, quel que soit leur groupe.
+- **Dans les modes `GROUP` et `ALL_PLAYERS` :** les IA, les joueurs morts ou en véhicule ne partent pas.
 - **Ellipse :** durées du fondu, de l'écran noir et du retour de l'image. Si les trois sont à 0, la téléportation est immédiate.
 - **Texte :** optionnel, affiché sur un léger voile, par exemple « Deux heures plus tard... ».
 - **Image :** optionnelle, centrée sur le noir, limitée à une part de l'écran (60 % par défaut) et jamais agrandie au-delà de sa résolution native.
 - **Son :** les sons du jeu suivent le fondu, ce qui se désactive. La voix et la radio ne sont pas coupées.
+- **Heure :** optionnelle, l'heure de jeu prend la valeur réglée (heure et minutes) quand l'écran des voyageurs est noir. Elle change pour tous les joueurs du monde, même ceux qui ne partent pas, et seulement à la première utilisation du module. La météo ne change pas.
 
 ### Appui feu virtuel au mortier
 

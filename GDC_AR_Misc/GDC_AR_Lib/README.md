@@ -16,11 +16,14 @@ Prefab: `Prefabs/Teleport/GDC_Teleport.et`. Place it as a root entity next to th
 
 - **Destination:** the name of an entity in the world. Players arrive spread out around it.
 - **`INDIVIDUAL` mode:** each player uses the action and travels alone.
-- **`GROUP` mode:** only the group leader sees the action. The leader takes along the group's players within an adjustable radius around the module. AI, dead players and players in a vehicle stay behind.
+- **`GROUP` mode:** only the group leader sees the action. The leader takes along the group's players within an adjustable radius around the module.
+- **`ALL_PLAYERS` mode:** only a player of the set minimum rank sees the action. That player takes along all the players within the radius, whatever their group.
+- **In `GROUP` and `ALL_PLAYERS` modes:** AI, dead players and players in a vehicle stay behind.
 - **Time skip:** durations of the fade, the black screen and the return of the picture. If all three are 0, the teleport is immediate.
 - **Text:** optional, shown on a light veil, for example "Two hours later...".
 - **Image:** optional, centred on the black screen, limited to a share of the screen (60% by default) and never enlarged beyond its native resolution.
 - **Sound:** game sounds follow the fade, and this can be turned off. Voice and radio are not cut.
+- **Time:** optional, the game clock takes the set value (hour and minutes) once the travellers' screens are black. It changes for all players in the world, even those who stay behind, and only at the first use of the module. The weather doesn't change.
 
 ### Virtual mortar fire support
 

@@ -5,7 +5,8 @@
 enum GDC_ETeleportMode
 {
 	INDIVIDUAL,	//!< Any player can use it and travels alone
-	GROUP		//!< Only a group leader can use it, and takes along the members of the group gathered around the module
+	GROUP,		//!< Only a group leader can use it, and takes along the members of the group gathered around the module
+	ALL_PLAYERS	//!< Only a player of sufficient rank can use it, and takes along all the players gathered around the module, whatever their group
 }
 
 class GDC_TeleportModuleComponentClass : ScriptComponentClass {}
@@ -21,11 +22,14 @@ class GDC_TeleportModuleComponent : ScriptComponent
 	[Attribute("", UIWidgets.EditBox, "Name of the entity players are teleported to.")]
 	protected string m_sDestinationName;
 
-	[Attribute(typename.EnumToString(GDC_ETeleportMode, GDC_ETeleportMode.INDIVIDUAL), UIWidgets.ComboBox, "INDIVIDUAL: any player can use it and travels alone. GROUP: only a group leader can use it, and takes along the group members gathered around the module.", enumType: GDC_ETeleportMode)]
+	[Attribute(typename.EnumToString(GDC_ETeleportMode, GDC_ETeleportMode.INDIVIDUAL), UIWidgets.ComboBox, "INDIVIDUAL: any player can use it and travels alone. GROUP: only a group leader can use it, and takes along the group members gathered around the module. ALL_PLAYERS: only a player of the minimum rank can use it, and takes along all the players gathered around the module, whatever their group.", enumType: GDC_ETeleportMode)]
 	protected GDC_ETeleportMode m_eMode;
 
-	[Attribute("30", UIWidgets.EditBox, "GROUP mode: group members further than this from the module, in metres, stay behind.", "1 1000 1")]
-	protected float m_fGroupRadius;
+	[Attribute("30", UIWidgets.EditBox, "GROUP and ALL_PLAYERS modes: players further than this from the module, in metres, stay behind.", "1 1000 1")]
+	protected float m_fRadius;
+
+	[Attribute(typename.EnumToString(SCR_ECharacterRank, SCR_ECharacterRank.INVALID), UIWidgets.ComboBox, "ALL_PLAYERS mode: minimum rank required to use the module. INVALID = no rank requirement.", enumType: SCR_ECharacterRank)]
+	protected SCR_ECharacterRank m_eMinRankRequired;
 
 	[Attribute("2", UIWidgets.EditBox, "Duration of the fade to black, in seconds. If the three durations are 0 the teleport is immediate.", "0 30 0.1", category: "Time skip")]
 	protected float m_fFadeOutDuration;
@@ -48,6 +52,12 @@ class GDC_TeleportModuleComponent : ScriptComponent
 	[Attribute("1", UIWidgets.CheckBox, "Fades the game sounds along with the picture. Voice and radio are not affected.", category: "Time skip")]
 	protected bool m_bMuteSound;
 
+	[Attribute("-1", UIWidgets.EditBox, "Hour of the game clock after the time skip, for all players in the world, changed at the first use of the module only. -1 = clock unchanged.", "-1 23 1", category: "Time skip")]
+	protected int m_iNewHour;
+
+	[Attribute("0", UIWidgets.EditBox, "Minutes of the game clock after the time skip. Ignored if the hour is -1.", "0 59 1", category: "Time skip")]
+	protected int m_iNewMinute;
+
 	//! Distance around the module from which a request is accepted, in metres. Wider than the action radius to allow for latency.
 	protected const float MAX_USE_DISTANCE = 10;
 
@@ -58,6 +68,9 @@ class GDC_TeleportModuleComponent : ScriptComponent
 
 	//! Server only. Successive travellers don't land on each other, even when they come from separate requests.
 	protected int m_iNextArrivalSlot;
+
+	//! Server only. A later use of the module must not send the clock back, for instance when several groups leave one after the other.
+	protected bool m_bTimeChanged;
 
 	//------------------------------------------------------------------------------------------------
 	//! This component has no replicated member, so it isn't a replicated item itself: its RplComponent identifies it.
@@ -130,13 +143,16 @@ class GDC_TeleportModuleComponent : ScriptComponent
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! \return True if this player can use the module: only group leaders in GROUP mode. Valid on server and clients.
+	//! \return True if this player can use the module: only group leaders in GROUP mode, the required rank in ALL_PLAYERS mode. Valid on server and clients.
 	bool IsAllowed(int playerId)
 	{
-		if (m_eMode != GDC_ETeleportMode.GROUP)
-			return true;
+		if (m_eMode == GDC_ETeleportMode.GROUP)
+			return GetLedGroup(playerId) != null;
 
-		return GetLedGroup(playerId) != null;
+		if (m_eMode == GDC_ETeleportMode.ALL_PLAYERS)
+			return HasRequiredRank(playerId);
+
+		return true;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -167,6 +183,27 @@ class GDC_TeleportModuleComponent : ScriptComponent
 			if (controller)
 				controller.GDC_SendTeleport(this, GetArrivalPosition(destination.GetOrigin()));
 		}
+
+		if (m_iNewHour >= 0 && !m_bTimeChanged)
+		{
+			m_bTimeChanged = true;
+
+			// Once the travellers' screens are black, so that they don't see the light jump.
+			GetGame().GetCallqueue().CallLater(ChangeTime, m_fFadeOutDuration * 1000);
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Server only. The time and weather manager replicates the clock to the clients.
+	protected void ChangeTime()
+	{
+		ChimeraWorld world = GetGame().GetWorld();
+		if (!world)
+			return;
+
+		TimeAndWeatherManagerEntity manager = world.GetTimeAndWeatherManager();
+		if (manager)
+			manager.SetHoursMinutesSeconds(m_iNewHour, m_iNewMinute, 0);
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -174,18 +211,24 @@ class GDC_TeleportModuleComponent : ScriptComponent
 	{
 		outTravellers.Insert(requesterId);
 
-		if (m_eMode != GDC_ETeleportMode.GROUP)
+		if (m_eMode == GDC_ETeleportMode.INDIVIDUAL)
 			return;
 
-		float maxDistanceSq = m_fGroupRadius * m_fGroupRadius;
-		foreach (int memberId : GetLedGroup(requesterId).GetPlayerIDs())
+		array<int> candidates = {};
+		if (m_eMode == GDC_ETeleportMode.GROUP)
+			candidates = GetLedGroup(requesterId).GetPlayerIDs();
+		else
+			GetGame().GetPlayerManager().GetPlayers(candidates);
+
+		float maxDistanceSq = m_fRadius * m_fRadius;
+		foreach (int candidateId : candidates)
 		{
-			if (memberId == requesterId)
+			if (candidateId == requesterId)
 				continue;
 
-			IEntity member = GetGame().GetPlayerManager().GetPlayerControlledEntity(memberId);
-			if (CanTravel(member) && vector.DistanceSq(member.GetOrigin(), GetOwner().GetOrigin()) <= maxDistanceSq)
-				outTravellers.Insert(memberId);
+			IEntity candidate = GetGame().GetPlayerManager().GetPlayerControlledEntity(candidateId);
+			if (CanTravel(candidate) && vector.DistanceSq(candidate.GetOrigin(), GetOwner().GetOrigin()) <= maxDistanceSq)
+				outTravellers.Insert(candidateId);
 		}
 	}
 
@@ -210,6 +253,20 @@ class GDC_TeleportModuleComponent : ScriptComponent
 			return group;
 
 		return null;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool HasRequiredRank(int playerId)
+	{
+		if (m_eMinRankRequired == SCR_ECharacterRank.INVALID)
+			return true;
+
+		IEntity character = GetGame().GetPlayerManager().GetPlayerControlledEntity(playerId);
+		if (!character)
+			return false;
+
+		SCR_ECharacterRank rank = SCR_CharacterRankComponent.GetCharacterRank(character);
+		return rank != SCR_ECharacterRank.INVALID && rank >= m_eMinRankRequired;
 	}
 
 	//------------------------------------------------------------------------------------------------
