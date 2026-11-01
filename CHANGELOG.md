@@ -8,6 +8,12 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/690756F509F253EB-GDCARLib/changelog)
 
+### 1.2.1 - 2026-11-01
+
+- ADDED: Teleport module, ALL_PLAYERS mode: a player of the minimum rank set on the module takes along all the players within the radius, whatever their group.
+- ADDED: Teleport module, optional change of the game clock during the time skip. The set hour and minutes apply to all players in the world, at the first use of the module only. Players who stay behind don't get the black screen.
+- CHANGED: Teleport module attribute m_fGroupRadius renamed m_fRadius. A value customised on an existing module returns to the default 30 m.
+
 ### 1.2.0 - 2026-11-01
 
 - ADDED: Teleport module with time skip (Prefabs/Teleport/GDC_Teleport.et). Individual use, or group use where only the group leader triggers it and takes along the players gathered nearby. Options: fade and black screen durations, text, background image, game sound fade.
