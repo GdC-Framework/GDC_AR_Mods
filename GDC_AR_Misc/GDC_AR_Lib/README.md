@@ -4,7 +4,7 @@ Bibliothèque de fonctions pour les missions de la communauté Grèce de canards
 
 Pour l'utiliser, il suffit de mettre GDC AR Lib en dépendance de ton addon, ou de le cocher dans « Open With Addons » au lancement de Workbench.
 
-Elle dépend de TILW, PSCore, Reforger Lobby et Coalition VON, voir [docs/TODO.md](docs/TODO.md).
+Elle dépend de TILW, PSCore, Reforger Lobby et Coalition VON, voir le [backlog](../../BACKLOG.md).
 
 ## Nouvelles fonctionnalités
 

@@ -1,5 +1,8 @@
 Arma Reforger stuff made by Grèce de canards community
 
+- [Changelog](CHANGELOG.md): versions published on the Workshop (French introduction)
+- [Backlog](BACKLOG.md): work to do on mods and missions (French)
+
 ## _Media
 Source images (loading screens, thumbnails, Workshop pages, custom textures), kept outside the addons and stored with Git LFS. See [_Media/README.md](_Media/README.md) (French).
 
