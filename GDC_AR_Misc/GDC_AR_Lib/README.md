@@ -1,48 +1,50 @@
 # GDC AR Lib
 
-Bibliothèque de fonctions pour les missions de la communauté Grèce de canards, destinée aux créateurs de missions.
+English | [Français](README.fr.md)
 
-Pour l'utiliser, il suffit de mettre GDC AR Lib en dépendance de ton addon, ou de le cocher dans « Open With Addons » au lancement de Workbench.
+A library of features for the missions of the Grèce de canards community, intended for mission makers.
 
-Elle dépend de TILW, PSCore, Reforger Lobby et Coalition VON, voir le [backlog](../../BACKLOG.md).
+To use it, add GDC AR Lib as a dependency of your addon, or tick it in "Open With Addons" when starting Workbench.
 
-## Nouvelles fonctionnalités
+It depends on TILW, PSCore, Reforger Lobby and Coalition VON, see the [backlog](../../BACKLOG.md) (in French).
 
-### Téléportation avec ellipse temporelle
+## New features
 
-Prefab : `Prefabs/Teleport/GDC_Teleport.et`, à poser en entité racine à côté de l'objet servant de point de départ (par exemple un drapeau), jamais en enfant de celui-ci.
+### Teleport with time skip
 
-- **Destination :** le nom d'une entité du monde. Les joueurs arrivent répartis autour d'elle.
-- **Mode `INDIVIDUAL` :** chaque joueur utilise l'action et part seul.
-- **Mode `GROUP` :** seul le chef de groupe voit l'action. Il emmène les joueurs de son groupe présents dans un rayon réglable autour du module. Les IA, les joueurs morts ou en véhicule ne partent pas.
-- **Ellipse :** durées du fondu, de l'écran noir et du retour de l'image. Si les trois sont à 0, la téléportation est immédiate.
-- **Texte :** optionnel, affiché sur un léger voile, par exemple « Deux heures plus tard... ».
-- **Image :** optionnelle, centrée sur le noir, limitée à une part de l'écran (60 % par défaut) et jamais agrandie au-delà de sa résolution native.
-- **Son :** les sons du jeu suivent le fondu, ce qui se désactive. La voix et la radio ne sont pas coupées.
+Prefab: `Prefabs/Teleport/GDC_Teleport.et`. Place it as a root entity next to the object used as the starting point (a flag, for example), never as a child of that object.
 
-### Appui feu virtuel au mortier
+- **Destination:** the name of an entity in the world. Players arrive spread out around it.
+- **`INDIVIDUAL` mode:** each player uses the action and travels alone.
+- **`GROUP` mode:** only the group leader sees the action. The leader takes along the group's players within an adjustable radius around the module. AI, dead players and players in a vehicle stay behind.
+- **Time skip:** durations of the fade, the black screen and the return of the picture. If all three are 0, the teleport is immediate.
+- **Text:** optional, shown on a light veil, for example "Two hours later...".
+- **Image:** optional, centred on the black screen, limited to a share of the screen (60% by default) and never enlarged beyond its native resolution.
+- **Sound:** game sounds follow the fade, and this can be turned off. Voice and radio are not cut.
 
-Prefab : `Prefabs/Support/GDC_FireSupport_Mortar.et`. Les obus sont simulés, sans pièce ni servant. La position du module tient lieu de position des tubes pour le temps de vol et la portée.
+### Virtual mortar fire support
 
-Les joueurs demandent le tir depuis un panneau ouvert par le menu radial de la carte. Ils y choisissent la munition, le nombre d'obus et la dispersion, dans les limites fixées par le module.
+Prefab: `Prefabs/Support/GDC_FireSupport_Mortar.et`. Shells are simulated, with no mortar or crew. The module position stands for the position of the tubes, for flight time and range.
 
-- **Désignation de la cible :** `ARCADE` par clic sur la carte, avec marqueur et zone d'impact affichés, ou `MILSIM` par coordonnées saisies à la main, sans rien sur la carte.
-- **Accès :** grade minimum et/ou objet à porter. Si les deux sont définis, les deux sont exigés. Sans eux, le joueur ne voit pas l'appui.
-- **Limites :** nombre de missions, délai entre deux missions, zones de tir autorisées ou interdites.
-- **Portée :** les anneaux de portée de chaque munition sont visibles dans le World Editor. Un symbole de mortier peut aussi être affiché sur la carte du jeu.
+Players request fire from a panel opened through the map's radial menu. They choose the ammunition, the number of rounds and the dispersion, within the limits set on the module.
 
-### Zones affichées sur la carte
+- **Target designation:** `ARCADE` by clicking on the map, with a marker and the impact area shown, or `MILSIM` by coordinates typed by hand, with nothing shown on the map.
+- **Access:** minimum rank and/or an item to carry. If both are set, both are required. Without them, the player doesn't see the support.
+- **Limits:** number of missions, delay between two missions, allowed or forbidden target areas.
+- **Range:** the range rings of each ammunition are visible in the World Editor. A mortar symbol can also be shown on the in-game map.
 
-Prefab : `Prefabs/Markers/GDC_Marker_Area.et`, une polyligne affichable sur la carte du jeu avec un contour et, si elle est fermée, un remplissage. Couleurs, épaisseur et opacité sont réglables. Elle sert aussi à définir les zones de tir de l'appui au mortier.
+### Areas shown on the map
 
-### Radios par slot
+Prefab: `Prefabs/Markers/GDC_Marker_Area.et`, a polyline that can be shown on the in-game map with an outline and, if it is closed, a fill. Colours, width and opacity are adjustable. It is also used to define the target areas of the mortar support.
 
-Fréquences des radios courte et longue portée, définies par slot sur les groupes jouables (`SCR_AIGroup`), avec Coalition VON. Un slot peut avoir plusieurs radios. Une fréquence longue portée commune peut s'appliquer aux membres du groupe sans fréquence propre.
+### Per-slot radios
 
-## Autres fonctionnalités
+Short-range and long-range radio frequencies, set per slot on playable groups (`SCR_AIGroup`), with Coalition VON. A slot can have several radios. A common long-range frequency can apply to group members with no frequency of their own.
 
-- **GDC Loadout Editor :** outil du World Editor pour modifier le loadout des prefabs de personnages, voir [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md).
-- **Artillerie IA :** `Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et`, tirs de mortier servi par des IA, déclenchés par un flag de mission TILW.
-- **`GDC_FollowNearestPlayerEntity` :** place une entité sur le joueur le plus proche d'une référence, à intervalle réglable.
-- **`GDC_ForceGroupActiveLODComponent` :** garde un groupe d'IA en simulation complète, quelle que soit la distance aux joueurs.
-- **GDC Import Loading Screens :** plugin du Resource Manager qui importe les écrans de chargement préparés dans `_Media` vers GDC AR Core.
+## Other features
+
+- **GDC Loadout Editor:** World Editor tool to edit the loadout of character prefabs, see [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md) (in French).
+- **AI artillery:** `Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et`, mortar fire served by AI, triggered by a TILW mission flag.
+- **`GDC_FollowNearestPlayerEntity`:** places an entity on the player closest to a reference, at an adjustable interval.
+- **`GDC_ForceGroupActiveLODComponent`:** keeps an AI group in full simulation, regardless of its distance from players.
+- **GDC Import Loading Screens:** Resource Manager plugin that imports the loading screens prepared in `_Media` into GDC AR Core.
