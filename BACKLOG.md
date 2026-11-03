@@ -24,6 +24,16 @@ Travaux à faire sur les mods et les missions, sans ordre de priorité imposé. 
 - Corriger la description de `m_sGDC_LongRangeFrequency` : elle dit que les radios de véhicules sont réglées sur cette fréquence, or aucun script GDC ne le fait plus.
 - Dérouler les tests sur serveur dédié (préréglages par slot, reconnexion, respawn). Ils étaient encore à faire en octobre : à confirmer.
 
+## GDC AR Mission Maker Tools
+
+### Bibliothèques MM (« Update MM Libraries »)
+
+- Mettre en place la chaîne de tests : un script Python dans `Tools/` qui contrôle une bibliothèque générée (`.meta`, parents, structure, index des addons) et le log du Workbench (erreurs de compilation, durée), puis une génération en ligne de commande (`RunCommandline`). À vérifier d'abord : comment passer les addons à charger en ligne de commande.
+- Dérouler la recette complète : création et réouverture, MM Forces avec RHS, MM Markers, MM Systems, index, avertissement d'addon manquant, mise à jour sans RHS, durée avec le modset complet.
+- Proposer un nom à la pose d'un marqueur ou d'une zone servant de repère à un module.
+- Évaluer une bibliothèque dédiée au Scenario Framework.
+- Signaler à Bacon que l'addon ZU-23 ne déclare `BaconZU23_Turret_Deployed` et `Ural4320_ZU23` dans aucun catalogue de faction, seulement dans un ancien registre Game Master.
+
 ## Coalition VON : fréquence de départ des radios de véhicules
 
 L'évolution demandée dans l'[issue #42](https://github.com/CoalitionArma/Coalition-VON/issues/42) est annoncée par l'équipe CVON pour une version postérieure à la 3.0.3. D'après son commentaire, les radios de véhicules démarrent sur la première fréquence longue portée de la configuration et y reviennent à chaque key fill. Trois réglages sont annoncés : `m_sVehicleFrequency` sur `CVON_FreqConfig` (mission) ou sur les infos d'indicatif d'une faction, et `m_sStartFrequency` sur `CVON_VehicleRadioComponent` (véhicule).
@@ -44,3 +54,7 @@ La copie locale de CVON est en 3.0.3 et ne contient pas encore ces attributs. Un
 - Ajouter l'objet de renseignement et son interaction dans l'hôtel.
 - Vérifier le nombre de slots pour 10 à 15 joueurs : un seul groupe jouable (`RifleSquad`) pour l'instant.
 - Vérifier que les IA utilisent les passerelles et échelles ajoutées, probablement absentes du navmesh de Zimnitrita.
+
+### Liberate ZPR 1 et 2
+
+- Les deux missions posent `TILW_BaseInteraction.et` (`{584EB34600E9698D}`), absent de TILW actuel et des autres addons installés : vérifier ces interactions et les remplacer.
