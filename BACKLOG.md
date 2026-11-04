@@ -28,8 +28,7 @@ Travaux à faire sur les mods et les missions, sans ordre de priorité imposé. 
 
 ### Bibliothèques MM (« Update MM Libraries »)
 
-- Mettre en place la chaîne de tests : un script Python dans `Tools/` qui contrôle une bibliothèque générée (`.meta`, parents, structure, index des addons) et le log du Workbench (erreurs de compilation, durée), puis une génération en ligne de commande (`RunCommandline`). À vérifier d'abord : comment passer les addons à charger en ligne de commande.
-- Dérouler la recette complète : création et réouverture, MM Forces avec RHS, MM Markers, MM Systems, index, avertissement d'addon manquant, mise à jour sans RHS, durée avec le modset complet.
+- Dérouler la recette manuelle listée dans [Tools/MMLibrariesTests/README.md](Tools/MMLibrariesTests/README.md) (dialogues, Launcher, panneau Prefab Library, drop réel). La partie automatisable passe avec `python run_tests.py`.
 - Proposer un nom à la pose d'un marqueur ou d'une zone servant de repère à un module.
 - Évaluer une bibliothèque dédiée au Scenario Framework.
 - Signaler à Bacon que l'addon ZU-23 ne déclare `BaconZU23_Turret_Deployed` et `Ural4320_ZU23` dans aucun catalogue de faction, seulement dans un ancien registre Game Master.

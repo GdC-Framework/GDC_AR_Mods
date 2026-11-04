@@ -16,6 +16,9 @@ class GDC_MMLibraryItem
 //! The libraries go into a local addon of the mission maker, "GDC AR MM Libraries" (GDC AR Mission Maker Tools is packed, so read-only),
 //! created by the first run; regenerating it mirrors the loaded addons. Never published, missions do not depend on it.
 //! Also writes GDC_MMLibraryIndex, the addon each library prefab comes from, named to mission makers dropping it without that addon.
+//! Command line, for automated tests (Tools/MMLibrariesTests in the GDC_AR_Mods repository), without any dialog:
+//! -wbModule=ResourceManager -plugin=GDC_MMCatalogGeneratorPlugin -run [-mmLibraryFolder="<folder of a new library addon>"]
+//! updates the loaded library addon, or creates it in -mmLibraryFolder when it is not loaded; exit code 0 on success.
 [WorkbenchPluginAttribute(
 	name: "Update MM Libraries",
 	description: "Create or update the MM prefab libraries from the loaded addons (run it again after changing them)",
@@ -36,20 +39,76 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	protected static const string LIBRARY_ADDON_TITLE = "GDC AR MM Libraries";
 	protected static const string MMTOOLS_ADDON_GUID = "6AC540B09694CF5F";
 
+	//! Command line parameter giving the folder of the library addon to create
+	protected static const string CLI_LIBRARY_FOLDER = "mmLibraryFolder";
+
 	[Attribute(desc: "Folder of the new GDC AR MM Libraries addon. Keep the default unless you store your Workbench projects elsewhere.")]
 	protected string m_sLibraryFolder;
+
+	//! Run from the command line: no dialog, results in the log only
+	protected bool m_bCommandLine;
 
 	//------------------------------------------------------------------------------------------------
 	override void Run()
 	{
 		string addonPath;
-		if (Workbench.GetAbsolutePath("$" + LIBRARY_ADDON_ID + ":", addonPath, true) && IsLibraryAddonLoaded())
+		if (GetLoadedLibraryPath(addonPath))
 		{
 			Generate(addonPath, true);
 			return;
 		}
 
 		CreateLibraryAddon();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void RunCommandline()
+	{
+		m_bCommandLine = true;
+		int start = System.GetTickCount();
+
+		bool success;
+		string addonPath;
+		if (GetLoadedLibraryPath(addonPath))
+		{
+			success = Generate(addonPath, true);
+		}
+		else
+		{
+			string folder;
+			ResourceManager resourceManager = Workbench.GetModule(ResourceManager);
+			resourceManager.GetCmdLine("-" + CLI_LIBRARY_FOLDER, folder);
+			success = CreateLibraryAddonIn(folder);
+		}
+
+		// parsed by the test runner
+		string result = "FAILED";
+		if (success)
+			result = "OK";
+
+		PrintFormat(LOG_PREFIX + "command line result: %1 in %2 ms", result, System.GetTickCount() - start);
+		if (success)
+			Workbench.Exit(0);
+		else
+			Workbench.Exit(1);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \param[out] addonPath absolute folder of the library addon, without trailing slash
+	//! \return true when the library addon is loaded
+	protected static bool GetLoadedLibraryPath(out string addonPath)
+	{
+		if (!Workbench.GetAbsolutePath("$" + LIBRARY_ADDON_ID + ":", addonPath, true) || !IsLibraryAddonLoaded())
+			return false;
+
+		// GetAbsolutePath ends with a slash: a double slash would register the files as "/PrefabLibrary/..."
+		addonPath.Replace("\\", "/");
+		while (addonPath.EndsWith("/"))
+		{
+			addonPath = addonPath.Substring(0, addonPath.Length() - 1);
+		}
+
+		return true;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -65,33 +124,8 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 		if (!Workbench.ScriptDialog(CAPTION, text, this))
 			return;
 
-		string folder = m_sLibraryFolder.Trim();
-		folder.Replace("\\", "/");
-		while (folder.EndsWith("/"))
-		{
-			folder = folder.Substring(0, folder.Length() - 1);
-		}
-
-		if (folder.IsEmpty())
-		{
-			ShowError("no folder given.");
-			return;
-		}
-
-		if (FileIO.FileExists(folder + "/addon.gproj"))
-		{
-			ShowError("an addon already exists in " + folder + ".\n\nIf it is your " + LIBRARY_ADDON_TITLE + ", close the Workbench and open your project from the Launcher with \"Open with Addons\", ticking \"" + LIBRARY_ADDON_TITLE + "\". Otherwise choose another folder.");
-			return;
-		}
-
-		if (!FileIO.MakeDirectory(folder) || !WriteProjectFile(folder + "/addon.gproj"))
-		{
-			ShowError("cannot write in " + folder + ".");
-			return;
-		}
-
-		// the addon is not loaded: files are registered when the Workbench opens it
-		if (!Generate(folder, false))
+		string folder = m_sLibraryFolder;
+		if (!CreateLibraryAddonIn(folder))
 			return;
 
 		string message = LIBRARY_ADDON_TITLE + " created in:\n" + folder + "\n\n"
@@ -108,8 +142,42 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! Creates the library addon in folder and generates its libraries. The addon is not loaded: GDC_MMResourceFile writes the meta files.
+	//! \param[in,out] folder folder of the new addon, normalised on return (slashes, no trailing slash)
+	protected bool CreateLibraryAddonIn(inout string folder)
+	{
+		folder = folder.Trim();
+		folder.Replace("\\", "/");
+		while (folder.EndsWith("/"))
+		{
+			folder = folder.Substring(0, folder.Length() - 1);
+		}
+
+		if (folder.IsEmpty())
+		{
+			ShowError("no folder given.");
+			return false;
+		}
+
+		if (FileIO.FileExists(folder + "/addon.gproj"))
+		{
+			ShowError("an addon already exists in " + folder + ".\n\nIf it is your " + LIBRARY_ADDON_TITLE + ", close the Workbench and open your project from the Launcher with \"Open with Addons\", ticking \"" + LIBRARY_ADDON_TITLE + "\". Otherwise choose another folder.");
+			return false;
+		}
+
+		if (!FileIO.MakeDirectory(folder) || !WriteProjectFile(folder + "/addon.gproj"))
+		{
+			ShowError("cannot write in " + folder + ".");
+			return false;
+		}
+
+		return Generate(folder, false);
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Writes the libraries and the index into the library addon at addonPath, mirroring the loaded addons.
 	//! \param[in] loaded true when the library addon is loaded: new files are registered and obsolete ones deleted
+	//! \return false when nothing was found or a file failed
 	protected bool Generate(string addonPath, bool loaded)
 	{
 		GDC_MMLibraryIndex.ResetFileAddons(); // the loaded addons may have changed since the last run
@@ -125,14 +193,17 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 			return false;
 		}
 
-		WBProgressDialog progress = new WBProgressDialog(CAPTION, Workbench.GetModule(ResourceManager));
+		WBProgressDialog progress;
+		if (!m_bCommandLine)
+			progress = new WBProgressDialog(CAPTION, Workbench.GetModule(ResourceManager));
 
 		array<ref GDC_MMLibraryIndexEntry> indexEntries = {};
 		int added, kept;
 		array<string> failures = {};
 		foreach (int index, GDC_MMLibraryItem item : items)
 		{
-			progress.SetProgress(index / (float)items.Count());
+			if (progress)
+				progress.SetProgress(index / (float)items.Count());
 
 			string relativePath = item.m_sPath;
 
@@ -187,10 +258,10 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 			Print(LOG_PREFIX + "failed: " + failure, LogLevel.ERROR);
 		}
 
-		if (loaded)
+		if (loaded && !m_bCommandLine)
 			Workbench.Dialog(CAPTION, "Libraries updated from the loaded addons: " + summary);
 
-		return true;
+		return failures.IsEmpty();
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -407,7 +478,8 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	protected void ShowError(string message)
 	{
 		Print(LOG_PREFIX + message, LogLevel.ERROR);
-		Workbench.Dialog(CAPTION, message);
+		if (!m_bCommandLine)
+			Workbench.Dialog(CAPTION, message);
 	}
 
 	//------------------------------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+GameProject {
+ ID "GDC AR MM Tools Tests"
+ GUID "DEB8F2D260181AFF"
+ TITLE "GDC AR MM Tools Tests"
+ Dependencies {
+  "6AC540B09694CF5F"
+ }
+}
