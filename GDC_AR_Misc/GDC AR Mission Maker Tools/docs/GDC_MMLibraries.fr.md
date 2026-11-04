@@ -22,9 +22,9 @@ Si vous avez choisi un autre dossier que celui par défaut, ajoutez-le d'abord a
 <details>
 <summary>Mais pourquoi je dois faire ça, bordel de noeud de chiotte ?</summary>
 
-> GDC Mission Maker Tools est un mod que vous téléchargez. Il est donc en lecture seule, comme tous les autres addons que vous chargez.
+> GDC Mission Maker Tools est un mod que vous téléchargez. Il est donc en lecture seule, rien ne peut être écrit dedans... Pas même la bibliothèque de mods que vous utilisez.
 >
-> Par contre, votre bibliothèque est locale et varie en fonction de votre modset : on est donc obligé de créer un petit mod local, rien qu'à vous, qui stocke les données de votre bibliothèque.
+> Pour écrire votre bibliothèque de mods, on est donc obligé de créer un petit mod local, rien qu'à vous, qui stocke les données de votre modset à vous (et rien qu'à vous, mais déconnez pas quand même avec le modset).
 
 </details>
 
