@@ -1,34 +1,36 @@
-# Bibliothèques d'entités MM (GDC Mission Maker Tools)
+# MM entity libraries (GDC Mission Maker Tools)
 
-Le plugin **Update MM Libraries** range les entités utiles aux créateurs de mission dans le panneau **Prefab Library** du World Editor. Les bibliothèques sont construites à partir des addons que vous avez chargés :
+English | [Français](GDC_MMLibraries.fr.md)
 
-- **MM Forces :** groupes, armes statiques, véhicules terrestres et aériens, par faction. Ils viennent des catalogues de faction que Bohemia et les addons de faction (RHS…) tiennent pour le Game Master. Les personnages seuls sont exclus, car seuls les groupes reçoivent une IA.
-- **MM Markers :** marqueurs de carte pour le briefing (Reforger Lobby, Coalition Lobby, TILW, GDC) et zones tracées sur la carte (TILW, GDC AR Lib), par addon.
-- **MM Systems :** waypoints vanilla, triggers et utilitaires TILW, modules de GDC AR Lib (IA, appui, téléportation).
+The **Update MM Libraries** plugin sorts the entities useful to mission makers into the World Editor's **Prefab Library** panel. The libraries are built from the addons you have loaded:
 
-Ce qui n'est pas listé reste disponible dans le Resource Browser.
+- **MM Forces:** groups, static weapons, land and air vehicles, per faction. They come from the faction catalogs that Bohemia and faction addons (RHS...) maintain for the Game Master. Single characters are left out, since only groups get an AI.
+- **MM Markers:** briefing map markers (Reforger Lobby, Coalition Lobby, TILW, GDC) and areas drawn on the map (TILW, GDC AR Lib), per addon.
+- **MM Systems:** vanilla waypoints, TILW triggers and utilities, GDC AR Lib modules (AI, support, teleport).
 
-## Créer les bibliothèques
+Anything not listed stays available in the Resource Browser.
 
-1. Ouvrez votre projet en cochant GDC Mission Maker Tools dans « Open With Addons ».
-2. Lancez **Plugins > GDC > Mission Maker > Update MM Libraries**.
-3. Choisissez le dossier du nouvel addon local **GDC Mission Maker Libraries**. Par défaut, il se place à côté de vos autres projets Workbench. Cliquez sur Create.
-4. Fermez le Workbench, puis rouvrez votre projet depuis le Launcher avec « Open With Addons » en cochant **GDC Mission Maker Libraries**. Il entraîne GDC Mission Maker Tools avec lui.
+## Create the libraries
 
-Si vous avez choisi un autre dossier que celui par défaut, ajoutez-le d'abord au Launcher avec « Add Existing Project ».
+1. Open your project with GDC Mission Maker Tools ticked in "Open With Addons".
+2. Run **Plugins > GDC > Mission Maker > Update MM Libraries**.
+3. Choose the folder of the new local addon **GDC Mission Maker Libraries**. By default, it goes next to your other Workbench projects. Click Create.
+4. Close Workbench, then reopen your project from the Launcher with "Open With Addons", ticking **GDC Mission Maker Libraries**. It brings GDC Mission Maker Tools with it.
 
-GDC Mission Maker Libraries n'appartient qu'à vous : ne le publiez jamais, et ne l'ajoutez jamais en dépendance.
+If you chose a folder other than the default one, first add it to the Launcher with "Add Existing Project".
 
-## Les utiliser
+GDC Mission Maker Libraries is yours alone: never publish it, and never add it as a dependency.
 
-Faites glisser un prefab du panneau Prefab Library dans la vue. C'est le **prefab d'origine** qui est posé, pas le raccourci de la bibliothèque : la mission ne dépend donc ni des bibliothèques ni de cet addon.
+## Use them
 
-Si l'addon du prefab n'est pas chargé, rien n'est posé et une boîte de dialogue indique l'addon à charger.
+Drag a prefab from the Prefab Library panel into the viewport. The **original prefab** is placed, not the library shortcut, so the mission depends neither on the libraries nor on this addon.
 
-## Les mettre à jour
+If the prefab's addon is not loaded, nothing is placed and a dialog names the addon to load.
 
-Relancez **Update MM Libraries** après avoir changé vos addons chargés. Les bibliothèques en deviennent le reflet : les nouveaux prefabs sont ajoutés, ceux des addons qui ne sont plus chargés sont retirés.
+## Update them
+
+Run **Update MM Libraries** again after changing your loaded addons. The libraries then mirror them: new prefabs are added, and prefabs of addons no longer loaded are removed.
 
 ## Tests
 
-Tests automatisés (mainteneurs) : [Tools/MMLibrariesTests](../../../Tools/MMLibrariesTests/README.md).
+Automated tests (maintainers): [Tools/MMLibrariesTests](../../../Tools/MMLibrariesTests/README.md) (in French).

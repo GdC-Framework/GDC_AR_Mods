@@ -8,6 +8,10 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/690756F509F253EB-GDCARLib/changelog)
 
+### 1.3.0 - 2026-11-04
+
+- REMOVED: GDC Loadout Editor. It moves to the new GDC Mission Maker Tools addon, a Workbench-only addon that is never a mission dependency. Missions and prefabs already edited with it are not affected.
+
 ### 1.2.1 - 2026-11-01
 
 - ADDED: Teleport module, ALL_PLAYERS mode: a player of the minimum rank set on the module takes along all the players within the radius, whatever their group.

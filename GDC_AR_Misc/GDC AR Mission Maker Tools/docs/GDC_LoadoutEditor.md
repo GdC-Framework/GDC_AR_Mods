@@ -1,151 +1,153 @@
-# Éditeur de loadout des joueurs (GDC Mission Maker Tools)
+# Player loadout editor (GDC Mission Maker Tools)
 
-Le **GDC Loadout Editor** est un outil du World Editor qui permet de modifier le loadout d'un prefab de personnage sans ouvrir ses composants un par un : tenue, armes, équipements (jumelles, montre) et inventaire. Il est pensé pour préparer rapidement les rôles joueurs d'une mission. L'outil :
+English | [Français](GDC_LoadoutEditor.fr.md)
 
-- affiche tout le loadout sur un seul panneau, avec les noms des slots et des prefabs ;
-- montre chaque poche, pochette ou sac avec sa capacité réelle (volume, emplacements, poids) et signale ce qui ne rentrera pas en jeu ;
-- sait répartir automatiquement une liste d'objets (chargeurs, grenades, soins…) dans l'équipement porté ;
-- fonctionne avec les prefabs vanilla, RHS ou GDC, pourvu qu'ils soient dans un projet modifiable.
+The **GDC Loadout Editor** is a World Editor tool to edit the loadout of a character prefab without opening its components one by one: clothing, weapons, equipment (binoculars, watch) and inventory. It is designed to quickly prepare the player roles of a mission. The tool:
 
-L'outil est fourni par l'addon **GDC Mission Maker Tools**. Il n'ajoute rien au jeu : il modifie uniquement des prefabs dans le Workbench. N'ajoutez jamais cet addon en dépendance d'une mission : chargez-le seulement pour éditer, en le cochant dans « Open With Addons » au lancement du Workbench.
+- shows the whole loadout on a single panel, with slot and prefab names;
+- shows each pocket, pouch or backpack with its real capacity (volume, slots, weight) and flags what will not fit in game;
+- can automatically distribute a list of items (magazines, grenades, medical supplies...) into the worn gear;
+- works with vanilla, RHS or GDC prefabs, as long as they are in an editable project.
 
-## Avant de commencer
+The tool is provided by the **GDC Mission Maker Tools** addon. It adds nothing to the game: it only edits prefabs in the Workbench. Never add this addon as a dependency of a mission: load it only to edit, by ticking it in "Open With Addons" when starting the Workbench.
 
-- L'addon **GDC Mission Maker Tools** doit être chargé dans le Workbench, ainsi que **tous les mods dont provient l'équipement** du personnage (RHS par exemple). Sans eux, l'outil ne peut pas lire l'équipement : il le signale et refuse d'appliquer des modifications.
-- Un **monde doit être ouvert** dans le World Editor (n'importe lequel, un monde de test suffit).
-- Le prefab à modifier doit se trouver **dans un de vos projets** (votre mod de mission par exemple). Les prefabs du jeu de base et des mods compilés (RHS, mods du Workshop) sont en lecture seule.
+## Before you start
 
-> **Astuce** — Pour modifier un soldat RHS ou vanilla, créez d'abord **votre propre prefab** à partir de celui-ci dans votre mod de mission (depuis le Resource Browser, en créant un prefab hérité ou une copie), puis éditez ce nouveau prefab avec l'outil. Rangez-le dans un dossier propre à votre mission, par exemple `VotreModDeMission/Prefabs/Characters/MaMission/`.
+- The **GDC Mission Maker Tools** addon must be loaded in the Workbench, along with **every mod the character's gear comes from** (RHS for example). Without them, the tool cannot read the gear: it says so and refuses to apply changes.
+- A **world must be open** in the World Editor (any world, a test world is enough).
+- The prefab to edit must be **in one of your projects** (your mission mod for example). Prefabs of the base game and of packed mods (RHS, Workshop mods) are read-only.
 
-## Ouvrir l'outil
+> **Tip** — To edit an RHS or vanilla soldier, first create **your own prefab** from it in your mission mod (from the Resource Browser, by creating an inherited prefab or a copy), then edit this new prefab with the tool. Store it in a folder of your mission, for example `YourMissionMod/Prefabs/Characters/MyMission/`.
 
-Dans le World Editor, cliquez sur l'icône **sac à dos GDC** de la barre d'outils. Le panneau de l'outil s'ouvre à droite.
+## Open the tool
 
-## Le déroulé en 4 étapes
+In the World Editor, click the **GDC backpack** icon in the toolbar. The tool panel opens on the right.
 
-1. **Choisir le personnage** : dans la section **Character**, sélectionnez le prefab dans le champ **Prefab**, puis cliquez sur **Load**. Le panneau se remplit avec le loadout du prefab. La console indique le fichier qui sera modifié, ou que le prefab est en lecture seule.
-2. **Modifier** le loadout dans les sections **Worn**, **Weapons**, **Equipment** et **Inventory** (voir ci-dessous).
-3. Cliquer sur **Apply** : les modifications sont appliquées au prefab. Une barre de progression s'affiche pendant l'opération.
-4. **Sauvegarder** : l'outil propose alors **Save world** (sauvegarde le monde et le prefab, comme Ctrl+S) ou **Later**. Tant que le monde n'est pas sauvegardé, le fichier du prefab n'est pas modifié sur le disque.
+## The 4 steps
 
-> **Important** — **Save world** sauvegarde aussi toutes les autres modifications en cours du monde ouvert, exactement comme Ctrl+S.
+1. **Choose the character**: in the **Character** section, select the prefab in the **Prefab** field, then click **Load**. The panel fills with the prefab's loadout. The console shows the file that will be modified, or that the prefab is read-only.
+2. **Edit** the loadout in the **Worn**, **Weapons**, **Equipment** and **Inventory** sections (see below).
+3. Click **Apply**: the changes are applied to the prefab. A progress bar is shown during the operation.
+4. **Save**: the tool then offers **Save world** (saves the world and the prefab, like Ctrl+S) or **Later**. As long as the world is not saved, the prefab file is not modified on disk.
 
-Tant que vous n'avez pas cliqué sur **Apply**, rien n'est écrit : un nouveau **Load** annule toutes vos modifications.
+> **Important** — **Save world** also saves all other pending changes of the open world, exactly like Ctrl+S.
 
-## Les sections du panneau
+Until you click **Apply**, nothing is written: a new **Load** cancels all your changes.
 
-### Worn (tenue)
+## Panel sections
 
-Un élément par slot de vêtement du personnage (`HAT`, `JACKET`, `PANTS`, `VEST`, `BACK`…), avec le prefab porté. Changez le prefab pour changer la tenue, videz-le pour retirer le vêtement. Les slots sont lus dans le prefab : les slots ajoutés par les mods (brassard, lunettes…) apparaissent aussi.
+### Worn (clothing)
 
-> **Important** — Après un changement de veste, de sac, de pantalon ou de gilet, cliquez sur **Refresh Containers** pour mettre à jour la liste des conteneurs de l'inventaire (voir [Changer de tenue](#changer-de-tenue)).
+One entry per clothing slot of the character (`HAT`, `JACKET`, `PANTS`, `VEST`, `BACK`...), with the worn prefab. Change the prefab to change the clothing, clear it to remove the item. Slots are read from the prefab: slots added by mods (armband, glasses...) appear too.
 
-### Weapons (armes)
+> **Important** — After changing the jacket, backpack, pants or vest, click **Refresh Containers** to update the list of inventory containers (see [Changing clothing](#changing-clothing)).
 
-Un élément par emplacement d'arme du personnage, par exemple `WEAPON SLOT 0 (PRIMARY)`, `WEAPON SLOT 2 (SECONDARY)`, `GRENADE SLOT 3 (GRENADE)`. Choisissez l'arme ou la grenade de chaque emplacement, ou videz-le.
+### Weapons
 
-L'outil ne gère pas les accessoires d'une arme (lunette, silencieux…) : choisissez directement une **variante d'arme** déjà équipée.
+One entry per weapon slot of the character, for example `WEAPON SLOT 0 (PRIMARY)`, `WEAPON SLOT 2 (SECONDARY)`, `GRENADE SLOT 3 (GRENADE)`. Choose the weapon or grenade of each slot, or clear it.
 
-### Equipment (équipements)
+The tool does not handle weapon attachments (scope, suppressor...): choose a **weapon variant** that already has them.
 
-Les emplacements d'équipement du personnage, comme `BINOCULARSLOT` (jumelles) et `WRISTWATCHSLOT` (montre).
+### Equipment
 
-### Inventory (inventaire)
+The character's equipment slots, such as `BINOCULARSLOT` (binoculars) and `WRISTWATCHSLOT` (watch).
 
-Un **conteneur** par rangement de l'équipement porté : la veste, le pantalon, le sac, et chaque pochette du gilet. Dépliez un conteneur pour voir et modifier ses objets (**Items**) : un prefab et une quantité par ligne. Mettre la quantité à 0 retire l'objet.
+### Inventory
 
-Le titre de chaque conteneur se lit ainsi :
+One **container** per storage of the worn gear: the jacket, the pants, the backpack, and each pouch of the vest. Expand a container to see and edit its items (**Items**): one prefab and one quantity per line. Setting the quantity to 0 removes the item.
+
+The title of each container reads as follows:
 
 ```
 VEST > m67_2 (Pouch_Filbe_M67_Base)  ·  1 item, 1 / 1 slots
 ```
 
-- à gauche, le rangement : l'équipement porté (en majuscules), la pochette et son prefab ;
-- après le point, le contenu et la capacité.
+- on the left, the storage: the worn gear (in capitals), the pouch and its prefab;
+- after the dot, the content and the capacity.
 
-Il existe deux sortes de rangements :
+There are two kinds of storage:
 
-| Type | Exemples | Capacité affichée | Ce qui compte en jeu |
+| Type | Examples | Capacity shown | What matters in game |
 |---|---|---|---|
-| **À volume** | veste, pantalon, sac, gilet, certaines pochettes | `860 / 1600` (volume occupé / volume max) et, si défini, `1.2 / 10.0 kg` | le volume, le poids max et la taille max d'un objet |
-| **À emplacements** | la plupart des pochettes de gilet RHS | `2 / 2 slots` | un seul objet par emplacement, et **seulement les types d'objets acceptés** (par exemple une pochette M67 n'accepte qu'une grenade à fragmentation) |
+| **Volume-based** | jacket, pants, backpack, vest, some pouches | `860 / 1600` (used volume / max volume) and, if set, `1.2 / 10.0 kg` | volume, max weight and max size of an item |
+| **Slot-based** | most RHS vest pouches | `2 / 2 slots` | one item per slot, and **only the accepted item types** (for example an M67 pouch only accepts a fragmentation grenade) |
 
-Les derniers conteneurs de la liste sont particuliers :
+The last containers of the list are special:
 
-- **AUTOMATIC PLACEMENT** : les objets placés ici n'ont pas de destination précise ; c'est le jeu qui les range où il trouve de la place. Il est toujours en fin de liste.
-- Les conteneurs dont le titre est un chemin (par exemple `Vest/Vest_PCGen_III_rifleman_filbe.et/nerd/Pouch_PCGEN3_ifak.et`) visent une pochette **qui n'est pas sur l'équipement actuel**. Leurs objets ne seront pas créés en jeu à cet endroit.
+- **AUTOMATIC PLACEMENT**: items placed here have no precise destination; the game stores them wherever it finds room. It is always last in the list.
+- Containers whose title is a path (for example `Vest/Vest_PCGen_III_rifleman_filbe.et/nerd/Pouch_PCGEN3_ifak.et`) target a pouch **that is not on the current gear**. Their items will not be created there in game.
 
-### Les alertes
+### Alerts
 
-| Icône | Message | Signification |
+| Icon | Message | Meaning |
 |---|---|---|
-| ❗ | `OVER CAPACITY` | Trop d'objets pour le volume ou le nombre d'emplacements : le surplus ne sera pas créé. |
-| ❗ | `OVERWEIGHT` | Le poids maximum du rangement est dépassé (le contenu des pochettes accrochées compte). |
-| ❗ | `NOT ACCEPTED: <objet>` | Ce type d'objet n'est pas accepté par cette pochette (un chargeur dans une pochette à grenade par exemple). |
-| ❗ | `TOO LARGE: <objet>` | L'objet est plus grand que ce que le rangement accepte. |
-| ⚠ | `NOT ON CURRENT GEAR` | Le rangement visé n'existe pas sur l'équipement porté. |
-| 🟡 | `AUTOMATIC PLACEMENT` | Des objets sont en placement automatique : le jeu décidera où ils vont. |
+| ❗ | `OVER CAPACITY` | Too many items for the volume or number of slots: the excess will not be created. |
+| ❗ | `OVERWEIGHT` | The storage's max weight is exceeded (the content of attached pouches counts). |
+| ❗ | `NOT ACCEPTED: <item>` | This item type is not accepted by this pouch (a magazine in a grenade pouch for example). |
+| ❗ | `TOO LARGE: <item>` | The item is larger than what the storage accepts. |
+| ⚠ | `NOT ON CURRENT GEAR` | The targeted storage does not exist on the worn gear. |
+| 🟡 | `AUTOMATIC PLACEMENT` | Items are in automatic placement: the game will decide where they go. |
 
-L'icône se place en début de ligne pour repérer les problèmes d'un coup d'œil. Le détail de chaque alerte est aussi écrit dans la console du Workbench.
+The icon is placed at the start of the line, to spot problems at a glance. Each alert is also detailed in the Workbench console.
 
-## Changer de tenue
+## Changing clothing
 
-Quand vous changez un vêtement dans **Worn**, cliquez sur **Refresh Containers**. L'outil adapte alors l'inventaire au nouvel équipement :
+When you change a clothing item in **Worn**, click **Refresh Containers**. The tool then adapts the inventory to the new gear:
 
-1. chaque conteneur est rattaché au rangement équivalent du nouvel équipement : même nom d'emplacement (`radio` → `radio`), ou à défaut **même modèle de pochette** s'il n'y en a qu'un ;
-2. les objets qui ne trouvent aucun rangement équivalent sont déplacés dans **Items To Distribute** (section **Automatic Distribution**), et la console liste ce qui a été déplacé.
+1. each container is attached to the equivalent storage of the new gear: same slot name (`radio` → `radio`), or failing that **same pouch model** if there is only one;
+2. items that find no equivalent storage are moved to **Items To Distribute** (**Automatic Distribution** section), and the console lists what was moved.
 
-Vous pouvez ensuite les répartir avec **Distribute Items** (voir ci-dessous) ou les placer à la main.
+You can then distribute them with **Distribute Items** (see below) or place them by hand.
 
-> **Attention** — Les objets restés dans **Items To Distribute** ne font pas partie du loadout : si vous cliquez sur **Apply** sans les distribuer, ils sont retirés du personnage.
+> **Warning** — Items left in **Items To Distribute** are not part of the loadout: if you click **Apply** without distributing them, they are removed from the character.
 
-## Répartir automatiquement les objets
+## Distributing items automatically
 
-La section **Automatic Distribution** permet de ranger une liste d'objets sans choisir chaque pochette à la main.
+The **Automatic Distribution** section stores a list of items without choosing each pouch by hand.
 
-1. (Facultatif) **Clear Inventory** vide tout l'inventaire du panneau, après confirmation. Rien n'est écrit avant **Apply**.
-2. Ajoutez les objets dans **Items To Distribute** (bouton **+**, puis un prefab et une quantité par ligne).
-3. Réglez si besoin **Distribution Order** : l'ordre dans lequel l'équipement est rempli, sous forme de noms de slots séparés par des virgules. Par défaut : `Vest,ArmoredVest,Jacket,Pants,Back`.
-4. Cliquez sur **Distribute Items**.
+1. (Optional) **Clear Inventory** empties the whole inventory of the panel, after confirmation. Nothing is written before **Apply**.
+2. Add the items to **Items To Distribute** (**+** button, then one prefab and one quantity per line).
+3. If needed, set **Distribution Order**: the order in which the gear is filled, as slot names separated by commas. Default: `Vest,ArmoredVest,Jacket,Pants,Back`.
+4. Click **Distribute Items**.
 
-Pour chaque objet, l'outil cherche d'abord une **pochette à emplacements** libre qui accepte ce type d'objet (une grenade va dans une pochette à grenade), puis un **rangement à volume** qui a encore la place, en respectant le volume, le poids et la taille maximum. Ce qui ne rentre nulle part est mis en **AUTOMATIC PLACEMENT** et signalé dans la console. La liste **Items To Distribute** est vidée une fois la répartition faite.
+For each item, the tool first looks for a free **slot-based pouch** that accepts this item type (a grenade goes into a grenade pouch), then for a **volume-based storage** that still has room, respecting max volume, weight and size. What fits nowhere goes to **AUTOMATIC PLACEMENT** and is reported in the console. The **Items To Distribute** list is emptied once the distribution is done.
 
-Vérifiez le résultat dans **Inventory**, puis cliquez sur **Apply**.
+Check the result in **Inventory**, then click **Apply**.
 
-## Boutons
+## Buttons
 
-| Bouton | Rôle |
+| Button | Role |
 |---|---|
-| **Load** | Charge le prefab choisi dans **Character**. Annule aussi toutes les modifications non appliquées. |
-| **Refresh Containers** | Adapte l'inventaire après un changement de tenue. |
-| **Clear Inventory** | Vide tout l'inventaire du panneau, après confirmation. |
-| **Distribute Items** | Répartit les objets de **Items To Distribute** dans l'équipement. |
-| **Apply** | Applique les modifications au prefab, puis propose de sauvegarder le monde. |
+| **Load** | Loads the prefab chosen in **Character**. Also cancels all changes not applied. |
+| **Refresh Containers** | Adapts the inventory after a clothing change. |
+| **Clear Inventory** | Empties the whole inventory of the panel, after confirmation. |
+| **Distribute Items** | Distributes the items of **Items To Distribute** into the gear. |
+| **Apply** | Applies the changes to the prefab, then offers to save the world. |
 
-## Sécurités
+## Safeguards
 
-L'outil refuse ou demande confirmation dans les cas suivants :
+The tool refuses or asks for confirmation in the following cases:
 
-- **Prefab en lecture seule** (jeu de base ou mod compilé) : Apply affiche une erreur et n'écrit rien.
-- **Mod manquant** : si des prefabs du loadout ne peuvent pas être chargés (mod RHS non chargé par exemple), la console les liste au Load et **Apply est bloqué**.
-- **Écriture inhabituelle** : si Apply ferait perdre plus de la moitié de l'inventaire, vider plusieurs slots de tenue ou mettre le même objet dans plusieurs slots, une confirmation est demandée (**Cancel** par défaut).
-- **Prefab modifié ailleurs** : si le prefab a changé depuis le Load (modifié à la main par exemple), Apply refuse d'écrire ; faites **Load** et recommencez.
+- **Read-only prefab** (base game or packed mod): Apply shows an error and writes nothing.
+- **Missing mod**: if prefabs of the loadout cannot be loaded (RHS not loaded for example), the console lists them at Load and **Apply is blocked**.
+- **Unusual write**: if Apply would lose more than half of the inventory, empty several clothing slots or put the same item in several slots, a confirmation is asked (**Cancel** by default).
+- **Prefab modified elsewhere**: if the prefab changed since the Load (edited by hand for example), Apply refuses to write; click **Load** and start again.
 
-Tous les messages de l'outil dans la console commencent par `[GDC LoadoutEditor]`.
+All tool messages in the console start with `[GDC LoadoutEditor]`.
 
-## Questions fréquentes
+## FAQ
 
-**Rien ne se passe quand je choisis un prefab.**
-Cliquez sur **Load** : le Workbench ne prévient pas l'outil quand le champ change.
+**Nothing happens when I choose a prefab.**
+Click **Load**: the Workbench does not notify the tool when the field changes.
 
-**Le Copy/Paste du clic droit ne fonctionne pas pour coller des objets.**
-C'est une limite du Workbench : **Paste** est désactivé dans le panneau des outils. Saisissez les objets à la main, ou utilisez la répartition automatique.
+**Right-click Copy/Paste does not work to paste items.**
+It is a Workbench limitation: **Paste** is disabled in the tool panel. Type the items by hand, or use automatic distribution.
 
-**J'ai appliqué mais mon fichier n'a pas changé.**
-L'outil modifie le prefab en mémoire : sauvegardez le monde (**Save world** dans la fenêtre proposée, ou Ctrl+S).
+**I applied but my file did not change.**
+The tool edits the prefab in memory: save the world (**Save world** in the offered window, or Ctrl+S).
 
-**Une pochette affiche `0 / 0` ou un gilet pare-balles `OVER CAPACITY` avec un seul objet.**
-Certains équipements n'ont aucune place de rangement (un gilet pare-balles seul par exemple) : tout objet placé dedans ne sera pas créé en jeu. Placez-le ailleurs.
+**A pouch shows `0 / 0`, or a body armor shows `OVER CAPACITY` with a single item.**
+Some gear has no storage room (a plate carrier alone for example): any item placed in it will not be created in game. Place it elsewhere.
 
-**Des objets restent en `NOT ON CURRENT GEAR` après un Load.**
-Le prefab vise des pochettes qui ne sont pas sur l'équipement actuel. Cliquez sur **Refresh Containers** : les objets sont rattachés à une pochette équivalente, ou déplacés dans **Items To Distribute**.
+**Items stay in `NOT ON CURRENT GEAR` after a Load.**
+The prefab targets pouches that are not on the current gear. Click **Refresh Containers**: the items are attached to an equivalent pouch, or moved to **Items To Distribute**.

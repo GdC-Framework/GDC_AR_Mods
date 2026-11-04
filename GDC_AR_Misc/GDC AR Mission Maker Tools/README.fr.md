@@ -16,12 +16,12 @@ Que propose cet addon ?
 
 Le resource browser du World Editor donne accès à toutes les entités chargées : il y a en a littéralement des milliers, dont seule une petite partie est utile au créateur de missions. GDC Mission Maker tools propose un plugin permettant de créer une bibliothèque des entités utiles au créateurs de mission, directement accessible par le panneau natif du World Editor **Prefab Library**.
 
-Mode d'emploi : [docs/GDC_MMLibraries.md](docs/GDC_MMLibraries.md).
+Mode d'emploi : [docs/GDC_MMLibraries.fr.md](docs/GDC_MMLibraries.fr.md).
 
 
 ## Un éditeur de loadouts (un peu) mieux
 
 Un outil du World Editor (icône sac à dos GDC de la barre d'outils) pour modifier le loadout d'un prefab de personnage sur un seul panneau : tenue, armes, équipements et inventaire, avec la capacité réelle de chaque conteneur. 
 
-Mode d'emploi : [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md).
+Mode d'emploi : [docs/GDC_LoadoutEditor.fr.md](docs/GDC_LoadoutEditor.fr.md).
 
