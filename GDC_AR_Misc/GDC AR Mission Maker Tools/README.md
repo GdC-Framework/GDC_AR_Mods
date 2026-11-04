@@ -1,46 +1,26 @@
-# GDC AR Mission Maker Tools
+# GDC Mission Maker Tools
 
 English | [Français](README.fr.md)
 
-Workbench tools for the mission makers of the Grèce de canards community.
+Tools for the Enfusion Workbench ("Arma Reforger Tools") that make life easier for mission makers.
 
-Never add this addon as a dependency of a mission: load it only to edit, by ticking it in "Open With Addons" when starting Workbench. Missions built with it don't depend on it, and players never download it.
+/!\ No need to add this addon to the dependencies of your mission. Load it with "Open With Addons" in the Enfusion Launcher (right-click on your mission mod).
 
-## MM libraries
+What does this addon offer?
 
-Shortcuts sorted for mission makers in the World Editor's **Prefab Library** panel, built from the addons you have loaded:
+  * An entity library, 3den style
+  * A loadout editor
 
-- **MM Forces:** groups, static weapons, land and air vehicles, per faction. They come from the faction catalogs that Bohemia and faction addons (RHS...) maintain for the Game Master. Single characters are left out, since only groups get an AI.
-- **MM Markers:** briefing map markers (Reforger Lobby, Coalition Lobby, TILW, GDC) and areas drawn on the map (TILW, GDC AR Lib), per addon.
-- **MM Systems:** vanilla waypoints, TILW triggers and utilities, GDC AR Lib modules (AI, support, teleport).
 
-Anything not listed stays available in the Resource Browser.
+## An entity library, 3den style
 
-### Create the libraries
+The World Editor's Resource Browser gives access to every loaded entity: there are literally thousands of them, and only a small part is useful to mission makers. GDC Mission Maker Tools provides a plugin that builds a library of the entities useful to mission makers, directly available in the World Editor's native **Prefab Library** panel.
 
-1. Open your project with GDC AR Mission Maker Tools ticked in "Open With Addons".
-2. Run **Plugins > GDC > Mission Maker > Update MM Libraries**.
-3. Choose the folder of the new local addon **GDC AR MM Libraries**. The default one is next to your other Workbench projects. Click Create.
-4. Close Workbench, then open your project from the Launcher with "Open With Addons", ticking **GDC AR MM Libraries**. It brings GDC AR Mission Maker Tools with it.
+User guide: [docs/GDC_MMLibraries.md](docs/GDC_MMLibraries.md) (in French).
 
-If you chose a folder other than the default one, first add it to the Launcher with "Add Existing Project".
 
-GDC AR MM Libraries is yours alone: never publish it, and never add it as a dependency.
+## A (slightly) better loadout editor
 
-### Use them
+A World Editor tool (GDC backpack icon in the toolbar) to edit the loadout of a character prefab on a single panel: clothing, weapons, equipment and inventory, with the real capacity of each container.
 
-Drag a prefab from the Prefab Library panel into the viewport. The **original prefab** is placed, not the library shortcut, so the mission depends neither on the libraries nor on this addon.
-
-If the prefab's addon is not loaded, nothing is placed and a dialog names the addon to load.
-
-### Update them
-
-Run **Update MM Libraries** again after changing your loaded addons. The libraries then mirror them: new prefabs are added, and prefabs of addons no longer loaded are removed.
-
-## Tests
-
-Automated tests: [Tools/MMLibrariesTests](../../Tools/MMLibrariesTests/README.md) (in French). They run the plugin from the command line:
-
-```
--wbModule=ResourceManager -plugin=GDC_MMCatalogGeneratorPlugin -run [-mmLibraryFolder="<folder>"]
-```
+User guide: [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md) (in French).

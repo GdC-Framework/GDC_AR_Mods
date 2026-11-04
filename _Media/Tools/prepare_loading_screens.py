@@ -5,7 +5,7 @@ to 16:9, resizes it to 1280x720 and saves it as an RGB PNG with the same name in
 _Media/LoadingScreens/Exports. Only new or modified originals are processed, unless
 --force is given.
 
-The exports are then imported into GDC AR Core with the Workbench plugin
+The exports are then imported into GDC Core with the Workbench plugin
 "GDC Import Loading Screens" (Resource Manager > Plugins).
 """
 

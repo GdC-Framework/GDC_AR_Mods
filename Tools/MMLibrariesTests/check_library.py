@@ -1,13 +1,13 @@
-"""File-level checks of a generated "GDC AR MM Libraries" addon (no Workbench needed).
+"""File-level checks of a generated "GDC Mission Maker Libraries" addon (no Workbench needed).
 
-Usage: python check_library.py "<folder of the GDC AR MM Libraries addon>"
+Usage: python check_library.py "<folder of the GDC Mission Maker Libraries addon>"
 Exit code 0 when no problem is found. Also imported by run_tests.py.
 """
 import os
 import re
 import sys
 
-LIBRARY_ADDON_ID = "GDC AR MM Libraries"
+LIBRARY_ADDON_ID = "GDC Mission Maker Libraries"
 MMTOOLS_GUID = "6AC540B09694CF5F"
 INDEX = "Configs/MM Libraries/LibraryAddons.conf"
 
@@ -65,7 +65,7 @@ def check_project(library):
     if not re.search(r'GUID "' + GUID + '"', text):
         library.error("addon.gproj: GUID is not 16 hexadecimal digits")
     if f'"{MMTOOLS_GUID}"' not in text:
-        library.error("addon.gproj: no dependency on GDC AR Mission Maker Tools")
+        library.error("addon.gproj: no dependency on GDC Mission Maker Tools")
 
 
 def check_meta(library, relative, resource_class):

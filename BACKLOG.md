@@ -24,7 +24,11 @@ Travaux à faire sur les mods et les missions, sans ordre de priorité imposé. 
 - Corriger la description de `m_sGDC_LongRangeFrequency` : elle dit que les radios de véhicules sont réglées sur cette fréquence, or aucun script GDC ne le fait plus.
 - Dérouler les tests sur serveur dédié (préréglages par slot, reconnexion, respawn). Ils étaient encore à faire en octobre : à confirmer.
 
-## GDC AR Mission Maker Tools
+## GDC Mission Maker Tools
+
+### Publication
+
+- Le GDC Loadout Editor a quitté GDC AR Lib pour cet addon. Publier d'abord une version de GDC AR Lib sans l'éditeur, puis seulement GDC Mission Maker Tools : chargés ensemble, GDC AR Lib 1.2.1 du Workshop et MM Tools définiraient deux fois les classes `GDC_Loadout*`, et la compilation échouerait.
 
 ### Bibliothèques MM (« Update MM Libraries »)
 
@@ -32,6 +36,13 @@ Travaux à faire sur les mods et les missions, sans ordre de priorité imposé. 
 - Proposer un nom à la pose d'un marqueur ou d'une zone servant de repère à un module.
 - Évaluer une bibliothèque dédiée au Scenario Framework.
 - Signaler à Bacon que l'addon ZU-23 ne déclare `BaconZU23_Turret_Deployed` et `Ural4320_ZU23` dans aucun catalogue de faction, seulement dans un ancien registre Game Master.
+
+## Noms des mods sans « AR »
+
+Les TITLE des addons ont perdu « AR » (GDC Core, GDC Equipment, GDC Terrains, GDC Loadouts, GDC Mission Maker Tools) ; seul GDC AR Lib le garde, pour le distinguer de GDC_Lib d'Arma 3. Les ID de Core, Equipment, Terrains et Loadouts restent inchangés, ainsi que les dossiers. À la prochaine publication de chaque mod :
+
+- Vérifier que le dialogue de publication reprend le nouveau nom, et que les anciens liens Workshop (`…-GDCARCore`, `…-GDCARTerrains` dans les READMEs) mènent toujours à la page.
+- Prévenir les joueurs que l'ancien nom devient le nouveau, et mettre à jour le wiki.
 
 ## Coalition VON : fréquence de départ des radios de véhicules
 

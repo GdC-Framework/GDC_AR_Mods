@@ -1,6 +1,6 @@
 #ifdef WORKBENCH
 //! Index of the MM library prefabs coming from an addon (not from vanilla), written by GDC_MMCatalogGeneratorPlugin
-//! into the GDC AR MM Libraries addon. It lets GDC_MMCatalogDropPlugin name the addon to load when a library prefab is dropped
+//! into the GDC Mission Maker Libraries addon. It lets GDC_MMCatalogDropPlugin name the addon to load when a library prefab is dropped
 //! while its parent's addon is not loaded: the parent prefab, and so the addon, cannot be read then.
 [BaseContainerProps(configRoot: true)]
 class GDC_MMLibraryIndex

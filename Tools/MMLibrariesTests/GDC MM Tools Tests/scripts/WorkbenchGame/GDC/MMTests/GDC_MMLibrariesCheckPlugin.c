@@ -25,7 +25,7 @@ class GDC_MMDropPluginTestAccess : GDC_MMCatalogDropPlugin
 class GDC_MMLibrariesCheckPlugin : WorkbenchPlugin
 {
 	protected static const string LOG_PREFIX = "[MM Tests] ";
-	protected static const string LIBRARY_ROOT = "$GDC AR MM Libraries:PrefabLibrary/";
+	protected static const string LIBRARY_ROOT = "$GDC Mission Maker Libraries:PrefabLibrary/";
 
 	//------------------------------------------------------------------------------------------------
 	override void RunCommandline()

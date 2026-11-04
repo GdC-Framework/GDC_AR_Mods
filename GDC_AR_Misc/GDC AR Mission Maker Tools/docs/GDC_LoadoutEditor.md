@@ -1,4 +1,4 @@
-# Éditeur de loadout des joueurs (GDC AR Lib)
+# Éditeur de loadout des joueurs (GDC Mission Maker Tools)
 
 Le **GDC Loadout Editor** est un outil du World Editor qui permet de modifier le loadout d'un prefab de personnage sans ouvrir ses composants un par un : tenue, armes, équipements (jumelles, montre) et inventaire. Il est pensé pour préparer rapidement les rôles joueurs d'une mission. L'outil :
 
@@ -7,11 +7,11 @@ Le **GDC Loadout Editor** est un outil du World Editor qui permet de modifier le
 - sait répartir automatiquement une liste d'objets (chargeurs, grenades, soins…) dans l'équipement porté ;
 - fonctionne avec les prefabs vanilla, RHS ou GDC, pourvu qu'ils soient dans un projet modifiable.
 
-L'outil est fourni par le mod **GDC AR Lib**. Il n'ajoute rien au jeu : il modifie uniquement des prefabs dans le Workbench.
+L'outil est fourni par l'addon **GDC Mission Maker Tools**. Il n'ajoute rien au jeu : il modifie uniquement des prefabs dans le Workbench. N'ajoutez jamais cet addon en dépendance d'une mission : chargez-le seulement pour éditer, en le cochant dans « Open With Addons » au lancement du Workbench.
 
 ## Avant de commencer
 
-- Le mod **GDC AR Lib** doit être chargé dans le Workbench, ainsi que **tous les mods dont provient l'équipement** du personnage (RHS par exemple). Sans eux, l'outil ne peut pas lire l'équipement : il le signale et refuse d'appliquer des modifications.
+- L'addon **GDC Mission Maker Tools** doit être chargé dans le Workbench, ainsi que **tous les mods dont provient l'équipement** du personnage (RHS par exemple). Sans eux, l'outil ne peut pas lire l'équipement : il le signale et refuse d'appliquer des modifications.
 - Un **monde doit être ouvert** dans le World Editor (n'importe lequel, un monde de test suffit).
 - Le prefab à modifier doit se trouver **dans un de vos projets** (votre mod de mission par exemple). Les prefabs du jeu de base et des mods compilés (RHS, mods du Workshop) sont en lecture seule.
 

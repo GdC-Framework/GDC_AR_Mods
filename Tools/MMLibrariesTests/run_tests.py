@@ -1,11 +1,14 @@
-"""Automated tests of "Update MM Libraries" (GDC AR Mission Maker Tools), see README.md.
+"""Automated tests of "Update MM Libraries" (GDC Mission Maker Tools), see README.md.
 
 Runs the Workbench from the command line on a test library in _work/ (never the mission maker's own library),
 then checks the files (check_library.py), the Workbench log and what the Workbench registered
-(GDC AR MM Tools Tests addon).
+(GDC MM Tools Tests addon).
 
-Usage: python run_tests.py [--full]
-  --full  also updates the library with the whole GDC modset and reports the duration
+Usage: python run_tests.py [--full] [--authorize-scripts]
+  --full               also updates the library with the whole GDC modset and reports the duration
+  --authorize-scripts  passes -scriptAuthorizeAll: no "Script Authorization Required" dialog (FileIO calls).
+                       Off by default: the user decides each time whether to lift this protection;
+                       without it, someone must click the dialog at each Workbench start.
 Exit code 0 when every step passes. Logs and reports are kept in _work/results/.
 """
 import os
@@ -20,7 +23,7 @@ import check_library
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 WORK = os.path.join(HERE, "_work")
-LIBRARY = os.path.join(WORK, "GDC AR MM Libraries")
+LIBRARY = os.path.join(WORK, "GDC Mission Maker Libraries")
 RESULTS = os.path.join(WORK, "results")
 
 STEAM = r"C:\Program Files (x86)\Steam\steamapps\common"
@@ -32,7 +35,7 @@ WORKBENCH_ADDONS = os.path.join(os.path.expanduser("~"), "Documents", "My Games"
 MMTOOLS_GPROJ = os.path.join(REPO, "GDC_AR_Misc", "GDC AR Mission Maker Tools", "addon.gproj")
 
 # The first folder holding an addon ID wins: _work comes before the Workbench addons folder,
-# where the mission maker's own GDC AR MM Libraries usually is.
+# where the mission maker's own GDC Mission Maker Libraries usually is.
 ADDON_DIRS = [
     os.path.join(STEAM, "Arma Reforger", "addons"),
     os.path.join(REPO, "GDC_AR_Misc"),
@@ -42,7 +45,7 @@ ADDON_DIRS = [
 ]
 
 LIBRARY_ID = check_library.LIBRARY_ADDON_ID
-TESTS_ID = "GDC AR MM Tools Tests"
+TESTS_ID = "GDC MM Tools Tests"
 
 # TILW and GDC AR Lib bring PSCore, Reforger Lobby and Coalition VON as dependencies
 BASE = ["TilWMissionFramework", "GDC AR Lib"]
@@ -90,9 +93,11 @@ def run_workbench(step, addons, plugin, extra="", expected_error=None):
     """Runs the Workbench headless; returns (exit code, console log, seconds).
     expected_error: text of a script error the step expects, not counted as a failure."""
     dirs = ",".join(norm(d) for d in ADDON_DIRS)
+    # -scriptAuthorizeAll (opt-in, --authorize-scripts): no "Script Authorization Required" dialog
+    authorize = " -scriptAuthorizeAll" if "--authorize-scripts" in sys.argv else ""
     command = (
         f'"{WORKBENCH}" -gproj "{norm(MMTOOLS_GPROJ)}" -addonsDir "{dirs}" -addons "{",".join(addons)}" '
-        f'-profile {PROFILE} -wbModule=ResourceManager -plugin={plugin} -run {extra}'
+        f'-profile {PROFILE}{authorize} -wbModule=ResourceManager -plugin={plugin} -run {extra}'
     )
     start = time.time()
     process = subprocess.Popen(command, cwd=WORKBENCH_DIR)
@@ -148,7 +153,7 @@ def loaded_library_path(log):
     if not match:
         return None
     for path in re.findall(r"gproj: '([^']+)'", match.group(1)):
-        if path.endswith("/GDC AR MM Libraries/addon.gproj"):
+        if path.endswith("/GDC Mission Maker Libraries/addon.gproj"):
             return path
     return None
 

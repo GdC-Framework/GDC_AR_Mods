@@ -1,5 +1,5 @@
 #ifdef WORKBENCH
-//! Replaces a prefab of the MM libraries (PrefabLibrary/MM .../ of the local GDC AR MM Libraries addon) dropped into the viewport by its parent prefab,
+//! Replaces a prefab of the MM libraries (PrefabLibrary/MM .../ of the local GDC Mission Maker Libraries addon) dropped into the viewport by its parent prefab,
 //! from the Prefab Library panel or the Resource Browser. The library prefabs are only shortcuts sorted for mission makers:
 //! the world never references them, so missions depend neither on that addon nor on this one. Other dropped files keep the native behaviour.
 //! A library prefab whose addon is not loaded places nothing and tells which addon to load (see GDC_MMLibraryIndex).

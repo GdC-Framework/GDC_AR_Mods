@@ -13,7 +13,7 @@ class GDC_MMLibraryItem
 //! - MM Markers: PrefabLibrary/MM Markers/<Icons|Areas>/<Addon>/, see GDC_MMMarkerReader;
 //! - MM Systems: PrefabLibrary/MM Systems/<Waypoints|Triggers|Systems>/<Addon>/, see GDC_MMSystemsReader.
 //! Dropping one into the viewport places its parent (see GDC_MMCatalogDropPlugin).
-//! The libraries go into a local addon of the mission maker, "GDC AR MM Libraries" (GDC AR Mission Maker Tools is packed, so read-only),
+//! The libraries go into a local addon of the mission maker, "GDC Mission Maker Libraries" (GDC Mission Maker Tools is packed, so read-only),
 //! created by the first run; regenerating it mirrors the loaded addons. Never published, missions do not depend on it.
 //! Also writes GDC_MMLibraryIndex, the addon each library prefab comes from, named to mission makers dropping it without that addon.
 //! Command line, for automated tests (Tools/MMLibrariesTests in the GDC_AR_Mods repository), without any dialog:
@@ -34,15 +34,15 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	protected static const string SYSTEMS_DIRECTORY = "PrefabLibrary/MM Systems/";
 	protected static const ref array<string> LIBRARY_DIRECTORIES = { FORCES_DIRECTORY, MARKERS_DIRECTORY, SYSTEMS_DIRECTORY };
 
-	//! Local addon receiving the libraries; depends on GDC AR Mission Maker Tools so that ticking it in the Launcher is enough
-	protected static const string LIBRARY_ADDON_ID = "GDC AR MM Libraries";
-	protected static const string LIBRARY_ADDON_TITLE = "GDC AR MM Libraries";
+	//! Local addon receiving the libraries; depends on GDC Mission Maker Tools so that ticking it in the Launcher is enough
+	protected static const string LIBRARY_ADDON_ID = "GDC Mission Maker Libraries";
+	protected static const string LIBRARY_ADDON_TITLE = "GDC Mission Maker Libraries";
 	protected static const string MMTOOLS_ADDON_GUID = "6AC540B09694CF5F";
 
 	//! Command line parameter giving the folder of the library addon to create
 	protected static const string CLI_LIBRARY_FOLDER = "mmLibraryFolder";
 
-	[Attribute(desc: "Folder of the new GDC AR MM Libraries addon. Keep the default unless you store your Workbench projects elsewhere.")]
+	[Attribute(desc: "Folder of the new GDC Mission Maker Libraries addon. Keep the default unless you store your Workbench projects elsewhere.")]
 	protected string m_sLibraryFolder;
 
 	//! Run from the command line: no dialog, results in the log only
@@ -115,8 +115,8 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	//! First run, or library addon not loaded: let the mission maker choose its folder, create it and explain how to load it.
 	protected void CreateLibraryAddon()
 	{
-		if (m_sLibraryFolder.IsEmpty())
-			m_sLibraryFolder = GetDefaultLibraryFolder();
+		// Workbench keeps plugin attributes between sessions: always offer the current default, not a folder typed long ago
+		m_sLibraryFolder = GetDefaultLibraryFolder();
 
 		string text = "The " + LIBRARY_ADDON_TITLE + " addon is not loaded.\n\n"
 			+ "If you have never created it: choose its folder below and click Create. The default folder is the one of your Workbench projects.\n\n"
@@ -131,7 +131,7 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 		string message = LIBRARY_ADDON_TITLE + " created in:\n" + folder + "\n\n"
 			+ "To see it in the Prefab Library panel:\n"
 			+ "1. close the Workbench;\n"
-			+ "2. in the Launcher, open your project with \"Open with Addons\" and tick \"" + LIBRARY_ADDON_TITLE + "\" (it brings GDC AR Mission Maker Tools with it).";
+			+ "2. in the Launcher, open your project with \"Open with Addons\" and tick \"" + LIBRARY_ADDON_TITLE + "\" (it brings GDC Mission Maker Tools with it).";
 
 		if (!IsInDefaultAddonsFolder(folder))
 			message += "\n\nThis folder is not the default one: first add it to the Launcher with \"Add Existing Project\" (its addon.gproj file).";

@@ -46,8 +46,7 @@ Fréquences des radios courte et longue portée, définies par slot sur les grou
 
 ## Autres fonctionnalités
 
-- **GDC Loadout Editor :** outil du World Editor pour modifier le loadout des prefabs de personnages, voir [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md).
 - **Artillerie IA :** `Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et`, tirs de mortier servi par des IA, déclenchés par un flag de mission TILW.
 - **`GDC_FollowNearestPlayerEntity` :** place une entité sur le joueur le plus proche d'une référence, à intervalle réglable.
 - **`GDC_ForceGroupActiveLODComponent` :** garde un groupe d'IA en simulation complète, quelle que soit la distance aux joueurs.
-- **GDC Import Loading Screens :** plugin du Resource Manager qui importe les écrans de chargement préparés dans `_Media` vers GDC AR Core.
+- **GDC Import Loading Screens :** plugin du Resource Manager qui importe les écrans de chargement préparés dans `_Media` vers GDC Core.

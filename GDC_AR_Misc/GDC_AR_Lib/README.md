@@ -46,8 +46,7 @@ Short-range and long-range radio frequencies, set per slot on playable groups (`
 
 ## Other features
 
-- **GDC Loadout Editor:** World Editor tool to edit the loadout of character prefabs, see [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md) (in French).
 - **AI artillery:** `Prefabs/AI/Artillery/GDC_ArtilleryFireSupport.et`, mortar fire served by AI, triggered by a TILW mission flag.
 - **`GDC_FollowNearestPlayerEntity`:** places an entity on the player closest to a reference, at an adjustable interval.
 - **`GDC_ForceGroupActiveLODComponent`:** keeps an AI group in full simulation, regardless of its distance from players.
-- **GDC Import Loading Screens:** Resource Manager plugin that imports the loading screens prepared in `_Media` into GDC AR Core.
+- **GDC Import Loading Screens:** Resource Manager plugin that imports the loading screens prepared in `_Media` into GDC Core.

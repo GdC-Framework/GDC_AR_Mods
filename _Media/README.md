@@ -34,7 +34,7 @@ Pas d'accents ni de caractères spéciaux dans les noms de fichiers et de dossie
 - **Format 16:9**, chaque côté **multiple de 4** (sinon pas de compression GPU, fichier 3 à 4 fois plus lourd).
 - Taille recommandée : **1280 × 720** ; 1920 × 1080 au maximum.
 - PNG **RVB sans couche alpha**.
-- Les loading screens partagés vont dans **GDC AR Core** (`UI/MissionLoadingScreens/`), pour n'être téléchargés qu'une fois.
+- Les loading screens partagés vont dans **GDC Core** (`UI/MissionLoadingScreens/`), pour n'être téléchargés qu'une fois.
 
 Ordre de grandeur attendu : environ 0,9 Mo par `.edds` en 1280 × 720 sans mipmaps.
 
@@ -42,7 +42,7 @@ Ordre de grandeur attendu : environ 0,9 Mo par `.edds` en 1280 × 720 sans mipma
 
 1. Placer l'original dans `LoadingScreens/_Originaux/`, avec son nom définitif (sans accent ni espace).
 2. Double-cliquer sur `Tools/Preparer_LoadingScreens.cmd` : les originaux nouveaux ou modifiés sont recadrés au centre en 16:9 et exportés en 1280 × 720 dans `LoadingScreens/Exports/`. Pour un autre cadrage que le centre, déposer dans `_Originaux/` une version déjà recadrée en 16:9.
-3. Dans Workbench (projet GDC AR Core ouvert depuis le dépôt Git) : **Resource Manager > Plugins > GDC Import Loading Screens**. Tous les exports sont copiés dans `GDC_AR_Core/UI/MissionLoadingScreens/` puis importés ou ré-importés (sans mipmaps). Le PNG copié reste à côté du `.edds` : c'est sa source pour Workbench, et la publication d'une mission le copie dans le bundle quand l'image sert d'icône ou d'aperçu (`m_sIcon`, `m_sPreviewImage`). **Ne jamais le supprimer** : sans lui, le `.edds` est effacé par Workbench et la publication échoue (« Cannot copy image »). Il est versionné via LFS. Une image déjà importée garde son GUID : les missions qui la référencent restent valides.
+3. Dans Workbench (projet GDC Core ouvert depuis le dépôt Git) : **Resource Manager > Plugins > GDC Import Loading Screens**. Tous les exports sont copiés dans `GDC_AR_Core/UI/MissionLoadingScreens/` puis importés ou ré-importés (sans mipmaps). Le PNG copié reste à côté du `.edds` : c'est sa source pour Workbench, et la publication d'une mission le copie dans le bundle quand l'image sert d'icône ou d'aperçu (`m_sIcon`, `m_sPreviewImage`). **Ne jamais le supprimer** : sans lui, le `.edds` est effacé par Workbench et la publication échoue (« Cannot copy image »). Il est versionné via LFS. Une image déjà importée garde son GUID : les missions qui la référencent restent valides.
 4. Référencer le `.edds` dans le `.conf` de la mission (`m_sLoadingScreen`, `m_sPreviewImage`…).
 5. Committer l'original et l'export dans `_Media/` en même temps que le `.edds`, son `.meta` et le PNG de l'addon.
 

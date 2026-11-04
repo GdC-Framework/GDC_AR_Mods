@@ -1,9 +1,9 @@
 #ifdef WORKBENCH
 //! Resource Manager plugin importing the loading screens prepared by _Media/Tools/prepare_loading_screens.py.
-//! Every PNG of _Media/LoadingScreens/Exports is copied into GDC AR Core (UI/MissionLoadingScreens),
+//! Every PNG of _Media/LoadingScreens/Exports is copied into GDC Core (UI/MissionLoadingScreens),
 //! registered (new image) or kept with its GUID (existing image) and rebuilt as .edds. The PNG copy stays next to the .edds as its source.
-//! GDC AR Core must be opened from the Git repository, next to the _Media folder.
-[WorkbenchPluginAttribute("GDC Import Loading Screens", "Import or re-import the loading screens of _Media/LoadingScreens/Exports into GDC AR Core (UI/MissionLoadingScreens)", "", "", { "ResourceManager" }, "", 0xf03e)]
+//! GDC Core must be opened from the Git repository, next to the _Media folder.
+[WorkbenchPluginAttribute("GDC Import Loading Screens", "Import or re-import the loading screens of _Media/LoadingScreens/Exports into GDC Core (UI/MissionLoadingScreens)", "", "", { "ResourceManager" }, "", 0xf03e)]
 class GDC_LoadingScreenImportPlugin : WorkbenchPlugin
 {
 	protected static const string LOG_PREFIX = "[GDC LoadingScreens] ";
@@ -25,7 +25,7 @@ class GDC_LoadingScreenImportPlugin : WorkbenchPlugin
 		string targetFolder;
 		if (!Workbench.GetAbsolutePath(TARGET_FOLDER, targetFolder, true))
 		{
-			ShowError("folder " + TARGET_FOLDER + " not found. Open GDC AR Core (or a project depending on it) in the Workbench.");
+			ShowError("folder " + TARGET_FOLDER + " not found. Open GDC Core (or a project depending on it) in the Workbench.");
 			return;
 		}
 
@@ -34,7 +34,7 @@ class GDC_LoadingScreenImportPlugin : WorkbenchPlugin
 		FileIO.FindFiles(OnFileFound, exportFolder, ".png");
 		if (m_aFiles.IsEmpty())
 		{
-			ShowError("no PNG found in " + exportFolder + ". GDC AR Core must be opened from the Git repository; run _Media/Tools/Preparer_LoadingScreens.cmd first.");
+			ShowError("no PNG found in " + exportFolder + ". GDC Core must be opened from the Git repository; run _Media/Tools/Preparer_LoadingScreens.cmd first.");
 			return;
 		}
 
