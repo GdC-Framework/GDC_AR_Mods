@@ -2,7 +2,7 @@
 
 Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la plus ancienne. Le texte de chaque version reprend celui publié sur le Workshop, en anglais : `ADDED`, `FIXED`, `CHANGED`. Les dates sont en UTC.
 
-À compléter à chaque publication. Seul GDC AR Lib est suivi pour l'instant ; un mod s'ajoute ici à sa prochaine publication.
+À compléter à chaque publication. Sont suivis GDC AR Lib et GDC Mission Maker Tools ; un autre mod s'ajoute ici à sa prochaine publication.
 
 ## GDC AR Lib
 
@@ -73,3 +73,11 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 ### 0.0.1 - 2026-04-03
 
 - Première publication, sans texte de version.
+
+## GDC Mission Maker Tools
+
+[Page sur le Workshop](https://reforger.armaplatform.com/workshop/6AC540B09694CF5F-GDCMissionMakerTools)
+
+### 0.0.1 - 2026-11-04
+
+- Première publication, sans texte de version : bibliothèques MM (« Update MM Libraries ») et GDC Loadout Editor, venu de GDC AR Lib.
