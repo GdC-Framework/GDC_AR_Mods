@@ -19,7 +19,14 @@ Anything not listed stays available in the Resource Browser.
 
 If you chose a folder other than the default one, first add it to the Launcher with "Add Existing Project".
 
-[But why on earth do I have to do this?](#why-a-local-addon)
+<details>
+<summary>But why on earth do I have to do this?</summary>
+
+GDC Mission Maker Tools is a mod you download. It is therefore read-only, like every other addon you load.
+
+Your library, however, is local and depends on your modset: so we have to create a small local mod, yours alone, that stores the data of your library.
+
+</details>
 
 ⚠️ **Never add GDC Mission Maker <ins>Libraries</ins> as a dependency. Your library addon is local and never published, so no other player could play the mission! So be nice: right-click in the Workbench Launcher and add it with "Open With Addons".**
 
@@ -34,12 +41,6 @@ PS: if the prefab's addon is not loaded, nothing is placed and a dialog names th
 ## I loaded other addons or removed some addons from my mission: update the library
 
 Run **Update MM Libraries** again: new prefabs are added, and prefabs of addons no longer loaded are removed. No risk, you can do it as many times as you like.
-
-## Why a local addon
-
-GDC Mission Maker Tools is a mod you download. It is therefore read-only, like every other addon you load.
-
-Your library, however, is local and depends on your modset: so we have to create a small local mod, yours alone, that stores the data of your library.
 
 ## Tests for the addon maintainers (AI food, ha!)
 
