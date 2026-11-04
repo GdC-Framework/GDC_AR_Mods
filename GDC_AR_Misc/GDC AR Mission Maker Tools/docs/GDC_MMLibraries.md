@@ -22,9 +22,9 @@ If you chose a folder other than the default one, first add it to the Launcher w
 <details>
 <summary>But why on earth do I have to do this?</summary>
 
-GDC Mission Maker Tools is a mod you download. It is therefore read-only, like every other addon you load.
-
-Your library, however, is local and depends on your modset: so we have to create a small local mod, yours alone, that stores the data of your library.
+> GDC Mission Maker Tools is a mod you download. It is therefore read-only, like every other addon you load.
+>
+> Your library, however, is local and depends on your modset: so we have to create a small local mod, yours alone, that stores the data of your library.
 
 </details>
 
