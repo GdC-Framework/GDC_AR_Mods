@@ -9,7 +9,7 @@ The **GDC Loadout Editor** is a World Editor tool to edit the loadout of a chara
 - can automatically distribute a list of items (magazines, grenades, medical supplies...) into the worn gear;
 - works with vanilla, RHS or GDC prefabs, as long as they are in an editable project.
 
-The tool is provided by the **GDC Mission Maker Tools** addon. It adds nothing to the game: it only edits prefabs in the Workbench. Never add this addon as a dependency of a mission: load it only to edit, by ticking it in "Open With Addons" when starting the Workbench.
+The tool is provided by the **GDC Mission Maker Tools** addon. It adds nothing to the game: it only edits prefabs in the Workbench. There is no need to add this addon as a dependency of a mission: load it to edit, by ticking it in "Open With Addons" when starting the Workbench.
 
 ## Before you start
 

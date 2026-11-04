@@ -9,7 +9,7 @@ Le **GDC Loadout Editor** est un outil du World Editor qui permet de modifier le
 - sait répartir automatiquement une liste d'objets (chargeurs, grenades, soins…) dans l'équipement porté ;
 - fonctionne avec les prefabs vanilla, RHS ou GDC, pourvu qu'ils soient dans un projet modifiable.
 
-L'outil est fourni par l'addon **GDC Mission Maker Tools**. Il n'ajoute rien au jeu : il modifie uniquement des prefabs dans le Workbench. N'ajoutez jamais cet addon en dépendance d'une mission : chargez-le seulement pour éditer, en le cochant dans « Open With Addons » au lancement du Workbench.
+L'outil est fourni par l'addon **GDC Mission Maker Tools**. Il n'ajoute rien au jeu : il modifie uniquement des prefabs dans le Workbench. Inutile d'ajouter cet addon en dépendance d'une mission : chargez-le pour éditer, en le cochant dans « Open With Addons » au lancement du Workbench.
 
 ## Avant de commencer
 
