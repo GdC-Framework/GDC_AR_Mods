@@ -60,6 +60,16 @@ La copie locale de CVON est en 3.0.3 et ne contient pas encore ces attributs. Un
 - Vérifier le nombre de slots pour 10 à 15 joueurs : un seul groupe jouable (`RifleSquad`) pour l'instant.
 - Vérifier que les IA utilisent les passerelles et échelles ajoutées, probablement absentes du navmesh de Zimnitrita.
 
+### Maintenance après le retrait de GameMasterFX et de RHIB
+
+En 1.9, GameMasterFX 1.7.0 et RHIB 1.0.20 cassent la compilation des scripts. Ils ont été retirés des dépendances de GDC Core et de GDC Equipment (novembre 2026). Les missions qui les utilisent ne s'ouvrent plus correctement sans eux : les charger à part dans le Workbench pour les reprendre.
+
+- **Entre Deux** : les RHIB `RHIB_LZ_*` (`framework.layer`) portent l'interaction « Fin de mission ». Les remplacer par un autre objet et corriger le briefing (« sur l'avant du RHIB », `briefing.layer`).
+- **Gulf Coast Mission 06 et 06b** : 10 feux et 6 fumées de GameMasterFX (`build.layer`). Le terrain reste de toute façon bloqué par le navmesh de Gulfcoast.
+- **Return To Babaorum** : 2 feux et 1 fumée de GameMasterFX (`items.layer`).
+- Pour chaque mission, choisir entre retirer les éléments, les remplacer par des éléments du jeu de base, ou déclarer le mod comme dépendance de la mission (`addons.json`) une fois corrigé par son auteur.
+- Attention : enregistrer un monde sans ces mods chargés supprime leurs prefabs des layers.
+
 ### Liberate ZPR 1 et 2
 
 - Les deux missions posent `TILW_BaseInteraction.et` (`{584EB34600E9698D}`), absent de TILW actuel et des autres addons installés : vérifier ces interactions et les remplacer.
