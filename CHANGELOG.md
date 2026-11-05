@@ -12,6 +12,14 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 - REMOVED : GameMasterFX (5994AD5A9F33BE57), until fix for 1.9 version
 
+## GDC Equipment
+
+[Historique sur le Workshop](https://reforger.armaplatform.com/workshop/663E97A021C36ABF/changelog)
+
+### 1.1.4 - 2026-11-05
+
+- REMOVED: RHIB (5994614FB5AD35C2) until fixed for 1.9
+
 ## GDC AR Lib
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/690756F509F253EB-GDCARLib/changelog)
