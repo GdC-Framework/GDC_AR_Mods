@@ -50,20 +50,9 @@ TESTS_ID = "GDC MM Tools Tests"
 # TILW and GDC AR Lib bring PSCore, Reforger Lobby and Coalition VON as dependencies
 BASE = ["TilWMissionFramework", "GDC AR Lib"]
 RHS = BASE + ["RHS_Core", "RHS_Content_01", "RHS_Content_02"]
-FULL = [
-    "ACE_Core_Dev", "ACE_Backblast_Dev", "ACE_Carrying_Dev", "ACE_Chopping_Dev", "ACE_Compass_Dev", "ACE_Finger_Dev",
-    "ACE_Medical_Core_Dev", "ACE_Medical_Hitzones_Dev", "ACE_Medical_Circulation_Dev", "ACE_Trenches_Dev",
-    "ACE_MagRepack_Dev", "ACE_Explosives_Dev", "ACE_Captives_Dev", "ACE_TacticalLadder_Dev", "ACE_Radio_Dev",
-    "ACE_TacticalPeriscope_Dev", "ACE_Overheating_Dev", "ACE_CookOff_Dev", "ACE_Weather_Dev", "ACE_Facepaint_Dev",
-    "ACE_Ballistics_Dev", "ACE_Medical_Breathing_Dev", "ACE_Scopes_Dev", "ACE_AllInOne_Dev", "CoalitionVON",
-    "CoalitionSquadInterface", "FixedLoadCasualtyVehicles", "FNGGMBudgetless", "GameMasterFX", "Grays_Adjustable_Doors",
-    "ImprovedBloodEffect", "MaehNoWeapDropUnCon", "NoIconForUncon", "NoSupplySystem", "RealismOverhaulAI",
-    "RealismOverhaulBallistics", "WCS_Armbands", "Youcansit", "GDC AR Core", "ChungusLaunchers", "MarkerRoundsProject",
-    "EchoesOf89UGLTextures", "RHS_Content_01", "RHS_Content_02", "RHS_Core", "FPTR", "WCS_Armaments", "WCS_SpaceCore",
-    "JLTV", "M2A2", "BTR70Mountable", "RHIB", "RussianMarkerGrenades", "LaserRangefinder", "M4MAAWS", "STRYKER",
-    "Wirecutters2", "WZLaunchers", "ZU23", "GDC AR Equipment", "TilWMissionFramework", "PSCoreDevelopment",
-    "ReforgerLobbyCommunity", "GDC AR Lib",
-]
+# The whole GDC modset: the modpack addons bring every mod as a dependency, declared by GUID.
+# Mod IDs are not a reliable handle: ACE ships dev.gproj files, WCS renamed several IDs in 8.4.0.
+FULL = BASE + ["GDC AR Core", "GDC AR Equipment"]
 
 SUMMARY_RE = re.compile(r"\[MM Libraries\] (\d+) new, (\d+) kept, (\d+) removed, (\d+) failed\.")
 RESULT_RE = re.compile(r"\[MM Libraries\] command line result: (\w+) in (\d+) ms")
@@ -108,8 +97,14 @@ def run_workbench(step, addons, plugin, extra="", expected_error=None):
         code = process.poll()
         if code is not None:
             break
-        if "Can't compile" in read_log(start):
+        log = read_log(start)
+        if "Can't compile" in log:
             blocked = "compile error, Workbench stopped"
+            break
+        # a missing addon opens a "Missing Addon" dialog, then the Workbench goes on without it
+        missing = re.search(r"ENGINE\s+\(E\): Addon '.*' not found", log)
+        if missing:
+            blocked = "addon loading: " + missing.group(0)
             break
         time.sleep(2)
     if code is None:

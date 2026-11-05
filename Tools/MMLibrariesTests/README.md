@@ -45,7 +45,7 @@ Deux plugins servent aux tests :
 | 6. Ouverture sans RHS | sans RHS | Parents RHS illisibles ; l'index nomme RHS pour chacun (message au drop) ; les autres prefabs restent lisibles |
 | 7. Mise à jour sans RHS | sans RHS | Seuls les prefabs RHS sont retirés ; la bibliothèque redevient identique à celle de l'étape 1 |
 | 8. Création refusée | sans bibliothèque | Code 1 et message d'erreur quand le dossier contient déjà un addon ; bibliothèque intacte |
-| 9. Modset complet (`--full`) | modset GDC | Code 0, contrôle des fichiers, durée |
+| 9. Modset complet (`--full`) | modset GDC : TILW, GDC AR Lib, GDC Core et GDC Equipment, qui chargent tous les autres mods comme dépendances | Code 0, contrôle des fichiers, durée |
 
 Chaque étape vérifie aussi l'absence d'erreur de script dans le log du Workbench, donc la compilation de l'addon.
 
