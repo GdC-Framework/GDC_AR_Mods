@@ -2,7 +2,15 @@
 
 Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la plus ancienne. Le texte de chaque version reprend celui publié sur le Workshop, en anglais : `ADDED`, `FIXED`, `CHANGED`. Les dates sont en UTC.
 
-À compléter à chaque publication. Sont suivis GDC AR Lib et GDC Mission Maker Tools ; un autre mod s'ajoute ici à sa prochaine publication.
+À compléter à chaque publication. Sont suivis GDC Core, GDC Equipment, GDC AR Lib et GDC Mission Maker Tools ; un autre mod s'ajoute ici à sa prochaine publication.
+
+## GDC Core
+
+[Historique sur le Workshop](https://reforger.armaplatform.com/workshop/663710CD8BEB01D4/changelog)
+
+### 2.3.1 - 2026-11-05
+
+- REMOVED : GameMasterFX (5994AD5A9F33BE57), until fix for 1.9 version
 
 ## GDC AR Lib
 
