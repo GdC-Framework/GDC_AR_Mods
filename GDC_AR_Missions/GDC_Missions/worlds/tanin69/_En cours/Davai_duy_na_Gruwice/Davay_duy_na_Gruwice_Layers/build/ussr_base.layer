@@ -86,3 +86,32 @@ $grp GenericEntity : "{90B7CEB4C665B1E2}Prefabs/Structures/Military/Flags/FlagPo
   coords 14334.328 50.906 11963.784
  }
 }
+$grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ Trg_Arrivee_Rouge {
+  coords 10031.599 19.78 6416.958
+  m_queryRadius 50
+  m_flagName "Arrivee_Rouge"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_AFRF"
+  m_ratioThreshold 0.01
+ }
+ Trg_Arrivee_Bleu {
+  coords 9313.399 69.509 5652.037
+  m_queryRadius 50
+  m_flagName "Arrivee_Bleu"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_AFRF"
+  m_ratioThreshold 0.01
+ }
+ Trg_Arrivee_Vert {
+  coords 11136.547 19.463 5485.094
+  m_queryRadius 50
+  m_flagName "Arrivee_Vert"
+  m_stopAfterFirstChange 1
+  m_playersOnly 1
+  m_ownerFactionKey "RHS_AFRF"
+  m_ratioThreshold 0.01
+ }
+}

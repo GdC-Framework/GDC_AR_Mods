@@ -1,0 +1,7 @@
+SCR_AIGroup : "{E50881DAFE9E0B75}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_CloseProtectionTeam.et" {
+ ID "25E513B8BECBB52C"
+ m_faction "RHS_ION"
+ m_aUnitPrefabSlots {
+  "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+ }
+}

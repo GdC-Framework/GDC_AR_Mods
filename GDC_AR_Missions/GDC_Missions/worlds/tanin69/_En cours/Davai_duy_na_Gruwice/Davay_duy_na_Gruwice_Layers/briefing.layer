@@ -44,10 +44,11 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   m_sTitle "Renseignements"
   m_sTextData "<color name=\"green\"><b>Topo</b></color>"\
   ""\
-  "- <b>Canal</b> : ceinture entièrement Gruwice."\
-  "- <b>Nord, Est, Sud</b> : canal bétonné, passage à pied uniquement par les ponts, passerelles et échelles marqués sur carte."\
+  "- <b>Un Canal</b> ceinture entièrement Gruwice. Les berges Nord, Est et Sud sont bétonnées : passage à pied uniquement par les ponts, passerelles et échelles marqués sur carte."\
   "- <b>Ouest</b> : rives escarpées, praticables par des soldats bien entraînés."\
   "- <b>Au nord du canal</b> : zone humide, praticable à pied en cette saison."\
+  ""\
+  "<b>Photo satellite dispo à https://is.gd/davay_sat</b>"\
   ""\
   "<color name=\"green\"><b>Hostiles</b></color>"\
   ""\

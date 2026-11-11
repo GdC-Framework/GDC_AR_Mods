@@ -32,7 +32,7 @@ AIWaypointCycle Pied_NE_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWay
   "Pied_NE_WP4"
  }
 }
-SCR_AIGroup Pied_NE_grp : "{E50881DAFE9E0B75}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_CloseProtectionTeam.et" {
+SCR_AIGroup Pied_NE_grp : "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et" {
  coords 10300 9.981 5805
  m_faction "RHS_ION"
  m_aStaticWaypoints {

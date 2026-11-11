@@ -1,0 +1,221 @@
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ Opp_Ouest_Pat_WP1 {
+  coords 10050 10 5650
+ }
+ Opp_Ouest_Pat_WP2 {
+  coords 10085 14.531 5546
+ }
+ Opp_Ouest_Pat_WP3 {
+  coords 10060 10 5400
+ }
+ Opp_Nord_Pat_WP1 {
+  coords 10000 10 5790
+ }
+ Opp_Nord_Pat_WP2 {
+  coords 10130 9.984 5780
+ }
+ Opp_Nord_Pat_WP3 {
+  coords 10260 9.734 5770
+ }
+ Opp_Est_Pat_WP1 {
+  coords 10376 15.438 5678
+ }
+ Opp_Est_Pat_WP2 {
+  coords 10390 14.625 5535
+ }
+ Opp_Est_Pat_WP3 {
+  coords 10380 14.625 5435
+ }
+ Opp_Ouest_Pat2_WP1 {
+  coords 9980 10 5700
+ }
+ Opp_Ouest_Pat2_WP2 {
+  coords 9975 10.031 5590
+ }
+ Opp_Ouest_Pat2_WP3 {
+  coords 10010 13.031 5480
+ }
+ Opp_Nord_Pat2_WP1 {
+  coords 10050 13.141 5850
+ }
+ Opp_Nord_Pat2_WP2 {
+  coords 10160 10.062 5880
+ }
+ Opp_Nord_Pat2_WP3 {
+  coords 10240 10 5838
+ }
+ Opp_Est_Pat2_WP1 {
+  coords 10280 14.625 5600
+ }
+ Opp_Est_Pat2_WP2 {
+  coords 10298 14.625 5464
+ }
+ Opp_Est_Pat2_WP3 {
+  coords 10330 14.625 5400
+ }
+}
+$grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ Opp_Ouest_Def_WP {
+  coords 9920 9.062 5600
+  CompletionRadius 30
+ }
+ Opp_Nord_Def_WP {
+  coords 10080 10.562 5880
+  CompletionRadius 30
+ }
+ Opp_Est_Def_WP {
+  coords 10394.234 14.625 5368.877
+  CompletionRadius 30
+ }
+}
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ Opp_Ouest_Pat_Cycle {
+  coords 10050 10 5650
+  CycleWaypoints {
+   "Opp_Ouest_Pat_WP1"
+   "Opp_Ouest_Pat_WP2"
+   "Opp_Ouest_Pat_WP3"
+  }
+ }
+ Opp_Nord_Pat_Cycle {
+  coords 10000 10 5790
+  CycleWaypoints {
+   "Opp_Nord_Pat_WP1"
+   "Opp_Nord_Pat_WP2"
+   "Opp_Nord_Pat_WP3"
+  }
+ }
+ Opp_Est_Pat_Cycle {
+  coords 10376 15.438 5678
+  CycleWaypoints {
+   "Opp_Est_Pat_WP1"
+   "Opp_Est_Pat_WP2"
+   "Opp_Est_Pat_WP3"
+  }
+ }
+ Opp_Ouest_Pat2_Cycle {
+  coords 9980 10 5700
+  CycleWaypoints {
+   "Opp_Ouest_Pat2_WP1"
+   "Opp_Ouest_Pat2_WP2"
+   "Opp_Ouest_Pat2_WP3"
+  }
+ }
+ Opp_Nord_Pat2_Cycle {
+  coords 10050 13.141 5850
+  CycleWaypoints {
+   "Opp_Nord_Pat2_WP1"
+   "Opp_Nord_Pat2_WP2"
+   "Opp_Nord_Pat2_WP3"
+  }
+ }
+ Opp_Est_Pat2_Cycle {
+  coords 10280 14.625 5600
+  CycleWaypoints {
+   "Opp_Est_Pat2_WP1"
+   "Opp_Est_Pat2_WP2"
+   "Opp_Est_Pat2_WP3"
+  }
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ Opp_Ouest_Def_Spawner {
+  coords 9920 9.062 5600
+  m_prefab "{39B98C6FED10E7D7}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_DefenceTeam.et"
+  m_conditionFlag "Arrivee_Bleu"
+  m_setEntityNames {
+   "Opp_Ouest_Def_grp"
+  }
+  m_waypointNames {
+   "Opp_Ouest_Def_WP"
+  }
+ }
+ Opp_Ouest_Pat_Spawner {
+  coords 10050 10 5650
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Bleu"
+  m_setEntityNames {
+   "Opp_Ouest_Pat_grp"
+  }
+  m_waypointNames {
+   "Opp_Ouest_Pat_Cycle"
+  }
+ }
+ Opp_Nord_Def_Spawner {
+  coords 10080 10.562 5880
+  m_prefab "{39B98C6FED10E7D7}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_DefenceTeam.et"
+  m_conditionFlag "Arrivee_Rouge"
+  m_setEntityNames {
+   "Opp_Nord_Def_grp"
+  }
+  m_waypointNames {
+   "Opp_Nord_Def_WP"
+  }
+ }
+ Opp_Nord_Pat_Spawner {
+  coords 10000 10 5790
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Rouge"
+  m_setEntityNames {
+   "Opp_Nord_Pat_grp"
+  }
+  m_waypointNames {
+   "Opp_Nord_Pat_Cycle"
+  }
+ }
+ Opp_Est_Def_Spawner {
+  coords 10395.939 14.625 5370.235
+  m_prefab "{39B98C6FED10E7D7}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_DefenceTeam.et"
+  m_conditionFlag "Arrivee_Vert"
+  m_setEntityNames {
+   "Opp_Est_Def_grp"
+  }
+  m_waypointNames {
+   "Opp_Est_Def_WP"
+  }
+ }
+ Opp_Est_Pat_Spawner {
+  coords 10376 15.438 5678
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Vert"
+  m_setEntityNames {
+   "Opp_Est_Pat_grp"
+  }
+  m_waypointNames {
+   "Opp_Est_Pat_Cycle"
+  }
+ }
+ Opp_Ouest_Pat2_Spawner {
+  coords 9980 10 5700
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Bleu"
+  m_setEntityNames {
+   "Opp_Ouest_Pat2_grp"
+  }
+  m_waypointNames {
+   "Opp_Ouest_Pat2_Cycle"
+  }
+ }
+ Opp_Nord_Pat2_Spawner {
+  coords 10050 13.141 5850
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Rouge"
+  m_setEntityNames {
+   "Opp_Nord_Pat2_grp"
+  }
+  m_waypointNames {
+   "Opp_Nord_Pat2_Cycle"
+  }
+ }
+ Opp_Est_Pat2_Spawner {
+  coords 10280 14.625 5600
+  m_prefab "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et"
+  m_conditionFlag "Arrivee_Vert"
+  m_setEntityNames {
+   "Opp_Est_Pat2_grp"
+  }
+  m_waypointNames {
+   "Opp_Est_Pat2_Cycle"
+  }
+ }
+}

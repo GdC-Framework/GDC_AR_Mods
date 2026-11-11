@@ -31,12 +31,16 @@ SCR_AIWorld : "{E0A05C76552E7F58}Prefabs/AI/SCR_AIWorld.et" {
    }
   }
  }
+ "Active AI limit" 256
 }
 PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/PerceptionManager.et" {
  coords 15524.039 52.125 4448.752
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  components {
+  RHS_AdditionalGameModeSettingsComponent "{61AE627E9607513B}" {
+   Enabled 0
+  }
   SCR_AdditionalGameModeSettingsComponent "{6170E11C3C452ACC}" {
    m_bEnableTeamKillPunishment 0
   }
@@ -70,7 +74,7 @@ GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.et" {
   GDC_FireSupportModuleComponent "{61B0D269FFC4ADD8}" {
    m_sDisplayName "Mortiers"
    m_iFireMissionCount 5
-   m_fCooldown 300
+   m_fCooldown 316.9
    m_aRequiredItems {
     "{421001C003F947AF}Prefabs/Items/Equipment/Radios/Radio_R168.et"
    }

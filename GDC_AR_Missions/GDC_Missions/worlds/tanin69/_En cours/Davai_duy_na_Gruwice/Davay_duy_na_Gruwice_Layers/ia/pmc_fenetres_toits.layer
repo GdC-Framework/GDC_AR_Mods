@@ -1,0 +1,167 @@
+$grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ Fen1_WP {
+  coords 10441.914 34.05 5602.606
+  angles 0 90 0
+  CompletionRadius 9
+ }
+ Fen2_WP {
+  coords 10378.03 28.644 5587.02
+  angles 0 85 0
+  CompletionRadius 5
+  m_bFastInit 1
+ }
+ Fen3_WP {
+  coords 10379.151 33.511 5443.889
+  angles 0 -15 0
+  CompletionRadius 8
+ }
+ Fen4_WP {
+  coords 10109.356 28.54 5852.199
+  angles 0 48 0
+  CompletionRadius 7
+ }
+ Fen5_WP {
+  coords 10125.762 32.247 5710.306
+  angles 0 -83 0
+  CompletionRadius 4
+ }
+ Fen6_WP {
+  coords 10085.915 33.283 5520.662
+  angles 0 -105 0
+  CompletionRadius 7
+ }
+ Fen7_WP {
+  coords 9985.949 26.924 5705.75
+  angles 0 70 0
+  CompletionRadius 7
+ }
+ Fen8_WP {
+  coords 10081.477 28.569 5421.047
+  angles 0 140 0
+  CompletionRadius 8
+ }
+ Fen9_WP {
+  coords 10241.94 33.31 5673.318
+  angles 0 2.605 0
+  CompletionRadius 8
+ }
+}
+$grp SCR_AIGroup : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_BASE.et" {
+ Fen1_grp {
+  coords 10445.092 34.079 5601.337
+  angles 0 110 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen1_WP"
+  }
+ }
+ Fen2_grp {
+  coords 10377.098 28.643 5585.781
+  angles 0 157.564 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen2_WP"
+  }
+ }
+ Fen3_grp {
+  coords 10374.735 33.511 5443.565
+  angles 0 157.564 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen3_WP"
+  }
+ }
+ Fen4_grp {
+  coords 10105.379 29.441 5854.301
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen4_WP"
+  }
+ }
+ Fen5_grp {
+  coords 10127.002 32.539 5712.164
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen5_WP"
+  }
+ }
+ Fen6_grp {
+  coords 10080.945 33.353 5524.632
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen6_WP"
+  }
+ }
+ Fen7_grp {
+  coords 9980.979 26.994 5709.72
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen7_WP"
+  }
+ }
+ Fen8_grp {
+  coords 10076.324 28.639 5423.89
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen8_WP"
+  }
+ }
+ Fen9_grp {
+  coords 10236.788 33.38 5676.162
+  angles 0 -32.957 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen9_WP"
+  }
+ }
+}
+GenericEntity Fen2_Obs : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+ components {
+  SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+   m_iCharacterStance CROUCH
+  }
+ }
+ coords 10377.326 28.643 5585.131
+ angles 0 124.615 0
+}

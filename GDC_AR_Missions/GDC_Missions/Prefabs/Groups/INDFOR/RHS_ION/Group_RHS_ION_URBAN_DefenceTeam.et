@@ -1,0 +1,6 @@
+SCR_AIGroup : "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et" {
+ ID "25E513B8BECBB52D"
+ m_aUnitPrefabSlots {
+  "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et" "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+ }
+}
