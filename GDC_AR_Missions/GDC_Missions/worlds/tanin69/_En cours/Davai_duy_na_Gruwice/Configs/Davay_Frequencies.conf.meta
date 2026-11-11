@@ -1,0 +1,19 @@
+MetaFileClass {
+ Name "{1C73C0C1A053B755}worlds/tanin69/_En cours/Davai_duy_na_Gruwice/Configs/Davay_Frequencies.conf"
+ Configurations {
+  CONFResourceClass PC {
+  }
+  CONFResourceClass XBOX_ONE : PC {
+  }
+  CONFResourceClass XBOX_SERIES : PC {
+  }
+  CONFResourceClass PS4 : PC {
+  }
+  CONFResourceClass PS5 : PC {
+  }
+  CONFResourceClass HEADLESS : PC {
+  }
+  CONFResourceClass Xbox : PC {
+  }
+ }
+}

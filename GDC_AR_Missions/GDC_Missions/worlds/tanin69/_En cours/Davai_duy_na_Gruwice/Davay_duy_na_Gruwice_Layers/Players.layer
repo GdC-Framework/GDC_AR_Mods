@@ -1,4 +1,62 @@
-SCR_AIGroup : "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et" {
- coords 14339.061 50.905 11958.555
- m_bSetPlayable 1
+$grp SCR_AIGroup : "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et" {
+ aGranit {
+  coords 14339.061 50.905 11958.555
+  m_aUnitPrefabSlots {
+   "{435F1619E3185905}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_PL_GDC.et"
+   "{CE23C9E993F6FF02}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Medic_GDC.et"
+   "{EEBE4069E0E9F6FB}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_RTO_GDC.et"
+  }
+  m_sCustomNameSet "Granit"
+  m_bSetPlayable 1
+  m_aGDC_SlotShortRangeFrequencies {
+   "31000"
+   "31000"
+   "31000"
+  }
+  m_sGDC_LongRangeFrequency "48000"
+ }
+ bBerkut {
+  coords 14344.061 50.905 11958.555
+  m_aUnitPrefabSlots {
+   "{4D415251DEEF56DF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_SL_GDC.et"
+   "{26206A9E442A2BD6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_MG_GDC.et"
+   "{9271DC93BEF1753B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_AMG_GDC.et"
+   "{05CA6130C68B1767}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_GL_GDC.et"
+   "{8FEEEA6199CD4371}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_LAT_GDC.et"
+   "{57A81E7CED0E4E56}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Rifleman_GDC.et"
+  }
+  m_sCustomNameSet "Berkut"
+  m_bSetPlayable 1
+  m_aGDC_SlotShortRangeFrequencies {
+   "32000"
+   "32000"
+   "32000"
+   "32000"
+   "32000"
+   "32000"
+  }
+  m_sGDC_LongRangeFrequency "48000"
+ }
+ cTaiga {
+  coords 14349.061 50.905 11958.555
+  m_aUnitPrefabSlots {
+   "{4D415251DEEF56DF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_SL_GDC.et"
+   "{26206A9E442A2BD6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_MG_GDC.et"
+   "{9271DC93BEF1753B}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_AMG_GDC.et"
+   "{05CA6130C68B1767}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_GL_GDC.et"
+   "{848F7954E7DC4E5F}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_AT_GDC.et"
+   "{30DECF591D0710B2}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_AAT_GDC.et"
+  }
+  m_sCustomNameSet "Taiga"
+  m_bSetPlayable 1
+  m_aGDC_SlotShortRangeFrequencies {
+   "33000"
+   "33000"
+   "33000"
+   "33000"
+   "33000"
+   "33000"
+  }
+  m_sGDC_LongRangeFrequency "48000"
+ }
 }

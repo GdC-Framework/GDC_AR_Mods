@@ -38,6 +38,9 @@ PerceptionManager PerceptionManager1 : "{028DAEAD63E056BE}Prefabs/World/Game/Per
 }
 PS_GameModeCoop PS_GameMode_Lobby1 : "{9C2001FE7A2F2281}Prefabs/MP/Modes/PS_GameMode_Lobby.et" {
  components {
+  CVON_VONGameModeComponent "{6624E607CC6D4CC8}" {
+   m_sFreqConfig "{1C73C0C1A053B755}worlds/tanin69/_En cours/Davai_duy_na_Gruwice/Configs/Davay_Frequencies.conf"
+  }
   RHS_AdditionalGameModeSettingsComponent "{61AE627E9607513B}" {
    Enabled 0
   }
