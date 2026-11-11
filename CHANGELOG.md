@@ -24,6 +24,10 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/690756F509F253EB-GDCARLib/changelog)
 
+### 1.4.0 - 2026-11-11
+
+- ADDED: Teleport module, optional line on the ground showing the gathering radius (GROUP and ALL_PLAYERS modes). White by default, width and decal material can be set. It follows the terrain only: roads, building floors and tall grass hide it. In the World Editor, the circle is shown while the module is selected.
+
 ### 1.3.0 - 2026-11-04
 
 - REMOVED: GDC Loadout Editor. It moves to the new GDC Mission Maker Tools addon, a Workbench-only addon that is never a mission dependency. Missions and prefabs already edited with it are not affected.
