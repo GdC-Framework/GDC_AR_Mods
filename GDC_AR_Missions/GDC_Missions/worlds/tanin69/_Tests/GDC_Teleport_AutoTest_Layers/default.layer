@@ -1,0 +1,89 @@
+SCR_BaseGameMode GameMode_Plain1 : "{1B76F75A3175E85C}Prefabs/MP/Modes/Plain/GameMode_Plain.et" {
+ components {
+  SCR_RespawnSystemComponent "{56B2B4793051E7C9}" {
+   m_SpawnLogic SCR_AutoSpawnLogic "{5D36888CC966608A}" {
+    m_sForcedFaction "USSR"
+   }
+  }
+ }
+ coords 1145 51 1345
+}
+SCR_FactionManager "6ABCD25B0FC919AB" : "{4A188E44289B9A50}Prefabs/MP/Managers/Factions/FactionManager_Editor.et" {
+ coords 1150 51 1345
+}
+SCR_LoadoutManager : "{97EF4C1A41F63DDB}Prefabs/MP/Managers/Loadouts/LoadoutManager_USxUSSR.et" {
+ coords 1140 51 1345
+}
+SCR_SpawnPoint T_Spawn : "{4FEA25583D0975F7}Prefabs/MP/Spawning/SpawnPoint_USSR.et" {
+ coords 1285.249 39 2258.188
+}
+$grp GenericEntity {
+ Dest_All {
+  coords 1380 39 2258
+ }
+ Dest_Ind {
+  coords 1285 39 2360
+ }
+}
+$grp GenericEntity : "{A83D5F1E06C7B942}Prefabs/Teleport/GDC_Teleport.et" {
+ T_All {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "T_All"
+    m_sDestinationName "Dest_All"
+    m_eMode ALL_PLAYERS
+    m_fRadius 25
+    m_bShowZoneOnGround 1
+    m_fFadeOutDuration 0.5
+    m_fBlackDuration 1
+    m_fFadeInDuration 0.5
+    m_iNewHour 22
+    m_iNewMinute 25
+   }
+  }
+  coords 1285 39 2258
+ }
+ T_RankHigh {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "T_RankHigh"
+    m_sDestinationName "Dest_Ind"
+    m_eMode ALL_PLAYERS
+    m_eMinRankRequired GENERAL
+    m_fFadeOutDuration 0.5
+    m_fBlackDuration 1
+    m_fFadeInDuration 0.5
+   }
+  }
+  coords 1288 39 2258
+ }
+ T_Far {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "T_Far"
+    m_sDestinationName "Dest_Ind"
+    m_eMode ALL_PLAYERS
+    m_fFadeOutDuration 0.5
+    m_fBlackDuration 1
+    m_fFadeInDuration 0.5
+   }
+  }
+  coords 1285 39 2200
+ }
+ T_Individual {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "T_Individual"
+    m_sDestinationName "Dest_Ind"
+    m_bShowZoneOnGround 1
+    m_fFadeOutDuration 0.5
+    m_fBlackDuration 1
+    m_fFadeInDuration 0.5
+   }
+  }
+  coords 1383 39 2258
+ }
+}
+GDC_TeleportTestEntity T_Test {
+ coords 1290 39 2250
+}

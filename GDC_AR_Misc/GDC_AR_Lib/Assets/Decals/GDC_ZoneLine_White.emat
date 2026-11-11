@@ -1,0 +1,14 @@
+MatPBRDecal {
+ Color 1 1 1 1
+ DiffuseIBL 1 1 1 1
+ ZBias 3
+ SortBias 3
+ AlphaMul 1
+ BlendMode AlphaBlend
+ CrossFade 0
+ BCRMap "{94EB1C9CB42ABFE4}Assets/Decals/Markings/Stripes/Data/RoadStripe_Full_01_BCR.edds"
+ OpacityMap "{3502ECCE10C9A00A}Assets/Decals/Markings/Stripes/Data/RoadStripe_Full_01_A.edds"
+ NMOMap "{AC33A70E6D5DED7A}Assets/Decals/Markings/Stripes/Data/RoadStripe_Full_01_NMO.edds"
+ GlobalMapsUVTransform MatUVTransform "{559CF7EE34A5514C}" {
+ }
+}

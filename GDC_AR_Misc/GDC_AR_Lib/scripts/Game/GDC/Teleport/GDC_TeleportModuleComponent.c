@@ -31,6 +31,15 @@ class GDC_TeleportModuleComponent : ScriptComponent
 	[Attribute(typename.EnumToString(SCR_ECharacterRank, SCR_ECharacterRank.INVALID), UIWidgets.ComboBox, "ALL_PLAYERS mode: minimum rank required to use the module. INVALID = no rank requirement.", enumType: SCR_ECharacterRank)]
 	protected SCR_ECharacterRank m_eMinRankRequired;
 
+	[Attribute("0", UIWidgets.CheckBox, "GROUP and ALL_PLAYERS modes: draws a line on the ground along the radius, so that players see where to gather. It follows the terrain only: roads, floors and tall grass hide it.", category: "Zone marking")]
+	protected bool m_bShowZoneOnGround;
+
+	[Attribute("0.15", UIWidgets.EditBox, "Width of the line on the ground, in metres.", "0.05 2 0.05", category: "Zone marking")]
+	protected float m_fZoneLineWidth;
+
+	[Attribute("{C77A89CC3D3BC257}Assets/Decals/GDC_ZoneLine_White.emat", UIWidgets.ResourcePickerThumbnail, "Decal material of the line on the ground. The default one is a white line.", "emat", category: "Zone marking")]
+	protected ResourceName m_sZoneLineMaterial;
+
 	[Attribute("2", UIWidgets.EditBox, "Duration of the fade to black, in seconds. If the three durations are 0 the teleport is immediate.", "0 30 0.1", category: "Time skip")]
 	protected float m_fFadeOutDuration;
 
@@ -71,6 +80,101 @@ class GDC_TeleportModuleComponent : ScriptComponent
 
 	//! Server only. A later use of the module must not send the clock back, for instance when several groups leave one after the other.
 	protected bool m_bTimeChanged;
+
+	//! Distance between two points of the line on the ground, in metres.
+	protected const float ZONE_POINT_SPACING = 1;
+	protected const int ZONE_MIN_POINTS = 16;
+
+	//! A finalized track decal is removed after its lifetime: this one must last the whole game.
+	protected const float ZONE_LINE_LIFETIME = 100000000;
+
+	//! Clients only. Keeps the line on the ground alive.
+	protected ref TrackDecalFactory m_ZoneLine;
+
+	//! Clients only. True once the whole line has been drawn.
+	protected bool m_bZoneDrawn;
+
+	//------------------------------------------------------------------------------------------------
+	//! \return True if the line on the ground has been drawn on this machine
+	bool IsZoneDrawn()
+	{
+		return m_bZoneDrawn;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void OnPostInit(IEntity owner)
+	{
+		super.OnPostInit(owner);
+
+		// The line is only a visual aid: nothing to draw on a dedicated server.
+		if (System.IsConsoleApp() || !HasZone())
+			return;
+
+		SetEventMask(owner, EntityEvent.INIT);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	override void EOnInit(IEntity owner)
+	{
+		super.EOnInit(owner);
+
+		// Not in the World Editor outside play mode, where the zone is drawn as a debug shape instead.
+		if (GetGame().InPlayMode())
+			DrawZoneOnGround();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \return True if the line on the ground is wanted and meaningful: the radius only matters in GROUP and ALL_PLAYERS modes.
+	protected bool HasZone()
+	{
+		return m_bShowZoneOnGround && m_eMode != GDC_ETeleportMode.INDIVIDUAL && m_fRadius > 0;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Fills outPoints with the circle of the radius around the module, on the terrain: count segments, the last point closing the circle.
+	protected void GetZonePoints(int count, notnull array<vector> outPoints)
+	{
+		vector center = GetOwner().GetOrigin();
+		BaseWorld world = GetOwner().GetWorld();
+
+		for (int i = 0; i <= count; i++)
+		{
+			float angle = i * Math.PI2 / count;
+			vector point = center + Vector(Math.Cos(angle) * m_fRadius, 0, Math.Sin(angle) * m_fRadius);
+			point[1] = world.GetSurfaceY(point[0], point[2]);
+			outPoints.Insert(point);
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Draws the circle of the radius on the terrain, as one track decal (the engine's tyre track system).
+	protected void DrawZoneOnGround()
+	{
+		GenericWorldEntity worldEntity = GetGame().GetWorldEntity();
+		if (!worldEntity || m_sZoneLineMaterial.IsEmpty())
+			return;
+
+		array<vector> points = {};
+		GetZonePoints(Math.Max(ZONE_MIN_POINTS, Math.Ceil(Math.PI2 * m_fRadius / ZONE_POINT_SPACING)), points);
+
+		m_ZoneLine = new TrackDecalFactory(m_sZoneLineMaterial, m_fZoneLineWidth, ZONE_LINE_LIFETIME);
+		foreach (vector point : points)
+		{
+			GenericTerrainEntity terrain = worldEntity.GetTerrain(point[0], point[2]);
+			if (!terrain)
+				continue;
+
+			vector normal = SCR_TerrainHelper.GetTerrainNormal(point, GetOwner().GetWorld());
+			if (!m_ZoneLine.AddPoint(terrain, point, normal, 1))
+			{
+				Print("[GDC_Teleport] The line on the ground could not be drawn.", LogLevel.WARNING);
+				return;
+			}
+		}
+
+		m_ZoneLine.FinalizeDecal(0);
+		m_bZoneDrawn = true;
+	}
 
 	//------------------------------------------------------------------------------------------------
 	//! This component has no replicated member, so it isn't a replicated item itself: its RplComponent identifies it.
@@ -302,4 +406,35 @@ class GDC_TeleportModuleComponent : ScriptComponent
 		float radius = ring * ARRIVAL_SPACING;
 		return Vector(Math.Cos(angle) * radius, 0, Math.Sin(angle) * radius);
 	}
+
+#ifdef WORKBENCH
+
+	//------------------------------------------------------------------------------------------------
+	override int _WB_GetAfterWorldUpdateSpecs(IEntity owner, IEntitySource src)
+	{
+		return EEntityFrameUpdateSpecs.CALL_WHEN_ENTITY_SELECTED;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! While the module is selected, shows the zone of the line on the ground in the World Editor.
+	override void _WB_AfterWorldUpdate(IEntity owner, float timeSlice)
+	{
+		if (!HasZone())
+			return;
+
+		const int SEGMENTS = 128;
+		array<vector> points = {};
+		GetZonePoints(SEGMENTS, points);
+
+		// Slightly above the ground so that the terrain doesn't hide the shape.
+		vector shapePoints[129];
+		foreach (int i, vector point : points)
+		{
+			shapePoints[i] = point + Vector(0, 0.3, 0);
+		}
+
+		Shape.CreateLines(ARGB(255, 255, 255, 255), ShapeFlags.ONCE | ShapeFlags.NOZBUFFER, shapePoints, SEGMENTS + 1);
+	}
+
+#endif
 }
