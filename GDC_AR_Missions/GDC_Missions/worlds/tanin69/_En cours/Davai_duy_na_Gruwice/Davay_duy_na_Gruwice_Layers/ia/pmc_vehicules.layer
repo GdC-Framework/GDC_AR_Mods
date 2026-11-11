@@ -1,0 +1,121 @@
+AIWaypointCycle Pat_Nord_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ coords 10279 9.919 5906
+ CycleWaypoints {
+  "Pat_Nord_WP_Wait1"
+  "Pat_Nord_WP_Wait2"
+  "Pat_Nord_WP_Wait3"
+  "Pat_Nord_WP_Wait4"
+ }
+}
+$grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ Pat_Nord_WP_Wait1 {
+  coords 10285.971 9.919 5837.539
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{6C1A5E2B7F3D9A21}" {
+   m_holdingTime 120
+  }
+ }
+ Pat_Nord_WP_Wait2 {
+  coords 10142.517 10.199 5882.117
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{6C1A5E2B7F3D9A22}" {
+   m_holdingTime 120
+  }
+ }
+ Pat_Nord_WP_Wait3 {
+  coords 10500.634 10.031 5702.783
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{6C1A5E2B7F3D9A23}" {
+   m_holdingTime 120
+  }
+ }
+ Pat_Nord_WP_Wait4 {
+  coords 10421.421 20.687 5839.792
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{6C1A5E2B7F3D9A24}" {
+   m_holdingTime 120
+  }
+ }
+}
+$grp TILW_PrefabSpawnerEntity : "{7F10372CF1CA1175}Prefabs/Utils/TILW_PrefabSpawner.et" {
+ ZU_Ouest_Spawner {
+  coords 9859.285 9.009 5699.796
+  angles 0 -90 0
+  m_prefab "{1A407760EEAE4156}Prefabs/Vehicles/Static/BaconZU23/BaconZU23_Turret_Deployed.et"
+  m_setEntityNames {
+   "ZU_Ouest"
+  }
+  m_pregameSpawn 1
+  m_crewConfig TILW_CrewConfig "{4F23754BCE86AA1E}" {
+   m_crewGroups {
+    TILW_CrewGroup "{4821C06FA589815D}" {
+     m_crewStations {
+      TILW_CrewStation "{A6E7F424CB5B6E27}" {
+       m_allowCargo 0
+       m_characters {
+        "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+       }
+      }
+     }
+     m_entityName "ZU_Ouest_crew"
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ Pat_Nord_Spawner {
+  coords 10282.226 9.919 5905.513
+  angles 0 180 0
+  m_prefab "{DB5CE10CC310B826}Prefabs/Vehicles/Wheeled/M998/M1025_armed_M2HB_MDO_ION_Camo.et"
+  m_setEntityNames {
+   "Pat_Nord"
+  }
+  m_pregameSpawn 1
+  m_crewConfig TILW_CrewConfig "{6C1A5E2B7F3D9A32}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6C1A5E2B7F3D9A33}" {
+     m_crewStations {
+      TILW_CrewStation "{6C1A5E2B7F3D9A34}" {
+       m_allowCargo 0
+       m_characters {
+        "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+        "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+       }
+      }
+     }
+     m_waypointNames {
+      "Pat_Nord_WP_Cycle"
+     }
+     m_waypointDelay 5
+     m_entityName "Pat_Nord_crew"
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+ ZU_Nord_Spawner {
+  coords 10190.755 12.196 5860.112
+  angles 4.089 84.451 0.5
+  m_prefab "{C76F8569165D73AF}Prefabs/Vehicles/Wheeled/Ural4320/Ural4320_ZU23_ReducedDust.et"
+  m_setEntityNames {
+   "ZU_Nord"
+  }
+  m_pregameSpawn 1
+  m_crewConfig TILW_CrewConfig "{6C1A5E2B7F3D9A02}" {
+   m_crewGroups {
+    TILW_CrewGroup "{6C1A5E2B7F3D9A03}" {
+     m_crewStations {
+      TILW_CrewStation "{6C1A5E2B7F3D9A04}" {
+       m_allowCargo 0
+       m_characters {
+        "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+        "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+       }
+      }
+     }
+     m_entityName "ZU_Nord_crew"
+    }
+   }
+   m_noTurretDismount 1
+   m_useIdleGroups 0
+  }
+ }
+}

@@ -1,0 +1,41 @@
+SCR_DefendWaypoint Def_Est_WP : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ coords 10440 15.591 5505
+ CompletionRadius 30
+}
+SCR_AIGroup Def_Est_grp : "{9F5D840D3A60B643}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN_DEMI/Group_RHS_ION_BLACK_STATIC_Static_Cell.et" {
+ coords 10440 15.591 5505
+ m_faction "RHS_ION"
+ m_aStaticWaypoints {
+  "Def_Est_WP"
+ }
+}
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ Pied_NE_WP1 {
+  coords 10300 9.981 5805
+ }
+ Pied_NE_WP2 {
+  coords 10400 20.669 5785
+ }
+ Pied_NE_WP3 {
+  coords 10430 11.395 5655
+ }
+ Pied_NE_WP4 {
+  coords 10310 16.481 5680
+ }
+}
+AIWaypointCycle Pied_NE_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ coords 10300 9.981 5805
+ CycleWaypoints {
+  "Pied_NE_WP1"
+  "Pied_NE_WP2"
+  "Pied_NE_WP3"
+  "Pied_NE_WP4"
+ }
+}
+SCR_AIGroup Pied_NE_grp : "{E50881DAFE9E0B75}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_CloseProtectionTeam.et" {
+ coords 10300 9.981 5805
+ m_faction "RHS_ION"
+ m_aStaticWaypoints {
+  "Pied_NE_WP_Cycle"
+ }
+}

@@ -1,0 +1,9 @@
+SCR_AIGroup Fen5_grp : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_BASE.et" {
+ coords 10442 17.161 5603
+ angles 0 110 0
+ m_faction "RHS_ION"
+ m_aUnitPrefabSlots {
+  "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+ }
+ m_bSnapToTerrain 0
+}

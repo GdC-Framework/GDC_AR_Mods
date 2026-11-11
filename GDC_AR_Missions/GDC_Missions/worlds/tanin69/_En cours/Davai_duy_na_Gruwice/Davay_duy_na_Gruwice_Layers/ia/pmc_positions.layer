@@ -1,0 +1,19 @@
+SCR_AIGroup PR3_grp : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_BASE.et" {
+ coords 10472.385 11.044 5620.549
+ angles 0 90 0
+ m_faction "RHS_ION"
+ m_aUnitPrefabSlots {
+  "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+  "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+ }
+ m_aStaticWaypoints {
+  "PR3_WP_GetIn"
+ }
+}
+SCR_BoardingTimedWaypoint PR3_WP_GetIn : "{B049D4C74FBC0C4D}Prefabs/AI/Waypoints/AIWaypoint_GetInNearest.et" {
+ coords 10473.565 11.044 5616.248
+ CompletionRadius 5
+ m_TimedWaypointParameters SCR_AITimedWaypointParameters "{6C1A5E2B7F3D9A41}" {
+  m_holdingTime -1
+ }
+}

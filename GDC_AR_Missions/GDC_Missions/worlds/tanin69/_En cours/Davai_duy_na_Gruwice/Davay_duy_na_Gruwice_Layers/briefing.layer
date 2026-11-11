@@ -1,13 +1,3 @@
-$grp GenericEntity : "{2535412C99887CC1}Prefabs/Structures/FootBridge/Metal_Footbridge_01.et" {
- {
-  coords 10450.791 10.359 5376.222
-  angles 0 -90.766 0
- }
- {
-  coords 10203.258 8.044 5927.839
-  angles 0 63.375 0
- }
-}
 $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
  b_Situation {
   coords 15505.293 52.126 4440.746
@@ -143,7 +133,7 @@ PolylineShapeEntity NoFireArea : "{72B1111AF22BA033}Prefabs/Markers/GDC_Marker_A
 }
 $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker.et" {
  Insert_1 {
-  coords 10055.956 38.685 6486.003
+  coords 10031.599 19.78 6416.958
   angles 0 90 0
   m_MarkerColor 0.8 0 0 1
   m_sQuadName "entry-point"
@@ -279,7 +269,6 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   angles 0 -25.933 0
   m_MarkerColor 0.007 0.002 0.002 1
   m_sQuadName "entry-point"
-  m_fWorldSize 40
   m_sDescription "Passerelle"
   m_bUseWorldScale 0
   m_bVisibleForEmptyFaction 1
@@ -290,7 +279,6 @@ $grp PS_ManualMarker : "{CD85ADE9E0F54679}PrefabsEditable/Markers/EditableMarker
   angles 0 28.539 0
   m_MarkerColor 0.007 0.002 0.002 1
   m_sQuadName "entry-point"
-  m_fWorldSize 40
   m_sDescription "Passerelle"
   m_bUseWorldScale 0
   m_bVisibleForEmptyFaction 1

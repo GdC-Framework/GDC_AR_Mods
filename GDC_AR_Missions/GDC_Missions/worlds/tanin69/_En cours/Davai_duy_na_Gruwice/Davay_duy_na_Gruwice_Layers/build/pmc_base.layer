@@ -1,3 +1,13 @@
+$grp GenericEntity : "{2535412C99887CC1}Prefabs/Structures/FootBridge/Metal_Footbridge_01.et" {
+ {
+  coords 10450.791 10.359 5376.222
+  angles 0 -90.766 0
+ }
+ {
+  coords 10203.258 8.044 5927.839
+  angles 0 63.375 0
+ }
+}
 $grp GameEntity : "{6BE6E583708A59A7}Prefabs/Structures/BuildingParts/Ladders/Ladder_CoalLoader_01/Ladder_CoalLoader_crane01_404.et" {
  {
   coords 10461.777 6.114 5515.582
@@ -23,4 +33,8 @@ $grp GameEntity : "{6BE6E583708A59A7}Prefabs/Structures/BuildingParts/Ladders/La
   coords 10523.616 12.225 5812.586
   angles 0 49.998 0
  }
+}
+GenericEntity PR3_Emplacement : "{97CF91FDCC1EFA4E}Prefabs/Compositions/Misc/FreeRoamBuilding/Emplacement_MG_US_01_M2HB.et" {
+ coords 10473.293 11.101 5616.9
+ angles 0 107.658 0
 }
