@@ -27,14 +27,9 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
  c_Mission {
   coords 15508.526 52.125 4434.998
   m_sTitle "Mission"
-  m_sTextData "<color name=\"green\"><b>Objectifs</b></color>"\
+  m_sTextData "<color name=\"green\"><b>Objectif</b></color>"\
   ""\
-  "- <b>Couper la tête du serpent</b> : neutraliser tout hostile dans le centre de Gruwice."\
-  "- <b>Faire parler l'oracle</b> : récupérer les intels au rdc de l'hôtel Météor."\
-  ""\
-  "<color name=\"green\"><b>Si nécessaire</b></color>"\
-  ""\
-  "- <b>Passer l'aspirateur</b> : nettoyer les étages de l'hôtel."
+  "Récupérer les intels au rdc de l'hôtel Météor et filer au plus vite vers votre point d'extraction."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 2
@@ -60,7 +55,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "- <b>Périphérie</b> : positions renforcées, quelques armes lourdes soviétiques."\
   "- <b>Immeubles et positions de tir favorables</b> : probablement exploités."\
-  "- <b>Place Lénine</b> : seul l'hôtel Météor est occupé."
+  "- <b><color name=\"red\">Place Lénine</color></b> : seul l'hôtel Météor est occupé."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 3

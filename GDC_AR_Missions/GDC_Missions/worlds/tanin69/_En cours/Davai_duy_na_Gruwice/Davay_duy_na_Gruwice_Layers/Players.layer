@@ -1,6 +1,7 @@
 $grp SCR_AIGroup : "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Group_RHS_RF_MSV_VKPO_DS_RifleSquad.et" {
  aGranit {
-  coords 14339.061 50.905 11958.555
+  coords 14347.484 50.905 11976.848
+  angles 0 140.923 0
   m_aUnitPrefabSlots {
    "{435F1619E3185905}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_PL_GDC.et"
    "{CE23C9E993F6FF02}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_Medic_GDC.et"
@@ -16,7 +17,7 @@ $grp SCR_AIGroup : "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Dem
   m_sGDC_LongRangeFrequency "48000"
  }
  bBerkut {
-  coords 14344.061 50.905 11958.555
+  coords 14349.087 50.905 11964.32
   m_aUnitPrefabSlots {
    "{4D415251DEEF56DF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_SL_GDC.et"
    "{26206A9E442A2BD6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_MG_GDC.et"
@@ -38,7 +39,8 @@ $grp SCR_AIGroup : "{F6CEAA1D2B0A7ED0}Prefabs/Groups/OPFOR/RHS_AFRF/MSV/VKPO_Dem
   m_sGDC_LongRangeFrequency "48000"
  }
  cTaiga {
-  coords 14349.061 50.905 11958.555
+  coords 14364.213 50.905 11976.374
+  angles 0 -35.19 0
   m_aUnitPrefabSlots {
    "{4D415251DEEF56DF}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_SL_GDC.et"
    "{26206A9E442A2BD6}Prefabs/Characters/Factions/OPFOR/RHS_AFRF/MSV/VKPO_Demiseason/Character_RHS_RF_MSV_VKPO_DS_MG_GDC.et"

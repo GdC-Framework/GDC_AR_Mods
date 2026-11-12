@@ -1,91 +1,3 @@
-$grp GenericEntity : "{5B462DF843A26368}Prefabs/Utils/Interactions/TILW_TeleportInteraction.et" {
- Join_Rouge {
-  components {
-   ActionsManagerComponent "{62EF76E0D47ED96A}" {
-    additionalActions {
-     TILW_TeleportInteraction "{62EF76E608B6CB36}" {
-      m_actionName "Insertion sur Rouge (Groza)"
-      m_locationName "Insert_1"
-     }
-    }
-   }
-  }
-  coords 14308.129 52.106 12002.306
- }
- Join_Bleu {
-  components {
-   ActionsManagerComponent "{62EF76E0D47ED96A}" {
-    additionalActions {
-     TILW_TeleportInteraction "{62EF76E608B6CB36}" {
-      m_actionName "Insertion sur Bleu (Kassatka)"
-      m_locationName "Insert_2"
-     }
-    }
-   }
-  }
-  coords 14320.771 52.106 11983.769
- }
- Join_Vert {
-  components {
-   ActionsManagerComponent "{62EF76E0D47ED96A}" {
-    additionalActions {
-     TILW_TeleportInteraction "{62EF76E608B6CB36}" {
-      m_actionName "Insertion sur Vert (Sokol)"
-      m_locationName "Insert_3"
-     }
-    }
-   }
-  }
-  coords 14334.328 52.106 11964.184
- }
-}
-$grp GenericEntity : "{90B7CEB4C665B1E2}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1.et" {
- Flag_Rouge {
-  components {
-   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
-    m_sDefaultMaterial "{362AC46447DBE58B}Assets/Props/Fabric/Flags/Data/Flag_1_2_Red.emat"
-   }
-   SlotManagerComponent "{55DAE04E55ECE7FA}" {
-    Slots {
-     EntitySlotInfo Flag {
-      Prefab "{E53A39F9653831CE}Prefabs/Props/Fabric/Flags/Flag_1_2_Red_01.et"
-     }
-    }
-   }
-  }
-  coords 14308.129 50.906 12001.906
- }
- Flag_Bleu {
-  components {
-   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
-    m_sDefaultMaterial "{5A1B3B1C76F584C8}Assets/Props/Fabric/Flags/Data/Flag_1_2_Blue.emat"
-   }
-   SlotManagerComponent "{55DAE04E55ECE7FA}" {
-    Slots {
-     EntitySlotInfo Flag {
-      Prefab "{9A8AE4E1D90840AC}Prefabs/Props/Fabric/Flags/Flag_1_2_Blue_01.et"
-     }
-    }
-   }
-  }
-  coords 14320.771 50.906 11983.369
- }
- Flag_Vert {
-  components {
-   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
-    m_sDefaultMaterial "{B7A02313829700F9}Assets/Props/Fabric/Flags/Data/Flag_1_2_Green.emat"
-   }
-   SlotManagerComponent "{55DAE04E55ECE7FA}" {
-    Slots {
-     EntitySlotInfo Flag {
-      Prefab "{0CA57DAC081DF11A}Prefabs/Props/Fabric/Flags/Flag_1_2_Green_01.et"
-     }
-    }
-   }
-  }
-  coords 14334.328 50.906 11963.784
- }
-}
 $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
  Trg_Arrivee_Rouge {
   coords 10031.599 19.78 6416.958
@@ -113,5 +25,96 @@ $grp TILW_FactionTriggerEntity : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_
   m_playersOnly 1
   m_ownerFactionKey "RHS_AFRF"
   m_ratioThreshold 0.01
+ }
+}
+$grp GenericEntity : "{90B7CEB4C665B1E2}Prefabs/Structures/Military/Flags/FlagPole_02/FlagPole_02_V1.et" {
+ Flag_Rouge {
+  components {
+   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
+    m_sDefaultMaterial "{362AC46447DBE58B}Assets/Props/Fabric/Flags/Data/Flag_1_2_Red.emat"
+   }
+   SlotManagerComponent "{55DAE04E55ECE7FA}" {
+    Slots {
+     EntitySlotInfo Flag {
+      Prefab "{E53A39F9653831CE}Prefabs/Props/Fabric/Flags/Flag_1_2_Red_01.et"
+     }
+    }
+   }
+  }
+  coords 14217.962 50.906 11883.162
+ }
+ Flag_Bleu {
+  components {
+   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
+    m_sDefaultMaterial "{5A1B3B1C76F584C8}Assets/Props/Fabric/Flags/Data/Flag_1_2_Blue.emat"
+   }
+   SlotManagerComponent "{55DAE04E55ECE7FA}" {
+    Slots {
+     EntitySlotInfo Flag {
+      Prefab "{9A8AE4E1D90840AC}Prefabs/Props/Fabric/Flags/Flag_1_2_Blue_01.et"
+     }
+    }
+   }
+  }
+  coords 14303.063 50.906 11989.962
+ }
+ Flag_Vert {
+  components {
+   SCR_FlagComponent "{5E3C95A1E1EE9681}" {
+    m_sDefaultMaterial "{B7A02313829700F9}Assets/Props/Fabric/Flags/Data/Flag_1_2_Green.emat"
+   }
+   SlotManagerComponent "{55DAE04E55ECE7FA}" {
+    Slots {
+     EntitySlotInfo Flag {
+      Prefab "{0CA57DAC081DF11A}Prefabs/Props/Fabric/Flags/Flag_1_2_Green_01.et"
+     }
+    }
+   }
+  }
+  coords 14291.563 50.906 11921.401
+ }
+}
+$grp GenericEntity : "{A83D5F1E06C7B942}Prefabs/Teleport/GDC_Teleport.et" {
+ Join_bleu {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Insertion sur Bleu (Kassatka)"
+    m_sDestinationName "Insert_2"
+    m_eMode ALL_PLAYERS
+    m_fRadius 10
+    m_eMinRankRequired CAPTAIN
+    m_bShowZoneOnGround 1
+    m_sText "Quelques heures plus tard..."
+   }
+  }
+  coords 14303.058 52.106 11989.973
+ }
+ Join_rouge {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Insertion sur Rouge (Groza)"
+    m_sDestinationName "Insert_1"
+    m_eMode ALL_PLAYERS
+    m_fRadius 10
+    m_eMinRankRequired CAPTAIN
+    m_bShowZoneOnGround 1
+    m_sText "Quelques heures plus tard..."
+   }
+  }
+  coords 14217.952 52.106 11883.182
+ }
+ Join_vert {
+  components {
+   GDC_TeleportModuleComponent "{6B17D0F4A3E2C985}" {
+    m_sActionName "Insertion sur Vert (Sokol)"
+    m_sDestinationName "Insert_3"
+    m_eMode ALL_PLAYERS
+    m_fRadius 10
+    m_eMinRankRequired CAPTAIN
+    m_bShowZoneOnGround 1
+    m_sText "Quelques heures plus tard..."
+   }
+  }
+  coords 14291.549 52.106 11921.423
  }
 }

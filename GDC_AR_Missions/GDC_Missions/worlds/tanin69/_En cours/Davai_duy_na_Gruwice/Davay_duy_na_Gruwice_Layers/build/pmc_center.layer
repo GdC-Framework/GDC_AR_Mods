@@ -1,0 +1,245 @@
+$grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ Def_Center_grp2_WP {
+  coords 10187.03 20.125 5420.716
+  CompletionRadius 20
+ }
+ Fen1_WP2 {
+  coords 10178.217 24.045 5459.814
+  angles 0 90 0
+  CompletionRadius 5
+ }
+ Fen1_WP3 {
+  coords 10175.403 24.045 5434.74
+  angles 0 90 0
+  CompletionRadius 5
+ }
+ Fen1_WP4 {
+  coords 10182.273 24.045 5445.043
+  angles 0 90 0
+  CompletionRadius 5
+ }
+ Int1_WP1 {
+  coords 10180.245 20.125 5435.69
+  angles 0 90 0
+  CompletionRadius 2
+ }
+ Int1_WP2 {
+  coords 10184.058 20.125 5419.169
+  angles 0 90 0
+  CompletionRadius 2
+ }
+ Int1_WP3 {
+  coords 10173.198 20.125 5429.435
+  angles 0 90 0
+  CompletionRadius 2
+ }
+ Int1_WP4 {
+  coords 10179.045 20.125 5421.817
+  angles 0 90 0
+  CompletionRadius 2
+ }
+ Int1_WP5 {
+  coords 10171.844 20.125 5433.542
+  angles 0 90 0
+  CompletionRadius 2
+ }
+ Def_Center_grp3_WP {
+  coords 10173.765 20.125 5453.874
+  CompletionRadius 9
+ }
+}
+AIWaypointCycle Def_Center_grp1_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ coords 10211.05 19.782 5433.712
+ CycleWaypoints {
+  "Def_Center_grp1_WP1"
+  "Def_Center_grp1_WP2"
+  "Def_Center_grp1_WP3"
+  "Def_Center_grp1_WP4"
+  "Def_Center_grp1_WP5"
+  "Def_Center_grp1_WP6"
+ }
+}
+$grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
+ Def_Center_grp1_WP1 {
+  coords 10179.138 19.781 5481.335
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+ Def_Center_grp1_WP2 {
+  coords 10217.063 19.781 5443.134
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+ Def_Center_grp1_WP3 {
+  coords 10252.784 19.781 5500.248
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+ Def_Center_grp1_WP4 {
+  coords 10269.938 19.782 5413.938
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+ Def_Center_grp1_WP5 {
+  coords 10210.66 19.781 5399.587
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+ Def_Center_grp1_WP6 {
+  coords 10256.042 19.781 5455.967
+  CompletionRadius 10
+  m_TimedWaypointParameters SCR_AITimedWaypointParameters "{60D91039CD461DCD}" {
+   m_holdingTime 30
+  }
+ }
+}
+GenericEntity : "{6D56FED1E55A8F84}Prefabs/Items/Misc/IntelligenceFolder_E_01/IntelligenceFolder_E_01.et" {
+ coords 10174.812 21.031 5425.231
+ angles 0 42.163 0
+}
+$grp SCR_AIGroup : "{9F5D840D3A60B643}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN_DEMI/Group_RHS_ION_BLACK_STATIC_Static_Cell.et" {
+ Def_Center_grp1 {
+  coords 10203.129 19.781 5431.644
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots +{
+   "{5A758DA8CCDE08B3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban_demi/RandomSoldiers/Character_RHS_ION_Urban_D_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "Def_Center_grp1_Cycle"
+  }
+ }
+ Def_Center_grp2 {
+  coords 10191.757 19.782 5420.727
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots +{
+   "{5A758DA8CCDE08B3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban_demi/RandomSoldiers/Character_RHS_ION_Urban_D_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "Def_Center_grp2_WP"
+  }
+ }
+ Def_Center_grp3 {
+  coords 10171.619 20.125 5456.874
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Def_Center_grp3_WP"
+  }
+ }
+}
+$grp SCR_AIGroup : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_BASE.et" {
+ Fen1_grp2 {
+  coords 10180.775 24.045 5461.265
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen1_WP2"
+  }
+ }
+ Fen1_grp3 {
+  coords 10173.254 24.045 5433.876
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen1_WP3"
+  }
+ }
+ Fen1_grp4 {
+  coords 10183.849 24.045 5446.912
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{B8D79D2C9ADC6159}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Marksman.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Fen1_WP4"
+  }
+ }
+ Int1_grp1 {
+  coords 10180.729 20.125 5435.346
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A7FC572D7BE2ADF3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Rifleman10.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Int1_WP1"
+  }
+ }
+ Int1_grp2 {
+  coords 10184.161 20.131 5419.369
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A7FC572D7BE2ADF3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Rifleman10.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Int1_WP2"
+  }
+ }
+ Int1_grp3 {
+  coords 10173.287 20.125 5429.548
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{006311076DB5EE8A}Prefabs/Characters/Factions/INDFOR/RHS_ION/RandomSoldiers/Character_RHS_ION_SL_Random.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Int1_WP3"
+  }
+ }
+ Int1_grp4 {
+  coords 10180.841 20.125 5420.887
+  angles 0 -26.262 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A7FC572D7BE2ADF3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Rifleman10.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Int1_WP4"
+  }
+ }
+ Int1_grp5 {
+  coords 10171.844 20.125 5433.542
+  angles 0 78.738 0
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A7FC572D7BE2ADF3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/Character_RHS_ION_Urban_Rifleman10.et"
+  }
+  m_bSnapToTerrain 0
+  m_aStaticWaypoints {
+   "Int1_WP5"
+  }
+ }
+}
+GenericEntity Int1_Obs1 : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
+ components {
+  SCR_AISmartActionSentinelComponent "{5CB0DBCC796A6F1C}" {
+   m_iCharacterStance CROUCH
+  }
+ }
+ coords 10185.232 20.125 5420.675
+ angles 0 124.615 0
+}
