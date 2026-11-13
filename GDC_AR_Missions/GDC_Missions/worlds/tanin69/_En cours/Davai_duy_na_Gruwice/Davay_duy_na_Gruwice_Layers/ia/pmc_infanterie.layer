@@ -1,41 +1,168 @@
-SCR_DefendWaypoint Def_Est_WP : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
- coords 10440 15.591 5505
- CompletionRadius 30
-}
-SCR_AIGroup Def_Est_grp : "{9F5D840D3A60B643}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN_DEMI/Group_RHS_ION_BLACK_STATIC_Static_Cell.et" {
- coords 10440 15.591 5505
- m_faction "RHS_ION"
- m_aStaticWaypoints {
-  "Def_Est_WP"
- }
-}
 $grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
  Pied_NE_WP1 {
   coords 10300 9.981 5805
  }
  Pied_NE_WP2 {
-  coords 10400 20.669 5785
+  coords 10385.369 20.687 5781.035
  }
  Pied_NE_WP3 {
   coords 10430 11.395 5655
  }
  Pied_NE_WP4 {
-  coords 10310 16.481 5680
+  coords 10310 16.5 5680
+ }
+ Pied_SO_WP1 {
+  coords 9990 11.703 5540
+ }
+ Pied_SO_WP2 {
+  coords 10075 10 5450
+ }
+ Pied_SO_WP3 {
+  coords 10060 10 5400
+ }
+ Pied_SO_WP4 {
+  coords 10010 13.031 5480
+ }
+ Pied_SE_WP1 {
+  coords 10442 14.625 5417
+ }
+ Pied_SE_WP2 {
+  coords 10400 13.5 5280
+ }
+ Pied_SE_WP3 {
+  coords 10339 14.523 5336
+ }
+ Pied_NO_WP1 {
+  coords 10116 10.25 5870
+ }
+ Pied_NO_WP2 {
+  coords 10000 10 5790
+ }
+ Pied_NO_WP3 {
+  coords 10050 10 5650
  }
 }
-AIWaypointCycle Pied_NE_WP_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
- coords 10300 9.981 5805
- CycleWaypoints {
-  "Pied_NE_WP1"
-  "Pied_NE_WP2"
-  "Pied_NE_WP3"
-  "Pied_NE_WP4"
+$grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
+ Def_Est_WP {
+  coords 10440 15.591 5505
+  CompletionRadius 30
+ }
+ Def_Nord_WP {
+  coords 10120 10.742 5735
+  CompletionRadius 30
+ }
+ Def_Sud_WP {
+  coords 10105 10.523 5265
+  CompletionRadius 30
+ }
+ Def_SE_WP {
+  coords 10339 14.523 5336
+  CompletionRadius 20
  }
 }
-SCR_AIGroup Pied_NE_grp : "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et" {
- coords 10300 9.981 5805
- m_faction "RHS_ION"
- m_aStaticWaypoints {
-  "Pied_NE_WP_Cycle"
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ Pied_NE_WP_Cycle {
+  coords 10300 9.981 5805
+  CycleWaypoints {
+   "Pied_NE_WP1"
+   "Pied_NE_WP2"
+   "Pied_NE_WP3"
+   "Pied_NE_WP4"
+  }
+ }
+ Pied_SO_WP_Cycle {
+  coords 9990 11.703 5540
+  CycleWaypoints {
+   "Pied_SO_WP1"
+   "Pied_SO_WP2"
+   "Pied_SO_WP3"
+   "Pied_SO_WP4"
+  }
+ }
+ Pied_SE_WP_Cycle {
+  coords 10442 14.625 5417
+  CycleWaypoints {
+   "Pied_SE_WP1"
+   "Pied_SE_WP2"
+   "Pied_SE_WP3"
+  }
+ }
+ Pied_NO_WP_Cycle {
+  coords 10116 10.25 5870
+  CycleWaypoints {
+   "Pied_NO_WP1"
+   "Pied_NO_WP2"
+   "Pied_NO_WP3"
+  }
+ }
+}
+$grp SCR_AIGroup : "{9F5D840D3A60B643}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN_DEMI/Group_RHS_ION_BLACK_STATIC_Static_Cell.et" {
+ Def_Est_grp {
+  coords 10440 15.591 5505
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Def_Est_WP"
+  }
+ }
+ Def_Nord_grp {
+  coords 10120 10.742 5735
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Def_Nord_WP"
+  }
+ }
+ Def_Sud_grp {
+  coords 10105 10.523 5265
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Def_Sud_WP"
+  }
+ }
+}
+$grp SCR_AIGroup : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBAN/Group_RHS_ION_URBAN_BASE.et" {
+ Def_SE_grp {
+  coords 10339 14.523 5336
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+   "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "Def_SE_WP"
+  }
+ }
+ Pied_NO_grp {
+  coords 10116 10.25 5870
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots {
+   "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+   "{A1C83383561D7708}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban/RandomSoldiers/Character_RHS_ION_Urban_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "Pied_NO_WP_Cycle"
+  }
+ }
+}
+$grp SCR_AIGroup : "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et" {
+ Pied_NE_grp {
+  coords 10300 9.981 5805
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Pied_NE_WP_Cycle"
+  }
+ }
+ Pied_SO_grp {
+  coords 9990 11.703 5540
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Pied_SO_WP_Cycle"
+  }
+ }
+ Pied_SE_grp {
+  coords 10442 14.625 5417
+  m_faction "RHS_ION"
+  m_aStaticWaypoints {
+   "Pied_SE_WP_Cycle"
+  }
  }
 }

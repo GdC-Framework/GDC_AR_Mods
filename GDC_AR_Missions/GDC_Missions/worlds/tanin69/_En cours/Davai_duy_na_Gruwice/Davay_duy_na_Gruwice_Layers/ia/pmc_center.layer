@@ -1,3 +1,17 @@
+$grp SCR_AIWaypoint : "{22A875E30470BD4F}Prefabs/AI/Waypoints/AIWaypoint_Patrol.et" {
+ Pat_Center_WP1 {
+  coords 10168.15 19.781 5508.612
+ }
+ Pat_Center_WP2 {
+  coords 10275.71 14.625 5526.086
+ }
+ Pat_Center_WP3 {
+  coords 10280 14.625 5395
+ }
+ Pat_Center_WP4 {
+  coords 10160 14.312 5390
+ }
+}
 $grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_DefendSmall.et" {
  Def_Center_grp2_WP {
   coords 10187.03 20.125 5420.716
@@ -47,16 +61,31 @@ $grp SCR_DefendWaypoint : "{2FCBE5C76E285A7B}Prefabs/AI/Waypoints/AIWaypoint_Def
   coords 10173.765 20.125 5453.874
   CompletionRadius 9
  }
+ Def_Center_grp4_WP {
+  coords 10255 19.781 5440
+  CompletionRadius 15
+ }
 }
-AIWaypointCycle Def_Center_grp1_Cycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
- coords 10211.05 19.782 5433.712
- CycleWaypoints {
-  "Def_Center_grp1_WP1"
-  "Def_Center_grp1_WP2"
-  "Def_Center_grp1_WP3"
-  "Def_Center_grp1_WP4"
-  "Def_Center_grp1_WP5"
-  "Def_Center_grp1_WP6"
+$grp AIWaypointCycle : "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et" {
+ Def_Center_grp1_Cycle {
+  coords 10211.05 19.782 5433.712
+  CycleWaypoints {
+   "Def_Center_grp1_WP1"
+   "Def_Center_grp1_WP2"
+   "Def_Center_grp1_WP3"
+   "Def_Center_grp1_WP4"
+   "Def_Center_grp1_WP5"
+   "Def_Center_grp1_WP6"
+  }
+ }
+ Pat_Center_Cycle {
+  coords 10150 14.641 5490
+  CycleWaypoints {
+   "Pat_Center_WP1"
+   "Pat_Center_WP2"
+   "Pat_Center_WP3"
+   "Pat_Center_WP4"
+  }
  }
 }
 $grp SCR_TimedWaypoint : "{531EC45063C1F57B}Prefabs/AI/Waypoints/AIWaypoint_Wait.et" {
@@ -133,6 +162,17 @@ $grp SCR_AIGroup : "{9F5D840D3A60B643}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBA
   m_faction "RHS_ION"
   m_aStaticWaypoints {
    "Def_Center_grp3_WP"
+  }
+ }
+ Def_Center_grp4 {
+  coords 10255 19.781 5440
+  m_faction "RHS_ION"
+  m_aUnitPrefabSlots +{
+   "{5A758DA8CCDE08B3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban_demi/RandomSoldiers/Character_RHS_ION_Urban_D_Rifleman_Random.et"
+   "{5A758DA8CCDE08B3}Prefabs/Characters/Factions/INDFOR/RHS_ION_Urban_demi/RandomSoldiers/Character_RHS_ION_Urban_D_Rifleman_Random.et"
+  }
+  m_aStaticWaypoints {
+   "Def_Center_grp4_WP"
   }
  }
 }
@@ -232,6 +272,13 @@ $grp SCR_AIGroup : "{A5C5CE75FE31AFD8}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_URBA
   m_aStaticWaypoints {
    "Int1_WP5"
   }
+ }
+}
+SCR_AIGroup Pat_Center_grp : "{ECD58A7788BFD1EC}Prefabs/Groups/INDFOR/RHS_ION/Group_RHS_ION_URBAN_FireTeam.et" {
+ coords 10147.388 10 5467.269
+ m_faction "RHS_ION"
+ m_aStaticWaypoints {
+  "Pat_Center_Cycle"
  }
 }
 GenericEntity Int1_Obs1 : "{F76BD5785C7FE191}Prefabs/Systems/Compositions/PatrolPoint/PatrolPoint_ObservationPoint.et" {
