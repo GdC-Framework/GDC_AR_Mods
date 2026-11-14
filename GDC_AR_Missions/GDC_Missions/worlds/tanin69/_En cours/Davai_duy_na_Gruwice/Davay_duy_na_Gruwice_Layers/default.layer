@@ -94,6 +94,3 @@ GenericEntity : "{025324A226175C65}Prefabs/Support/GDC_FireSupport_Mortar.et" {
  }
  coords 11282.923 21.437 6733.724
 }
-TILW_MissionFrameworkEntity TFM : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
- coords 15507.921 52.125 4423.281
-}

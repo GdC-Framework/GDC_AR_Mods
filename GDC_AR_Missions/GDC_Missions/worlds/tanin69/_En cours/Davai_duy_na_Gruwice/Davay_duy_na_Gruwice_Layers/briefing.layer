@@ -55,7 +55,7 @@ $grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescripti
   ""\
   "- <b>Périphérie</b> : positions renforcées, quelques armes lourdes soviétiques."\
   "- <b>Immeubles et positions de tir favorables</b> : probablement exploités."\
-  "- <b><color name=\"red\">Place Lénine</color></b> : seul l'hôtel Météor est occupé."
+  "- <b><color name=\"red\">Place Lénine</color></b> : seul l'hôtel Meteor est occupé. On pense qu'un passage au sous-sol permettrait de filer en douce."
   m_bEmptyFactionVisibility 1
   m_bShowForAnyFaction 1
   m_iOrder 3

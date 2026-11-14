@@ -1,0 +1,118 @@
+$grp GenericEntity {
+ Spawn_1 {
+  coords 10578.208 4.386 4979.7
+ }
+ Spawn_2 {
+  coords 10137.77 6.051 4954.25
+ }
+ Spawn_3 {
+  coords 9928.396 5.959 5282.273
+ }
+}
+TILW_FactionTriggerEntity TRG_RUS_HERE : "{8C576D46F6579229}Prefabs/Logic/Triggers/TILW_FactionTrigger.et" {
+ coords 10181.309 25.382 5431.295
+ m_captureTime 300
+ m_flagName "GO_REINF"
+ m_stopAfterFirstChange 1
+ m_playersOnly 1
+ m_ownerFactionKey "RHS_AFRF"
+ m_ratioThreshold 0.01
+}
+TILW_MissionFrameworkEntity TFM : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 15507.921 52.125 4423.281
+ m_missionEvents {
+  TILW_MissionEvent "{6ADD635645E5843F}" {
+   m_name "Reinforcements"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6ADD63564A4CA9C1}" {
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_1"
+     m_waypointNames {
+      "WP_SAD1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6ADD635400A5EA75}" {
+     m_executionDelay 10
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_2"
+     m_waypointNames {
+      "WP_SAD1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6ADD635416BFDC9D}" {
+     m_executionDelay 15
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_3"
+     m_waypointNames {
+      "WP_SAD1"
+     }
+    }
+    TILW_ReactivateEventsInstruction "{6ADD6C090CAFB674}" {
+     m_executionDelay 300
+     m_eventNames {
+      "Reinforcements"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6ADD635652686E74}" {
+    m_flagName "GO_REINF"
+   }
+  }
+  TILW_MissionEvent "{6ADD6C08429240E1}" {
+   m_name "Bloc"
+   m_instructions {
+    TILW_SpawnGroupInstruction "{6ADD6C085373333E}" {
+     m_executionDelay 60
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_1"
+     m_waypointNames {
+      "Opp_Est_Def_WP"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6ADD6C0881126509}" {
+     m_executionDelay 90
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_1"
+     m_waypointNames {
+      "Wp_Def1"
+     }
+    }
+    TILW_SpawnGroupInstruction "{6ADD6C08B8227BEF}" {
+     m_executionDelay 20
+     m_prefab "{51CA3A5A84652348}Prefabs/Groups/INDFOR/RHS_ION/RHS_ION_COY/Group_RHS_ION_COY_QuickReactionForce.et"
+     m_locationName "Spawn_3"
+     m_waypointNames {
+      "Wp_Def2"
+     }
+    }
+   }
+   m_condition TILW_LiteralTerm "{6ADD6C085A0CF759}" {
+    m_flagName "GO_REINF"
+   }
+  }
+  TILW_MissionEvent "{6ADD6C091BFFCEF0}" {
+   m_name "Stop Reinf"
+   m_instructions {
+    TILW_ClearFlagInstruction "{6ADD6C09290094E5}" {
+     m_executionDelay 1100
+     m_flagName "GO_REINF"
+    }
+   }
+   m_condition TILW_LiteralTerm "{6ADD6C09416BCDDC}" {
+    m_flagName "GO_REINF"
+   }
+  }
+ }
+}
+$grp SCR_DefendWaypoint : "{93291E72AC23930F}Prefabs/AI/Waypoints/AIWaypoint_Defend.et" {
+ Wp_Def1 {
+  coords 10172.271 10.141 5846.893
+ }
+ Wp_Def2 {
+  coords 9879.582 10.556 5689.396
+ }
+}
+SCR_SearchAndDestroyWaypoint WP_SAD1 : "{B3E7B8DC2BAB8ACC}Prefabs/AI/Waypoints/AIWaypoint_SearchAndDestroy.et" {
+ coords 10213.866 19.782 5442.518
+ CompletionRadius 60
+}
