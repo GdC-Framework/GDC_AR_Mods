@@ -8,7 +8,7 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/663710CD8BEB01D4/changelog)
 
-### 2.5.0 - à publier
+### 2.5.0 - 2026-11-15
 
 - REMOVED: dependencies No Icon For Uncon, No Weapon Drop Unconscious, FNG GM Budgetless and No Supply System. Their effects are now built into GDC Core.
 - ADDED: name tags never show that a player is unconscious, including the role icon of COALITION Squad Interface. The Game Master and spectators still see the real state.
