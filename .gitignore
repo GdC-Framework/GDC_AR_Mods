@@ -3,3 +3,5 @@
 
 # Windows folder settings
 desktop.ini
+
+__pycache__/
