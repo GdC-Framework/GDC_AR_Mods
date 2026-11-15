@@ -8,6 +8,22 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/663710CD8BEB01D4/changelog)
 
+### 2.5.0 - à publier
+
+- REMOVED: dependencies No Icon For Uncon, No Weapon Drop Unconscious, FNG GM Budgetless and No Supply System. Their effects are now built into GDC Core.
+- ADDED: name tags never show that a player is unconscious, including the role icon of COALITION Squad Interface. The Game Master and spectators still see the real state.
+- ADDED: a player who falls unconscious puts his weapon away instead of dropping it. A live grenade in hand is still dropped.
+- ADDED: Game Master budgets raised to 100 000 (entities, AI, vehicles, systems).
+- ADDED: supplies disabled for every game mode; the repair kit repairs up to 100 %.
+
+### 2.4.0 - 2026-11-11
+
+- REMOVED: Realism Overhaul - AI
+
+### 2.3.2 - 2026-11-06
+
+- Fixed: Project Name
+
 ### 2.3.1 - 2026-11-05
 
 - REMOVED : GameMasterFX (5994AD5A9F33BE57), until fix for 1.9 version
