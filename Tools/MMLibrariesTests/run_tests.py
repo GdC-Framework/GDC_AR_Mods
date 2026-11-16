@@ -23,7 +23,7 @@ import check_library
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(os.path.dirname(HERE))
 WORK = os.path.join(HERE, "_work")
-LIBRARY = os.path.join(WORK, "GDC Mission Maker Libraries")
+LIBRARY = os.path.join(WORK, "GDC Mission Maker Local")
 RESULTS = os.path.join(WORK, "results")
 
 STEAM = r"C:\Program Files (x86)\Steam\steamapps\common"
@@ -35,7 +35,7 @@ WORKBENCH_ADDONS = os.path.join(os.path.expanduser("~"), "Documents", "My Games"
 MMTOOLS_GPROJ = os.path.join(REPO, "GDC_AR_Misc", "GDC AR Mission Maker Tools", "addon.gproj")
 
 # The first folder holding an addon ID wins: _work comes before the Workbench addons folder,
-# where the mission maker's own GDC Mission Maker Libraries usually is.
+# where the mission maker's own GDC Mission Maker Local usually is.
 ADDON_DIRS = [
     os.path.join(STEAM, "Arma Reforger", "addons"),
     os.path.join(REPO, "GDC_AR_Misc"),
@@ -148,7 +148,7 @@ def loaded_library_path(log):
     if not match:
         return None
     for path in re.findall(r"gproj: '([^']+)'", match.group(1)):
-        if path.endswith("/GDC Mission Maker Libraries/addon.gproj"):
+        if path.endswith("/GDC Mission Maker Local/addon.gproj"):
             return path
     return None
 

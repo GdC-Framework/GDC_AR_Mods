@@ -1,13 +1,13 @@
-"""File-level checks of a generated "GDC Mission Maker Libraries" addon (no Workbench needed).
+"""File-level checks of a generated "GDC Mission Maker Local" addon (no Workbench needed).
 
-Usage: python check_library.py "<folder of the GDC Mission Maker Libraries addon>"
+Usage: python check_library.py "<folder of the GDC Mission Maker Local addon>"
 Exit code 0 when no problem is found. Also imported by run_tests.py.
 """
 import os
 import re
 import sys
 
-LIBRARY_ADDON_ID = "GDC Mission Maker Libraries"
+LIBRARY_ADDON_ID = "GDC Mission Maker Local"
 MMTOOLS_GUID = "6AC540B09694CF5F"
 INDEX = "Configs/MM Libraries/LibraryAddons.conf"
 

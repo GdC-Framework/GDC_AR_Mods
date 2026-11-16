@@ -6,7 +6,7 @@ Tests automatisés du plugin « Update MM Libraries » de GDC Mission Maker Tool
 python run_tests.py          # scénario complet, environ 2 à 3 minutes
 python run_tests.py --full   # ajoute une mise à jour avec tout le modset GDC (durée)
 python run_tests.py --authorize-scripts   # sans le dialogue « Script Authorization Required »
-python check_library.py "<dossier d'un addon GDC Mission Maker Libraries>"   # contrôle des fichiers seul
+python check_library.py "<dossier d'un addon GDC Mission Maker Local>"   # contrôle des fichiers seul
 ```
 
 Sans `--authorize-scripts`, chaque lancement du Workbench affiche le dialogue « Script Authorization Required » (appels `FileIO` du plugin) : il faut cliquer « Yes to All », sinon l'étape reste bloquée. L'option passe `-scriptAuthorizeAll` au Workbench, qui accorde alors ces autorisations à tous les scripts chargés, y compris ceux des addons installés : à décider à chaque fois.
@@ -26,7 +26,7 @@ ArmaReforgerWorkbenchSteamDiag.exe -gproj "<MM Tools>/addon.gproj" -addonsDir "<
 - `-plugin` exécute la méthode `RunCommandline()` du plugin, puis le plugin ferme le Workbench avec son code de sortie.
 - Le profil `GDCMMTest` sépare les logs : `Documents/My Games/GDCMMTest/logs/`.
 
-La bibliothèque de test est créée dans `_work/GDC Mission Maker Libraries`. Quand deux addons portent le même ID, le Workbench charge celui du premier dossier de `-addonsDir` : `_work` passe donc avant `Documents/My Games/ArmaReforgerWorkbench/addons`, où se trouve d'habitude la bibliothèque du mission maker. Le script refuse de démarrer si une autre bibliothèque passerait avant, et chaque étape vérifie dans le log que la bibliothèque chargée est bien celle de test.
+La bibliothèque de test est créée dans `_work/GDC Mission Maker Local`. Quand deux addons portent le même ID, le Workbench charge celui du premier dossier de `-addonsDir` : `_work` passe donc avant `Documents/My Games/ArmaReforgerWorkbench/addons`, où se trouve d'habitude la bibliothèque du mission maker. Le script refuse de démarrer si une autre bibliothèque passerait avant, et chaque étape vérifie dans le log que la bibliothèque chargée est bien celle de test.
 
 Deux plugins servent aux tests :
 
@@ -56,7 +56,7 @@ Le contrôle des fichiers (`check_library.py`) vérifie : `addon.gproj` (ID, tit
 Reste à faire dans le Workbench, ce que la ligne de commande ne couvre pas :
 
 - Premier lancement depuis le menu : boîte de dialogue, dossier par défaut, message de fin ; dossier hors défaut avec « Add Existing Project ».
-- Ouverture par le Launcher avec « Open with Addons » en cochant seulement GDC Mission Maker Libraries (MM Tools doit suivre).
+- Ouverture par le Launcher avec « Open with Addons » en cochant seulement GDC Mission Maker Local (MM Tools doit suivre).
 - Panneau Prefab Library : les trois bibliothèques et leur ordre.
 - Drop réel dans la vue : entité posée = prefab d'origine, orientation, sélection ; marqueurs (rotation des marqueurs PS) et zones (polyligne vide).
 - Drop d'un prefab dont l'addon manque : texte de la boîte de dialogue.

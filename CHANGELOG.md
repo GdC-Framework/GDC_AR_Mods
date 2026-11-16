@@ -114,6 +114,13 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Page sur le Workshop](https://reforger.armaplatform.com/workshop/6AC540B09694CF5F-GDCMissionMakerTools)
 
+### 0.1.0 - à publier
+
+- ADDED: Create Mission Skeleton plugin (Plugins > GDC). It adds to the open mission world everything a GDC mission starts with: layers, AI world (the terrain's own, navmeshes filled for Arland, Eden and Cain), perception manager, Reforger Lobby game mode with the usual GDC settings, TILW framework, briefing sections and an empty Coalition VON frequency config linked on the game mode. It only adds what is missing, so it can be run again safely.
+- ADDED: the skeleton is described by a config (Configs/GDC MM/MissionSkeleton.conf). To change it, create a config inheriting it in your GDC Mission Maker Local addon and select it in Plugins > Settings > Create Mission Skeleton.
+- CHANGED: the plugins moved from Plugins > GDC > Mission Maker to Plugins > GDC.
+- CHANGED: the local addon created by Update MM Libraries is now named GDC Mission Maker Local, as it also holds your own configs. An existing GDC Mission Maker Libraries addon keeps working, nothing to do.
+
 ### 0.0.1 - 2026-11-04
 
 - Première publication, sans texte de version : bibliothèques MM (« Update MM Libraries ») et GDC Loadout Editor, venu de GDC AR Lib.

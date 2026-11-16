@@ -10,6 +10,7 @@ Que propose cet addon ?
 
   * Une bibliothèque d'entités alla 3den
   * Un éditeur de loadouts 
+  * Un squelette de mission en un clic
 
 
 ## Une bibliothèque d'entités alla 3den
@@ -24,4 +25,11 @@ Mode d'emploi : [docs/GDC_MMLibraries.fr.md](docs/GDC_MMLibraries.fr.md).
 Un outil du World Editor (icône sac à dos GDC de la barre d'outils) pour modifier le loadout d'un prefab de personnage sur un seul panneau : tenue, armes, équipements et inventaire, avec la capacité réelle de chaque conteneur. 
 
 Mode d'emploi : [docs/GDC_LoadoutEditor.fr.md](docs/GDC_LoadoutEditor.fr.md).
+
+
+## Un squelette de mission en un clic
+
+Un plugin du World Editor qui ajoute à un nouveau monde de mission tout ce par quoi commence une mission GDC : calques, managers, mode de jeu Reforger Lobby avec les réglages habituels, framework TILW, sections du briefing et config de fréquences Coalition VON. Il n'ajoute que ce qui manque : on peut le relancer sans risque.
+
+Mode d'emploi : [docs/GDC_MissionSkeleton.fr.md](docs/GDC_MissionSkeleton.fr.md).
 

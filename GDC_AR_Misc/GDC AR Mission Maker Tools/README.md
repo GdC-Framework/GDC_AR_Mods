@@ -10,6 +10,7 @@ What does this addon offer?
 
   * An entity library, 3den style
   * A loadout editor
+  * A mission skeleton in one click
 
 
 ## An entity library, 3den style
@@ -24,3 +25,10 @@ User guide: [docs/GDC_MMLibraries.md](docs/GDC_MMLibraries.md).
 A World Editor tool (GDC backpack icon in the toolbar) to edit the loadout of a character prefab on a single panel: clothing, weapons, equipment and inventory, with the real capacity of each container.
 
 User guide: [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md).
+
+
+## A mission skeleton in one click
+
+A World Editor plugin that adds to a new mission world everything a GDC mission starts with: layers, managers, Reforger Lobby game mode with the usual settings, TILW framework, briefing sections and Coalition VON frequency config. It only adds what is missing, so it can be run again safely.
+
+User guide: [docs/GDC_MissionSkeleton.md](docs/GDC_MissionSkeleton.md).

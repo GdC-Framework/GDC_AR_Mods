@@ -13,11 +13,13 @@ Anything not listed stays available in the Resource Browser.
 ## First run: create the libraries
 
 1. Open your project with GDC Mission Maker Tools ticked in "Open With Addons".
-2. Run **Plugins > GDC > Mission Maker > Update MM Libraries**.
-3. Choose the folder of the new local addon **GDC Mission Maker Libraries**. By default, it goes next to your other Workbench projects. Click Create.
-4. Close Workbench, then reopen your project from the Launcher with "Open With Addons", ticking **GDC Mission Maker Libraries** (no need to tick GDC Mission Maker Tools anymore: your local library addon brings it along).
+2. Run **Plugins > GDC > Update MM Libraries**.
+3. Choose the folder of the new local addon **GDC Mission Maker Local**. By default, it goes next to your other Workbench projects. Click Create.
+4. Close Workbench, then reopen your project from the Launcher with "Open With Addons", ticking **GDC Mission Maker Local** (no need to tick GDC Mission Maker Tools anymore: your local library addon brings it along).
 
 If you chose a folder other than the default one, first add it to the Launcher with "Add Existing Project".
+
+Already have the addon under its former name (GDC Mission Maker Libraries)? It keeps working as it is, nothing to do.
 
 <details>
 <summary>But why on earth do I have to do this?</summary>
@@ -28,7 +30,7 @@ If you chose a folder other than the default one, first add it to the Launcher w
 
 </details>
 
-⚠️ **Never add GDC Mission Maker <ins>Libraries</ins> as a dependency. Your library addon is local and never published, so no other player could play the mission! So be nice: right-click in the Workbench Launcher and add it with "Open With Addons".**
+⚠️ **Never add GDC Mission Maker <ins>Local</ins> as a dependency. Your library addon is local and never published, so no other player could play the mission! So be nice: right-click in the Workbench Launcher and add it with "Open With Addons".**
 
 ## Use the library
 

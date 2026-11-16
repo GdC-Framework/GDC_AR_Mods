@@ -13,8 +13,9 @@ class GDC_MMLibraryItem
 //! - MM Markers: PrefabLibrary/MM Markers/<Icons|Areas>/<Addon>/, see GDC_MMMarkerReader;
 //! - MM Systems: PrefabLibrary/MM Systems/<Waypoints|Triggers|Systems>/<Addon>/, see GDC_MMSystemsReader.
 //! Dropping one into the viewport places its parent (see GDC_MMCatalogDropPlugin).
-//! The libraries go into a local addon of the mission maker, "GDC Mission Maker Libraries" (GDC Mission Maker Tools is packed, so read-only),
+//! The libraries go into a local addon of the mission maker, "GDC Mission Maker Local" (GDC Mission Maker Tools is packed, so read-only),
 //! created by the first run; regenerating it mirrors the loaded addons. Never published, missions do not depend on it.
+//! The same addon holds the mission maker's own configs (e.g. a mission skeleton inheriting GDC's).
 //! Also writes GDC_MMLibraryIndex, the addon each library prefab comes from, named to mission makers dropping it without that addon.
 //! Command line, for automated tests (Tools/MMLibrariesTests in the GDC_AR_Mods repository), without any dialog:
 //! -wbModule=ResourceManager -plugin=GDC_MMCatalogGeneratorPlugin -run [-mmLibraryFolder="<folder of a new library addon>"]
@@ -23,7 +24,7 @@ class GDC_MMLibraryItem
 	name: "Update MM Libraries",
 	description: "Create or update the MM prefab libraries from the loaded addons (run it again after changing them)",
 	wbModules: { "WorldEditor", "ResourceManager" },
-	category: "GDC/Mission Maker",
+	category: "GDC",
 	awesomeFontCode: 0xF0CB)]
 class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 {
@@ -35,14 +36,16 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	protected static const ref array<string> LIBRARY_DIRECTORIES = { FORCES_DIRECTORY, MARKERS_DIRECTORY, SYSTEMS_DIRECTORY };
 
 	//! Local addon receiving the libraries; depends on GDC Mission Maker Tools so that ticking it in the Launcher is enough
-	protected static const string LIBRARY_ADDON_ID = "GDC Mission Maker Libraries";
-	protected static const string LIBRARY_ADDON_TITLE = "GDC Mission Maker Libraries";
+	protected static const string LIBRARY_ADDON_ID = "GDC Mission Maker Local";
+	protected static const string LIBRARY_ADDON_TITLE = "GDC Mission Maker Local";
+	//! IDs given to the local addon by earlier versions, still recognised
+	protected static const ref array<string> LEGACY_LIBRARY_ADDON_IDS = { "GDC Mission Maker Libraries", "GDC AR MM Libraries" };
 	protected static const string MMTOOLS_ADDON_GUID = "6AC540B09694CF5F";
 
 	//! Command line parameter giving the folder of the library addon to create
 	protected static const string CLI_LIBRARY_FOLDER = "mmLibraryFolder";
 
-	[Attribute(desc: "Folder of the new GDC Mission Maker Libraries addon. Keep the default unless you store your Workbench projects elsewhere.")]
+	[Attribute(desc: "Folder of the new GDC Mission Maker Local addon. Keep the default unless you store your Workbench projects elsewhere.")]
 	protected string m_sLibraryFolder;
 
 	//! Run from the command line: no dialog, results in the log only
@@ -98,7 +101,8 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	//! \return true when the library addon is loaded
 	protected static bool GetLoadedLibraryPath(out string addonPath)
 	{
-		if (!Workbench.GetAbsolutePath("$" + LIBRARY_ADDON_ID + ":", addonPath, true) || !IsLibraryAddonLoaded())
+		string libraryID = GetLoadedLibraryID();
+		if (libraryID.IsEmpty() || !Workbench.GetAbsolutePath("$" + libraryID + ":", addonPath, true))
 			return false;
 
 		// GetAbsolutePath ends with a slash: a double slash would register the files as "/PrefabLibrary/..."
@@ -136,7 +140,7 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 		if (!IsInDefaultAddonsFolder(folder))
 			message += "\n\nThis folder is not the default one: first add it to the Launcher with \"Add Existing Project\" (its addon.gproj file).";
 
-		message += "\n\nAfter changing your loaded addons, run Update MM Libraries again (Plugins > GDC > Mission Maker)."
+		message += "\n\nAfter changing your loaded addons, run Update MM Libraries again (Plugins > GDC)."
 			+ " Run it again as well if, once the addon is loaded, a library prefab cannot be dropped into the viewport (forbidden sign).";
 		Workbench.Dialog(CAPTION, message);
 	}
@@ -267,15 +271,34 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	//------------------------------------------------------------------------------------------------
 	protected static bool IsLibraryAddonLoaded()
 	{
+		return !GetLoadedLibraryID().IsEmpty();
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \return ID of the loaded local addon (current or legacy ID), empty when none is loaded
+	protected static string GetLoadedLibraryID()
+	{
 		array<string> guids = {};
 		GameProject.GetLoadedAddons(guids);
 		foreach (string guid : guids)
 		{
-			if (GameProject.GetAddonID(guid) == LIBRARY_ADDON_ID)
-				return true;
+			string id = GameProject.GetAddonID(guid);
+			if (id == LIBRARY_ADDON_ID || LEGACY_LIBRARY_ADDON_IDS.Contains(id))
+				return id;
 		}
 
-		return false;
+		return string.Empty;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \return ID of the loaded local addon, else the current ID (the addon being created)
+	protected static string GetLibraryID()
+	{
+		string id = GetLoadedLibraryID();
+		if (id.IsEmpty())
+			return LIBRARY_ADDON_ID;
+
+		return id;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -351,7 +374,7 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 	protected static void CollectMarkers(notnull array<ref GDC_MMLibraryItem> items, notnull set<string> generated)
 	{
 		array<ref GDC_MMMarkerEntry> entries = {};
-		GDC_MMMarkerReader.Read(LIBRARY_ADDON_ID, entries);
+		GDC_MMMarkerReader.Read(GetLibraryID(), entries);
 		foreach (GDC_MMMarkerEntry entry : entries)
 		{
 			string addonID, addonTitle;
@@ -432,7 +455,7 @@ class GDC_MMCatalogGeneratorPlugin : WorkbenchPlugin
 		int removed;
 		foreach (string directory : LIBRARY_DIRECTORIES)
 		{
-			string libraryRoot = "$" + LIBRARY_ADDON_ID + ":" + directory;
+			string libraryRoot = "$" + GetLibraryID() + ":" + directory;
 			foreach (ResourceName existing : SCR_WorkbenchHelper.SearchWorkbenchResources({ "et" }, null, libraryRoot))
 			{
 				string relativePath = existing.GetPath();

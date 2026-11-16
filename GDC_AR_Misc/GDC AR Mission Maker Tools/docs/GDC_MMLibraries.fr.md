@@ -13,11 +13,13 @@ Ce qui n'est pas listé reste disponible dans le Resource Browser.
 ## Premier lancement : créer les bibliothèques
 
 1. Ouvrez votre projet en cochant GDC Mission Maker Tools dans « Open With Addons ».
-2. Lancez **Plugins > GDC > Mission Maker > Update MM Libraries**.
-3. Choisissez le dossier du nouvel addon local **GDC Mission Maker Libraries**. Par défaut, il se place à côté de vos autres projets Workbench. Cliquez sur Create.
-4. Fermez le Workbench, puis rouvrez votre projet depuis le Launcher avec « Open With Addons » en cochant **GDC Mission Maker Libraries** (plus besoin de cocher GDC Mission Maker Tools, votre addon local de bibliothèque l'entraîne avec lui).
+2. Lancez **Plugins > GDC > Update MM Libraries**.
+3. Choisissez le dossier du nouvel addon local **GDC Mission Maker Local**. Par défaut, il se place à côté de vos autres projets Workbench. Cliquez sur Create.
+4. Fermez le Workbench, puis rouvrez votre projet depuis le Launcher avec « Open With Addons » en cochant **GDC Mission Maker Local** (plus besoin de cocher GDC Mission Maker Tools, votre addon local de bibliothèque l'entraîne avec lui).
 
 Si vous avez choisi un autre dossier que celui par défaut, ajoutez-le d'abord au Launcher avec « Add Existing Project ».
+
+Vous avez déjà l'addon sous son ancien nom (GDC Mission Maker Libraries) ? Il continue de fonctionner tel quel, rien à faire.
 
 <details>
 <summary>Mais pourquoi je dois faire ça, bordel de noeud de chiotte ?</summary>
@@ -28,7 +30,7 @@ Si vous avez choisi un autre dossier que celui par défaut, ajoutez-le d'abord a
 
 </details>
 
-⚠️ **N'ajoutez jamais GDC Mission Maker <ins>Libraries</ins> en dépendance. Votre mod de bibliothèque étant local et jamais publié, aucun autre joueur ne pourrait jouer la mission ! Donc, on fait gentiment un clic droit dans le launcher du workbench pour l'ajouter avec "Open with addons".**
+⚠️ **N'ajoutez jamais GDC Mission Maker <ins>Local</ins> en dépendance. Votre mod de bibliothèque étant local et jamais publié, aucun autre joueur ne pourrait jouer la mission ! Donc, on fait gentiment un clic droit dans le launcher du workbench pour l'ajouter avec "Open with addons".**
 
 ## Utiliser la bibliothèque
 
