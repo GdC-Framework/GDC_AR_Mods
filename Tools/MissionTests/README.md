@@ -28,6 +28,15 @@ Les logs sont dans `Documents/My Games/GDCAutoServer`, `GDCAutoClient1` et `GDCA
   - il les déplace avec la séquence de téléportation de GDC AR Lib ;
   - il appelle directement les modules (téléportation, appui feu) au nom des joueurs.
 
+## Pièges de lancement
+
+Le script règle déjà tout cela. C'est à savoir pour écrire un autre lanceur, par exemple `GDC_AR_Lib/tools/run_support_autotest.ps1`, qui n'a ni les options du serveur ni une liste d'addons à jour depuis la 1.9.
+
+- **Clients : `-noBackend`.** Sans cette option, les deux clients prennent l'identité Steam de l'utilisateur et le second est refusé (« same identity »).
+- **Serveur : `-scrDefine ENABLE_DIAG -scrDefine GAME_MODE_DEBUG -rpl-validation-scr-disable`.** Le client Diag définit `ENABLE_DIAG` et `GAME_MODE_DEBUG`, le serveur Diag seulement `DEBUG`. Sans ces options, la somme de contrôle des scripts diffère et les clients sont expulsés. Avec elles, l'erreur de somme de contrôle s'affiche encore dans le log, mais elle est sans effet.
+- Un client met environ 2 min à charger Zimnitrita.
+- Les erreurs « Dedicated server is not correctly configured to connect to the BI backend » sont du bruit propre à cet environnement de test.
+
 ## Ajouter une mission
 
 1. Écrire `Scripts/Game/GDC/MissionTests/Missions/GDC_MissionTest_<Mission>.c`, une classe dérivée de `GDC_MissionTest` qui implémente `RunStep()`. Les outils communs sont dans `GDC_MissionTest.c` : recensement des IA, inventaires, slots du lobby, drapeaux TILW, radios CVON…
