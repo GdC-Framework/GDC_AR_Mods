@@ -8,6 +8,10 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/663710CD8BEB01D4/changelog)
 
+### 2.5.1 - 2026-11-18
+
+- ADDED: dependency OpsTrack (6660ABEECE887CC5), loaded in every GDC mission. Its settings stay on each server (OpsTrackSettings.json in the server profile); without an API key it records nothing.
+
 ### 2.5.0 - 2026-11-15
 
 - REMOVED: dependencies No Icon For Uncon, No Weapon Drop Unconscious, FNG GM Budgetless and No Supply System. Their effects are now built into GDC Core.

@@ -15,6 +15,7 @@ Socle commun des parties Arma Reforger de la communauté Grèce de Canards : les
 | Fixed Load Casualty Vehicles | Charger un blessé dans un véhicule |
 | Gray's Adjustable Doors | Portes entrouvertes, ouverture par les IA |
 | Improved Blood Effect | Effets de sang |
+| OpsTrack | Enregistrement des parties. Réglé sur chaque serveur (`OpsTrackSettings.json` du profil, clé d'API) ; sans clé, il n'enregistre rien. |
 | Realism Overhaul - Ballistics | Balistique des munitions et matériaux |
 | WCS Armbands | Brassards |
 | You can sit | S'asseoir sur les décors et dans les véhicules |
