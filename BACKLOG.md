@@ -48,6 +48,28 @@ La copie locale de CVON est en 3.0.3 et ne contient pas encore ces attributs. Un
 - Vérifier le comportement et le nom des attributs.
 - Murabat : retirer le contournement de `Configs/Murabat_Frequencies.conf` (48000 placé en tête de `m_aSRFrequencies`) et remettre 31000 en premier.
 
+## Réécrire le pont Reforger Lobby – Coalition VON
+
+Le pont *AFI CVON-RL COMMUNITY Compat* (`66E2C8C95CD0EF22`, 2.1.12) n'est plus maintenu : son auteur ne répond plus à nos demandes. Il faut écrire le nôtre.
+
+- **Constat du 18/11/2026** : il remplace `SCR_VONController.EOnFixedFrame` par une copie d'une ancienne version de CVON, sans appeler celle de CVON. Les ajouts de CVON 3.2.3 qui n'y figurent pas ne s'exécutent donc jamais sur nos serveurs, par exemple `WriteHeartbeat` et `RefreshListenedRadios`. L'effet en jeu n'est pas vérifié.
+- Recenser ce que fait le pont (spectateurs et morts de Reforger Lobby dans CVON, au minimum) et le refaire en appelant `super` partout où c'est possible, pour suivre les mises à jour de CVON.
+- Décider où le ranger : GDC AR Lib, qui dépend déjà de Reforger Lobby et de Coalition VON, ou un addon séparé. Voir la réduction des dépendances de GDC AR Lib plus haut.
+- Le retirer ensuite des configs serveur des missions, et mettre à jour la règle d'ordre des listes de mods.
+
+## Supervision des mods sur le serveur GDC
+
+But : que la supervision des mods (`Tools/ModSync`, skill `gdc-mod-supervision`) ne dépende plus du PC de l'admin qui a Claude Code. Le serveur GDC fait le travail mécanique, et l'analyse finale se fait avec Claude Code ou, sans abonnement, en déposant les résultats dans claude.ai.
+
+Le serveur dédié Linux est déjà installé, c'est notre serveur de jeu. Il sait télécharger un mod dans une version précise (champ `version` de la config), dans un dossier séparé (`-addonDownloadDir`).
+
+- Faire tourner la supervision avec une instance à part du serveur dédié (profil, port et dossier de mods distincts), sans toucher au serveur de jeu ni à ses mods.
+- Suivre les mises à jour des mods du modset et garder l'ancienne version avant chaque mise à jour, comme `before` le fait sur le PC.
+- Porter sous Linux ce qui en dépend : `mod_supervision.py` et `mod_conflicts.py` (chemins `My Games`, lecteur de `.pak` d'enfusion-mcp-py), et le test de compilation (`run_mission_test.ps1 -Compile`, aujourd'hui en PowerShell avec l'exécutable Windows).
+- Ne publier que des résultats compacts : `report.json`, `conflicts.json`, comparaisons des fichiers qui touchent GDC. Les mods eux-mêmes ne quittent pas le serveur.
+- Écrire un skill claude.ai « analyse de supervision » qui prend ces fichiers en entrée, pour un admin sans Claude Code (plan gratuit : skills et exécution de code disponibles, sans accès au PC ni, par défaut, au réseau hors domaines approuvés).
+- À vérifier avant de copier des fichiers de mods ailleurs que sur le serveur : les conditions du Workshop et les licences des mods.
+
 ## Missions
 
 ### Davay, duy na Gruwice

@@ -1,0 +1,280 @@
+<title>Supervision des mods GDC</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, a verdict band on top, one block per addon, status chips in the margin of each block */
+:root {
+  --bg: #f3f4f1;
+  --surface: #fbfbf9;
+  --fg: #1d2420;
+  --muted: #5b655f;
+  --line: #d6dbd4;
+  --accent: #4d6b3c;
+  --ok: #2f7a4a;
+  --ok-bg: #e3f1e7;
+  --warn: #8a5a00;
+  --warn-bg: #fbefd6;
+  --bad: #a3322b;
+  --bad-bg: #f8e1df;
+  --info-bg: #e7ece4;
+  --font-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151a17; --surface: #1c231f; --fg: #e3e8e2; --muted: #9aa69d; --line: #2f3933; --accent: #9cbf84;
+    --ok: #7fcf98; --ok-bg: #1d3325; --warn: #e8b85c; --warn-bg: #3a2e14; --bad: #f08a80; --bad-bg: #3d1f1c;
+    --info-bg: #222b25; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151a17; --surface: #1c231f; --fg: #e3e8e2; --muted: #9aa69d; --line: #2f3933; --accent: #9cbf84;
+  --ok: #7fcf98; --ok-bg: #1d3325; --warn: #e8b85c; --warn-bg: #3a2e14; --bad: #f08a80; --bad-bg: #3d1f1c;
+  --info-bg: #222b25; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 32px 64px; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; line-height: 1.15; }
+h1 { font-size: 2.1rem; font-weight: 700; letter-spacing: 0.01em; }
+h2 { font-size: 1.45rem; font-weight: 600; padding-bottom: 6px; border-bottom: 2px solid var(--accent); }
+h3 { font-size: 1.2rem; font-weight: 600; }
+p { margin: 0; max-width: 68ch; }
+ul { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; max-width: 70ch; }
+code, .mono { font-family: var(--font-mono); font-size: 0.88em; }
+a { color: var(--accent); }
+.eyebrow { font-family: var(--font-display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+header { display: flex; flex-direction: column; gap: 8px; }
+.meta { color: var(--muted); font-size: 0.92rem; }
+.verdict { background: var(--warn-bg); border-left: 4px solid var(--warn); padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.verdict strong { font-family: var(--font-display); font-size: 1.3rem; color: var(--warn); font-weight: 700; }
+section { display: flex; flex-direction: column; gap: 18px; }
+.addon { background: var(--surface); border: 1px solid var(--line); padding: 18px; display: flex; flex-direction: column; gap: 12px; }
+.addon-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.ver { font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.chip { font-family: var(--font-display); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 9px; border-radius: 3px; white-space: nowrap; }
+.chip.ok { background: var(--ok-bg); color: var(--ok); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip.bad { background: var(--bad-bg); color: var(--bad); }
+.chip.info { background: var(--info-bg); color: var(--muted); }
+.impact { background: var(--info-bg); padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+.label { font-weight: 600; }
+.source { font-size: 0.88rem; color: var(--muted); }
+.table-box { overflow-x: auto; border: 1px solid var(--line); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.92rem; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.04em; font-size: 0.9rem; color: var(--muted); }
+tr:last-child td { border-bottom: none; }
+td.v { font-family: var(--font-mono); font-size: 0.85rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.checks { display: flex; flex-direction: column; gap: 10px; }
+.check { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; align-items: start; }
+.check > div { min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+details { background: var(--surface); border: 1px solid var(--line); }
+summary { cursor: pointer; padding: 12px 16px; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+details .table-box { border: none; border-top: 1px solid var(--line); }
+footer { color: var(--muted); font-size: 0.85rem; }
+@media (max-width: 520px) {
+  h1 { font-size: 1.7rem; }
+  .check { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Modset GDC · Workbench et serveur</span>
+  <h1>Supervision des mods GDC</h1>
+  <p class="meta">Supervision du 18/11/2026. Première supervision : la référence est l'état des mods avant la synchro du 18/11.</p>
+</header>
+
+<div class="verdict">
+  <strong>À vérifier en jeu</strong>
+  <p>Rien n'est cassé : tout le modset compile et aucune ressource utilisée par GDC n'a disparu. Deux points restent à tester en jeu : l'état inconscient caché sur les tags de CSI, et les lanceurs guidés de Zagoria passés sur TALOS. Une nouvelle dépendance, TALOS, entre dans le modset.</p>
+</div>
+
+<section>
+  <h2>Mods mis à jour</h2>
+  <p>11 mods du modset ont changé. Les trois qui touchent GDC d'abord, les autres dans le tableau.</p>
+
+  <article class="addon">
+    <div class="addon-head">
+      <h3>COALITION Squad Interface</h3>
+      <span class="ver">1.8.20 → 1.9.2</span>
+      <span class="chip warn">À tester en jeu</span>
+    </div>
+    <div class="impact">
+      <span class="label">Impact pour GDC</span>
+      <p>GDC Core cache l'état inconscient sur les tags au-dessus des joueurs. CSI 1.9 a réécrit justement cette partie. À la lecture du code, notre réglage fonctionne toujours : l'icône « inconscient » ne s'affiche pas. Reste à le confirmer sur le serveur.</p>
+    </div>
+    <ul>
+      <li><strong>Panneau d'administration serveur</strong> : taille maximale des groupes, réglages par défaut et réglages imposés aux joueurs, conservés après un redémarrage. Il permettrait de couper le radar pour tout le monde, que GDC n'utilise pas.</li>
+      <li>Tags : atténuation, limite au champ de vision, tags réduits à l'icône, icônes de spécialité mises à jour quand l'inventaire change.</li>
+      <li>Couleurs : jeux de couleurs prêts à l'emploi et sélecteur. Radar et boussole retouchés (non utilisés chez GDC).</li>
+      <li>Barres animées quand un joueur parle ; un joueur qui se reconnecte retrouve son équipe.</li>
+      <li>1.9.1 et 1.9.2 : couleurs des tags de véhicules, et tags qui restaient bloqués à l'écran pendant la radio.</li>
+    </ul>
+    <p class="source">Source : historique du code sur GitHub (CoalitionArma/Coalition-Squad-Interface). Le changelog Workshop dit seulement « Next Major CSI Release! ».</p>
+  </article>
+
+  <article class="addon">
+    <div class="addon-head">
+      <h3>WCS_Armaments</h3>
+      <span class="ver">9.0.1 → 9.0.2</span>
+      <span class="chip ok">Compatible</span>
+    </div>
+    <div class="impact">
+      <span class="label">Impact pour GDC</span>
+      <p>Aucun script ne change. Les trois parties du jeu que WCS et GDC modifient tous les deux restent intactes : contrôleur du joueur (appui feu et téléportation de GDC Lib), contrôleur du personnage (arme rangée quand on tombe inconscient), consommation de carburant de GDC Core.</p>
+    </div>
+    <ul>
+      <li>Nouveau : réarmement pour le Humvee M1025 TOW et l'UAZ-469 Kornet, jusqu'à 4 missiles, auprès des stations de réarmement WCS (caisses de munitions des camions M923A1 et Oural, ateliers véhicules, hélipads). Le coût prévu est de 100 de ravitaillement par missile.</li>
+      <li>Chez GDC, ce réarmement est gratuit : GDC Core désactive le ravitaillement, et la station WCS, comme celles du jeu, saute alors le coût sans bloquer l'action (vérifié dans le code).</li>
+    </ul>
+    <p class="source">Source : comparaison des fichiers des deux versions, la 9.0.1 a été retéléchargée depuis le Workshop. Aucun changelog publié, pas de code public.</p>
+  </article>
+
+  <article class="addon">
+    <div class="addon-head">
+      <h3>Zagoria 89 Launchers</h3>
+      <span class="ver">1.0.54 → 1.0.55</span>
+      <span class="chip warn">À tester en jeu</span>
+    </div>
+    <div class="impact">
+      <span class="label">Impact pour GDC</span>
+      <p>Le guidage des missiles de ces lanceurs passe de WCS à <strong>TALOS 1.0.86</strong>, un nouveau mod qui devient dépendance du modset. TALOS est compatible avec le code GDC : il touche le personnage (comme les radios par slot de GDC Lib) et la carte, sans conflit et sans aucun marqueur. Le comportement en jeu des lanceurs guidés est à vérifier.</p>
+    </div>
+    <p>TALOS manquait au Workbench : l'outil de synchro ne voyait pas cette dépendance. C'est corrigé et TALOS a été copié.</p>
+    <p class="source">Source : changelog Workshop (« Moved missile guidance from WCS to TALOS framework »). Ancienne version non comparée : GDC n'utilise directement aucune ressource de ce mod.</p>
+  </article>
+
+  <h3>Autres mises à jour</h3>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Mod</th><th>Version</th><th>Changement</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td>Chungus Launchers</td><td class="v">1.0.34 → 1.0.35</td><td>Descriptions des armes et munitions complétées, mod allégé (61 → 35 Mo). Le M67 et sa roquette, utilisés par GDC, sont toujours là.</td><td>Changelog et comparaison</td></tr>
+        <tr><td>WCS_JLTV, WCS_Stryker, WCS_M2A2, WCS_SpaceCore</td><td class="v">9.0.0 → 9.0.1</td><td>Inconnu. Les ressources que GDC utilise (1 du JLTV, 2 du Stryker) existent toujours.</td><td>Aucun changelog</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Nos addons</h3>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Addon</th><th>Version</th><th>Changement</th></tr></thead>
+      <tbody>
+        <tr><td>GDC Core</td><td class="v">2.3.2 → 2.5.0</td><td>Mods « No Icon For Uncon », « No Weapon Drop Unconscious », « FNG GM Budgetless » et « No Supply System » remplacés par GDC Core. État inconscient caché sur les tags, arme rangée au lieu d'être lâchée, budgets Game Master à 100 000, ravitaillement désactivé : réparer, soigner et réarmer restent possibles, sans coût. Realism Overhaul - AI retiré (2.4.0).</td></tr>
+        <tr><td>GDC AR Lib</td><td class="v">1.3.0 → 1.4.0</td><td>Module de téléportation : cercle au sol facultatif qui montre la zone de regroupement.</td></tr>
+        <tr><td>GDC Equipment</td><td class="v">1.1.4 → 1.1.5</td><td>Nom du projet corrigé.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>Vérifications</h2>
+  <div class="checks">
+    <div class="check"><span class="chip ok">OK</span><div><span class="label">Compilation de tout le modset</span><p>Scripts du jeu compilés avec les mods à jour, après l'ajout de TALOS.</p></div></div>
+    <div class="check"><span class="chip ok">OK</span><div><span class="label">Ressources utilisées par GDC</span><p>Aucun prefab ni config référencé par GDC n'a été supprimé par une mise à jour.</p></div></div>
+    <div class="check"><span class="chip ok">OK</span><div><span class="label">Téléchargements</span><p>Pas de fichier obsolète ni de téléchargement incomplet dans le Workbench.</p></div></div>
+    <div class="check"><span class="chip ok">Corrigé</span><div><span class="label">Dépendance manquante</span><p>TALOS, nouvelle dépendance de Zagoria 89 Launchers, manquait au Workbench. Copié, et l'outil de synchro lit désormais les dépendances au bon endroit.</p></div></div>
+    <div class="check"><span class="chip info">Mineur</span><div><span class="label">Liste des mods des tests automatiques</span><p>TALOS n'y figure pas. Il est chargé automatiquement comme dépendance et la compilation passe ; à ajouter à l'occasion.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <h2>À revérifier</h2>
+  <ul>
+    <li>Sur le serveur : un joueur inconscient ne doit pas être signalé par son tag CSI, icône de rôle comprise.</li>
+    <li>Lanceurs guidés de Zagoria 89 Launchers avec TALOS.</li>
+    <li>Bibliothèques des outils mission maker à mettre à jour pour WCS 9.0.x.</li>
+  </ul>
+</section>
+
+<details>
+  <summary>Périmètre : 59 mods supervisés</summary>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Mod</th><th>Version</th><th>Nécessaire pour</th></tr></thead>
+      <tbody>
+        <tr><td>ACE All in One Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Backblast Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Ballistics Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Captives Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Carrying Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Chopping Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Compass Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Cook-Off Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Core Dev</td><td class="v">1.5.41</td><td>GDC Core</td></tr>
+        <tr><td>ACE Explosives Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Facepaint Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Finger Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Magazine Repack Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Medical Breathing Dev</td><td class="v">1.5.41</td><td>GDC Core</td></tr>
+        <tr><td>ACE Medical Circulation Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Medical Core Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Medical Hitzones Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Overheating Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Radio Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Scopes Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Tactical Ladder Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Tactical Periscope Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Trenches Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>ACE Weather Dev</td><td class="v">1.5.40</td><td>GDC Core</td></tr>
+        <tr><td>BRDM and BTR periscopes</td><td class="v">1.0.3</td><td>GDC Equipment</td></tr>
+        <tr><td>Chungus Launchers</td><td class="v">1.0.35</td><td>GDC Equipment</td></tr>
+        <tr><td>COALITION Squad Interface</td><td class="v">1.9.2</td><td>GDC Core</td></tr>
+        <tr><td>Coalition VON</td><td class="v">3.2.3</td><td>GDC Core, GDC AR Lib</td></tr>
+        <tr><td>E.o.W. Weapon Overhaul</td><td class="v">1.0.7</td><td>GDC Equipment</td></tr>
+        <tr><td>E89 Custom UGL Textures</td><td class="v">1.0.1</td><td>GDC Equipment</td></tr>
+        <tr><td>Fixed Load Casualty Vehicles</td><td class="v">1.0.0</td><td>GDC Core</td></tr>
+        <tr><td>GDC AR Core</td><td class="v">2.5.0</td><td>GDC Core</td></tr>
+        <tr><td>GDC AR Lib</td><td class="v">1.4.0</td><td>GDC AR Lib</td></tr>
+        <tr><td>GDC Equipment</td><td class="v">1.1.5</td><td>GDC Equipment</td></tr>
+        <tr><td>GDC Mission Maker Tools</td><td class="v">local</td><td>GDC Mission Maker Tools</td></tr>
+        <tr><td>Grays Adjustable Doors</td><td class="v">1.0.6</td><td>GDC Core</td></tr>
+        <tr><td>Gs Mountable BTR-70</td><td class="v">3.1.2</td><td>GDC Equipment</td></tr>
+        <tr><td>Improved Blood Effect</td><td class="v">1.5.9</td><td>GDC Core</td></tr>
+        <tr><td>Laser Rangefinder</td><td class="v">1.0.12</td><td>GDC Equipment</td></tr>
+        <tr><td>M4 MAAWS</td><td class="v">0.9.12</td><td>GDC Equipment</td></tr>
+        <tr><td>PSCore</td><td class="v">1.6.10</td><td>GDC AR Lib</td></tr>
+        <tr><td>Realism Overhaul - Ballistics</td><td class="v">1.7.0</td><td>GDC Core</td></tr>
+        <tr><td>Reforger Lobby Community</td><td class="v">1.8.23</td><td>GDC AR Lib</td></tr>
+        <tr><td>RHS - Content Pack 01</td><td class="v">0.17.5281</td><td>GDC Equipment</td></tr>
+        <tr><td>RHS - Content Pack 02</td><td class="v">0.17.5281</td><td>GDC Equipment</td></tr>
+        <tr><td>RHS - Status Quo</td><td class="v">0.17.5281</td><td>GDC Equipment</td></tr>
+        <tr><td>Russian Marker Grenades</td><td class="v">1.0.2</td><td>GDC Equipment</td></tr>
+        <tr><td>TALOS</td><td class="v">1.0.86</td><td>GDC Equipment</td></tr>
+        <tr><td>TilW Mission Framework</td><td class="v">1.0.128</td><td>GDC AR Lib</td></tr>
+        <tr><td>WCS_Armaments</td><td class="v">9.0.2</td><td>GDC Equipment</td></tr>
+        <tr><td>WCS_Armbands</td><td class="v">9.0.1</td><td>GDC Core</td></tr>
+        <tr><td>WCS_JLTV</td><td class="v">9.0.1</td><td>GDC Equipment</td></tr>
+        <tr><td>WCS_M2A2</td><td class="v">9.0.1</td><td>GDC Equipment</td></tr>
+        <tr><td>WCS_SpaceCore</td><td class="v">9.0.1</td><td>GDC Equipment</td></tr>
+        <tr><td>WCS_Stryker</td><td class="v">9.0.1</td><td>GDC Equipment</td></tr>
+        <tr><td>Wirecutters 2</td><td class="v">1.1.12</td><td>GDC Equipment</td></tr>
+        <tr><td>You can sit</td><td class="v">1.0.8</td><td>GDC Core</td></tr>
+        <tr><td>Zagoria 89 Launchers</td><td class="v">1.0.55</td><td>GDC Equipment</td></tr>
+        <tr><td>ZU-23</td><td class="v">1.7.1</td><td>GDC Equipment</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<section>
+  <h2>Historique</h2>
+  <div class="table-box">
+    <table>
+      <thead><tr><th>Date</th><th>Verdict</th><th>Mods mis à jour</th></tr></thead>
+      <tbody>
+        <tr><td class="v">18/11/2026</td><td>À vérifier en jeu</td><td>11 (première supervision)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>Le périmètre couvre GDC Core, GDC Equipment, GDC AR Lib, GDC Mission Maker Tools et toutes leurs dépendances. « Ressources utilisées par GDC » ne couvre que les fichiers du dépôt GDC, pas les missions faites ailleurs.</footer>
+
+</div>

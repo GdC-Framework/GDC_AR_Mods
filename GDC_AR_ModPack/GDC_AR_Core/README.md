@@ -19,6 +19,13 @@ Socle commun des parties Arma Reforger de la communauté Grèce de Canards : les
 | WCS Armbands | Brassards |
 | You can sit | S'asseoir sur les décors et dans les véhicules |
 
+**Ordre des dépendances à garder** : dans `addon.gproj`, ACE All in One doit rester avant Coalition VON. C'est ce qui fait charger ACE avant CVON et Reforger Lobby :
+
+- sinon, la version d'ACE Radio de `ActivateVON` passerait avant celle de CVON et réactiverait la voix du jeu de base ;
+- et celle d'ACE Medical de `UpdateConsciousness` remplacerait celle de Reforger Lobby.
+
+La supervision des mods le vérifie (`Tools/ModSync/mod_supervision.py order`).
+
 ## Réglages intégrés à GDC Core
 
 - **Inconscience discrète** : les étiquettes de nom ne montrent jamais qu'un joueur est inconscient. Cela vaut aussi pour l'icône de rôle de COALITION Squad Interface. Le Game Master et les spectateurs voient toujours l'état réel. Script `GDC_SCR_NameTagData_NoUnconscious.c`, remplace *No Icon For Uncon*.

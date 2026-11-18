@@ -1,0 +1,252 @@
+{
+    "mods": [
+        {
+            "modId": "672166DE5926F11F",
+            "name": "Minus Building Pack"
+        },
+        {
+            "modId": "597697D81A1EA202",
+            "name": "Zimnitrita"
+        },
+        {
+            "modId": "65AD7D0D9941A380",
+            "name": "ACE Core Dev"
+        },
+        {
+            "modId": "65AD7BCC9F6B3B4E",
+            "name": "ACE Chopping Dev"
+        },
+        {
+            "modId": "65AD7CE59E8DB349",
+            "name": "ACE Trenches Dev"
+        },
+        {
+            "modId": "65AD7D2E9866FA6E",
+            "name": "ACE Finger Dev"
+        },
+        {
+            "modId": "6586079789278413",
+            "name": "ACE Medical Core Dev"
+        },
+        {
+            "modId": "65AD7D4F994EA327",
+            "name": "ACE Medical Circulation Dev"
+        },
+        {
+            "modId": "65AD7C139EB4C1A1",
+            "name": "ACE Backblast Dev"
+        },
+        {
+            "modId": "667B230F9505C8BA",
+            "name": "ACE Weather Dev"
+        },
+        {
+            "modId": "671F73D99978B4F2",
+            "name": "ACE Medical Breathing Dev"
+        },
+        {
+            "modId": "68EAA4B96976D557",
+            "name": "ACE Facepaint Dev"
+        },
+        {
+            "modId": "65AD7D1E9EEAFA53",
+            "name": "ACE Explosives Dev"
+        },
+        {
+            "modId": "65AD7CF69FAF1FDD",
+            "name": "ACE Compass Dev"
+        },
+        {
+            "modId": "65AD7C249E4ECDFB",
+            "name": "ACE Captives Dev"
+        },
+        {
+            "modId": "65AD7D4099944EBD",
+            "name": "ACE Magazine Repack Dev"
+        },
+        {
+            "modId": "65B343F799FB521B",
+            "name": "ACE Medical Hitzones Dev"
+        },
+        {
+            "modId": "65AD7C75826B46C6",
+            "name": "ACE Radio Dev"
+        },
+        {
+            "modId": "65B8EA178A3E94E3",
+            "name": "ACE Overheating Dev"
+        },
+        {
+            "modId": "65AD7CB89F219E38",
+            "name": "ACE Tactical Ladder Dev"
+        },
+        {
+            "modId": "68F77A54920B80AF",
+            "name": "ACE Ballistics Dev"
+        },
+        {
+            "modId": "65AD7C379CBD394D",
+            "name": "ACE Carrying Dev"
+        },
+        {
+            "modId": "68FC0EDE9F677A3C",
+            "name": "ACE Scopes Dev"
+        },
+        {
+            "modId": "65AD7CD09CAEC4E2",
+            "name": "ACE Tactical Periscope Dev"
+        },
+        {
+            "modId": "664AFDC993C9CE1A",
+            "name": "ACE Cook-Off Dev"
+        },
+        {
+            "modId": "65AD7BE594439A52",
+            "name": "ACE All in One Dev"
+        },
+        {
+            "modId": "6624E618B9058265",
+            "name": "Coalition VON"
+        },
+        {
+            "modId": "5B0D1E4380971EBD",
+            "name": "COALITION Squad Interface"
+        },
+        {
+            "modId": "654B28FA8AC71D80",
+            "name": "Fixed Load Casualty Vehicles"
+        },
+        {
+            "modId": "655D72AF8DB4CB84",
+            "name": "Grays Adjustable Doors"
+        },
+        {
+            "modId": "62FCEB51DF8527B6",
+            "name": "Improved Blood Effect"
+        },
+        {
+            "modId": "646139033F5805AD",
+            "name": "Realism Overhaul - Ballistics"
+        },
+        {
+            "modId": "61E42AE6714A3CC2",
+            "name": "WCS_Armbands"
+        },
+        {
+            "modId": "6052A9DD45564825",
+            "name": "You can sit"
+        },
+        {
+            "modId": "663710CD8BEB01D4",
+            "name": "GDC Core"
+        },
+        {
+            "modId": "61F0E6AB2D06B1C6",
+            "name": "TilW Mission Framework"
+        },
+        {
+            "modId": "1337133713371337",
+            "name": "PSCore"
+        },
+        {
+            "modId": "0315131312150202",
+            "name": "Reforger Lobby Community"
+        },
+        {
+            "modId": "690756F509F253EB",
+            "name": "GDC AR Lib"
+        },
+        {
+            "modId": "6190F1B505C08562",
+            "name": "Chungus Launchers"
+        },
+        {
+            "modId": "65E44DD20628F01C",
+            "name": "E.o.W. Weapon Overhaul"
+        },
+        {
+            "modId": "66B80EEC79D4A085",
+            "name": "E89 Custom UGL Textures"
+        },
+        {
+            "modId": "1337C0DE5DABBEEF",
+            "name": "RHS - Content Pack 01"
+        },
+        {
+            "modId": "BADC0DEDABBEDA5E",
+            "name": "RHS - Content Pack 02"
+        },
+        {
+            "modId": "595F2BF2F44836FB",
+            "name": "RHS - Status Quo"
+        },
+        {
+            "modId": "607D472207F3EE65",
+            "name": "BRDM and BTR periscopes"
+        },
+        {
+            "modId": "629B2BA37EFFD577",
+            "name": "WCS_Armaments"
+        },
+        {
+            "modId": "5E389BB9F58B79A6",
+            "name": "WCS_SpaceCore"
+        },
+        {
+            "modId": "5C721177A220B42F",
+            "name": "Joint Light Tactical Vehicle"
+        },
+        {
+            "modId": "63120AE07E6C0966",
+            "name": "M2 Bradley Fighting Vehicle"
+        },
+        {
+            "modId": "617A2E90EA218AC4",
+            "name": "Gs Mountable BTR-70"
+        },
+        {
+            "modId": "6512762F90381C05",
+            "name": "Russian Marker Grenades"
+        },
+        {
+            "modId": "620E426C34BE0D17",
+            "name": "Laser Rangefinder"
+        },
+        {
+            "modId": "61C2509A023211FE",
+            "name": "M4 MAAWS"
+        },
+        {
+            "modId": "5B02128D896F7DE8",
+            "name": "STRYKER"
+        },
+        {
+            "modId": "62F364B35E9B51B0",
+            "name": "Wirecutters 2"
+        },
+        {
+            "modId": "696AFA6207142000",
+            "name": "TALOS"
+        },
+        {
+            "modId": "61D8DE60644F9103",
+            "name": "Zagoria 89 Launchers"
+        },
+        {
+            "modId": "5C9AD9EF76F6B5EA",
+            "name": "ZU-23"
+        },
+        {
+            "modId": "663E97A021C36ABF",
+            "name": "GDC Equipment"
+        },
+        {
+            "modId": "66E2C8C95CD0EF22",
+            "name": "AFI CVON-RL COMMUNITY Compat"
+        },
+        {
+            "modId": "66273C703D4DFCEF",
+            "name": "GDC Missions"
+        }
+    ]
+}

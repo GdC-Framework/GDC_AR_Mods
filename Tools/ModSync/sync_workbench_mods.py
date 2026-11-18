@@ -35,6 +35,13 @@ VANILLA_IDS = {"58D0FB3206B6F859", "5614BBCCBB55ED1C"}
 FOLDER_RE = re.compile(r"^.+_([0-9A-F]{16})$")
 
 
+def project_file(folder):
+    """The addon's project file: the .gproj of the folder, whatever its name (addon.gproj for most addons,
+    dev.gproj for ACE, sometimes the addon name)."""
+    gprojs = [f for f in os.listdir(folder) if f.lower().endswith(".gproj")]
+    return os.path.join(folder, gprojs[0]) if len(gprojs) == 1 else None
+
+
 class Addon:
     def __init__(self, folder, path, data):
         self.folder = folder
@@ -45,6 +52,16 @@ class Addon:
         self.version = revision.get("version", "")
         self.corrupted = bool(revision.get("corrupted"))
         self.dependencies = [d.get("assetId", "") for d in revision.get("dependencies") or []]
+        # ServerData.json often lists no dependency: the project file is the reference (Zagoria 89 Launchers 1.0.55
+        # added TALOS, declared only there)
+        gproj = project_file(path)
+        if gproj:
+            with open(gproj, encoding="utf-8-sig", errors="replace") as file:
+                block = re.search(r"Dependencies\s*\{([^}]*)\}", file.read())
+            if block:
+                for dependency in re.findall(r'"([0-9A-F]{16})"', block.group(1)):
+                    if dependency not in self.dependencies:
+                        self.dependencies.append(dependency)
 
     def is_complete(self):
         """True when the folder holds the files of its declared version (not a download in progress)."""

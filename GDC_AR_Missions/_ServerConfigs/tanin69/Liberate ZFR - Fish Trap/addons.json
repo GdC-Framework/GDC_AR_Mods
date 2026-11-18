@@ -1,0 +1,32 @@
+{
+    "mods": [
+        {
+            "modId": "597697D81A1EA202",
+            "name": "Zimnitrita"
+        },
+        {
+            "modId": "69A4D664A6284E06",
+            "name": "REAPER_AiHelicopters - WCS"
+        },
+        {
+            "modId": "663710CD8BEB01D4",
+            "name": "GDC Core"
+        },
+        {
+            "modId": "690756F509F253EB",
+            "name": "GDC AR Lib"
+        },
+        {
+            "modId": "663E97A021C36ABF",
+            "name": "GDC Equipment"
+        },
+        {
+            "modId": "66E2C8C95CD0EF22",
+            "name": "AFI CVON-RL COMMUNITY Compat"
+        },
+        {
+            "modId": "66273C703D4DFCEF",
+            "name": "GDC Missions"
+        }
+    ]
+}

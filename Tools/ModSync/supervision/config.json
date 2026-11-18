@@ -1,0 +1,32 @@
+{
+ "_comment": "Root GDC projects (gproj ID) whose dependencies are supervised, recursively.",
+ "roots": ["GDC AR Core", "GDC AR Equipment", "GDC AR Lib", "GDC MM Tools"],
+ "_comment_mission_tests": "Supervised addons that run_mission_test.ps1 must not load: Workbench plugins, the dedicated server does not compile the WorkbenchGame module.",
+ "not_in_mission_tests": ["GDC MM Tools"],
+ "_comment_families": "Addons made to work together by their authors (name prefixes): conflicts inside one family only are not reported.",
+ "families": {
+  "ACE": ["ACE "],
+  "RHS": ["RHS - "],
+  "WCS": ["WCS_"],
+  "PS (Reforger Lobby)": ["PSCore", "Reforger Lobby Community"],
+  "GDC": ["GDC "]
+ },
+ "_comment_load_order": "Load order rule of the server mod lists: terrain, then the mission's own mods, then this GDC sequence, then the mission addon (a GDC_AR_Missions project) last. The game loads the list in order, each mod preceded by its dependencies not loaded yet.",
+ "load_order": {
+  "sequence": [
+   {"modId": "663710CD8BEB01D4", "name": "GDC Core"},
+   {"modId": "690756F509F253EB", "name": "GDC AR Lib"},
+   {"modId": "663E97A021C36ABF", "name": "GDC Equipment"},
+   {"modId": "66E2C8C95CD0EF22", "name": "AFI CVON-RL COMMUNITY Compat"}
+  ],
+  "_comment_after_ace": "In the resolved load order these must come after ACE All in One and all its modules: then ACE Radio's ActivateVON never bypasses Coalition VON's, and Reforger Lobby's UpdateConsciousness is the one kept. A mission mod listed before GDC Core that brings one of them breaks it.",
+  "ace": "65AD7BE594439A52",
+  "after_ace": {
+   "6624E618B9058265": "Coalition VON",
+   "0315131312150202": "Reforger Lobby Community",
+   "1337133713371337": "PSCore"
+  },
+  "_comment_core_dependency_order": "Pairs [first, second]: in GDC Core's addon.gproj, the first dependency must be listed before the second.",
+  "core_dependency_order": [["65AD7BE594439A52", "6624E618B9058265"]]
+ }
+}

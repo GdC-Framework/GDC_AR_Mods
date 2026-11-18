@@ -1,0 +1,28 @@
+{
+    "mods": [
+        {
+            "modId": "5DB95DA85FDC5120",
+            "name": "Gulfcoast Islands"
+        },
+        {
+            "modId": "663710CD8BEB01D4",
+            "name": "GDC Core"
+        },
+        {
+            "modId": "690756F509F253EB",
+            "name": "GDC AR Lib"
+        },
+        {
+            "modId": "663E97A021C36ABF",
+            "name": "GDC Equipment"
+        },
+        {
+            "modId": "66E2C8C95CD0EF22",
+            "name": "AFI CVON-RL COMMUNITY Compat"
+        },
+        {
+            "modId": "66273C703D4DFCEF",
+            "name": "GDC Missions"
+        }
+    ]
+}

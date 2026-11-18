@@ -1,0 +1,242 @@
+{
+ "artifact_url": "https://claude.ai/artifact/4qyWzYTEFXQYg1Wvs7oyah",
+ "supervised_at": "2026-11-18",
+ "versions": {
+  "6AC540B09694CF5F": {
+   "name": "GDC Mission Maker Tools",
+   "version": "local"
+  },
+  "690756F509F253EB": {
+   "name": "GDC AR Lib",
+   "version": "1.4.0"
+  },
+  "6624E618B9058265": {
+   "name": "Coalition VON",
+   "version": "3.2.3"
+  },
+  "0315131312150202": {
+   "name": "Reforger Lobby Community",
+   "version": "1.8.23"
+  },
+  "1337133713371337": {
+   "name": "PSCore",
+   "version": "1.6.10"
+  },
+  "61F0E6AB2D06B1C6": {
+   "name": "TilW Mission Framework",
+   "version": "1.0.128"
+  },
+  "663E97A021C36ABF": {
+   "name": "GDC Equipment",
+   "version": "1.1.5"
+  },
+  "5C9AD9EF76F6B5EA": {
+   "name": "ZU-23",
+   "version": "1.7.1"
+  },
+  "61D8DE60644F9103": {
+   "name": "Zagoria 89 Launchers",
+   "version": "1.0.55"
+  },
+  "696AFA6207142000": {
+   "name": "TALOS",
+   "version": "1.0.86"
+  },
+  "62F364B35E9B51B0": {
+   "name": "Wirecutters 2",
+   "version": "1.1.12"
+  },
+  "5B02128D896F7DE8": {
+   "name": "WCS_Stryker",
+   "version": "9.0.1"
+  },
+  "629B2BA37EFFD577": {
+   "name": "WCS_Armaments",
+   "version": "9.0.2"
+  },
+  "5E389BB9F58B79A6": {
+   "name": "WCS_SpaceCore",
+   "version": "9.0.1"
+  },
+  "61C2509A023211FE": {
+   "name": "M4 MAAWS",
+   "version": "0.9.12"
+  },
+  "620E426C34BE0D17": {
+   "name": "Laser Rangefinder",
+   "version": "1.0.12"
+  },
+  "6512762F90381C05": {
+   "name": "Russian Marker Grenades",
+   "version": "1.0.2"
+  },
+  "595F2BF2F44836FB": {
+   "name": "RHS - Status Quo",
+   "version": "0.17.5281"
+  },
+  "BADC0DEDABBEDA5E": {
+   "name": "RHS - Content Pack 02",
+   "version": "0.17.5281"
+  },
+  "1337C0DE5DABBEEF": {
+   "name": "RHS - Content Pack 01",
+   "version": "0.17.5281"
+  },
+  "617A2E90EA218AC4": {
+   "name": "Gs Mountable BTR-70",
+   "version": "3.1.2"
+  },
+  "63120AE07E6C0966": {
+   "name": "WCS_M2A2",
+   "version": "9.0.1"
+  },
+  "5C721177A220B42F": {
+   "name": "WCS_JLTV",
+   "version": "9.0.1"
+  },
+  "607D472207F3EE65": {
+   "name": "BRDM and BTR periscopes",
+   "version": "1.0.3"
+  },
+  "66B80EEC79D4A085": {
+   "name": "E89 Custom UGL Textures",
+   "version": "1.0.1"
+  },
+  "65E44DD20628F01C": {
+   "name": "E.o.W. Weapon Overhaul",
+   "version": "1.0.7"
+  },
+  "6190F1B505C08562": {
+   "name": "Chungus Launchers",
+   "version": "1.0.35"
+  },
+  "663710CD8BEB01D4": {
+   "name": "GDC AR Core",
+   "version": "2.5.0"
+  },
+  "6052A9DD45564825": {
+   "name": "You can sit",
+   "version": "1.0.8"
+  },
+  "61E42AE6714A3CC2": {
+   "name": "WCS_Armbands",
+   "version": "9.0.1"
+  },
+  "646139033F5805AD": {
+   "name": "Realism Overhaul - Ballistics",
+   "version": "1.7.0"
+  },
+  "62FCEB51DF8527B6": {
+   "name": "Improved Blood Effect",
+   "version": "1.5.9"
+  },
+  "655D72AF8DB4CB84": {
+   "name": "Grays Adjustable Doors",
+   "version": "1.0.6"
+  },
+  "654B28FA8AC71D80": {
+   "name": "Fixed Load Casualty Vehicles",
+   "version": "1.0.0"
+  },
+  "5B0D1E4380971EBD": {
+   "name": "COALITION Squad Interface",
+   "version": "1.9.2"
+  },
+  "65AD7BE594439A52": {
+   "name": "ACE All in One Dev",
+   "version": "1.5.40"
+  },
+  "664AFDC993C9CE1A": {
+   "name": "ACE Cook-Off Dev",
+   "version": "1.5.40"
+  },
+  "65AD7D0D9941A380": {
+   "name": "ACE Core Dev",
+   "version": "1.5.41"
+  },
+  "65AD7CD09CAEC4E2": {
+   "name": "ACE Tactical Periscope Dev",
+   "version": "1.5.40"
+  },
+  "68FC0EDE9F677A3C": {
+   "name": "ACE Scopes Dev",
+   "version": "1.5.40"
+  },
+  "65AD7C379CBD394D": {
+   "name": "ACE Carrying Dev",
+   "version": "1.5.40"
+  },
+  "68F77A54920B80AF": {
+   "name": "ACE Ballistics Dev",
+   "version": "1.5.40"
+  },
+  "65AD7CB89F219E38": {
+   "name": "ACE Tactical Ladder Dev",
+   "version": "1.5.40"
+  },
+  "65B8EA178A3E94E3": {
+   "name": "ACE Overheating Dev",
+   "version": "1.5.40"
+  },
+  "65AD7C75826B46C6": {
+   "name": "ACE Radio Dev",
+   "version": "1.5.40"
+  },
+  "65B343F799FB521B": {
+   "name": "ACE Medical Hitzones Dev",
+   "version": "1.5.40"
+  },
+  "6586079789278413": {
+   "name": "ACE Medical Core Dev",
+   "version": "1.5.40"
+  },
+  "65AD7D4099944EBD": {
+   "name": "ACE Magazine Repack Dev",
+   "version": "1.5.40"
+  },
+  "65AD7C249E4ECDFB": {
+   "name": "ACE Captives Dev",
+   "version": "1.5.40"
+  },
+  "65AD7CF69FAF1FDD": {
+   "name": "ACE Compass Dev",
+   "version": "1.5.40"
+  },
+  "65AD7D1E9EEAFA53": {
+   "name": "ACE Explosives Dev",
+   "version": "1.5.40"
+  },
+  "68EAA4B96976D557": {
+   "name": "ACE Facepaint Dev",
+   "version": "1.5.40"
+  },
+  "671F73D99978B4F2": {
+   "name": "ACE Medical Breathing Dev",
+   "version": "1.5.41"
+  },
+  "65AD7D4F994EA327": {
+   "name": "ACE Medical Circulation Dev",
+   "version": "1.5.40"
+  },
+  "667B230F9505C8BA": {
+   "name": "ACE Weather Dev",
+   "version": "1.5.40"
+  },
+  "65AD7C139EB4C1A1": {
+   "name": "ACE Backblast Dev",
+   "version": "1.5.40"
+  },
+  "65AD7D2E9866FA6E": {
+   "name": "ACE Finger Dev",
+   "version": "1.5.40"
+  },
+  "65AD7CE59E8DB349": {
+   "name": "ACE Trenches Dev",
+   "version": "1.5.40"
+  },
+  "65AD7BCC9F6B3B4E": {
+   "name": "ACE Chopping Dev",
+   "version": "1.5.40"
+  }
+ }
+}

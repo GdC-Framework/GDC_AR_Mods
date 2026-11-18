@@ -1,5 +1,6 @@
 # Automated mission test: local dedicated server (Diag) + 2 clients, sources loaded from the repository.
 # Usage: powershell -ExecutionPolicy Bypass -File Tools/MissionTests/run_mission_test.ps1 [-Mission Davay] [-NoClients] [-Compile] [-Smoke]
+#        [-ExtraAddonsDir <folders>] [-ExtraAddons <IDs or GUIDs>]
 # Workbench must be closed. Results: PASS/FAIL/WARN lines, then the errors of the three logs, grouped.
 param(
     [string]$Mission = 'Davay',
@@ -10,7 +11,11 @@ param(
     # The WorkbenchGame module (Workbench plugins) is not compiled by the server.
     [switch]$Compile,
     # Server only, on an Arland world (fastest terrain to load): compiles, loads the world and starts a game, no scenario
-    [switch]$Smoke
+    [switch]$Smoke,
+    # Extra addons to load on top of the modset (a candidate addon and its dependencies, for instance):
+    # folders containing them (comma separated) and their IDs or GUIDs (comma separated)
+    [string]$ExtraAddonsDir = '',
+    [string]$ExtraAddons = ''
 )
 
 $worlds = @{
@@ -39,7 +44,10 @@ $dirs = @(
     "$repo/Tools/MissionTests/GDC_MissionTests/",
     ((Join-Path $env:USERPROFILE 'Documents/My Games/ArmaReforgerWorkbench/addons') -replace '\\', '/')
 ) -join ','
-$addons = 'ACE_Core_Dev,ACE_Backblast_Dev,ACE_Carrying_Dev,ACE_Chopping_Dev,ACE_Compass_Dev,ACE_Finger_Dev,ACE_Medical_Core_Dev,ACE_Medical_Hitzones_Dev,ACE_Medical_Circulation_Dev,ACE_Trenches_Dev,ACE_MagRepack_Dev,ACE_Explosives_Dev,ACE_Captives_Dev,ACE_TacticalLadder_Dev,ACE_Radio_Dev,ACE_TacticalPeriscope_Dev,ACE_Overheating_Dev,ACE_CookOff_Dev,ACE_Weather_Dev,ACE_Facepaint_Dev,ACE_Ballistics_Dev,ACE_Medical_Breathing_Dev,ACE_Scopes_Dev,ACE_AllInOne_Dev,CoalitionVON,CoalitionSquadInterface,FixedLoadCasualtyVehicles,Grays_Adjustable_Doors,ImprovedBloodEffect,RealismOverhaulAI,RealismOverhaulBallistics,WCS_Armbands,Youcansit,GDC AR Core,ChungusLaunchers,MarkerRoundsProject,EchoesOf89UGLTextures,RHS_Content_01,RHS_Content_02,RHS_Core,FPTR,WCS_Armaments,WCS_SpaceCore,WCS_JLTV,WCS_M2A2,BTR70Mountable,RussianMarkerGrenades,LaserRangefinder,M4MAAWS,WCS_Stryker,Wirecutters2,WZLaunchers,ZU23,GDC AR Equipment,TilWMissionFramework,PSCoreDevelopment,ReforgerLobbyCommunity,AFI_CVON_RL_Compat,GDC AR Lib,MinusBuildingPack,Zimnitrita,GDC Missions,GDC Mission Tests'
+$addons = 'ACE_Core_Dev,ACE_Backblast_Dev,ACE_Carrying_Dev,ACE_Chopping_Dev,ACE_Compass_Dev,ACE_Finger_Dev,ACE_Medical_Core_Dev,ACE_Medical_Hitzones_Dev,ACE_Medical_Circulation_Dev,ACE_Trenches_Dev,ACE_MagRepack_Dev,ACE_Explosives_Dev,ACE_Captives_Dev,ACE_TacticalLadder_Dev,ACE_Radio_Dev,ACE_TacticalPeriscope_Dev,ACE_Overheating_Dev,ACE_CookOff_Dev,ACE_Weather_Dev,ACE_Facepaint_Dev,ACE_Ballistics_Dev,ACE_Medical_Breathing_Dev,ACE_Scopes_Dev,ACE_AllInOne_Dev,CoalitionVON,CoalitionSquadInterface,FixedLoadCasualtyVehicles,Grays_Adjustable_Doors,ImprovedBloodEffect,RealismOverhaulBallistics,WCS_Armbands,Youcansit,GDC AR Core,ChungusLaunchers,MarkerRoundsProject,EchoesOf89UGLTextures,RHS_Content_01,RHS_Content_02,RHS_Core,FPTR,WCS_Armaments,WCS_SpaceCore,WCS_JLTV,WCS_M2A2,BTR70Mountable,RussianMarkerGrenades,LaserRangefinder,M4MAAWS,WCS_Stryker,Wirecutters2,WZLaunchers,ZU23,GDC AR Equipment,TilWMissionFramework,PSCoreDevelopment,ReforgerLobbyCommunity,AFI_CVON_RL_Compat,GDC AR Lib,MinusBuildingPack,Zimnitrita,GDC Missions,GDC Mission Tests'
+
+if ($ExtraAddonsDir) { $dirs = "$dirs,$($ExtraAddonsDir -replace '\\', '/')" }
+if ($ExtraAddons) { $addons = "$addons,$ExtraAddons" }
 
 $serverDir = 'C:\Program Files (x86)\Steam\steamapps\common\Arma Reforger Server'
 $gameDir = 'C:\Program Files (x86)\Steam\steamapps\common\Arma Reforger'

@@ -15,6 +15,7 @@ powershell -ExecutionPolicy Bypass -File Tools/MissionTests/run_mission_test.ps1
 - `-Smoke` : serveur seul sur un monde **Arland** (`_Tests/GDC_Teleport_Arland.ent`), le terrain le plus rapide à charger : compilation, chargement du monde et démarrage d'une partie, sans scénario (environ 30 s). Attrape en plus les prefabs ou configs illisibles et les erreurs à l'initialisation du mode de jeu. Résultat « COMPILED AND STARTED » ou la cause de l'échec.
 - `-NoClients` : serveur seul sur le monde de la mission, pour vérifier que son scénario démarre. Il s'arrête alors sur « Two players connected ».
 - `-TimeoutMinutes` : 60 par défaut.
+- `-ExtraAddonsDir` et `-ExtraAddons` : chargent des mods en plus du modset (dossiers et ID ou GUID, séparés par des virgules), par exemple un mod candidat et ses dépendances, avec `-Compile`.
 
 Les logs sont dans `Documents/My Games/GDCAutoServer`, `GDCAutoClient1` et `GDCAutoClient2`.
 
@@ -30,7 +31,7 @@ Les logs sont dans `Documents/My Games/GDCAutoServer`, `GDCAutoClient1` et `GDCA
 
 ## Pièges de lancement
 
-Le script règle déjà tout cela. C'est à savoir pour écrire un autre lanceur, par exemple `GDC_AR_Lib/tools/run_support_autotest.ps1`, qui n'a ni les options du serveur ni une liste d'addons à jour depuis la 1.9.
+Le script règle déjà tout cela. C'est à savoir pour écrire un autre lanceur, par exemple `GDC_AR_Lib/tools/run_support_autotest.ps1`, qui n'a pas les options du serveur (sa liste d'addons reprend celle de ce script depuis le 18/11/2026).
 
 - **Clients : `-noBackend`.** Sans cette option, les deux clients prennent l'identité Steam de l'utilisateur et le second est refusé (« same identity »).
 - **Serveur : `-scrDefine ENABLE_DIAG -scrDefine GAME_MODE_DEBUG -rpl-validation-scr-disable`.** Le client Diag définit `ENABLE_DIAG` et `GAME_MODE_DEBUG`, le serveur Diag seulement `DEBUG`. Sans ces options, la somme de contrôle des scripts diffère et les clients sont expulsés. Avec elles, l'erreur de somme de contrôle s'affiche encore dans le log, mais elle est sans effet.
