@@ -1,38 +1,40 @@
 # GDC Core
 
-Socle commun des parties Arma Reforger de la communauté Grèce de Canards : les mods que tout le monde charge, et les réglages de jeu propres à GDC.
+English | [Français](README.fr.md)
 
-- Workshop : https://reforger.armaplatform.com/workshop/663710CD8BEB01D4-GDCARCore
-- Historique des versions : [CHANGELOG.md](../../CHANGELOG.md), section GDC Core.
+The common base of every Arma Reforger game of the Grèce de canards community: the addons everybody loads, and the game settings specific to GDC.
 
-## Mods embarqués (dépendances)
+- Workshop: https://reforger.armaplatform.com/workshop/663710CD8BEB01D4-GDCARCore
+- Version history: [CHANGELOG.md](../../CHANGELOG.md), GDC Core section (in French, release notes in English).
 
-| Mod | Rôle |
+## Bundled addons (dependencies)
+
+| Addon | Purpose |
 |---|---|
-| ACE All-in-One | Médical avancé, explosifs, captifs, porter/traîner, etc. |
-| Coalition VON | Radios (réseaux CP et LP) |
-| COALITION Squad Interface | Étiquettes et couleurs d'équipe au-dessus des joueurs. Le radar n'est pas utilisé. |
-| Fixed Load Casualty Vehicles | Charger un blessé dans un véhicule |
-| Gray's Adjustable Doors | Portes entrouvertes, ouverture par les IA |
-| Improved Blood Effect | Effets de sang |
-| OpsTrack | Enregistrement des parties. Réglé sur chaque serveur (`OpsTrackSettings.json` du profil, clé d'API) ; sans clé, il n'enregistre rien. |
-| Realism Overhaul - Ballistics | Balistique des munitions et matériaux |
-| WCS Armbands | Brassards |
-| You can sit | S'asseoir sur les décors et dans les véhicules |
+| ACE All-in-One | Advanced medical, explosives, captives, carrying and dragging, etc. |
+| Coalition VON | Radios (short range and long range nets) |
+| COALITION Squad Interface | Name tags and team colours above players. The radar is not used. |
+| Fixed Load Casualty Vehicles | Loading a casualty into a vehicle |
+| Gray's Adjustable Doors | Half-open doors, doors opened by AI |
+| Improved Blood Effect | Blood effects |
+| OpsTrack | Game recording. Set up on each server (`OpsTrackSettings.json` in the server profile, API key); without a key it records nothing. |
+| Realism Overhaul - Ballistics | Ammunition and material ballistics |
+| WCS Armbands | Armbands |
+| You can sit | Sitting on props and in vehicles |
 
-**Ordre des dépendances à garder** : dans `addon.gproj`, ACE All in One doit rester avant Coalition VON. C'est ce qui fait charger ACE avant CVON et Reforger Lobby :
+**Keep the dependency order**: in `addon.gproj`, ACE All in One must stay before Coalition VON. This is what loads ACE before Coalition VON and Reforger Lobby. Otherwise:
 
-- sinon, la version d'ACE Radio de `ActivateVON` passerait avant celle de CVON et réactiverait la voix du jeu de base ;
-- et celle d'ACE Medical de `UpdateConsciousness` remplacerait celle de Reforger Lobby.
+- ACE Radio's `ActivateVON` would run before Coalition VON's and turn the vanilla voice chat back on;
+- ACE Medical's `UpdateConsciousness` would replace Reforger Lobby's.
 
-La supervision des mods le vérifie (`Tools/ModSync/mod_supervision.py order`).
+The addon supervision checks it (`Tools/ModSync/mod_supervision.py order`).
 
-## Réglages intégrés à GDC Core
+## Settings built into GDC Core
 
-- **Inconscience discrète** : les étiquettes de nom ne montrent jamais qu'un joueur est inconscient. Cela vaut aussi pour l'icône de rôle de COALITION Squad Interface. Le Game Master et les spectateurs voient toujours l'état réel. Script `GDC_SCR_NameTagData_NoUnconscious.c`, remplace *No Icon For Uncon*.
-- **Arme conservée** : un joueur qui tombe inconscient range son arme au lieu de la lâcher. Une grenade dégoupillée tombe toujours. Script `GDC_SCR_CharacterControllerComponent_NoWeaponDrop.c`, remplace *No Weapon Drop Unconscious*.
-- **Budgets du Game Master** à 100 000 (entités, IA, véhicules, systèmes). Surcharge de `Prefabs/Editor/EditorManager.et`, remplace *FNG GM Budgetless*.
-- **Pas de supplies** : la gestion des ressources est désactivée pour tous les modes de jeu, et le kit de réparation répare jusqu'à 100 %. Surcharges de `Prefabs/MP/Modes/GameMode_Base.et` et `Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_base.et`, remplacent *No Supply System*.
-- **Consommation de carburant** à l'échelle normale (`GDC_FuelConsumption.c`).
-- **Météo** : séchage du sol, des fissures et des flaques réglé sur le temps de jeu, avec des durées propres à GDC (8, 10 et 15). Voir `Terrains/Common/WeatherPresets/WeatherParameters.conf` ; le jeu de base ne fixe pas ces valeurs.
-- **Écrans de chargement** des missions GDC (`UI/MissionLoadingScreens`).
+- **Hidden unconsciousness**: name tags never show that a player is unconscious, including the role icon of COALITION Squad Interface. The Game Master and spectators still see the real state. Script `GDC_SCR_NameTagData_NoUnconscious.c`, replaces *No Icon For Uncon*.
+- **Weapon kept**: a player who falls unconscious puts his weapon away instead of dropping it. A live grenade in hand is still dropped. Script `GDC_SCR_CharacterControllerComponent_NoWeaponDrop.c`, replaces *No Weapon Drop Unconscious*.
+- **Game Master budgets** raised to 100 000 (entities, AI, vehicles, systems). Override of `Prefabs/Editor/EditorManager.et`, replaces *FNG GM Budgetless*.
+- **No supplies**: resource management is disabled for every game mode, so repairing, healing and rearming cost nothing; the repair kit repairs up to 100 %. Overrides of `Prefabs/MP/Modes/GameMode_Base.et` and `Prefabs/Items/Equipment/Kits/RepairKit_01/RepairKit_01_base.et`, replace *No Supply System*.
+- **Fuel consumption** at the normal scale (`GDC_FuelConsumption.c`).
+- **Weather**: drying of the ground, cracks and puddles follows game time, with GDC durations (8, 10 and 15). See `Terrains/Common/WeatherPresets/WeatherParameters.conf`; the base game does not set these values.
+- **Loading screens** of the GDC missions (`UI/MissionLoadingScreens`).
