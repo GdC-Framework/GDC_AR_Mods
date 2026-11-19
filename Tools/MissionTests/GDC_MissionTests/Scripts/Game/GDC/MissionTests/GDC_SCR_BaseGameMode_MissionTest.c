@@ -57,8 +57,8 @@ modded class SCR_BaseGameMode
 			case "Uncon":
 				return new GDC_MissionTest_Uncon();
 
-			case "LobbyVoice":
-				return new GDC_MissionTest_LobbyVoice();
+			case "RLCVON":
+				return new GDC_MissionTest_RLCVON();
 		}
 
 		return null;
@@ -73,8 +73,8 @@ modded class SCR_BaseGameMode
 			case "Uncon":
 				return new GDC_MissionTestClient_Uncon();
 
-			case "LobbyVoice":
-				return new GDC_MissionTestClient_LobbyVoice();
+			case "RLCVON":
+				return new GDC_MissionTestClient_RLCVON();
 		}
 
 		return null;

@@ -44,13 +44,18 @@ Le script règle déjà tout cela. C'est à savoir pour écrire un autre lanceur
 2. Ajouter une ligne dans `GDC_CreateMissionTest()` (`GDC_SCR_BaseGameMode_MissionTest.c`).
 3. Ajouter le monde dans `$worlds` de `run_mission_test.ps1`. Si la mission utilise d'autres mods, compléter `$addons`.
 
-## LobbyVoice : voix dans le lobby (~4 min)
+## RLCVON : pont Reforger Lobby – Coalition VON (~6 min)
 
-Teste le pont Reforger Lobby – Coalition VON (*GDC RL-CVON*) pendant le choix des slots, sur le monde Arland. TeamSpeak n'est pas nécessaire : les contrôles lisent ce que CVON enverrait au plugin.
+Teste le pont *GDC RL-CVON*, de la preview à la mort d'un joueur, sur le monde Arland. TeamSpeak n'est pas nécessaire : chaque client lit ce que CVON enverrait au plugin pour l'autre joueur (entrée vocale, voix de salon ou directe, gains). Le serveur pilote le lobby ; à chaque phase, les clients laissent CVON se mettre à jour, puis vérifient :
 
-- Le serveur ouvre le choix des slots. Au bout de 30 s, seul le joueur 1 prend un slot.
-- Chaque client vérifie, sans slot puis après le slot du joueur 1, qu'il entend l'autre joueur : présent dans les voix de CVON, entendu par le salon du lobby, volume plein dans les deux oreilles.
-- Il note aussi si l'entité de lobby de l'autre lui est encore transmise. Prendre un slot téléporte cette entité sur le terrain, loin des autres : elle n'est plus transmise. L'ancien pont AFI coupait la voix d'un joueur dont il ne voyait pas l'entité. C'était le défaut « on n'entend plus personne dès qu'on prend un slot ».
+- **preview**, **choix des slots** sans slot, puis **joueur 1 dans un slot** : les deux s'entendent. Prendre un slot téléporte l'entité de lobby sur le terrain : l'autre joueur n'est plus transmis au client, et l'ancien pont AFI coupait alors sa voix (défaut « on n'entend plus personne dès qu'on prend un slot ») ;
+- **salons du lobby** : joueur 2 seul dans son salon local, non entendu ; les deux dans le salon global, entendus ;
+- **touches de voix de Reforger Lobby** (directe, faction, admin) : elles laissent le VON du jeu tel quel ;
+- **briefing** : entendu si et seulement si les deux joueurs sont dans le même salon de Reforger Lobby ;
+- **partie** : les deux soldats vivants et proches, chacun entend l'autre en voix directe ;
+- **mort** du joueur 2 : le joueur 1 ne l'entend plus.
+
+Non couvert : le son réel, les radios, la radio de véhicule, le combiné, les reconnexions. Voir `GDC_AR_ModPack/GDC_RL_CVON/PLAN_DE_TEST.md`.
 
 ## Davay, duy na Gruwice (~40 min)
 

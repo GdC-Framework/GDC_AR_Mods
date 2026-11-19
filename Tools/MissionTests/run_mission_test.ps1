@@ -21,7 +21,7 @@ param(
 $worlds = @{
     'Davay' = 'worlds/tanin69/_En cours/Davai_duy_na_Gruwice/Davay_duy_na_Gruwice.ent'
     'Uncon' = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
-    'LobbyVoice' = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
+    'RLCVON' = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
 }
 $compileWorld = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
 if ($Compile -or $Smoke) {
