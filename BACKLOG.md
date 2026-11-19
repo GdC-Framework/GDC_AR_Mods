@@ -53,9 +53,10 @@ La copie locale de CVON est en 3.0.3 et ne contient pas encore ces attributs. Un
 Le pont *AFI CVON-RL COMMUNITY Compat* (`66E2C8C95CD0EF22`, 2.1.12) n'est plus maintenu : son auteur ne répond plus à nos demandes. Il faut écrire le nôtre.
 
 - **Constat du 18/11/2026** : il remplace `SCR_VONController.EOnFixedFrame` par une copie d'une ancienne version de CVON, sans appeler celle de CVON. Les ajouts de CVON 3.2.3 qui n'y figurent pas ne s'exécutent donc jamais sur nos serveurs, par exemple `WriteHeartbeat` et `RefreshListenedRadios`. L'effet en jeu n'est pas vérifié.
-- Recenser ce que fait le pont (spectateurs et morts de Reforger Lobby dans CVON, au minimum) et le refaire en appelant `super` partout où c'est possible, pour suivre les mises à jour de CVON.
-- Décider où le ranger : GDC AR Lib, qui dépend déjà de Reforger Lobby et de Coalition VON, ou un addon séparé. Voir la réduction des dépendances de GDC AR Lib plus haut.
-- Le retirer ensuite des configs serveur des missions, et mettre à jour la règle d'ordre des listes de mods.
+- **Fait le 19/11/2026** : addon séparé *GDC RL-CVON* (`GDC_AR_ModPack/GDC_RL_CVON`, GUID `BCA23F9DDF701E02`, non publié). Il passe par les points d'extension de CVON (`IsSpectatorTalker`, `HearOverChannel`, `ComputeSpectatorLR`) au lieu de copier `EOnFixedFrame` et `InitializeRadios`. Il coupe aussi `LobbyVoNAdminEnable`, qu'AFI oubliait, et laisse le VON de Reforger Lobby fonctionner dans une mission sans CVON. Compilation OK (`-Compile`). `Tools/MissionTests` l'utilise à la place d'AFI.
+- **Défaut du lobby corrigé et vérifié le 19/11/2026** (test `LobbyVoice` de `Tools/MissionTests`). Quand un joueur prenait un slot, il n'entendait plus les autres, et le contournement était de prendre un slot puis de le quitter. Cause : prendre un slot téléporte l'entité de lobby du joueur sur le terrain, l'entité de l'autre joueur ne lui est plus transmise, et AFI coupait la voix d'un joueur sans entité. Avec *GDC RL-CVON*, les deux clients gardent l'autre joueur à plein volume. Avec AFI, le même test montre que chaque client retire l'autre joueur de ses voix après le slot.
+- Tester à plusieurs sur le serveur dédié, avec TeamSpeak : parole dans le lobby et au briefing, salons de spectateurs, passage en spectateur à la mort, joueur coupé dans le jeu, radios et préréglages par slot, radio de véhicule, combiné d'un sac radio, respawn, reconnexion.
+- Ensuite : publier l'addon, le mettre à la place d'AFI dans `_ServerConfigs/addons.json` et dans les listes des missions, et mettre à jour la règle d'ordre des listes de mods (skill `gdc-mod-supervision`, README de `Tools/ModSync`).
 
 ## Supervision des mods sur le serveur GDC
 

@@ -21,6 +21,7 @@ param(
 $worlds = @{
     'Davay' = 'worlds/tanin69/_En cours/Davai_duy_na_Gruwice/Davay_duy_na_Gruwice.ent'
     'Uncon' = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
+    'LobbyVoice' = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
 }
 $compileWorld = 'worlds/tanin69/_Tests/GDC_Teleport_Arland.ent'
 if ($Compile -or $Smoke) {
@@ -38,13 +39,14 @@ $repo = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path -replace '\\', '/'
 $dirs = @(
     "$repo/GDC_AR_ModPack/GDC_AR_Core/",
     "$repo/GDC_AR_ModPack/GDC_AR_Equipment/",
+    "$repo/GDC_AR_ModPack/GDC_RL_CVON/",
     "$repo/GDC_AR_Misc/GDC_AR_Lib/",
     'C:/Dev/Enfusion/Zimnitrita_map/',
     "$repo/GDC_AR_Missions/GDC_Missions/",
     "$repo/Tools/MissionTests/GDC_MissionTests/",
     ((Join-Path $env:USERPROFILE 'Documents/My Games/ArmaReforgerWorkbench/addons') -replace '\\', '/')
 ) -join ','
-$addons = 'ACE_Core_Dev,ACE_Backblast_Dev,ACE_Carrying_Dev,ACE_Chopping_Dev,ACE_Compass_Dev,ACE_Finger_Dev,ACE_Medical_Core_Dev,ACE_Medical_Hitzones_Dev,ACE_Medical_Circulation_Dev,ACE_Trenches_Dev,ACE_MagRepack_Dev,ACE_Explosives_Dev,ACE_Captives_Dev,ACE_TacticalLadder_Dev,ACE_Radio_Dev,ACE_TacticalPeriscope_Dev,ACE_Overheating_Dev,ACE_CookOff_Dev,ACE_Weather_Dev,ACE_Facepaint_Dev,ACE_Ballistics_Dev,ACE_Medical_Breathing_Dev,ACE_Scopes_Dev,ACE_AllInOne_Dev,CoalitionVON,CoalitionSquadInterface,FixedLoadCasualtyVehicles,Grays_Adjustable_Doors,ImprovedBloodEffect,RealismOverhaulBallistics,WCS_Armbands,Youcansit,GDC AR Core,ChungusLaunchers,MarkerRoundsProject,EchoesOf89UGLTextures,RHS_Content_01,RHS_Content_02,RHS_Core,FPTR,WCS_Armaments,WCS_SpaceCore,WCS_JLTV,WCS_M2A2,BTR70Mountable,RussianMarkerGrenades,LaserRangefinder,M4MAAWS,WCS_Stryker,Wirecutters2,WZLaunchers,ZU23,GDC AR Equipment,TilWMissionFramework,PSCoreDevelopment,ReforgerLobbyCommunity,AFI_CVON_RL_Compat,GDC AR Lib,MinusBuildingPack,Zimnitrita,GDC Missions,GDC Mission Tests'
+$addons = 'ACE_Core_Dev,ACE_Backblast_Dev,ACE_Carrying_Dev,ACE_Chopping_Dev,ACE_Compass_Dev,ACE_Finger_Dev,ACE_Medical_Core_Dev,ACE_Medical_Hitzones_Dev,ACE_Medical_Circulation_Dev,ACE_Trenches_Dev,ACE_MagRepack_Dev,ACE_Explosives_Dev,ACE_Captives_Dev,ACE_TacticalLadder_Dev,ACE_Radio_Dev,ACE_TacticalPeriscope_Dev,ACE_Overheating_Dev,ACE_CookOff_Dev,ACE_Weather_Dev,ACE_Facepaint_Dev,ACE_Ballistics_Dev,ACE_Medical_Breathing_Dev,ACE_Scopes_Dev,ACE_AllInOne_Dev,CoalitionVON,CoalitionSquadInterface,FixedLoadCasualtyVehicles,Grays_Adjustable_Doors,ImprovedBloodEffect,RealismOverhaulBallistics,WCS_Armbands,Youcansit,GDC AR Core,ChungusLaunchers,MarkerRoundsProject,EchoesOf89UGLTextures,RHS_Content_01,RHS_Content_02,RHS_Core,FPTR,WCS_Armaments,WCS_SpaceCore,WCS_JLTV,WCS_M2A2,BTR70Mountable,RussianMarkerGrenades,LaserRangefinder,M4MAAWS,WCS_Stryker,Wirecutters2,WZLaunchers,ZU23,GDC AR Equipment,TilWMissionFramework,PSCoreDevelopment,ReforgerLobbyCommunity,GDC RL-CVON,GDC AR Lib,MinusBuildingPack,Zimnitrita,GDC Missions,GDC Mission Tests'
 
 if ($ExtraAddonsDir) { $dirs = "$dirs,$($ExtraAddonsDir -replace '\\', '/')" }
 if ($ExtraAddons) { $addons = "$addons,$ExtraAddons" }

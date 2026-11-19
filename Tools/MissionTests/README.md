@@ -44,6 +44,14 @@ Le script règle déjà tout cela. C'est à savoir pour écrire un autre lanceur
 2. Ajouter une ligne dans `GDC_CreateMissionTest()` (`GDC_SCR_BaseGameMode_MissionTest.c`).
 3. Ajouter le monde dans `$worlds` de `run_mission_test.ps1`. Si la mission utilise d'autres mods, compléter `$addons`.
 
+## LobbyVoice : voix dans le lobby (~4 min)
+
+Teste le pont Reforger Lobby – Coalition VON (*GDC RL-CVON*) pendant le choix des slots, sur le monde Arland. TeamSpeak n'est pas nécessaire : les contrôles lisent ce que CVON enverrait au plugin.
+
+- Le serveur ouvre le choix des slots. Au bout de 30 s, seul le joueur 1 prend un slot.
+- Chaque client vérifie, sans slot puis après le slot du joueur 1, qu'il entend l'autre joueur : présent dans les voix de CVON, entendu par le salon du lobby, volume plein dans les deux oreilles.
+- Il note aussi si l'entité de lobby de l'autre lui est encore transmise. Prendre un slot téléporte cette entité sur le terrain, loin des autres : elle n'est plus transmise. L'ancien pont AFI coupait la voix d'un joueur dont il ne voyait pas l'entité. C'était le défaut « on n'entend plus personne dès qu'on prend un slot ».
+
 ## Davay, duy na Gruwice (~40 min)
 
 Le client 1 prend le PL de Granit, le client 2 le SL de Berkut. L'insertion se fait sur l'axe Bleu.
