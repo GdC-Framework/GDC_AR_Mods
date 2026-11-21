@@ -9,7 +9,7 @@ class GDC_MMCheckRule
 {
 	string m_sId;						//!< "2.1": block number, rule number
 	int m_iBlock;
-	string m_sFramework;				//!< GDC_MMCheckFramework value
+	string m_sOrigin;				//!< GDC_MMCheckOrigin value
 	GDC_EMMCheckSeverity m_eSeverity;
 	GDC_EMMCheckFamily m_eFamily;
 	string m_sKB;						//!< id of its knowledge base sheet, empty if none
@@ -79,8 +79,49 @@ class GDC_MMCheckRule
 }
 
 //------------------------------------------------------------------------------------------------
+//! An addon GDC missions must not load (rule 2.5), with the reason; its knowledge base sheet: gdc-excluded-addons.
+class GDC_MMCheckExcludedAddon
+{
+	string m_sGUID;
+	string m_sName;
+	string m_sOnlyWith;					//!< excluded only when the mission places an entity of this class; empty: always
+	protected ref array<string> m_aReason;	//!< English, French; one sentence ending with a full stop
+
+	//------------------------------------------------------------------------------------------------
+	void GDC_MMCheckExcludedAddon(string guid, string name, string onlyWith, string englishReason, string frenchReason)
+	{
+		m_sGUID = guid;
+		m_sName = name;
+		m_sOnlyWith = onlyWith;
+		m_aReason = { englishReason, frenchReason };
+	}
+
+	//------------------------------------------------------------------------------------------------
+	string GetReason()
+	{
+		return GDC_MMCheckText.T(m_aReason[0], m_aReason[1]);
+	}
+}
+
+//------------------------------------------------------------------------------------------------
 class GDC_MMCheckCatalog
 {
+	protected static ref array<ref GDC_MMCheckExcludedAddon> s_aExcludedAddons;
+
+	//------------------------------------------------------------------------------------------------
+	//! \return addons GDC missions must not load (rule 2.5); keep the sheet gdc-excluded-addons in step
+	static array<ref GDC_MMCheckExcludedAddon> GetExcludedAddons()
+	{
+		if (s_aExcludedAddons)
+			return s_aExcludedAddons;
+
+		s_aExcludedAddons = {};
+		s_aExcludedAddons.Insert(new GDC_MMCheckExcludedAddon("69A510CE600D1126", "Anarchy Map Markers & Drawings", "PS_GameModeCoop",
+			"it conflicts with Reforger Lobby (input of the quick marker menu, OnInputQuickMarkerMenu).",
+			"il entre en conflit avec Reforger Lobby (entrée du menu rapide des marqueurs, OnInputQuickMarkerMenu)."));
+		return s_aExcludedAddons;
+	}
+
 	protected static ref array<ref GDC_MMCheckRule> s_aRules;
 
 	//! Where the knowledge base sheets are read: the public GitHub repository, their only home (the GDC wiki links to them)
@@ -101,9 +142,9 @@ class GDC_MMCheckCatalog
 	static array<string> GetBlockTitles()
 	{
 		if (GDC_MMCheckText.s_eLanguage == GDC_EMMCheckLanguage.FRENCH)
-			return { "Structure", "Ressources et addons", "Joueurs et slots", "Réglages des systèmes", "Logique de mission", "IA", "Pré-publication" };
+			return { "Structure de la mission", "Ressources et addons", "Joueurs et slots", "Réglages des systèmes", "Logique de mission", "IA", "Pré-publication" };
 
-		return { "Structure", "Resources and addons", "Players and slots", "System settings", "Mission logic", "AI", "Pre-publication" };
+		return { "Mission structure", "Resources and addons", "Players and slots", "System settings", "Mission logic", "AI", "Pre-publication" };
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -125,8 +166,72 @@ class GDC_MMCheckCatalog
 		s_aRules = {};
 		GDC_MMCheckRule rule;
 
+		// ---- 1. Mission structure (compared with the mission skeleton) -----------------------------
+		rule = Declare("1.1", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Skeleton layers missing", "Calques du squelette absents");
+		rule.SetProblem(
+			"the mission lacks these layers or folders of the mission skeleton: %1.",
+			"il manque à la mission ces calques ou dossiers du squelette de mission : %1.");
+		rule.SetFix(
+			"run Create Mission Skeleton to add them, or ignore this if the mission is organised otherwise.",
+			"lancez Create Mission Skeleton pour les ajouter, ou ignorez ceci si la mission est organisée autrement.");
+
+		rule = Declare("1.2", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Game mode missing or duplicated", "Mode de jeu absent ou en double");
+		rule.SetProblem(
+			"the mission has %1 game modes: it needs exactly one.",
+			"la mission a %1 modes de jeu : il en faut exactement un.");
+		rule.SetFix(
+			"keep a single game mode; without one, run Create Mission Skeleton.",
+			"gardez un seul mode de jeu ; s'il n'y en a aucun, lancez Create Mission Skeleton.");
+
+		rule = Declare("1.3", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Skeleton entity missing", "Entité du squelette absente");
+		rule.SetProblem(
+			"the world has no %1 (addon %2), expected by the mission skeleton.",
+			"le monde n'a pas de %1 (addon %2), prévu par le squelette de mission.");
+		rule.SetFix(
+			"run Create Mission Skeleton, which adds it, or ignore this if the mission does without it.",
+			"lancez Create Mission Skeleton, qui l'ajoute, ou ignorez ceci si la mission s'en passe.");
+
+		rule = Declare("1.4", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("AI world navmesh without a file", "Navmesh de l'AI World sans fichier");
+		rule.SetProblem(
+			"the %1 navmesh has no file: AI cannot move on it.",
+			"la navmesh %1 n'a pas de fichier : les IA ne peuvent pas s'y déplacer.");
+		rule.SetFix(
+			"set its NavmeshFile (NavmeshWorldComponent > NavmeshSettings > NavmeshFilesConfig).",
+			"renseignez son NavmeshFile (NavmeshWorldComponent > NavmeshSettings > NavmeshFilesConfig).");
+
+		rule = Declare("1.5", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Briefing sections missing", "Sections du briefing absentes");
+		rule.SetProblem(
+			"the briefing lacks these sections of the mission skeleton: %1.",
+			"il manque au briefing ces sections du squelette de mission : %1.");
+		rule.SetFix(
+			"add them in the briefing layer, or ignore this if the briefing is organised otherwise.",
+			"ajoutez-les dans le calque du briefing, ou ignorez ceci si le briefing est organisé autrement.");
+
+		rule = Declare("1.6", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Briefing section empty", "Section du briefing vide");
+		rule.SetProblem(
+			"the \"%1\" section has no text.",
+			"la section « %1 » n'a pas de texte.");
+		rule.SetFix(
+			"write it, or delete the section.",
+			"rédigez-la, ou supprimez la section.");
+
+		rule = Declare("1.7", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Briefing section not written", "Section du briefing non rédigée");
+		rule.SetProblem(
+			"the \"%1\" section still holds the hint of the mission skeleton.",
+			"la section « %1 » contient encore l'indication du squelette de mission.");
+		rule.SetFix(
+			"replace the hint with the mission's text.",
+			"remplacez l'indication par le texte de la mission.");
+
 		// ---- 2. Resources and addons --------------------------------------------------------------
-		rule = Declare("2.1", GDC_MMCheckFramework.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule = Declare("2.1", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Missing resource", "Ressource introuvable");
 		rule.SetProblem(
 			"the property points to %1, found in none of the loaded addons.",
@@ -135,7 +240,7 @@ class GDC_MMCheckCatalog
 			"load the addon that holds it, or pick another resource.",
 			"chargez l'addon qui la contient, ou choisissez une autre ressource.");
 
-		rule = Declare("2.2", GDC_MMCheckFramework.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule = Declare("2.2", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
 		rule.SetTitle("MM library proxy used", "Proxy de bibliothèque MM utilisé");
 		rule.SetProblem(
 			"%1 is a library proxy, not the real prefab: the mission would need your GDC Mission Maker Local addon.",
@@ -145,7 +250,7 @@ class GDC_MMCheckCatalog
 			"utilisez le vrai prefab : redéposez l'élément depuis la Prefab Library, ou choisissez le vrai prefab dans la propriété (Resource Browser).");
 		rule.m_sKB = "gdc-mm-library-proxy";
 
-		rule = Declare("2.3", GDC_MMCheckFramework.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule = Declare("2.3", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Entity without its prefab", "Entité sans son prefab");
 		rule.SetProblem(
 			"a bare %1 with no prefab: its prefab was probably stripped by saving the world while the prefab's addon was not loaded.",
@@ -154,7 +259,7 @@ class GDC_MMCheckCatalog
 			"close the world without saving, restore the layer from git, load the missing addon, then reopen the world.",
 			"fermez le monde sans enregistrer, restaurez le calque depuis git, chargez l'addon manquant, puis rouvrez le monde.");
 
-		rule = Declare("2.4", GDC_MMCheckFramework.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule = Declare("2.4", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Unknown resource GUID", "GUID de ressource inconnu");
 		rule.SetProblem(
 			"the property points to %1: this GUID is unknown, but a file with another GUID exists at this path.",
@@ -163,8 +268,18 @@ class GDC_MMCheckCatalog
 			"pick the resource again in this property.",
 			"choisissez à nouveau la ressource dans cette propriété.");
 
+		rule = Declare("2.5", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Excluded addon loaded", "Addon exclu chargé");
+		rule.SetProblem(
+			"%1 is loaded: %2",
+			"%1 est chargé : %2");
+		rule.SetFix(
+			"remove %1 from the dependencies of the mission addon, and from the server's mod list.",
+			"retirez %1 des dépendances de l'addon de la mission, et de la liste des mods du serveur.");
+		rule.m_sKB = "gdc-excluded-addons";
+
 		// ---- 4. System settings -------------------------------------------------------------------
-		rule = Declare("4.1", GDC_MMCheckFramework.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);
+		rule = Declare("4.1", GDC_MMCheckOrigin.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);
 		rule.SetTitle("Entity deleter without a filter", "Deleter sans filtre");
 		rule.SetProblem(
 			"with an empty prefab filter, it deletes every root entity in its sphere, managers and AI included.",
@@ -176,7 +291,7 @@ class GDC_MMCheckCatalog
 		rule.m_sKB = "tilw-entity-deleter";
 
 		// ---- 5. Mission logic ---------------------------------------------------------------------
-		rule = Declare("5.1", GDC_MMCheckFramework.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);
+		rule = Declare("5.1", GDC_MMCheckOrigin.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);
 		rule.SetTitle("Interaction placed as a child", "Interaction placée en enfant");
 		rule.SetProblem(
 			"a TILW interaction under another entity may lose its action label on a dedicated server.",
@@ -187,7 +302,7 @@ class GDC_MMCheckCatalog
 		rule.SetVerified("TilWMissionFramework", "1.0.128", "2026-11-20");
 		rule.m_sKB = "tilw-interaction-child";
 
-		rule = Declare("5.2", GDC_MMCheckFramework.TILW, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.MODSET);
+		rule = Declare("5.2", GDC_MMCheckOrigin.TILW, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.MODSET);
 		rule.SetTitle("Vehicle crew that never spawns", "Équipage de véhicule qui n'apparaît jamais");
 		rule.SetProblem(
 			"TILW_VehicleCrewComponent does nothing with Reforger Lobby: TILW's lobby code is compiled out, so the vehicle stays empty.",
@@ -263,12 +378,12 @@ class GDC_MMCheckCatalog
 	}
 
 	//------------------------------------------------------------------------------------------------
-	protected static GDC_MMCheckRule Declare(string id, string framework, GDC_EMMCheckSeverity severity, GDC_EMMCheckFamily family)
+	protected static GDC_MMCheckRule Declare(string id, string origin, GDC_EMMCheckSeverity severity, GDC_EMMCheckFamily family)
 	{
 		GDC_MMCheckRule rule = new GDC_MMCheckRule();
 		rule.m_sId = id;
 		rule.m_iBlock = id.Substring(0, id.IndexOf(".")).ToInt();
-		rule.m_sFramework = framework;
+		rule.m_sOrigin = origin;
 		rule.m_eSeverity = severity;
 		rule.m_eFamily = family;
 		s_aRules.Insert(rule);

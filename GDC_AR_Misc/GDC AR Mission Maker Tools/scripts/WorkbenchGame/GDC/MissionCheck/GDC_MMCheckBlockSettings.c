@@ -14,7 +14,7 @@ class GDC_MMCheckBlockSettings : GDC_MMCheckBlock
 	//------------------------------------------------------------------------------------------------
 	override void Run(GDC_MMCheckContext context, GDC_MMCheckReport report)
 	{
-		if (context.Uses(GDC_MMCheckFramework.TILW))
+		if (context.Uses(GDC_MMCheckOrigin.TILW))
 			CheckEntityDeleters(context, report);
 	}
 

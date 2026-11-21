@@ -1,5 +1,5 @@
 #ifdef WORKBENCH
-//! Shared types of the Check Mission plugin: log, frameworks, findings, report, context given to each block, base block.
+//! Shared types of the Check Mission plugin: log, origins, findings, report, context given to each block, base block.
 
 //------------------------------------------------------------------------------------------------
 //! Language of every text the plugin builds (dialogs, report, rules): set from the plugin settings before each run.
@@ -154,29 +154,29 @@ class GDC_MMCheckLog
 }
 
 //------------------------------------------------------------------------------------------------
-//! Framework a rule belongs to. Rules of a framework only run when the mission uses it (one of its entities or
-//! components is placed): an addon merely loaded does not count.
-class GDC_MMCheckFramework
+//! Origin of a rule: vanilla, GDC or a third-party framework (TILW). Rules of an optional origin only run when the
+//! mission uses it (one of its entities or components is placed): an addon merely loaded does not count.
+class GDC_MMCheckOrigin
 {
 	static const string VANILLA = "vanilla";
 	static const string GDC = "GDC";
 	static const string TILW = "TILW";
 
 	//------------------------------------------------------------------------------------------------
-	//! \return frameworks recognised from class names, in their display order (vanilla is always used)
+	//! \return optional origins, recognised from class names, in their display order (vanilla is always used)
 	static array<string> GetOptional()
 	{
 		return { GDC, TILW };
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! \return class name prefixes of a framework (PK_ classes ship with TILW)
-	static array<string> GetClassPrefixes(string framework)
+	//! \return class name prefixes of an origin (PK_ classes ship with TILW)
+	static array<string> GetClassPrefixes(string origin)
 	{
-		if (framework == GDC)
+		if (origin == GDC)
 			return { "GDC_" };
 
-		if (framework == TILW)
+		if (origin == TILW)
 			return { "TILW_", "PK_" };
 
 		return {};
@@ -206,7 +206,7 @@ class GDC_MMCheckFinding
 {
 	GDC_EMMCheckSeverity m_eSeverity;
 	string m_sRule;			//!< number of the rule, e.g. "5.1"
-	string m_sFramework;	//!< GDC_MMCheckFramework value
+	string m_sOrigin;	//!< GDC_MMCheckOrigin value
 	string m_sTitle;		//!< short name of the rule, e.g. "Entity deleter without a filter"
 	string m_sWhere;		//!< layer / entity, property
 	string m_sLink;			//!< @"ENTITY:<id>": the Log Console selects the entity when it is clicked (may be empty)
@@ -220,7 +220,7 @@ class GDC_MMCheckFinding
 	void Write()
 	{
 		LogLevel level = GDC_MMCheckReport.SeverityLogLevel(m_eSeverity);
-		GDC_MMCheckLog.Write(string.Format("  %1 %2 [%3] %4", GDC_MMCheckReport.SeverityLabel(m_eSeverity), m_sRule, m_sFramework, m_sTitle), level);
+		GDC_MMCheckLog.Write(string.Format("  %1 %2 [%3] %4", GDC_MMCheckReport.SeverityLabel(m_eSeverity), m_sRule, m_sOrigin, m_sTitle), level);
 
 		string whereLabel = GDC_MMCheckText.T("Where", "Où");
 		string problemLabel = GDC_MMCheckText.T("Problem", "Problème");
@@ -264,7 +264,7 @@ class GDC_MMCheckReport
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! Adds a finding of a catalogue rule (GDC_MMCheckCatalog), which gives its severity, framework, title, problem and
+	//! Adds a finding of a catalogue rule (GDC_MMCheckCatalog), which gives its severity, origin, title, problem and
 	//! fix, in the current language.
 	//! \param ruleId e.g. "2.1"
 	//! \param entity the entity concerned, null for a finding about the whole mission
@@ -282,7 +282,7 @@ class GDC_MMCheckReport
 		GDC_MMCheckFinding finding = new GDC_MMCheckFinding();
 		finding.m_eSeverity = rule.m_eSeverity;
 		finding.m_sRule = rule.m_sId;
-		finding.m_sFramework = rule.m_sFramework;
+		finding.m_sOrigin = rule.m_sOrigin;
 		finding.m_sTitle = rule.GetTitle();
 		finding.m_sProblem = string.Format(rule.GetProblem(), arg1, arg2);
 		finding.m_sFix = string.Format(rule.GetFix(), arg1, arg2);
@@ -355,8 +355,9 @@ class GDC_MMCheckContext
 	WorldEditorAPI m_Api;
 	int m_iSubScene;
 	string m_sWorldPath;
+	ResourceName m_SkeletonConfig;	//!< mission skeleton block 1 compares the mission with (plugin settings)
 	ref array<IEntitySource> m_aEntities = {};
-	ref set<string> m_UsedFrameworks = new set<string>(); //!< GDC_MMCheckFramework values used by the mission
+	ref set<string> m_UsedOrigins = new set<string>(); //!< GDC_MMCheckOrigin values used by the mission
 
 	protected ref map<string, int> m_mResourceStates = new map<string, int>();
 
@@ -378,28 +379,28 @@ class GDC_MMCheckContext
 				m_aEntities.Insert(source);
 		}
 
-		FindUsedFrameworks();
+		FindUsedOrigins();
 	}
 
 	//------------------------------------------------------------------------------------------------
-	bool Uses(string framework)
+	bool Uses(string origin)
 	{
-		return m_UsedFrameworks.Contains(framework);
+		return m_UsedOrigins.Contains(origin);
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! A framework is used when an entity or a component of the mission has one of its class prefixes.
-	protected void FindUsedFrameworks()
+	//! An origin is used when an entity or a component of the mission has one of its class prefixes.
+	protected void FindUsedOrigins()
 	{
-		m_UsedFrameworks.Insert(GDC_MMCheckFramework.VANILLA);
-		foreach (string framework : GDC_MMCheckFramework.GetOptional())
+		m_UsedOrigins.Insert(GDC_MMCheckOrigin.VANILLA);
+		foreach (string origin : GDC_MMCheckOrigin.GetOptional())
 		{
-			array<string> prefixes = GDC_MMCheckFramework.GetClassPrefixes(framework);
+			array<string> prefixes = GDC_MMCheckOrigin.GetClassPrefixes(origin);
 			foreach (IEntitySource entity : m_aEntities)
 			{
 				if (HasPrefix(entity.GetClassName(), prefixes))
 				{
-					m_UsedFrameworks.Insert(framework);
+					m_UsedOrigins.Insert(origin);
 					break;
 				}
 
@@ -415,7 +416,7 @@ class GDC_MMCheckContext
 
 				if (found)
 				{
-					m_UsedFrameworks.Insert(framework);
+					m_UsedOrigins.Insert(origin);
 					break;
 				}
 			}

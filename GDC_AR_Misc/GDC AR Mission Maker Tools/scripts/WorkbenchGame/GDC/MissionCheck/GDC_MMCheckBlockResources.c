@@ -3,7 +3,8 @@
 //! - 2.1 / 2.4 every resource the mission references exists in the loaded addons, looked up by GUID (2.4: GUID unknown
 //!   but a file exists at its path);
 //! - 2.2 no MM library proxy (PrefabLibrary/MM ...) used as a prefab or in a property;
-//! - 2.3 no AI group, character or vehicle without a prefab.
+//! - 2.3 no AI group, character or vehicle without a prefab;
+//! - 2.5 no excluded addon loaded (GDC_MMCheckCatalog.GetExcludedAddons).
 //! Only the references the mission adds are checked: a reference its entity's prefab already holds belongs to the
 //! prefab's addon.
 class GDC_MMCheckBlockResources : GDC_MMCheckBlock
@@ -27,6 +28,7 @@ class GDC_MMCheckBlockResources : GDC_MMCheckBlock
 		m_Context = context;
 		m_Report = report;
 		m_mPrefabResources = new map<string, ref set<string>>();
+		CheckExcludedAddons();
 
 		foreach (IEntitySource entity : context.m_aEntities)
 		{
@@ -45,6 +47,36 @@ class GDC_MMCheckBlockResources : GDC_MMCheckBlock
 					CheckResource(resource, entity, property);
 			}
 		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! 2.5: an excluded addon among the loaded ones; one excluded only with a class counts when the mission places one
+	protected void CheckExcludedAddons()
+	{
+		array<string> loaded = {};
+		GameProject.GetLoadedAddons(loaded);
+		foreach (GDC_MMCheckExcludedAddon excluded : GDC_MMCheckCatalog.GetExcludedAddons())
+		{
+			if (!loaded.Contains(excluded.m_sGUID))
+				continue;
+
+			if (!excluded.m_sOnlyWith.IsEmpty() && !PlacesClass(excluded.m_sOnlyWith))
+				continue;
+
+			m_Report.Add("2.5", null, string.Empty, excluded.m_sName, excluded.GetReason());
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected bool PlacesClass(string className)
+	{
+		foreach (IEntitySource entity : m_Context.m_aEntities)
+		{
+			if (GDC_MMCheckContext.Inherits(entity.GetClassName(), className))
+				return true;
+		}
+
+		return false;
 	}
 
 	//------------------------------------------------------------------------------------------------

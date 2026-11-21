@@ -13,8 +13,8 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 {
 	// The Workbench builds each label from the variable name ("m_bResourcesAndAddons" -> "Resources And Addons"):
 	// the names are the labels. Rules of each block: GDC_MMCheckCatalog (listed above the boxes).
-	[Attribute("1", desc: "Block 1: layers, managers, game mode, AI world, briefing.", category: "Blocks")]
-	protected bool m_bStructure;
+	[Attribute("1", desc: "Block 1: layers, game mode, managers, AI world navmeshes, briefing, compared with the mission skeleton below.", category: "Blocks")]
+	protected bool m_bMissionStructure;
 
 	[Attribute("1", desc: "Block 2: resources the mission points to, MM library proxies, entities that lost their prefab.", category: "Blocks")]
 	protected bool m_bResourcesAndAddons;
@@ -33,6 +33,9 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 
 	[Attribute("1", desc: "Block 7: what must be clean before publishing the mission addon.", category: "Blocks")]
 	protected bool m_bPrePublication;
+
+	[Attribute("{5C3D8A2E9F71B046}Configs/GDC MM/MissionSkeleton.conf", desc: "Mission skeleton block 1 compares the mission with: the one selected in Create Mission Skeleton.", params: "conf class=GDC_MMMissionSkeletonConfig", category: "Blocks")]
+	protected ResourceName m_SkeletonConfig;
 
 	[Attribute("1", desc: "List the Info findings in the Log Console. They are always counted in the result.", category: "Report")]
 	protected bool m_bShowInfo;
@@ -103,24 +106,25 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	{
 		int start = System.GetTickCount();
 		GDC_MMCheckContext context = new GDC_MMCheckContext(api);
+		context.m_SkeletonConfig = m_SkeletonConfig;
 		string worldName = FilePath.StripPath(context.m_sWorldPath);
-		string frameworks = DescribeFrameworks(context);
+		string origins = DescribeOrigins(context);
 
 		GDC_MMCheckLog.Write();
 		GDC_MMCheckLog.Separator();
 		string worldLabel = GDC_MMCheckText.T("World", "Monde");
 		string entitiesLabel = GDC_MMCheckText.T("Entities", "Entités");
-		string frameworksLabel = "Frameworks";
-		int width = Math.Max(GDC_MMCheckLog.CharCount(worldLabel), Math.Max(GDC_MMCheckLog.CharCount(entitiesLabel), GDC_MMCheckLog.CharCount(frameworksLabel)));
+		string originsLabel = GDC_MMCheckText.T("Origins", "Origines");
+		int width = Math.Max(GDC_MMCheckLog.CharCount(worldLabel), Math.Max(GDC_MMCheckLog.CharCount(entitiesLabel), GDC_MMCheckLog.CharCount(originsLabel)));
 		string colon = GDC_MMCheckText.T(": ", " : "); // dialogs and sentences; log columns use " : "
 		GDC_MMCheckLog.Write(GDC_MMCheckText.T("CHECK MISSION - ", "VÉRIFICATION DE MISSION - ") + worldName);
 		GDC_MMCheckLog.Write(GDC_MMCheckLog.Pad(worldLabel, width) + " : " + context.m_sWorldPath);
 		GDC_MMCheckLog.Write(GDC_MMCheckLog.Pad(entitiesLabel, width) + " : " + context.m_aEntities.Count().ToString() + GDC_MMCheckText.T(" (terrain excluded)", " (hors terrain)"));
-		GDC_MMCheckLog.Write(GDC_MMCheckLog.Pad(frameworksLabel, width) + " : " + frameworks);
+		GDC_MMCheckLog.Write(GDC_MMCheckLog.Pad(originsLabel, width) + " : " + origins);
 		GDC_MMCheckLog.Separator();
 		GDC_MMCheckLog.Write();
 
-		string summary = worldLabel + colon + worldName + "\n" + frameworksLabel + colon + frameworks + "\n";
+		string summary = worldLabel + colon + worldName + "\n" + originsLabel + colon + origins + "\n";
 		int errors;
 		int warnings;
 		int infos;
@@ -223,23 +227,23 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 
 	//------------------------------------------------------------------------------------------------
 	//! \return "vanilla, TILW (GDC not used: its rules are skipped)"
-	protected static string DescribeFrameworks(GDC_MMCheckContext context)
+	protected static string DescribeOrigins(GDC_MMCheckContext context)
 	{
-		string used = GDC_MMCheckFramework.VANILLA;
+		string used = GDC_MMCheckOrigin.VANILLA;
 		string unused;
 		int unusedCount;
-		foreach (string framework : GDC_MMCheckFramework.GetOptional())
+		foreach (string origin : GDC_MMCheckOrigin.GetOptional())
 		{
-			if (context.Uses(framework))
+			if (context.Uses(origin))
 			{
-				used += ", " + framework;
+				used += ", " + origin;
 			}
 			else
 			{
 				if (!unused.IsEmpty())
 					unused += ", ";
 
-				unused += framework;
+				unused += origin;
 				unusedCount++;
 			}
 		}
@@ -258,7 +262,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	protected static array<ref GDC_MMCheckBlock> GetBlocks()
 	{
 		array<ref GDC_MMCheckBlock> blocks = {};
-		AddBlock(blocks, new GDC_MMCheckBlock(), 1);
+		AddBlock(blocks, new GDC_MMCheckBlockStructure(), 1);
 		AddBlock(blocks, new GDC_MMCheckBlockResources(), 2);
 		AddBlock(blocks, new GDC_MMCheckBlock(), 3);
 		AddBlock(blocks, new GDC_MMCheckBlockSettings(), 4);
@@ -281,7 +285,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 		switch (number)
 		{
 			case 1:
-				return m_bStructure;
+				return m_bMissionStructure;
 			case 2:
 				return m_bResourcesAndAddons;
 			case 3:
