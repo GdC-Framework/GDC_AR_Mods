@@ -1,5 +1,7 @@
 # Entity deleter without a filter (TILW)
 
+English | [Français](tilw-entity-deleter.fr.md)
+
 Rule 4.1 · warning · addon behaviour
 
 ## What happens

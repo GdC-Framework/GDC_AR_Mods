@@ -48,7 +48,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 		ApplyLanguage();
 		string text = GDC_MMCheckText.T(
 			"Check Mission reads the open world and changes nothing.\nTick the blocks to run. TILW and GDC rules only run when the mission uses them.",
-			"Check Mission lit le monde ouvert et ne modifie rien.\nCoche les blocs à lancer. Les règles TILW et GDC ne tournent que si la mission les utilise.");
+			"Check Mission lit le monde ouvert et ne modifie rien.\nCochez les blocs à lancer. Les règles TILW et GDC ne tournent que si la mission les utilise.");
 		text += "\n\n" + GDC_MMCheckCatalog.DescribeBlocks();
 		Workbench.ScriptDialog(CAPTION + GDC_MMCheckText.T(" - settings", " - réglages"), text, this);
 		ApplyLanguage(); // the language may have just been changed in this dialog
@@ -78,8 +78,8 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 		api.GetWorldPath(worldPath);
 		if (worldPath.IsEmpty())
 		{
-			GDC_MMCheckLog.Write(GDC_MMCheckText.T("No world open: open the mission world first.", "Aucun monde ouvert : ouvre d'abord le monde de la mission."), LogLevel.WARNING);
-			Workbench.Dialog(CAPTION, GDC_MMCheckText.T("Error: open the mission world first.", "Erreur : ouvre d'abord le monde de la mission."));
+			GDC_MMCheckLog.Write(GDC_MMCheckText.T("No world open: open the mission world first.", "Aucun monde ouvert : ouvrez d'abord le monde de la mission."), LogLevel.WARNING);
+			Workbench.Dialog(CAPTION, GDC_MMCheckText.T("Error: open the mission world first.", "Erreur : ouvrez d'abord le monde de la mission."));
 			return;
 		}
 

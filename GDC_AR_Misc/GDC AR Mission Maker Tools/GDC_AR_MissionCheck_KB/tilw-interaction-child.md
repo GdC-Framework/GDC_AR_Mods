@@ -1,5 +1,7 @@
 # Interaction placed as a child (TILW)
 
+English | [Français](tilw-interaction-child.fr.md)
+
 Rule 5.1 · warning · addon behaviour
 
 ## What happens

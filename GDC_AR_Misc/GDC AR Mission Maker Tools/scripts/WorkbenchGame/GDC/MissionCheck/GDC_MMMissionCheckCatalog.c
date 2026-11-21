@@ -133,16 +133,16 @@ class GDC_MMCheckCatalog
 			"la propriété pointe vers %1, absente de tous les addons chargés.");
 		rule.SetFix(
 			"load the addon that holds it, or pick another resource.",
-			"charge l'addon qui la contient, ou choisis une autre ressource.");
+			"chargez l'addon qui la contient, ou choisissez une autre ressource.");
 
 		rule = Declare("2.2", GDC_MMCheckFramework.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
 		rule.SetTitle("MM library proxy used", "Proxy de bibliothèque MM utilisé");
 		rule.SetProblem(
 			"%1 is a library proxy, not the real prefab: the mission would need your GDC Mission Maker Local addon.",
-			"%1 est un proxy de bibliothèque, pas le vrai prefab : la mission dépendrait de ton addon GDC Mission Maker Local.");
+			"%1 est un proxy de bibliothèque, pas le vrai prefab : la mission dépendrait de votre addon GDC Mission Maker Local.");
 		rule.SetFix(
 			"use the real prefab: drop the item again from the Prefab Library, or pick the real prefab in the property (Resource Browser).",
-			"utilise le vrai prefab : redépose l'élément depuis la Prefab Library, ou choisis le vrai prefab dans la propriété (Resource Browser).");
+			"utilisez le vrai prefab : redéposez l'élément depuis la Prefab Library, ou choisissez le vrai prefab dans la propriété (Resource Browser).");
 		rule.m_sKB = "gdc-mm-library-proxy";
 
 		rule = Declare("2.3", GDC_MMCheckFramework.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
@@ -152,7 +152,7 @@ class GDC_MMCheckCatalog
 			"un %1 nu, sans prefab : il a sans doute été retiré en enregistrant le monde alors que l'addon du prefab n'était pas chargé.");
 		rule.SetFix(
 			"close the world without saving, restore the layer from git, load the missing addon, then reopen the world.",
-			"ferme le monde sans enregistrer, restaure le calque depuis git, charge l'addon manquant, puis rouvre le monde.");
+			"fermez le monde sans enregistrer, restaurez le calque depuis git, chargez l'addon manquant, puis rouvrez le monde.");
 
 		rule = Declare("2.4", GDC_MMCheckFramework.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Unknown resource GUID", "GUID de ressource inconnu");
@@ -161,7 +161,7 @@ class GDC_MMCheckCatalog
 			"la propriété pointe vers %1 : ce GUID est inconnu, mais un fichier d'un autre GUID existe à ce chemin.");
 		rule.SetFix(
 			"pick the resource again in this property.",
-			"choisis à nouveau la ressource dans cette propriété.");
+			"choisissez à nouveau la ressource dans cette propriété.");
 
 		// ---- 4. System settings -------------------------------------------------------------------
 		rule = Declare("4.1", GDC_MMCheckFramework.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);
@@ -171,7 +171,7 @@ class GDC_MMCheckCatalog
 			"avec un filtre de prefabs vide, il supprime toutes les entités racines de sa sphère, managers et IA compris.");
 		rule.SetFix(
 			"fill its prefab filter list, or check that only what must go is within its radius.",
-			"remplis sa liste de filtres de prefabs, ou vérifie que seul ce qui doit disparaître est dans son rayon.");
+			"remplissez sa liste de filtres de prefabs, ou vérifiez que seul ce qui doit disparaître est dans son rayon.");
 		rule.SetVerified("TilWMissionFramework", "1.0.128", "2026-11-20");
 		rule.m_sKB = "tilw-entity-deleter";
 
@@ -183,7 +183,7 @@ class GDC_MMCheckCatalog
 			"une interaction TILW sous une autre entité peut perdre le libellé de son action sur un serveur dédié.");
 		rule.SetFix(
 			"place it as a root entity at the object's position, with \"Display UI At Reference Point\" ticked on its UserActionContext.",
-			"place-la en entité racine à la position de l'objet, avec « Display UI At Reference Point » coché sur son UserActionContext.");
+			"placez-la en entité racine à la position de l'objet, avec « Display UI At Reference Point » coché sur son UserActionContext.");
 		rule.SetVerified("TilWMissionFramework", "1.0.128", "2026-11-20");
 		rule.m_sKB = "tilw-interaction-child";
 
@@ -194,7 +194,7 @@ class GDC_MMCheckCatalog
 			"TILW_VehicleCrewComponent ne fait rien avec Reforger Lobby : le code lobby de TILW n'est pas compilé, le véhicule reste vide.");
 		rule.SetFix(
 			"spawn the vehicle and its crew with a TILW_PrefabSpawner (crew config, pregame spawn ticked).",
-			"fais apparaître le véhicule et son équipage avec un TILW_PrefabSpawner (config d'équipage, apparition en pregame cochée).");
+			"faites apparaître le véhicule et son équipage avec un TILW_PrefabSpawner (config d'équipage, apparition en pregame cochée).");
 		rule.SetVerified("TilWMissionFramework", "1.0.128", "2026-11-10");
 		rule.m_sKB = "tilw-vehicle-crew";
 

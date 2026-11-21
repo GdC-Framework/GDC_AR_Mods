@@ -44,7 +44,7 @@ def main() -> int:
     for sheet_id in sorted(set(sheets) - named):
         texts = [p.read_text(encoding="utf-8") for p in sheets[sheet_id].values()]
         if not all(PLANNED.search(t) for t in texts):
-            errors.append(f"{sheet_id}: named by no rule; for a planned rule, write 'Rule planned' / 'Règle prévue' as its second line")
+            errors.append(f"{sheet_id}: named by no rule; for a planned rule, write 'Rule planned' / 'Règle prévue' under its language switch")
 
     for index, suffix in (("README.md", ".md"), ("README.fr.md", ".fr.md")):
         index_path = KB_DIR / index

@@ -11,6 +11,7 @@ Que propose cet addon ?
   * Une bibliothèque d'entités alla 3den
   * Un éditeur de loadouts 
   * Un squelette de mission en un clic
+  * Une vérification de mission
 
 
 ## Une bibliothèque d'entités alla 3den
@@ -32,4 +33,11 @@ Mode d'emploi : [docs/GDC_LoadoutEditor.fr.md](docs/GDC_LoadoutEditor.fr.md).
 Un plugin du World Editor qui ajoute à un nouveau monde de mission tout ce par quoi commence une mission GDC : calques, managers, mode de jeu Reforger Lobby avec les réglages habituels, framework TILW, sections du briefing et config de fréquences Coalition VON. Il n'ajoute que ce qui manque : on peut le relancer sans risque.
 
 Mode d'emploi : [docs/GDC_MissionSkeleton.fr.md](docs/GDC_MissionSkeleton.fr.md).
+
+
+## Une vérification de mission
+
+Un plugin du World Editor (Plugins > GDC > Check Mission, Ctrl+Alt+C) qui vérifie le monde de mission ouvert sans le modifier : ressources introuvables, proxys de la bibliothèque MM, entités qui ont perdu leur prefab, pièges de TILW… Les blocs à lancer et la langue (anglais ou français) se règlent dans Plugins > Settings > Check Mission. Le rapport est dans la Log Console (filtre `[GDC_CHECK]`) : chaque constat dit où, ce qui ne va pas et que faire, avec un lien qui sélectionne l'entité.
+
+Pourquoi chaque règle existe, la preuve et que faire : [base de connaissance de la vérification de mission](GDC_AR_MissionCheck_KB/README.fr.md).
 

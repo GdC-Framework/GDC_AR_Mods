@@ -1,5 +1,7 @@
 # MM library proxy used (GDC)
 
+English | [Français](gdc-mm-library-proxy.fr.md)
+
 Rule 2.2 · error · GDC convention
 
 ## What happens

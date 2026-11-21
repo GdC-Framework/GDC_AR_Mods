@@ -1,5 +1,7 @@
 # Interaction placée en enfant (TILW)
 
+[English](tilw-interaction-child.md) | Français
+
 Règle 5.1 · avertissement · comportement d'addon
 
 ## Ce qui se passe
@@ -9,7 +11,7 @@ Une interaction TILW (`TILW_SetFlagInteraction`, sans doute aussi `TILW_Teleport
 Constaté et confirmé sur le serveur dédié GDC lors d'une mission précédente. Aucun autre effet connu.
 
 ## Que faire
-Place l'interaction en entité racine à la position de l'objet, avec « Display UI At Reference Point » coché sur son UserActionContext. Exemple : les interactions « Fin de mission » d'Entre Deux (calque framework).
+Placez l'interaction en entité racine à la position de l'objet, avec « Display UI At Reference Point » coché sur son UserActionContext. Exemple : les interactions « Fin de mission » d'Entre Deux (calque framework).
 
 ## Quand retirer la règle
 Quand un test sur serveur dédié, avec un TILW plus récent, montre que le libellé fonctionne sur une interaction placée en enfant.
