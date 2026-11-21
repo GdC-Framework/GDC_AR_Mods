@@ -120,12 +120,15 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 ### 1.0.0 - 2026-11-21
 
-- ADDED: Create Mission Skeleton plugin (Plugins > GDC). It adds to the open mission world everything a GDC mission starts with: layers, AI world (the terrain's own, navmeshes filled for Arland, Eden and Cain), perception manager, Reforger Lobby game mode with the usual GDC settings, TILW framework, briefing sections and an empty Coalition VON frequency config linked on the game mode. It only adds what is missing, so it can be run again safely.
-- ADDED: the skeleton is described by a config (Configs/GDC MM/MissionSkeleton.conf). To change it, create a config inheriting it in your GDC Mission Maker Local addon and select it in Plugins > Settings > Create Mission Skeleton.
 - ADDED: Check Mission plugin (Plugins > GDC, Ctrl+Alt+C). It checks the open mission world without changing it: structure, resources and addons, players and loadouts, system settings, TILW mission logic, AI. The report goes to the Log Console, in English or French, with the fix for each finding and a link to its explanation. Blocks and language in Plugins > Settings > Check Mission; list of the checks in the user guide.
 - ADDED: the Loadout Editor shows the spare magazines of the primary weapon.
+
+### 0.2.0 - 2026-11-16
+
+- ADDED: Create Mission Skeleton plugin (Plugins > GDC).
+- ADDED: the skeleton is described by a config (Configs/GDC MM/MissionSkeleton.conf).
 - CHANGED: the plugins moved from Plugins > GDC > Mission Maker to Plugins > GDC.
-- CHANGED: the local addon created by Update MM Libraries is now named GDC Mission Maker Local, as it also holds your own configs. An existing GDC Mission Maker Libraries addon keeps working, nothing to do.
+- CHANGED: the local addon created by Update MM Libraries is now named GDC Mission Maker Local.
 
 ### 0.0.1 - 2026-11-04
 
