@@ -17,6 +17,7 @@ Le rapport de Check Mission, dans la Log Console, donne l'adresse de la fiche de
 | 5.1 | [Interaction TILW placée en enfant](tilw-interaction-child.fr.md) | comportement d'addon (TILW) |
 | 5.2 à 5.5 | [Triggers TILW mal réglés](tilw-triggers.fr.md) | comportement d'addon (TILW) |
 | 5.6 à 5.14 | [Événements de mission TILW mal réglés](tilw-mission-events.fr.md) | comportement d'addon (TILW) |
+| 6.5 | [IA ou waypoint au-dessus du vide](engine-ai-placement.fr.md) | comportement du moteur |
 
 ## Tenir les fiches à jour (IA food)
 

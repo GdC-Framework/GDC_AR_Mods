@@ -75,6 +75,36 @@ FLAG_SETTER_PREFAB = '''GenericEntity {
 '''
 
 
+# a group prefab without faction, as the RHS ones: spawned by a TILW spawner in T_Faulty (6.1)
+NO_FACTION_GROUP = "{6C0A11E0C4EC5107}Prefabs/GDC_CheckTests/T_NoFactionGroup.et"
+WP_MOVE = "{750A8D1695BD6998}Prefabs/AI/Waypoints/AIWaypoint_Move.et"
+WP_CYCLE = "{35BD6541CBB8AC08}Prefabs/AI/Waypoints/AIWaypoint_Cycle.et"
+WP_GET_IN = "{712F4795CF8B91C7}Prefabs/AI/Waypoints/AIWaypoint_GetIn.et"
+GROUND_Y = "39.5"  # Arland around 2048 / 2048 (39.44 to 39.63 m): the AI traps stand there (6.5: on the ground but one)
+# terrain height of Arland where the playable groups stand (z 2070): rule 6.5 checks that they stand on the ground
+GROUND_2070 = {2070: "48.5", 2080: "49.094", 2090: "48.906"}
+
+
+def faulty_ai():
+    """T_Faulty's AI layer: one trap per rule of block 6"""
+    riflemen = "".join(f'  "{RIFLEMAN}"\n' for _ in range(31))
+    return "\n".join([
+        # 6.1 (no faction), 6.2 (WP_Missing, and G_BadFaction is a group, not a waypoint), 6.3 (NoVeh, and Trg_Presence is
+        # no vehicle); its 31 riflemen and the spawner's 4 give 35 AI at start, above the limit of 30: 6.6, 6.7
+        f'SCR_AIGroup G_AINoFaction : "{FIRE_TEAM}" {{\n coords 2048 {GROUND_Y} 2048\n m_faction ""\n m_aUnitPrefabSlots {{\n{riflemen} }}\n'
+        ' m_aStaticWaypoints {\n  "WP_Used_GDCTest"\n  "WP_Missing_GDCTest"\n  "G_BadFaction"\n  "C_Cycle_GDCTest"\n'
+        '  "WP_Air_GDCTest"\n  "WP_Entity_GDCTest"\n }\n m_aStaticVehicles {\n  "NoVeh_GDCTest"\n  "Trg_Presence"\n }\n}',
+        f'SCR_AIWaypoint WP_Used_GDCTest : "{WP_MOVE}" {{\n coords 2048.2 {GROUND_Y} 2048\n}}',
+        f'SCR_AIWaypoint WP_Orphan_GDCTest : "{WP_MOVE}" {{\n coords 2048.4 {GROUND_Y} 2048\n}}',  # 6.4
+        f'SCR_AIWaypoint WP_Air_GDCTest : "{WP_MOVE}" {{\n coords 2048.6 80 2048\n}}',  # 6.5
+        f'AIWaypointCycle C_Cycle_GDCTest : "{WP_CYCLE}" {{\n coords 2048.8 {GROUND_Y} 2048\n CycleWaypoints {{\n  "WP_Used_GDCTest"\n'
+        '  "WP_Ghost_GDCTest"\n }\n}',  # 6.2
+        f'SCR_EntityWaypoint WP_Entity_GDCTest : "{WP_GET_IN}" {{\n coords 2049 {GROUND_Y} 2048\n m_EntityWaypointParameters '
+        'SCR_AIEntityWaypointParameters "{6C0A11E0C4EC5801}" {\n  m_sEntityName "NoTarget_GDCTest"\n }\n}',  # 6.2
+        f'TILW_PrefabSpawnerEntity P_GroupSpawner {{\n coords 2049.2 {GROUND_Y} 2048\n m_prefab "{NO_FACTION_GROUP}"\n}}',  # 6.1
+    ]) + "\n"
+
+
 class Ids:
     """Object GUIDs of the layers, fixed so that the files do not change from one run to the next"""
     def __init__(self, first):
@@ -224,7 +254,7 @@ GAME_MODE_SKELETON = (f'PS_GameModeCoop PS_GameMode_Lobby1 : "{GAME_MODE_RL}" {{
 
 
 def group(name, slots, x, faction=None, frequencies=None):
-    lines = [f'SCR_AIGroup {name} : "{FIRE_TEAM}" {{', f" coords {x} 39.438 2070"]
+    lines = [f'SCR_AIGroup {name} : "{FIRE_TEAM}" {{', f" coords {x} {GROUND_2070[x]} 2070"]
     if faction is not None:
         lines.append(f' m_faction "{faction}"')
     lines.append(" m_aUnitPrefabSlots {")
@@ -264,9 +294,10 @@ def main():
         write(ADDON / path, character_prefab(name))
         write(ADDON / (path + ".meta"), meta(CHARACTER_PREFABS[name][0] + path, "EntityTemplateResourceClass"))
 
-    guid, path = FLAG_SETTER[:18], FLAG_SETTER[18:]
-    write(ADDON / path, FLAG_SETTER_PREFAB)
-    write(ADDON / (path + ".meta"), meta(guid + path, "EntityTemplateResourceClass"))
+    for reference, text in ((FLAG_SETTER, FLAG_SETTER_PREFAB), (NO_FACTION_GROUP, f'SCR_AIGroup : "{FIRE_TEAM}" {{\n m_faction ""\n}}\n')):
+        guid, path = reference[:18], reference[18:]
+        write(ADDON / path, text)
+        write(ADDON / (path + ".meta"), meta(guid + path, "EntityTemplateResourceClass"))
 
     # ---- T_Clean: what Create Mission Skeleton makes, briefing written, one clean playable group: no finding
     world("T_Clean", {
@@ -311,13 +342,13 @@ def main():
                                          prefab_ref("T_NotOnGear"), prefab_ref("T_VanillaRadio")], 2070, faction="")
         + group("G_Freq", [RIFLEMAN, RIFLEMAN], 2080, frequencies=["31000"])
         + group("G_BadFaction", [RIFLEMAN], 2090, faction="XX_GDCTest"),
-        "ia/opfor": "",
+        "ia/opfor": faulty_ai(),
         "build/decor": "\n".join([
             "PK_EntityDeleter D_NoFilter {\n coords 2100 39.438 2100\n}",
             'PK_EntityDeleter D_Missing {\n coords 2102 39.438 2100\n m_prefabFilterList {\n  "{6C0A11E0C4EC59F2}Prefabs/GDC_CheckTests/MissingPrefab.et"\n }\n}',
             'PK_EntityDeleter D_Proxy {\n coords 2104 39.438 2100\n m_prefabFilterList {\n  "{6C0A11E0C4EC59F3}PrefabLibrary/MM Forces/GDC_CheckTests/Proxy.et"\n }\n}',
             f'PK_EntityDeleter D_WrongGuid {{\n coords 2106 39.438 2100\n m_prefabFilterList {{\n  "{{6C0A11E0C4EC59F4}}{AI_WORLD.split("}")[1]}"\n }}\n}}',
-            "SCR_AIGroup {\n coords 2108 39.438 2100\n}",
+            "SCR_AIGroup {\n coords 2108 56.375 2100\n}",
             f'Vehicle V_Crew : "{S105}" {{\n components {{\n  TILW_VehicleCrewComponent "{{6C0A11E0C4EC5401}}" {{\n  }}\n }}\n coords 2110 39 2110\n}}',
             f'SCR_DestructibleEntity : "{BEETLE_TRAP}" {{\n coords 2120 39 2120\n {{\n  GenericEntity : "{TILW_INTERACTION}" {{\n   coords 0 0 0\n  }}\n }}\n}}',
             'GenericEntity T_Teleport {\n components {\n  GDC_TeleportModuleComponent "{6C0A11E0C4EC5402}" {\n   m_eMode ALL_PLAYERS\n   m_eMinRankRequired CAPTAIN\n  }\n }\n coords 2130 39.438 2130\n}',

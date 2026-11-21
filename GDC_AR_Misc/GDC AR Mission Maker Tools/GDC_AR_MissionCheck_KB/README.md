@@ -17,6 +17,7 @@ The report of Check Mission, in the Log Console, gives the address of the sheet 
 | 5.1 | [TILW interaction placed as a child](tilw-interaction-child.md) | addon behaviour (TILW) |
 | 5.2 to 5.5 | [TILW triggers badly set](tilw-triggers.md) | addon behaviour (TILW) |
 | 5.6 to 5.14 | [TILW mission events badly set](tilw-mission-events.md) | addon behaviour (TILW) |
+| 6.5 | [AI or waypoint above the void](engine-ai-placement.md) | engine behaviour |
 
 ## Maintaining the sheets (AI food)
 

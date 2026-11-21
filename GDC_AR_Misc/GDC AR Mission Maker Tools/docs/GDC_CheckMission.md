@@ -111,7 +111,15 @@ The knowledge base explains the rules whose reason is not obvious: evidence, wor
 
 ### 6. AI
 
-Coming soon.
+| # | Check | What is checked | Severity | Origin |
+|---|---|---|---|---|
+| 6.1 | AI group without a faction | Every AI group, placed or spawned during the mission, has a faction. | error | vanilla |
+| 6.2 | AI waypoint not found | Every waypoint or target named by a group, a cycle waypoint or an entity waypoint exists. | error | vanilla |
+| 6.3 | Group vehicle the AI cannot use | Every vehicle a group lists (m_aStaticVehicles) exists and can be used by the AI. | error | vanilla |
+| 6.4 | Waypoints nothing uses | Every placed waypoint is named by a group, a cycle waypoint or another setting of the mission. | info | vanilla |
+| 6.5 | [AI or waypoint above the void](../GDC_AR_MissionCheck_KB/engine-ai-placement.md) | Every AI group, AI character and waypoint stands on the ground or on an object. | warning | vanilla |
+| 6.6 | AI budget | The number of AI the mission places and spawns, against the active AI limit. | info | vanilla |
+| 6.7 | More AI at start than the active AI limit | The AI placed at start do not exceed the active AI limit of the AI world. | warning | vanilla |
 
 ### 7. Pre-publication
 

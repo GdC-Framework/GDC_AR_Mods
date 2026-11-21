@@ -31,7 +31,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	[Attribute("1", desc: "Block 5: what sets or reads the mission flags: TILW triggers, interactions and mission events.", category: "Blocks")]
 	protected bool m_bMissionLogic;
 
-	[Attribute("1", desc: "Block 6: AI groups, waypoints, AI count.", category: "Blocks")]
+	[Attribute("1", desc: "Block 6: AI groups (faction, waypoints, vehicles), waypoints nothing uses, AI or waypoints above the void, AI budget.", category: "Blocks")]
 	protected bool m_bAI;
 
 	[Attribute("1", desc: "Block 7: what must be clean before publishing the mission addon.", category: "Blocks")]
@@ -317,7 +317,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 		AddBlock(blocks, new GDC_MMCheckBlockPlayers(), 3);
 		AddBlock(blocks, new GDC_MMCheckBlockSettings(), 4);
 		AddBlock(blocks, new GDC_MMCheckBlockLogic(), 5);
-		AddBlock(blocks, new GDC_MMCheckBlock(), 6);
+		AddBlock(blocks, new GDC_MMCheckBlockAI(), 6);
 		AddBlock(blocks, new GDC_MMCheckBlock(), 7);
 		return blocks;
 	}

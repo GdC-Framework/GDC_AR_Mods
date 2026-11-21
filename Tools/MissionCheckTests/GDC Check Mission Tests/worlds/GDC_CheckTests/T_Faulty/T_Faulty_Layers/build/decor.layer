@@ -20,7 +20,7 @@ PK_EntityDeleter D_WrongGuid {
  }
 }
 SCR_AIGroup {
- coords 2108 39.438 2100
+ coords 2108 56.375 2100
 }
 Vehicle V_Crew : "{54C3CC22DEBD57BE}Prefabs/Vehicles/Wheeled/S105/S105_beige.et" {
  components {

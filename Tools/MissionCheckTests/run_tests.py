@@ -55,6 +55,10 @@ FAULTY = {
     "5.6": (2, "ERROR", "TILW_MF_A"), "5.7": (1, "ERROR", "TILW_MF_A"), "5.8": (2, "WARNING", "P_Spawner"),
     "5.9": (1, "ERROR", "TILW_MF_A"), "5.10": (1, "WARNING", "TILW_MF_A"), "5.11": (2, "ERROR", "P_Spawner"),
     "5.12": (1, "ERROR", "TILW_MF_"), "5.13": (1, "WARNING", "TILW_MF_A"), "5.14": (1, "WARNING", "TILW_MF_A"),
+    # AI layer: G_AINoFaction (35 AI at start with the spawner's group, limit 30), waypoints, P_GroupSpawner
+    "6.1": (2, "ERROR", "P_GroupSpawner"), "6.2": (3, "ERROR", "C_Cycle_GDCTest"), "6.3": (1, "ERROR", "G_AINoFaction"),
+    "6.4": (1, "INFO", None), "6.5": (1, "WARNING", "WP_Air_GDCTest"), "6.6": (1, "INFO", "SCR_AIWorld"),
+    "6.7": (1, "WARNING", "SCR_AIWorld"),
 }
 # engine behaviours the TILW mission event rules rely on (GDC_MMCheckEngineProbePlugin): probe -> markers expected
 PROBES = {
@@ -224,6 +228,18 @@ def main():
         written = [l.split("[GDC_CHECK_PROBE]", 1)[1].strip() for l in text.splitlines() if "[GDC_CHECK_PROBE]" in l]
         for marker in markers:
             results.check(f"engine probe {probe}: {marker}", marker in written, ", ".join(written))
+
+    # rule 6.5: in the World Editor, a trace down finds the ground and the roofs (T_Clean, on Arland). The navmesh is not
+    # checked: it answers on Arland but not on the terrains with a tiled navmesh (Zimnitrita, Gulfcoast), see README
+    text = run_workbench(results, "engine probe traces", gproj, TEST_ADDON_GUID, "WorldEditor", "GDC_MMCheckNavmeshProbePlugin",
+                         '-probeWorld="worlds/GDC_CheckTests/T_Clean/T_Clean.ent"', keep_logs=args.keep_logs)
+    written = [l.split("[GDC_CHECK_PROBE]", 1)[1].strip() for l in text.splitlines() if "[GDC_CHECK_PROBE]" in l]
+    traces = {w.split()[1]: float(w.split()[2]) for w in written if w.startswith("TRACE ")}
+    results.check("engine probe traces: ground found below", traces.get("ground", 1) < 1, str(traces))
+    results.check("engine probe traces: nothing below a point in the air", traces.get("air30") == 1, str(traces))
+    house = next((w for w in written if w.startswith("HOUSE ")), "")
+    roof = re.search(r"trace=([\d.]+)", house)
+    results.check("engine probe traces: roof of a house found below", roof is not None and float(roof.group(1)) < 1, house)
 
     # rule 2.4 is unit tested with made-up addon lists: never load an addon that may be missing, the Workbench then
     # opens a modal "Missing Addon" dialog on the user's screen

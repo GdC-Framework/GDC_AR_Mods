@@ -17,7 +17,7 @@ Le code de sortie vaut 0 quand tout passe. Le résumé de chaque lancement est g
 |---|---|
 | Contrôles statiques | `check_kb.py` (fiches de la base de connaissance) ; `rules_doc.py --check` (liste des contrôles du mode d'emploi à jour) ; fins de ligne LF ; textes français au vouvoiement ; textes français différents des anglais |
 | Tests unitaires | plugin `GDC_MMCheckUnitTestsPlugin` : catalogue (chaque règle complète dans les deux langues, description comprise, mêmes `%1 %2 %3`, numéros et titres uniques, règles « comportement d'addon » vérifiées et dotées d'une fiche) ; aides de texte (accents, majuscules, accords) ; résolution des ressources (règle 2.1) ; addons exclus (2.4, avec des listes simulées) ; analyse de loadout (arme principale, chargeurs de rechange, débordement, prefabs introuvables, poids, rangements absents) |
-| Sondes moteur | plugin `GDC_MMCheckEngineProbePlugin` (`-probe=terms`, `loop`, `nullarray`, un lancement chacune) : les comportements du moteur et de TILW sur lesquels reposent les règles 5.6 et 5.7 |
+| Sondes moteur | plugin `GDC_MMCheckEngineProbePlugin` (`-probe=terms`, `loop`, `nullarray`, un lancement chacune) : les comportements du moteur et de TILW sur lesquels reposent les règles 5.6 et 5.7 ; plugin `GDC_MMCheckNavmeshProbePlugin` sur `T_Clean` : le tracé vers le bas trouve le sol et un toit, rien sous un point en l'air (règle 6.5) |
 | `T_Clean` | monde complet et propre : aucun constat |
 | `T_Faulty`, en anglais puis en français | un cas piégé par règle : chaque règle attendue sort le bon nombre de fois, avec la bonne gravité, sur la bonne entité ; le rapport est dans la bonne langue |
 | `T_NoPlayable` | Reforger Lobby sans groupe jouable (3.1), sans aucune entité TILW : les règles TILW ne tournent pas |
@@ -40,6 +40,9 @@ Chaque lancement vérifie aussi l'absence d'erreur de script dans le log, donc l
 - Les entités enfants **définies dans un prefab** (le gestionnaire de factions du mode de jeu Reforger Lobby, par exemple) ne figurent pas dans la liste des entités du monde : on les atteint par leur parent (`GetChild`). Les enfants posés par le MM, eux, y figurent.
 - Un appel de méthode sur nul écrit « Virtual Machine Exception : NULL pointer to instance » puis **le script continue** : l'appel vaut faux, la boucle appelante n'est pas interrompue. Un événement TILW sans condition ne bloque donc pas les suivants, il ne part simplement jamais de lui-même (règle 5.6).
 - Un opérateur TILW sans opérande, liste vide ou jamais créée : une Conjunction vaut vrai, une Disjunction faux (règle 5.7).
+- Dans le World Editor, le navmesh ne répond de façon fiable que sur Arland (navmesh d'un seul tenant). Sur Zimnitrita et Gulfcoast (navmesh découpé en tuiles), `GetReachablePoint` échoue partout alors que les tuiles se disent chargées et valides, même là où les IA se déplacent bien en jeu : aucune règle ne s'appuie donc sur le navmesh (sondes du 21/11/2026, `-probeWorld=` sur Davay et Gulf Coast 03).
+- Demander `Workbench.Exit` **avant** d'ouvrir un monde fait planter le Workbench (0xC0000374) : la sortie vient à la fin.
+- Mots réservés d'Enforce rencontrés comme noms de variables : `event`, `reference`, `out`.
 - Charger un addon introuvable (`-addons`) ouvre un dialogue modal « Missing Addon » : ne jamais faire charger aux tests un addon qui peut manquer.
 
 ## Recette manuelle

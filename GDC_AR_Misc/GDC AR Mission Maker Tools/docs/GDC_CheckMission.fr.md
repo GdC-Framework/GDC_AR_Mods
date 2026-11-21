@@ -111,7 +111,15 @@ La base de connaissance explique les règles dont la raison n'est pas évidente 
 
 ### 6. IA
 
-À venir.
+| # | Contrôle | Ce qui est vérifié | Gravité | Origine |
+|---|---|---|---|---|
+| 6.1 | Groupe IA sans faction | Chaque groupe IA, posé ou apparu en cours de mission, a une faction. | erreur | vanilla |
+| 6.2 | Waypoint IA introuvable | Chaque waypoint ou cible nommé par un groupe, un waypoint Cycle ou un waypoint d'entité existe. | erreur | vanilla |
+| 6.3 | Véhicule de groupe inutilisable par l'IA | Chaque véhicule listé par un groupe (m_aStaticVehicles) existe et peut être utilisé par l'IA. | erreur | vanilla |
+| 6.4 | Waypoints que rien n'utilise | Chaque waypoint posé est nommé par un groupe, un waypoint Cycle ou un autre réglage de la mission. | info | vanilla |
+| 6.5 | [IA ou waypoint au-dessus du vide](../GDC_AR_MissionCheck_KB/engine-ai-placement.fr.md) | Chaque groupe IA, personnage IA et waypoint repose sur le sol ou sur un objet. | avertissement | vanilla |
+| 6.6 | Budget d'IA | Le nombre d'IA que la mission pose et fait apparaître, comparé à la limite d'IA actives. | info | vanilla |
+| 6.7 | Plus d'IA au départ que la limite d'IA actives | Les IA posées au départ ne dépassent pas la limite d'IA actives du monde IA. | avertissement | vanilla |
 
 ### 7. Pré-publication
 

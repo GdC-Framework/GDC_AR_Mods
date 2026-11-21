@@ -749,6 +749,92 @@ class GDC_MMCheckCatalog
 		rule.SetVerified("TilWMissionFramework", "1.0.128", "2026-11-21");
 		rule.m_sKB = "tilw-mission-events";
 
+		// ---- 6. AI -----------------------------------------------------------------------------------------
+		rule = Declare("6.1", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("AI group without a faction", "Groupe IA sans faction");
+		rule.SetDescription(
+			"Every AI group, placed or spawned during the mission, has a faction.",
+			"Chaque groupe IA, posé ou apparu en cours de mission, a une faction.");
+		rule.SetProblem(
+			"%1 has no faction (m_faction): a group gives its faction to its members, so they belong to no side.",
+			"%1 n'a pas de faction (m_faction) : un groupe donne sa faction à ses membres, qui n'appartiennent donc à aucun camp.");
+		rule.SetFix(
+			"set the group's faction key, or use a child prefab that sets it (the RHS group prefabs declare none).",
+			"renseignez la clé de faction du groupe, ou utilisez un prefab enfant qui la fixe (les prefabs de groupe RHS n'en déclarent pas).");
+
+		rule = Declare("6.2", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("AI waypoint not found", "Waypoint IA introuvable");
+		rule.SetDescription(
+			"Every waypoint or target named by a group, a cycle waypoint or an entity waypoint exists.",
+			"Chaque waypoint ou cible nommé par un groupe, un waypoint Cycle ou un waypoint d'entité existe.");
+		rule.SetProblem(
+			"%1 names %2: no entity holds these names, or it is not a waypoint. The AI ignores them.",
+			"%1 nomme %2 : aucune entité ne porte ces noms, ou ce n'est pas un waypoint. L'IA les ignore.");
+		rule.SetFix(
+			"type the names exactly as in the Name field of the waypoints (or of the target entity).",
+			"saisissez les noms exactement comme dans le champ Name des waypoints (ou de l'entité visée).");
+
+		rule = Declare("6.3", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Group vehicle the AI cannot use", "Véhicule de groupe inutilisable par l'IA");
+		rule.SetDescription(
+			"Every vehicle a group lists (m_aStaticVehicles) exists and can be used by the AI.",
+			"Chaque véhicule listé par un groupe (m_aStaticVehicles) existe et peut être utilisé par l'IA.");
+		rule.SetProblem(
+			"the group lists vehicles the AI cannot use: %1. No entity holds the name, or it has no SCR_AIVehicleUsageComponent.",
+			"le groupe liste des véhicules que l'IA ne peut pas utiliser : %1. Aucune entité ne porte ce nom, ou elle n'a pas de SCR_AIVehicleUsageComponent.");
+		rule.SetFix(
+			"type the vehicle's name as in its Name field, and choose a vehicle or static weapon the AI can use.",
+			"saisissez le nom du véhicule comme dans son champ Name, et choisissez un véhicule ou une arme fixe utilisable par l'IA.");
+
+		rule = Declare("6.4", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Waypoints nothing uses", "Waypoints que rien n'utilise");
+		rule.SetDescription(
+			"Every placed waypoint is named by a group, a cycle waypoint or another setting of the mission.",
+			"Chaque waypoint posé est nommé par un groupe, un waypoint Cycle ou un autre réglage de la mission.");
+		rule.SetProblem(
+			"%1 waypoints are named by no group, cycle waypoint, instruction or setting of the mission: %2.",
+			"%1 waypoints ne sont nommés par aucun groupe, waypoint Cycle, instruction ou réglage de la mission : %2.");
+		rule.SetFix(
+			"check the names typed where they should be used (a typo leaves a group standing still), or delete them.",
+			"vérifiez les noms saisis là où ils devraient servir (une faute de frappe laisse un groupe immobile), ou supprimez-les.");
+
+		rule = Declare("6.5", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("AI or waypoint above the void", "IA ou waypoint au-dessus du vide");
+		rule.SetDescription(
+			"Every AI group, AI character and waypoint stands on the ground or on an object.",
+			"Chaque groupe IA, personnage IA et waypoint repose sur le sol ou sur un objet.");
+		rule.SetProblem(
+			"nothing (ground or object) lies within %1 m below it: placed too high, beside a floor, or under the terrain.",
+			"rien (sol ou objet) ne se trouve à moins de %1 m sous lui : posé trop haut, à côté d'un plancher, ou sous le terrain.");
+		rule.SetFix(
+			"lower it onto the floor or the ground.",
+			"descendez-le sur le plancher ou sur le sol.");
+		rule.m_sKB = "engine-ai-placement";
+
+		rule = Declare("6.6", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.INFO, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("AI budget", "Budget d'IA");
+		rule.SetDescription(
+			"The number of AI the mission places and spawns, against the active AI limit.",
+			"Le nombre d'IA que la mission pose et fait apparaître, comparé à la limite d'IA actives.");
+		rule.SetProblem(
+			"%1 AI at start, up to %2 more spawned during the mission, for an active AI limit of %3 (vehicle crews not counted).",
+			"%1 IA au départ, jusqu'à %2 de plus apparues en cours de mission, pour une limite d'IA actives de %3 (équipages de véhicules non comptés).");
+		rule.SetFix(
+			"check that the AI alive at the busiest moment stay below the limit.",
+			"vérifiez que les IA en vie au moment le plus chargé restent sous la limite.");
+
+		rule = Declare("6.7", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("More AI at start than the active AI limit", "Plus d'IA au départ que la limite d'IA actives");
+		rule.SetDescription(
+			"The AI placed at start do not exceed the active AI limit of the AI world.",
+			"Les IA posées au départ ne dépassent pas la limite d'IA actives du monde IA.");
+		rule.SetProblem(
+			"%1 AI at start for an active AI limit of %2: the AI beyond the limit may stay inactive.",
+			"%1 IA au départ pour une limite d'IA actives de %2 : les IA au-delà de la limite peuvent rester inactives.");
+		rule.SetFix(
+			"raise the limit (SCR_AIWorld, Active AI limit) or place fewer AI at start.",
+			"relevez la limite (SCR_AIWorld, Active AI limit) ou posez moins d'IA au départ.");
+
 		return s_aRules;
 	}
 
