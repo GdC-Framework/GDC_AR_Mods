@@ -32,6 +32,11 @@ Travaux à faire sur les mods et les missions, sans ordre de priorité imposé. 
 - Évaluer une bibliothèque dédiée au Scenario Framework.
 - Signaler à Bacon que l'addon ZU-23 ne déclare `BaconZU23_Turret_Deployed` et `Ural4320_ZU23` dans aucun catalogue de faction, seulement dans un ancien registre Game Master.
 
+### Vérification de mission (« Check Mission »)
+
+- Écrire sur le wiki GDC une page qui présente Check Mission dans les grandes lignes et renvoie aux fiches de la base de connaissance, maintenues seulement sur GitHub (`GDC AR Mission Maker Tools/GDC_AR_MissionCheck_KB/`).
+- Faire signaler par la supervision des mods les règles « comportement d'addon » dont l'addon a changé de version depuis leur vérification.
+
 ## Noms des mods sans « AR »
 
 Les TITLE des addons ont perdu « AR » (GDC Core, GDC Equipment, GDC Terrains, GDC Loadouts, GDC Mission Maker Tools) ; seul GDC AR Lib le garde, pour le distinguer de GDC_Lib d'Arma 3. Les ID de Core, Equipment, Terrains et Loadouts restent inchangés, ainsi que les dossiers. À la prochaine publication de chaque mod :
