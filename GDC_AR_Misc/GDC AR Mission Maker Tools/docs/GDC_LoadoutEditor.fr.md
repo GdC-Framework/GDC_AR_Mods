@@ -90,6 +90,10 @@ Les derniers conteneurs de la liste sont particuliers :
 
 L'icône se place en début de ligne pour repérer les problèmes d'un coup d'œil. Le détail de chaque alerte est aussi écrit dans la console du Workbench.
 
+L'arme principale (emplacement d'arme 0) affiche ses chargeurs de rechange dans l'inventaire, par exemple `WEAPON SLOT 0 (PRIMARY) · 6 SPARE MAGAZINES`, ou `⚠ NO SPARE MAGAZINE`. Un chargeur compte s'il va dans l'arme (même puits de chargeur) ; celui qui est engagé dans l'arme ne compte pas.
+
+Check Mission (Ctrl+Alt+C) fait les mêmes contrôles sur tous les slots jouables de la mission : loadouts qui débordent (règle 3.6) et armes principales sans chargeur de rechange (règle 3.7). L'éditeur de loadouts en donne ensuite le détail.
+
 ## Changer de tenue
 
 Quand vous changez un vêtement dans **Worn**, cliquez sur **Refresh Containers**. L'outil adapte alors l'inventaire au nouvel équipement :

@@ -1,0 +1,48 @@
+PK_EntityDeleter D_NoFilter {
+ coords 2100 39.438 2100
+}
+PK_EntityDeleter D_Missing {
+ coords 2102 39.438 2100
+ m_prefabFilterList {
+  "{6C0A11E0C4EC59F2}Prefabs/GDC_CheckTests/MissingPrefab.et"
+ }
+}
+PK_EntityDeleter D_Proxy {
+ coords 2104 39.438 2100
+ m_prefabFilterList {
+  "{6C0A11E0C4EC59F3}PrefabLibrary/MM Forces/GDC_CheckTests/Proxy.et"
+ }
+}
+PK_EntityDeleter D_WrongGuid {
+ coords 2106 39.438 2100
+ m_prefabFilterList {
+  "{6C0A11E0C4EC59F4}Prefabs/AI/SCR_AIWorld.et"
+ }
+}
+SCR_AIGroup {
+ coords 2108 39.438 2100
+}
+Vehicle V_Crew : "{54C3CC22DEBD57BE}Prefabs/Vehicles/Wheeled/S105/S105_beige.et" {
+ components {
+  TILW_VehicleCrewComponent "{6C0A11E0C4EC5401}" {
+  }
+ }
+ coords 2110 39 2110
+}
+SCR_DestructibleEntity : "{E9146AD559A299BB}Prefabs/Structures/Forest/BarkBeetleTrap_E_01.et" {
+ coords 2120 39 2120
+ {
+  GenericEntity : "{584EB34600E9698D}Prefabs/Utils/Interactions/TILW_SetFlagInteraction.et" {
+   coords 0 0 0
+  }
+ }
+}
+GenericEntity T_Teleport {
+ components {
+  GDC_TeleportModuleComponent "{6C0A11E0C4EC5402}" {
+   m_eMode ALL_PLAYERS
+   m_eMinRankRequired CAPTAIN
+  }
+ }
+ coords 2130 39.438 2130
+}

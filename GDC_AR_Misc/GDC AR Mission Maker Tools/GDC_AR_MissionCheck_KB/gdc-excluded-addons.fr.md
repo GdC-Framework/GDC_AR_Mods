@@ -2,7 +2,7 @@
 
 [English](gdc-excluded-addons.md) | Français
 
-Règle 2.5 · erreur · convention GDC
+Règle 2.4 · erreur · convention GDC
 
 ## Ce qui se passe
 Certains addons cassent les missions GDC. S'il est chargé dans le Workbench, la mission risque d'en dépendre, et le serveur et les joueurs le chargent alors aussi.

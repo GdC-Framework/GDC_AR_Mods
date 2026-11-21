@@ -1,0 +1,13 @@
+SCR_ChimeraCharacter : "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et" {
+ components {
+  SCR_InventoryStorageManagerComponent "{520EA1D2DB118DE5}" {
+   InitialInventoryItems {
+    ItemsInitConfigurationItem "{6C0A11E0C4EC5204}" {
+     PrefabsToSpawn {
+      "{54C68E438DD34265}Prefabs/Items/Equipment/Radios/Radio_R107M.et"
+     }
+    }
+   }
+  }
+ }
+}

@@ -1,10 +1,10 @@
 #ifdef WORKBENCH
 //! Block 2, resources and addons (rules 2.1 to 2.4, described in GDC_MMCheckCatalog):
-//! - 2.1 / 2.4 every resource the mission references exists in the loaded addons, looked up by GUID (2.4: GUID unknown
-//!   but a file exists at its path);
+//! - 2.1 every resource the mission references exists in the loaded addons, looked up by GUID (an unknown GUID whose
+//!   path exists is no finding: the Workbench repairs it from the path when it opens the world);
 //! - 2.2 no MM library proxy (PrefabLibrary/MM ...) used as a prefab or in a property;
 //! - 2.3 no AI group, character or vehicle without a prefab;
-//! - 2.5 no excluded addon loaded (GDC_MMCheckCatalog.GetExcludedAddons).
+//! - 2.4 no excluded addon loaded (GDC_MMCheckCatalog.GetExcludedAddons).
 //! Only the references the mission adds are checked: a reference its entity's prefab already holds belongs to the
 //! prefab's addon.
 class GDC_MMCheckBlockResources : GDC_MMCheckBlock
@@ -50,33 +50,48 @@ class GDC_MMCheckBlockResources : GDC_MMCheckBlock
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! 2.5: an excluded addon among the loaded ones; one excluded only with a class counts when the mission places one
+	//! 2.4: an excluded addon among the loaded ones; one excluded only with a class counts when the mission places one
 	protected void CheckExcludedAddons()
 	{
 		array<string> loaded = {};
 		GameProject.GetLoadedAddons(loaded);
+		set<string> classes = new set<string>();
+		foreach (IEntitySource entity : m_Context.m_aEntities)
+		{
+			classes.Insert(entity.GetClassName());
+		}
+
+		foreach (GDC_MMCheckExcludedAddon excluded : FindExcludedAddons(loaded, classes))
+		{
+			m_Report.Add("2.4", null, string.Empty, excluded.m_sName, excluded.GetReason());
+		}
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! \param loaded GUIDs of the loaded addons
+	//! \param missionClasses classes of the entities the mission places
+	//! \return the excluded addons among the loaded ones; one excluded only with a class counts when the mission places
+	//! an entity inheriting it (unit tested with made-up lists: loading a missing addon opens a modal dialog)
+	static array<GDC_MMCheckExcludedAddon> FindExcludedAddons(notnull array<string> loaded, notnull set<string> missionClasses)
+	{
+		array<GDC_MMCheckExcludedAddon> found = {};
 		foreach (GDC_MMCheckExcludedAddon excluded : GDC_MMCheckCatalog.GetExcludedAddons())
 		{
 			if (!loaded.Contains(excluded.m_sGUID))
 				continue;
 
-			if (!excluded.m_sOnlyWith.IsEmpty() && !PlacesClass(excluded.m_sOnlyWith))
-				continue;
+			bool placed = excluded.m_sOnlyWith.IsEmpty();
+			foreach (string className : missionClasses)
+			{
+				if (!placed && GDC_MMCheckContext.Inherits(className, excluded.m_sOnlyWith))
+					placed = true;
+			}
 
-			m_Report.Add("2.5", null, string.Empty, excluded.m_sName, excluded.GetReason());
-		}
-	}
-
-	//------------------------------------------------------------------------------------------------
-	protected bool PlacesClass(string className)
-	{
-		foreach (IEntitySource entity : m_Context.m_aEntities)
-		{
-			if (GDC_MMCheckContext.Inherits(entity.GetClassName(), className))
-				return true;
+			if (placed)
+				found.Insert(excluded);
 		}
 
-		return false;
+		return found;
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -199,16 +214,8 @@ class GDC_MMCheckBlockResources : GDC_MMCheckBlock
 			return;
 		}
 
-		switch (m_Context.GetResourceState(resource))
-		{
-			case GDC_MMCheckContext.RESOURCE_MISSING:
-				m_Report.Add("2.1", entity, property, resource);
-				break;
-
-			case GDC_MMCheckContext.RESOURCE_PATH_ONLY:
-				m_Report.Add("2.4", entity, property, resource);
-				break;
-		}
+		if (m_Context.GetResourceState(resource) == GDC_MMCheckContext.RESOURCE_MISSING)
+			m_Report.Add("2.1", entity, property, resource);
 	}
 
 	//------------------------------------------------------------------------------------------------

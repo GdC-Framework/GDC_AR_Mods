@@ -318,38 +318,24 @@ class GDC_LoadoutEditorTool : WorldEditorTool
 			return false;
 		}
 
-		GDC_LoadoutSnapshot snapshot = new GDC_LoadoutSnapshot();
-		if (!GDC_LoadoutPrefabIO.Read(source, prefab, snapshot))
+		// same reading and checks as Check Mission (GDC_LoadoutAnalysis)
+		GDC_LoadoutAnalysis analysis = new GDC_LoadoutAnalysis();
+		if (!analysis.Read(source, prefab))
 			return false;
 
+		GDC_LoadoutSnapshot snapshot = analysis.m_Snapshot;
 		m_FailedPrefab = ResourceName.Empty;
 		m_LoadedSnapshot = snapshot;
 		m_Prefab = prefab;
-
-		m_aWorn = {};
-		foreach (GDC_LoadoutSlotRef worn : snapshot.m_aWorn)
-		{
-			m_aWorn.Insert(GDC_LoadoutWornSlot.Create(worn.m_sKey, worn.m_Prefab));
-		}
-
-		m_aWeapons = {};
-		foreach (GDC_LoadoutSlotRef weapon : snapshot.m_aWeapons)
-		{
-			m_aWeapons.Insert(GDC_LoadoutWeaponSlot.Create(weapon.m_sKey, weapon.m_sLabel, weapon.m_Prefab));
-		}
-
-		m_aGadgets = {};
-		foreach (GDC_LoadoutSlotRef gadget : snapshot.m_aGadgets)
-		{
-			m_aGadgets.Insert(GDC_LoadoutGadgetSlot.Create(gadget.m_sKey, gadget.m_Prefab));
-		}
+		m_aWorn = analysis.m_aWorn;
+		m_aWeapons = analysis.m_aWeapons;
+		m_aGadgets = analysis.m_aGadgets;
+		m_aNodes = analysis.m_aNodes;
+		m_aContainers = analysis.m_aContainers;
 
 		if (!m_aItemsToDistribute)
 			m_aItemsToDistribute = {};
 
-		m_aContainers = {};
-		GDC_LoadoutStorageTree.CollectNodes(m_aWorn, m_aNodes);
-		GDC_LoadoutStorageTree.BuildContainers(snapshot.m_aEntries, m_aNodes, m_aContainers);
 		UpdateLabels();
 		StoreBindings();
 		UpdatePropertyPanel();
@@ -372,38 +358,7 @@ class GDC_LoadoutEditorTool : WorldEditorTool
 	//! (e.g. RHS) is not loaded in this Workbench session. Their storages cannot be read.
 	protected void ReportMissingPrefabs(notnull GDC_LoadoutSnapshot snapshot)
 	{
-		array<ResourceName> used = {};
-		foreach (GDC_LoadoutSlotRef worn : snapshot.m_aWorn)
-		{
-			used.Insert(worn.m_Prefab);
-		}
-
-		foreach (GDC_LoadoutSlotRef weapon : snapshot.m_aWeapons)
-		{
-			used.Insert(weapon.m_Prefab);
-		}
-
-		foreach (GDC_LoadoutSlotRef gadget : snapshot.m_aGadgets)
-		{
-			used.Insert(gadget.m_Prefab);
-		}
-
-		foreach (GDC_LoadoutEntryRef entry : snapshot.m_aEntries)
-		{
-			used.InsertAll(entry.m_aPrefabs);
-		}
-
-		m_aMissingPrefabs.Clear();
-		foreach (ResourceName candidate : used)
-		{
-			if (candidate.IsEmpty() || m_aMissingPrefabs.Contains(candidate))
-				continue;
-
-			Resource resource = Resource.Load(candidate);
-			if (!resource || !resource.IsValid())
-				m_aMissingPrefabs.Insert(candidate);
-		}
-
+		GDC_LoadoutAnalysis.CollectMissingPrefabs(snapshot, m_aMissingPrefabs);
 		if (m_aMissingPrefabs.IsEmpty())
 			return;
 
@@ -460,8 +415,10 @@ class GDC_LoadoutEditorTool : WorldEditorTool
 
 	protected void UpdateLabels()
 	{
-		m_aWarnings.Clear();
-		GDC_LoadoutStorageTree.UpdateLabels(m_aContainers, m_aNodes, new GDC_LoadoutItemCache(), m_aWarnings);
+		if (!m_aWeapons)
+			m_aWeapons = {};
+
+		GDC_LoadoutAnalysis.Check(m_aContainers, m_aNodes, m_aWeapons, m_aWarnings, null);
 	}
 
 	protected void PrintWarnings(string doneMessage)

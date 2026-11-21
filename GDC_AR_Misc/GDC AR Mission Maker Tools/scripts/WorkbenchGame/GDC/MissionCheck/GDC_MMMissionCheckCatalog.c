@@ -79,7 +79,7 @@ class GDC_MMCheckRule
 }
 
 //------------------------------------------------------------------------------------------------
-//! An addon GDC missions must not load (rule 2.5), with the reason; its knowledge base sheet: gdc-excluded-addons.
+//! An addon GDC missions must not load (rule 2.4), with the reason; its knowledge base sheet: gdc-excluded-addons.
 class GDC_MMCheckExcludedAddon
 {
 	string m_sGUID;
@@ -109,7 +109,7 @@ class GDC_MMCheckCatalog
 	protected static ref array<ref GDC_MMCheckExcludedAddon> s_aExcludedAddons;
 
 	//------------------------------------------------------------------------------------------------
-	//! \return addons GDC missions must not load (rule 2.5); keep the sheet gdc-excluded-addons in step
+	//! \return addons GDC missions must not load (rule 2.4); keep the sheet gdc-excluded-addons in step
 	static array<ref GDC_MMCheckExcludedAddon> GetExcludedAddons()
 	{
 		if (s_aExcludedAddons)
@@ -253,22 +253,13 @@ class GDC_MMCheckCatalog
 		rule = Declare("2.3", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Entity without its prefab", "Entité sans son prefab");
 		rule.SetProblem(
-			"a bare %1 with no prefab: its prefab was probably stripped by saving the world while the prefab's addon was not loaded.",
-			"un %1 nu, sans prefab : il a sans doute été retiré en enregistrant le monde alors que l'addon du prefab n'était pas chargé.");
+			"a %1 without its prefab: the addon of the prefab is not loaded, or the prefab was stripped by saving the world without that addon.",
+			"un %1 sans son prefab : l'addon du prefab n'est pas chargé, ou le prefab a été retiré en enregistrant le monde sans cet addon.");
 		rule.SetFix(
-			"close the world without saving, restore the layer from git, load the missing addon, then reopen the world.",
-			"fermez le monde sans enregistrer, restaurez le calque depuis git, chargez l'addon manquant, puis rouvrez le monde.");
+			"load the addon of the prefab and reopen the world, without saving it before; if the entity stays without prefab, restore its layer from git.",
+			"chargez l'addon du prefab et rouvrez le monde, sans l'enregistrer avant ; si l'entité reste sans prefab, restaurez son calque depuis git.");
 
-		rule = Declare("2.4", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
-		rule.SetTitle("Unknown resource GUID", "GUID de ressource inconnu");
-		rule.SetProblem(
-			"the property points to %1: this GUID is unknown, but a file with another GUID exists at this path.",
-			"la propriété pointe vers %1 : ce GUID est inconnu, mais un fichier d'un autre GUID existe à ce chemin.");
-		rule.SetFix(
-			"pick the resource again in this property.",
-			"choisissez à nouveau la ressource dans cette propriété.");
-
-		rule = Declare("2.5", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule = Declare("2.4", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
 		rule.SetTitle("Excluded addon loaded", "Addon exclu chargé");
 		rule.SetProblem(
 			"%1 is loaded: %2",
@@ -277,6 +268,100 @@ class GDC_MMCheckCatalog
 			"remove %1 from the dependencies of the mission addon, and from the server's mod list.",
 			"retirez %1 des dépendances de l'addon de la mission, et de la liste des mods du serveur.");
 		rule.m_sKB = "gdc-excluded-addons";
+
+		// ---- 3. Players and slots -----------------------------------------------------------------
+		rule = Declare("3.1", GDC_MMCheckOrigin.RL, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.MODSET);
+		rule.SetTitle("No playable group", "Aucun groupe jouable");
+		rule.SetProblem(
+			"no AI group has Set Playable ticked: Reforger Lobby has no slot to offer.",
+			"aucun groupe d'IA n'a Set Playable coché : Reforger Lobby n'a aucun slot à proposer.");
+		rule.SetFix(
+			"tick Set Playable (m_bSetPlayable) on the groups of the players.",
+			"cochez Set Playable (m_bSetPlayable) sur les groupes des joueurs.");
+		rule.SetVerified("ReforgerLobbyCommunity", "1.8.23", "2026-11-21");
+		rule.m_sKB = "rl-playable-groups";
+
+		rule = Declare("3.2", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Playable group without a faction", "Groupe jouable sans faction");
+		rule.SetProblem(
+			"the group has no faction (m_faction), neither set in the mission nor in its prefab: its slots belong to no side.",
+			"le groupe n'a pas de faction (m_faction), ni dans la mission ni dans son prefab : ses slots n'appartiennent à aucun camp.");
+		rule.SetFix(
+			"set its faction, or use a group prefab that declares one (the RHS group prefabs declare none).",
+			"renseignez sa faction, ou utilisez un prefab de groupe qui en déclare une (les prefabs de groupes RHS n'en déclarent pas).");
+
+		rule = Declare("3.3", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Slot frequency list of the wrong length", "Liste de fréquences de mauvaise longueur");
+		rule.SetProblem(
+			"the list has %1 entries for %2 slots: its frequencies do not match the slots, in order.",
+			"la liste a %1 entrées pour %2 slots : ses fréquences ne correspondent pas aux slots, dans l'ordre.");
+		rule.SetFix(
+			"give one entry per slot, in the order of the unit prefab slots (an empty entry keeps the default).",
+			"mettez une entrée par slot, dans l'ordre des slots du groupe (une entrée vide garde la valeur par défaut).");
+
+		rule = Declare("3.4", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Teleport module nobody can use", "Module de téléportation inutilisable");
+		rule.SetProblem(
+			"in ALL_PLAYERS mode it requires the rank %1, and no playable slot reaches it (highest: %2).",
+			"en mode ALL_PLAYERS il exige le grade %1, qu'aucun slot jouable n'atteint (le plus haut : %2).");
+		rule.SetFix(
+			"lower its minimum rank (m_eMinRankRequired, INVALID for none), or give that rank to the slot meant to use it.",
+			"baissez son grade minimum (m_eMinRankRequired, INVALID pour aucun), ou donnez ce grade au slot qui doit l'utiliser.");
+
+		rule = Declare("3.5", GDC_MMCheckOrigin.GDC, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.GDC);
+		rule.SetTitle("Radio that is not a Coalition VON radio", "Radio qui n'est pas une radio Coalition VON");
+		rule.SetProblem(
+			"the slot %1 carries %2, which is not a Coalition VON radio: it does not work with Coalition VON.",
+			"le slot %1 porte %2, qui n'est pas une radio Coalition VON : elle ne fonctionne pas avec Coalition VON.");
+		rule.SetFix(
+			"replace it in the loadout of the slot prefab with a Coalition VON radio (AN/PRC-152, R-148, R-168...).",
+			"remplacez-la dans le loadout du prefab de slot par une radio Coalition VON (AN/PRC-152, R-148, R-168...).");
+		rule.m_sKB = "gdc-cvon-radios";
+
+		rule = Declare("3.6", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Loadout over its limits", "Loadout qui déborde");
+		rule.SetProblem(
+			"the slot %1 starts with more than its gear can hold (%2 storage problems: capacity, weight, size or item type): some items will not be spawned.",
+			"le slot %1 démarre avec plus que son équipement ne peut contenir (%2 problèmes de rangement : capacité, poids, taille ou type d'objet) : des objets ne seront pas créés.");
+		rule.SetFix(
+			"open the slot prefab in the Loadout Editor (GDC backpack icon): it shows which storage overflows.",
+			"ouvrez le prefab du slot dans l'éditeur de loadouts (icône sac à dos GDC) : il montre quel rangement déborde.");
+
+		rule = Declare("3.7", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Primary weapon without a spare magazine", "Arme principale sans chargeur de rechange");
+		rule.SetProblem(
+			"the slot %1 has no spare magazine for its primary weapon %2.",
+			"le slot %1 n'a aucun chargeur de rechange pour son arme principale %2.");
+		rule.SetFix(
+			"add magazines for it to the loadout (Loadout Editor, Items To Distribute).",
+			"ajoutez-lui des chargeurs dans le loadout (éditeur de loadouts, Items To Distribute).");
+
+		rule = Declare("3.8", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.ERROR, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Loadout item missing", "Objet du loadout introuvable");
+		rule.SetProblem(
+			"the slot %1 uses prefabs that no loaded addon provides (%2): they will not be spawned.",
+			"le slot %1 utilise des prefabs qu'aucun addon chargé ne fournit (%2) : ils ne seront pas créés.");
+		rule.SetFix(
+			"load the addon that provides them, or replace them in the loadout of the slot prefab.",
+			"chargez l'addon qui les fournit, ou remplacez-les dans le loadout du prefab de slot.");
+
+		rule = Declare("3.9", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Loadout heavier than the character can carry", "Loadout plus lourd que ce que le personnage peut porter");
+		rule.SetProblem(
+			"the loadout of slot %1 weighs about %2 kg, above the %3 kg the character can carry: some items may not be spawned.",
+			"le loadout du slot %1 pèse environ %2 kg, au-delà des %3 kg que le personnage peut porter : des objets risquent de ne pas être créés.");
+		rule.SetFix(
+			"lighten the loadout (Loadout Editor).",
+			"allégez le loadout (éditeur de loadouts).");
+
+		rule = Declare("3.10", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
+		rule.SetTitle("Loadout items aimed at a missing storage", "Objets du loadout destinés à un rangement absent");
+		rule.SetProblem(
+			"the slot %1 puts items in %2 storages that are not on its gear (a pouch of a former vest, for example): they will not be where expected.",
+			"le slot %1 range des objets dans %2 rangements absents de son équipement (une pochette d'un ancien gilet, par exemple) : ils ne seront pas là où on les attend.");
+		rule.SetFix(
+			"open the slot prefab in the Loadout Editor and press Refresh Containers: it moves them to Items To Distribute.",
+			"ouvrez le prefab du slot dans l'éditeur de loadouts et cliquez sur Refresh Containers : il les déplace dans Items To Distribute.");
 
 		// ---- 4. System settings -------------------------------------------------------------------
 		rule = Declare("4.1", GDC_MMCheckOrigin.TILW, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.MODSET);

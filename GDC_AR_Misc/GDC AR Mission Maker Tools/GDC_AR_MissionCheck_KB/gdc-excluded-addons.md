@@ -2,7 +2,7 @@
 
 English | [Français](gdc-excluded-addons.fr.md)
 
-Rule 2.5 · error · GDC convention
+Rule 2.4 · error · GDC convention
 
 ## What happens
 Some addons break GDC missions. If one is loaded in the Workbench, the mission may depend on it, and then the server and the players load it too.

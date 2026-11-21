@@ -90,6 +90,10 @@ The last containers of the list are special:
 
 The icon is placed at the start of the line, to spot problems at a glance. Each alert is also detailed in the Workbench console.
 
+The primary weapon (weapon slot 0) shows its spare magazines in the inventory, for example `WEAPON SLOT 0 (PRIMARY) · 6 SPARE MAGAZINES`, or `⚠ NO SPARE MAGAZINE`. A magazine counts when it fits the weapon (same magazine well); the one loaded in the weapon does not count.
+
+Check Mission (Ctrl+Alt+C) runs the same checks on every playable slot of the mission: overflowing loadouts (rule 3.6) and primary weapons without a spare magazine (rule 3.7). The Loadout Editor then shows the details.
+
 ## Changing clothing
 
 When you change a clothing item in **Worn**, click **Refresh Containers**. The tool then adapts the inventory to the new gear:

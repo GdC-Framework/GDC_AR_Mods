@@ -1,0 +1,42 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ a_Contexte {
+  coords 2040 39.438 2048
+  m_sTitle "Contexte"
+  m_sTextData "Test du contexte."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 0
+ }
+ b_Situation {
+  coords 2040 39.438 2050
+  m_sTitle "Situation"
+  m_sTextData "Test de la situation."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+ c_Mission {
+  coords 2040 39.438 2052
+  m_sTitle "Mission"
+  m_sTextData "Test de la mission."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 2
+ }
+ d_Renseignements {
+  coords 2040 39.438 2054
+  m_sTitle "Renseignements"
+  m_sTextData "Test des renseignements."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 3
+ }
+ e_Insertion_Extraction {
+  coords 2040 39.438 2056
+  m_sTitle "Insertion et extraction"
+  m_sTextData "Test de l'insertion."
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 4
+ }
+}

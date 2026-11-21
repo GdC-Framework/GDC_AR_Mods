@@ -1,0 +1,8 @@
+GameProject {
+ ID "GDC Check Mission Tests"
+ GUID "6C0A11E0C4EC5001"
+ TITLE "GDC Check Mission Tests"
+ Dependencies {
+  "58D0FB3206B6F859" "6AC540B09694CF5F" "690756F509F253EB"
+ }
+}

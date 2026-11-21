@@ -908,11 +908,17 @@ class GDC_LoadoutStorageTree
 	}
 
 	//! Refreshes container titles: "NAME (prefab)  ·  details  ⚠ ALERT"; adds a warning line per problem.
+	//! \param outOverLimit also receives the warnings of the limits that keep items from being spawned (slots, type,
+	//! volume, weight, size); may be null
+	//! \param outNotOnGear also receives the warnings of the items targeting a storage that is not on the current gear;
+	//! may be null
 	static void UpdateLabels(
 		notnull array<ref GDC_LoadoutContainer> containers,
 		notnull array<ref GDC_LoadoutStorageNode> nodes,
 		notnull GDC_LoadoutItemCache itemCache,
-		notnull array<string> outWarnings)
+		notnull array<string> outWarnings,
+		array<string> outOverLimit = null,
+		array<string> outNotOnGear = null)
 	{
 		foreach (GDC_LoadoutContainer container : containers)
 		{
@@ -960,6 +966,8 @@ class GDC_LoadoutStorageTree
 			int itemCount = container.CountItems();
 			details.Insert(GDC_LoadoutUtils.ItemCountText(itemCount));
 
+			// the Describe* methods only warn about limits that keep items from being spawned
+			int limitWarningsStart = outWarnings.Count();
 			if (node && node.m_bSlotBased)
 				DescribeSlots(container, node, itemCache, details, alerts, outWarnings);
 			else if (node)
@@ -968,8 +976,21 @@ class GDC_LoadoutStorageTree
 			if (node)
 				DescribeSize(container, node, itemCache, alerts, outWarnings);
 
+			if (outOverLimit)
+			{
+				for (int w = limitWarningsStart, warningCount = outWarnings.Count(); w < warningCount; w++)
+				{
+					outOverLimit.Insert(outWarnings[w]);
+				}
+			}
+
 			if (!node && !gear && !container.m_sTargetStorage.IsEmpty() && itemCount > 0)
-				outWarnings.Insert(string.Format("%1 items target '%2', which is not on the current gear. They are kept as configured.", itemCount, container.m_sTargetStorage));
+			{
+				string notOnGear = string.Format("%1 items target '%2', which is not on the current gear. They are kept as configured.", itemCount, container.m_sTargetStorage);
+				outWarnings.Insert(notOnGear);
+				if (outNotOnGear)
+					outNotOnGear.Insert(notOnGear);
+			}
 
 			// alert icons go at the start of the line (each once), the alert texts stay at the end
 			string label = name + GDC_LoadoutUtils.SEPARATOR + SCR_StringHelper.Join(", ", details);

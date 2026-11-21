@@ -1,0 +1,18 @@
+$grp PS_MissionDescription : "{3136BE42592F3B1B}PrefabsEditable/MissionDescription/EditableMissionDescription.et" {
+ a_Contexte {
+  coords 2040 39.438 2048
+  m_sTitle "Contexte"
+  m_sTextData "<i>Toile de fond : lieu, époque, camps en présence.</i>"
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 0
+ }
+ b_Situation {
+  coords 2040 39.438 2050
+  m_sTitle "Situation"
+  m_sTextData ""
+  m_bEmptyFactionVisibility 1
+  m_bShowForAnyFaction 1
+  m_iOrder 1
+ }
+}

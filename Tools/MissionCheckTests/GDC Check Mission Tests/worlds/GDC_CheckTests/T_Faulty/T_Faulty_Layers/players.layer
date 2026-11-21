@@ -1,0 +1,24 @@
+SCR_AIGroup G_NoFaction : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et" {
+ coords 2070 39.438 2070
+ m_faction ""
+ m_aUnitPrefabSlots {
+  "{2F912ED6E399FF47}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Unarmed.et"
+  "{6C0A11E0C4EC5101}Prefabs/GDC_CheckTests/Characters/T_NoSpare.et"
+  "{6C0A11E0C4EC5102}Prefabs/GDC_CheckTests/Characters/T_Missing.et"
+  "{6C0A11E0C4EC5103}Prefabs/GDC_CheckTests/Characters/T_Heavy.et"
+  "{6C0A11E0C4EC5104}Prefabs/GDC_CheckTests/Characters/T_NotOnGear.et"
+  "{6C0A11E0C4EC5105}Prefabs/GDC_CheckTests/Characters/T_VanillaRadio.et"
+ }
+ m_bSetPlayable 1
+}
+SCR_AIGroup G_Freq : "{84E5BBAB25EA23E5}Prefabs/Groups/BLUFOR/Group_US_FireTeam.et" {
+ coords 2080 39.438 2070
+ m_aUnitPrefabSlots {
+  "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et"
+  "{26A9756790131354}Prefabs/Characters/Factions/BLUFOR/US_Army/Character_US_Rifleman.et"
+ }
+ m_bSetPlayable 1
+ m_aGDC_SlotShortRangeFrequencies {
+  "31000"
+ }
+}

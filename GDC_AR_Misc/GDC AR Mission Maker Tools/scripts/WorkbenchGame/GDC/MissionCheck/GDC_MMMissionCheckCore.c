@@ -161,16 +161,17 @@ class GDC_MMCheckOrigin
 	static const string VANILLA = "vanilla";
 	static const string GDC = "GDC";
 	static const string TILW = "TILW";
+	static const string RL = "RL"; //!< Reforger Lobby (and its PSCore)
 
 	//------------------------------------------------------------------------------------------------
 	//! \return optional origins, recognised from class names, in their display order (vanilla is always used)
 	static array<string> GetOptional()
 	{
-		return { GDC, TILW };
+		return { GDC, RL, TILW };
 	}
 
 	//------------------------------------------------------------------------------------------------
-	//! \return class name prefixes of an origin (PK_ classes ship with TILW)
+	//! \return class name prefixes of an origin (PK_ classes ship with TILW, PS_ ones with Reforger Lobby and PSCore)
 	static array<string> GetClassPrefixes(string origin)
 	{
 		if (origin == GDC)
@@ -178,6 +179,9 @@ class GDC_MMCheckOrigin
 
 		if (origin == TILW)
 			return { "TILW_", "PK_" };
+
+		if (origin == RL)
+			return { "PS_" };
 
 		return {};
 	}
@@ -269,8 +273,8 @@ class GDC_MMCheckReport
 	//! \param ruleId e.g. "2.1"
 	//! \param entity the entity concerned, null for a finding about the whole mission
 	//! \param property the property concerned, appended to the entity's description (may be empty)
-	//! \param arg1 replaces %1 in the rule's problem and fix (e.g. the resource), arg2 replaces %2
-	void Add(string ruleId, IEntitySource entity, string property = string.Empty, string arg1 = string.Empty, string arg2 = string.Empty)
+	//! \param arg1 replaces %1 in the rule's problem and fix (e.g. the resource), arg2 replaces %2, arg3 %3
+	void Add(string ruleId, IEntitySource entity, string property = string.Empty, string arg1 = string.Empty, string arg2 = string.Empty, string arg3 = string.Empty)
 	{
 		GDC_MMCheckRule rule = GDC_MMCheckCatalog.Get(ruleId);
 		if (!rule)
@@ -284,8 +288,8 @@ class GDC_MMCheckReport
 		finding.m_sRule = rule.m_sId;
 		finding.m_sOrigin = rule.m_sOrigin;
 		finding.m_sTitle = rule.GetTitle();
-		finding.m_sProblem = string.Format(rule.GetProblem(), arg1, arg2);
-		finding.m_sFix = string.Format(rule.GetFix(), arg1, arg2);
+		finding.m_sProblem = string.Format(rule.GetProblem(), arg1, arg2, arg3);
+		finding.m_sFix = string.Format(rule.GetFix(), arg1, arg2, arg3);
 		finding.m_sSheet = GDC_MMCheckCatalog.GetSheetUrl(rule.m_sKB);
 		if (entity)
 		{
@@ -363,7 +367,6 @@ class GDC_MMCheckContext
 
 	static const int RESOURCE_OK = 0;
 	static const int RESOURCE_MISSING = 1;
-	static const int RESOURCE_PATH_ONLY = 2; //!< GUID unknown, but a file exists at the stored path (other GUID)
 
 	//------------------------------------------------------------------------------------------------
 	void GDC_MMCheckContext(WorldEditorAPI api)
@@ -496,32 +499,34 @@ class GDC_MMCheckContext
 
 	//------------------------------------------------------------------------------------------------
 	//! Whether a referenced resource exists in the loaded addons, by its GUID (its stored path may be outdated).
-	//! \return RESOURCE_OK, RESOURCE_MISSING or RESOURCE_PATH_ONLY
+	//! \return RESOURCE_OK or RESOURCE_MISSING
 	int GetResourceState(ResourceName resource)
 	{
 		int state;
 		if (m_mResourceStates.Find(resource, state))
 			return state;
 
-		// resource database lookup (packed files included, nothing loaded): GUID -> path -> GUID gives the same GUID
-		state = RESOURCE_MISSING;
-		string guid = GetGUID(resource);
-		ResourceName registered = Workbench.GetResourceName(resource.GetPath());
-		if (!registered.IsEmpty() && (guid.IsEmpty() || GetGUID(registered) == guid))
-		{
-			state = RESOURCE_OK;
-		}
-		else
-		{
-			// the stored path may be outdated (file renamed): a resource that loads by its GUID exists
-			Resource loaded = Resource.Load(resource);
-			if (loaded && loaded.IsValid())
-				state = RESOURCE_OK;
-			else if (!registered.IsEmpty())
-				state = RESOURCE_PATH_ONLY;
-		}
-
+		state = ResolveResourceState(resource);
 		m_mResourceStates.Insert(resource, state);
+		return state;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! GetResourceState without its cache.
+	static int ResolveResourceState(ResourceName resource)
+	{
+		int state;
+		// resource database lookup (packed files included, nothing loaded). GetPath() resolves a known GUID to the file's
+		// current path (a renamed file stays found); GetResourceName() of a path without any file returns the path
+		// itself, without GUID. Resource.Load is no test: it falls back on the path when the GUID is unknown
+		// (verified by Tools/MissionCheckTests).
+		string registeredGuid = GetGUID(Workbench.GetResourceName(resource.GetPath()));
+		// an unknown GUID whose path exists is repaired from the path by the Workbench when it opens the world
+		if (registeredGuid.IsEmpty())
+			state = RESOURCE_MISSING;
+		else
+			state = RESOURCE_OK;
+
 		return state;
 	}
 

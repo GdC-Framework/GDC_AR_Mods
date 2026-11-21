@@ -2,6 +2,9 @@
 //! Mission maker plugin checking the open mission world, without changing it. The blocks of checks to run are chosen in
 //! the plugin settings (Plugins > Settings > Check Mission). Results: a summary per block in a dialog, and a report in
 //! the Log Console, every line starting with [GDC_CHECK] (see GDC_MMCheckLog and GDC_MMCheckFinding.Write).
+//! Command line (automatic tests, see Tools/MissionCheckTests): -wbModule=WorldEditor -plugin=GDC_MMMissionCheckPlugin
+//! -run -checkWorld="<world .ent>" [-checkLanguage=fr]. Every block runs; each finding is also written as a
+//! "[GDC_CHECK_DATA] rule|severity|where" line; exit code 0 when the world was checked, 2 when it could not be opened.
 [WorkbenchPluginAttribute(
 	name: "Check Mission",
 	description: "Check the open mission world (blocks to run in Plugins > Settings)",
@@ -19,7 +22,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	[Attribute("1", desc: "Block 2: resources the mission points to, MM library proxies, entities that lost their prefab.", category: "Blocks")]
 	protected bool m_bResourcesAndAddons;
 
-	[Attribute("1", desc: "Block 3: factions, player prefabs, medics, radios, slots.", category: "Blocks")]
+	[Attribute("1", desc: "Block 3: playable groups, their factions, slot frequency lists, teleport ranks.", category: "Blocks")]
 	protected bool m_bPlayersAndSlots;
 
 	[Attribute("1", desc: "Block 4: settings of the game mode, managers and system entities.", category: "Blocks")]
@@ -44,6 +47,8 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	protected GDC_EMMCheckLanguage m_eLanguage;
 
 	protected static const string CAPTION = "Check Mission";
+	static const string DATA_PREFIX = "[GDC_CHECK_DATA]";
+	protected bool m_bCommandLine; //!< run from the command line: every block, Info shown, data lines written
 
 	//------------------------------------------------------------------------------------------------
 	override void Configure()
@@ -100,6 +105,44 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	}
 
 	//------------------------------------------------------------------------------------------------
+	override void RunCommandline()
+	{
+		WorldEditor worldEditor = Workbench.GetModule(WorldEditor);
+		string world;
+		string language;
+		if (worldEditor)
+		{
+			worldEditor.GetCmdLine("-checkWorld", world);
+			worldEditor.GetCmdLine("-checkLanguage", language);
+		}
+
+		m_eLanguage = GDC_EMMCheckLanguage.ENGLISH;
+		if (language == "fr")
+			m_eLanguage = GDC_EMMCheckLanguage.FRENCH;
+
+		ApplyLanguage();
+		if (!worldEditor || world.IsEmpty() || !worldEditor.SetOpenedResource(world))
+		{
+			Print(DATA_PREFIX + " OPEN_FAILED|" + world, LogLevel.ERROR);
+			Workbench.Exit(2);
+			return;
+		}
+
+		m_bCommandLine = true;
+		m_bMissionStructure = true;
+		m_bResourcesAndAddons = true;
+		m_bPlayersAndSlots = true;
+		m_bSystemSettings = true;
+		m_bMissionLogic = true;
+		m_bAI = true;
+		m_bPrePublication = true;
+		m_bShowInfo = true;
+		RunChecks(worldEditor.GetApi());
+		Print(DATA_PREFIX + " DONE", LogLevel.NORMAL);
+		Workbench.Exit(0);
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! Runs the checked blocks and writes their findings to the log.
 	//! \return text of the summary dialog
 	protected string RunChecks(WorldEditorAPI api)
@@ -145,6 +188,13 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 			{
 				report = new GDC_MMCheckReport(context);
 				block.Run(context, report);
+				if (m_bCommandLine)
+				{
+					foreach (GDC_MMCheckFinding finding : report.m_aFindings)
+					{
+						Print(string.Format("%1 %2|%3|%4", DATA_PREFIX, finding.m_sRule, typename.EnumToString(GDC_EMMCheckSeverity, finding.m_eSeverity), finding.m_sWhere), LogLevel.NORMAL);
+					}
+				}
 				int blockErrors = report.Count(GDC_EMMCheckSeverity.ERROR);
 				int blockWarnings = report.Count(GDC_EMMCheckSeverity.WARNING);
 				int blockInfos = report.Count(GDC_EMMCheckSeverity.INFO);
@@ -264,7 +314,7 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 		array<ref GDC_MMCheckBlock> blocks = {};
 		AddBlock(blocks, new GDC_MMCheckBlockStructure(), 1);
 		AddBlock(blocks, new GDC_MMCheckBlockResources(), 2);
-		AddBlock(blocks, new GDC_MMCheckBlock(), 3);
+		AddBlock(blocks, new GDC_MMCheckBlockPlayers(), 3);
 		AddBlock(blocks, new GDC_MMCheckBlockSettings(), 4);
 		AddBlock(blocks, new GDC_MMCheckBlockLogic(), 5);
 		AddBlock(blocks, new GDC_MMCheckBlock(), 6);
