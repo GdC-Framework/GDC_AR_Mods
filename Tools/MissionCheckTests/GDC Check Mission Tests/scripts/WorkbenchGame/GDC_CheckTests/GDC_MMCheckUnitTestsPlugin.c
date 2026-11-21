@@ -60,6 +60,10 @@ class GDC_MMCheckUnitTestsPlugin : WorkbenchPlugin
 				string languageName = typename.EnumToString(GDC_EMMCheckLanguage, language);
 				Check("catalogue.title " + id + " " + languageName, !rule.GetTitle().IsEmpty());
 				Check("catalogue.problem " + id + " " + languageName, !rule.GetProblem().IsEmpty());
+				Check("catalogue.description " + id + " " + languageName, !rule.GetDescription().IsEmpty());
+				// a feature may exist in several frameworks (triggers, teleport): the title names the framework
+				if (rule.m_sOrigin == GDC_MMCheckOrigin.TILW)
+					Check("catalogue.title_names_framework " + id + " " + languageName, rule.GetTitle().Contains("TILW"), rule.GetTitle());
 				problems.Insert(rule.GetProblem());
 				fixes.Insert(rule.GetFix());
 			}

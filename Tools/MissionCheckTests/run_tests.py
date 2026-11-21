@@ -36,22 +36,38 @@ TIMEOUT = 300
 
 # T_Faulty: rule -> (count, severity, text expected in the "where" of one of the findings, or None)
 FAULTY = {
-    "1.1": (1, "INFO", None), "1.2": (2, "ERROR", "PS_GameMode_Lobby2"), "1.3": (2, "WARNING", None),
+    "1.1": (1, "INFO", None), "1.2": (2, "ERROR", "PS_GameMode_Lobby2"), "1.3": (1, "WARNING", None),
     "1.4": (3, "ERROR", "SCR_AIWorld"), "1.5": (1, "INFO", None), "1.6": (1, "INFO", "b_Situation"),
     "1.7": (1, "INFO", "a_Contexte"),
     "2.1": (1, "ERROR", "D_Missing"), "2.2": (1, "ERROR", "D_Proxy"), "2.3": (1, "ERROR", "SCR_AIGroup"),
     # D_WrongGuid holds an unknown GUID on an existing path: the Workbench repairs the GUID when it loads the world, so it
     # must give no finding (2.1 x1 is D_Missing only; the former rule "unknown GUID" was removed for that reason)
-    "3.2": (1, "ERROR", "G_NoFaction"), "3.3": (1, "ERROR", "G_Freq"), "3.4": (1, "ERROR", "T_Teleport"),
-    "3.5": (1, "ERROR", "G_NoFaction"), "3.6": (1, "WARNING", "G_NoFaction"), "3.7": (1, "WARNING", "G_NoFaction"),
-    "3.8": (1, "ERROR", "G_NoFaction"), "3.9": (1, "WARNING", "G_NoFaction"), "3.10": (1, "WARNING", "G_NoFaction"),
-    "4.1": (1, "WARNING", "D_NoFilter"), "5.1": (1, "WARNING", "TILW_SetFlagInteraction"), "5.2": (1, "ERROR", "V_Crew"),
+    "3.2": (1, "ERROR", "G_NoFaction"), "3.3": (1, "ERROR", "G_Freq"), "3.4": (1, "ERROR", "G_NoFaction"),
+    "3.5": (1, "WARNING", "G_NoFaction"), "3.6": (1, "WARNING", "G_NoFaction"), "3.7": (1, "ERROR", "G_NoFaction"),
+    "3.8": (1, "WARNING", "G_NoFaction"), "3.9": (1, "WARNING", "G_NoFaction"),
+    "4.1": (1, "WARNING", "D_NoFilter"), "4.2": (1, "ERROR", "V_Crew"), "4.3": (2, "WARNING", "SCR_AIWorld"),
+    "4.4": (3, "ERROR", "G_BadFaction"), "4.5": (1, "ERROR", "T_Teleport"), "4.6": (1, "ERROR", "T_Teleport"),
+    "4.7": (1, "ERROR", "T_Support"), "4.8": (1, "ERROR", "T_Support"), "4.9": (1, "ERROR", "T_Support"),
+    "4.10": (1, "ERROR", "T_Artillery"),
+    "5.1": (1, "WARNING", "TILW_SetFlagInteraction"), "5.2": (1, "WARNING", "Trg_Presence"), "5.3": (1, "ERROR", "Trg_Faction"),
+    "5.4": (1, "WARNING", "Trg_Faction"), "5.5": (1, "ERROR", "Trg_Presence"),
+    # mission events of TILW_MF_A (event and meta flag without condition...), TILW_MF_B (second framework entity), P_Spawner
+    "5.6": (2, "ERROR", "TILW_MF_A"), "5.7": (1, "ERROR", "TILW_MF_A"), "5.8": (2, "WARNING", "P_Spawner"),
+    "5.9": (1, "ERROR", "TILW_MF_A"), "5.10": (1, "WARNING", "TILW_MF_A"), "5.11": (2, "ERROR", "P_Spawner"),
+    "5.12": (1, "ERROR", "TILW_MF_"), "5.13": (1, "WARNING", "TILW_MF_A"), "5.14": (1, "WARNING", "TILW_MF_A"),
+}
+# engine behaviours the TILW mission event rules rely on (GDC_MMCheckEngineProbePlugin): probe -> markers expected
+PROBES = {
+    "terms": ["EMPTY_AND true", "EMPTY_OR false"],  # 5.7: an empty Conjunction is true, an empty Disjunction false
+    # 5.6: a call on null logs an error and the script goes on, the test of TILW_MissionEvent then skips the event
+    "loop": ["STEP_SKIPPED 0", "STEP_RAN 1", "AFTER_LOOP"],
+    "nullarray": ["NULL_AND true"],  # 5.7: an operand array never created gives the same result as an empty one
 }
 # Reforger Lobby without playable group, no TILW entity: the TILW rules must not run
 NO_PLAYABLE = {"1.3": (1, "WARNING", None), "3.1": (1, "ERROR", None)}
 # skeleton of GDC Missions, RHS not loaded (its group then has no prefab: 2.3)
 SKELETON = {"1.7": (5, "INFO", "a_Contexte"), "2.3": (1, "ERROR", None), "3.1": (1, "ERROR", None), "4.1": (1, "WARNING", None),
-            "5.1": (1, "WARNING", None), "5.2": (1, "ERROR", "Vehicle_1")}
+            "4.2": (1, "ERROR", "Vehicle_1"), "5.1": (1, "WARNING", None)}
 # French second person singular, forbidden in texts for mission makers (vouvoiement)
 TUTOIEMENT = re.compile(r"\b(tu|toi|ton|ta|tes|te)\b|\b\w+-(toi|le|la|les)\b(?<!-la)", re.IGNORECASE)
 
@@ -155,6 +171,8 @@ def check_world(results, label, text, expected):
 def static_checks(results):
     kb = subprocess.run([sys.executable, "-I", str(REPO / "Tools" / "MissionCheckKB" / "check_kb.py")], capture_output=True, text=True)
     results.check("knowledge base: check_kb.py", kb.returncode == 0, kb.stdout.strip().splitlines()[-1] if kb.stdout.strip() else kb.stderr)
+    doc = subprocess.run([sys.executable, "-I", str(REPO / "Tools" / "MissionCheckKB" / "rules_doc.py"), "--check"], capture_output=True, text=True)
+    results.check("user guide: list of the checks up to date (rules_doc.py --check)", doc.returncode == 0, doc.stdout.strip())
 
     folders = [MM_TOOLS / "scripts" / "WorkbenchGame" / "GDC" / "MissionCheck", MM_TOOLS / "scripts" / "WorkbenchGame" / "GDC" / "LoadoutEditor",
                MM_TOOLS / "GDC_AR_MissionCheck_KB", REPO / "Tools" / "MissionCheckKB", HERE]
@@ -198,6 +216,14 @@ def main():
     failed = [t for t in tests if t.startswith("FAIL")]
     ended = any(t.startswith("END") for t in tests)
     results.check(f"unit tests: {len(tests) - 1 if ended else len(tests)} run, all pass", ended and not failed, "; ".join(failed[:10]))
+
+    print("== engine probes", flush=True)
+    for probe, markers in PROBES.items():
+        text = run_workbench(results, f"engine probe {probe}", gproj, TEST_ADDON_GUID, "ResourceManager", "GDC_MMCheckEngineProbePlugin",
+                             f"-probe={probe}", keep_logs=args.keep_logs)
+        written = [l.split("[GDC_CHECK_PROBE]", 1)[1].strip() for l in text.splitlines() if "[GDC_CHECK_PROBE]" in l]
+        for marker in markers:
+            results.check(f"engine probe {probe}: {marker}", marker in written, ", ".join(written))
 
     # rule 2.4 is unit tested with made-up addon lists: never load an addon that may be missing, the Workbench then
     # opens a modal "Missing Addon" dialog on the user's screen

@@ -22,13 +22,13 @@ class GDC_MMMissionCheckPlugin : WorkbenchPlugin
 	[Attribute("1", desc: "Block 2: resources the mission points to, MM library proxies, entities that lost their prefab.", category: "Blocks")]
 	protected bool m_bResourcesAndAddons;
 
-	[Attribute("1", desc: "Block 3: playable groups, their factions, slot frequency lists, teleport ranks.", category: "Blocks")]
+	[Attribute("1", desc: "Block 3: playable groups, their factions, slot frequency lists, radios and loadouts.", category: "Blocks")]
 	protected bool m_bPlayersAndSlots;
 
-	[Attribute("1", desc: "Block 4: settings of the game mode, managers and system entities.", category: "Blocks")]
+	[Attribute("1", desc: "Block 4: settings that break a system on their own: game mode and AI world, faction keys, TILW deleter and vehicle crew, GDC teleport, fire support and AI artillery.", category: "Blocks")]
 	protected bool m_bSystemSettings;
 
-	[Attribute("1", desc: "Block 5: triggers, events, flags, interactions, spawners.", category: "Blocks")]
+	[Attribute("1", desc: "Block 5: what sets or reads the mission flags: TILW triggers, interactions and mission events.", category: "Blocks")]
 	protected bool m_bMissionLogic;
 
 	[Attribute("1", desc: "Block 6: AI groups, waypoints, AI count.", category: "Blocks")]

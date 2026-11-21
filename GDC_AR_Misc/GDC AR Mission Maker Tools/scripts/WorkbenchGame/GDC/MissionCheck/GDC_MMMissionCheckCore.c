@@ -362,6 +362,7 @@ class GDC_MMCheckContext
 	ResourceName m_SkeletonConfig;	//!< mission skeleton block 1 compares the mission with (plugin settings)
 	ref array<IEntitySource> m_aEntities = {};
 	ref set<string> m_UsedOrigins = new set<string>(); //!< GDC_MMCheckOrigin values used by the mission
+	ref GDC_MMCheckWorld m_World; //!< what several blocks need to know about the world, read once and cached
 
 	protected ref map<string, int> m_mResourceStates = new map<string, int>();
 
@@ -383,6 +384,7 @@ class GDC_MMCheckContext
 		}
 
 		FindUsedOrigins();
+		m_World = new GDC_MMCheckWorld(this);
 	}
 
 	//------------------------------------------------------------------------------------------------

@@ -12,3 +12,9 @@ python Tools/MissionCheckKB/check_kb.py
 ```
 
 Il renvoie le code 1 en cas d'erreur. La façon de rédiger une fiche est décrite dans l'index de la base.
+
+`rules_doc.py` écrit la liste de tous les contrôles dans le mode d'emploi de Check Mission (`docs/GDC_CheckMission.md` et `.fr.md`, entre les balises `RULES`), à partir du catalogue des règles : numéro, titre (lien vers la fiche quand elle existe), description, gravité, origine. À relancer après toute modification du catalogue ; `--check` vérifie seulement que la liste est à jour.
+
+```
+python Tools/MissionCheckKB/rules_doc.py
+```

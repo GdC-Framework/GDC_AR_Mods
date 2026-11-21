@@ -39,4 +39,4 @@ User guide: [docs/GDC_MissionSkeleton.md](docs/GDC_MissionSkeleton.md).
 
 A World Editor plugin (Plugins > GDC > Check Mission, Ctrl+Alt+C) that checks the open mission world without changing it: missing resources, MM library proxies, entities that lost their prefab, TILW pitfalls... The blocks to run and the language (English or French) are set in Plugins > Settings > Check Mission. The report is in the Log Console (filter `[GDC_CHECK]`): each finding says where, what goes wrong and what to do, with a link that selects the entity.
 
-Why each rule exists, the evidence and what to do: [mission check knowledge base](GDC_AR_MissionCheck_KB/README.md).
+User guide and list of every check: [docs/GDC_CheckMission.md](docs/GDC_CheckMission.md). Why a rule exists, the evidence and what to do: [mission check knowledge base](GDC_AR_MissionCheck_KB/README.md).

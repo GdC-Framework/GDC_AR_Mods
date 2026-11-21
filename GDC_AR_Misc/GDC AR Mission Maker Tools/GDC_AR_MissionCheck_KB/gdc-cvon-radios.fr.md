@@ -2,7 +2,7 @@
 
 [English](gdc-cvon-radios.md) | Français
 
-Règle 3.5 · erreur · convention GDC
+Règle 3.4 · erreur · convention GDC
 
 ## Ce qui se passe
 Les missions GDC utilisent Coalition VON (CVON) pour les radios. Un slot jouable qui démarre avec une autre radio (jeu de base, ACE, autre mod) reçoit une radio qui ne fonctionne pas avec CVON.

@@ -15,8 +15,9 @@ Le code de sortie vaut 0 quand tout passe. Le résumé de chaque lancement est g
 
 | Étape | Contenu |
 |---|---|
-| Contrôles statiques | `check_kb.py` (fiches de la base de connaissance) ; fins de ligne LF ; textes français au vouvoiement ; textes français différents des anglais |
-| Tests unitaires | plugin `GDC_MMCheckUnitTestsPlugin` : catalogue (chaque règle complète dans les deux langues, mêmes `%1 %2 %3`, numéros et titres uniques, règles « comportement d'addon » vérifiées et dotées d'une fiche) ; aides de texte (accents, majuscules, accords) ; résolution des ressources (règle 2.1) ; addons exclus (2.4, avec des listes simulées) ; analyse de loadout (arme principale, chargeurs de rechange, débordement, prefabs introuvables, poids, rangements absents) |
+| Contrôles statiques | `check_kb.py` (fiches de la base de connaissance) ; `rules_doc.py --check` (liste des contrôles du mode d'emploi à jour) ; fins de ligne LF ; textes français au vouvoiement ; textes français différents des anglais |
+| Tests unitaires | plugin `GDC_MMCheckUnitTestsPlugin` : catalogue (chaque règle complète dans les deux langues, description comprise, mêmes `%1 %2 %3`, numéros et titres uniques, règles « comportement d'addon » vérifiées et dotées d'une fiche) ; aides de texte (accents, majuscules, accords) ; résolution des ressources (règle 2.1) ; addons exclus (2.4, avec des listes simulées) ; analyse de loadout (arme principale, chargeurs de rechange, débordement, prefabs introuvables, poids, rangements absents) |
+| Sondes moteur | plugin `GDC_MMCheckEngineProbePlugin` (`-probe=terms`, `loop`, `nullarray`, un lancement chacune) : les comportements du moteur et de TILW sur lesquels reposent les règles 5.6 et 5.7 |
 | `T_Clean` | monde complet et propre : aucun constat |
 | `T_Faulty`, en anglais puis en français | un cas piégé par règle : chaque règle attendue sort le bon nombre de fois, avec la bonne gravité, sur la bonne entité ; le rapport est dans la bonne langue |
 | `T_NoPlayable` | Reforger Lobby sans groupe jouable (3.1), sans aucune entité TILW : les règles TILW ne tournent pas |
@@ -36,6 +37,9 @@ Chaque lancement vérifie aussi l'absence d'erreur de script dans le log, donc l
 - `Resource.Load` d'une référence au GUID inconnu se rabat sur le chemin : ce n'est pas un test d'existence.
 - À l'ouverture d'un monde, le Workbench répare un GUID inconnu dont le chemin existe : une règle « GUID inconnu » ne se déclencherait jamais, elle a été retirée (le monde T_Faulty garde le cas, qui ne doit rien donner).
 - `SCR_ECharacterRank.INVALID` est la **dernière** valeur de l'énumération, pas la plus basse.
+- Les entités enfants **définies dans un prefab** (le gestionnaire de factions du mode de jeu Reforger Lobby, par exemple) ne figurent pas dans la liste des entités du monde : on les atteint par leur parent (`GetChild`). Les enfants posés par le MM, eux, y figurent.
+- Un appel de méthode sur nul écrit « Virtual Machine Exception : NULL pointer to instance » puis **le script continue** : l'appel vaut faux, la boucle appelante n'est pas interrompue. Un événement TILW sans condition ne bloque donc pas les suivants, il ne part simplement jamais de lui-même (règle 5.6).
+- Un opérateur TILW sans opérande, liste vide ou jamais créée : une Conjunction vaut vrai, une Disjunction faux (règle 5.7).
 - Charger un addon introuvable (`-addons`) ouvre un dialogue modal « Missing Addon » : ne jamais faire charger aux tests un addon qui peut manquer.
 
 ## Recette manuelle

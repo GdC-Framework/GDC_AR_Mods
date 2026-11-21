@@ -63,6 +63,102 @@ CHARACTER_PREFABS = {
 }
 
 
+# an entity setting a flag from a component: the mission makes it appear (Spawn Prefab), so its flag counts as set (5.8)
+FLAG_SETTER = "{6C0A11E0C4EC5106}Prefabs/GDC_CheckTests/T_FlagSetter.et"
+FLAG_SETTER_PREFAB = '''GenericEntity {
+ components {
+  TILW_Flag_EntityDamage "{6C0A11E0C4EC5601}" {
+   m_flagName "Dmg_GDCTest"
+  }
+ }
+}
+'''
+
+
+class Ids:
+    """Object GUIDs of the layers, fixed so that the files do not change from one run to the next"""
+    def __init__(self, first):
+        self.next = first
+
+    def __call__(self):
+        self.next += 1
+        return "{%016X}" % self.next
+
+
+def obj(ids, cls, body=(), key=None):
+    """One object of a layer: [key] Class "{GUID}" { body }"""
+    head = f'{key + " " if key else ""}{cls} "{ids()}" {{'
+    return [head, *[" " + line for line in body], "}"]
+
+
+def objects(key, items):
+    lines = [key + " {"]
+    for item in items:
+        lines += [" " + line for line in item]
+    return lines + ["}"]
+
+
+def strings(key, values):
+    return [key + " {", *[f' "{v}"' for v in values], "}"]
+
+
+def literal(ids, flag):
+    return obj(ids, "TILW_LiteralTerm", [f'm_flagName "{flag}"'])
+
+
+def all_of(ids, flags):
+    return obj(ids, "TILW_ConjunctionTerm", objects("m_operands", [literal(ids, f) for f in flags]), key="m_condition")
+
+
+def event(ids, name, condition=None, instructions=(), pregame=False):
+    body = [f'm_name "{name}"']
+    if instructions:
+        body += objects("m_instructions", instructions)
+    if condition:
+        body += condition
+    if pregame:
+        body.append("m_pregameEvent 1")
+    return obj(ids, "TILW_MissionEvent", body)
+
+
+def faulty_framework():
+    """T_Faulty's TILW Mission Framework entity: one trap per mission event rule, and the cases that must not fire"""
+    ids = Ids(0x6C0A11E0C4EC5700)
+    instructions = [
+        obj(ids, "TILW_RunEventsInstruction", strings("m_eventNames", ["E_RunOnly", "Ghost_GDCTest"])),  # 5.9 (Ghost)
+        obj(ids, "TILW_ReactivateEventsInstruction", strings("m_eventNames", ["E_Dup"])),  # 5.10
+        obj(ids, "TILW_AssignWaypointsInstruction", ['m_groupName "NoGroup_GDCTest"', *strings("m_waypointNames", ["Trg_Presence"])]),  # 5.11
+        obj(ids, "TILW_AssignWaypointsInstruction", ['m_groupName "Crew_GDCTest"']),  # named by the crew below: no finding
+        obj(ids, "TILW_SpawnPrefabInstruction", [f'm_prefab "{FLAG_SETTER}"', 'm_locationName "Trg_Faction"', 'm_setEntityName "Spawned_GDCTest"']),
+        obj(ids, "TILW_SpawnVehicleInstruction", ['m_locationName "Trg_Faction"', *obj(ids, "TILW_CrewConfig", objects(
+            "m_crewGroups", [obj(ids, "TILW_CrewGroup", ['m_entityName "Crew_GDCTest"'])]), key="m_crewConfig")]),
+        obj(ids, "TILW_DeleteEntitiesInstruction", strings("m_entityNames", ["Spawned_GDCTest"])),  # named at spawn: no finding
+        obj(ids, "TILW_EndGameInstruction"),  # with m_suppressGameEnd: 5.14
+    ]
+    events = [
+        event(ids, "E_NoCondition"),  # 5.6
+        event(ids, "E_EmptyAnd", obj(ids, "TILW_ConjunctionTerm", key="m_condition")),  # 5.7
+        # 5.8 for Never_GDCTest only: F_GDCTest (trigger), Dmg_GDCTest (spawned prefab), M_Meta_GDCTest (meta flag) are set
+        event(ids, "E_Flags", all_of(ids, ["Never_GDCTest", "F_GDCTest", "Dmg_GDCTest", "M_Meta_GDCTest"]), instructions),
+        event(ids, "E_RunOnly", all_of(ids, ["NoFlag_GDCTest"])),  # run by name: its condition may be unreachable
+        event(ids, "E_Dup", all_of(ids, ["F_GDCTest"])),
+        event(ids, "E_Dup", all_of(ids, ["F_GDCTest"])),
+        event(ids, "E_Pregame", all_of(ids, ["F_GDCTest", "R_GDCTest"]), pregame=True),  # 5.13 for F_GDCTest only
+    ]
+    meta_flags = [
+        obj(ids, "TILW_MetaFlag", ['m_flagName "M_NoDef_GDCTest"']),  # 5.6
+        obj(ids, "TILW_MetaFlag", ['m_flagName "M_Meta_GDCTest"', *obj(ids, "TILW_LiteralTerm", ['m_flagName "F_GDCTest"'], key="m_definition")]),
+    ]
+    body = ["coords 2180 39.438 2180", *objects("m_missionEvents", events), *objects("m_metaFlags", meta_flags),
+            *objects("m_randomFlags", [obj(ids, "TILW_RandomFlag", ['m_flagName "R_GDCTest"'])]), "m_suppressGameEnd 1"]
+    first = "\n".join([f'TILW_MissionFrameworkEntity TILW_MF_A : "{TILW_MF}" {{', *[" " + line for line in body], "}"])
+    # a second framework entity: 5.12
+    second = f'TILW_MissionFrameworkEntity TILW_MF_B : "{TILW_MF}" {{\n coords 2184 39.438 2180\n}}'
+    # a spawner waiting for a flag nothing sets (5.8) and aimed at a waypoint nobody holds (5.11)
+    spawner = 'TILW_PrefabSpawnerEntity P_Spawner {\n coords 2190 39.438 2190\n m_conditionFlag "Never2_GDCTest"\n m_waypointNames {\n  "NoWp_GDCTest"\n }\n}'
+    return [first, second, spawner]
+
+
 def prefab_ref(name):
     guid = CHARACTER_PREFABS[name][0]
     return f"{guid}{CHARACTERS}/{name}.et"
@@ -117,8 +213,14 @@ AI_WORLD_WITH_NAVMESHES = f'''SCR_AIWorld : "{AI_WORLD_ARLAND}" {{
   }}
  }}
  coords 2048 39.438 2048
+ "Active AI limit" 128
 }}
 '''
+
+# game mode with the values of the mission skeleton (rule 4.2)
+GAME_MODE_SKELETON = (f'PS_GameModeCoop PS_GameMode_Lobby1 : "{GAME_MODE_RL}" {{\n coords 2052 39.438 2048\n m_bTeamSwitch 1\n'
+                      " m_bPublicCommandBriefing 1\n m_bRemoveSquadMarkers 1\n m_iFreezeTime 0\n m_bDisableGarbageSystem 1\n"
+                      " m_bDisableArmaVision 0\n}\n")
 
 
 def group(name, slots, x, faction=None, frequencies=None):
@@ -162,11 +264,15 @@ def main():
         write(ADDON / path, character_prefab(name))
         write(ADDON / (path + ".meta"), meta(CHARACTER_PREFABS[name][0] + path, "EntityTemplateResourceClass"))
 
+    guid, path = FLAG_SETTER[:18], FLAG_SETTER[18:]
+    write(ADDON / path, FLAG_SETTER_PREFAB)
+    write(ADDON / (path + ".meta"), meta(guid + path, "EntityTemplateResourceClass"))
+
     # ---- T_Clean: what Create Mission Skeleton makes, briefing written, one clean playable group: no finding
     world("T_Clean", {
         "default": AI_WORLD_WITH_NAVMESHES
         + f'PerceptionManager PerceptionManager : "{PERCEPTION}" {{\n coords 2048 39.438 2052\n}}\n'
-        + f'PS_GameModeCoop PS_GameMode_Lobby1 : "{GAME_MODE_RL}" {{\n coords 2052 39.438 2048\n}}\n',
+        + GAME_MODE_SKELETON,
         "systems": f'TILW_MissionFrameworkEntity TILW_MF : "{TILW_MF}" {{\n coords 2052 41.188 2052\n}}\n',
         "briefing": briefing([("a_Contexte", "Contexte", "Test du contexte."), ("b_Situation", "Situation", "Test de la situation."),
                               ("c_Mission", "Mission", "Test de la mission."), ("d_Renseignements", "Renseignements", "Test des renseignements."),
@@ -181,7 +287,7 @@ def main():
     world("T_NoPlayable", {
         "default": AI_WORLD_WITH_NAVMESHES
         + f'PerceptionManager PerceptionManager : "{PERCEPTION}" {{\n coords 2048 39.438 2052\n}}\n'
-        + f'PS_GameModeCoop PS_GameMode_Lobby1 : "{GAME_MODE_RL}" {{\n coords 2052 39.438 2048\n}}\n',
+        + GAME_MODE_SKELETON,
         "systems": "",
         "briefing": briefing([("a_Contexte", "Contexte", "Test du contexte."), ("b_Situation", "Situation", "Test de la situation."),
                               ("c_Mission", "Mission", "Test de la mission."), ("d_Renseignements", "Renseignements", "Test des renseignements."),
@@ -193,16 +299,18 @@ def main():
 
     # ---- T_Faulty: one planted case per rule
     world("T_Faulty", {
-        # 1.4 x2 (base AI world: Soldiers and BTRlike without file), 1.2 x2 (two game modes), 1.3 (no PerceptionManager)
-        "default": f'SCR_AIWorld : "{AI_WORLD}" {{\n coords 2048 39.438 2048\n}}\n'
+        # 1.4 x3 (base AI world: no navmesh file), 4.2 (AI limit 30 instead of 128, and the game mode values),
+        # 1.2 x2 (two game modes), 1.3 (no PerceptionManager)
+        "default": f'SCR_AIWorld : "{AI_WORLD}" {{\n coords 2048 39.438 2048\n "Active AI limit" 30\n}}\n'
         + f'PS_GameModeCoop PS_GameMode_Lobby1 : "{GAME_MODE_RL}" {{\n coords 2052 39.438 2048\n}}\n'
         + f'PS_GameModeCoop PS_GameMode_Lobby2 : "{GAME_MODE_RL}" {{\n coords 2056 39.438 2048\n}}\n',
-        # no "systems" layer: 1.1, and no TILW framework entity: 1.3
+        # no "systems" layer: 1.1 (the TILW framework entities are in build/decor, with the mission event traps)
         # 1.7 (skeleton hint kept), 1.6 (empty), 1.5 (the three other sections)
         "briefing": briefing([("a_Contexte", "Contexte", SKELETON_HINT), ("b_Situation", "Situation", "")]),
         "players": group("G_NoFaction", [UNARMED, prefab_ref("T_NoSpare"), prefab_ref("T_Missing"), prefab_ref("T_Heavy"),
                                          prefab_ref("T_NotOnGear"), prefab_ref("T_VanillaRadio")], 2070, faction="")
-        + group("G_Freq", [RIFLEMAN, RIFLEMAN], 2080, frequencies=["31000"]),
+        + group("G_Freq", [RIFLEMAN, RIFLEMAN], 2080, frequencies=["31000"])
+        + group("G_BadFaction", [RIFLEMAN], 2090, faction="XX_GDCTest"),
         "ia/opfor": "",
         "build/decor": "\n".join([
             "PK_EntityDeleter D_NoFilter {\n coords 2100 39.438 2100\n}",
@@ -213,6 +321,14 @@ def main():
             f'Vehicle V_Crew : "{S105}" {{\n components {{\n  TILW_VehicleCrewComponent "{{6C0A11E0C4EC5401}}" {{\n  }}\n }}\n coords 2110 39 2110\n}}',
             f'SCR_DestructibleEntity : "{BEETLE_TRAP}" {{\n coords 2120 39 2120\n {{\n  GenericEntity : "{TILW_INTERACTION}" {{\n   coords 0 0 0\n  }}\n }}\n}}',
             'GenericEntity T_Teleport {\n components {\n  GDC_TeleportModuleComponent "{6C0A11E0C4EC5402}" {\n   m_eMode ALL_PLAYERS\n   m_eMinRankRequired CAPTAIN\n  }\n }\n coords 2130 39.438 2130\n}',
+            'TILW_PresenceTriggerEntity Trg_Presence {\n coords 2140 39.438 2140\n m_entityNames {\n  "Nobody_GDCTest"\n }\n}',
+            'TILW_FactionTriggerEntity Trg_Faction {\n coords 2150 39.438 2150\n m_sendStatusMessages 1\n m_statusMessages {\n  "a" "b"\n }\n'
+            ' m_displayTo {\n  "ZZ_GDCTest"\n }\n m_flagName "F_GDCTest"\n}',
+            'GenericEntity T_Support {\n components {\n  GDC_FireSupportModuleComponent "{6C0A11E0C4EC5403}" {\n   m_eMinRankRequired GENERAL\n'
+            '   m_eFireAreaMode WHITELIST\n   m_aAreaNames {\n    "NoArea_GDCTest"\n   }\n   m_iMinDispersion 200\n   m_iMaxDispersion 100\n'
+            '   m_sMarkerVisibleToFaction "YY_GDCTest"\n  }\n }\n coords 2160 39.438 2160\n}',
+            'GenericEntity T_Artillery {\n components {\n  GDC_ArtilleryFireSupportComponent "{6C0A11E0C4EC5404}" {\n   m_sAIGroupName "NoMortar_GDCTest"\n  }\n }\n coords 2170 39.438 2170\n}',
+            *faulty_framework(),
         ]) + "\n",
     })
     print(f"written: {ADDON}")

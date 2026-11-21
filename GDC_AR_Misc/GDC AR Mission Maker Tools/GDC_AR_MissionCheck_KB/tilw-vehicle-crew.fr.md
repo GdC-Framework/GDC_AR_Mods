@@ -1,8 +1,8 @@
-# Équipage de véhicule qui n'apparaît jamais (TILW)
+# Équipage TILW de véhicule qui n'apparaît jamais
 
 [English](tilw-vehicle-crew.md) | Français
 
-Règle 5.2 · erreur · comportement d'addon
+Règle 4.2 · erreur · comportement d'addon
 
 ## Ce qui se passe
 Un véhicule doté d'un `TILW_VehicleCrewComponent` reste vide dans une mission Reforger Lobby : aucun équipage n'apparaît, et rien ne le signale dans le log.

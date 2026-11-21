@@ -11,10 +11,12 @@ The report of Check Mission, in the Log Console, gives the address of the sheet 
 | 2.2 | [MM library proxy used](gdc-mm-library-proxy.md) | GDC convention |
 | 2.4 | [Excluded addon loaded](gdc-excluded-addons.md) | GDC convention |
 | 3.1 | [No playable group](rl-playable-groups.md) | addon behaviour (RL) |
-| 3.5 | [Radio that is not a Coalition VON radio](gdc-cvon-radios.md) | GDC convention |
-| 4.1 | [Entity deleter without a filter](tilw-entity-deleter.md) | addon behaviour (TILW) |
-| 5.1 | [Interaction placed as a child](tilw-interaction-child.md) | addon behaviour (TILW) |
-| 5.2 | [Vehicle crew that never spawns](tilw-vehicle-crew.md) | addon behaviour (TILW) |
+| 3.4 | [Radio that is not a Coalition VON radio](gdc-cvon-radios.md) | GDC convention |
+| 4.1 | [TILW entity deleter without a filter](tilw-entity-deleter.md) | addon behaviour (TILW) |
+| 4.2 | [TILW vehicle crew that never spawns](tilw-vehicle-crew.md) | addon behaviour (TILW) |
+| 5.1 | [TILW interaction placed as a child](tilw-interaction-child.md) | addon behaviour (TILW) |
+| 5.2 to 5.5 | [TILW triggers badly set](tilw-triggers.md) | addon behaviour (TILW) |
+| 5.6 to 5.14 | [TILW mission events badly set](tilw-mission-events.md) | addon behaviour (TILW) |
 
 ## Maintaining the sheets (AI food)
 

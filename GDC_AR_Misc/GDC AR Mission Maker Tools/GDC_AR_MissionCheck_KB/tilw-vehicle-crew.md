@@ -1,8 +1,8 @@
-# Vehicle crew that never spawns (TILW)
+# TILW vehicle crew that never spawns
 
 English | [Français](tilw-vehicle-crew.fr.md)
 
-Rule 5.2 · error · addon behaviour
+Rule 4.2 · error · addon behaviour
 
 ## What happens
 A vehicle with a `TILW_VehicleCrewComponent` stays empty in a Reforger Lobby mission: no crew spawns, and nothing in the log says so.

@@ -39,5 +39,5 @@ Mode d'emploi : [docs/GDC_MissionSkeleton.fr.md](docs/GDC_MissionSkeleton.fr.md)
 
 Un plugin du World Editor (Plugins > GDC > Check Mission, Ctrl+Alt+C) qui vérifie le monde de mission ouvert sans le modifier : ressources introuvables, proxys de la bibliothèque MM, entités qui ont perdu leur prefab, pièges de TILW… Les blocs à lancer et la langue (anglais ou français) se règlent dans Plugins > Settings > Check Mission. Le rapport est dans la Log Console (filtre `[GDC_CHECK]`) : chaque constat dit où, ce qui ne va pas et que faire, avec un lien qui sélectionne l'entité.
 
-Pourquoi chaque règle existe, la preuve et que faire : [base de connaissance de la vérification de mission](GDC_AR_MissionCheck_KB/README.fr.md).
+Mode d'emploi et liste de tous les contrôles : [docs/GDC_CheckMission.fr.md](docs/GDC_CheckMission.fr.md). Pourquoi une règle existe, la preuve et que faire : [base de connaissance de la vérification de mission](GDC_AR_MissionCheck_KB/README.fr.md).
 

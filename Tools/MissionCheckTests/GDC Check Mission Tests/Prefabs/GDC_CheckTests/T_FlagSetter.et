@@ -1,0 +1,7 @@
+GenericEntity {
+ components {
+  TILW_Flag_EntityDamage "{6C0A11E0C4EC5601}" {
+   m_flagName "Dmg_GDCTest"
+  }
+ }
+}

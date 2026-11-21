@@ -29,7 +29,7 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 
 		CheckGameMode();
 
-		GDC_MMMissionSkeletonConfig skeleton = LoadSkeleton(context.m_SkeletonConfig);
+		GDC_MMMissionSkeletonConfig skeleton = context.m_World.GetSkeleton();
 		if (!skeleton)
 		{
 			GDC_MMCheckLog.Write(GDC_MMCheckText.T(
@@ -42,19 +42,6 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 		CheckEntities(skeleton);
 		if (skeleton.m_Briefing)
 			CheckBriefing(skeleton.m_Briefing);
-	}
-
-	//------------------------------------------------------------------------------------------------
-	protected static GDC_MMMissionSkeletonConfig LoadSkeleton(ResourceName config)
-	{
-		if (config.IsEmpty())
-			return null;
-
-		Resource resource = Resource.Load(config);
-		if (!resource || !resource.IsValid())
-			return null;
-
-		return GDC_MMMissionSkeletonConfig.Cast(BaseContainerTools.CreateInstanceFromContainer(resource.GetResource().ToBaseContainer()));
 	}
 
 	//------------------------------------------------------------------------------------------------
@@ -140,9 +127,7 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 			if (entry.m_eRole == GDC_EMMSkeletonEntityRole.GAME_MODE)
 				continue; // rule 1.2
 
-			string className = entry.m_sUniqueClass;
-			if (className.IsEmpty())
-				className = GetPrefabClass(entry.m_Prefab);
+			string className = GDC_MMCheckWorld.GetEntryClass(entry);
 
 			entries.Insert(entry);
 			classes.Insert(className);
@@ -150,7 +135,7 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 				missionOnly.Insert(className);
 		}
 
-		map<string, IEntitySource> found = FindEntities(classes, missionOnly);
+		map<string, IEntitySource> found = m_Context.m_World.FindEntities(classes, missionOnly);
 		foreach (int i, GDC_MMSkeletonEntity expected : entries)
 		{
 			IEntitySource entity = found.Get(classes[i]);
@@ -203,7 +188,7 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 		if (!briefing.m_aSections || briefing.m_aSections.IsEmpty())
 			return;
 
-		string briefingClass = GetPrefabClass(briefing.m_Prefab);
+		string briefingClass = GDC_MMCheckWorld.GetPrefabClass(briefing.m_Prefab);
 		if (briefingClass.IsEmpty())
 			return; // its addon is not loaded: rule 1.3 does not cover it, rule 2.1 reports the mission's own references
 
@@ -253,106 +238,6 @@ class GDC_MMCheckBlockStructure : GDC_MMCheckBlock
 		normalized.Replace("\t", string.Empty);
 		normalized.Replace(" ", string.Empty);
 		return normalized;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! The mission sub-scene first, where the skeleton places its entities; the other sub-scenes (terrain, large) only
-	//! for the classes still missing. Each entity class is tested once.
-	//! \param missionOnly classes only looked for in the mission sub-scene
-	//! \return first entity found per class inheriting it (empty class names are ignored)
-	protected map<string, IEntitySource> FindEntities(notnull array<string> classes, notnull set<string> missionOnly)
-	{
-		array<string> wanted = {};
-		array<typename> wantedTypes = {};
-		foreach (string className : classes)
-		{
-			typename type = className.ToType();
-			if (type && !wanted.Contains(className))
-			{
-				wanted.Insert(className);
-				wantedTypes.Insert(type);
-			}
-		}
-
-		map<string, IEntitySource> found = new map<string, IEntitySource>();
-		map<string, ref array<string>> matches = new map<string, ref array<string>>(); // entity class -> wanted classes it inherits
-		WorldEditorAPI api = m_Context.m_Api;
-		array<int> subScenes = { m_Context.m_iSubScene };
-		for (int other = 0, subSceneCount = api.GetNumSubScenes(); other < subSceneCount; other++)
-		{
-			if (other != m_Context.m_iSubScene)
-				subScenes.Insert(other);
-		}
-
-		foreach (int s : subScenes)
-		{
-			if (found.Count() == wanted.Count() || (s != m_Context.m_iSubScene && !LooksBeyondMission(wanted, found, missionOnly)))
-				break;
-
-			for (int i = 0, count = api.GetEntityCount(s); i < count && found.Count() < wanted.Count(); i++)
-			{
-				IEntitySource source = api.GetEntity(s, i);
-				if (!source)
-					continue;
-
-				string sourceClass = source.GetClassName();
-				array<string> inherited = matches.Get(sourceClass);
-				if (!inherited)
-				{
-					inherited = {};
-					typename sourceType = sourceClass.ToType();
-					if (sourceType)
-					{
-						foreach (int w, typename wantedType : wantedTypes)
-						{
-							if (sourceType.IsInherited(wantedType))
-								inherited.Insert(wanted[w]);
-						}
-					}
-
-					matches.Insert(sourceClass, inherited);
-				}
-
-				foreach (string inheritedClass : inherited)
-				{
-					if (!found.Contains(inheritedClass) && (s == m_Context.m_iSubScene || !missionOnly.Contains(inheritedClass)))
-						found.Insert(inheritedClass, source);
-				}
-			}
-		}
-
-		return found;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! \return whether a class still missing may be found outside the mission sub-scene
-	protected static bool LooksBeyondMission(notnull array<string> wanted, notnull map<string, IEntitySource> found, notnull set<string> missionOnly)
-	{
-		foreach (string className : wanted)
-		{
-			if (!found.Contains(className) && !missionOnly.Contains(className))
-				return true;
-		}
-
-		return false;
-	}
-
-	//------------------------------------------------------------------------------------------------
-	//! \return class of the prefab's entity, empty when the prefab cannot be loaded (its addon is not loaded)
-	protected static string GetPrefabClass(ResourceName prefab)
-	{
-		if (prefab.IsEmpty())
-			return string.Empty;
-
-		Resource resource = Resource.Load(prefab);
-		if (!resource || !resource.IsValid())
-			return string.Empty;
-
-		IEntitySource source = resource.GetResource().ToEntitySource();
-		if (!source)
-			return string.Empty;
-
-		return source.GetClassName();
 	}
 }
 #endif

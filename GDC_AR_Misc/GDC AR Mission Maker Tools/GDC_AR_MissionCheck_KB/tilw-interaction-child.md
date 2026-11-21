@@ -1,4 +1,4 @@
-# Interaction placed as a child (TILW)
+# TILW interaction placed as a child
 
 English | [Français](tilw-interaction-child.fr.md)
 

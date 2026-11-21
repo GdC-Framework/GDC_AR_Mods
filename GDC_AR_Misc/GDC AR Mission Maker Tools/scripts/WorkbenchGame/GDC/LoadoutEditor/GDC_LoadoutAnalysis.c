@@ -157,6 +157,44 @@ class GDC_LoadoutAnalysis
 	}
 
 	//------------------------------------------------------------------------------------------------
+	//! \return whether the character starts with this exact prefab: worn, in a weapon or equipment slot, or in the
+	//! inventory (an inherited prefab does not count)
+	bool Carries(ResourceName prefab)
+	{
+		foreach (GDC_LoadoutWornSlot worn : m_aWorn)
+		{
+			if (worn && worn.m_Prefab == prefab)
+				return true;
+		}
+
+		foreach (GDC_LoadoutWeaponSlot weapon : m_aWeapons)
+		{
+			if (weapon && weapon.m_Prefab == prefab)
+				return true;
+		}
+
+		foreach (GDC_LoadoutGadgetSlot gadget : m_aGadgets)
+		{
+			if (gadget && gadget.m_Prefab == prefab)
+				return true;
+		}
+
+		foreach (GDC_LoadoutContainer container : m_aContainers)
+		{
+			if (!container)
+				continue;
+
+			foreach (GDC_LoadoutItem item : container.m_aItems)
+			{
+				if (item && item.m_iCount > 0 && item.m_Prefab == prefab)
+					return true;
+			}
+		}
+
+		return false;
+	}
+
+	//------------------------------------------------------------------------------------------------
 	//! \return the primary weapon, empty without one
 	ResourceName GetPrimaryWeapon()
 	{

@@ -1,4 +1,4 @@
-# Entity deleter without a filter (TILW)
+# TILW entity deleter without a filter
 
 English | [Français](tilw-entity-deleter.fr.md)
 

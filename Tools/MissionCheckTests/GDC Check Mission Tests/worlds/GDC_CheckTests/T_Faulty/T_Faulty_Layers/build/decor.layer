@@ -46,3 +46,190 @@ GenericEntity T_Teleport {
  }
  coords 2130 39.438 2130
 }
+TILW_PresenceTriggerEntity Trg_Presence {
+ coords 2140 39.438 2140
+ m_entityNames {
+  "Nobody_GDCTest"
+ }
+}
+TILW_FactionTriggerEntity Trg_Faction {
+ coords 2150 39.438 2150
+ m_sendStatusMessages 1
+ m_statusMessages {
+  "a" "b"
+ }
+ m_displayTo {
+  "ZZ_GDCTest"
+ }
+ m_flagName "F_GDCTest"
+}
+GenericEntity T_Support {
+ components {
+  GDC_FireSupportModuleComponent "{6C0A11E0C4EC5403}" {
+   m_eMinRankRequired GENERAL
+   m_eFireAreaMode WHITELIST
+   m_aAreaNames {
+    "NoArea_GDCTest"
+   }
+   m_iMinDispersion 200
+   m_iMaxDispersion 100
+   m_sMarkerVisibleToFaction "YY_GDCTest"
+  }
+ }
+ coords 2160 39.438 2160
+}
+GenericEntity T_Artillery {
+ components {
+  GDC_ArtilleryFireSupportComponent "{6C0A11E0C4EC5404}" {
+   m_sAIGroupName "NoMortar_GDCTest"
+  }
+ }
+ coords 2170 39.438 2170
+}
+TILW_MissionFrameworkEntity TILW_MF_A : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2180 39.438 2180
+ m_missionEvents {
+  TILW_MissionEvent "{6C0A11E0C4EC570B}" {
+   m_name "E_NoCondition"
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC570D}" {
+   m_name "E_EmptyAnd"
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC570C}" {
+   }
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC5713}" {
+   m_name "E_Flags"
+   m_instructions {
+    TILW_RunEventsInstruction "{6C0A11E0C4EC5701}" {
+     m_eventNames {
+      "E_RunOnly"
+      "Ghost_GDCTest"
+     }
+    }
+    TILW_ReactivateEventsInstruction "{6C0A11E0C4EC5702}" {
+     m_eventNames {
+      "E_Dup"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{6C0A11E0C4EC5703}" {
+     m_groupName "NoGroup_GDCTest"
+     m_waypointNames {
+      "Trg_Presence"
+     }
+    }
+    TILW_AssignWaypointsInstruction "{6C0A11E0C4EC5704}" {
+     m_groupName "Crew_GDCTest"
+    }
+    TILW_SpawnPrefabInstruction "{6C0A11E0C4EC5705}" {
+     m_prefab "{6C0A11E0C4EC5106}Prefabs/GDC_CheckTests/T_FlagSetter.et"
+     m_locationName "Trg_Faction"
+     m_setEntityName "Spawned_GDCTest"
+    }
+    TILW_SpawnVehicleInstruction "{6C0A11E0C4EC5708}" {
+     m_locationName "Trg_Faction"
+     m_crewConfig TILW_CrewConfig "{6C0A11E0C4EC5707}" {
+      m_crewGroups {
+       TILW_CrewGroup "{6C0A11E0C4EC5706}" {
+        m_entityName "Crew_GDCTest"
+       }
+      }
+     }
+    }
+    TILW_DeleteEntitiesInstruction "{6C0A11E0C4EC5709}" {
+     m_entityNames {
+      "Spawned_GDCTest"
+     }
+    }
+    TILW_EndGameInstruction "{6C0A11E0C4EC570A}" {
+    }
+   }
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC5712}" {
+    m_operands {
+     TILW_LiteralTerm "{6C0A11E0C4EC570E}" {
+      m_flagName "Never_GDCTest"
+     }
+     TILW_LiteralTerm "{6C0A11E0C4EC570F}" {
+      m_flagName "F_GDCTest"
+     }
+     TILW_LiteralTerm "{6C0A11E0C4EC5710}" {
+      m_flagName "Dmg_GDCTest"
+     }
+     TILW_LiteralTerm "{6C0A11E0C4EC5711}" {
+      m_flagName "M_Meta_GDCTest"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC5716}" {
+   m_name "E_RunOnly"
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC5715}" {
+    m_operands {
+     TILW_LiteralTerm "{6C0A11E0C4EC5714}" {
+      m_flagName "NoFlag_GDCTest"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC5719}" {
+   m_name "E_Dup"
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC5718}" {
+    m_operands {
+     TILW_LiteralTerm "{6C0A11E0C4EC5717}" {
+      m_flagName "F_GDCTest"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC571C}" {
+   m_name "E_Dup"
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC571B}" {
+    m_operands {
+     TILW_LiteralTerm "{6C0A11E0C4EC571A}" {
+      m_flagName "F_GDCTest"
+     }
+    }
+   }
+  }
+  TILW_MissionEvent "{6C0A11E0C4EC5720}" {
+   m_name "E_Pregame"
+   m_condition TILW_ConjunctionTerm "{6C0A11E0C4EC571F}" {
+    m_operands {
+     TILW_LiteralTerm "{6C0A11E0C4EC571D}" {
+      m_flagName "F_GDCTest"
+     }
+     TILW_LiteralTerm "{6C0A11E0C4EC571E}" {
+      m_flagName "R_GDCTest"
+     }
+    }
+   }
+   m_pregameEvent 1
+  }
+ }
+ m_metaFlags {
+  TILW_MetaFlag "{6C0A11E0C4EC5721}" {
+   m_flagName "M_NoDef_GDCTest"
+  }
+  TILW_MetaFlag "{6C0A11E0C4EC5723}" {
+   m_flagName "M_Meta_GDCTest"
+   m_definition TILW_LiteralTerm "{6C0A11E0C4EC5722}" {
+    m_flagName "F_GDCTest"
+   }
+  }
+ }
+ m_randomFlags {
+  TILW_RandomFlag "{6C0A11E0C4EC5724}" {
+   m_flagName "R_GDCTest"
+  }
+ }
+ m_suppressGameEnd 1
+}
+TILW_MissionFrameworkEntity TILW_MF_B : "{8F846D0FD5D6EA51}Prefabs/MP/TILW_MissionFramework.et" {
+ coords 2184 39.438 2180
+}
+TILW_PrefabSpawnerEntity P_Spawner {
+ coords 2190 39.438 2190
+ m_conditionFlag "Never2_GDCTest"
+ m_waypointNames {
+  "NoWp_GDCTest"
+ }
+}

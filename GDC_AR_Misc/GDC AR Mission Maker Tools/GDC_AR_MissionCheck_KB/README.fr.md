@@ -11,10 +11,12 @@ Le rapport de Check Mission, dans la Log Console, donne l'adresse de la fiche de
 | 2.2 | [Proxy de bibliothèque MM utilisé](gdc-mm-library-proxy.fr.md) | convention GDC |
 | 2.4 | [Addon exclu chargé](gdc-excluded-addons.fr.md) | convention GDC |
 | 3.1 | [Aucun groupe jouable](rl-playable-groups.fr.md) | comportement d'addon (RL) |
-| 3.5 | [Radio qui n'est pas une radio Coalition VON](gdc-cvon-radios.fr.md) | convention GDC |
-| 4.1 | [Deleter sans filtre](tilw-entity-deleter.fr.md) | comportement d'addon (TILW) |
-| 5.1 | [Interaction placée en enfant](tilw-interaction-child.fr.md) | comportement d'addon (TILW) |
-| 5.2 | [Équipage de véhicule qui n'apparaît jamais](tilw-vehicle-crew.fr.md) | comportement d'addon (TILW) |
+| 3.4 | [Radio qui n'est pas une radio Coalition VON](gdc-cvon-radios.fr.md) | convention GDC |
+| 4.1 | [Deleter TILW sans filtre](tilw-entity-deleter.fr.md) | comportement d'addon (TILW) |
+| 4.2 | [Équipage TILW de véhicule qui n'apparaît jamais](tilw-vehicle-crew.fr.md) | comportement d'addon (TILW) |
+| 5.1 | [Interaction TILW placée en enfant](tilw-interaction-child.fr.md) | comportement d'addon (TILW) |
+| 5.2 à 5.5 | [Triggers TILW mal réglés](tilw-triggers.fr.md) | comportement d'addon (TILW) |
+| 5.6 à 5.14 | [Événements de mission TILW mal réglés](tilw-mission-events.fr.md) | comportement d'addon (TILW) |
 
 ## Tenir les fiches à jour (IA food)
 
