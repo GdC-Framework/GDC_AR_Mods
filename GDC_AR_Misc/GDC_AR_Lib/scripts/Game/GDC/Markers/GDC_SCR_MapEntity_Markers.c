@@ -1,19 +1,21 @@
 // GDC_SCR_MapEntity_Markers.c
 // Path in mod: Scripts/Game/GDC/Markers/GDC_SCR_MapEntity_Markers.c
 
-//! Draws the areas marked with GDC_MarkerAreaComponent on the map.
+//! Draws the areas marked with GDC_MarkerAreaComponent and the GDC_MarkerIconEntity icons on the map.
 modded class SCR_MapEntity
 {
 	protected const ResourceName GDC_AREA_CANVAS_LAYOUT = "{A4D17E3C6B9025F8}UI/layouts/Markers/GDC_MarkerAreaCanvas.layout";
 
 	protected CanvasWidget m_wGDC_AreaCanvas;
 	protected ref array<ref CanvasWidgetCommand> m_aGDC_AreaCommands;
+	protected bool m_bGDC_IconsShown;
 
 	//------------------------------------------------------------------------------------------------
-	//! The canvas is created first, so that the markers created when the map opens are on top of it.
+	//! The areas and icons are created first, so that the markers created when the map opens are on top of them.
 	override protected void OnMapOpen(MapConfiguration config)
 	{
 		GDC_CreateAreaCanvas();
+		GDC_CreateIcons();
 		super.OnMapOpen(config);
 	}
 
@@ -25,6 +27,8 @@ modded class SCR_MapEntity
 
 		m_wGDC_AreaCanvas = null;
 		m_aGDC_AreaCommands = null;
+
+		GDC_DeleteIcons();
 		super.OnMapClose();
 	}
 
@@ -33,12 +37,20 @@ modded class SCR_MapEntity
 	{
 		super.UpdateMap(timeSlice);
 
-		if (!m_wGDC_AreaCanvas)
-			return;
-
-		foreach (GDC_MarkerAreaComponent area : GDC_MarkerAreaComponent.GetShownAreas())
+		if (m_wGDC_AreaCanvas)
 		{
-			area.UpdateScreenVertices(this);
+			foreach (GDC_MarkerAreaComponent area : GDC_MarkerAreaComponent.GetShownAreas())
+			{
+				area.UpdateScreenVertices(this);
+			}
+		}
+
+		if (m_bGDC_IconsShown)
+		{
+			foreach (GDC_MarkerIconEntity icon : GDC_MarkerIconEntity.GetShownMarkers())
+			{
+				icon.UpdateMapWidget(this);
+			}
 		}
 	}
 
@@ -64,5 +76,39 @@ modded class SCR_MapEntity
 		}
 
 		m_wGDC_AreaCanvas.SetDrawCommands(m_aGDC_AreaCommands);
+	}
+
+	//------------------------------------------------------------------------------------------------
+	//! Created after the area canvas, so that the icons are on top of the areas.
+	protected void GDC_CreateIcons()
+	{
+		array<GDC_MarkerIconEntity> icons = GDC_MarkerIconEntity.GetShownMarkers();
+		if (icons.IsEmpty())
+			return;
+
+		Widget mapFrame = m_wMapRoot.FindAnyWidget(SCR_MapConstants.MAP_FRAME_NAME);
+		if (!mapFrame)
+			return;
+
+		foreach (GDC_MarkerIconEntity icon : icons)
+		{
+			icon.CreateMapWidget(this, mapFrame);
+		}
+
+		m_bGDC_IconsShown = true;
+	}
+
+	//------------------------------------------------------------------------------------------------
+	protected void GDC_DeleteIcons()
+	{
+		if (!m_bGDC_IconsShown)
+			return;
+
+		foreach (GDC_MarkerIconEntity icon : GDC_MarkerIconEntity.GetShownMarkers())
+		{
+			icon.DeleteMapWidget();
+		}
+
+		m_bGDC_IconsShown = false;
 	}
 }

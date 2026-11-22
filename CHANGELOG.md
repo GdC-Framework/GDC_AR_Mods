@@ -44,6 +44,10 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Historique sur le Workshop](https://reforger.armaplatform.com/workshop/690756F509F253EB-GDCARLib/changelog)
 
+### 1.5.0 - à publier
+
+- ADDED: map icon markers (Prefabs/Markers/GDC_Marker_Icon_*.et), one prefab per icon image set: tactical icons (also hand-drawn), tasks, topographic icons, OPFOR, BLUFOR and INDFOR unit types. Color, size on the screen or in meters, rotation, label, description on hover, factions that see it. They need no lobby addon.
+
 ### 1.4.0 - 2026-11-11
 
 - ADDED: Teleport module, optional line on the ground showing the gathering radius (GROUP and ALL_PLAYERS modes). White by default, width and decal material can be set. It follows the terrain only: roads, building floors and tall grass hide it. In the World Editor, the circle is shown while the module is selected.
@@ -120,6 +124,7 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 ### 1.0.1 - à publier
 
+- ADDED: the MM Markers library includes the GDC AR Lib icon markers.
 - FIXED: the Loadout Editor button now shows an icon (a suitcase) for every user. Its custom icon was not published, so the button only showed its name.
 
 ### 1.0.0 - 2026-11-21

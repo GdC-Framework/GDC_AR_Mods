@@ -18,8 +18,8 @@ class GDC_MMMarkerEntry
 //! Vanilla has no map marker meant for mission makers, so it is not scanned.
 class GDC_MMMarkerReader
 {
-	//! Icon markers, children included: Reforger Lobby (PSCore), Coalition Lobby
-	protected static const ref array<string> ICON_CLASSES = { "PS_ManualMarker", "COA_ManualMarker" };
+	//! Icon markers, children included: Reforger Lobby (PSCore), Coalition Lobby, GDC AR Lib
+	protected static const ref array<string> ICON_CLASSES = { "PS_ManualMarker", "COA_ManualMarker", "GDC_MarkerIconEntity" };
 
 	//! Areas: polylines carrying one of these components (GDC AR Lib area, TILW map shape, cover map and AO limit)
 	protected static const ref array<string> AREA_COMPONENTS = { "GDC_MarkerAreaComponent", "TILW_MapShapeComponent", "TILW_CoverMapComponent", "TILW_AOLimitComponent" };

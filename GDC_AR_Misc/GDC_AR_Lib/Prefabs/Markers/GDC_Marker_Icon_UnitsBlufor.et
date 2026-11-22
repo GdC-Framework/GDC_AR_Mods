@@ -1,0 +1,5 @@
+GDC_MarkerIconEntity {
+ ID "2952A7E6A8F7C101"
+ m_sImageSet "{1228936E5DB30403}UI/Textures/GroupManagement/FlagIcons/GroupFlagsBlufor.imageset"
+ m_sIconName "infantry"
+}

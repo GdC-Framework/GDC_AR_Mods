@@ -1,0 +1,5 @@
+GDC_MarkerIconEntity {
+ ID "7853B7E824B1F062"
+ m_sImageSet "{BCD5479864D1A79A}UI/Textures/Map/topographicIcons/icons_topographic_map.imageset"
+ m_sIconName "view-point"
+}

@@ -1,0 +1,5 @@
+GDC_MarkerIconEntity {
+ ID "12680C365AF8AC2A"
+ m_sImageSet "{10C0A9A305E8B3A4}UI/Imagesets/Tasks/Task_Icons.imageset"
+ m_sIconName "Icon_Task_Intel"
+}

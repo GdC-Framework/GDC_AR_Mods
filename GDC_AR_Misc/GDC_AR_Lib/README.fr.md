@@ -41,6 +41,10 @@ Les joueurs demandent le tir depuis un panneau ouvert par le menu radial de la c
 
 Prefab : `Prefabs/Markers/GDC_Marker_Area.et`, une polyligne affichable sur la carte du jeu avec un contour et, si elle est fermée, un remplissage. Couleurs, épaisseur et opacité sont réglables. Elle sert aussi à définir les zones de tir de l'appui au mortier.
 
+### Icônes affichées sur la carte
+
+Prefabs `Prefabs/Markers/GDC_Marker_Icon_*.et`, un par atlas d'icônes : `Tactical` (icônes tactiques de la carte), `Drawn` (les mêmes, au style dessiné à la main), `Tasks` (tâches), `Topographic` (lieux et repères de la carte), `UnitsOpfor`, `UnitsBlufor` et `UnitsIndfor` (types d'unités). Le nom de l'icône se recopie depuis l'atlas (ouvrir le fichier `.imageset` réglé dans le prefab). Réglages : couleur, taille fixe à l'écran ou en mètres (l'icône suit alors le zoom, avec une taille minimale), rotation avec l'entité pour les flèches, libellé sous l'icône, description au survol et factions qui voient le marqueur (toutes si la liste est vide).
+
 ### Radios par slot
 
 Fréquences des radios courte et longue portée, définies par slot sur les groupes jouables (`SCR_AIGroup`), avec Coalition VON. Un slot peut avoir plusieurs radios. Une fréquence longue portée commune peut s'appliquer aux membres du groupe sans fréquence propre.

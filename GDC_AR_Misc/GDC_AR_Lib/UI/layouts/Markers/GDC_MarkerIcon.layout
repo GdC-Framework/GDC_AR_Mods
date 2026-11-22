@@ -1,0 +1,82 @@
+FrameWidgetClass {
+ Name "GDC_MarkerIcon"
+ Slot FrameWidgetSlot "{DE423EABD3D45834}" {
+  OffsetLeft 0
+  OffsetTop 0
+  SizeX 0
+  OffsetRight 0
+  SizeY 0
+  OffsetBottom 0
+ }
+ "Z Order" 60
+ Clipping False
+ "Ignore Cursor" 0
+ {
+  ImageWidgetClass "{87AAAAD7F4899D27}" {
+   Name "Icon"
+   Slot FrameWidgetSlot "{675083864D19108A}" {
+    OffsetLeft 0
+    OffsetTop 0
+    SizeX 32
+    OffsetRight -32
+    SizeY 32
+    OffsetBottom -32
+    Alignment 0.5 0.5
+   }
+   Clipping False
+   "Ignore Cursor" 0
+   Texture "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+   Image "point-of-interest"
+   Size 32 32
+  }
+  TextWidgetClass "{52CE68AFC865876D}" {
+   Name "Label"
+   Slot FrameWidgetSlot "{04000AB26C3ABE22}" {
+    Alignment 0.5 0
+    SizeToContent 1
+   }
+   Clipping False
+   Color 0 0 0 1
+   Text ""
+   "Font Size" 16
+   "Min Font Size" 16
+   "Horizontal Alignment" Center
+   FontProperties FontProperties "{57EE6182F56BD9E1}" {
+    Font "{3E7733BAC8C831F6}UI/Fonts/RobotoCondensed/RobotoCondensed_Regular.fnt"
+    Bold 1
+    ShadowSize 3
+   }
+  }
+  PanelWidgetClass "{80393B5111612FBA}" {
+   Name "DescriptionPanel"
+   Slot FrameWidgetSlot "{E81B0A13B9422D4D}" {
+    Alignment 0.5 1
+    SizeToContent 1
+   }
+   "Z Order" 1
+   "Is Visible" 0
+   Color 0 0 0 0.75
+   style full
+   {
+    OverlayWidgetClass "{86F1D08C1E58D824}" {
+     Name "DescriptionOverlay"
+     Slot FrameWidgetSlot "{C4EFD76244E59194}" {
+      SizeToContent 1
+     }
+     {
+      RichTextWidgetClass "{A0E4680469A19AE4}" {
+       Name "DescriptionText"
+       Slot OverlayWidgetSlot "{5349B37B33D7A8F3}" {
+        Padding 8 6 8 6
+       }
+       Text ""
+       "Font Size" 16
+       "Min Font Size" 16
+       "Horizontal Alignment" Center
+      }
+     }
+    }
+   }
+  }
+ }
+}

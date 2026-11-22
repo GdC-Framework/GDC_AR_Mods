@@ -41,6 +41,10 @@ Players request fire from a panel opened through the map's radial menu. They cho
 
 Prefab: `Prefabs/Markers/GDC_Marker_Area.et`, a polyline that can be shown on the in-game map with an outline and, if it is closed, a fill. Colours, width and opacity are adjustable. It is also used to define the target areas of the mortar support.
 
+### Icons shown on the map
+
+Prefabs `Prefabs/Markers/GDC_Marker_Icon_*.et`, one per icon image set: `Tactical` (tactical map icons), `Drawn` (the same, hand-drawn style), `Tasks` (tasks), `Topographic` (map places and landmarks), `UnitsOpfor`, `UnitsBlufor` and `UnitsIndfor` (unit types). The icon name is copied from the image set (open the `.imageset` file set in the prefab). Settings: colour, fixed size on the screen or size in meters (the icon then follows the zoom, with a minimum size), rotation with the entity for arrows, label under the icon, description on hover and factions that see the marker (all if the list is empty).
+
 ### Per-slot radios
 
 Short-range and long-range radio frequencies, set per slot on playable groups (`SCR_AIGroup`), with Coalition VON. A slot can have several radios. A common long-range frequency can apply to group members with no frequency of their own.

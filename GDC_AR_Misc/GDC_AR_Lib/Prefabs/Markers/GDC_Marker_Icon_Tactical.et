@@ -1,0 +1,5 @@
+GDC_MarkerIconEntity {
+ ID "BA852665993B241A"
+ m_sImageSet "{E23427CAC80DA8B7}UI/Textures/Icons/icons_mapMarkersUI.imageset"
+ m_sIconName "point-of-interest"
+}
