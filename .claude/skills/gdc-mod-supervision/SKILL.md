@@ -133,7 +133,7 @@ Run `conflicts`. The load order is an admin choice: it is resolved from the serv
 (`GDC_AR_Missions/_ServerConfigs/addons.json`; `--server-config <mission addons.json>` for one mission), the way the
 game does it (list order, each mod preceded by its dependencies not loaded yet). Never take it from the MissionTests
 log: that list has its own order. The global list is kept in the order of the GDC rule (`load_order` in config.json:
-terrain, mission mods, GDC Core, GDC AR Lib, GDC Equipment, AFI bridge, mission addon); `order` checks any list
+terrain, mission mods, GDC Core, GDC AR Lib, GDC Equipment, GDC RL-CVON bridge, mission addon); `order` checks any list
 against it (`--apply` rewrites the repo's lists), and `after` reports rule breaks among its checks. It writes `conflicts.json` and adds it to report.json. Every supervised addon counts, GDC's projects included; conflicts
 inside one family of addons made by the same authors (`families` in config.json) are left out. Items not seen at the
 last supervision have `"new": true`.

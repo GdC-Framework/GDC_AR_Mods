@@ -49,7 +49,7 @@ C:/Dev/Enfusion/enfusion-mcp-py/.venv/Scripts/python.exe mod_supervision.py save
   1. le terrain ;
   2. les mods propres à la mission ;
   3. GDC Core, GDC AR Lib, GDC Equipment ;
-  4. le pont AFI CVON-RL ;
+  4. le pont GDC RL-CVON (Reforger Lobby – Coalition VON) ;
   5. le mod de la mission en dernier.
 
   Coalition VON, Reforger Lobby et PSCore doivent se charger après ACE, et GDC Core doit garder ACE avant Coalition VON dans ses dépendances. `after` fait aussi ces vérifications. `conflicts` prend l'ordre de la liste globale du dépôt, rangée selon cette règle, ou celui d'une liste donnée avec `--server-config`.

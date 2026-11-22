@@ -2,7 +2,7 @@
 
 Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la plus ancienne. Le texte de chaque version reprend celui publié sur le Workshop, en anglais : `ADDED`, `FIXED`, `CHANGED`. Les dates sont en UTC.
 
-À compléter à chaque publication. Sont suivis GDC Core, GDC Equipment, GDC AR Lib et GDC Mission Maker Tools ; un autre mod s'ajoute ici à sa prochaine publication.
+À compléter à chaque publication. Sont suivis GDC Core, GDC Equipment, GDC AR Lib, GDC Mission Maker Tools et GDC RL-CVON ; un autre mod s'ajoute ici à sa prochaine publication.
 
 ## GDC Core
 
@@ -142,3 +142,15 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 ### 0.0.1 - 2026-11-04
 
 - Première publication, sans texte de version : bibliothèques MM (« Update MM Libraries ») et GDC Loadout Editor, venu de GDC AR Lib.
+
+## GDC RL-CVON
+
+[Historique sur le Workshop](https://reforger.armaplatform.com/workshop/BCA23F9DDF701E02-GDCRL-CVON/changelog)
+
+### 1.0.0 - 2026-11-22
+
+- Publication en public, sans texte de version. Remplace AFI CVON-RL COMMUNITY Compat (66E2C8C95CD0EF22) dans les listes de mods, après le test avec les joueurs du 22/11/2026 sur Murabat.
+
+### 0.0.1 - 2026-11-19
+
+- Première publication, non listée, sans texte de version, pour le test sur le serveur GDC.

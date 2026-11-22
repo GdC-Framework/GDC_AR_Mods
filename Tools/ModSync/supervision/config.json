@@ -17,7 +17,7 @@
    {"modId": "663710CD8BEB01D4", "name": "GDC Core"},
    {"modId": "690756F509F253EB", "name": "GDC AR Lib"},
    {"modId": "663E97A021C36ABF", "name": "GDC Equipment"},
-   {"modId": "66E2C8C95CD0EF22", "name": "AFI CVON-RL COMMUNITY Compat"}
+   {"modId": "BCA23F9DDF701E02", "name": "GDC RL-CVON"}
   ],
   "_comment_after_ace": "In the resolved load order these must come after ACE All in One and all its modules: then ACE Radio's ActivateVON never bypasses Coalition VON's, and Reforger Lobby's UpdateConsciousness is the one kept. A mission mod listed before GDC Core that brings one of them breaks it.",
   "ace": "65AD7BE594439A52",
