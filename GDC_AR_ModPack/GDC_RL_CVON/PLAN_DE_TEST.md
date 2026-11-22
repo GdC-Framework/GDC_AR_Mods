@@ -47,21 +47,22 @@ AFI ne doit plus figurer dans la liste : les deux ponts ensemble se contrediraie
 
 **Retour arrière** : remettre l'entrée d'AFI (`66E2C8C95CD0EF22`, « AFI CVON-RL COMMUNITY Compat ») et redémarrer.
 
-## 3. Séance (environ 20 min)
+## 3. Séance (environ 25 min)
 
 | Joueur | Slot à Murabat | Fréquences attendues |
 |---|---|---|
 | **tanin** (admin, note les résultats) | CdO | longue portée 48000, PRC-152 38000 |
 | **Warzen** | SL d'Alpha | longue portée 48000, groupe 31000 |
 | **Seegan** | Chef d'équipe (TL) d'Alpha | groupe 31000, équipe 32000 ou 33000 |
+| **fazer** | SL de Bravo | longue portée 48000, groupe 34000 |
 
-Tous les trois sur TeamSpeak avec le plugin CVON de la même version que le mod (3.2.4). Pour un KO, noter qui parlait, qui n'entendait pas, et l'heure.
+Tous les quatre sur TeamSpeak avec le plugin CVON de la même version que le mod (3.2.4). Pour un KO, noter qui parlait, qui n'entendait pas, et l'heure.
 
 | # | Action | Résultat attendu |
 |---|---|---|
-| 1 | Lobby : Warzen prend le SL d'Alpha, tanin et Seegan restent sans slot. Chacun parle | Les trois s'entendent |
-| 2 | Lobby : Seegan, avec son slot, quitte le serveur et revient aussitôt. Chacun parle | Les trois s'entendent. Seegan doit se remettre prêt ou reprendre son slot : sinon Reforger Lobby le lui retire 2 minutes après son départ |
-| 3 | Partie : Seegan appelle sur 31000, puis Warzen sur 48000 | Fréquences du tableau. Warzen entend Seegan, tanin non ; tanin entend Warzen, Seegan non |
+| 1 | Lobby : Warzen prend le SL d'Alpha, tanin, Seegan et fazer restent sans slot. Chacun parle | Les quatre s'entendent |
+| 2 | Lobby : Seegan, avec son slot, quitte le serveur et revient aussitôt. Chacun parle | Les quatre s'entendent. Seegan doit se remettre prêt ou reprendre son slot : sinon Reforger Lobby le lui retire 2 minutes après son départ |
+| 3 | Partie : Seegan appelle sur 31000, puis Warzen sur 48000, puis fazer sur 34000 | Fréquences du tableau. Seegan : Warzen l'entend, tanin et fazer non. Warzen : tanin et fazer l'entendent, Seegan non. fazer : personne d'autre ne l'entend (seul sur 34000) |
 | 4 | Warzen monte dans un véhicule avec radio, fait le key fill et appelle tanin | La radio du véhicule apparaît dans les radios de Warzen, et tanin reçoit l'appel |
 | 5 | Si un slot porte un sac radio avec la longue portée (sinon, sauter) : Seegan prend le combiné de ce porteur (*Grab Handset*) et appelle tanin | tanin reçoit l'appel. Cette fonction ne marchait pas avec AFI |
 | 6 | Warzen, à pied à côté de Seegan, quitte le serveur et revient. Warzen parle, puis appelle tanin sur 48000 | Warzen reprend son personnage. Seegan l'entend en direct, tanin reçoit l'appel. Volume et oreille des radios de Warzen revenus aux valeurs par défaut de CVON (volume 9, les deux oreilles) |
