@@ -21,7 +21,7 @@ L'outil est fourni par l'addon **GDC Mission Maker Tools**. Il n'ajoute rien au 
 
 ## Ouvrir l'outil
 
-Dans le World Editor, cliquez sur l'icône **sac à dos GDC** de la barre d'outils. Le panneau de l'outil s'ouvre à droite.
+Dans le World Editor, cliquez sur l'icône **valise** de la barre d'outils. Le panneau de l'outil s'ouvre à droite.
 
 ## Le déroulé en 4 étapes
 

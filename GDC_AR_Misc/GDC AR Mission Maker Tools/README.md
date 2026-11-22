@@ -23,7 +23,7 @@ User guide: [docs/GDC_MMLibraries.md](docs/GDC_MMLibraries.md).
 
 ## A (slightly) better loadout editor
 
-A World Editor tool (GDC backpack icon in the toolbar) to edit the loadout of a character prefab on a single panel: clothing, weapons, equipment and inventory, with the real capacity of each container.
+A World Editor tool (suitcase icon in the toolbar) to edit the loadout of a character prefab on a single panel: clothing, weapons, equipment and inventory, with the real capacity of each container.
 
 User guide: [docs/GDC_LoadoutEditor.md](docs/GDC_LoadoutEditor.md).
 

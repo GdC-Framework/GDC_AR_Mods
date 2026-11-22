@@ -4,8 +4,8 @@
 [WorkbenchToolAttribute(
 	name: "GDC Loadout Editor",
 	description: "Edit the loadout of a character prefab: clothing, weapons, equipment slots and inventory.\n1. Pick a character prefab in 'Character' and press 'Load'\n2. Edit, press 'Apply', then save with the Workbench",
-	icon: "WBData/GDC/GDC_LoadoutEditor.png",
-	wbModules: { "WorldEditor" })]
+	wbModules: { "WorldEditor" },
+	awesomeFontCode: 0xF0F2)] // fa-suitcase; a custom icon cannot be shipped: the raw PNG is not packed and an .edds is not accepted
 class GDC_LoadoutEditorTool : WorldEditorTool
 {
 	[Attribute(desc: "Character prefab to edit. Press 'Load' after picking it.", uiwidget: UIWidgets.ResourcePickerThumbnail, params: "et", category: "Character")]

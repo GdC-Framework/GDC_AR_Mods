@@ -118,6 +118,10 @@ Versions publiées sur le Workshop Bohemia, par mod, de la plus récente à la p
 
 [Page sur le Workshop](https://reforger.armaplatform.com/workshop/6AC540B09694CF5F-GDCMissionMakerTools)
 
+### 1.0.1 - à publier
+
+- FIXED: the Loadout Editor button now shows an icon (a suitcase) for every user. Its custom icon was not published, so the button only showed its name.
+
 ### 1.0.0 - 2026-11-21
 
 - ADDED: Check Mission plugin (Plugins > GDC, Ctrl+Alt+C). It checks the open mission world without changing it: structure, resources and addons, players and loadouts, system settings, TILW mission logic, AI. The report goes to the Log Console, in English or French, with the fix for each finding and a link to its explanation. Blocks and language in Plugins > Settings > Check Mission; list of the checks in the user guide.

@@ -23,7 +23,7 @@ Mode d'emploi : [docs/GDC_MMLibraries.fr.md](docs/GDC_MMLibraries.fr.md).
 
 ## Un éditeur de loadouts (un peu) mieux
 
-Un outil du World Editor (icône sac à dos GDC de la barre d'outils) pour modifier le loadout d'un prefab de personnage sur un seul panneau : tenue, armes, équipements et inventaire, avec la capacité réelle de chaque conteneur. 
+Un outil du World Editor (icône valise de la barre d'outils) pour modifier le loadout d'un prefab de personnage sur un seul panneau : tenue, armes, équipements et inventaire, avec la capacité réelle de chaque conteneur. 
 
 Mode d'emploi : [docs/GDC_LoadoutEditor.fr.md](docs/GDC_LoadoutEditor.fr.md).
 

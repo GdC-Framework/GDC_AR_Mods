@@ -21,7 +21,7 @@ The tool is provided by the **GDC Mission Maker Tools** addon. It adds nothing t
 
 ## Open the tool
 
-In the World Editor, click the **GDC backpack** icon in the toolbar. The tool panel opens on the right.
+In the World Editor, click the **suitcase** icon in the toolbar. The tool panel opens on the right.
 
 ## The 4 steps
 

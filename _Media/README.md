@@ -12,6 +12,7 @@ Il est volontairement **en dehors des dossiers d'addons** pour ne pas être affi
 | `Tools/` | Outils de préparation des images |
 | `Thumbnails/` | Vignettes de missions (`m_sIcon`) |
 | `Workshop/` | Images des pages Workshop (`thumbnail.png`, preview, galerie) |
+| `Icons/` | Icônes d'outils Workbench, gardées en archive : un outil publié ne peut afficher qu'une icône FontAwesome (`awesomeFontCode`) |
 | `Textures/` | Sources des textures custom (affiches, panneaux, etc.) |
 | `Docs/` | Sources des documents pour les joueurs (aide-mémoire, etc.), à exporter vers le wiki |
 

@@ -376,8 +376,8 @@ class GDC_MMCheckCatalog
 			"the slot %1 starts with more than its gear can hold (%2 storage problems: capacity, weight, size or item type): some items will not be spawned.",
 			"le slot %1 démarre avec plus que son équipement ne peut contenir (%2 problèmes de rangement : capacité, poids, taille ou type d'objet) : des objets ne seront pas créés.");
 		rule.SetFix(
-			"open the slot prefab in the Loadout Editor (GDC backpack icon): it shows which storage overflows.",
-			"ouvrez le prefab du slot dans l'éditeur de loadouts (icône sac à dos GDC) : il montre quel rangement déborde.");
+			"open the slot prefab in the Loadout Editor (suitcase icon): it shows which storage overflows.",
+			"ouvrez le prefab du slot dans l'éditeur de loadouts (icône valise) : il montre quel rangement déborde.");
 
 		rule = Declare("3.6", GDC_MMCheckOrigin.VANILLA, GDC_EMMCheckSeverity.WARNING, GDC_EMMCheckFamily.ENGINE);
 		rule.SetTitle("Primary weapon without a spare magazine", "Arme principale sans chargeur de rechange");
